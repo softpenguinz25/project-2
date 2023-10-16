@@ -1,0 +1,181 @@
+[gd_scene load_steps=14 format=3 uid="uid://cfp78jp6axt6s"]
+
+[ext_resource type="Script" path="res://scripts/environment/door.gd" id="1_2rk2v"]
+[ext_resource type="Texture2D" uid="uid://bmafufmhy5xnv" path="res://sprites/environment/door.png" id="2_awo1w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jq83a"]
+size = Vector2(107, 504)
+
+[sub_resource type="Animation" id="Animation_ys4yn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.499996, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_e317e"]
+resource_name = "door_close"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -504), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -504), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5oloh"]
+resource_name = "door_open"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0), Vector2(0, -504)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.499996, 0), Vector2(0, -504)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k38iy"]
+_data = {
+"RESET": SubResource("Animation_ys4yn"),
+"door_close": SubResource("Animation_e317e"),
+"door_open": SubResource("Animation_5oloh")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4d0lk"]
+animation = &"door_close"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_reu6f"]
+animation = &"door_open"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qgeug"]
+advance_mode = 2
+advance_condition = &"trigger_open"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bmmu5"]
+advance_mode = 2
+advance_condition = &"trigger_close"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cil6y"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_unumu"]
+states/door_close/node = SubResource("AnimationNodeAnimation_4d0lk")
+states/door_close/position = Vector2(491, 105)
+states/door_open/node = SubResource("AnimationNodeAnimation_reu6f")
+states/door_open/position = Vector2(340, 100)
+transitions = ["door_close", "door_open", SubResource("AnimationNodeStateMachineTransition_qgeug"), "door_open", "door_close", SubResource("AnimationNodeStateMachineTransition_bmmu5"), "Start", "door_open", SubResource("AnimationNodeStateMachineTransition_cil6y")]
+graph_offset = Vector2(6, 8)
+
+[node name="door" type="StaticBody2D" node_paths=PackedStringArray("animation_tree")]
+position = Vector2(53, 396)
+script = ExtResource("1_2rk2v")
+animation_tree = NodePath("AnimationTree")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.5, 0)
+scale = Vector2(0.66875, 0.673797)
+texture = ExtResource("2_awo1w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.499996, 0)
+shape = SubResource("RectangleShape2D_jq83a")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_k38iy")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_unumu")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/conditions/trigger_close = false
+parameters/conditions/trigger_open = false
+
+[node name="Light Button" type="Button" parent="."]
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 79.0
+offset_top = 13.0
+offset_right = 129.0
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(25, 25)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Door Button" type="Button" parent="."]
+modulate = Color(1, 0, 0, 1)
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 79.0
+offset_top = -59.0
+offset_right = 129.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(25, 25)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[connection signal="button_down" from="Door Button" to="." method="switch_door_state"]
