@@ -74,8 +74,9 @@ shape = SubResource("RectangleShape2D_3giqt")
 [node name="player" parent="." instance=ExtResource("1_52sae")]
 position = Vector2(956, 520)
 
-[node name="camera_manager" type="Node" parent="."]
+[node name="camera_manager" type="Node" parent="." node_paths=PackedStringArray("camera")]
 script = ExtResource("4_fgdp0")
+camera = NodePath("Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="camera_manager"]
 position = Vector2(640, 360)
@@ -88,3 +89,8 @@ position = Vector2(320, 360)
 
 [node name="door_right" type="Node2D" parent="camera_manager"]
 position = Vector2(960, 360)
+
+[connection signal="light_off" from="door_left" to="camera_manager" method="set_camera_pos" binds= ["default"]]
+[connection signal="light_on" from="door_left" to="camera_manager" method="set_camera_pos" binds= ["door_left"]]
+[connection signal="light_off" from="door_right" to="camera_manager" method="set_camera_pos" binds= ["default"]]
+[connection signal="light_on" from="door_right" to="camera_manager" method="set_camera_pos" binds= ["door_right"]]

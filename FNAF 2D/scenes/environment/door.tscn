@@ -178,4 +178,6 @@ pivot_offset = Vector2(25, 25)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
+[connection signal="button_down" from="Light Button" to="." method="change_light_state" binds= [true]]
+[connection signal="button_up" from="Light Button" to="." method="change_light_state" binds= [false]]
 [connection signal="button_down" from="Door Button" to="." method="switch_door_state"]
