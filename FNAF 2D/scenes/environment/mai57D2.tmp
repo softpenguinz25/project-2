@@ -1,11 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://cq3xl7epyqcof"]
+[gd_scene load_steps=12 format=3 uid="uid://cq3xl7epyqcof"]
 
-[ext_resource type="Texture2D" uid="uid://iavdw7y2t4ka" path="res://sprites/environment/main_office/checkerboard.png" id="1_7giwt"]
 [ext_resource type="PackedScene" uid="uid://b8dn51lufbqdf" path="res://scenes/characters/player.tscn" id="1_52sae"]
+[ext_resource type="Texture2D" uid="uid://iavdw7y2t4ka" path="res://sprites/environment/checkerboard.png" id="1_kcsci"]
 [ext_resource type="PackedScene" uid="uid://cfp78jp6axt6s" path="res://scenes/environment/door.tscn" id="2_mbf6m"]
-[ext_resource type="Texture2D" uid="uid://dvfexnxjhk5ur" path="res://sprites/environment/main_office/table.png" id="3_6j2kl"]
 [ext_resource type="Script" path="res://scripts/environment/camera_tweener.gd" id="4_fgdp0"]
-[ext_resource type="Texture2D" uid="uid://y6yqx1oqxrhd" path="res://sprites/environment/main_office/tv.png" id="4_yislq"]
+[ext_resource type="Texture2D" uid="uid://y6yqx1oqxrhd" path="res://sprites/environment/tv.png" id="4_okhfq"]
+[ext_resource type="Texture2D" uid="uid://dvfexnxjhk5ur" path="res://sprites/environment/table.png" id="5_48617"]
 
 [sub_resource type="Gradient" id="Gradient_3qded"]
 offsets = PackedFloat32Array(0, 0.2, 0.787097, 1)
@@ -13,8 +13,6 @@ colors = PackedColorArray(0.0352941, 0.0352941, 0.0352941, 1, 0.156863, 0.156863
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_cetqn"]
 gradient = SubResource("Gradient_3qded")
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_6i2pb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m45bn"]
 size = Vector2(1280, 72)
@@ -24,8 +22,6 @@ size = Vector2(1280, 72)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3giqt"]
 size = Vector2(1280, 144)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rlic5"]
-
 [node name="main_office" type="Node2D"]
 
 [node name="background" type="Sprite2D" parent="."]
@@ -33,12 +29,6 @@ position = Vector2(639.988, 396)
 rotation = 1.57079
 scale = Vector2(1.969, 1279.96)
 texture = SubResource("GradientTexture1D_cetqn")
-
-[node name="hall" type="Sprite2D" parent="."]
-self_modulate = Color(0, 0, 0, 1)
-position = Vector2(640, 396)
-scale = Vector2(240, 504)
-texture = SubResource("CanvasTexture_6i2pb")
 
 [node name="floor" type="StaticBody2D" parent="."]
 
@@ -58,7 +48,7 @@ scale = Vector2(2.25, 2.25)
 pivot_offset = Vector2(426.75, 16)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_7giwt")
+texture = ExtResource("1_kcsci")
 stretch_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
@@ -86,29 +76,28 @@ shape = SubResource("RectangleShape2D_3giqt")
 [node name="Table" type="Sprite2D" parent="."]
 position = Vector2(891, 608)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_6j2kl")
+texture = ExtResource("5_48617")
 offset = Vector2(128, -28)
 
 [node name="Tv" type="Sprite2D" parent="."]
 position = Vector2(959, 477)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_yislq")
+texture = ExtResource("4_okhfq")
 
 [node name="Button" type="Button" parent="Tv"]
+z_index = -1
 offset_left = -132.0
 offset_top = -58.0
 offset_right = 132.0
 offset_bottom = 126.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_rlic5")
 
 [node name="player" parent="." instance=ExtResource("1_52sae")]
 position = Vector2(956, 520)
 metadata/_edit_lock_ = true
 
-[node name="camera_manager" type="Node" parent="." node_paths=PackedStringArray("camera", "start_node")]
+[node name="camera_manager" type="Node" parent="." node_paths=PackedStringArray("camera")]
 script = ExtResource("4_fgdp0")
 camera = NodePath("Camera2D")
-start_node = NodePath("default")
 
 [node name="Camera2D" type="Camera2D" parent="camera_manager"]
 position = Vector2(640, 360)
@@ -127,8 +116,8 @@ position = Vector2(960, 360)
 position = Vector2(960, 493)
 scale = Vector2(5, 5)
 
-[connection signal="light_off" from="door_left" to="camera_manager" method="set_camera_pos" binds= ["default", 0.2]]
-[connection signal="light_on" from="door_left" to="camera_manager" method="set_camera_pos" binds= ["door_left", 0.2]]
-[connection signal="light_off" from="door_right" to="camera_manager" method="set_camera_pos" binds= ["default", 0.2]]
-[connection signal="light_on" from="door_right" to="camera_manager" method="set_camera_pos" binds= ["door_right", 0.2]]
-[connection signal="button_down" from="Tv/Button" to="camera_manager" method="set_camera_pos" binds= ["security_camera", 0.33]]
+[connection signal="light_off" from="door_left" to="camera_manager" method="set_camera_pos" binds= ["default"]]
+[connection signal="light_on" from="door_left" to="camera_manager" method="set_camera_pos" binds= ["door_left"]]
+[connection signal="light_off" from="door_right" to="camera_manager" method="set_camera_pos" binds= ["default"]]
+[connection signal="light_on" from="door_right" to="camera_manager" method="set_camera_pos" binds= ["door_right"]]
+[connection signal="button_down" from="Tv/Button" to="camera_manager" method="set_camera_pos" binds= ["security_camera"]]

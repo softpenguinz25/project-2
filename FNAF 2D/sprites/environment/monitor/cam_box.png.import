@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmafufmhy5xnv"
-path="res://.godot/imported/door.png-2c76deb4177111648b62df0828d7c7e1.ctex"
+uid="uid://catrauyekuw30"
+path="res://.godot/imported/cam_box.png-009639373ac3fb0c8b5dfd1629eab34d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/environment/door.png"
-dest_files=["res://.godot/imported/door.png-2c76deb4177111648b62df0828d7c7e1.ctex"]
+source_file="res://sprites/environment/monitor/cam_box.png"
+dest_files=["res://.godot/imported/cam_box.png-009639373ac3fb0c8b5dfd1629eab34d.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://cfp78jp6axt6s"]
+[gd_scene load_steps=18 format=3 uid="uid://cfp78jp6axt6s"]
 
 [ext_resource type="Script" path="res://scripts/environment/door.gd" id="1_2rk2v"]
-[ext_resource type="Texture2D" uid="uid://bmafufmhy5xnv" path="res://sprites/environment/door.png" id="2_awo1w"]
+[ext_resource type="Texture2D" uid="uid://bmafufmhy5xnv" path="res://sprites/environment/main_office/door.png" id="2_ge7kw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jq83a"]
 size = Vector2(107, 504)
@@ -121,6 +121,16 @@ states/door_open/position = Vector2(340, 100)
 transitions = ["door_close", "door_open", SubResource("AnimationNodeStateMachineTransition_qgeug"), "door_open", "door_close", SubResource("AnimationNodeStateMachineTransition_bmmu5"), "Start", "door_open", SubResource("AnimationNodeStateMachineTransition_cil6y")]
 graph_offset = Vector2(6, 8)
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_hffdi"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_emur7"]
+texture = SubResource("CanvasTexture_hffdi")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_r6ip2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_61vq1"]
+texture = SubResource("CanvasTexture_r6ip2")
+
 [node name="door" type="StaticBody2D" node_paths=PackedStringArray("animation_tree")]
 position = Vector2(53, 396)
 script = ExtResource("1_2rk2v")
@@ -129,7 +139,7 @@ animation_tree = NodePath("AnimationTree")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.5, 0)
 scale = Vector2(0.66875, 0.673797)
-texture = ExtResource("2_awo1w")
+texture = ExtResource("2_ge7kw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.499996, 0)
@@ -161,6 +171,7 @@ grow_vertical = 2
 pivot_offset = Vector2(25, 25)
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_emur7")
 
 [node name="Door Button" type="Button" parent="."]
 modulate = Color(1, 0, 0, 1)
@@ -177,6 +188,7 @@ grow_vertical = 2
 pivot_offset = Vector2(25, 25)
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_61vq1")
 
 [connection signal="button_down" from="Light Button" to="." method="change_light_state" binds= [true]]
 [connection signal="button_up" from="Light Button" to="." method="change_light_state" binds= [false]]

@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://k6w3gp7lc80w"]
+
+[ext_resource type="Texture2D" uid="uid://catrauyekuw30" path="res://sprites/environment/monitor/cam_box.png" id="1_weffv"]
+[ext_resource type="Script" path="res://scripts/monitor/cam_box.gd" id="2_w1x8l"]
+[ext_resource type="Texture2D" uid="uid://ccb0btpes530e" path="res://sprites/environment/monitor/cam_box_bg.png" id="3_6ib8p"]
+[ext_resource type="FontFile" uid="uid://c458otts8ji68" path="res://ui/fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" id="3_86ikk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_drsw3"]
+
+[node name="cam_box" type="TextureRect"]
+z_index = 1
+offset_right = 59.0
+offset_bottom = 39.0
+texture = ExtResource("1_weffv")
+expand_mode = 1
+script = ExtResource("2_w1x8l")
+
+[node name="cam_box_bg" type="TextureRect" parent="."]
+self_modulate = Color(0.258824, 0.258824, 0.258824, 1)
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_6ib8p")
+expand_mode = 1
+
+[node name="cam_box_label" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 57.0
+offset_bottom = 37.0
+theme_override_fonts/normal_font = ExtResource("3_86ikk")
+text = "CAM
+1A"
+fit_content = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 57.0
+offset_bottom = 37.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_drsw3")
+
+[connection signal="button_down" from="Button" to="." method="click_cam"]

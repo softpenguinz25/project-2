@@ -6,7 +6,7 @@ var last_move_dir : int
 @onready var acceleration_turn_around_multiplier : float = 2.5
 
 func _process(_delta):
-	var move_dir : int = Input.get_axis("move_left", "move_right")
+	var move_dir : int = int(Input.get_axis("move_left", "move_right"))
 	if absf(move_dir) > 0:
 		var acceleration_to_use : float = acceleration if signf(velocity.x) == move_dir else acceleration * acceleration_turn_around_multiplier
 		velocity.x += move_dir * acceleration_to_use * _delta
