@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cq3xl7epyqcof"]
+[gd_scene load_steps=16 format=3 uid="uid://cq3xl7epyqcof"]
 
 [ext_resource type="Texture2D" uid="uid://iavdw7y2t4ka" path="res://sprites/environment/main_office/checkerboard.png" id="1_7giwt"]
 [ext_resource type="PackedScene" uid="uid://b8dn51lufbqdf" path="res://scenes/characters/player.tscn" id="1_52sae"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dvfexnxjhk5ur" path="res://sprites/environment/main_office/table.png" id="3_6j2kl"]
 [ext_resource type="Script" path="res://scripts/environment/camera_tweener.gd" id="4_fgdp0"]
 [ext_resource type="Texture2D" uid="uid://y6yqx1oqxrhd" path="res://sprites/environment/main_office/tv.png" id="4_yislq"]
+[ext_resource type="PackedScene" uid="uid://gce66gknn2m8" path="res://scenes/monitor/monitor_screen.tscn" id="5_2xxo1"]
+[ext_resource type="Script" path="res://scenes/environment/monitor.gd" id="5_fctrn"]
 
 [sub_resource type="Gradient" id="Gradient_3qded"]
 offsets = PackedFloat32Array(0, 0.2, 0.787097, 1)
@@ -83,18 +85,27 @@ texture = SubResource("CanvasTexture_nmf0t")
 position = Vector2(640, 72)
 shape = SubResource("RectangleShape2D_3giqt")
 
-[node name="Table" type="Sprite2D" parent="."]
+[node name="table" type="Sprite2D" parent="."]
 position = Vector2(891, 608)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_6j2kl")
 offset = Vector2(128, -28)
 
-[node name="Tv" type="Sprite2D" parent="."]
+[node name="monitor" type="Sprite2D" parent="." node_paths=PackedStringArray("monitor_focus_button")]
 position = Vector2(959, 477)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_yislq")
+script = ExtResource("5_fctrn")
+monitor_focus_button = NodePath("monitor_focus_button")
 
-[node name="Button" type="Button" parent="Tv"]
+[node name="monitor_screen" parent="monitor" instance=ExtResource("5_2xxo1")]
+offset_left = -119.0
+offset_top = -34.0
+offset_right = 898.0
+offset_bottom = 436.0
+scale = Vector2(0.185, 0.185)
+
+[node name="monitor_focus_button" type="Button" parent="monitor"]
 offset_left = -132.0
 offset_top = -58.0
 offset_right = 132.0
@@ -112,7 +123,7 @@ start_node = NodePath("default")
 
 [node name="Camera2D" type="Camera2D" parent="camera_manager"]
 position = Vector2(640, 360)
-scale = Vector2(5, 5)
+scale = Vector2(10.8, 10.8)
 
 [node name="default" type="Node2D" parent="camera_manager"]
 position = Vector2(640, 360)
@@ -124,11 +135,12 @@ position = Vector2(320, 360)
 position = Vector2(960, 360)
 
 [node name="security_camera" type="Node2D" parent="camera_manager"]
-position = Vector2(960, 493)
-scale = Vector2(5, 5)
+position = Vector2(959, 493.5)
+scale = Vector2(10.8, 10.8)
 
 [connection signal="light_off" from="door_left" to="camera_manager" method="set_camera_pos" binds= ["default", 0.2]]
 [connection signal="light_on" from="door_left" to="camera_manager" method="set_camera_pos" binds= ["door_left", 0.2]]
 [connection signal="light_off" from="door_right" to="camera_manager" method="set_camera_pos" binds= ["default", 0.2]]
 [connection signal="light_on" from="door_right" to="camera_manager" method="set_camera_pos" binds= ["door_right", 0.2]]
-[connection signal="button_down" from="Tv/Button" to="camera_manager" method="set_camera_pos" binds= ["security_camera", 0.33]]
+[connection signal="monitor_focus" from="monitor" to="camera_manager" method="set_camera_pos" binds= ["security_camera", 0.33]]
+[connection signal="button_down" from="monitor/monitor_focus_button" to="monitor" method="set_monitor_focus" binds= [true]]

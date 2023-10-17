@@ -6,7 +6,7 @@
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_8xar5"]
 
-[node name="monitor" type="Control"]
+[node name="monitor_screen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,9 +27,15 @@ cam_scenes = {
 [node name="cam_default_red" type="TextureRect" parent="monitor_scene"]
 self_modulate = Color(1, 0, 0, 1)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CanvasTexture_8xar5")
@@ -38,24 +44,25 @@ texture = SubResource("CanvasTexture_8xar5")
 visible = false
 self_modulate = Color(0, 0, 1, 1)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CanvasTexture_8xar5")
 
 [node name="monitor_map" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 901.0
-offset_top = 331.0
-offset_right = -19.0001
-offset_bottom = -29.0001
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 870.0
+offset_top = 329.0
+offset_right = 1230.0
+offset_bottom = 689.0
 size_flags_vertical = 3
 texture = ExtResource("1_evw1b")
 expand_mode = 1
@@ -64,8 +71,6 @@ expand_mode = 1
 layout_mode = 0
 cam_name = "CAM
 SUBS"
-default_cam_color = Color(0.258824, 0.258824, 0.258824, 1)
-selected_cam_color = Color(0.764706, 0.870588, 0, 1)
 
 [node name="cam_box_2" parent="monitor_map" instance=ExtResource("3_qdy7j")]
 layout_mode = 0
@@ -75,8 +80,6 @@ offset_right = 374.0
 offset_bottom = 66.0
 cam_name = "CAM 
 CRIBE"
-default_cam_color = Color(0.258824, 0.258824, 0.258824, 1)
-selected_cam_color = Color(0.764706, 0.870588, 0, 1)
 
 [node name="cam_box_3" parent="monitor_map" instance=ExtResource("3_qdy7j")]
 layout_mode = 0
@@ -86,8 +89,6 @@ offset_right = 210.0
 offset_bottom = 122.0
 cam_name = "CAM
 TO"
-default_cam_color = Color(0.258824, 0.258824, 0.258824, 1)
-selected_cam_color = Color(0.764706, 0.870588, 0, 1)
 
 [node name="cam_box_4" parent="monitor_map" instance=ExtResource("3_qdy7j")]
 layout_mode = 0
@@ -97,8 +98,6 @@ offset_right = 103.0
 offset_bottom = 141.0
 cam_name = "CAM
 JUJU"
-default_cam_color = Color(0.258824, 0.258824, 0.258824, 1)
-selected_cam_color = Color(0.764706, 0.870588, 0, 1)
 
 [node name="cam_box_5" parent="monitor_map" instance=ExtResource("3_qdy7j")]
 layout_mode = 0
@@ -108,8 +107,6 @@ offset_right = 259.0
 offset_bottom = 163.0
 cam_name = "CAM
 PROD"
-default_cam_color = Color(0.258824, 0.258824, 0.258824, 1)
-selected_cam_color = Color(0.764706, 0.870588, 0, 1)
 
 [node name="cam_box_6" parent="monitor_map" instance=ExtResource("3_qdy7j")]
 layout_mode = 0
@@ -119,8 +116,6 @@ offset_right = 88.0001
 offset_bottom = 214.0
 cam_name = "CAM
 GAMES"
-default_cam_color = Color(0.258824, 0.258824, 0.258824, 1)
-selected_cam_color = Color(0.764706, 0.870588, 0, 1)
 
 [node name="cam_box_7" parent="monitor_map" instance=ExtResource("3_qdy7j")]
 layout_mode = 0
@@ -130,8 +125,6 @@ offset_right = 45.0001
 offset_bottom = 263.0
 cam_name = "CAM
 HIT"
-default_cam_color = Color(0.258824, 0.258824, 0.258824, 1)
-selected_cam_color = Color(0.764706, 0.870588, 0, 1)
 
 [node name="cam_box_8" parent="monitor_map" instance=ExtResource("3_qdy7j")]
 layout_mode = 0
@@ -141,8 +134,14 @@ offset_right = 376.0
 offset_bottom = 263.0
 cam_name = "CAM
 30K"
-default_cam_color = Color(0.258824, 0.258824, 0.258824, 1)
-selected_cam_color = Color(0.764706, 0.870588, 0, 1)
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 22.0
+offset_right = 196.0
+offset_bottom = 84.0
+text = "EXIT"
 
 [connection signal="cam_clicked" from="monitor_map/cam_box_1" to="monitor_scene" method="switch_cam_scene" binds= ["default_red"]]
 [connection signal="cam_clicked" from="monitor_map/cam_box_2" to="monitor_scene" method="switch_cam_scene" binds= ["default_blue"]]
