@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cq3xl7epyqcof"]
+[gd_scene load_steps=19 format=3 uid="uid://cq3xl7epyqcof"]
 
 [ext_resource type="Texture2D" uid="uid://iavdw7y2t4ka" path="res://sprites/environment/main_office/checkerboard.png" id="1_7giwt"]
 [ext_resource type="PackedScene" uid="uid://b8dn51lufbqdf" path="res://scenes/characters/player.tscn" id="1_52sae"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://biqinu2vf4hhn" path="res://scenes/characters/animatronics/freddy.tscn" id="8_8st2l"]
 [ext_resource type="PackedScene" uid="uid://dx4nwqj61k5ub" path="res://scenes/characters/animatronics/bonnie.tscn" id="8_w172p"]
 [ext_resource type="PackedScene" uid="uid://ptnmkyrjbbv6" path="res://scenes/characters/animatronics/chica.tscn" id="9_vuwfo"]
+[ext_resource type="PackedScene" uid="uid://bg513jn72ci7b" path="res://scenes/characters/animatronics/foxy.tscn" id="11_rr8c6"]
 
 [sub_resource type="Gradient" id="Gradient_3qded"]
 offsets = PackedFloat32Array(0, 0.2, 0.787097, 1)
@@ -149,6 +150,8 @@ door_obstacle = NodePath("../../door_left")
 
 [node name="chica" parent="animatronics" node_paths=PackedStringArray("door_obstacle") instance=ExtResource("9_vuwfo")]
 door_obstacle = NodePath("../../door_right")
+
+[node name="foxy" parent="animatronics" instance=ExtResource("11_rr8c6")]
 
 [connection signal="light_off" from="door_left" to="camera_manager" method="set_camera_pos" binds= ["default", 0.2]]
 [connection signal="light_on" from="door_left" to="camera_manager" method="set_camera_pos" binds= ["door_left", 0.2]]

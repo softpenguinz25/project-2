@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://gce66gknn2m8"]
+[gd_scene load_steps=12 format=3 uid="uid://gce66gknn2m8"]
 
 [ext_resource type="Script" path="res://scripts/monitor/monitor_scene.gd" id="1_20jul"]
 [ext_resource type="Texture2D" uid="uid://i08yjr748wt6" path="res://sprites/environment/monitor/monitor_map.png" id="1_evw1b"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ccr5wtvhqhsfx" path="res://sprites/characters/animatronics/placeholder/placeholder_icon_chica.png" id="6_1erd1"]
 [ext_resource type="Texture2D" uid="uid://ckyyaww1k4028" path="res://sprites/characters/animatronics/placeholder/placeholder_icon_bonnie.png" id="6_2iw3h"]
 [ext_resource type="Texture2D" uid="uid://b82ka5cdnk2ui" path="res://sprites/characters/animatronics/placeholder/placeholder_icon_freddy.png" id="6_eiy07"]
+[ext_resource type="Texture2D" uid="uid://bdfutn7boc1bi" path="res://sprites/characters/animatronics/placeholder/placeholder_icon_foxy.png" id="6_vlpr8"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_8xar5"]
 
@@ -187,6 +188,7 @@ monitor_scene = NodePath("../monitor_scene")
 animatronic_placeholder = {
 "bonnie": NodePath("visual_bonnie"),
 "chica": NodePath("visual_chica"),
+"foxy": NodePath("visual_foxy"),
 "freddy": NodePath("visual_freddy")
 }
 
@@ -265,6 +267,17 @@ offset_bottom = 263.0
 cam_name = "hall_east"
 cam_display_name = "CAM
 2B"
+
+[node name="visual_foxy" type="TextureRect" parent="monitor_map"]
+z_index = 1
+layout_mode = 0
+offset_left = -14.0
+offset_top = 224.0
+offset_right = 18.0
+offset_bottom = 256.0
+mouse_filter = 2
+texture = ExtResource("6_vlpr8")
+expand_mode = 1
 
 [node name="visual_chica" type="TextureRect" parent="monitor_map"]
 z_index = 1

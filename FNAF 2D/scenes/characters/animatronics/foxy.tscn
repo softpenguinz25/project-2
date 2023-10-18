@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bg513jn72ci7b"]
+
+[ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_roaming.gd" id="1_p2sb2"]
+[ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_in_office.gd" id="2_eycoe"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_76cpf"]
+
+[node name="foxy" type="Node2D" node_paths=PackedStringArray("movement_timer", "animatronic_in_office")]
+script = ExtResource("1_p2sb2")
+animatronic_name = "foxy"
+movement_timer = NodePath("foxy_timer")
+min_move_time = 0.75
+max_move_time = 1.25
+cam_path = Array[Array]([["pirate_cove", "pirate_cove", "pirate_cove", "pirate_cove"]])
+animatronic_in_office = NodePath("foxy_in_office")
+early_camera_nums = 1
+
+[node name="foxy_in_office" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(0.898039, 0, 0.0588235, 1)
+position = Vector2(371, 460)
+scale = Vector2(150, 150)
+texture = SubResource("CanvasTexture_76cpf")
+script = ExtResource("2_eycoe")
+
+[node name="foxy_timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="foxy_timer" to="." method="movement_opportunity"]
