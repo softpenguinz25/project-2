@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://k6w3gp7lc80w"]
 
-[ext_resource type="Texture2D" uid="uid://catrauyekuw30" path="res://sprites/environment/monitor/cam_box.png" id="1_weffv"]
+[ext_resource type="Texture2D" uid="uid://catrauyekuw30" path="res://sprites/environment/monitor/cam_box_border.png" id="1_pe75y"]
 [ext_resource type="Script" path="res://scripts/monitor/cam_box.gd" id="2_w1x8l"]
 [ext_resource type="Texture2D" uid="uid://ccb0btpes530e" path="res://sprites/environment/monitor/cam_box_bg.png" id="3_6ib8p"]
 [ext_resource type="FontFile" uid="uid://c458otts8ji68" path="res://ui/fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" id="3_86ikk"]
@@ -11,9 +11,11 @@
 z_index = 1
 offset_right = 59.0
 offset_bottom = 39.0
-texture = ExtResource("1_weffv")
+texture = ExtResource("1_pe75y")
 expand_mode = 1
 script = ExtResource("2_w1x8l")
+cam_name = "CAM
+1A"
 default_cam_color = Color(0.258824, 0.258824, 0.258824, 1)
 selected_cam_color = Color(0.764706, 0.870588, 0, 1)
 

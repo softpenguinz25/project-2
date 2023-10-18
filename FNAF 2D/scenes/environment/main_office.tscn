@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cq3xl7epyqcof"]
+[gd_scene load_steps=18 format=3 uid="uid://cq3xl7epyqcof"]
 
 [ext_resource type="Texture2D" uid="uid://iavdw7y2t4ka" path="res://sprites/environment/main_office/checkerboard.png" id="1_7giwt"]
 [ext_resource type="PackedScene" uid="uid://b8dn51lufbqdf" path="res://scenes/characters/player.tscn" id="1_52sae"]
@@ -7,7 +7,8 @@
 [ext_resource type="Script" path="res://scripts/environment/camera_tweener.gd" id="4_fgdp0"]
 [ext_resource type="Texture2D" uid="uid://y6yqx1oqxrhd" path="res://sprites/environment/main_office/tv.png" id="4_yislq"]
 [ext_resource type="PackedScene" uid="uid://gce66gknn2m8" path="res://scenes/monitor/monitor_screen.tscn" id="5_2xxo1"]
-[ext_resource type="Script" path="res://scenes/environment/monitor.gd" id="5_fctrn"]
+[ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_roaming.gd" id="8_20bp6"]
+[ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_in_office.gd" id="9_83ulb"]
 
 [sub_resource type="Gradient" id="Gradient_3qded"]
 offsets = PackedFloat32Array(0, 0.2, 0.787097, 1)
@@ -27,6 +28,8 @@ size = Vector2(1280, 72)
 size = Vector2(1280, 144)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rlic5"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hx00s"]
 
 [node name="main_office" type="Node2D"]
 
@@ -91,19 +94,18 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_6j2kl")
 offset = Vector2(128, -28)
 
-[node name="monitor" type="Sprite2D" parent="." node_paths=PackedStringArray("monitor_focus_button")]
+[node name="monitor" type="Sprite2D" parent="."]
 position = Vector2(959, 477)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_yislq")
-script = ExtResource("5_fctrn")
-monitor_focus_button = NodePath("monitor_focus_button")
 
-[node name="monitor_screen" parent="monitor" instance=ExtResource("5_2xxo1")]
+[node name="monitor_screen" parent="monitor" node_paths=PackedStringArray("monitor_focus_button") instance=ExtResource("5_2xxo1")]
 offset_left = -119.0
 offset_top = -34.0
 offset_right = 898.0
 offset_bottom = 436.0
 scale = Vector2(0.185, 0.185)
+monitor_focus_button = NodePath("../monitor_focus_button")
 
 [node name="monitor_focus_button" type="Button" parent="monitor"]
 offset_left = -132.0
@@ -134,13 +136,39 @@ position = Vector2(320, 360)
 [node name="door_right" type="Node2D" parent="camera_manager"]
 position = Vector2(960, 360)
 
-[node name="security_camera" type="Node2D" parent="camera_manager"]
+[node name="monitor" type="Node2D" parent="camera_manager"]
 position = Vector2(959, 493.5)
 scale = Vector2(10.8, 10.8)
+
+[node name="animatronics" type="Node2D" parent="."]
+
+[node name="bonnie" type="Node2D" parent="animatronics" node_paths=PackedStringArray("movement_timer", "animatronic_in_office", "door_obstacle")]
+script = ExtResource("8_20bp6")
+animatronic_name = "bonnie"
+movement_timer = NodePath("bonnie_timer")
+min_move_time = 0.0
+max_move_time = 1.0
+cam_path = Array[String](["show_stage", "supply_closet", "dining_room_1", "hall", "dining_room_2", "hall_east"])
+animatronic_in_office = NodePath("bonnie_in_office")
+door_obstacle = NodePath("../../door_left")
+
+[node name="bonnie_in_office" type="Sprite2D" parent="animatronics/bonnie"]
+visible = false
+self_modulate = Color(0.34902, 0.262745, 0.490196, 1)
+position = Vector2(-284, 498)
+scale = Vector2(72, 300)
+texture = SubResource("CanvasTexture_hx00s")
+script = ExtResource("9_83ulb")
+
+[node name="bonnie_timer" type="Timer" parent="animatronics/bonnie"]
+autostart = true
 
 [connection signal="light_off" from="door_left" to="camera_manager" method="set_camera_pos" binds= ["default", 0.2]]
 [connection signal="light_on" from="door_left" to="camera_manager" method="set_camera_pos" binds= ["door_left", 0.2]]
 [connection signal="light_off" from="door_right" to="camera_manager" method="set_camera_pos" binds= ["default", 0.2]]
 [connection signal="light_on" from="door_right" to="camera_manager" method="set_camera_pos" binds= ["door_right", 0.2]]
-[connection signal="monitor_focus" from="monitor" to="camera_manager" method="set_camera_pos" binds= ["security_camera", 0.33]]
-[connection signal="button_down" from="monitor/monitor_focus_button" to="monitor" method="set_monitor_focus" binds= [true]]
+[connection signal="monitor_focus" from="monitor/monitor_screen" to="camera_manager" method="set_camera_pos" binds= ["monitor", 0.33]]
+[connection signal="monitor_unfocus" from="monitor/monitor_screen" to="camera_manager" method="set_camera_pos" binds= ["default", 0.33]]
+[connection signal="button_down" from="monitor/monitor_focus_button" to="monitor/monitor_screen" method="set_monitor_focus" binds= [true]]
+[connection signal="animatronic_moved" from="animatronics/bonnie" to="monitor/monitor_screen" method="set_animatronic_pos"]
+[connection signal="timeout" from="animatronics/bonnie/bonnie_timer" to="animatronics/bonnie" method="movement_opportunity"]

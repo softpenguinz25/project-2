@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dem0vx6x8r6x6"
-path="res://.godot/imported/cam_box.png-009639373ac3fb0c8b5dfd1629eab34d.ctex"
+uid="uid://ckyyaww1k4028"
+path="res://.godot/imported/placeholder_icon_bonnie.png-20f6aa39c300f3ff83b312ebeadc0964.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/environment/monitor/cam_box.png"
-dest_files=["res://.godot/imported/cam_box.png-009639373ac3fb0c8b5dfd1629eab34d.ctex"]
+source_file="res://sprites/characters/animatronics/placeholder/placeholder_icon_bonnie.png"
+dest_files=["res://.godot/imported/placeholder_icon_bonnie.png-20f6aa39c300f3ff83b312ebeadc0964.ctex"]
 
 [params]
 

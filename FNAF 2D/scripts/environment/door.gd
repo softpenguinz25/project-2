@@ -1,12 +1,13 @@
 extends StaticBody2D
+class_name door
 
 @export var animation_tree : AnimationTree
 
 @export_category("Door")
-var current_door_state : bool = true
+var current_door_state : bool
 
 @export_category("Light")
-var current_light_state : bool = false
+var current_light_state : bool
 
 @export_category("Signals")
 signal door_off(door_off_data)
@@ -23,8 +24,8 @@ func change_door_state(new_door_state : bool):
 	
 	current_door_state = new_door_state
 	
-	animation_tree["parameters/conditions/trigger_close"] = !current_door_state
-	animation_tree["parameters/conditions/trigger_open"] = current_door_state
+	animation_tree["parameters/conditions/trigger_close"] = current_door_state
+	animation_tree["parameters/conditions/trigger_open"] = !current_door_state
 	
 	if current_door_state:
 		door_on.emit()

@@ -1,10 +1,11 @@
 @tool
 extends TextureRect
 
-@export_multiline var cam_name : String = "CAM\n1A" :
-	set(new_cam_name):
-		cam_name = new_cam_name
-		$cam_box_label.text = cam_name
+@export var cam_name : String
+@export_multiline var cam_display_name : String = "CAM\n1A" :
+	set(new_cam_display_name):
+		cam_display_name = new_cam_display_name
+		$cam_box_label.text = cam_display_name
 
 @export var default_cam_color : Color = Color.html("#424242")
 @export var selected_cam_color : Color = Color.html("#C3DE00")

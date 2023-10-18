@@ -1,18 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://gce66gknn2m8"]
+[gd_scene load_steps=9 format=3 uid="uid://gce66gknn2m8"]
 
 [ext_resource type="Script" path="res://scripts/monitor/monitor_scene.gd" id="1_20jul"]
 [ext_resource type="Texture2D" uid="uid://i08yjr748wt6" path="res://sprites/environment/monitor/monitor_map.png" id="1_evw1b"]
+[ext_resource type="Script" path="res://scripts/monitor/monitor_screen.gd" id="1_q3gbe"]
 [ext_resource type="PackedScene" uid="uid://k6w3gp7lc80w" path="res://scenes/monitor/cam_box.tscn" id="3_qdy7j"]
+[ext_resource type="Script" path="res://scripts/monitor/monitor_map.gd" id="4_56s7s"]
+[ext_resource type="FontFile" uid="uid://c458otts8ji68" path="res://ui/fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" id="4_px0q1"]
+[ext_resource type="Texture2D" uid="uid://ckyyaww1k4028" path="res://sprites/characters/animatronics/placeholder/placeholder_icon_bonnie.png" id="6_2iw3h"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_8xar5"]
 
-[node name="monitor_screen" type="Control"]
+[node name="monitor_screen" type="Control" node_paths=PackedStringArray("monitor_scripts")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_q3gbe")
+monitor_scripts = [NodePath("monitor_scene"), NodePath("monitor_map")]
 
 [node name="monitor_scene" type="Control" parent="."]
 anchors_preset = 0
@@ -20,12 +26,69 @@ offset_right = 1280.0
 offset_bottom = 720.0
 script = ExtResource("1_20jul")
 cam_scenes = {
-"default_blue": [NodePath("../monitor_map/cam_box_2"), NodePath("cam_default_blue")],
-"default_red": [NodePath("../monitor_map/cam_box_1"), NodePath("cam_default_red")]
+"dining_room_1": [NodePath("../monitor_map/cam_box_4"), NodePath("cam_default_green")],
+"dining_room_2": [NodePath("../monitor_map/cam_box_5"), NodePath("cam_default_blue")],
+"hall": [NodePath("../monitor_map/cam_box_3"), NodePath("cam_default_yellow")],
+"hall_east": [NodePath("../monitor_map/cam_box_8"), NodePath("cam_default_brown")],
+"hall_west": [NodePath("../monitor_map/cam_box_7"), NodePath("cam_default_violet")],
+"pirate_cove": [NodePath("../monitor_map/cam_box_6"), NodePath("cam_default_indigo")],
+"show_stage": [NodePath("../monitor_map/cam_box_2"), NodePath("cam_default_orange")],
+"supply_closet": [NodePath("../monitor_map/cam_box_1"), NodePath("cam_default_red")]
 }
 
 [node name="cam_default_red" type="TextureRect" parent="monitor_scene"]
 self_modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_8xar5")
+
+[node name="cam_default_orange" type="TextureRect" parent="monitor_scene"]
+visible = false
+self_modulate = Color(1, 0.647059, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_8xar5")
+
+[node name="cam_default_yellow" type="TextureRect" parent="monitor_scene"]
+visible = false
+self_modulate = Color(1, 1, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_8xar5")
+
+[node name="cam_default_green" type="TextureRect" parent="monitor_scene"]
+visible = false
+self_modulate = Color(0, 1, 0, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -57,7 +120,58 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CanvasTexture_8xar5")
 
-[node name="monitor_map" type="TextureRect" parent="."]
+[node name="cam_default_indigo" type="TextureRect" parent="monitor_scene"]
+visible = false
+self_modulate = Color(0.294118, 0, 0.509804, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_8xar5")
+
+[node name="cam_default_violet" type="TextureRect" parent="monitor_scene"]
+visible = false
+self_modulate = Color(0.933333, 0.509804, 0.933333, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_8xar5")
+
+[node name="cam_default_brown" type="TextureRect" parent="monitor_scene"]
+visible = false
+self_modulate = Color(0.647059, 0.164706, 0.164706, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_8xar5")
+
+[node name="monitor_map" type="TextureRect" parent="." node_paths=PackedStringArray("monitor_scene")]
 layout_mode = 1
 offset_left = 870.0
 offset_top = 329.0
@@ -66,11 +180,17 @@ offset_bottom = 689.0
 size_flags_vertical = 3
 texture = ExtResource("1_evw1b")
 expand_mode = 1
+script = ExtResource("4_56s7s")
+monitor_scene = NodePath("../monitor_scene")
+animatronic_placeholder = {
+"bonnie": NodePath("visual_bonnie")
+}
 
 [node name="cam_box_1" parent="monitor_map" instance=ExtResource("3_qdy7j")]
 layout_mode = 0
-cam_name = "CAM
-SUBS"
+cam_name = "supply_closet"
+cam_display_name = "CAM
+6"
 
 [node name="cam_box_2" parent="monitor_map" instance=ExtResource("3_qdy7j")]
 layout_mode = 0
@@ -78,8 +198,9 @@ offset_left = 315.0
 offset_top = 27.0
 offset_right = 374.0
 offset_bottom = 66.0
-cam_name = "CAM 
-CRIBE"
+cam_name = "show_stage"
+cam_display_name = "CAM
+1"
 
 [node name="cam_box_3" parent="monitor_map" instance=ExtResource("3_qdy7j")]
 layout_mode = 0
@@ -87,8 +208,9 @@ offset_left = 151.0
 offset_top = 83.0
 offset_right = 210.0
 offset_bottom = 122.0
-cam_name = "CAM
-TO"
+cam_name = "hall"
+cam_display_name = "CAM
+3"
 
 [node name="cam_box_4" parent="monitor_map" instance=ExtResource("3_qdy7j")]
 layout_mode = 0
@@ -96,8 +218,9 @@ offset_left = 44.0001
 offset_top = 102.0
 offset_right = 103.0
 offset_bottom = 141.0
-cam_name = "CAM
-JUJU"
+cam_name = "dining_room_1"
+cam_display_name = "CAM
+5A"
 
 [node name="cam_box_5" parent="monitor_map" instance=ExtResource("3_qdy7j")]
 layout_mode = 0
@@ -105,8 +228,9 @@ offset_left = 200.0
 offset_top = 124.0
 offset_right = 259.0
 offset_bottom = 163.0
-cam_name = "CAM
-PROD"
+cam_name = "dining_room_2"
+cam_display_name = "CAM
+5B"
 
 [node name="cam_box_6" parent="monitor_map" instance=ExtResource("3_qdy7j")]
 layout_mode = 0
@@ -114,8 +238,9 @@ offset_left = 29.0001
 offset_top = 175.0
 offset_right = 88.0001
 offset_bottom = 214.0
-cam_name = "CAM
-GAMES"
+cam_name = "pirate_cove"
+cam_display_name = "CAM
+4"
 
 [node name="cam_box_7" parent="monitor_map" instance=ExtResource("3_qdy7j")]
 layout_mode = 0
@@ -123,8 +248,9 @@ offset_left = -13.9999
 offset_top = 224.0
 offset_right = 45.0001
 offset_bottom = 263.0
-cam_name = "CAM
-HIT"
+cam_name = "hall_west"
+cam_display_name = "CAM
+2A"
 
 [node name="cam_box_8" parent="monitor_map" instance=ExtResource("3_qdy7j")]
 layout_mode = 0
@@ -132,16 +258,36 @@ offset_left = 317.0
 offset_top = 224.0
 offset_right = 376.0
 offset_bottom = 263.0
-cam_name = "CAM
-30K"
+cam_name = "hall_east"
+cam_display_name = "CAM
+2B"
 
-[node name="Button2" type="Button" parent="."]
+[node name="visual_bonnie" type="TextureRect" parent="monitor_map"]
+z_index = 1
+layout_mode = 0
+offset_left = 315.0
+offset_top = 27.0
+offset_right = 347.0
+offset_bottom = 59.0
+texture = ExtResource("6_2iw3h")
+expand_mode = 1
+
+[node name="exit_button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 42.0
 offset_top = 22.0
 offset_right = 196.0
 offset_bottom = 84.0
+theme_override_fonts/font = ExtResource("4_px0q1")
+theme_override_font_sizes/font_size = 52
 text = "EXIT"
 
-[connection signal="cam_clicked" from="monitor_map/cam_box_1" to="monitor_scene" method="switch_cam_scene" binds= ["default_red"]]
-[connection signal="cam_clicked" from="monitor_map/cam_box_2" to="monitor_scene" method="switch_cam_scene" binds= ["default_blue"]]
+[connection signal="cam_clicked" from="monitor_map/cam_box_1" to="monitor_scene" method="switch_cam_scene" binds= ["supply_closet"]]
+[connection signal="cam_clicked" from="monitor_map/cam_box_2" to="monitor_scene" method="switch_cam_scene" binds= ["show_stage"]]
+[connection signal="cam_clicked" from="monitor_map/cam_box_3" to="monitor_scene" method="switch_cam_scene" binds= ["hall"]]
+[connection signal="cam_clicked" from="monitor_map/cam_box_4" to="monitor_scene" method="switch_cam_scene" binds= ["dining_room_1"]]
+[connection signal="cam_clicked" from="monitor_map/cam_box_5" to="monitor_scene" method="switch_cam_scene" binds= ["dining_room_2"]]
+[connection signal="cam_clicked" from="monitor_map/cam_box_6" to="monitor_scene" method="switch_cam_scene" binds= ["pirate_cove"]]
+[connection signal="cam_clicked" from="monitor_map/cam_box_7" to="monitor_scene" method="switch_cam_scene" binds= ["hall_west"]]
+[connection signal="cam_clicked" from="monitor_map/cam_box_8" to="monitor_scene" method="switch_cam_scene" binds= ["hall_east"]]
+[connection signal="button_down" from="exit_button" to="." method="set_monitor_focus" binds= [false]]
