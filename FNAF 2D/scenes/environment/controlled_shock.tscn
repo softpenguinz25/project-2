@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtfwnspxtw300"]
+
+[ext_resource type="Texture2D" uid="uid://bkwpw4jkh22c2" path="res://sprites/environment/main_office/controlled_shock.png" id="1_cx0p5"]
+[ext_resource type="Script" path="res://sprites/environment/main_office/controlled_shock.gd" id="2_twmwc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1u3f3"]
+
+[node name="controlled_shock" type="Sprite2D"]
+position = Vector2(640, 548)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_cx0p5")
+script = ExtResource("2_twmwc")
+
+[node name="controlled_shock_button" type="Button" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -75.0
+offset_top = -186.0
+offset_right = -15.0
+offset_bottom = -94.0
+grow_horizontal = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1u3f3")
+
+[connection signal="button_down" from="controlled_shock_button" to="." method="shock"]

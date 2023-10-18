@@ -1,11 +1,7 @@
-extends Node2D
-
-@export var animatronic_name : String
+extends animatronic
+class_name animatronic_roaming
 
 var can_move : bool = true
-
-@export var ai_level : int = 20
-const max_ai_level = 20
 
 @export var movement_timer : Timer
 @export var min_move_time : float = 4.75
@@ -24,7 +20,7 @@ var current_cam_index_property:
 
 var current_pos:
 	get:
-		return cam_path[current_cam_index_property]
+		return cam_path[cam_path_num][current_cam_index_property]
 
 @export_range(0, 1) var move_backward_probability : float = .25
 
@@ -57,7 +53,11 @@ func move() -> void:
 
 func attack_opportunity() -> void:
 	if door_obstacle == null or !door_obstacle.current_door_state:
-		print(animatronic_name + " JUMPSCARE!")
+		pass
+		#print(animatronic_name + " JUMPSCARE!")
 	else:
-		cam_path_num = randi_range(0, cam_path.size() - 1)
-		current_cam_index_property = randi_range(0, early_camera_nums - 1)
+		reset_pos()
+
+func reset_pos() -> void:
+	cam_path_num = randi_range(0, cam_path.size() - 1)
+	current_cam_index_property = randi_range(0, early_camera_nums - 1)

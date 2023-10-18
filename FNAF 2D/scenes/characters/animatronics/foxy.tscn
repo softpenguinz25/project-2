@@ -7,23 +7,25 @@
 
 [node name="foxy" type="Node2D" node_paths=PackedStringArray("movement_timer", "animatronic_in_office")]
 script = ExtResource("1_p2sb2")
-animatronic_name = "foxy"
 movement_timer = NodePath("foxy_timer")
-min_move_time = 0.75
-max_move_time = 1.25
+min_move_time = 1.5
+max_move_time = 2.5
 cam_path = Array[Array]([["pirate_cove", "pirate_cove", "pirate_cove", "pirate_cove"]])
+move_backward_probability = 0.0
 animatronic_in_office = NodePath("foxy_in_office")
 early_camera_nums = 1
+animatronic_name = "foxy"
 
 [node name="foxy_in_office" type="Sprite2D" parent="."]
 visible = false
-self_modulate = Color(0.898039, 0, 0.0588235, 1)
+self_modulate = Color(0.8, 0.219608, 0.188235, 1)
 position = Vector2(371, 460)
 scale = Vector2(150, 150)
 texture = SubResource("CanvasTexture_76cpf")
 script = ExtResource("2_eycoe")
 
 [node name="foxy_timer" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 
 [connection signal="timeout" from="foxy_timer" to="." method="movement_opportunity"]

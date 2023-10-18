@@ -1,6 +1,7 @@
-extends Sprite2D
+extends animatronic
 class_name animatronic_in_office
 
+@onready var sprite : Sprite2D = $"."
 var is_in_office : bool
 
 func set_office_appearance_state(appear_in_office : bool) -> void:
@@ -9,4 +10,4 @@ func set_office_appearance_state(appear_in_office : bool) -> void:
 	
 	is_in_office = appear_in_office
 	
-	visible = is_in_office
+	sprite.visible = is_in_office

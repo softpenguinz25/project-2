@@ -7,12 +7,12 @@
 
 [node name="freddy" type="Node2D" node_paths=PackedStringArray("movement_timer", "animatronic_in_office")]
 script = ExtResource("1_nfrfi")
-animatronic_name = "bonnie"
 movement_timer = NodePath("freddy_timer")
 min_move_time = 1.5
 max_move_time = 2.5
 cam_path = Array[Array]([["show_stage", "supply_closet", "dining_room_1", "hall"], ["show_stage", "dining_room_2", "hall"]])
 animatronic_in_office = NodePath("freddy_in_office")
+animatronic_name = "bonnie"
 
 [node name="freddy_in_office" type="Sprite2D" parent="."]
 visible = false
@@ -23,6 +23,7 @@ texture = SubResource("CanvasTexture_v4nso")
 script = ExtResource("2_aprr7")
 
 [node name="freddy_timer" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 
 [connection signal="timeout" from="freddy_timer" to="." method="movement_opportunity"]

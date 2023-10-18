@@ -7,12 +7,12 @@
 
 [node name="bonnie" type="Node2D" node_paths=PackedStringArray("movement_timer", "animatronic_in_office")]
 script = ExtResource("1_wrjf4")
-animatronic_name = "bonnie"
 movement_timer = NodePath("bonnie_timer")
 min_move_time = 0.75
 max_move_time = 1.25
 cam_path = Array[Array]([["show_stage", "dining_room_2", "hall", "dining_room_1", "pirate_cove", "hall_west"]])
 animatronic_in_office = NodePath("bonnie_in_office")
+animatronic_name = "bonnie"
 
 [node name="bonnie_in_office" type="Sprite2D" parent="."]
 visible = false
