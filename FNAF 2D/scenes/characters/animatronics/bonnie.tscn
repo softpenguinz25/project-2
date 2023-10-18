@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dx4nwqj61k5ub"]
+
+[ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_roaming.gd" id="1_wrjf4"]
+[ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_in_office.gd" id="2_uapmq"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hx00s"]
+
+[node name="bonnie" type="Node2D" node_paths=PackedStringArray("movement_timer", "animatronic_in_office")]
+script = ExtResource("1_wrjf4")
+animatronic_name = "bonnie"
+movement_timer = NodePath("bonnie_timer")
+min_move_time = 0.75
+max_move_time = 1.25
+cam_path = Array[Array]([["show_stage", "dining_room_2", "hall", "dining_room_1", "pirate_cove", "hall_west"]])
+animatronic_in_office = NodePath("bonnie_in_office")
+
+[node name="bonnie_in_office" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(0.34902, 0.262745, 0.490196, 1)
+position = Vector2(-284, 498)
+scale = Vector2(72, 300)
+texture = SubResource("CanvasTexture_hx00s")
+script = ExtResource("2_uapmq")
+
+[node name="bonnie_timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="bonnie_timer" to="." method="movement_opportunity"]

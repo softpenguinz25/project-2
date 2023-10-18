@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://gce66gknn2m8"]
+[gd_scene load_steps=11 format=3 uid="uid://gce66gknn2m8"]
 
 [ext_resource type="Script" path="res://scripts/monitor/monitor_scene.gd" id="1_20jul"]
 [ext_resource type="Texture2D" uid="uid://i08yjr748wt6" path="res://sprites/environment/monitor/monitor_map.png" id="1_evw1b"]
@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://k6w3gp7lc80w" path="res://scenes/monitor/cam_box.tscn" id="3_qdy7j"]
 [ext_resource type="Script" path="res://scripts/monitor/monitor_map.gd" id="4_56s7s"]
 [ext_resource type="FontFile" uid="uid://c458otts8ji68" path="res://ui/fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" id="4_px0q1"]
+[ext_resource type="Texture2D" uid="uid://ccr5wtvhqhsfx" path="res://sprites/characters/animatronics/placeholder/placeholder_icon_chica.png" id="6_1erd1"]
 [ext_resource type="Texture2D" uid="uid://ckyyaww1k4028" path="res://sprites/characters/animatronics/placeholder/placeholder_icon_bonnie.png" id="6_2iw3h"]
+[ext_resource type="Texture2D" uid="uid://b82ka5cdnk2ui" path="res://sprites/characters/animatronics/placeholder/placeholder_icon_freddy.png" id="6_eiy07"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_8xar5"]
 
@@ -183,7 +185,9 @@ expand_mode = 1
 script = ExtResource("4_56s7s")
 monitor_scene = NodePath("../monitor_scene")
 animatronic_placeholder = {
-"bonnie": NodePath("visual_bonnie")
+"bonnie": NodePath("visual_bonnie"),
+"chica": NodePath("visual_chica"),
+"freddy": NodePath("visual_freddy")
 }
 
 [node name="cam_box_1" parent="monitor_map" instance=ExtResource("3_qdy7j")]
@@ -262,14 +266,37 @@ cam_name = "hall_east"
 cam_display_name = "CAM
 2B"
 
+[node name="visual_chica" type="TextureRect" parent="monitor_map"]
+z_index = 1
+layout_mode = 0
+offset_left = 335.0
+offset_top = 27.0
+offset_right = 367.0
+offset_bottom = 59.0
+mouse_filter = 2
+texture = ExtResource("6_1erd1")
+expand_mode = 1
+
 [node name="visual_bonnie" type="TextureRect" parent="monitor_map"]
+z_index = 1
+layout_mode = 0
+offset_left = 325.0
+offset_top = 27.0
+offset_right = 357.0
+offset_bottom = 59.0
+mouse_filter = 2
+texture = ExtResource("6_2iw3h")
+expand_mode = 1
+
+[node name="visual_freddy" type="TextureRect" parent="monitor_map"]
 z_index = 1
 layout_mode = 0
 offset_left = 315.0
 offset_top = 27.0
 offset_right = 347.0
 offset_bottom = 59.0
-texture = ExtResource("6_2iw3h")
+mouse_filter = 2
+texture = ExtResource("6_eiy07")
 expand_mode = 1
 
 [node name="exit_button" type="Button" parent="."]

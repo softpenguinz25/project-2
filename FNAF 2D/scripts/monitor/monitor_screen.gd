@@ -21,6 +21,6 @@ func set_monitor_focus(focus : bool):
 	else:
 		monitor_unfocus.emit()
 
-func set_animatronic_pos(animatronic_name : String, cam_name : String):
+func set_animatronic_pos(_animatronic_name : String, _cam_name : String):
 	for monitor_script in monitor_scripts:
-		monitor_script.set_animatronic_pos(animatronic_name, cam_name)
+		monitor_script.set_animatronic_pos(_animatronic_name, _cam_name)

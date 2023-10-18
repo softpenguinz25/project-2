@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://ptnmkyrjbbv6"]
+
+[ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_roaming.gd" id="1_v68eu"]
+[ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_in_office.gd" id="2_8nlf7"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hx00s"]
+
+[node name="chica" type="Node2D" node_paths=PackedStringArray("movement_timer", "animatronic_in_office")]
+script = ExtResource("1_v68eu")
+animatronic_name = "chica"
+movement_timer = NodePath("chica_timer")
+min_move_time = 0.75
+max_move_time = 1.25
+cam_path = Array[Array]([["show_stage", "supply_closet", "dining_room_1", "hall", "dining_room_2", "hall_east"]])
+animatronic_in_office = NodePath("chica_in_office")
+
+[node name="chica_in_office" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 0.756863, 0.027451, 1)
+position = Vector2(1564, 498)
+scale = Vector2(72, 300)
+texture = SubResource("CanvasTexture_hx00s")
+script = ExtResource("2_8nlf7")
+
+[node name="chica_timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="chica_timer" to="." method="movement_opportunity"]
