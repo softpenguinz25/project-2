@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://cfp78jp6axt6s"]
+[gd_scene load_steps=20 format=3 uid="uid://cfp78jp6axt6s"]
 
 [ext_resource type="Script" path="res://scripts/environment/door.gd" id="1_2rk2v"]
 [ext_resource type="Texture2D" uid="uid://bmafufmhy5xnv" path="res://sprites/environment/main_office/door.png" id="2_ge7kw"]
+[ext_resource type="Script" path="res://scripts/environment/interactable_button.gd" id="3_8n50h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jq83a"]
 size = Vector2(107, 504)
@@ -126,6 +127,9 @@ graph_offset = Vector2(6, 8)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_emur7"]
 texture = SubResource("CanvasTexture_hffdi")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kgycj"]
+size = Vector2(50, 50)
+
 [sub_resource type="CanvasTexture" id="CanvasTexture_r6ip2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_61vq1"]
@@ -172,8 +176,15 @@ pivot_offset = Vector2(25, 25)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/normal = SubResource("StyleBoxTexture_emur7")
+script = ExtResource("3_8n50h")
 
-[node name="Door Button" type="Button" parent="."]
+[node name="interact_area" type="Area2D" parent="Light Button" groups=["interactable"]]
+
+[node name="interact_collider" type="CollisionShape2D" parent="Light Button/interact_area"]
+position = Vector2(25, 25)
+shape = SubResource("RectangleShape2D_kgycj")
+
+[node name="Door Button" type="Button" parent="." groups=["interactable"]]
 modulate = Color(1, 0, 0, 1)
 anchors_preset = -1
 anchor_top = 0.5
@@ -189,6 +200,13 @@ pivot_offset = Vector2(25, 25)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/normal = SubResource("StyleBoxTexture_61vq1")
+script = ExtResource("3_8n50h")
+
+[node name="interact_area" type="Area2D" parent="Door Button" groups=["interactable"]]
+
+[node name="interact_collider" type="CollisionShape2D" parent="Door Button/interact_area"]
+position = Vector2(25, 25)
+shape = SubResource("RectangleShape2D_kgycj")
 
 [connection signal="button_down" from="Light Button" to="." method="change_light_state" binds= [true]]
 [connection signal="button_up" from="Light Button" to="." method="change_light_state" binds= [false]]

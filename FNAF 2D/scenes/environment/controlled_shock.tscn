@@ -1,9 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtfwnspxtw300"]
+[gd_scene load_steps=6 format=3 uid="uid://dtfwnspxtw300"]
 
 [ext_resource type="Texture2D" uid="uid://bkwpw4jkh22c2" path="res://sprites/environment/main_office/controlled_shock.png" id="1_cx0p5"]
 [ext_resource type="Script" path="res://sprites/environment/main_office/controlled_shock.gd" id="2_twmwc"]
+[ext_resource type="Script" path="res://scripts/environment/interactable_button.gd" id="3_qcxp6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1u3f3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5kkp"]
+size = Vector2(92, 120)
 
 [node name="controlled_shock" type="Sprite2D"]
 position = Vector2(640, 548)
@@ -21,5 +25,13 @@ offset_right = -15.0
 offset_bottom = -94.0
 grow_horizontal = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_1u3f3")
+script = ExtResource("3_qcxp6")
+
+[node name="interact_area" type="Area2D" parent="controlled_shock_button" groups=["interactable"]]
+position = Vector2(30, 186)
+
+[node name="interact_collider" type="CollisionShape2D" parent="controlled_shock_button/interact_area"]
+position = Vector2(0, -140)
+shape = SubResource("RectangleShape2D_y5kkp")
 
 [connection signal="button_down" from="controlled_shock_button" to="." method="shock"]

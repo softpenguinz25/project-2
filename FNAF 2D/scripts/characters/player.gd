@@ -9,8 +9,6 @@ var last_move_dir : int
 func _process(_delta):
 	move_player(_delta)
 	
-	check_interactions()
-	
 	move_and_slide()
 
 func move_player(_delta) -> void:
@@ -26,8 +24,9 @@ func move_player(_delta) -> void:
 		
 	velocity.x = clampf(velocity.x, -top_speed, top_speed)
 
-func check_interactions() -> void:
-	pass
-	#foreach child
-		#if has interactable script
-			#interact w/ it! :D
+func interact_with_interactables(area_2d : Area2D, interact_state : bool) -> void:
+	print("area 2d name: " + str(area_2d))
+	if !area_2d.is_in_group("interactable"): return
+	
+	var interactable_node : interactable = area_2d.get_parent()
+	interactable_node.set_interact_state(interact_state)

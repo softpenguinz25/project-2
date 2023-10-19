@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://mkh8ja63pnlt"]
+
+[ext_resource type="Texture2D" uid="uid://m4ahsdeb8hs4" path="res://sprites/characters/animatronics/freddy.png" id="1_kgtwc"]
+[ext_resource type="FontFile" uid="uid://c458otts8ji68" path="res://ui/fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" id="2_qxmd5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xl3br"]
+line_spacing = 12.0
+font_size = 64
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tpg4w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5l8k2"]
+
+[node name="menu_main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="freddy" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 328.0
+offset_top = -5.0
+offset_right = 1608.0
+offset_bottom = 1275.0
+texture = ExtResource("1_kgtwc")
+stretch_mode = 4
+
+[node name="title" type="Label" parent="."]
+layout_mode = 2
+offset_left = 160.0
+offset_top = 40.0
+offset_right = 520.0
+offset_bottom = 400.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+text = "Five
+Nights
+at
+Freddy's
+2D"
+label_settings = SubResource("LabelSettings_xl3br")
+
+[node name="button_vbox" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 390.0
+offset_right = 400.0
+offset_bottom = 690.0
+theme_override_constants/separation = 12
+
+[node name="button_newgame" type="Button" parent="button_vbox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tpg4w")
+text = "New Game"
+alignment = 0
+
+[node name="button_continue" type="Button" parent="button_vbox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5l8k2")
+text = "Continue"
+alignment = 0

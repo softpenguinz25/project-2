@@ -376,3 +376,6 @@ shape = SubResource("RectangleShape2D_2y5pm")
 
 [node name="interact_area_collider" type="CollisionShape2D" parent="interact_area"]
 shape = SubResource("CircleShape2D_kxxd3")
+
+[connection signal="area_entered" from="interact_area" to="." method="interact_with_interactables" binds= [true]]
+[connection signal="area_exited" from="interact_area" to="." method="interact_with_interactables" binds= [false]]
