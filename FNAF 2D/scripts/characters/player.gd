@@ -1,11 +1,19 @@
 extends CharacterBody2D
 
+@export_category("Movement")
 var last_move_dir : int
 @onready var top_speed : float = 600
 @onready var acceleration : float = 3600
 @onready var acceleration_turn_around_multiplier : float = 2.5
 
 func _process(_delta):
+	move_player(_delta)
+	
+	check_interactions()
+	
+	move_and_slide()
+
+func move_player(_delta) -> void:
 	var move_dir : int = int(Input.get_axis("move_left", "move_right"))
 	if absf(move_dir) > 0:
 		var acceleration_to_use : float = acceleration if signf(velocity.x) == move_dir else acceleration * acceleration_turn_around_multiplier
@@ -17,4 +25,9 @@ func _process(_delta):
 		velocity.x = 0
 		
 	velocity.x = clampf(velocity.x, -top_speed, top_speed)
-	move_and_slide()
+
+func check_interactions() -> void:
+	pass
+	#foreach child
+		#if has interactable script
+			#interact w/ it! :D

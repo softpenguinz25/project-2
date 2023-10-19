@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://b8dn51lufbqdf"]
+[gd_scene load_steps=39 format=3 uid="uid://b8dn51lufbqdf"]
 
 [ext_resource type="Texture2D" uid="uid://dgcs3ce0qfxe4" path="res://sprites/characters/player_spritesheet.png" id="1_snjbr"]
 [ext_resource type="Script" path="res://scripts/characters/player.gd" id="1_vovqw"]
@@ -340,6 +340,9 @@ graph_offset = Vector2(-156, -4)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2y5pm"]
 size = Vector2(11, 29)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_kxxd3"]
+radius = 30.0
+
 [node name="player" type="CharacterBody2D"]
 texture_filter = 1
 scale = Vector2(8, 8)
@@ -368,3 +371,8 @@ player_body = NodePath("..")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_2y5pm")
+
+[node name="interact_area" type="Area2D" parent="."]
+
+[node name="interact_area_collider" type="CollisionShape2D" parent="interact_area"]
+shape = SubResource("CircleShape2D_kxxd3")

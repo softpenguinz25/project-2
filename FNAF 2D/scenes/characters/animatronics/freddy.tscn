@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_roaming.gd" id="1_nfrfi"]
 [ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_in_office.gd" id="2_aprr7"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_v4nso"]
+[ext_resource type="Texture2D" uid="uid://m4ahsdeb8hs4" path="res://sprites/characters/animatronics/freddy.png" id="2_t86ti"]
 
 [node name="freddy" type="Node2D" node_paths=PackedStringArray("movement_timer", "animatronic_in_office")]
 script = ExtResource("1_nfrfi")
@@ -16,11 +15,11 @@ animatronic_name = "bonnie"
 
 [node name="freddy_in_office" type="Sprite2D" parent="."]
 visible = false
-self_modulate = Color(0.529412, 0.219608, 0.0666667, 1)
-position = Vector2(640, 498)
-scale = Vector2(72, 300)
-texture = SubResource("CanvasTexture_v4nso")
+position = Vector2(640, 456)
+scale = Vector2(12, 12)
+texture = ExtResource("2_t86ti")
 script = ExtResource("2_aprr7")
+animatronic_name = "freddy"
 
 [node name="freddy_timer" type="Timer" parent="."]
 wait_time = 2.0

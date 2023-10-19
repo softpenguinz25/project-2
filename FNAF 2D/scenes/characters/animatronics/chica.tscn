@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_roaming.gd" id="1_v68eu"]
 [ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_in_office.gd" id="2_8nlf7"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_hx00s"]
+[ext_resource type="Texture2D" uid="uid://cqoahgwik4jad" path="res://sprites/characters/animatronics/chica.png" id="2_qim7x"]
 
 [node name="chica" type="Node2D" node_paths=PackedStringArray("movement_timer", "animatronic_in_office")]
 script = ExtResource("1_v68eu")
@@ -16,11 +15,11 @@ animatronic_name = "chica"
 
 [node name="chica_in_office" type="Sprite2D" parent="."]
 visible = false
-self_modulate = Color(1, 0.756863, 0.027451, 1)
-position = Vector2(1564, 498)
-scale = Vector2(72, 300)
-texture = SubResource("CanvasTexture_hx00s")
+position = Vector2(1540, 456)
+scale = Vector2(12, 12)
+texture = ExtResource("2_qim7x")
 script = ExtResource("2_8nlf7")
+animatronic_name = "chica"
 
 [node name="chica_timer" type="Timer" parent="."]
 autostart = true
