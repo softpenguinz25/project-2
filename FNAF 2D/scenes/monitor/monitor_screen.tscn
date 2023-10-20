@@ -1,17 +1,26 @@
-[gd_scene load_steps=12 format=3 uid="uid://gce66gknn2m8"]
+[gd_scene load_steps=22 format=3 uid="uid://gce66gknn2m8"]
 
 [ext_resource type="Script" path="res://scripts/monitor/monitor_scene.gd" id="1_20jul"]
 [ext_resource type="Texture2D" uid="uid://i08yjr748wt6" path="res://sprites/environment/monitor/monitor_map.png" id="1_evw1b"]
 [ext_resource type="Script" path="res://scripts/monitor/monitor_screen.gd" id="1_q3gbe"]
 [ext_resource type="PackedScene" uid="uid://k6w3gp7lc80w" path="res://scenes/monitor/cam_box.tscn" id="3_qdy7j"]
+[ext_resource type="Texture2D" uid="uid://bguxtivtmhotq" path="res://sprites/environment/monitor/monitor_scenes/supply_closet.png" id="3_rx4qe"]
 [ext_resource type="Script" path="res://scripts/monitor/monitor_map.gd" id="4_56s7s"]
+[ext_resource type="Texture2D" uid="uid://m4ahsdeb8hs4" path="res://sprites/characters/animatronics/freddy.png" id="4_b3bsa"]
+[ext_resource type="Texture2D" uid="uid://cawnt80dviwug" path="res://sprites/environment/monitor/monitor_scenes/show_stage.png" id="4_p234h"]
 [ext_resource type="FontFile" uid="uid://c458otts8ji68" path="res://ui/fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" id="4_px0q1"]
+[ext_resource type="Texture2D" uid="uid://cqoahgwik4jad" path="res://sprites/characters/animatronics/chica.png" id="5_3nkbq"]
+[ext_resource type="Texture2D" uid="uid://drebcrtv0836i" path="res://sprites/environment/monitor/monitor_scenes/hall.png" id="5_gjyeg"]
 [ext_resource type="Texture2D" uid="uid://ccr5wtvhqhsfx" path="res://sprites/characters/animatronics/placeholder/placeholder_icon_chica.png" id="6_1erd1"]
 [ext_resource type="Texture2D" uid="uid://ckyyaww1k4028" path="res://sprites/characters/animatronics/placeholder/placeholder_icon_bonnie.png" id="6_2iw3h"]
 [ext_resource type="Texture2D" uid="uid://b82ka5cdnk2ui" path="res://sprites/characters/animatronics/placeholder/placeholder_icon_freddy.png" id="6_eiy07"]
+[ext_resource type="Texture2D" uid="uid://cfyuikbm070gp" path="res://sprites/environment/monitor/monitor_scenes/dining_room_1.png" id="6_mvl5q"]
 [ext_resource type="Texture2D" uid="uid://bdfutn7boc1bi" path="res://sprites/characters/animatronics/placeholder/placeholder_icon_foxy.png" id="6_vlpr8"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_8xar5"]
+[ext_resource type="Texture2D" uid="uid://b00yvpujsf3kv" path="res://sprites/environment/monitor/monitor_scenes/dining_room_2.png" id="7_bt2rh"]
+[ext_resource type="Texture2D" uid="uid://bg43yix30oy1r" path="res://sprites/characters/animatronics/bonnie.png" id="7_ulw5k"]
+[ext_resource type="Texture2D" uid="uid://c0utk2gg3lix1" path="res://sprites/environment/monitor/monitor_scenes/pirate_cove.png" id="8_x6uih"]
+[ext_resource type="Texture2D" uid="uid://cjt124bp3qw2a" path="res://sprites/environment/monitor/monitor_scenes/hall_west.png" id="9_tucfd"]
+[ext_resource type="Texture2D" uid="uid://yawqeupa1i8x" path="res://sprites/environment/monitor/monitor_scenes/hall_east.png" id="10_ynp8o"]
 
 [node name="monitor_screen" type="Control" node_paths=PackedStringArray("monitor_scripts")]
 layout_mode = 3
@@ -29,35 +38,18 @@ offset_right = 1280.0
 offset_bottom = 720.0
 script = ExtResource("1_20jul")
 cam_scenes = {
-"dining_room_1": [NodePath("../monitor_map/cam_box_4"), NodePath("cam_default_green")],
-"dining_room_2": [NodePath("../monitor_map/cam_box_5"), NodePath("cam_default_blue")],
-"hall": [NodePath("../monitor_map/cam_box_3"), NodePath("cam_default_yellow")],
-"hall_east": [NodePath("../monitor_map/cam_box_8"), NodePath("cam_default_brown")],
-"hall_west": [NodePath("../monitor_map/cam_box_7"), NodePath("cam_default_violet")],
-"pirate_cove": [NodePath("../monitor_map/cam_box_6"), NodePath("cam_default_indigo")],
-"show_stage": [NodePath("../monitor_map/cam_box_2"), NodePath("cam_default_orange")],
-"supply_closet": [NodePath("../monitor_map/cam_box_1"), NodePath("cam_default_red")]
+"dining_room_1": [NodePath("../monitor_map/cam_box_4"), NodePath("cam_dining_room_1")],
+"dining_room_2": [NodePath("../monitor_map/cam_box_5"), NodePath("cam_dining_room_2")],
+"hall": [NodePath("../monitor_map/cam_box_3"), NodePath("cam_hall")],
+"hall_east": [NodePath("../monitor_map/cam_box_8"), NodePath("cam_hall_east")],
+"hall_west": [NodePath("../monitor_map/cam_box_7"), NodePath("cam_hall_west")],
+"pirate_cove": [NodePath("../monitor_map/cam_box_6"), NodePath("cam_pirate_cove")],
+"show_stage": [NodePath("../monitor_map/cam_box_2"), NodePath("cam_show_stage")],
+"supply_closet": [NodePath("../monitor_map/cam_box_1"), NodePath("cam_supply_closet")]
 }
 
-[node name="cam_default_red" type="TextureRect" parent="monitor_scene"]
-self_modulate = Color(1, 0, 0, 1)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -640.0
-offset_top = -360.0
-offset_right = 640.0
-offset_bottom = 360.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("CanvasTexture_8xar5")
-
-[node name="cam_default_orange" type="TextureRect" parent="monitor_scene"]
+[node name="cam_supply_closet" type="TextureRect" parent="monitor_scene"]
 visible = false
-self_modulate = Color(1, 0.647059, 0, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -70,45 +62,28 @@ offset_right = 640.0
 offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("CanvasTexture_8xar5")
+texture = ExtResource("3_rx4qe")
 
-[node name="cam_default_yellow" type="TextureRect" parent="monitor_scene"]
+[node name="freddy" type="TextureRect" parent="monitor_scene/cam_supply_closet"]
 visible = false
-self_modulate = Color(1, 1, 0, 1)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -640.0
-offset_top = -360.0
-offset_right = 640.0
-offset_bottom = 360.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("CanvasTexture_8xar5")
+layout_mode = 0
+offset_left = 400.0
+offset_top = 144.0
+offset_right = 912.0
+offset_bottom = 656.0
+texture = ExtResource("4_b3bsa")
 
-[node name="cam_default_green" type="TextureRect" parent="monitor_scene"]
+[node name="chica" type="TextureRect" parent="monitor_scene/cam_supply_closet"]
 visible = false
-self_modulate = Color(0, 1, 0, 1)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -640.0
-offset_top = -360.0
-offset_right = 640.0
-offset_bottom = 360.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("CanvasTexture_8xar5")
+layout_mode = 0
+offset_left = 32.0
+offset_top = 144.0
+offset_right = 544.0
+offset_bottom = 656.0
+texture = ExtResource("5_3nkbq")
 
-[node name="cam_default_blue" type="TextureRect" parent="monitor_scene"]
+[node name="cam_show_stage" type="TextureRect" parent="monitor_scene"]
 visible = false
-self_modulate = Color(0, 0, 1, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -121,45 +96,34 @@ offset_right = 640.0
 offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("CanvasTexture_8xar5")
+texture = ExtResource("4_p234h")
 
-[node name="cam_default_indigo" type="TextureRect" parent="monitor_scene"]
+[node name="freddy" type="TextureRect" parent="monitor_scene/cam_show_stage"]
 visible = false
-self_modulate = Color(0.294118, 0, 0.509804, 1)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -640.0
-offset_top = -360.0
-offset_right = 640.0
-offset_bottom = 360.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("CanvasTexture_8xar5")
+offset_left = 400.0
+offset_top = 64.0
+offset_right = 912.0
+offset_bottom = 576.0
+texture = ExtResource("4_b3bsa")
 
-[node name="cam_default_violet" type="TextureRect" parent="monitor_scene"]
+[node name="bonnie" type="TextureRect" parent="monitor_scene/cam_show_stage"]
 visible = false
-self_modulate = Color(0.933333, 0.509804, 0.933333, 1)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -640.0
-offset_top = -360.0
-offset_right = 640.0
-offset_bottom = 360.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("CanvasTexture_8xar5")
+offset_left = 112.0
+offset_top = 64.0
+offset_right = 624.0
+offset_bottom = 576.0
+texture = ExtResource("7_ulw5k")
 
-[node name="cam_default_brown" type="TextureRect" parent="monitor_scene"]
+[node name="chica" type="TextureRect" parent="monitor_scene/cam_show_stage"]
 visible = false
-self_modulate = Color(0.647059, 0.164706, 0.164706, 1)
+offset_left = 672.0
+offset_top = 64.0
+offset_right = 1184.0
+offset_bottom = 576.0
+texture = ExtResource("5_3nkbq")
+
+[node name="cam_hall" type="TextureRect" parent="monitor_scene"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -172,7 +136,182 @@ offset_right = 640.0
 offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("CanvasTexture_8xar5")
+texture = ExtResource("5_gjyeg")
+
+[node name="freddy" type="TextureRect" parent="monitor_scene/cam_hall"]
+visible = false
+offset_left = 384.0
+offset_top = 144.0
+offset_right = 896.0
+offset_bottom = 656.0
+texture = ExtResource("4_b3bsa")
+
+[node name="bonnie" type="TextureRect" parent="monitor_scene/cam_hall"]
+visible = false
+offset_left = 832.0
+offset_top = 144.0
+offset_right = 1344.0
+offset_bottom = 656.0
+texture = ExtResource("7_ulw5k")
+
+[node name="chica" type="TextureRect" parent="monitor_scene/cam_hall"]
+visible = false
+offset_left = -48.0
+offset_top = 144.0
+offset_right = 464.0
+offset_bottom = 656.0
+texture = ExtResource("5_3nkbq")
+
+[node name="cam_dining_room_1" type="TextureRect" parent="monitor_scene"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_mvl5q")
+
+[node name="freddy" type="TextureRect" parent="monitor_scene/cam_dining_room_1"]
+visible = false
+offset_left = -48.0
+offset_top = 144.0
+offset_right = 464.0
+offset_bottom = 656.0
+texture = ExtResource("4_b3bsa")
+
+[node name="bonnie" type="TextureRect" parent="monitor_scene/cam_dining_room_1"]
+visible = false
+offset_left = 400.0
+offset_top = 144.0
+offset_right = 912.0
+offset_bottom = 656.0
+texture = ExtResource("7_ulw5k")
+
+[node name="chica" type="TextureRect" parent="monitor_scene/cam_dining_room_1"]
+visible = false
+offset_left = 864.0
+offset_top = 144.0
+offset_right = 1376.0
+offset_bottom = 656.0
+texture = ExtResource("5_3nkbq")
+
+[node name="cam_dining_room_2" type="TextureRect" parent="monitor_scene"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_bt2rh")
+
+[node name="freddy" type="TextureRect" parent="monitor_scene/cam_dining_room_2"]
+visible = false
+offset_left = 832.0
+offset_top = 144.0
+offset_right = 1344.0
+offset_bottom = 656.0
+texture = ExtResource("4_b3bsa")
+
+[node name="bonnie" type="TextureRect" parent="monitor_scene/cam_dining_room_2"]
+visible = false
+offset_left = -64.0
+offset_top = 144.0
+offset_right = 448.0
+offset_bottom = 656.0
+texture = ExtResource("7_ulw5k")
+
+[node name="chica" type="TextureRect" parent="monitor_scene/cam_dining_room_2"]
+visible = false
+offset_left = 384.0
+offset_top = 144.0
+offset_right = 896.0
+offset_bottom = 656.0
+texture = ExtResource("5_3nkbq")
+
+[node name="cam_pirate_cove" type="TextureRect" parent="monitor_scene"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_x6uih")
+
+[node name="bonnie" type="TextureRect" parent="monitor_scene/cam_pirate_cove"]
+visible = false
+offset_left = -32.0
+offset_top = 144.0
+offset_right = 480.0
+offset_bottom = 656.0
+texture = ExtResource("7_ulw5k")
+
+[node name="cam_hall_west" type="TextureRect" parent="monitor_scene"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_tucfd")
+
+[node name="bonnie" type="TextureRect" parent="monitor_scene/cam_hall_west"]
+visible = false
+offset_left = 720.0
+offset_top = 144.0
+offset_right = 1232.0
+offset_bottom = 656.0
+texture = ExtResource("7_ulw5k")
+
+[node name="cam_hall_east" type="TextureRect" parent="monitor_scene"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_ynp8o")
+
+[node name="chica" type="TextureRect" parent="monitor_scene/cam_hall_east"]
+visible = false
+offset_left = -16.0
+offset_top = 144.0
+offset_right = 496.0
+offset_bottom = 656.0
+texture = ExtResource("5_3nkbq")
 
 [node name="monitor_map" type="TextureRect" parent="." node_paths=PackedStringArray("monitor_scene")]
 layout_mode = 1
