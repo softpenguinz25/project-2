@@ -7,31 +7,37 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1u3f3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5kkp"]
-size = Vector2(92, 120)
+size = Vector2(24, 40)
 
 [node name="controlled_shock" type="Sprite2D"]
 position = Vector2(640, 548)
-scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_cx0p5")
 script = ExtResource("2_twmwc")
 
-[node name="controlled_shock_button" type="Button" parent="."]
+[node name="controlled_shock_button" type="Button" parent="." node_paths=PackedStringArray("cooldown_timer")]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -75.0
-offset_top = -186.0
-offset_right = -15.0
-offset_bottom = -94.0
+offset_left = -32.0
+offset_top = -88.0
+offset_right = -8.0
+offset_bottom = -48.0
 grow_horizontal = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_1u3f3")
 script = ExtResource("3_qcxp6")
+cooldown_timer = NodePath("../controlled_shock_cooldown")
 
 [node name="interact_area" type="Area2D" parent="controlled_shock_button" groups=["interactable"]]
 position = Vector2(30, 186)
 
 [node name="interact_collider" type="CollisionShape2D" parent="controlled_shock_button/interact_area"]
-position = Vector2(0, -140)
+position = Vector2(-18, -166)
 shape = SubResource("RectangleShape2D_y5kkp")
 
+[node name="controlled_shock_cooldown" type="Timer" parent="."]
+wait_time = 0.001
+one_shot = true
+
 [connection signal="button_down" from="controlled_shock_button" to="." method="shock"]
+[connection signal="button_down" from="controlled_shock_button" to="controlled_shock_button" method="button_pressed"]
+[connection signal="timeout" from="controlled_shock_cooldown" to="controlled_shock_button" method="set_button_disabled_state" binds= [false]]

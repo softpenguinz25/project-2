@@ -1,25 +1,33 @@
 [gd_scene load_steps=4 format=3 uid="uid://bg513jn72ci7b"]
 
 [ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_roaming.gd" id="1_p2sb2"]
-[ext_resource type="Texture2D" uid="uid://ska12g6uvqs1" path="res://sprites/characters/animatronics/foxy.png" id="2_7ydwp"]
 [ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_in_office.gd" id="2_eycoe"]
+[ext_resource type="Texture2D" uid="uid://6lwa73vf87k6" path="res://sprites/characters/animatronics/foxy_head.png" id="2_mn24y"]
 
-[node name="foxy" type="Node2D" node_paths=PackedStringArray("movement_timer", "animatronic_in_office")]
+[node name="foxy" type="Node2D" node_paths=PackedStringArray("movement_timer", "animatronic_in_office", "pause_animatronic_timer", "pause_animatronic_timer_cooldown")]
 script = ExtResource("1_p2sb2")
 movement_timer = NodePath("foxy_timer")
-min_move_time = 1.5
-max_move_time = 2.5
 cam_path = Array[Array]([["pirate_cove", "pirate_cove", "pirate_cove", "pirate_cove"]])
 move_backward_probability = 0.0
 animatronic_in_office = NodePath("foxy_in_office")
 early_camera_nums = 1
+pause_animatronic_timer = NodePath("foxy_timer_pause")
+pause_animatronic_timer_cooldown = NodePath("foxy_timer_pause_cooldown")
 animatronic_name = "foxy"
+ai_level_by_hour = {
+1: 1,
+2: 3,
+3: 4,
+4: 6,
+5: 8,
+12: 0
+}
 
 [node name="foxy_in_office" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(371, 455)
-scale = Vector2(12, 12)
-texture = ExtResource("2_7ydwp")
+position = Vector2(376, 448)
+scale = Vector2(10, 10)
+texture = ExtResource("2_mn24y")
 script = ExtResource("2_eycoe")
 animatronic_name = "foxy"
 
@@ -27,4 +35,12 @@ animatronic_name = "foxy"
 wait_time = 2.0
 autostart = true
 
+[node name="foxy_timer_pause" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="foxy_timer_pause_cooldown" type="Timer" parent="."]
+wait_time = 3.0
+
 [connection signal="timeout" from="foxy_timer" to="." method="movement_opportunity"]
+[connection signal="timeout" from="foxy_timer_pause" to="." method="pause_animatronic" binds= [false]]
+[connection signal="timeout" from="foxy_timer_pause_cooldown" to="." method="set_can_pause" binds= [true]]

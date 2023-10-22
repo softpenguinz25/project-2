@@ -2,9 +2,22 @@ extends interactable
 
 @onready var button : Button = $"."
 
+@export var cooldown_timer : Timer
+
 func _ready():
 	button.disabled = true
 
 func set_interact_state(interact_state : bool):
 	super.set_interact_state(interact_state)
-	button.disabled = not is_interacting
+	set_button_disabled_state(not is_interacting)
+
+func set_button_disabled_state(state : bool):
+	if state: 
+		button.set_pressed(false)
+		button.button_up.emit()
+	button.disabled = state
+
+func button_pressed():
+	if cooldown_timer != null: 
+		set_button_disabled_state(true)
+		cooldown_timer.start()

@@ -1,0 +1,240 @@
+[gd_scene load_steps=29 format=3 uid="uid://cq3xl7epyqcof"]
+
+[ext_resource type="Texture2D" uid="uid://iavdw7y2t4ka" path="res://sprites/environment/main_office/checkerboard.png" id="1_7giwt"]
+[ext_resource type="PackedScene" uid="uid://b8dn51lufbqdf" path="res://scenes/characters/player.tscn" id="1_52sae"]
+[ext_resource type="PackedScene" uid="uid://cfp78jp6axt6s" path="res://scenes/environment/door.tscn" id="2_mbf6m"]
+[ext_resource type="Texture2D" uid="uid://dvfexnxjhk5ur" path="res://sprites/environment/main_office/table.png" id="3_6j2kl"]
+[ext_resource type="Script" path="res://scripts/environment/camera_tweener.gd" id="4_fgdp0"]
+[ext_resource type="Texture2D" uid="uid://y6yqx1oqxrhd" path="res://sprites/environment/main_office/tv.png" id="4_yislq"]
+[ext_resource type="PackedScene" uid="uid://gce66gknn2m8" path="res://scenes/monitor/monitor_screen.tscn" id="5_2xxo1"]
+[ext_resource type="PackedScene" uid="uid://dtfwnspxtw300" path="res://scenes/environment/controlled_shock.tscn" id="7_5di67"]
+[ext_resource type="PackedScene" uid="uid://biqinu2vf4hhn" path="res://scenes/characters/animatronics/freddy.tscn" id="8_8st2l"]
+[ext_resource type="Texture2D" uid="uid://dm6gd5iggigeq" path="res://sprites/circle.png" id="8_srpys"]
+[ext_resource type="PackedScene" uid="uid://dx4nwqj61k5ub" path="res://scenes/characters/animatronics/bonnie.tscn" id="8_w172p"]
+[ext_resource type="Texture2D" uid="uid://cmcmuov4aca2m" path="res://sprites/triangle.png" id="9_l8015"]
+[ext_resource type="PackedScene" uid="uid://ptnmkyrjbbv6" path="res://scenes/characters/animatronics/chica.tscn" id="9_vuwfo"]
+[ext_resource type="PackedScene" uid="uid://bg513jn72ci7b" path="res://scenes/characters/animatronics/foxy.tscn" id="11_rr8c6"]
+[ext_resource type="Texture2D" uid="uid://b4u2ijuldf5ys" path="res://sprites/environment/main_office/vent.png" id="15_lsjsw"]
+[ext_resource type="Script" path="res://scripts/environment/interactable_button.gd" id="16_pvige"]
+[ext_resource type="Script" path="res://sprites/environment/main_office/controlled_shock.gd" id="16_qyhf1"]
+
+[sub_resource type="Gradient" id="Gradient_3qded"]
+offsets = PackedFloat32Array(0, 0.2, 0.787097, 1)
+colors = PackedColorArray(0.0352941, 0.0352941, 0.0352941, 1, 0.156863, 0.156863, 0.156863, 1, 0.156863, 0.156863, 0.156863, 1, 0.0352941, 0.0352941, 0.0352941, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cetqn"]
+gradient = SubResource("Gradient_3qded")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_6i2pb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m45bn"]
+size = Vector2(1280, 72)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_2xu5p"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_nmf0t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3giqt"]
+size = Vector2(1280, 144)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rlic5"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hffdi"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_abngf"]
+texture = SubResource("CanvasTexture_hffdi")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wyroy"]
+size = Vector2(24, 24)
+
+[node name="main_office" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(639.988, 396)
+rotation = 1.57079
+scale = Vector2(1.969, 1279.96)
+texture = SubResource("GradientTexture1D_cetqn")
+
+[node name="hall" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(640, 396)
+scale = Vector2(240, 504)
+texture = SubResource("CanvasTexture_6i2pb")
+
+[node name="floor" type="StaticBody2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="floor"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 213.0
+offset_top = 668.0
+offset_right = 1066.5
+offset_bottom = 700.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.25, 2.25)
+pivot_offset = Vector2(426.75, 16)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_7giwt")
+stretch_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+position = Vector2(640, 684)
+shape = SubResource("RectangleShape2D_m45bn")
+
+[node name="door_left" parent="." instance=ExtResource("2_mbf6m")]
+
+[node name="door_right" parent="." instance=ExtResource("2_mbf6m")]
+position = Vector2(1227, 396)
+scale = Vector2(-1, 1)
+
+[node name="vent_bg" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(416, 448)
+scale = Vector2(128, 128)
+texture = SubResource("CanvasTexture_2xu5p")
+
+[node name="animatronics" type="Node2D" parent="."]
+
+[node name="freddy" parent="animatronics" instance=ExtResource("8_8st2l")]
+animatronic_name = "freddy"
+
+[node name="bonnie" parent="animatronics" node_paths=PackedStringArray("door_obstacle") instance=ExtResource("8_w172p")]
+door_obstacle = NodePath("../../door_left")
+
+[node name="chica" parent="animatronics" node_paths=PackedStringArray("door_obstacle") instance=ExtResource("9_vuwfo")]
+door_obstacle = NodePath("../../door_right")
+
+[node name="foxy" parent="animatronics" instance=ExtResource("11_rr8c6")]
+
+[node name="controlled_shock" parent="." node_paths=PackedStringArray("animatronic_to_shock") instance=ExtResource("7_5di67")]
+animatronic_to_shock = NodePath("../animatronics/freddy")
+
+[node name="light" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.945098, 0.760784, 1)
+position = Vector2(640, 144)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_srpys")
+
+[node name="PointLight2D" type="PointLight2D" parent="light"]
+position = Vector2(0, 350)
+scale = Vector2(4.625, 5.95475)
+texture = ExtResource("9_l8015")
+metadata/_edit_lock_ = true
+
+[node name="ceiling" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ceiling"]
+modulate = Color(0.0196078, 0.0196078, 0.0196078, 1)
+position = Vector2(640, 72)
+scale = Vector2(1280, -144)
+texture = SubResource("CanvasTexture_nmf0t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ceiling"]
+position = Vector2(640, 72)
+shape = SubResource("RectangleShape2D_3giqt")
+
+[node name="table" type="Sprite2D" parent="."]
+position = Vector2(891, 608)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_6j2kl")
+offset = Vector2(128, -28)
+
+[node name="monitor" type="Sprite2D" parent="."]
+position = Vector2(959, 477)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_yislq")
+
+[node name="monitor_screen" parent="monitor" node_paths=PackedStringArray("monitor_focus_button") instance=ExtResource("5_2xxo1")]
+offset_left = -119.0
+offset_top = -34.0
+offset_right = 898.0
+offset_bottom = 436.0
+scale = Vector2(0.185, 0.185)
+monitor_focus_button = NodePath("../monitor_focus_button")
+metadata/_edit_use_anchors_ = true
+
+[node name="monitor_focus_button" type="Button" parent="monitor"]
+offset_left = -132.0
+offset_top = -58.0
+offset_right = 132.0
+offset_bottom = 126.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rlic5")
+
+[node name="player" parent="." instance=ExtResource("1_52sae")]
+position = Vector2(956, 520)
+metadata/_edit_lock_ = true
+
+[node name="camera_manager" type="Node" parent="." node_paths=PackedStringArray("camera", "start_node")]
+script = ExtResource("4_fgdp0")
+camera = NodePath("Camera2D")
+start_node = NodePath("default")
+
+[node name="Camera2D" type="Camera2D" parent="camera_manager"]
+position = Vector2(640, 360)
+scale = Vector2(10.8, 10.8)
+
+[node name="default" type="Node2D" parent="camera_manager"]
+position = Vector2(640, 360)
+
+[node name="door_left" type="Node2D" parent="camera_manager"]
+position = Vector2(320, 360)
+
+[node name="door_right" type="Node2D" parent="camera_manager"]
+position = Vector2(960, 360)
+
+[node name="monitor" type="Node2D" parent="camera_manager"]
+position = Vector2(959, 493.5)
+scale = Vector2(10.8, 10.8)
+
+[node name="vent" type="Sprite2D" parent="." node_paths=PackedStringArray("animatronic_to_shock")]
+position = Vector2(416, 448)
+scale = Vector2(2, 2)
+texture = ExtResource("15_lsjsw")
+script = ExtResource("16_qyhf1")
+animatronic_to_shock = NodePath("../animatronics/foxy")
+
+[node name="vent_button" type="Button" parent="vent"]
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = 8.0
+offset_right = -20.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(25, 25)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_abngf")
+script = ExtResource("16_pvige")
+
+[node name="vent_area" type="Area2D" parent="vent/vent_button" groups=["interactable"]]
+
+[node name="interact_collider" type="CollisionShape2D" parent="vent/vent_button/vent_area"]
+position = Vector2(12, 12)
+shape = SubResource("RectangleShape2D_wyroy")
+
+[connection signal="light_off" from="door_left" to="camera_manager" method="set_camera_pos" binds= ["default", 0.2]]
+[connection signal="light_on" from="door_left" to="camera_manager" method="set_camera_pos" binds= ["door_left", 0.2]]
+[connection signal="light_off" from="door_right" to="camera_manager" method="set_camera_pos" binds= ["default", 0.2]]
+[connection signal="light_on" from="door_right" to="camera_manager" method="set_camera_pos" binds= ["door_right", 0.2]]
+[connection signal="animatronic_moved" from="animatronics/freddy" to="monitor/monitor_screen" method="set_animatronic_pos"]
+[connection signal="animatronic_moved" from="animatronics/bonnie" to="monitor/monitor_screen" method="set_animatronic_pos"]
+[connection signal="animatronic_moved" from="animatronics/chica" to="monitor/monitor_screen" method="set_animatronic_pos"]
+[connection signal="animatronic_moved" from="animatronics/foxy" to="monitor/monitor_screen" method="set_animatronic_pos"]
+[connection signal="shock_trigger" from="controlled_shock" to="animatronics/freddy" method="reset_pos"]
+[connection signal="camera_scene_switched" from="monitor/monitor_screen" to="animatronics/freddy" method="set_current_motitor_cam"]
+[connection signal="camera_scene_switched" from="monitor/monitor_screen" to="animatronics/bonnie" method="set_current_motitor_cam"]
+[connection signal="camera_scene_switched" from="monitor/monitor_screen" to="animatronics/chica" method="set_current_motitor_cam"]
+[connection signal="camera_scene_switched" from="monitor/monitor_screen" to="animatronics/foxy" method="set_current_motitor_cam"]
+[connection signal="monitor_focus" from="monitor/monitor_screen" to="camera_manager" method="set_camera_pos" binds= ["monitor", 0.33]]
+[connection signal="monitor_unfocus" from="monitor/monitor_screen" to="camera_manager" method="set_camera_pos" binds= ["default", 0.33]]
+[connection signal="button_down" from="monitor/monitor_focus_button" to="monitor/monitor_screen" method="set_monitor_focus" binds= [true]]
+[connection signal="shock_trigger" from="vent" to="animatronics/foxy" method="reset_pos"]

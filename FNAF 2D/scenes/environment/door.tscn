@@ -122,10 +122,10 @@ states/door_open/position = Vector2(340, 100)
 transitions = ["door_close", "door_open", SubResource("AnimationNodeStateMachineTransition_qgeug"), "door_open", "door_close", SubResource("AnimationNodeStateMachineTransition_bmmu5"), "Start", "door_open", SubResource("AnimationNodeStateMachineTransition_cil6y")]
 graph_offset = Vector2(6, 8)
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_hffdi"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_58k4a"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_emur7"]
-texture = SubResource("CanvasTexture_hffdi")
+texture = SubResource("CanvasTexture_58k4a")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kgycj"]
 size = Vector2(50, 50)
@@ -142,7 +142,7 @@ animation_tree = NodePath("AnimationTree")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.5, 0)
-scale = Vector2(0.66875, 0.673797)
+scale = Vector2(7.71357, 7.875)
 texture = ExtResource("2_ge7kw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bejqoa25geq0y"]
+
+[ext_resource type="Script" path="res://scripts/characters/animatronics/ai_manager.gd" id="1_vjgcu"]
+
+[node name="ai_manager" type="Node"]
+script = ExtResource("1_vjgcu")

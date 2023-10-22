@@ -4,14 +4,22 @@
 [ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_in_office.gd" id="2_8nlf7"]
 [ext_resource type="Texture2D" uid="uid://cqoahgwik4jad" path="res://sprites/characters/animatronics/chica.png" id="2_qim7x"]
 
-[node name="chica" type="Node2D" node_paths=PackedStringArray("movement_timer", "animatronic_in_office")]
+[node name="chica" type="Node2D" node_paths=PackedStringArray("movement_timer", "animatronic_in_office", "pause_animatronic_timer", "pause_animatronic_timer_cooldown")]
 script = ExtResource("1_v68eu")
 movement_timer = NodePath("chica_timer")
-min_move_time = 0.75
-max_move_time = 1.25
 cam_path = Array[Array]([["show_stage", "supply_closet", "dining_room_1", "hall", "dining_room_2", "hall_east"]])
 animatronic_in_office = NodePath("chica_in_office")
+pause_animatronic_timer = NodePath("chica_timer_pause")
+pause_animatronic_timer_cooldown = NodePath("chica_timer_pause_cooldown")
 animatronic_name = "chica"
+ai_level_by_hour = {
+1: 3,
+2: 5,
+3: 7,
+4: 10,
+5: 14,
+12: 0
+}
 
 [node name="chica_in_office" type="Sprite2D" parent="."]
 visible = false
@@ -24,4 +32,12 @@ animatronic_name = "chica"
 [node name="chica_timer" type="Timer" parent="."]
 autostart = true
 
+[node name="chica_timer_pause" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="chica_timer_pause_cooldown" type="Timer" parent="."]
+wait_time = 7.0
+
 [connection signal="timeout" from="chica_timer" to="." method="movement_opportunity"]
+[connection signal="timeout" from="chica_timer_pause" to="." method="pause_animatronic" binds= [false]]
+[connection signal="timeout" from="chica_timer_pause_cooldown" to="." method="set_can_pause" binds= [true]]

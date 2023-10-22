@@ -1,0 +1,175 @@
+[gd_scene load_steps=23 format=3 uid="uid://bd0gd1ffnkixs"]
+
+[ext_resource type="Script" path="res://scripts/misc/scene_loader.gd" id="1_csbld"]
+[ext_resource type="Texture2D" uid="uid://bs7b1qfv6r66q" path="res://sprites/static/4.png" id="2_0svh0"]
+[ext_resource type="FontFile" uid="uid://c458otts8ji68" path="res://ui/fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" id="3_6kd4k"]
+[ext_resource type="Texture2D" uid="uid://cbvf2blkod7d8" path="res://sprites/static/6.png" id="4_ct65l"]
+[ext_resource type="Texture2D" uid="uid://cmdr3qb5u6fb1" path="res://sprites/static/8.png" id="5_qx76t"]
+[ext_resource type="Texture2D" uid="uid://c86doagu88wwg" path="res://sprites/static/9.png" id="6_4jscr"]
+[ext_resource type="Texture2D" uid="uid://bnnn73x60baqk" path="res://sprites/static/10.png" id="7_4tdvk"]
+[ext_resource type="Texture2D" uid="uid://dx1t6agw3at0b" path="res://sprites/static/21.png" id="8_fx61v"]
+[ext_resource type="Texture2D" uid="uid://crr0y42npgguf" path="res://sprites/static/22.png" id="9_w1587"]
+[ext_resource type="Texture2D" uid="uid://duvsh68d3ln6v" path="res://sprites/static/25.png" id="10_skvsg"]
+[ext_resource type="Texture2D" uid="uid://b0tiiv7uo3jyy" path="res://sprites/static/430.png" id="11_womix"]
+[ext_resource type="Texture2D" uid="uid://yqe6eym8s2t5" path="res://sprites/static/434.png" id="12_enqnv"]
+[ext_resource type="Texture2D" uid="uid://c0n6pgoih70ok" path="res://sprites/static/435.png" id="13_2725l"]
+[ext_resource type="Texture2D" uid="uid://dk4ws78nw1jrt" path="res://sprites/static/436.png" id="14_hx2b4"]
+[ext_resource type="Texture2D" uid="uid://cn6vf4kt7cuev" path="res://sprites/static/437.png" id="15_mfts5"]
+[ext_resource type="Texture2D" uid="uid://b21xor2lidyqp" path="res://sprites/static/438.png" id="16_jxmvm"]
+[ext_resource type="Texture2D" uid="uid://ul05miqcikby" path="res://sprites/static/439.png" id="17_7jqwi"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_y4kvj"]
+
+[sub_resource type="Animation" id="Animation_y5vcu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_0svh0")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../TextureRect:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gwinq"]
+resource_name = "static_transition"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_0svh0"), ExtResource("4_ct65l"), ExtResource("5_qx76t"), ExtResource("6_4jscr"), ExtResource("7_4tdvk"), ExtResource("8_fx61v"), ExtResource("9_w1587"), ExtResource("10_skvsg"), ExtResource("11_womix"), ExtResource("12_enqnv"), ExtResource("13_2725l"), ExtResource("14_hx2b4"), ExtResource("15_mfts5"), ExtResource("16_jxmvm"), ExtResource("17_7jqwi"), null]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../TextureRect:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(12.5, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mhico"]
+_data = {
+"RESET": SubResource("Animation_y5vcu"),
+"static_transition": SubResource("Animation_gwinq")
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_kb2wp"]
+
+[node name="scene_night_number" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="scene_switcher" type="Node" parent="."]
+script = ExtResource("1_csbld")
+
+[node name="bg_black" type="TextureRect" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_y4kvj")
+
+[node name="static" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0svh0")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.5
+offset_top = -13.0
+offset_right = 35.5
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_6kd4k")
+theme_override_font_sizes/font_size = 100
+text = "12:00 AM
+Night 20D"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -207.0
+offset_top = 91.0
+offset_right = 207.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_6kd4k")
+theme_override_font_sizes/font_size = 40
+text = "youre screwed lmao"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../static")
+autoplay = "static_transition"
+speed_scale = 5.0
+libraries = {
+"": SubResource("AnimationLibrary_mhico")
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0, 0, 0, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_kb2wp")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="scene_switcher" method="load_scene" binds= ["res://scenes/environment/main_office.tscn"]]

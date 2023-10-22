@@ -1,0 +1,446 @@
+[gd_scene load_steps=42 format=3 uid="uid://cq3xl7epyqcof"]
+
+[ext_resource type="Texture2D" uid="uid://iavdw7y2t4ka" path="res://sprites/environment/main_office/checkerboard.png" id="1_7giwt"]
+[ext_resource type="PackedScene" uid="uid://b8dn51lufbqdf" path="res://scenes/characters/player.tscn" id="1_52sae"]
+[ext_resource type="Script" path="res://scripts/ui/battery_timer.gd" id="1_le2rd"]
+[ext_resource type="PackedScene" uid="uid://cfp78jp6axt6s" path="res://scenes/environment/door.tscn" id="2_mbf6m"]
+[ext_resource type="Texture2D" uid="uid://dmq2ckyixcre0" path="res://sprites/environment/main_office/poster_bonnie.png" id="2_ocusl"]
+[ext_resource type="Texture2D" uid="uid://dvfexnxjhk5ur" path="res://sprites/environment/main_office/table.png" id="3_6j2kl"]
+[ext_resource type="Texture2D" uid="uid://blpp3id8h5igu" path="res://sprites/environment/main_office/poster_chica.png" id="3_54f56"]
+[ext_resource type="Script" path="res://scripts/ui/jumpscare_manager.gd" id="3_h0wic"]
+[ext_resource type="Texture2D" uid="uid://beoixkh4fcusk" path="res://sprites/environment/main_office/poster_foxy.png" id="4_evmdn"]
+[ext_resource type="Script" path="res://scripts/environment/camera_tweener.gd" id="4_fgdp0"]
+[ext_resource type="Texture2D" uid="uid://y6yqx1oqxrhd" path="res://sprites/environment/main_office/tv.png" id="4_yislq"]
+[ext_resource type="PackedScene" uid="uid://gce66gknn2m8" path="res://scenes/monitor/monitor_screen.tscn" id="5_2xxo1"]
+[ext_resource type="Texture2D" uid="uid://dnjau41foeqn5" path="res://sprites/environment/main_office/poster_freddy.png" id="5_qsvjq"]
+[ext_resource type="PackedScene" uid="uid://dtfwnspxtw300" path="res://scenes/environment/controlled_shock.tscn" id="7_5di67"]
+[ext_resource type="PackedScene" uid="uid://biqinu2vf4hhn" path="res://scenes/characters/animatronics/freddy.tscn" id="8_8st2l"]
+[ext_resource type="Texture2D" uid="uid://dm6gd5iggigeq" path="res://sprites/circle.png" id="8_srpys"]
+[ext_resource type="PackedScene" uid="uid://dx4nwqj61k5ub" path="res://scenes/characters/animatronics/bonnie.tscn" id="8_w172p"]
+[ext_resource type="Texture2D" uid="uid://cmcmuov4aca2m" path="res://sprites/triangle.png" id="9_l8015"]
+[ext_resource type="PackedScene" uid="uid://ptnmkyrjbbv6" path="res://scenes/characters/animatronics/chica.tscn" id="9_vuwfo"]
+[ext_resource type="PackedScene" uid="uid://bg513jn72ci7b" path="res://scenes/characters/animatronics/foxy.tscn" id="11_rr8c6"]
+[ext_resource type="PackedScene" uid="uid://bacnqjv7gmdyp" path="res://scenes/environment/vent.tscn" id="15_ksk3m"]
+[ext_resource type="FontFile" uid="uid://c458otts8ji68" path="res://ui/fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" id="16_wag7a"]
+[ext_resource type="Script" path="res://scripts/ui/time_text.gd" id="17_atj12"]
+[ext_resource type="Texture2D" uid="uid://4mb717pe7bls" path="res://sprites/ui/battery.png" id="18_yn54k"]
+[ext_resource type="Script" path="res://scripts/ui/battery_label.gd" id="20_wdquv"]
+[ext_resource type="Script" path="res://scripts/ui/usage_bar.gd" id="21_qecai"]
+[ext_resource type="Texture2D" uid="uid://dbdxg7l6q5qwq" path="res://sprites/ui/usage_bar.png" id="21_srqtj"]
+[ext_resource type="Texture2D" uid="uid://m4ahsdeb8hs4" path="res://sprites/characters/animatronics/freddy.png" id="27_pyv15"]
+[ext_resource type="Script" path="res://scripts/ui/jumpscare_gfx.gd" id="28_h3xu5"]
+[ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_jumpscare.gd" id="28_okq1x"]
+[ext_resource type="Texture2D" uid="uid://bg43yix30oy1r" path="res://sprites/characters/animatronics/bonnie.png" id="29_mlvg8"]
+[ext_resource type="Texture2D" uid="uid://cqoahgwik4jad" path="res://sprites/characters/animatronics/chica.png" id="30_jfwju"]
+[ext_resource type="Texture2D" uid="uid://ska12g6uvqs1" path="res://sprites/characters/animatronics/foxy.png" id="31_kxx03"]
+
+[sub_resource type="Gradient" id="Gradient_3qded"]
+offsets = PackedFloat32Array(0, 0.2, 0.787097, 1)
+colors = PackedColorArray(0.0352941, 0.0352941, 0.0352941, 1, 0.156863, 0.156863, 0.156863, 1, 0.156863, 0.156863, 0.156863, 1, 0.0352941, 0.0352941, 0.0352941, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cetqn"]
+gradient = SubResource("Gradient_3qded")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_6i2pb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m45bn"]
+size = Vector2(1280, 72)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_2xu5p"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_nmf0t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3giqt"]
+size = Vector2(1280, 144)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rlic5"]
+
+[node name="main_office" type="Node2D"]
+
+[node name="game_manager" type="Node" parent="."]
+
+[node name="night_timer" type="Timer" parent="game_manager"]
+wait_time = 6.0
+one_shot = true
+autostart = true
+
+[node name="battery_timer" type="Node" parent="game_manager"]
+script = ExtResource("1_le2rd")
+start_power = null
+power_per_second = 1.0
+
+[node name="camera_manager" type="Node" parent="game_manager" node_paths=PackedStringArray("camera", "start_node")]
+script = ExtResource("4_fgdp0")
+camera = NodePath("Camera2D")
+start_node = NodePath("default")
+
+[node name="Camera2D" type="Camera2D" parent="game_manager/camera_manager"]
+position = Vector2(640, 360)
+scale = Vector2(10.8, 10.8)
+
+[node name="default" type="Node2D" parent="game_manager/camera_manager"]
+position = Vector2(640, 360)
+
+[node name="door_left" type="Node2D" parent="game_manager/camera_manager"]
+position = Vector2(320, 360)
+
+[node name="door_right" type="Node2D" parent="game_manager/camera_manager"]
+position = Vector2(960, 360)
+
+[node name="monitor" type="Node2D" parent="game_manager/camera_manager"]
+position = Vector2(959, 493.5)
+scale = Vector2(10.8, 10.8)
+
+[node name="jumpscare_manager" type="Node" parent="game_manager"]
+script = ExtResource("3_h0wic")
+
+[node name="environment" type="Node2D" parent="."]
+
+[node name="background" type="Sprite2D" parent="environment"]
+position = Vector2(639.988, 396)
+rotation = 1.57079
+scale = Vector2(1.969, 1920)
+texture = SubResource("GradientTexture1D_cetqn")
+
+[node name="poster_bonnie" type="Sprite2D" parent="environment"]
+position = Vector2(-240, 301)
+rotation = 0.261799
+scale = Vector2(16, 16)
+skew = -4.8995e-05
+texture = ExtResource("2_ocusl")
+
+[node name="poster_chica" type="Sprite2D" parent="environment"]
+position = Vector2(-96, 414)
+rotation = -0.261799
+scale = Vector2(16, 16)
+skew = -4.8995e-05
+texture = ExtResource("3_54f56")
+
+[node name="poster_foxy" type="Sprite2D" parent="environment"]
+position = Vector2(1506, 368)
+rotation = -0.261799
+scale = Vector2(16, 16)
+skew = -4.8995e-05
+texture = ExtResource("4_evmdn")
+
+[node name="poster_freddy" type="Sprite2D" parent="environment"]
+position = Vector2(1369, 441)
+rotation = 0.261799
+scale = Vector2(16, 16)
+skew = -4.8995e-05
+texture = ExtResource("5_qsvjq")
+
+[node name="hall" type="Sprite2D" parent="environment"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(640, 396)
+scale = Vector2(240, 504)
+texture = SubResource("CanvasTexture_6i2pb")
+
+[node name="floor" type="StaticBody2D" parent="environment"]
+
+[node name="TextureRect" type="TextureRect" parent="environment/floor"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 213.0
+offset_top = 668.0
+offset_right = 1066.5
+offset_bottom = 700.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.25, 2.25)
+pivot_offset = Vector2(426.75, 16)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_7giwt")
+stretch_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="environment/floor"]
+position = Vector2(640, 684)
+shape = SubResource("RectangleShape2D_m45bn")
+
+[node name="door_left" parent="environment" instance=ExtResource("2_mbf6m")]
+
+[node name="door_right" parent="environment" instance=ExtResource("2_mbf6m")]
+position = Vector2(1227, 396)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="vent_bg" type="Sprite2D" parent="environment"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(416, 448)
+scale = Vector2(128, 128)
+texture = SubResource("CanvasTexture_2xu5p")
+
+[node name="animatronics" type="Node2D" parent="environment"]
+
+[node name="freddy" parent="environment/animatronics" instance=ExtResource("8_8st2l")]
+animatronic_name = "freddy"
+
+[node name="bonnie" parent="environment/animatronics" node_paths=PackedStringArray("door_obstacle") instance=ExtResource("8_w172p")]
+door_obstacle = NodePath("../../door_left")
+
+[node name="chica" parent="environment/animatronics" node_paths=PackedStringArray("door_obstacle") instance=ExtResource("9_vuwfo")]
+door_obstacle = NodePath("../../door_right")
+
+[node name="foxy" parent="environment/animatronics" instance=ExtResource("11_rr8c6")]
+
+[node name="controlled_shock" parent="environment" node_paths=PackedStringArray("animatronic_to_shock") instance=ExtResource("7_5di67")]
+position = Vector2(640, 552)
+animatronic_to_shock = NodePath("../animatronics/freddy")
+
+[node name="light" type="Sprite2D" parent="environment"]
+visible = false
+self_modulate = Color(1, 0.945098, 0.760784, 1)
+position = Vector2(640, 144)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_srpys")
+
+[node name="PointLight2D" type="PointLight2D" parent="environment/light"]
+position = Vector2(0, 350)
+scale = Vector2(4.625, 5.95475)
+texture = ExtResource("9_l8015")
+metadata/_edit_lock_ = true
+
+[node name="ceiling" type="StaticBody2D" parent="environment"]
+
+[node name="Sprite2D" type="Sprite2D" parent="environment/ceiling"]
+modulate = Color(0.0196078, 0.0196078, 0.0196078, 1)
+position = Vector2(640, 72)
+scale = Vector2(1920, -144)
+texture = SubResource("CanvasTexture_nmf0t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="environment/ceiling"]
+position = Vector2(640, 72)
+shape = SubResource("RectangleShape2D_3giqt")
+
+[node name="table" type="Sprite2D" parent="environment"]
+position = Vector2(891, 608)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_6j2kl")
+offset = Vector2(128, -28)
+
+[node name="monitor" type="Sprite2D" parent="environment"]
+position = Vector2(959, 477)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_yislq")
+
+[node name="monitor_screen" parent="environment/monitor" node_paths=PackedStringArray("monitor_focus_button", "nodes_to_set_active") instance=ExtResource("5_2xxo1")]
+offset_left = -119.0
+offset_top = -34.0
+offset_right = 898.0
+offset_bottom = 436.0
+scale = Vector2(0.185, 0.185)
+monitor_focus_button = NodePath("../monitor_focus_button")
+nodes_to_set_active = [NodePath("."), NodePath("../monitor_focus_button")]
+metadata/_edit_use_anchors_ = true
+
+[node name="monitor_focus_button" type="Button" parent="environment/monitor"]
+offset_left = -132.0
+offset_top = -58.0
+offset_right = 132.0
+offset_bottom = 126.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rlic5")
+
+[node name="vent" parent="environment" node_paths=PackedStringArray("animatronic_to_shock") instance=ExtResource("15_ksk3m")]
+animatronic_to_shock = NodePath("../animatronics/foxy")
+
+[node name="player" type="Node2D" parent="."]
+
+[node name="player" parent="player" instance=ExtResource("1_52sae")]
+position = Vector2(956, 520)
+metadata/_edit_lock_ = true
+
+[node name="ui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ui_topbar" type="Control" parent="ui"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 144.0
+
+[node name="time" type="Label" parent="ui/ui_topbar" node_paths=PackedStringArray("night_timer")]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("16_wag7a")
+theme_override_font_sizes/font_size = 120
+text = "-12 AM-"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("17_atj12")
+night_timer = NodePath("../../../game_manager/night_timer")
+
+[node name="battery" type="TextureRect" parent="ui/ui_topbar"]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 80.0
+texture = ExtResource("18_yn54k")
+stretch_mode = 5
+
+[node name="battery_label" type="Label" parent="ui/ui_topbar/battery" node_paths=PackedStringArray("battery_timer")]
+layout_mode = 0
+offset_left = 128.0
+offset_right = 272.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("16_wag7a")
+theme_override_font_sizes/font_size = 56
+text = ":69%"
+vertical_alignment = 1
+script = ExtResource("20_wdquv")
+battery_timer = NodePath("../../../../game_manager/battery_timer")
+
+[node name="usage_label" type="Label" parent="ui/ui_topbar"]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 198.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("16_wag7a")
+theme_override_font_sizes/font_size = 56
+text = "Usage:"
+vertical_alignment = 1
+script = ExtResource("21_qecai")
+
+[node name="usage_bar_1" type="TextureRect" parent="ui/ui_topbar/usage_label"]
+self_modulate = Color(0, 1, 0, 1)
+layout_mode = 0
+offset_left = 192.0
+offset_top = 24.0
+offset_right = 224.0
+offset_bottom = 64.0
+texture = ExtResource("21_srqtj")
+
+[node name="usage_bar_2" type="TextureRect" parent="ui/ui_topbar/usage_label"]
+visible = false
+self_modulate = Color(0, 1, 0, 1)
+layout_mode = 0
+offset_left = 232.0
+offset_top = 24.0
+offset_right = 264.0
+offset_bottom = 64.0
+texture = ExtResource("21_srqtj")
+
+[node name="usage_bar_3" type="TextureRect" parent="ui/ui_topbar/usage_label"]
+visible = false
+self_modulate = Color(1, 1, 0, 1)
+layout_mode = 0
+offset_left = 272.0
+offset_top = 24.0
+offset_right = 304.0
+offset_bottom = 64.0
+texture = ExtResource("21_srqtj")
+
+[node name="usage_bar_4" type="TextureRect" parent="ui/ui_topbar/usage_label"]
+visible = false
+self_modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = 312.0
+offset_top = 24.0
+offset_right = 344.0
+offset_bottom = 64.0
+texture = ExtResource("21_srqtj")
+
+[node name="night_text" type="Label" parent="ui/ui_topbar"]
+layout_mode = 0
+offset_left = 1018.0
+offset_right = 1279.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("16_wag7a")
+theme_override_font_sizes/font_size = 64
+text = "Night:
+-1-"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ui_jumpscare" type="Control" parent="ui"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("28_h3xu5")
+jumpscare_sprites = {
+"bonnie": NodePath("bonnie_jumpscare"),
+"chica": NodePath("chica_jumpscare"),
+"foxy": NodePath("foxy_jumpscare"),
+"freddy": NodePath("freddy_jumpscare")
+}
+
+[node name="freddy_jumpscare" type="TextureRect" parent="ui/ui_jumpscare"]
+visible = false
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 1280.0
+texture = ExtResource("27_pyv15")
+stretch_mode = 5
+script = ExtResource("28_okq1x")
+
+[node name="bonnie_jumpscare" type="TextureRect" parent="ui/ui_jumpscare"]
+visible = false
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 1280.0
+texture = ExtResource("29_mlvg8")
+stretch_mode = 5
+script = ExtResource("28_okq1x")
+
+[node name="chica_jumpscare" type="TextureRect" parent="ui/ui_jumpscare"]
+visible = false
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 1280.0
+texture = ExtResource("30_jfwju")
+stretch_mode = 5
+script = ExtResource("28_okq1x")
+
+[node name="foxy_jumpscare" type="TextureRect" parent="ui/ui_jumpscare"]
+visible = false
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 1280.0
+texture = ExtResource("31_kxx03")
+stretch_mode = 5
+script = ExtResource("28_okq1x")
+
+[connection signal="usage_changed" from="game_manager/battery_timer" to="ui/ui_topbar/usage_label" method="set_usage_bars"]
+[connection signal="jumpscare_played" from="game_manager/jumpscare_manager" to="game_manager/camera_manager" method="shake_screen" unbinds=1]
+[connection signal="jumpscare_played" from="game_manager/jumpscare_manager" to="ui/ui_jumpscare" method="show_jumpscare_sprite" unbinds=1]
+[connection signal="door_off" from="environment/door_left" to="game_manager/battery_timer" method="increment_usage" binds= [-1]]
+[connection signal="door_on" from="environment/door_left" to="game_manager/battery_timer" method="increment_usage" binds= [1]]
+[connection signal="light_off" from="environment/door_left" to="game_manager/camera_manager" method="set_camera_pos" binds= ["default", 0.2]]
+[connection signal="light_on" from="environment/door_left" to="game_manager/camera_manager" method="set_camera_pos" binds= ["door_left", 0.2]]
+[connection signal="door_off" from="environment/door_right" to="game_manager/battery_timer" method="increment_usage" binds= [-1]]
+[connection signal="door_on" from="environment/door_right" to="game_manager/battery_timer" method="increment_usage" binds= [1]]
+[connection signal="light_off" from="environment/door_right" to="game_manager/camera_manager" method="set_camera_pos" binds= ["default", 0.2]]
+[connection signal="light_on" from="environment/door_right" to="game_manager/camera_manager" method="set_camera_pos" binds= ["door_right", 0.2]]
+[connection signal="animatronic_jumpscare" from="environment/animatronics/freddy" to="game_manager/jumpscare_manager" method="play_jumpscare"]
+[connection signal="animatronic_moved" from="environment/animatronics/freddy" to="environment/monitor/monitor_screen" method="set_animatronic_pos"]
+[connection signal="animatronic_jumpscare" from="environment/animatronics/bonnie" to="game_manager/jumpscare_manager" method="play_jumpscare"]
+[connection signal="animatronic_moved" from="environment/animatronics/bonnie" to="environment/monitor/monitor_screen" method="set_animatronic_pos"]
+[connection signal="animatronic_jumpscare" from="environment/animatronics/chica" to="game_manager/jumpscare_manager" method="play_jumpscare"]
+[connection signal="animatronic_moved" from="environment/animatronics/chica" to="environment/monitor/monitor_screen" method="set_animatronic_pos"]
+[connection signal="animatronic_jumpscare" from="environment/animatronics/foxy" to="game_manager/jumpscare_manager" method="play_jumpscare"]
+[connection signal="animatronic_moved" from="environment/animatronics/foxy" to="environment/monitor/monitor_screen" method="set_animatronic_pos"]
+[connection signal="attempt_shock" from="environment/controlled_shock" to="game_manager/battery_timer" method="increment_power" binds= [-5]]
+[connection signal="shock_trigger" from="environment/controlled_shock" to="environment/animatronics/freddy" method="reset_pos"]
+[connection signal="active_state_off" from="environment/monitor/monitor_screen" to="environment/monitor/monitor_screen" method="set_monitor_focus" binds= [false]]
+[connection signal="camera_scene_switched" from="environment/monitor/monitor_screen" to="environment/animatronics/freddy" method="set_current_motitor_cam"]
+[connection signal="camera_scene_switched" from="environment/monitor/monitor_screen" to="environment/animatronics/bonnie" method="set_current_motitor_cam"]
+[connection signal="camera_scene_switched" from="environment/monitor/monitor_screen" to="environment/animatronics/chica" method="set_current_motitor_cam"]
+[connection signal="camera_scene_switched" from="environment/monitor/monitor_screen" to="environment/animatronics/foxy" method="set_current_motitor_cam"]
+[connection signal="monitor_focus" from="environment/monitor/monitor_screen" to="player/player" method="set_active_state" binds= [false]]
+[connection signal="monitor_focus" from="environment/monitor/monitor_screen" to="game_manager/camera_manager" method="set_camera_pos" binds= ["monitor", 0.33]]
+[connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="player/player" method="set_active_state" binds= [true]]
+[connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="game_manager/camera_manager" method="set_camera_pos" binds= ["default", 0.33]]
+[connection signal="button_down" from="environment/monitor/monitor_focus_button" to="environment/monitor/monitor_screen" method="set_monitor_focus" binds= [true]]
+[connection signal="attempt_shock" from="environment/vent" to="game_manager/battery_timer" method="increment_power" binds= [-5]]
+[connection signal="shock_trigger" from="environment/vent" to="environment/animatronics/foxy" method="reset_pos"]

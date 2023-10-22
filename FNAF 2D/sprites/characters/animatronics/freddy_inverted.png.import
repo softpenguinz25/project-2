@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0utk2gg3lix1"
-path="res://.godot/imported/pirate_cove.png-819fbb6b3a493905539bc4a01303f97d.ctex"
+uid="uid://bb0gjj5buo4s0"
+path="res://.godot/imported/freddy_inverted.png-db15cc1ffd7813166eb98e347dbe71c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/environment/monitor/monitor_scenes/pirate_cove.png"
-dest_files=["res://.godot/imported/pirate_cove.png-819fbb6b3a493905539bc4a01303f97d.ctex"]
+source_file="res://sprites/characters/animatronics/freddy_inverted.png"
+dest_files=["res://.godot/imported/freddy_inverted.png-db15cc1ffd7813166eb98e347dbe71c2.ctex"]
 
 [params]
 

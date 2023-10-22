@@ -3,7 +3,7 @@ extends Monitor
 @export var monitor_scene : Monitor
 @export var animatronic_placeholder : Dictionary
 
-func set_animatronic_pos(_animatronic_name : String, _cam_name : String):
+func set_animatronic_pos(_animatronic_name : String, _cam_name : String, _num_times_been_to_cam : int = -1):
 	var placeholder_animatronic = get_node(animatronic_placeholder[_animatronic_name])
 	if(_animatronic_name == "" or _cam_name == ""):
 		placeholder_animatronic.self_modulate = Color.RED

@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://bacnqjv7gmdyp"]
+
+[ext_resource type="Texture2D" uid="uid://b4u2ijuldf5ys" path="res://sprites/environment/main_office/vent.png" id="1_c8i2t"]
+[ext_resource type="Script" path="res://sprites/environment/main_office/controlled_shock.gd" id="2_hfdkc"]
+[ext_resource type="Script" path="res://scripts/environment/interactable_button.gd" id="3_7e54q"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hffdi"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_abngf"]
+texture = SubResource("CanvasTexture_hffdi")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wyroy"]
+size = Vector2(24, 24)
+
+[node name="vent" type="Sprite2D"]
+position = Vector2(416, 448)
+scale = Vector2(2, 2)
+texture = ExtResource("1_c8i2t")
+script = ExtResource("2_hfdkc")
+
+[node name="vent_button" type="Button" parent="." node_paths=PackedStringArray("cooldown_timer")]
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = 8.0
+offset_right = -20.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(25, 25)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_abngf")
+script = ExtResource("3_7e54q")
+cooldown_timer = NodePath("vent_cooldown")
+
+[node name="vent_area" type="Area2D" parent="vent_button" groups=["interactable"]]
+
+[node name="interact_collider" type="CollisionShape2D" parent="vent_button/vent_area"]
+position = Vector2(12, 12)
+shape = SubResource("RectangleShape2D_wyroy")
+
+[node name="vent_cooldown" type="Timer" parent="vent_button"]
+one_shot = true
+
+[connection signal="button_down" from="vent_button" to="." method="shock"]
+[connection signal="button_down" from="vent_button" to="vent_button" method="button_pressed"]
+[connection signal="timeout" from="vent_button/vent_cooldown" to="vent_button" method="set_button_disabled_state" binds= [false]]

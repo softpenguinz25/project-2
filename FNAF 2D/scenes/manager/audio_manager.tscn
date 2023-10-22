@@ -1,0 +1,72 @@
+[gd_scene load_steps=2 format=3 uid="uid://blvip6t3vu3p3"]
+
+[ext_resource type="Script" path="res://scripts/audio/audio_manager.gd" id="1_3tv34"]
+
+[node name="audio_manager" type="Node"]
+script = ExtResource("1_3tv34")
+
+[node name="audio_players" type="Node" parent="."]
+
+[node name="audio_stream_player_1" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_2" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_3" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_4" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_5" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_6" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_7" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_8" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_9" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_10" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_11" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_12" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_13" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_14" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_15" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_16" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_17" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_18" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_19" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_20" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_21" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_22" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_23" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_24" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_25" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_26" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_27" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_28" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_29" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_30" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_31" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="audio_stream_player_32" type="AudioStreamPlayer" parent="audio_players"]
