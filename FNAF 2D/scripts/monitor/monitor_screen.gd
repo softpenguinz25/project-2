@@ -8,6 +8,8 @@ signal monitor_unfocus
 
 var current_cam_scene : String
 
+var active_state_permanent : bool = false
+
 signal camera_scene_switched_no_params
 signal camera_scene_switched
 
@@ -23,11 +25,17 @@ signal animatronic_moved_out_of_camera_queue
 signal animatronic_moved_in_camera_queue
 
 func set_active_state(active_state : bool):
+	if active_state_permanent: return
+	
 	if active_state: active_state_on.emit()
 	else: active_state_off.emit()
 	for child in nodes_to_set_active:
 		child.set_process(active_state)
 		child.visible = active_state
+
+func set_active_state_permanently(active_state : bool): 
+	set_active_state(active_state)
+	active_state_permanent = true
 
 func set_monitor_focus(focus : bool):
 	if focus == is_focused:

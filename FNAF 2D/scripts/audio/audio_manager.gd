@@ -4,6 +4,8 @@ extends Node
 var sound_paths_per_player : Dictionary
 
 func play_sound(sound_path : String):
+	if sound_path.is_empty(): return
+	
 	for audio_stream_player in audio_players.get_children():
 		if not audio_stream_player.playing:
 			var sound_file = load(sound_path)

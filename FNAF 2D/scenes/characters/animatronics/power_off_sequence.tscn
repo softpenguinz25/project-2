@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://laggy4k680x3"]
+
+[ext_resource type="Script" path="res://scripts/characters/animatronics/power_off_sequence.gd" id="1_ano5y"]
+[ext_resource type="Texture2D" uid="uid://bajj2ulxsu0fo" path="res://sprites/characters/animatronics/freddy_eyes.png" id="2_mofcy"]
+[ext_resource type="Script" path="res://gfx/freddy_eyes.gd" id="3_bvm4v"]
+[ext_resource type="Texture2D" uid="uid://dkxdpqo5mpy5b" path="res://sprites/characters/animatronics/freddy_eyes_blank.png" id="4_7ertb"]
+[ext_resource type="Texture2D" uid="uid://cphp58ib0826f" path="res://sprites/characters/animatronics/freddy_eyes_red.png" id="5_houu7"]
+
+[node name="power_off_sequence" type="Node2D" node_paths=PackedStringArray("timer_until_freddy_flicker", "timer_until_power_darkness", "timer_until_jumpscare")]
+light_mask = 8
+visibility_layer = 8
+script = ExtResource("1_ano5y")
+timer_until_freddy_flicker = NodePath("timer_until_freddy_flicker")
+timer_until_power_darkness = NodePath("timer_until_power_darkness")
+timer_until_jumpscare = NodePath("timer_until_power_darkness")
+
+[node name="freddy_eyes" type="Sprite2D" parent="." node_paths=PackedStringArray("flicker_timer")]
+visible = false
+light_mask = 8
+visibility_layer = 8
+position = Vector2(640, 348)
+scale = Vector2(12, 12)
+texture = ExtResource("2_mofcy")
+script = ExtResource("3_bvm4v")
+flicker_timer = NodePath("freddy_eyes_flicker_timer")
+eye_sprite_chances = {
+ExtResource("2_mofcy"): 8.0,
+ExtResource("4_7ertb"): 1.0,
+ExtResource("5_houu7"): 1.0
+}
+
+[node name="freddy_eyes_flicker_timer" type="Timer" parent="freddy_eyes"]
+wait_time = 0.1
+
+[node name="timer_until_freddy_flicker" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="timer_until_power_darkness" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="timer_until_jumpscare" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="freddy_flicker_started" from="." to="timer_until_power_darkness" method="start"]
+[connection signal="freddy_flicker_started" from="." to="freddy_eyes" method="toggle_animation" binds= [true]]
+[connection signal="power_darkness_started" from="." to="timer_until_jumpscare" method="start"]
+[connection signal="power_darkness_started" from="." to="freddy_eyes" method="toggle_animation" binds= [false, true]]
+[connection signal="power_off_started" from="." to="timer_until_freddy_flicker" method="start"]
+[connection signal="timeout" from="freddy_eyes/freddy_eyes_flicker_timer" to="freddy_eyes" method="try_flicker"]
+[connection signal="timeout" from="timer_until_freddy_flicker" to="." method="increment_power_off_stage"]
+[connection signal="timeout" from="timer_until_power_darkness" to="." method="increment_power_off_stage"]
+[connection signal="timeout" from="timer_until_jumpscare" to="." method="increment_power_off_stage"]

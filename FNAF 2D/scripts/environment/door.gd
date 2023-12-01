@@ -14,6 +14,8 @@ signal door_off(door_off_data)
 signal door_on(door_on_data)
 signal light_off(light_off_data)
 signal light_on(light_on_data)
+signal button_enabled(enabled : bool)
+signal button_disabled(disabled : bool)
 
 func switch_door_state():
 	change_door_state(!current_door_state)
@@ -45,3 +47,7 @@ func change_light_state(new_light_state : bool):
 		light_on.emit()
 	else:
 		light_off.emit()
+
+func change_button_disabled_state(disabled : bool):
+	button_enabled.emit(!disabled)
+	button_disabled.emit(disabled)

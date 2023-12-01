@@ -208,6 +208,8 @@ script = ExtResource("3_8n50h")
 position = Vector2(25, 25)
 shape = SubResource("RectangleShape2D_kgycj")
 
+[connection signal="button_enabled" from="." to="Light Button" method="set_interact_state_absolute"]
+[connection signal="button_enabled" from="." to="Door Button" method="set_interact_state_absolute"]
 [connection signal="button_down" from="Light Button" to="." method="change_light_state" binds= [true]]
 [connection signal="button_up" from="Light Button" to="." method="change_light_state" binds= [false]]
 [connection signal="button_down" from="Door Button" to="." method="switch_door_state"]

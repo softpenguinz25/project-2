@@ -560,6 +560,7 @@ offset_bottom = 656.0
 texture = ExtResource("5_3nkbq")
 
 [node name="monitor_map" type="TextureRect" parent="." node_paths=PackedStringArray("monitor_scene")]
+visible = false
 layout_mode = 1
 offset_left = 864.0
 offset_top = 304.0
@@ -654,6 +655,7 @@ cam_display_name = "CAM
 2B"
 
 [node name="visual_foxy" type="TextureRect" parent="monitor_map"]
+visible = false
 z_index = 1
 layout_mode = 0
 offset_left = 29.0
@@ -665,6 +667,7 @@ texture = ExtResource("6_vlpr8")
 expand_mode = 1
 
 [node name="visual_chica" type="TextureRect" parent="monitor_map"]
+visible = false
 z_index = 1
 layout_mode = 0
 offset_left = 335.0
@@ -676,6 +679,7 @@ texture = ExtResource("6_1erd1")
 expand_mode = 1
 
 [node name="visual_bonnie" type="TextureRect" parent="monitor_map"]
+visible = false
 z_index = 1
 layout_mode = 0
 offset_left = 325.0
@@ -687,6 +691,7 @@ texture = ExtResource("6_2iw3h")
 expand_mode = 1
 
 [node name="visual_freddy" type="TextureRect" parent="monitor_map"]
+visible = false
 z_index = 1
 layout_mode = 0
 offset_left = 315.0
@@ -737,10 +742,14 @@ theme_override_fonts/font = ExtResource("4_px0q1")
 theme_override_font_sizes/font_size = 52
 text = "EXIT CAMERA"
 
+[connection signal="active_state_off" from="." to="." method="set_visible" binds= [false]]
+[connection signal="active_state_on" from="." to="." method="set_visible" binds= [true]]
 [connection signal="animatronic_moved_in_camera_queue" from="." to="static_player" method="play" binds= ["static"]]
 [connection signal="animatronic_moved_out_of_camera_queue" from="." to="static_player" method="play" binds= ["static"]]
 [connection signal="camera_scene_switched_no_params" from="." to="static_player" method="stop"]
 [connection signal="camera_scene_switched_no_params" from="." to="static_player" method="play" binds= ["static"]]
+[connection signal="monitor_focus" from="." to="monitor_map" method="set_visible" binds= [true]]
+[connection signal="monitor_unfocus" from="." to="monitor_map" method="set_visible" binds= [false]]
 [connection signal="cam_scene_switched" from="monitor_scene" to="." method="set_current_camera_scene"]
 [connection signal="cam_clicked" from="monitor_map/cam_box_1" to="monitor_scene" method="switch_cam_scene" binds= ["supply_closet"]]
 [connection signal="cam_clicked" from="monitor_map/cam_box_2" to="monitor_scene" method="switch_cam_scene" binds= ["show_stage"]]
