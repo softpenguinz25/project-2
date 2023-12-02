@@ -742,8 +742,6 @@ theme_override_fonts/font = ExtResource("4_px0q1")
 theme_override_font_sizes/font_size = 52
 text = "EXIT CAMERA"
 
-[connection signal="active_state_off" from="." to="." method="set_visible" binds= [false]]
-[connection signal="active_state_on" from="." to="." method="set_visible" binds= [true]]
 [connection signal="animatronic_moved_in_camera_queue" from="." to="static_player" method="play" binds= ["static"]]
 [connection signal="animatronic_moved_out_of_camera_queue" from="." to="static_player" method="play" binds= ["static"]]
 [connection signal="camera_scene_switched_no_params" from="." to="static_player" method="stop"]

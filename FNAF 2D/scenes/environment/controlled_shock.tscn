@@ -35,7 +35,6 @@ position = Vector2(-18, -166)
 shape = SubResource("RectangleShape2D_y5kkp")
 
 [node name="controlled_shock_cooldown" type="Timer" parent="."]
-wait_time = 0.001
 one_shot = true
 
 [connection signal="button_disabled" from="." to="controlled_shock_button" method="set_interact_state_absolute"]

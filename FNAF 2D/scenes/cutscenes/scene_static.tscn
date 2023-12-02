@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dwq3y2o15eej1"]
+[gd_scene load_steps=32 format=3 uid="uid://dwq3y2o15eej1"]
 
 [ext_resource type="Script" path="res://scripts/misc/scene_loader.gd" id="1_v2gd0"]
 [ext_resource type="AudioStream" uid="uid://b4d3qo5rsv4ia" path="res://sounds/cutscenes/cutscene_static.wav" id="1_xl4uv"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://hkklnyb011vt" path="res://sprites/cutscenes/static/18.png" id="8_ygh82"]
 [ext_resource type="Texture2D" uid="uid://bt4cn08wyb3vk" path="res://sprites/cutscenes/static/20.png" id="9_eg4ws"]
 [ext_resource type="Texture2D" uid="uid://bs7b1qfv6r66q" path="res://sprites/static/4.png" id="11_rwsw7"]
+[ext_resource type="Script" path="res://scripts/cutscenes/static_next_scene.gd" id="11_yrviw"]
 [ext_resource type="Texture2D" uid="uid://cbvf2blkod7d8" path="res://sprites/static/6.png" id="12_fchqe"]
 [ext_resource type="Texture2D" uid="uid://cmdr3qb5u6fb1" path="res://sprites/static/8.png" id="13_58sqs"]
 [ext_resource type="Texture2D" uid="uid://c86doagu88wwg" path="res://sprites/static/9.png" id="14_fkkan"]
@@ -193,9 +194,16 @@ autoplay = "default"
 stream = ExtResource("1_xl4uv")
 autoplay = true
 
-[node name="Timer" type="Timer" parent="."]
+[node name="static_next_scene" type="Node" parent="." node_paths=PackedStringArray("game_over_timer", "springtrap_timer")]
+script = ExtResource("11_yrviw")
+game_over_timer = NodePath("../game_over_timer")
+springtrap_timer = NodePath("../spring_trap_timer")
+
+[node name="game_over_timer" type="Timer" parent="."]
 wait_time = 10.0
-autostart = true
+
+[node name="spring_trap_timer" type="Timer" parent="."]
+wait_time = 10.0
 
 [node name="static" type="AnimatedSprite2D" parent="."]
 position = Vector2(640, 352)
@@ -209,4 +217,5 @@ libraries = {
 "": SubResource("AnimationLibrary_he8l4")
 }
 
-[connection signal="timeout" from="Timer" to="scene_switcher" method="load_scene" binds= ["res://scenes/cutscenes/scene_game_over.tscn"]]
+[connection signal="timeout" from="game_over_timer" to="scene_switcher" method="load_scene" binds= ["res://scenes/cutscenes/scene_game_over.tscn"]]
+[connection signal="timeout" from="spring_trap_timer" to="scene_switcher" method="load_scene" binds= ["res://scenes/cutscenes/scene_game_over_springtrap.tscn"]]
