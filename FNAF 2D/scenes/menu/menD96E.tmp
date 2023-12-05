@@ -10,8 +10,8 @@
 [ext_resource type="Shader" path="res://shaders/GodotRetro - Ahopness/Screen Shaders/VHSPause.gdshader" id="4_aqevc"]
 [ext_resource type="Texture2D" uid="uid://bb0gjj5buo4s0" path="res://sprites/characters/animatronics/freddy_inverted.png" id="5_6q3u6"]
 [ext_resource type="Script" path="res://scripts/ui/main_menu_button.gd" id="8_q3obw"]
-[ext_resource type="Script" path="res://scripts/ui/star_ranking_local.gd" id="9_emtr0"]
 [ext_resource type="Texture2D" uid="uid://b34eatpnubpry" path="res://sprites/star_outline.png" id="9_gacgs"]
+[ext_resource type="Script" path="res://scripts/ui/star_ranking.gd" id="9_sj78e"]
 [ext_resource type="Texture2D" uid="uid://cb5kijdc2gycv" path="res://sprites/star.png" id="9_xstaa"]
 [ext_resource type="Texture2D" uid="uid://bs7b1qfv6r66q" path="res://sprites/static/4.png" id="10_w7nmk"]
 [ext_resource type="Texture2D" uid="uid://caroegfhu8p6o" path="res://sprites/circle_faded.png" id="11_5fvmq"]
@@ -30,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://b21xor2lidyqp" path="res://sprites/static/438.png" id="23_nft4l"]
 [ext_resource type="Texture2D" uid="uid://ul05miqcikby" path="res://sprites/static/439.png" id="24_skto6"]
 [ext_resource type="Script" path="res://scripts/misc/credits.gd" id="26_lpeo8"]
-[ext_resource type="Script" path="res://scripts/misc/reset_data.gd" id="31_s0btl"]
+[ext_resource type="Script" path="res://scripts/ui/version_label.gd" id="31_gd0pb"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_kc32x"]
 
@@ -283,7 +283,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="gradient_left" type="TextureRect" parent="."]
+[node name="gradient" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 906.0
 offset_bottom = 720.0
@@ -304,16 +304,6 @@ autoplay = "freddy_glitching"
 libraries = {
 "": SubResource("AnimationLibrary_qa2lr")
 }
-
-[node name="gradient_right" type="TextureRect" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 1280.0
-offset_top = 720.0
-offset_right = 1822.0
-offset_bottom = 1440.0
-rotation = 3.14159
-texture = SubResource("GradientTexture1D_2tesq")
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="."]
 position = Vector2(639.5, 360)
@@ -370,10 +360,8 @@ Freddy's
 2D"
 label_settings = SubResource("LabelSettings_xl3br")
 
-[node name="star_ranking" type="Node" parent="title" node_paths=PackedStringArray("star_outline", "star_full")]
-script = ExtResource("9_emtr0")
-star_outline = NodePath("star_outline")
-star_full = NodePath("star_full")
+[node name="star_ranking" type="Node" parent="title"]
+script = ExtResource("9_sj78e")
 
 [node name="star_outline" type="TextureRect" parent="title/star_ranking"]
 visible = false
@@ -501,22 +489,6 @@ theme_override_font_sizes/font_size = 24
 text = "Original By: Scott Cawthon"
 alignment = 2
 
-[node name="button_resetdata" type="Button" parent="."]
-layout_mode = 2
-offset_left = 1012.0
-offset_top = 8.0
-offset_right = 1272.0
-offset_bottom = 38.0
-theme_override_fonts/font = ExtResource("2_qxmd5")
-theme_override_font_sizes/font_size = 24
-text = "Hold to Reset Data"
-alignment = 2
-script = ExtResource("31_s0btl")
-
-[node name="resetdata_timer" type="Timer" parent="button_resetdata"]
-wait_time = 5.0
-one_shot = true
-
 [node name="credit_label" type="Label" parent="."]
 visible = false
 layout_mode = 1
@@ -551,6 +523,7 @@ theme_override_fonts/font = ExtResource("2_qxmd5")
 theme_override_font_sizes/font_size = 24
 text = "V1.0"
 vertical_alignment = 2
+script = ExtResource("31_gd0pb")
 
 [connection signal="button_down" from="button_vbox/button_newgame" to="local_audio_manager" method="play_sound" binds= ["res://sounds/menu/menu_button.wav"]]
 [connection signal="button_down" from="button_vbox/button_newgame" to="scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/scene_night_number_1.tscn"]]
@@ -563,7 +536,3 @@ vertical_alignment = 2
 [connection signal="button_down" from="credit_container/button_godot" to="credit_container" method="open_link" binds= ["https://godotengine.org/license"]]
 [connection signal="button_down" from="credit_container/button_jujuprodgames" to="credit_container" method="open_link" binds= ["https://www.youtube.com/@JujuProdGames"]]
 [connection signal="button_down" from="credit_container/button_scottcawthon" to="credit_container" method="open_link" binds= ["https://store.steampowered.com/app/319510/Five_Nights_at_Freddys/", "https://play.google.com/store/apps/details?id=com.scottgames.fivenightsatfreddys&hl=en_US&gl=US"]]
-[connection signal="button_down" from="button_resetdata" to="button_resetdata/resetdata_timer" method="start"]
-[connection signal="button_up" from="button_resetdata" to="button_resetdata/resetdata_timer" method="stop"]
-[connection signal="data_reset" from="button_resetdata" to="title/star_ranking" method="update_star_state"]
-[connection signal="timeout" from="button_resetdata/resetdata_timer" to="button_resetdata" method="reset_data"]

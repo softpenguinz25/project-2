@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://cq3xl7epyqcof"]
+[gd_scene load_steps=84 format=3 uid="uid://cq3xl7epyqcof"]
 
 [ext_resource type="Script" path="res://scripts/misc/scene_loader.gd" id="1_7g5sr"]
 [ext_resource type="Texture2D" uid="uid://iavdw7y2t4ka" path="res://sprites/environment/main_office/checkerboard.png" id="1_7giwt"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://gj1qxmaloo2r" path="res://sprites/environment/main_office/poster_celebrate.png" id="8_56gpw"]
 [ext_resource type="Texture2D" uid="uid://dm6gd5iggigeq" path="res://sprites/circle.png" id="8_srpys"]
 [ext_resource type="PackedScene" uid="uid://dx4nwqj61k5ub" path="res://scenes/characters/animatronics/bonnie.tscn" id="8_w172p"]
+[ext_resource type="Script" path="res://scripts/controls/controls_manager.gd" id="8_xyoyc"]
 [ext_resource type="PackedScene" uid="uid://ptnmkyrjbbv6" path="res://scenes/characters/animatronics/chica.tscn" id="9_vuwfo"]
 [ext_resource type="Texture2D" uid="uid://caroegfhu8p6o" path="res://sprites/circle_faded.png" id="11_435lt"]
 [ext_resource type="PackedScene" uid="uid://bg513jn72ci7b" path="res://scenes/characters/animatronics/foxy.tscn" id="11_rr8c6"]
@@ -50,6 +51,12 @@
 [ext_resource type="Texture2D" uid="uid://cga7csxtslv51" path="res://sprites/environment/main_office/papers.png" id="43_bno6d"]
 [ext_resource type="Texture2D" uid="uid://buotigqtscelc" path="res://sprites/characters/animatronics/springtrap.png" id="43_m8a31"]
 [ext_resource type="AudioStream" uid="uid://k3g2oip5hiag" path="res://sounds/office/phone_call_youded.wav" id="47_jxlby"]
+[ext_resource type="Script" path="res://scripts/controls/controls.gd" id="49_hiw70"]
+[ext_resource type="Texture2D" uid="uid://bwq6xlg7v5hwo" path="res://sprites/controls/left_button_idle.png" id="50_npluy"]
+[ext_resource type="Texture2D" uid="uid://douxcqi1hty0r" path="res://sprites/controls/left_button_pressed.png" id="51_nwsy2"]
+[ext_resource type="Texture2D" uid="uid://bkb15so0k6g1v" path="res://sprites/controls/right_button_idle.png" id="52_wm7mj"]
+[ext_resource type="Texture2D" uid="uid://bjy3ipwfd2ikh" path="res://sprites/controls/right_button_pressed.png" id="53_ssi3s"]
+[ext_resource type="PackedScene" uid="uid://s7y7la06qtuq" path="res://scenes/ui/pause_menu.tscn" id="54_0trjx"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ry0vv"]
 
@@ -161,33 +168,6 @@ shader = ExtResource("31_uy5bd")
 shader_parameter/amount = 40.0
 shader_parameter/transparency = 1.0
 
-[sub_resource type="Animation" id="Animation_q2rb5"]
-resource_name = "static_preview_fade_in"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.133333), Color(1, 1, 1, 0.133333), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("static_preview:material:shader_parameter/transparency")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.125, 0.125, 1.0]
-}
-
 [sub_resource type="Animation" id="Animation_a75qs"]
 length = 0.001
 tracks/0/type = "value"
@@ -213,6 +193,33 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_q2rb5"]
+resource_name = "static_preview_fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.133333), Color(1, 1, 1, 0.133333), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("static_preview:material:shader_parameter/transparency")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.125, 0.125, 1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aepmt"]
@@ -298,6 +305,10 @@ jumpscare_timer = NodePath("jumpscare_timer")
 [node name="jumpscare_timer" type="Timer" parent="game_manager/jumpscare_manager"]
 one_shot = true
 
+[node name="controls_manager" type="Node" parent="game_manager" node_paths=PackedStringArray("mobile_controls")]
+script = ExtResource("8_xyoyc")
+mobile_controls = NodePath("../../ui/ui_bottombar/ui_mobile_controls_OLD")
+
 [node name="environment" type="Node2D" parent="."]
 
 [node name="black_bg" type="Sprite2D" parent="environment"]
@@ -319,10 +330,10 @@ scale = Vector2(2, 2)
 texture = ExtResource("8_56gpw")
 
 [node name="poster_celebrate_freddyhonk" type="Button" parent="environment/poster_celebrate"]
-offset_left = -4.0
-offset_top = -8.0
-offset_right = 8.0
-offset_bottom = 4.0
+offset_left = -5.0
+offset_top = -9.0
+offset_right = 11.0
+offset_bottom = 7.0
 scale = Vector2(0.5, 0.5)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_shwq5")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_5joot")
@@ -382,17 +393,22 @@ position = Vector2(956, 600)
 scale = Vector2(10, 10)
 texture = ExtResource("3_6j2kl")
 
+[node name="controlled_shock" parent="environment" node_paths=PackedStringArray("animatronic_to_shock") instance=ExtResource("7_5di67")]
+position = Vector2(640, 568)
+scale = Vector2(1.25, 1.25)
+animatronic_to_shock = NodePath("../animatronics/freddy")
+
 [node name="floor" type="StaticBody2D" parent="environment"]
 
-[node name="TextureRect" type="TextureRect" parent="environment/floor"]
+[node name="floor_texturerect" type="TextureRect" parent="environment/floor"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 213.0
+offset_left = 201.0
 offset_top = 668.0
-offset_right = 1066.5
+offset_right = 1066.0
 offset_bottom = 700.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -403,7 +419,7 @@ size_flags_vertical = 4
 texture = ExtResource("1_7giwt")
 stretch_mode = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="environment/floor"]
+[node name="floor_collision" type="CollisionShape2D" parent="environment/floor"]
 position = Vector2(640, 684)
 shape = SubResource("RectangleShape2D_m45bn")
 
@@ -530,10 +546,6 @@ script = ExtResource("23_8xgfu")
 light_to_flicker = NodePath(".")
 noise = SubResource("FastNoiseLite_xl4uu")
 total_energy_range = 1.0
-
-[node name="controlled_shock" parent="environment" node_paths=PackedStringArray("animatronic_to_shock") instance=ExtResource("7_5di67")]
-position = Vector2(640, 552)
-animatronic_to_shock = NodePath("../animatronics/freddy")
 
 [node name="ceiling" type="StaticBody2D" parent="environment"]
 
@@ -717,8 +729,8 @@ texture = ExtResource("21_srqtj")
 
 [node name="night_text" type="Label" parent="ui/ui_topbar"]
 layout_mode = 0
-offset_left = 1018.0
-offset_right = 1279.0
+offset_left = 1019.0
+offset_right = 1280.0
 offset_bottom = 144.0
 theme_override_fonts/font = ExtResource("16_wag7a")
 theme_override_font_sizes/font_size = 64
@@ -726,6 +738,7 @@ text = "Night:
 -1-"
 horizontal_alignment = 2
 vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="ui_jumpscare" type="Control" parent="ui"]
 layout_mode = 1
@@ -793,22 +806,95 @@ texture = ExtResource("43_m8a31")
 stretch_mode = 5
 script = ExtResource("28_okq1x")
 
-[node name="skip_call" type="Button" parent="ui"]
+[node name="ui_bottombar" type="Control" parent="ui"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = 648.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="skip_call" type="Button" parent="ui/ui_bottombar"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 563.0
-offset_top = 662.0
-offset_right = 718.0
-offset_bottom = 704.0
+offset_left = -77.0
+offset_top = -22.0
+offset_right = 78.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("16_wag7a")
 theme_override_font_sizes/font_size = 24
 text = "SKIP CALL"
+
+[node name="ui_mobile_controls" type="CanvasLayer" parent="ui/ui_bottombar"]
+
+[node name="mobile_move_left" type="TouchScreenButton" parent="ui/ui_bottombar/ui_mobile_controls"]
+modulate = Color(1, 1, 1, 0.533333)
+position = Vector2(56, 552)
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("50_npluy")
+texture_pressed = ExtResource("51_nwsy2")
+action = "move_left"
+visibility_mode = 1
+
+[node name="mobile_move_right" type="TouchScreenButton" parent="ui/ui_bottombar/ui_mobile_controls"]
+modulate = Color(1, 1, 1, 0.533333)
+position = Vector2(1112, 552)
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("52_wm7mj")
+texture_pressed = ExtResource("53_ssi3s")
+action = "move_right"
+visibility_mode = 1
+
+[node name="ui_mobile_controls_OLD" type="CanvasLayer" parent="ui/ui_bottombar"]
+visible = false
+script = ExtResource("49_hiw70")
+
+[node name="mobile_move_left_OLD" type="Button" parent="ui/ui_bottombar/ui_mobile_controls_OLD"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 56.0
+offset_top = -168.0
+offset_right = 184.0
+offset_bottom = -40.0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("16_wag7a")
+theme_override_font_sizes/font_size = 81
+text = "<"
+
+[node name="mobile_move_right_OLD" type="Button" parent="ui/ui_bottombar/ui_mobile_controls_OLD"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -168.0
+offset_top = -168.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("16_wag7a")
+theme_override_font_sizes/font_size = 81
+text = ">"
+
+[node name="pause" parent="ui" instance=ExtResource("54_0trjx")]
+visible = false
 
 [node name="office_ambience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("37_s1esw")
@@ -840,6 +926,9 @@ stream = ExtResource("47_jxlby")
 [connection signal="timeout" from="game_manager/jumpscare_manager/jumpscare_timer" to="game_manager/audio_manager_local" method="stop_all_sounds"]
 [connection signal="timeout" from="game_manager/jumpscare_manager/jumpscare_timer" to="game_manager/jumpscare_manager" method="finish_jumpscare"]
 [connection signal="button_down" from="environment/poster_celebrate/poster_celebrate_freddyhonk" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/nose_honk.wav"]]
+[connection signal="attempt_shock" from="environment/controlled_shock" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/office/controlled_shock.wav"]]
+[connection signal="attempt_shock" from="environment/controlled_shock" to="game_manager/battery_timer" method="increment_power" binds= [-3]]
+[connection signal="shock_trigger" from="environment/controlled_shock" to="environment/animatronics/freddy" method="reset_pos"]
 [connection signal="door_off" from="environment/door_left" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_close.wav"]]
 [connection signal="door_off" from="environment/door_left" to="game_manager/battery_timer" method="increment_usage" binds= [-1]]
 [connection signal="door_on" from="environment/door_left" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_close.wav"]]
@@ -868,6 +957,7 @@ stream = ExtResource("47_jxlby")
 [connection signal="light_on" from="environment/door_right" to="environment/door_right/PointLight2D" method="set_enabled" binds= [true]]
 [connection signal="using_20d_mode" from="environment/animatronics" to="phone_call" method="stop"]
 [connection signal="using_20d_mode" from="environment/animatronics" to="phone_call_youded" method="play"]
+[connection signal="using_20d_mode" from="environment/animatronics" to="ui/ui_topbar/night_text" method="set_text" binds= ["Night:-20D-"]]
 [connection signal="animatronic_jumpscare" from="environment/animatronics/freddy" to="game_manager/jumpscare_manager" method="play_jumpscare"]
 [connection signal="animatronic_moved" from="environment/animatronics/freddy" to="environment/monitor/monitor_screen" method="set_animatronic_pos"]
 [connection signal="animatronic_moved" from="environment/animatronics/freddy" to="environment/monitor/monitor_screen" method="animatronic_moved_to"]
@@ -902,6 +992,7 @@ stream = ExtResource("47_jxlby")
 [connection signal="power_darkness_started" from="environment/animatronics/power_off_sequence" to="game_manager/audio_manager_local" method="stop_sound" binds= ["res://sounds/animatronics/animatronic_music_box.wav"]]
 [connection signal="power_darkness_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/power_off_sequence/power_off_light/power_off_completely_animation" method="play" binds= ["power_off_completely_flicker"]]
 [connection signal="power_darkness_started" from="environment/animatronics/power_off_sequence" to="player/player" method="set_active_state" binds= [false]]
+[connection signal="power_darkness_started" from="environment/animatronics/power_off_sequence" to="ui/ui_bottombar/ui_mobile_controls" method="set_visible" binds= [false]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="game_manager/ambience_manager/ambience_timer_eerie" method="stop"]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="game_manager/ambience_manager/ambience_timer_circus" method="stop"]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="game_manager/ambience_manager/ambience_timer_cold" method="stop"]
@@ -917,6 +1008,7 @@ stream = ExtResource("47_jxlby")
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="phone_call" method="stop"]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="phone_call_youded" method="stop"]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_power_down.wav"]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/controlled_shock" method="change_button_disabled_state_permanently" binds= [true]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/door_left" method="change_door_state" binds= [false]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/door_left" method="change_button_disabled_state" binds= [true]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/door_left/PointLight2D" method="set_visible" binds= [false]]
@@ -932,18 +1024,15 @@ stream = ExtResource("47_jxlby")
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/shelf/PointLight2D" method="set_visible" binds= [false]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/light" method="set_modulate" binds= [Color(0.0156863, 0.0156863, 0.0156863, 1)]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/light/PointLight2D" method="set_visible" binds= [false]]
-[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/controlled_shock" method="change_button_disabled_state_permanently" binds= [true]]
-[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/monitor/monitor_screen" method="set_monitor_focus" binds= [false]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/monitor/monitor_screen" method="set_visible" binds= [false]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/monitor/monitor_screen" method="set_active_state_permanently" binds= [false]]
-[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/monitor/static_preview_bg/static_preview_animation" method="play" binds= ["RESET"]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/monitor/monitor_screen" method="set_monitor_focus" binds= [false]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/monitor/static_preview_bg" method="set_visible" binds= [false]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/monitor/monitor_focus_button" method="set_interact_state_absolute" binds= [false]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/vent" method="change_button_disabled_state_permanently" binds= [true]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="ui/ui_topbar" method="set_visible" binds= [false]]
 [connection signal="timeout" from="environment/animatronics/power_off_sequence/animatronic_footstep_sfx_timer" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_footstep.wav"]]
 [connection signal="timeout" from="environment/animatronics/power_off_sequence/animatronic_footstep_darkness_sfx_timer" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_footstep.wav"]]
-[connection signal="attempt_shock" from="environment/controlled_shock" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/office/controlled_shock.wav"]]
-[connection signal="attempt_shock" from="environment/controlled_shock" to="game_manager/battery_timer" method="increment_power" binds= [-3]]
-[connection signal="shock_trigger" from="environment/controlled_shock" to="environment/animatronics/freddy" method="reset_pos"]
 [connection signal="active_state_off" from="environment/monitor/monitor_screen" to="environment/monitor/monitor_screen" method="set_monitor_focus" binds= [false]]
 [connection signal="animatronic_moved_in_camera_queue" from="environment/monitor/monitor_screen" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_camera_cue.wav"]]
 [connection signal="animatronic_moved_out_of_camera_queue" from="environment/monitor/monitor_screen" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_camera_cue.wav"]]
@@ -957,6 +1046,8 @@ stream = ExtResource("47_jxlby")
 [connection signal="monitor_focus" from="environment/monitor/monitor_screen" to="game_manager/camera_manager" method="set_camera_pos" binds= ["monitor", 0.33]]
 [connection signal="monitor_focus" from="environment/monitor/monitor_screen" to="environment/monitor/static_preview_bg" method="set_visible" binds= [false]]
 [connection signal="monitor_focus" from="environment/monitor/monitor_screen" to="player/player" method="set_active_state" binds= [false]]
+[connection signal="monitor_focus" from="environment/monitor/monitor_screen" to="ui/ui_bottombar/ui_mobile_controls" method="set_visible" binds= [false]]
+[connection signal="monitor_focus" from="environment/monitor/monitor_screen" to="ui/pause" method="set_visible" binds= [true]]
 [connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="environment/animatronics/freddy" method="attempt_flash"]
 [connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="environment/animatronics/foxy" method="attempt_flash"]
 [connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/monitor/monitor_close.wav"]]
@@ -966,6 +1057,8 @@ stream = ExtResource("47_jxlby")
 [connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="environment/monitor/static_preview_bg" method="set_visible" binds= [true]]
 [connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="environment/monitor/static_preview_bg/static_preview_animation" method="play" binds= ["static_preview_fade_in"]]
 [connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="player/player" method="set_active_state" binds= [true]]
+[connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="ui/ui_bottombar/ui_mobile_controls" method="set_visible" binds= [true]]
+[connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="ui/pause" method="set_visible" binds= [false]]
 [connection signal="button_down" from="environment/monitor/monitor_focus_button" to="environment/monitor/monitor_screen" method="set_monitor_focus" binds= [true]]
 [connection signal="attempt_shock" from="environment/vent" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/office/light_vent.wav"]]
 [connection signal="attempt_shock" from="environment/vent" to="game_manager/battery_timer" method="increment_power" binds= [-3]]
@@ -977,8 +1070,13 @@ stream = ExtResource("47_jxlby")
 [connection signal="hour_changed" from="ui/ui_topbar/time" to="environment/animatronics/bonnie" method="set_ai_level_by_hour"]
 [connection signal="hour_changed" from="ui/ui_topbar/time" to="environment/animatronics/chica" method="set_ai_level_by_hour"]
 [connection signal="hour_changed" from="ui/ui_topbar/time" to="environment/animatronics/foxy" method="set_ai_level_by_hour"]
-[connection signal="button_down" from="ui/skip_call" to="phone_call" method="stop"]
-[connection signal="button_down" from="ui/skip_call" to="phone_call_youded" method="stop"]
-[connection signal="button_down" from="ui/skip_call" to="ui/skip_call" method="set_visible" binds= [false]]
-[connection signal="finished" from="phone_call" to="ui/skip_call" method="set_visible" binds= [false]]
-[connection signal="finished" from="phone_call_youded" to="ui/skip_call" method="set_visible" binds= [false]]
+[connection signal="button_down" from="ui/ui_bottombar/skip_call" to="phone_call" method="stop"]
+[connection signal="button_down" from="ui/ui_bottombar/skip_call" to="phone_call_youded" method="stop"]
+[connection signal="button_down" from="ui/ui_bottombar/skip_call" to="ui/ui_bottombar/skip_call" method="set_visible" binds= [false]]
+[connection signal="active_state_set" from="ui/ui_bottombar/ui_mobile_controls_OLD" to="ui/ui_bottombar/ui_mobile_controls_OLD" method="set_visible"]
+[connection signal="button_down" from="ui/ui_bottombar/ui_mobile_controls_OLD/mobile_move_left_OLD" to="game_manager/controls_manager" method="move_player" binds= [-1]]
+[connection signal="button_up" from="ui/ui_bottombar/ui_mobile_controls_OLD/mobile_move_left_OLD" to="game_manager/controls_manager" method="stop_player" binds= [-1]]
+[connection signal="button_down" from="ui/ui_bottombar/ui_mobile_controls_OLD/mobile_move_right_OLD" to="game_manager/controls_manager" method="move_player" binds= [1]]
+[connection signal="button_up" from="ui/ui_bottombar/ui_mobile_controls_OLD/mobile_move_right_OLD" to="game_manager/controls_manager" method="stop_player" binds= [1]]
+[connection signal="finished" from="phone_call" to="ui/ui_bottombar/skip_call" method="set_visible" binds= [false]]
+[connection signal="finished" from="phone_call_youded" to="ui/ui_bottombar/skip_call" method="set_visible" binds= [false]]

@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=3 uid="uid://s7y7la06qtuq"]
+
+[ext_resource type="Texture2D" uid="uid://dd561y450030a" path="res://sprites/ui/pause_button_idle.png" id="1_kqa4n"]
+[ext_resource type="Texture2D" uid="uid://cod1y2qxgc6bx" path="res://sprites/ui/pause_button_pressed.png" id="2_i2ww6"]
+[ext_resource type="FontFile" uid="uid://c458otts8ji68" path="res://ui/fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" id="3_210y3"]
+[ext_resource type="Script" path="res://scenes/ui/pause_menu.gd" id="3_adn8n"]
+[ext_resource type="Script" path="res://scripts/misc/scene_loader.gd" id="4_b7wmj"]
+
+[node name="pause" type="CanvasLayer"]
+
+[node name="pause_button" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(8, 8)
+scale = Vector2(3, 3)
+texture_normal = ExtResource("1_kqa4n")
+texture_pressed = ExtResource("2_i2ww6")
+
+[node name="pause_menu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_adn8n")
+
+[node name="pause_bg_overreaching" type="Panel" parent="pause_menu"]
+modulate = Color(1, 1, 1, 0.266667)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="pause_bg_overlay" type="Panel" parent="pause_menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -160.0
+offset_right = 240.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(240, 160)
+
+[node name="pause_vbox" type="VBoxContainer" parent="pause_menu/pause_bg_overlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="pause_title" type="Label" parent="pause_menu/pause_bg_overlay/pause_vbox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_210y3")
+theme_override_font_sizes/font_size = 85
+text = "-PAUSE-"
+horizontal_alignment = 1
+
+[node name="disclaimer_title" type="Label" parent="pause_menu/pause_bg_overlay/pause_vbox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_210y3")
+theme_override_font_sizes/font_size = 19
+text = "This does not stop the game from running."
+horizontal_alignment = 1
+
+[node name="resume_button" type="Button" parent="pause_menu/pause_bg_overlay/pause_vbox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_210y3")
+theme_override_font_sizes/font_size = 60
+text = "Resume"
+
+[node name="exit_button" type="Button" parent="pause_menu/pause_bg_overlay/pause_vbox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_210y3")
+theme_override_font_sizes/font_size = 60
+text = "Exit"
+
+[node name="scene_loader" type="Node" parent="."]
+script = ExtResource("4_b7wmj")
+
+[connection signal="pressed" from="pause_button" to="pause_menu" method="set_pause_state" binds= [true]]
+[connection signal="button_down" from="pause_menu/pause_bg_overlay/pause_vbox/resume_button" to="pause_menu" method="set_pause_state" binds= [false]]
+[connection signal="button_down" from="pause_menu/pause_bg_overlay/pause_vbox/exit_button" to="scene_loader" method="load_scene" binds= ["res://scenes/menu/menu_main.tscn"]]

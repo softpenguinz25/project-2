@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://du1j16gwgprge"]
+[gd_scene load_steps=11 format=3 uid="uid://du1j16gwgprge"]
 
 [ext_resource type="Script" path="res://scripts/misc/scene_loader.gd" id="1_jb6ee"]
 [ext_resource type="FontFile" uid="uid://c458otts8ji68" path="res://ui/fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" id="2_r55k3"]
 [ext_resource type="AudioStream" uid="uid://gaks83id48pl" path="res://sounds/cutscenes/cutscene_5amto6am.wav" id="3_y464p"]
 [ext_resource type="AudioStream" uid="uid://bpxa5va4gdwvw" path="res://sounds/cutscenes/cutscene_kidscheering.wav" id="4_5rs5x"]
+[ext_resource type="Script" path="res://scripts/misc/night_won_data.gd" id="5_40ano"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_y4kvj"]
 
@@ -179,6 +180,9 @@ offset_top = 406.0
 offset_right = 1280.0
 offset_bottom = 726.0
 texture = SubResource("CanvasTexture_tcx3e")
+
+[node name="night_won_data" type="Node" parent="."]
+script = ExtResource("5_40ano")
 
 [connection signal="timeout" from="Timer" to="scene_switcher" method="load_scene" binds= ["res://scenes/cutscenes/scene_win.tscn"]]
 [connection signal="timeout" from="Timer2" to="AudioStreamPlayer2" method="play"]

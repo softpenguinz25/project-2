@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://78vn01utb0p6"
-path="res://.godot/imported/JujuProdGames Logo.png-42a49028061d842b465abc913fe09212.ctex"
+uid="uid://dd561y450030a"
+path="res://.godot/imported/pause_button_idle.png-539ff2038b9ef082232e1c96e67b8ada.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://JujuProdGames Logo.png"
-dest_files=["res://.godot/imported/JujuProdGames Logo.png-42a49028061d842b465abc913fe09212.ctex"]
+source_file="res://sprites/ui/pause_button_idle.png"
+dest_files=["res://.godot/imported/pause_button_idle.png-539ff2038b9ef082232e1c96e67b8ada.ctex"]
 
 [params]
 

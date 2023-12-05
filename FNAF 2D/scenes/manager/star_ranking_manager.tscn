@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6s87kaxktx6k"]
+
+[ext_resource type="Script" path="res://scripts/ui/star_ranking.gd" id="1_xq0go"]
+
+[node name="star_ranking_manager" type="Node"]
+script = ExtResource("1_xq0go")
