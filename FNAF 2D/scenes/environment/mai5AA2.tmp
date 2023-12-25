@@ -1,0 +1,1084 @@
+[gd_scene load_steps=84 format=3 uid="uid://cq3xl7epyqcof"]
+
+[ext_resource type="Script" path="res://scripts/misc/scene_loader.gd" id="1_7g5sr"]
+[ext_resource type="Texture2D" uid="uid://iavdw7y2t4ka" path="res://sprites/environment/main_office/checkerboard.png" id="1_7giwt"]
+[ext_resource type="PackedScene" uid="uid://b8dn51lufbqdf" path="res://scenes/characters/player.tscn" id="1_52sae"]
+[ext_resource type="Script" path="res://scripts/ui/battery_timer.gd" id="1_le2rd"]
+[ext_resource type="Script" path="res://scenes/environment/ambience_manager.gd" id="1_slcho"]
+[ext_resource type="Script" path="res://scripts/ui/night_timer.gd" id="1_uycsg"]
+[ext_resource type="Script" path="res://scripts/audio/audio_manager_local.gd" id="1_wodpe"]
+[ext_resource type="PackedScene" uid="uid://cfp78jp6axt6s" path="res://scenes/environment/door.tscn" id="2_mbf6m"]
+[ext_resource type="Texture2D" uid="uid://dmq2ckyixcre0" path="res://sprites/environment/main_office/poster_bonnie.png" id="2_ocusl"]
+[ext_resource type="Texture2D" uid="uid://dvfexnxjhk5ur" path="res://sprites/environment/main_office/table.png" id="3_6j2kl"]
+[ext_resource type="Texture2D" uid="uid://blpp3id8h5igu" path="res://sprites/environment/main_office/poster_chica.png" id="3_54f56"]
+[ext_resource type="Script" path="res://scripts/ui/jumpscare_manager.gd" id="3_h0wic"]
+[ext_resource type="Texture2D" uid="uid://beoixkh4fcusk" path="res://sprites/environment/main_office/poster_foxy.png" id="4_evmdn"]
+[ext_resource type="Script" path="res://scripts/environment/camera_tweener.gd" id="4_fgdp0"]
+[ext_resource type="Texture2D" uid="uid://y6yqx1oqxrhd" path="res://sprites/environment/main_office/tv.png" id="4_yislq"]
+[ext_resource type="PackedScene" uid="uid://gce66gknn2m8" path="res://scenes/monitor/monitor_screen.tscn" id="5_2xxo1"]
+[ext_resource type="Texture2D" uid="uid://dnjau41foeqn5" path="res://sprites/environment/main_office/poster_freddy.png" id="5_qsvjq"]
+[ext_resource type="PackedScene" uid="uid://dtfwnspxtw300" path="res://scenes/environment/controlled_shock.tscn" id="7_5di67"]
+[ext_resource type="PackedScene" uid="uid://biqinu2vf4hhn" path="res://scenes/characters/animatronics/freddy.tscn" id="8_8st2l"]
+[ext_resource type="Texture2D" uid="uid://gj1qxmaloo2r" path="res://sprites/environment/main_office/poster_celebrate.png" id="8_56gpw"]
+[ext_resource type="Texture2D" uid="uid://dm6gd5iggigeq" path="res://sprites/circle.png" id="8_srpys"]
+[ext_resource type="PackedScene" uid="uid://dx4nwqj61k5ub" path="res://scenes/characters/animatronics/bonnie.tscn" id="8_w172p"]
+[ext_resource type="Script" path="res://scripts/controls/controls_manager.gd" id="8_xyoyc"]
+[ext_resource type="PackedScene" uid="uid://ptnmkyrjbbv6" path="res://scenes/characters/animatronics/chica.tscn" id="9_vuwfo"]
+[ext_resource type="Texture2D" uid="uid://caroegfhu8p6o" path="res://sprites/circle_faded.png" id="11_435lt"]
+[ext_resource type="PackedScene" uid="uid://bg513jn72ci7b" path="res://scenes/characters/animatronics/foxy.tscn" id="11_rr8c6"]
+[ext_resource type="PackedScene" uid="uid://bacnqjv7gmdyp" path="res://scenes/environment/vent.tscn" id="15_ksk3m"]
+[ext_resource type="FontFile" uid="uid://c458otts8ji68" path="res://ui/fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" id="16_wag7a"]
+[ext_resource type="Script" path="res://scripts/ui/time_text.gd" id="17_atj12"]
+[ext_resource type="Texture2D" uid="uid://25lyeii26ugb" path="res://sprites/triangle_faded.png" id="17_r0iwr"]
+[ext_resource type="Texture2D" uid="uid://4mb717pe7bls" path="res://sprites/ui/battery.png" id="18_yn54k"]
+[ext_resource type="Script" path="res://scripts/characters/animatronics/ai_manager_local.gd" id="19_i2y4a"]
+[ext_resource type="Script" path="res://scripts/ui/battery_label.gd" id="20_wdquv"]
+[ext_resource type="Script" path="res://scripts/ui/usage_bar.gd" id="21_qecai"]
+[ext_resource type="Texture2D" uid="uid://dbdxg7l6q5qwq" path="res://sprites/ui/usage_bar.png" id="21_srqtj"]
+[ext_resource type="Script" path="res://scripts/environment/flickering_light.gd" id="23_8xgfu"]
+[ext_resource type="PackedScene" uid="uid://laggy4k680x3" path="res://scenes/characters/animatronics/power_off_sequence.tscn" id="24_76qqo"]
+[ext_resource type="Texture2D" uid="uid://m4ahsdeb8hs4" path="res://sprites/characters/animatronics/freddy.png" id="27_pyv15"]
+[ext_resource type="Script" path="res://scripts/ui/jumpscare_gfx.gd" id="28_h3xu5"]
+[ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_jumpscare.gd" id="28_okq1x"]
+[ext_resource type="Texture2D" uid="uid://bg43yix30oy1r" path="res://sprites/characters/animatronics/bonnie.png" id="29_mlvg8"]
+[ext_resource type="Texture2D" uid="uid://cqoahgwik4jad" path="res://sprites/characters/animatronics/chica.png" id="30_jfwju"]
+[ext_resource type="Texture2D" uid="uid://ska12g6uvqs1" path="res://sprites/characters/animatronics/foxy.png" id="31_kxx03"]
+[ext_resource type="Shader" path="res://shaders/static_noise.gdshader" id="31_uy5bd"]
+[ext_resource type="Script" path="res://scripts/environment/interactable_button.gd" id="32_ewhl3"]
+[ext_resource type="AudioStream" uid="uid://d3m8mjy8816ky" path="res://sounds/ambience/ambience_office.wav" id="37_s1esw"]
+[ext_resource type="AudioStream" uid="uid://b7trr841c48r2" path="res://sounds/office/phone_call_edited.wav" id="39_2dram"]
+[ext_resource type="Texture2D" uid="uid://ukd8wuinc6se" path="res://sprites/environment/main_office/shelf.png" id="42_v60vx"]
+[ext_resource type="Texture2D" uid="uid://cga7csxtslv51" path="res://sprites/environment/main_office/papers.png" id="43_bno6d"]
+[ext_resource type="Texture2D" uid="uid://buotigqtscelc" path="res://sprites/characters/animatronics/springtrap.png" id="43_m8a31"]
+[ext_resource type="AudioStream" uid="uid://k3g2oip5hiag" path="res://sounds/office/phone_call_youded.wav" id="47_jxlby"]
+[ext_resource type="Script" path="res://scripts/controls/controls.gd" id="49_hiw70"]
+[ext_resource type="Texture2D" uid="uid://bwq6xlg7v5hwo" path="res://sprites/controls/left_button_idle.png" id="50_npluy"]
+[ext_resource type="Texture2D" uid="uid://douxcqi1hty0r" path="res://sprites/controls/left_button_pressed.png" id="51_nwsy2"]
+[ext_resource type="Texture2D" uid="uid://bkb15so0k6g1v" path="res://sprites/controls/right_button_idle.png" id="52_wm7mj"]
+[ext_resource type="Texture2D" uid="uid://bjy3ipwfd2ikh" path="res://sprites/controls/right_button_pressed.png" id="53_ssi3s"]
+[ext_resource type="PackedScene" uid="uid://s7y7la06qtuq" path="res://scenes/ui/pause_menu.tscn" id="54_0trjx"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ry0vv"]
+
+[sub_resource type="Gradient" id="Gradient_3qded"]
+offsets = PackedFloat32Array(0, 0.2, 0.787097, 1)
+colors = PackedColorArray(0.0352941, 0.0352941, 0.0352941, 1, 0.156863, 0.156863, 0.156863, 1, 0.156863, 0.156863, 0.156863, 1, 0.0352941, 0.0352941, 0.0352941, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cetqn"]
+gradient = SubResource("Gradient_3qded")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_shwq5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5joot"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ig8q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dnmg5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tb1lb"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_6i2pb"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_2xu5p"]
+
+[sub_resource type="Animation" id="Animation_nnko5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("power_off_lighting:enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("power_off_completely_lighting:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_y21ku"]
+resource_name = "power_off_completely_flicker"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("power_off_lighting:enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.4, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("power_off_completely_lighting:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.4, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d270r"]
+_data = {
+"RESET": SubResource("Animation_nnko5"),
+"power_off_completely_flicker": SubResource("Animation_y21ku")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m45bn"]
+size = Vector2(1280, 72)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2utnd"]
+frequency = 0.1252
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2gfao"]
+frequency = 0.1252
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_r2mov"]
+noise_type = 3
+frequency = 0.1252
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xl4uu"]
+noise_type = 3
+frequency = 0.0626
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_nmf0t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3giqt"]
+size = Vector2(1280, 144)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e8v3v"]
+shader = ExtResource("31_uy5bd")
+shader_parameter/amount = 40.0
+shader_parameter/transparency = 1.0
+
+[sub_resource type="Animation" id="Animation_a75qs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("static_preview:material:shader_parameter/transparency")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_q2rb5"]
+resource_name = "static_preview_fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.133333), Color(1, 1, 1, 0.133333), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("static_preview:material:shader_parameter/transparency")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.125, 0.125, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aepmt"]
+_data = {
+"RESET": SubResource("Animation_a75qs"),
+"static_preview_fade_in": SubResource("Animation_q2rb5")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rlic5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rcoei"]
+size = Vector2(264, 184)
+
+[node name="main_office" type="Node2D"]
+
+[node name="game_manager" type="Node" parent="."]
+
+[node name="scene_loader" type="Node" parent="game_manager"]
+script = ExtResource("1_7g5sr")
+
+[node name="ambience_manager" type="Node" parent="game_manager"]
+script = ExtResource("1_slcho")
+total_variation_time = 30.0
+
+[node name="ambience_timer_eerie" type="Timer" parent="game_manager/ambience_manager"]
+wait_time = 60.0
+one_shot = true
+
+[node name="ambience_timer_circus" type="Timer" parent="game_manager/ambience_manager"]
+wait_time = 150.0
+one_shot = true
+
+[node name="ambience_timer_cold" type="Timer" parent="game_manager/ambience_manager"]
+wait_time = 180.0
+one_shot = true
+
+[node name="ambience_timer_dumdumsong" type="Timer" parent="game_manager/ambience_manager"]
+wait_time = 300.0
+one_shot = true
+
+[node name="audio_manager_local" type="Node" parent="game_manager"]
+script = ExtResource("1_wodpe")
+
+[node name="night_timer" type="Timer" parent="game_manager"]
+wait_time = 360.0
+one_shot = true
+autostart = true
+script = ExtResource("1_uycsg")
+
+[node name="battery_timer" type="Node" parent="game_manager"]
+script = ExtResource("1_le2rd")
+power_per_second = 0.1
+
+[node name="camera_manager" type="Node" parent="game_manager" node_paths=PackedStringArray("camera", "camera_parent", "start_node")]
+script = ExtResource("4_fgdp0")
+camera = NodePath("camera_manager_parent/Camera2D")
+camera_parent = NodePath("camera_manager_parent")
+start_node = NodePath("default")
+
+[node name="camera_manager_parent" type="Node2D" parent="game_manager/camera_manager"]
+
+[node name="Camera2D" type="Camera2D" parent="game_manager/camera_manager/camera_manager_parent"]
+position = Vector2(640, 360)
+scale = Vector2(10.8, 10.8)
+
+[node name="default" type="Node2D" parent="game_manager/camera_manager"]
+position = Vector2(640, 360)
+
+[node name="door_left" type="Node2D" parent="game_manager/camera_manager"]
+position = Vector2(320, 360)
+
+[node name="door_right" type="Node2D" parent="game_manager/camera_manager"]
+position = Vector2(960, 360)
+
+[node name="monitor" type="Node2D" parent="game_manager/camera_manager"]
+position = Vector2(959, 493.5)
+scale = Vector2(10.8, 10.8)
+
+[node name="jumpscare_manager" type="Node" parent="game_manager" node_paths=PackedStringArray("jumpscare_timer")]
+script = ExtResource("3_h0wic")
+jumpscare_timer = NodePath("jumpscare_timer")
+
+[node name="jumpscare_timer" type="Timer" parent="game_manager/jumpscare_manager"]
+one_shot = true
+
+[node name="controls_manager" type="Node" parent="game_manager" node_paths=PackedStringArray("mobile_controls")]
+script = ExtResource("8_xyoyc")
+mobile_controls = NodePath("../../ui/ui_bottombar/ui_mobile_controls")
+show_mobile_controls = false
+
+[node name="environment" type="Node2D" parent="."]
+
+[node name="black_bg" type="Sprite2D" parent="environment"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(640, 360)
+scale = Vector2(3000, 2000)
+texture = SubResource("CanvasTexture_ry0vv")
+
+[node name="background" type="Sprite2D" parent="environment"]
+light_mask = 3
+position = Vector2(639.988, 396)
+rotation = 1.57079
+scale = Vector2(1.969, 1920)
+texture = SubResource("GradientTexture1D_cetqn")
+
+[node name="poster_celebrate" type="Sprite2D" parent="environment"]
+position = Vector2(344, 264)
+scale = Vector2(2, 2)
+texture = ExtResource("8_56gpw")
+
+[node name="poster_celebrate_freddyhonk" type="Button" parent="environment/poster_celebrate"]
+offset_left = -5.0
+offset_top = -9.0
+offset_right = 11.0
+offset_bottom = 7.0
+scale = Vector2(0.5, 0.5)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_shwq5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5joot")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2ig8q")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dnmg5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tb1lb")
+
+[node name="poster_bonnie" type="Sprite2D" parent="environment"]
+position = Vector2(-240, 301)
+rotation = 0.261799
+scale = Vector2(16, 16)
+skew = -4.8995e-05
+texture = ExtResource("2_ocusl")
+
+[node name="poster_chica" type="Sprite2D" parent="environment"]
+position = Vector2(-96, 414)
+rotation = -0.261799
+scale = Vector2(16, 16)
+skew = -4.8995e-05
+texture = ExtResource("3_54f56")
+
+[node name="poster_foxy" type="Sprite2D" parent="environment"]
+position = Vector2(1506, 368)
+rotation = -0.261799
+scale = Vector2(16, 16)
+skew = -4.8995e-05
+texture = ExtResource("4_evmdn")
+
+[node name="poster_freddy" type="Sprite2D" parent="environment"]
+position = Vector2(1369, 441)
+rotation = 0.261799
+scale = Vector2(16, 16)
+skew = -4.8995e-05
+texture = ExtResource("5_qsvjq")
+
+[node name="hall" type="Sprite2D" parent="environment"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(640, 396)
+scale = Vector2(240, 504)
+texture = SubResource("CanvasTexture_6i2pb")
+
+[node name="papers" type="Sprite2D" parent="environment"]
+self_modulate = Color(1, 1, 1, 0.533333)
+position = Vector2(229, 608)
+scale = Vector2(5, 5)
+texture = ExtResource("43_bno6d")
+
+[node name="papers2" type="Sprite2D" parent="environment"]
+self_modulate = Color(1, 1, 1, 0.533333)
+position = Vector2(1027, 615)
+rotation = 3.14159
+scale = Vector2(4, -4)
+texture = ExtResource("43_bno6d")
+
+[node name="table" type="Sprite2D" parent="environment"]
+position = Vector2(956, 600)
+scale = Vector2(10, 10)
+texture = ExtResource("3_6j2kl")
+
+[node name="vent_bg" type="Sprite2D" parent="environment"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(376, 448)
+scale = Vector2(128, 128)
+texture = SubResource("CanvasTexture_2xu5p")
+
+[node name="animatronics" type="Node2D" parent="environment" node_paths=PackedStringArray("animatronics_to_set")]
+script = ExtResource("19_i2y4a")
+animatronics_to_set = [NodePath("freddy"), NodePath("bonnie"), NodePath("chica"), NodePath("foxy")]
+
+[node name="freddy" parent="environment/animatronics" node_paths=PackedStringArray("monitor_screen") instance=ExtResource("8_8st2l")]
+monitor_screen = NodePath("../../monitor/monitor_screen")
+
+[node name="bonnie" parent="environment/animatronics" node_paths=PackedStringArray("door_obstacle", "monitor_screen") instance=ExtResource("8_w172p")]
+door_obstacle = NodePath("../../door_left")
+monitor_screen = NodePath("../../monitor/monitor_screen")
+
+[node name="chica" parent="environment/animatronics" node_paths=PackedStringArray("door_obstacle", "monitor_screen") instance=ExtResource("9_vuwfo")]
+door_obstacle = NodePath("../../door_right")
+monitor_screen = NodePath("../../monitor/monitor_screen")
+
+[node name="foxy" parent="environment/animatronics" node_paths=PackedStringArray("monitor_screen") instance=ExtResource("11_rr8c6")]
+monitor_screen = NodePath("../../monitor/monitor_screen")
+
+[node name="power_off_sequence" parent="environment/animatronics" node_paths=PackedStringArray("timer_until_animatronic_footstep", "timer_until_animatronic_footstep_darkness") instance=ExtResource("24_76qqo")]
+timer_until_animatronic_footstep = NodePath("animatronic_footstep_sfx_timer")
+timer_until_animatronic_footstep_darkness = NodePath("animatronic_footstep_darkness_sfx_timer")
+
+[node name="animatronic_footstep_sfx_timer" type="Timer" parent="environment/animatronics/power_off_sequence"]
+one_shot = true
+
+[node name="animatronic_footstep_darkness_sfx_timer" type="Timer" parent="environment/animatronics/power_off_sequence"]
+one_shot = true
+
+[node name="freddy_eyes_lighting" type="PointLight2D" parent="environment/animatronics/power_off_sequence"]
+light_mask = 8
+visibility_layer = 8
+position = Vector2(640, 360)
+enabled = false
+range_item_cull_mask = 8
+texture = ExtResource("8_srpys")
+texture_scale = 7.47
+
+[node name="power_off_light" type="Node2D" parent="environment/animatronics/power_off_sequence"]
+
+[node name="power_off_lighting" type="DirectionalLight2D" parent="environment/animatronics/power_off_sequence/power_off_light"]
+enabled = false
+energy = 0.9
+blend_mode = 1
+
+[node name="power_off_completely_lighting" type="DirectionalLight2D" parent="environment/animatronics/power_off_sequence/power_off_light"]
+enabled = false
+blend_mode = 1
+
+[node name="power_off_completely_animation" type="AnimationPlayer" parent="environment/animatronics/power_off_sequence/power_off_light"]
+libraries = {
+"": SubResource("AnimationLibrary_d270r")
+}
+speed_scale = 4.0
+
+[node name="controlled_shock" parent="environment" node_paths=PackedStringArray("animatronic_to_shock") instance=ExtResource("7_5di67")]
+position = Vector2(640, 568)
+scale = Vector2(1.25, 1.25)
+animatronic_to_shock = NodePath("../animatronics/freddy")
+
+[node name="floor" type="StaticBody2D" parent="environment"]
+
+[node name="floor_texturerect" type="TextureRect" parent="environment/floor"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 201.0
+offset_top = 668.0
+offset_right = 1066.0
+offset_bottom = 700.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.25, 2.25)
+pivot_offset = Vector2(426.75, 16)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_7giwt")
+stretch_mode = 1
+
+[node name="floor_collision" type="CollisionShape2D" parent="environment/floor"]
+position = Vector2(640, 684)
+shape = SubResource("RectangleShape2D_m45bn")
+
+[node name="door_left" parent="environment" instance=ExtResource("2_mbf6m")]
+
+[node name="PointLight2D" type="PointLight2D" parent="environment/door_left" node_paths=PackedStringArray("light_to_flicker")]
+position = Vector2(-214, -36)
+scale = Vector2(1.19, 2.3125)
+enabled = false
+range_item_cull_mask = 2
+texture = ExtResource("11_435lt")
+script = ExtResource("23_8xgfu")
+light_to_flicker = NodePath(".")
+noise = SubResource("FastNoiseLite_2utnd")
+total_energy_range = 1.0
+
+[node name="door_right" parent="environment" instance=ExtResource("2_mbf6m")]
+position = Vector2(1227, 396)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="PointLight2D" type="PointLight2D" parent="environment/door_right" node_paths=PackedStringArray("light_to_flicker")]
+position = Vector2(-214, -36)
+scale = Vector2(1.19, 2.3125)
+enabled = false
+range_item_cull_mask = 2
+texture = ExtResource("11_435lt")
+script = ExtResource("23_8xgfu")
+light_to_flicker = NodePath(".")
+noise = SubResource("FastNoiseLite_2gfao")
+total_energy_range = 1.0
+
+[node name="shelf" type="Sprite2D" parent="environment"]
+light_mask = 5
+position = Vector2(956, 226)
+scale = Vector2(10, 10)
+texture = ExtResource("42_v60vx")
+
+[node name="PointLight2D" type="PointLight2D" parent="environment/shelf" node_paths=PackedStringArray("light_to_flicker")]
+position = Vector2(-8.5, -4.5)
+scale = Vector2(0.0276855, 0.0276855)
+color = Color(1, 0.752941, 0, 1)
+energy = 3.5
+range_item_cull_mask = 6
+texture = ExtResource("11_435lt")
+script = ExtResource("23_8xgfu")
+light_to_flicker = NodePath(".")
+noise = SubResource("FastNoiseLite_r2mov")
+
+[node name="light" type="Sprite2D" parent="environment"]
+self_modulate = Color(1, 0.945098, 0.760784, 1)
+position = Vector2(640, 144)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_srpys")
+
+[node name="PointLight2D" type="PointLight2D" parent="environment/light" node_paths=PackedStringArray("light_to_flicker")]
+position = Vector2(-3352, 516)
+scale = Vector2(4.625, 5.95475)
+energy = 3.0
+range_item_cull_mask = 2
+texture = ExtResource("17_r0iwr")
+offset = Vector2(726.919, -30.228)
+script = ExtResource("23_8xgfu")
+light_to_flicker = NodePath(".")
+noise = SubResource("FastNoiseLite_xl4uu")
+total_energy_range = 1.0
+
+[node name="ceiling" type="StaticBody2D" parent="environment"]
+
+[node name="Sprite2D" type="Sprite2D" parent="environment/ceiling"]
+modulate = Color(0.0196078, 0.0196078, 0.0196078, 1)
+position = Vector2(640, 72)
+scale = Vector2(1920, -144)
+texture = SubResource("CanvasTexture_nmf0t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="environment/ceiling"]
+position = Vector2(640, 72)
+shape = SubResource("RectangleShape2D_3giqt")
+
+[node name="monitor" type="Sprite2D" parent="environment"]
+position = Vector2(959, 477)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_yislq")
+
+[node name="monitor_screen" parent="environment/monitor" node_paths=PackedStringArray("monitor_focus_button", "nodes_to_set_active") instance=ExtResource("5_2xxo1")]
+offset_left = -119.0
+offset_top = -34.0
+offset_right = 898.0
+offset_bottom = 436.0
+scale = Vector2(0.185, 0.185)
+monitor_focus_button = NodePath("../monitor_focus_button")
+nodes_to_set_active = [NodePath("."), NodePath("../monitor_focus_button")]
+metadata/_edit_use_anchors_ = true
+
+[node name="static_preview_bg" type="ColorRect" parent="environment/monitor"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -119.0
+offset_top = -34.0
+offset_right = -145.0
+offset_bottom = -152.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.466667, 0.466667, 0.466667, 1)
+
+[node name="static_preview" type="ColorRect" parent="environment/monitor/static_preview_bg"]
+material = SubResource("ShaderMaterial_e8v3v")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="static_preview_animation" type="AnimationPlayer" parent="environment/monitor/static_preview_bg"]
+libraries = {
+"": SubResource("AnimationLibrary_aepmt")
+}
+autoplay = "static_preview_fade_in"
+
+[node name="monitor_focus_button" type="Button" parent="environment/monitor"]
+offset_left = -132.0
+offset_top = -58.0
+offset_right = 132.0
+offset_bottom = 126.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rlic5")
+script = ExtResource("32_ewhl3")
+
+[node name="interact_area" type="Area2D" parent="environment/monitor/monitor_focus_button" groups=["interactable"]]
+
+[node name="interact_collider" type="CollisionShape2D" parent="environment/monitor/monitor_focus_button/interact_area"]
+position = Vector2(132, 92)
+shape = SubResource("RectangleShape2D_rcoei")
+
+[node name="vent" parent="environment" node_paths=PackedStringArray("animatronic_to_shock") instance=ExtResource("15_ksk3m")]
+light_mask = 3
+position = Vector2(376, 448)
+animatronic_to_shock = NodePath("../animatronics/foxy")
+
+[node name="player" type="Node2D" parent="."]
+
+[node name="player" parent="player" instance=ExtResource("1_52sae")]
+light_mask = 3
+position = Vector2(956, 520)
+metadata/_edit_lock_ = true
+
+[node name="ui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ui_topbar" type="Control" parent="ui"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_right = 1280.0
+offset_bottom = 144.0
+grow_horizontal = 2
+
+[node name="time" type="Label" parent="ui/ui_topbar" node_paths=PackedStringArray("night_timer")]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("16_wag7a")
+theme_override_font_sizes/font_size = 120
+text = "-12 AM-"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("17_atj12")
+night_timer = NodePath("../../../game_manager/night_timer")
+
+[node name="battery" type="TextureRect" parent="ui/ui_topbar"]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 80.0
+texture = ExtResource("18_yn54k")
+stretch_mode = 5
+
+[node name="battery_label" type="Label" parent="ui/ui_topbar/battery" node_paths=PackedStringArray("battery_timer")]
+layout_mode = 0
+offset_left = 128.0
+offset_right = 272.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_wag7a")
+theme_override_font_sizes/font_size = 56
+text = ":69%"
+vertical_alignment = 1
+script = ExtResource("20_wdquv")
+battery_timer = NodePath("../../../../game_manager/battery_timer")
+
+[node name="usage_label" type="Label" parent="ui/ui_topbar" node_paths=PackedStringArray("battery_timer")]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 198.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("16_wag7a")
+theme_override_font_sizes/font_size = 56
+text = "Usage:"
+vertical_alignment = 1
+script = ExtResource("21_qecai")
+battery_timer = NodePath("../../../game_manager/battery_timer")
+
+[node name="usage_bar_1" type="TextureRect" parent="ui/ui_topbar/usage_label"]
+self_modulate = Color(0, 1, 0, 1)
+layout_mode = 0
+offset_left = 192.0
+offset_top = 24.0
+offset_right = 224.0
+offset_bottom = 64.0
+texture = ExtResource("21_srqtj")
+
+[node name="usage_bar_2" type="TextureRect" parent="ui/ui_topbar/usage_label"]
+visible = false
+self_modulate = Color(0, 1, 0, 1)
+layout_mode = 0
+offset_left = 232.0
+offset_top = 24.0
+offset_right = 264.0
+offset_bottom = 64.0
+texture = ExtResource("21_srqtj")
+
+[node name="usage_bar_3" type="TextureRect" parent="ui/ui_topbar/usage_label"]
+visible = false
+self_modulate = Color(1, 1, 0, 1)
+layout_mode = 0
+offset_left = 272.0
+offset_top = 24.0
+offset_right = 304.0
+offset_bottom = 64.0
+texture = ExtResource("21_srqtj")
+
+[node name="usage_bar_4" type="TextureRect" parent="ui/ui_topbar/usage_label"]
+visible = false
+self_modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = 312.0
+offset_top = 24.0
+offset_right = 344.0
+offset_bottom = 64.0
+texture = ExtResource("21_srqtj")
+
+[node name="night_text" type="Label" parent="ui/ui_topbar"]
+layout_mode = 0
+offset_left = 1019.0
+offset_right = 1280.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("16_wag7a")
+theme_override_font_sizes/font_size = 64
+text = "Night:
+-1-"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ui_jumpscare" type="Control" parent="ui"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("28_h3xu5")
+jumpscare_sprites = {
+"bonnie": NodePath("bonnie_jumpscare"),
+"chica": NodePath("chica_jumpscare"),
+"foxy": NodePath("foxy_jumpscare"),
+"freddy": NodePath("freddy_jumpscare"),
+"springtrap": NodePath("springtrap_jumpscare")
+}
+
+[node name="freddy_jumpscare" type="TextureRect" parent="ui/ui_jumpscare"]
+visible = false
+light_mask = 8
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 1280.0
+texture = ExtResource("27_pyv15")
+stretch_mode = 5
+script = ExtResource("28_okq1x")
+
+[node name="bonnie_jumpscare" type="TextureRect" parent="ui/ui_jumpscare"]
+visible = false
+light_mask = 8
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 1280.0
+texture = ExtResource("29_mlvg8")
+stretch_mode = 5
+script = ExtResource("28_okq1x")
+
+[node name="chica_jumpscare" type="TextureRect" parent="ui/ui_jumpscare"]
+visible = false
+light_mask = 8
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 1280.0
+texture = ExtResource("30_jfwju")
+stretch_mode = 5
+script = ExtResource("28_okq1x")
+
+[node name="foxy_jumpscare" type="TextureRect" parent="ui/ui_jumpscare"]
+visible = false
+light_mask = 8
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 1280.0
+texture = ExtResource("31_kxx03")
+stretch_mode = 5
+script = ExtResource("28_okq1x")
+
+[node name="springtrap_jumpscare" type="TextureRect" parent="ui/ui_jumpscare"]
+visible = false
+light_mask = 8
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 1280.0
+texture = ExtResource("43_m8a31")
+stretch_mode = 5
+script = ExtResource("28_okq1x")
+
+[node name="ui_bottombar" type="Control" parent="ui"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = 648.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="skip_call" type="Button" parent="ui/ui_bottombar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.0
+offset_top = -22.0
+offset_right = 78.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("16_wag7a")
+theme_override_font_sizes/font_size = 24
+text = "SKIP CALL"
+
+[node name="ui_mobile_controls" type="CanvasLayer" parent="ui/ui_bottombar"]
+
+[node name="mobile_move_left" type="TouchScreenButton" parent="ui/ui_bottombar/ui_mobile_controls"]
+modulate = Color(1, 1, 1, 0.533333)
+position = Vector2(30, 546)
+scale = Vector2(0.56, 0.56)
+texture_normal = ExtResource("50_npluy")
+texture_pressed = ExtResource("51_nwsy2")
+action = "move_left"
+visibility_mode = 1
+
+[node name="mobile_move_right" type="TouchScreenButton" parent="ui/ui_bottombar/ui_mobile_controls"]
+modulate = Color(1, 1, 1, 0.533333)
+position = Vector2(1106, 546)
+scale = Vector2(0.56, 0.56)
+texture_normal = ExtResource("52_wm7mj")
+texture_pressed = ExtResource("53_ssi3s")
+action = "move_right"
+visibility_mode = 1
+
+[node name="ui_mobile_controls_OLD" type="CanvasLayer" parent="ui/ui_bottombar"]
+visible = false
+script = ExtResource("49_hiw70")
+
+[node name="mobile_move_left_OLD" type="Button" parent="ui/ui_bottombar/ui_mobile_controls_OLD"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 56.0
+offset_top = -168.0
+offset_right = 184.0
+offset_bottom = -40.0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("16_wag7a")
+theme_override_font_sizes/font_size = 81
+text = "<"
+
+[node name="mobile_move_right_OLD" type="Button" parent="ui/ui_bottombar/ui_mobile_controls_OLD"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -168.0
+offset_top = -168.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("16_wag7a")
+theme_override_font_sizes/font_size = 81
+text = ">"
+
+[node name="pause" parent="ui" instance=ExtResource("54_0trjx")]
+visible = false
+
+[node name="office_ambience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("37_s1esw")
+volume_db = -20.0
+autoplay = true
+
+[node name="phone_call" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("39_2dram")
+autoplay = true
+
+[node name="phone_call_youded" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("47_jxlby")
+
+[connection signal="timeout" from="game_manager/ambience_manager/ambience_timer_eerie" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/ambience/ambience_eerie.wav"]]
+[connection signal="timeout" from="game_manager/ambience_manager/ambience_timer_circus" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/ambience/ambience_circus.wav"]]
+[connection signal="timeout" from="game_manager/ambience_manager/ambience_timer_cold" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/ambience/ambience_cold.wav"]]
+[connection signal="timeout" from="game_manager/ambience_manager/ambience_timer_dumdumsong" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/ambience/ambience_dumdumsong.wav"]]
+[connection signal="timeout" from="game_manager/night_timer" to="game_manager/audio_manager_local" method="stop_all_sounds"]
+[connection signal="timeout" from="game_manager/night_timer" to="game_manager/night_timer" method="night_won"]
+[connection signal="incremented_power" from="game_manager/battery_timer" to="ui/ui_topbar/battery/battery_label" method="increment_power_gfx"]
+[connection signal="out_of_power" from="game_manager/battery_timer" to="environment/animatronics/power_off_sequence" method="increment_power_off_stage"]
+[connection signal="usage_changed" from="game_manager/battery_timer" to="ui/ui_topbar/usage_label" method="set_usage_bars"]
+[connection signal="jumpscare_finished" from="game_manager/jumpscare_manager" to="game_manager/scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/scene_static.tscn"]]
+[connection signal="jumpscare_played" from="game_manager/jumpscare_manager" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_jumpscare.wav"]]
+[connection signal="jumpscare_played" from="game_manager/jumpscare_manager" to="game_manager/camera_manager" method="shake_screen" binds= [5.0]]
+[connection signal="jumpscare_played" from="game_manager/jumpscare_manager" to="game_manager/camera_manager" method="set_camera_pos" binds= ["default", 0.2]]
+[connection signal="jumpscare_played" from="game_manager/jumpscare_manager" to="environment/monitor/monitor_screen" method="set_monitor_focus" binds= [false]]
+[connection signal="jumpscare_played_with_name" from="game_manager/jumpscare_manager" to="ui/ui_jumpscare" method="show_jumpscare_sprite"]
+[connection signal="timeout" from="game_manager/jumpscare_manager/jumpscare_timer" to="game_manager/audio_manager_local" method="stop_all_sounds"]
+[connection signal="timeout" from="game_manager/jumpscare_manager/jumpscare_timer" to="game_manager/jumpscare_manager" method="finish_jumpscare"]
+[connection signal="map_toggled" from="game_manager/controls_manager" to="environment/monitor/monitor_screen" method="toggle_map"]
+[connection signal="button_down" from="environment/poster_celebrate/poster_celebrate_freddyhonk" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/nose_honk.wav"]]
+[connection signal="using_20d_mode" from="environment/animatronics" to="phone_call" method="stop"]
+[connection signal="using_20d_mode" from="environment/animatronics" to="phone_call_youded" method="play"]
+[connection signal="using_20d_mode" from="environment/animatronics" to="ui/ui_topbar/night_text" method="set_text" binds= ["Night:-20D-"]]
+[connection signal="animatronic_jumpscare" from="environment/animatronics/freddy" to="game_manager/jumpscare_manager" method="play_jumpscare"]
+[connection signal="animatronic_moved" from="environment/animatronics/freddy" to="environment/monitor/monitor_screen" method="animatronic_moved_to"]
+[connection signal="animatronic_moved" from="environment/animatronics/freddy" to="environment/monitor/monitor_screen" method="set_animatronic_pos"]
+[connection signal="animatronic_moved_from" from="environment/animatronics/freddy" to="environment/monitor/monitor_screen" method="animatronic_moved_from"]
+[connection signal="in_office_cue" from="environment/animatronics/freddy" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_scare.wav"]]
+[connection signal="in_office_flashed" from="environment/animatronics/freddy" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_scare.wav"]]
+[connection signal="movement_cue" from="environment/animatronics/freddy" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_footstep.wav"]]
+[connection signal="animatronic_jumpscare" from="environment/animatronics/bonnie" to="game_manager/jumpscare_manager" method="play_jumpscare"]
+[connection signal="animatronic_moved" from="environment/animatronics/bonnie" to="environment/monitor/monitor_screen" method="animatronic_moved_to"]
+[connection signal="animatronic_moved" from="environment/animatronics/bonnie" to="environment/monitor/monitor_screen" method="set_animatronic_pos"]
+[connection signal="animatronic_moved_from" from="environment/animatronics/bonnie" to="environment/monitor/monitor_screen" method="animatronic_moved_from"]
+[connection signal="in_office_flashed" from="environment/animatronics/bonnie" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_scare.wav"]]
+[connection signal="movement_cue" from="environment/animatronics/bonnie" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_footstep.wav"]]
+[connection signal="animatronic_jumpscare" from="environment/animatronics/chica" to="game_manager/jumpscare_manager" method="play_jumpscare"]
+[connection signal="animatronic_moved" from="environment/animatronics/chica" to="environment/monitor/monitor_screen" method="animatronic_moved_to"]
+[connection signal="animatronic_moved" from="environment/animatronics/chica" to="environment/monitor/monitor_screen" method="set_animatronic_pos"]
+[connection signal="animatronic_moved_from" from="environment/animatronics/chica" to="environment/monitor/monitor_screen" method="animatronic_moved_from"]
+[connection signal="in_office_flashed" from="environment/animatronics/chica" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_scare.wav"]]
+[connection signal="movement_cue" from="environment/animatronics/chica" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_footstep.wav"]]
+[connection signal="animatronic_jumpscare" from="environment/animatronics/foxy" to="game_manager/jumpscare_manager" method="play_jumpscare"]
+[connection signal="animatronic_moved" from="environment/animatronics/foxy" to="environment/monitor/monitor_screen" method="animatronic_moved_to"]
+[connection signal="animatronic_moved" from="environment/animatronics/foxy" to="environment/monitor/monitor_screen" method="set_animatronic_pos"]
+[connection signal="animatronic_moved_from" from="environment/animatronics/foxy" to="environment/monitor/monitor_screen" method="animatronic_moved_from"]
+[connection signal="in_office_cue" from="environment/animatronics/foxy" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_scare.wav"]]
+[connection signal="in_office_flashed" from="environment/animatronics/foxy" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_scare.wav"]]
+[connection signal="movement_cue" from="environment/animatronics/foxy" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_footstep.wav"]]
+[connection signal="freddy_flicker_started" from="environment/animatronics/power_off_sequence" to="game_manager/audio_manager_local" method="stop_sound" binds= ["res://sounds/animatronics/animatronic_footstep.wav"]]
+[connection signal="freddy_flicker_started" from="environment/animatronics/power_off_sequence" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_music_box.wav"]]
+[connection signal="jumpscare_played" from="environment/animatronics/power_off_sequence" to="game_manager/jumpscare_manager" method="play_jumpscare" binds= ["freddy"]]
+[connection signal="power_darkness_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/power_off_sequence/animatronic_footstep_darkness_sfx_timer" method="start"]
+[connection signal="power_darkness_started" from="environment/animatronics/power_off_sequence" to="game_manager/audio_manager_local" method="stop_sound" binds= ["res://sounds/animatronics/animatronic_music_box.wav"]]
+[connection signal="power_darkness_started" from="environment/animatronics/power_off_sequence" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_flicker_off.wav"]]
+[connection signal="power_darkness_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/power_off_sequence/power_off_light/power_off_completely_animation" method="play" binds= ["power_off_completely_flicker"]]
+[connection signal="power_darkness_started" from="environment/animatronics/power_off_sequence" to="player/player" method="set_active_state" binds= [false]]
+[connection signal="power_darkness_started" from="environment/animatronics/power_off_sequence" to="ui/ui_bottombar/ui_mobile_controls" method="set_visible" binds= [false]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="game_manager/ambience_manager/ambience_timer_eerie" method="stop"]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="game_manager/ambience_manager/ambience_timer_circus" method="stop"]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="game_manager/ambience_manager/ambience_timer_cold" method="stop"]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="game_manager/ambience_manager/ambience_timer_dumdumsong" method="stop"]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="game_manager/audio_manager_local" method="stop_all_sounds"]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/freddy" method="reset_pos"]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/bonnie" method="reset_pos"]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/chica" method="reset_pos"]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/foxy" method="reset_pos"]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/power_off_sequence/animatronic_footstep_sfx_timer" method="start"]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="player/player" method="muffle_footstep_sfx"]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="office_ambience" method="stop"]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="phone_call" method="stop"]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="phone_call_youded" method="stop"]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_power_down.wav"]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/freddy" method="pause_animatronic" binds= [true]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/bonnie" method="pause_animatronic" binds= [true]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/chica" method="pause_animatronic" binds= [true]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/foxy" method="pause_animatronic" binds= [true]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/power_off_sequence/freddy_eyes_lighting" method="set_enabled" binds= [true]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/power_off_sequence/power_off_light/power_off_lighting" method="set_enabled" binds= [true]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/controlled_shock" method="change_button_disabled_state_permanently" binds= [true]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/door_left" method="change_button_disabled_state" binds= [true]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/door_left" method="change_door_state" binds= [false]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/door_left/PointLight2D" method="set_visible" binds= [false]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/door_right" method="change_button_disabled_state" binds= [true]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/door_right" method="change_door_state" binds= [false]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/door_right/PointLight2D" method="set_visible" binds= [false]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/shelf/PointLight2D" method="set_visible" binds= [false]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/light" method="set_modulate" binds= [Color(0.0156863, 0.0156863, 0.0156863, 1)]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/light/PointLight2D" method="set_visible" binds= [false]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/monitor/monitor_screen" method="set_visible" binds= [false]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/monitor/monitor_screen" method="set_active_state_permanently" binds= [false]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/monitor/monitor_screen" method="set_monitor_focus" binds= [false]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/monitor/static_preview_bg" method="set_visible" binds= [false]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/monitor/monitor_focus_button" method="set_interact_state_absolute" binds= [false]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/vent" method="change_button_disabled_state_permanently" binds= [true]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="ui/ui_topbar" method="set_visible" binds= [false]]
+[connection signal="timeout" from="environment/animatronics/power_off_sequence/animatronic_footstep_sfx_timer" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_footstep.wav"]]
+[connection signal="timeout" from="environment/animatronics/power_off_sequence/animatronic_footstep_darkness_sfx_timer" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_footstep.wav"]]
+[connection signal="attempt_shock" from="environment/controlled_shock" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/office/controlled_shock.wav"]]
+[connection signal="attempt_shock" from="environment/controlled_shock" to="game_manager/battery_timer" method="increment_power" binds= [-3]]
+[connection signal="shock_trigger" from="environment/controlled_shock" to="environment/animatronics/freddy" method="reset_pos"]
+[connection signal="door_off" from="environment/door_left" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_close.wav"]]
+[connection signal="door_off" from="environment/door_left" to="game_manager/battery_timer" method="increment_usage" binds= [-1]]
+[connection signal="door_on" from="environment/door_left" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_close.wav"]]
+[connection signal="door_on" from="environment/door_left" to="game_manager/battery_timer" method="increment_usage" binds= [1]]
+[connection signal="light_off" from="environment/door_left" to="game_manager/audio_manager_local" method="stop_sound" binds= ["res://sounds/door/door_light.wav"]]
+[connection signal="light_off" from="environment/door_left" to="game_manager/battery_timer" method="increment_usage" binds= [-1]]
+[connection signal="light_off" from="environment/door_left" to="game_manager/camera_manager" method="set_camera_pos" binds= ["default", 0.2]]
+[connection signal="light_off" from="environment/door_left" to="environment/door_left/PointLight2D" method="set_enabled" binds= [false]]
+[connection signal="light_on" from="environment/door_left" to="environment/animatronics/bonnie" method="attempt_flash"]
+[connection signal="light_on" from="environment/door_left" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_light.wav"]]
+[connection signal="light_on" from="environment/door_left" to="game_manager/battery_timer" method="increment_usage" binds= [1]]
+[connection signal="light_on" from="environment/door_left" to="game_manager/camera_manager" method="set_camera_pos" binds= ["door_left", 0.2]]
+[connection signal="light_on" from="environment/door_left" to="environment/door_left/PointLight2D" method="set_enabled" binds= [true]]
+[connection signal="door_off" from="environment/door_right" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_close.wav"]]
+[connection signal="door_off" from="environment/door_right" to="game_manager/battery_timer" method="increment_usage" binds= [-1]]
+[connection signal="door_on" from="environment/door_right" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_close.wav"]]
+[connection signal="door_on" from="environment/door_right" to="game_manager/battery_timer" method="increment_usage" binds= [1]]
+[connection signal="light_off" from="environment/door_right" to="game_manager/audio_manager_local" method="stop_sound" binds= ["res://sounds/door/door_light.wav"]]
+[connection signal="light_off" from="environment/door_right" to="game_manager/battery_timer" method="increment_usage" binds= [-1]]
+[connection signal="light_off" from="environment/door_right" to="game_manager/camera_manager" method="set_camera_pos" binds= ["default", 0.2]]
+[connection signal="light_off" from="environment/door_right" to="environment/door_right/PointLight2D" method="set_enabled" binds= [false]]
+[connection signal="light_on" from="environment/door_right" to="environment/animatronics/chica" method="attempt_flash"]
+[connection signal="light_on" from="environment/door_right" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_light.wav"]]
+[connection signal="light_on" from="environment/door_right" to="game_manager/battery_timer" method="increment_usage" binds= [1]]
+[connection signal="light_on" from="environment/door_right" to="game_manager/camera_manager" method="set_camera_pos" binds= ["door_right", 0.2]]
+[connection signal="light_on" from="environment/door_right" to="environment/door_right/PointLight2D" method="set_enabled" binds= [true]]
+[connection signal="active_state_off" from="environment/monitor/monitor_screen" to="environment/monitor/monitor_screen" method="set_monitor_focus" binds= [false]]
+[connection signal="animatronic_moved_in_camera_queue" from="environment/monitor/monitor_screen" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_camera_cue.wav"]]
+[connection signal="animatronic_moved_out_of_camera_queue" from="environment/monitor/monitor_screen" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_camera_cue.wav"]]
+[connection signal="camera_scene_switched" from="environment/monitor/monitor_screen" to="environment/animatronics/freddy" method="set_current_motitor_cam"]
+[connection signal="camera_scene_switched" from="environment/monitor/monitor_screen" to="environment/animatronics/bonnie" method="set_current_motitor_cam"]
+[connection signal="camera_scene_switched" from="environment/monitor/monitor_screen" to="environment/animatronics/chica" method="set_current_motitor_cam"]
+[connection signal="camera_scene_switched" from="environment/monitor/monitor_screen" to="environment/animatronics/foxy" method="set_current_motitor_cam"]
+[connection signal="camera_scene_switched_no_params" from="environment/monitor/monitor_screen" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/monitor/monitor_switch.wav"]]
+[connection signal="monitor_focus" from="environment/monitor/monitor_screen" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/monitor/monitor_open.wav"]]
+[connection signal="monitor_focus" from="environment/monitor/monitor_screen" to="game_manager/battery_timer" method="increment_usage" binds= [1]]
+[connection signal="monitor_focus" from="environment/monitor/monitor_screen" to="game_manager/camera_manager" method="set_camera_pos" binds= ["monitor", 0.33]]
+[connection signal="monitor_focus" from="environment/monitor/monitor_screen" to="environment/monitor/static_preview_bg" method="set_visible" binds= [false]]
+[connection signal="monitor_focus" from="environment/monitor/monitor_screen" to="player/player" method="set_active_state" binds= [false]]
+[connection signal="monitor_focus" from="environment/monitor/monitor_screen" to="ui/ui_bottombar/ui_mobile_controls" method="set_visible" binds= [false]]
+[connection signal="monitor_focus" from="environment/monitor/monitor_screen" to="ui/pause" method="set_visible" binds= [true]]
+[connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="environment/animatronics/freddy" method="attempt_flash"]
+[connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="environment/animatronics/foxy" method="attempt_flash"]
+[connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="game_manager/audio_manager_local" method="stop_sound" binds= ["res://sounds/monitor/monitor_open.wav"]]
+[connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/monitor/monitor_close.wav"]]
+[connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="game_manager/battery_timer" method="increment_usage" binds= [-1]]
+[connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="game_manager/camera_manager" method="set_camera_pos" binds= ["default", 0.33]]
+[connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="environment/monitor/static_preview_bg" method="set_visible" binds= [true]]
+[connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="environment/monitor/static_preview_bg/static_preview_animation" method="play" binds= ["static_preview_fade_in"]]
+[connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="player/player" method="set_active_state" binds= [true]]
+[connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="ui/ui_bottombar/ui_mobile_controls" method="set_visible" binds= [true]]
+[connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="ui/pause" method="set_visible" binds= [false]]
+[connection signal="button_down" from="environment/monitor/monitor_focus_button" to="environment/monitor/monitor_screen" method="set_monitor_focus" binds= [true]]
+[connection signal="attempt_shock" from="environment/vent" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/office/light_vent.wav"]]
+[connection signal="attempt_shock" from="environment/vent" to="game_manager/battery_timer" method="increment_power" binds= [-3]]
+[connection signal="shock_trigger" from="environment/vent" to="environment/animatronics/foxy" method="reset_pos"]
+[connection signal="is_moving" from="player/player" to="game_manager/audio_manager_local" method="play_sound"]
+[connection signal="not_is_moving" from="player/player" to="game_manager/audio_manager_local" method="stop_sound"]
+[connection signal="not_set_active" from="player/player" to="game_manager/audio_manager_local" method="stop_sound"]
+[connection signal="hour_changed" from="ui/ui_topbar/time" to="environment/animatronics/freddy" method="set_ai_level_by_hour"]
+[connection signal="hour_changed" from="ui/ui_topbar/time" to="environment/animatronics/bonnie" method="set_ai_level_by_hour"]
+[connection signal="hour_changed" from="ui/ui_topbar/time" to="environment/animatronics/chica" method="set_ai_level_by_hour"]
+[connection signal="hour_changed" from="ui/ui_topbar/time" to="environment/animatronics/foxy" method="set_ai_level_by_hour"]
+[connection signal="button_down" from="ui/ui_bottombar/skip_call" to="phone_call" method="stop"]
+[connection signal="button_down" from="ui/ui_bottombar/skip_call" to="phone_call_youded" method="stop"]
+[connection signal="button_down" from="ui/ui_bottombar/skip_call" to="ui/ui_bottombar/skip_call" method="set_visible" binds= [false]]
+[connection signal="active_state_set" from="ui/ui_bottombar/ui_mobile_controls_OLD" to="ui/ui_bottombar/ui_mobile_controls_OLD" method="set_visible"]
+[connection signal="button_down" from="ui/ui_bottombar/ui_mobile_controls_OLD/mobile_move_left_OLD" to="game_manager/controls_manager" method="move_player" binds= [-1]]
+[connection signal="button_up" from="ui/ui_bottombar/ui_mobile_controls_OLD/mobile_move_left_OLD" to="game_manager/controls_manager" method="stop_player" binds= [-1]]
+[connection signal="button_down" from="ui/ui_bottombar/ui_mobile_controls_OLD/mobile_move_right_OLD" to="game_manager/controls_manager" method="move_player" binds= [1]]
+[connection signal="button_up" from="ui/ui_bottombar/ui_mobile_controls_OLD/mobile_move_right_OLD" to="game_manager/controls_manager" method="stop_player" binds= [1]]
+[connection signal="finished" from="phone_call" to="ui/ui_bottombar/skip_call" method="set_visible" binds= [false]]
+[connection signal="finished" from="phone_call_youded" to="ui/ui_bottombar/skip_call" method="set_visible" binds= [false]]

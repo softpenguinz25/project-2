@@ -30,6 +30,7 @@ script = ExtResource("2_8nlf7")
 animatronic_name = "chica"
 
 [node name="chica_timer" type="Timer" parent="."]
+wait_time = 5.0
 autostart = true
 
 [node name="chica_timer_pause" type="Timer" parent="."]

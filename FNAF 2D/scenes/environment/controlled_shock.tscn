@@ -38,11 +38,11 @@ shape = SubResource("RectangleShape2D_y5kkp")
 one_shot = true
 
 [connection signal="button_disabled" from="." to="controlled_shock_button" method="set_interact_state_absolute"]
-[connection signal="button_disabled" from="." to="controlled_shock_button/interact_area" method="set_monitoring"]
 [connection signal="button_disabled" from="." to="controlled_shock_button/interact_area" method="set_monitorable"]
+[connection signal="button_disabled" from="." to="controlled_shock_button/interact_area" method="set_monitoring"]
 [connection signal="button_enabled" from="." to="controlled_shock_button" method="set_interact_state_absolute"]
-[connection signal="button_enabled" from="." to="controlled_shock_button/interact_area" method="set_monitoring"]
 [connection signal="button_enabled" from="." to="controlled_shock_button/interact_area" method="set_monitorable"]
+[connection signal="button_enabled" from="." to="controlled_shock_button/interact_area" method="set_monitoring"]
 [connection signal="button_down" from="controlled_shock_button" to="." method="shock"]
 [connection signal="button_down" from="controlled_shock_button" to="controlled_shock_button" method="button_pressed"]
 [connection signal="timeout" from="controlled_shock_cooldown" to="controlled_shock_button" method="unfreeze_disabled_state"]

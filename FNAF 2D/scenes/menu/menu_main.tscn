@@ -300,10 +300,10 @@ stretch_mode = 4
 
 [node name="freddy_player" type="AnimationPlayer" parent="."]
 root_node = NodePath("../freddy")
-autoplay = "freddy_glitching"
 libraries = {
 "": SubResource("AnimationLibrary_qa2lr")
 }
+autoplay = "freddy_glitching"
 
 [node name="gradient_right" type="TextureRect" parent="."]
 visible = false
@@ -365,8 +365,8 @@ offset_right = 520.0
 offset_bottom = 400.0
 theme_override_fonts/font = ExtResource("2_qxmd5")
 text = "One
-Night at
-Freddy's
+Night
+In
 2D"
 label_settings = SubResource("LabelSettings_xl3br")
 
@@ -449,11 +449,11 @@ sprite_frames = SubResource("SpriteFrames_2ijog")
 animation = &"static"
 
 [node name="static_player" type="AnimationPlayer" parent="."]
-autoplay = "static"
-speed_scale = 5.0
 libraries = {
 "": SubResource("AnimationLibrary_he8l4")
 }
+autoplay = "static"
+speed_scale = 5.0
 
 [node name="credit_container" type="Control" parent="."]
 layout_mode = 1
@@ -501,7 +501,12 @@ theme_override_font_sizes/font_size = 24
 text = "Original By: Scott Cawthon"
 alignment = 2
 
-[node name="button_resetdata" type="Button" parent="."]
+[node name="resetdata_container" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="button_resetdata" type="Button" parent="resetdata_container"]
 layout_mode = 2
 offset_left = 1012.0
 offset_top = 8.0
@@ -513,7 +518,7 @@ text = "Hold to Reset Data"
 alignment = 2
 script = ExtResource("31_s0btl")
 
-[node name="resetdata_timer" type="Timer" parent="button_resetdata"]
+[node name="resetdata_timer" type="Timer" parent="resetdata_container/button_resetdata"]
 wait_time = 5.0
 one_shot = true
 
@@ -563,7 +568,7 @@ vertical_alignment = 2
 [connection signal="button_down" from="credit_container/button_godot" to="credit_container" method="open_link" binds= ["https://godotengine.org/license"]]
 [connection signal="button_down" from="credit_container/button_jujuprodgames" to="credit_container" method="open_link" binds= ["https://www.youtube.com/@JujuProdGames"]]
 [connection signal="button_down" from="credit_container/button_scottcawthon" to="credit_container" method="open_link" binds= ["https://store.steampowered.com/app/319510/Five_Nights_at_Freddys/", "https://play.google.com/store/apps/details?id=com.scottgames.fivenightsatfreddys&hl=en_US&gl=US"]]
-[connection signal="button_down" from="button_resetdata" to="button_resetdata/resetdata_timer" method="start"]
-[connection signal="button_up" from="button_resetdata" to="button_resetdata/resetdata_timer" method="stop"]
-[connection signal="data_reset" from="button_resetdata" to="title/star_ranking" method="update_star_state"]
-[connection signal="timeout" from="button_resetdata/resetdata_timer" to="button_resetdata" method="reset_data"]
+[connection signal="button_down" from="resetdata_container/button_resetdata" to="resetdata_container/button_resetdata/resetdata_timer" method="start"]
+[connection signal="button_up" from="resetdata_container/button_resetdata" to="resetdata_container/button_resetdata/resetdata_timer" method="stop"]
+[connection signal="data_reset" from="resetdata_container/button_resetdata" to="title/star_ranking" method="update_star_state"]
+[connection signal="timeout" from="resetdata_container/button_resetdata/resetdata_timer" to="resetdata_container/button_resetdata" method="reset_data"]

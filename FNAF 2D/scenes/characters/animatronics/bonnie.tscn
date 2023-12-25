@@ -30,6 +30,7 @@ script = ExtResource("2_uapmq")
 animatronic_name = "bonnie"
 
 [node name="bonnie_timer" type="Timer" parent="."]
+wait_time = 5.0
 autostart = true
 
 [node name="bonnie_timer_pause" type="Timer" parent="."]

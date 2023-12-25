@@ -223,10 +223,10 @@ scale = Vector2(1.5, 1.5)
 texture = SubResource("CanvasTexture_myrbq")
 
 [node name="fade_in_player" type="AnimationPlayer" parent="."]
-autoplay = "fade_in"
 libraries = {
 "": SubResource("AnimationLibrary_83dhs")
 }
+autoplay = "fade_in"
 
 [node name="return_to_main_menu" type="Button" parent="."]
 layout_mode = 1

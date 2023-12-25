@@ -32,7 +32,7 @@ script = ExtResource("2_aprr7")
 animatronic_name = "freddy"
 
 [node name="freddy_timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 5.0
 autostart = true
 
 [node name="freddy_timer_pause" type="Timer" parent="."]

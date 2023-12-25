@@ -47,11 +47,11 @@ shape = SubResource("RectangleShape2D_wyroy")
 one_shot = true
 
 [connection signal="button_disabled" from="." to="vent_button" method="set_interact_state_absolute"]
-[connection signal="button_disabled" from="." to="vent_button/vent_area" method="set_monitoring"]
 [connection signal="button_disabled" from="." to="vent_button/vent_area" method="set_monitorable"]
+[connection signal="button_disabled" from="." to="vent_button/vent_area" method="set_monitoring"]
 [connection signal="button_enabled" from="." to="vent_button" method="set_interact_state_absolute"]
-[connection signal="button_enabled" from="." to="vent_button/vent_area" method="set_monitoring"]
 [connection signal="button_enabled" from="." to="vent_button/vent_area" method="set_monitorable"]
+[connection signal="button_enabled" from="." to="vent_button/vent_area" method="set_monitoring"]
 [connection signal="button_down" from="vent_button" to="." method="shock"]
 [connection signal="button_down" from="vent_button" to="vent_button" method="button_pressed"]
 [connection signal="timeout" from="vent_button/vent_cooldown" to="vent_button" method="unfreeze_disabled_state"]
