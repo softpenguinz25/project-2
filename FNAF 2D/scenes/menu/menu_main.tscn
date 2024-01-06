@@ -439,7 +439,7 @@ script = ExtResource("8_q3obw")
 
 [node name="menu_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_21r8m")
-volume_db = -5.0
+volume_db = -8.0
 autoplay = true
 
 [node name="static" type="AnimatedSprite2D" parent="."]
@@ -554,7 +554,7 @@ offset_bottom = -16.0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_qxmd5")
 theme_override_font_sizes/font_size = 24
-text = "V1.0"
+text = "V1.00"
 vertical_alignment = 2
 
 [connection signal="button_down" from="button_vbox/button_newgame" to="local_audio_manager" method="play_sound" binds= ["res://sounds/menu/menu_button.wav"]]

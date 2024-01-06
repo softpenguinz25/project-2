@@ -307,7 +307,6 @@ one_shot = true
 
 [node name="controls_manager" type="Node" parent="game_manager"]
 script = ExtResource("8_xyoyc")
-show_mobile_controls = false
 
 [node name="environment" type="Node2D" parent="."]
 
@@ -418,8 +417,14 @@ monitor_screen = NodePath("../../monitor/monitor_screen")
 monitor_screen = NodePath("../../monitor/monitor_screen")
 
 [node name="power_off_sequence" parent="environment/animatronics" node_paths=PackedStringArray("timer_until_animatronic_footstep", "timer_until_animatronic_footstep_darkness") instance=ExtResource("24_76qqo")]
+position = Vector2(-2, 0)
+time_until_animatronic_footstep_range = Vector2(5, 7)
 timer_until_animatronic_footstep = NodePath("animatronic_footstep_sfx_timer")
+time_until_freddy_flicker_range = Vector2(10, 15)
+time_until_power_darkness_range = Vector2(10, 16)
+time_until_animatronic_footstep_darkness_range = Vector2(3, 5)
 timer_until_animatronic_footstep_darkness = NodePath("animatronic_footstep_darkness_sfx_timer")
+time_until_jumpscare_range = Vector2(6, 12)
 
 [node name="animatronic_footstep_sfx_timer" type="Timer" parent="environment/animatronics/power_off_sequence"]
 one_shot = true
@@ -934,27 +939,27 @@ stream = ExtResource("47_jxlby")
 [connection signal="using_20d_mode" from="environment/animatronics" to="phone_call_youded" method="play"]
 [connection signal="using_20d_mode" from="environment/animatronics" to="ui/ui_topbar/night_text" method="set_text" binds= ["Night:-20D-"]]
 [connection signal="animatronic_jumpscare" from="environment/animatronics/freddy" to="game_manager/jumpscare_manager" method="play_jumpscare"]
-[connection signal="animatronic_moved" from="environment/animatronics/freddy" to="environment/monitor/monitor_screen" method="animatronic_moved_to"]
 [connection signal="animatronic_moved" from="environment/animatronics/freddy" to="environment/monitor/monitor_screen" method="set_animatronic_pos"]
+[connection signal="animatronic_moved" from="environment/animatronics/freddy" to="environment/monitor/monitor_screen" method="animatronic_moved_to"]
 [connection signal="animatronic_moved_from" from="environment/animatronics/freddy" to="environment/monitor/monitor_screen" method="animatronic_moved_from"]
 [connection signal="in_office_cue" from="environment/animatronics/freddy" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_scare.wav"]]
 [connection signal="in_office_flashed" from="environment/animatronics/freddy" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_scare.wav"]]
 [connection signal="movement_cue" from="environment/animatronics/freddy" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_footstep.wav"]]
 [connection signal="animatronic_jumpscare" from="environment/animatronics/bonnie" to="game_manager/jumpscare_manager" method="play_jumpscare"]
-[connection signal="animatronic_moved" from="environment/animatronics/bonnie" to="environment/monitor/monitor_screen" method="animatronic_moved_to"]
 [connection signal="animatronic_moved" from="environment/animatronics/bonnie" to="environment/monitor/monitor_screen" method="set_animatronic_pos"]
+[connection signal="animatronic_moved" from="environment/animatronics/bonnie" to="environment/monitor/monitor_screen" method="animatronic_moved_to"]
 [connection signal="animatronic_moved_from" from="environment/animatronics/bonnie" to="environment/monitor/monitor_screen" method="animatronic_moved_from"]
 [connection signal="in_office_flashed" from="environment/animatronics/bonnie" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_scare.wav"]]
 [connection signal="movement_cue" from="environment/animatronics/bonnie" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_footstep.wav"]]
 [connection signal="animatronic_jumpscare" from="environment/animatronics/chica" to="game_manager/jumpscare_manager" method="play_jumpscare"]
-[connection signal="animatronic_moved" from="environment/animatronics/chica" to="environment/monitor/monitor_screen" method="animatronic_moved_to"]
 [connection signal="animatronic_moved" from="environment/animatronics/chica" to="environment/monitor/monitor_screen" method="set_animatronic_pos"]
+[connection signal="animatronic_moved" from="environment/animatronics/chica" to="environment/monitor/monitor_screen" method="animatronic_moved_to"]
 [connection signal="animatronic_moved_from" from="environment/animatronics/chica" to="environment/monitor/monitor_screen" method="animatronic_moved_from"]
 [connection signal="in_office_flashed" from="environment/animatronics/chica" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_scare.wav"]]
 [connection signal="movement_cue" from="environment/animatronics/chica" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_footstep.wav"]]
 [connection signal="animatronic_jumpscare" from="environment/animatronics/foxy" to="game_manager/jumpscare_manager" method="play_jumpscare"]
-[connection signal="animatronic_moved" from="environment/animatronics/foxy" to="environment/monitor/monitor_screen" method="animatronic_moved_to"]
 [connection signal="animatronic_moved" from="environment/animatronics/foxy" to="environment/monitor/monitor_screen" method="set_animatronic_pos"]
+[connection signal="animatronic_moved" from="environment/animatronics/foxy" to="environment/monitor/monitor_screen" method="animatronic_moved_to"]
 [connection signal="animatronic_moved_from" from="environment/animatronics/foxy" to="environment/monitor/monitor_screen" method="animatronic_moved_from"]
 [connection signal="in_office_cue" from="environment/animatronics/foxy" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_scare.wav"]]
 [connection signal="in_office_flashed" from="environment/animatronics/foxy" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_scare.wav"]]
@@ -983,9 +988,13 @@ stream = ExtResource("47_jxlby")
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="phone_call" method="stop"]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="phone_call_youded" method="stop"]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_power_down.wav"]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/freddy" method="set_ai_level" binds= [0]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/freddy" method="pause_animatronic" binds= [true]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/bonnie" method="set_ai_level" binds= [0]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/bonnie" method="pause_animatronic" binds= [true]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/chica" method="set_ai_level" binds= [0]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/chica" method="pause_animatronic" binds= [true]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/foxy" method="set_ai_level" binds= [0]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/foxy" method="pause_animatronic" binds= [true]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/power_off_sequence/freddy_eyes_lighting" method="set_enabled" binds= [true]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/power_off_sequence/power_off_light/power_off_lighting" method="set_enabled" binds= [true]]

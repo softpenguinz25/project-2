@@ -69,6 +69,8 @@ signal animatronic_jumpscare(animatronic_name : String)
 @export_range(0, 1) var movement_cue_probability : float = .05
 signal movement_cue
 
+func set_ai_level(new_ai_level : int): super(new_ai_level)
+
 func _ready():
 	cam_path_num = randi_range(0, cam_path.size() - 1)
 

@@ -2,11 +2,11 @@
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.jujuprodgames.fnaf2d"
 4    android:installLocation="auto"
-5    android:versionCode="2"
-6    android:versionName="1.0" >
+5    android:versionCode="4"
+6    android:versionName="1.00" >
 7
 8    <uses-sdk
-9        android:minSdkVersion="24"
+9        android:minSdkVersion="21"
 10        android:targetSdkVersion="33" />
 11
 12    <supports-screens
@@ -35,94 +35,93 @@
 24-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:23:9-35
 25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 25-->[androidx.core:core:1.2.0] C:\Users\speed\.gradle\caches\transforms-3\9bcb1a65f5938aad264f4d73e9a06f28\transformed\core-1.2.0\AndroidManifest.xml:24:18-86
-26        android:extractNativeLibs="false"
-27        android:hasFragileUserData="false"
-27-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:25:9-43
-28        android:icon="@mipmap/icon"
-28-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:22:9-36
-29        android:isGame="true"
-29-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:24:9-30
-30        android:label="@string/godot_project_name_string"
-30-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:20:9-58
-31        android:requestLegacyExternalStorage="false" >
-31-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:26:9-53
-32        <activity
-32-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:34:9-51:20
-33            android:name="com.godot.game.GodotApp"
-33-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:35:13-37
-34            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
-34-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:42:13-141
-35            android:excludeFromRecents="false"
-35-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:39:13-47
-36            android:exported="true"
-36-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:40:13-36
-37            android:label="@string/godot_project_name_string"
-37-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:36:13-62
-38            android:launchMode="singleInstancePerTask"
-38-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:38:13-55
-39            android:resizeableActivity="true"
-39-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:43:13-47
-40            android:screenOrientation="landscape"
-40-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:41:13-50
-41            android:theme="@style/GodotAppSplashTheme" >
-41-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:37:13-55
-42            <intent-filter>
-42-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:46:13-50:29
-43                <action android:name="android.intent.action.MAIN" />
-43-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:47:17-69
-43-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:47:25-66
-44
-45                <category android:name="android.intent.category.DEFAULT" />
-45-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:48:17-76
-45-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:48:27-73
-46                <category android:name="android.intent.category.LAUNCHER" />
-46-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:49:17-77
-46-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:49:27-74
-47            </intent-filter>
-48        </activity>
-49        <!-- Records the version of the Godot editor used for building -->
-50        <meta-data
-51            android:name="org.godotengine.editor.version"
-52            android:value="4.2.stable" /> <!-- Records the version of the Godot library -->
-53        <meta-data
-53-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:14:9-16:44
-54            android:name="org.godotengine.library.version"
-54-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:15:13-59
-55            android:value="4.2.0.stable" />
-55-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:16:13-41
-56
-57        <service android:name="org.godotengine.godot.GodotDownloaderService" />
-57-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:18:9-80
-57-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:18:18-77
-58
-59        <activity
-59-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:20:9-24:75
-60            android:name="org.godotengine.godot.utils.ProcessPhoenix"
-60-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:21:13-70
-61            android:exported="false"
-61-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:22:13-37
-62            android:process=":phoenix"
-62-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:23:13-39
-63            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-63-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:24:13-72
-64
-65        <provider
-65-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:26:9-34:20
-66            android:name="androidx.core.content.FileProvider"
-66-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:27:13-62
-67            android:authorities="com.jujuprodgames.fnaf2d.fileprovider"
-67-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:28:13-64
-68            android:exported="false"
-68-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:29:13-37
-69            android:grantUriPermissions="true" >
-69-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:30:13-47
-70            <meta-data
-70-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:31:13-33:64
-71                android:name="android.support.FILE_PROVIDER_PATHS"
-71-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:32:17-67
-72                android:resource="@xml/godot_provider_paths" />
-72-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:33:17-61
-73        </provider>
-74    </application>
-75
-76</manifest>
+26        android:hasFragileUserData="false"
+26-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:25:9-43
+27        android:icon="@mipmap/icon"
+27-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:22:9-36
+28        android:isGame="true"
+28-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:24:9-30
+29        android:label="@string/godot_project_name_string"
+29-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:20:9-58
+30        android:requestLegacyExternalStorage="false" >
+30-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:26:9-53
+31        <activity
+31-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:34:9-51:20
+32            android:name="com.godot.game.GodotApp"
+32-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:35:13-37
+33            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
+33-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:42:13-141
+34            android:excludeFromRecents="false"
+34-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:39:13-47
+35            android:exported="true"
+35-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:40:13-36
+36            android:label="@string/godot_project_name_string"
+36-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:36:13-62
+37            android:launchMode="singleInstancePerTask"
+37-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:38:13-55
+38            android:resizeableActivity="true"
+38-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:43:13-47
+39            android:screenOrientation="landscape"
+39-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:41:13-50
+40            android:theme="@style/GodotAppSplashTheme" >
+40-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:37:13-55
+41            <intent-filter>
+41-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:46:13-50:29
+42                <action android:name="android.intent.action.MAIN" />
+42-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:47:17-69
+42-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:47:25-66
+43
+44                <category android:name="android.intent.category.DEFAULT" />
+44-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:48:17-76
+44-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:48:27-73
+45                <category android:name="android.intent.category.LAUNCHER" />
+45-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:49:17-77
+45-->D:\JujuProdGames\Godot\Godot Projects\FNAF-2D\FNAF 2D\android\build\AndroidManifest.xml:49:27-74
+46            </intent-filter>
+47        </activity>
+48        <!-- Records the version of the Godot editor used for building -->
+49        <meta-data
+50            android:name="org.godotengine.editor.version"
+51            android:value="4.2.stable" /> <!-- Records the version of the Godot library -->
+52        <meta-data
+52-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:14:9-16:44
+53            android:name="org.godotengine.library.version"
+53-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:15:13-59
+54            android:value="4.2.0.stable" />
+54-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:16:13-41
+55
+56        <service android:name="org.godotengine.godot.GodotDownloaderService" />
+56-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:18:9-80
+56-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:18:18-77
+57
+58        <activity
+58-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:20:9-24:75
+59            android:name="org.godotengine.godot.utils.ProcessPhoenix"
+59-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:21:13-70
+60            android:exported="false"
+60-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:22:13-37
+61            android:process=":phoenix"
+61-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:23:13-39
+62            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+62-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:24:13-72
+63
+64        <provider
+64-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:26:9-34:20
+65            android:name="androidx.core.content.FileProvider"
+65-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:27:13-62
+66            android:authorities="com.jujuprodgames.fnaf2d.fileprovider"
+66-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:28:13-64
+67            android:exported="false"
+67-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:29:13-37
+68            android:grantUriPermissions="true" >
+68-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:30:13-47
+69            <meta-data
+69-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:31:13-33:64
+70                android:name="android.support.FILE_PROVIDER_PATHS"
+70-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:32:17-67
+71                android:resource="@xml/godot_provider_paths" />
+71-->[godot-lib.template_release.aar] C:\Users\speed\.gradle\caches\transforms-3\36b10ee03ec1926a3db3db3767ee3561\transformed\jetified-godot-lib.template_release\AndroidManifest.xml:33:17-61
+72        </provider>
+73    </application>
+74
+75</manifest>
