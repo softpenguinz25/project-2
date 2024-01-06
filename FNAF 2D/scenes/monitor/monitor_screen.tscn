@@ -1,6 +1,5 @@
-[gd_scene load_steps=52 format=3 uid="uid://gce66gknn2m8"]
+[gd_scene load_steps=60 format=3 uid="uid://gce66gknn2m8"]
 
-[ext_resource type="Shader" path="res://shaders/vhs_effect.gdshader" id="1_5thp5"]
 [ext_resource type="Script" path="res://scripts/monitor/monitor_scene.gd" id="1_20jul"]
 [ext_resource type="Texture2D" uid="uid://i08yjr748wt6" path="res://sprites/environment/monitor/monitor_map.png" id="1_evw1b"]
 [ext_resource type="Script" path="res://scripts/monitor/monitor_screen.gd" id="1_q3gbe"]
@@ -30,11 +29,16 @@
 [ext_resource type="Texture2D" uid="uid://bs7b1qfv6r66q" path="res://sprites/static/4.png" id="26_dgqmx"]
 [ext_resource type="Texture2D" uid="uid://cbvf2blkod7d8" path="res://sprites/static/6.png" id="27_6p1vi"]
 [ext_resource type="Texture2D" uid="uid://cmdr3qb5u6fb1" path="res://sprites/static/8.png" id="28_8uhqu"]
+[ext_resource type="Shader" path="res://shaders/GodotRetro - Ahopness/Screen Shaders/TV.gdshader" id="29_b5ysl"]
 [ext_resource type="Texture2D" uid="uid://c86doagu88wwg" path="res://sprites/static/9.png" id="29_tqs6v"]
+[ext_resource type="Shader" path="res://shaders/GodotRetro - Ahopness/Screen Shaders/Aditional Shaders/Sharpness.gdshader" id="29_vu7ek"]
 [ext_resource type="Texture2D" uid="uid://bnnn73x60baqk" path="res://sprites/static/10.png" id="30_tmn07"]
 [ext_resource type="Texture2D" uid="uid://dx1t6agw3at0b" path="res://sprites/static/21.png" id="31_4jb6l"]
+[ext_resource type="Shader" path="res://shaders/GodotRetro - Ahopness/Screen Shaders/LensDistortion.gdshader" id="31_twoj6"]
 [ext_resource type="Texture2D" uid="uid://crr0y42npgguf" path="res://sprites/static/22.png" id="32_6eo4f"]
+[ext_resource type="Shader" path="res://shaders/GodotRetro - Ahopness/Screen Shaders/Grain.gdshader" id="32_n54ut"]
 [ext_resource type="Texture2D" uid="uid://duvsh68d3ln6v" path="res://sprites/static/25.png" id="33_acum6"]
+[ext_resource type="Shader" path="res://shaders/vignette.gdshader" id="33_csidv"]
 [ext_resource type="Texture2D" uid="uid://b0tiiv7uo3jyy" path="res://sprites/static/430.png" id="34_gad1m"]
 [ext_resource type="Texture2D" uid="uid://yqe6eym8s2t5" path="res://sprites/static/434.png" id="35_0ptnk"]
 [ext_resource type="Texture2D" uid="uid://c0n6pgoih70ok" path="res://sprites/static/435.png" id="36_2wfc0"]
@@ -63,28 +67,36 @@ animations = [{
 size = Vector2(1280, 720)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ifptp"]
-shader = ExtResource("1_5thp5")
-shader_parameter/overlay = true
-shader_parameter/scanlines_opacity = 0.4
-shader_parameter/scanlines_width = 0.25
-shader_parameter/grille_opacity = 0.3
-shader_parameter/resolution = Vector2(640, 480)
-shader_parameter/pixelate = true
-shader_parameter/roll = true
-shader_parameter/roll_speed = 8.0
-shader_parameter/roll_size = 15.0
-shader_parameter/roll_variation = 1.8
-shader_parameter/distort_intensity = 0.05
-shader_parameter/noise_opacity = 0.4
-shader_parameter/noise_speed = 5.0
-shader_parameter/static_noise_intensity = 0.06
-shader_parameter/aberration = 0.03
-shader_parameter/brightness = 1.4
-shader_parameter/discolor = true
-shader_parameter/warp_amount = 1.0
-shader_parameter/clip_warp = false
-shader_parameter/vignette_intensity = 0.4
-shader_parameter/vignette_opacity = 0.5
+shader = ExtResource("29_b5ysl")
+shader_parameter/vertJerkOpt = 0.0
+shader_parameter/vertMovementOpt = 0.0
+shader_parameter/bottomStaticOpt = 0.0
+shader_parameter/bottomStaticStrenth = 0.7
+shader_parameter/scalinesOpt = 0.8
+shader_parameter/rgbOffsetOpt = 0.2
+shader_parameter/horzFuzzOpt = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oqgcq"]
+shader = ExtResource("29_vu7ek")
+shader_parameter/sharpen_amount = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s8tuk"]
+shader = ExtResource("31_twoj6")
+shader_parameter/strength = 0.015
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1qn07"]
+shader = ExtResource("32_n54ut")
+shader_parameter/colored = true
+shader_parameter/color_amount = 0.6
+shader_parameter/grain_amount = 0.025
+shader_parameter/grain_size = 1.6
+shader_parameter/lum_amount = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8nhd0"]
+shader = ExtResource("33_csidv")
+shader_parameter/alpha = 1.25
+shader_parameter/inner_radius = 0.2
+shader_parameter/outer_radius = 1.33
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vlj1m"]
 animations = [{
@@ -566,6 +578,7 @@ texture = ExtResource("7_ulw5k")
 
 [node name="freddy_hall_west" type="TextureRect" parent="monitor_scene/cam_hall_west"]
 visible = false
+layout_mode = 0
 offset_left = 109.0
 offset_top = 144.0
 offset_right = 621.0
@@ -599,6 +612,7 @@ texture = ExtResource("5_3nkbq")
 
 [node name="freddy_hall_east" type="TextureRect" parent="monitor_scene/cam_hall_east"]
 visible = false
+layout_mode = 0
 offset_left = 818.0
 offset_top = 144.0
 offset_right = 1330.0
@@ -797,12 +811,88 @@ script = ExtResource("25_3xutd")
 position = Vector2(640, 360)
 shape = SubResource("RectangleShape2D_slyru")
 
-[node name="vhs_effect" type="ColorRect" parent="."]
+[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(6.4, 3.6)
+copy_mode = 2
+
+[node name="vhs_tv" type="ColorRect" parent="BackBufferCopy"]
 material = SubResource("ShaderMaterial_ifptp")
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BackBufferCopy2" type="BackBufferCopy" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(6.4, 3.6)
+
+[node name="vhs_sharpness" type="ColorRect" parent="BackBufferCopy2"]
+material = SubResource("ShaderMaterial_oqgcq")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BackBufferCopy3" type="BackBufferCopy" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(6.4, 3.6)
+
+[node name="vhs_lensdistortion" type="ColorRect" parent="BackBufferCopy3"]
+material = SubResource("ShaderMaterial_s8tuk")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BackBufferCopy4" type="BackBufferCopy" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(6.4, 3.6)
+
+[node name="vhs_grain" type="ColorRect" parent="BackBufferCopy4"]
+material = SubResource("ShaderMaterial_1qn07")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BackBufferCopy5" type="BackBufferCopy" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(6.4, 3.6)
+
+[node name="vhs_vignette" type="ColorRect" parent="BackBufferCopy5"]
+material = SubResource("ShaderMaterial_8nhd0")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+offset_right = -100.0
+offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2

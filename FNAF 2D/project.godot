@@ -16,8 +16,9 @@ run/main_scene="res://scenes/menu/menu_main.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 boot_splash/image="res://sprites/icon/JujuProdGames Logo.png"
-config/icon="res://sprites/icon/FNAF 2D Logo.png"
+config/icon="res://sprites/icon/FNAF 2D Logo Bigger 512x512.png"
 boot_splash/minimum_display_time=1000
+config/size/mode=3
 
 [autoload]
 
@@ -29,6 +30,7 @@ StarRankingManager="*res://scenes/manager/star_ranking_manager.tscn"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [editor]
