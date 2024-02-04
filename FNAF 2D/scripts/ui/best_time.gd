@@ -8,8 +8,6 @@ var save_path = "user://best_time.save"
 
 ##sets star_state to param
 func set_time_in_s(new_time_in_s : float):
-	print(new_time_in_s)
-	
 	if new_time_in_s >= 0:
 		last_time_in_s = new_time_in_s
 		if last_time_in_s > best_time_in_s: best_time_in_s = last_time_in_s

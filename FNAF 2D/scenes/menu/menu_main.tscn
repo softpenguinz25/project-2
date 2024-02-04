@@ -1,17 +1,11 @@
-[gd_scene load_steps=49 format=3 uid="uid://mkh8ja63pnlt"]
+[gd_scene load_steps=64 format=3 uid="uid://budmy4i04lgtg"]
 
 [ext_resource type="Script" path="res://scripts/misc/scene_loader.gd" id="1_6afx2"]
 [ext_resource type="Script" path="res://scripts/audio/audio_manager_local.gd" id="1_75gly"]
-[ext_resource type="Texture2D" uid="uid://m4ahsdeb8hs4" path="res://sprites/characters/animatronics/freddy.png" id="1_kgtwc"]
-[ext_resource type="Shader" path="res://shaders/GodotRetro - Ahopness/Screen Shaders/Aditional Shaders/Blur.gdshader" id="2_calxo"]
 [ext_resource type="FontFile" uid="uid://c458otts8ji68" path="res://ui/fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" id="2_qxmd5"]
 [ext_resource type="AudioStream" uid="uid://cl1bpactm4fm7" path="res://sounds/menu/menu_music.mp3" id="3_21r8m"]
-[ext_resource type="Shader" path="res://shaders/GodotRetro - Ahopness/Screen Shaders/TV.gdshader" id="3_r6rn2"]
-[ext_resource type="Shader" path="res://shaders/GodotRetro - Ahopness/Screen Shaders/VHSPause.gdshader" id="4_aqevc"]
-[ext_resource type="Texture2D" uid="uid://bb0gjj5buo4s0" path="res://sprites/characters/animatronics/freddy_inverted.png" id="5_6q3u6"]
 [ext_resource type="Script" path="res://scripts/ui/main_menu_button.gd" id="8_q3obw"]
 [ext_resource type="Script" path="res://scripts/ui/star_ranking_local.gd" id="9_emtr0"]
-[ext_resource type="Texture2D" uid="uid://b34eatpnubpry" path="res://sprites/star_outline.png" id="9_gacgs"]
 [ext_resource type="Texture2D" uid="uid://cb5kijdc2gycv" path="res://sprites/star.png" id="9_xstaa"]
 [ext_resource type="Texture2D" uid="uid://bs7b1qfv6r66q" path="res://sprites/static/4.png" id="10_w7nmk"]
 [ext_resource type="Texture2D" uid="uid://caroegfhu8p6o" path="res://sprites/circle_faded.png" id="11_5fvmq"]
@@ -25,112 +19,28 @@
 [ext_resource type="Texture2D" uid="uid://duvsh68d3ln6v" path="res://sprites/static/25.png" id="17_7n8nn"]
 [ext_resource type="Texture2D" uid="uid://b0tiiv7uo3jyy" path="res://sprites/static/430.png" id="18_p2gd1"]
 [ext_resource type="Texture2D" uid="uid://yqe6eym8s2t5" path="res://sprites/static/434.png" id="19_b752r"]
+[ext_resource type="Texture2D" uid="uid://2u4hxmt3lugo" path="res://sprites/cutscenes/static/12.png" id="19_sgk1k"]
+[ext_resource type="Texture2D" uid="uid://mqayc35mrtoh" path="res://sprites/cutscenes/static/13.png" id="20_2hr40"]
 [ext_resource type="Texture2D" uid="uid://c0n6pgoih70ok" path="res://sprites/static/435.png" id="20_8sifx"]
 [ext_resource type="Texture2D" uid="uid://dk4ws78nw1jrt" path="res://sprites/static/436.png" id="21_ddrne"]
+[ext_resource type="Texture2D" uid="uid://dhwi3653fptxs" path="res://sprites/cutscenes/static/14.png" id="21_otbmm"]
+[ext_resource type="Texture2D" uid="uid://bo44rvo38kk5t" path="res://sprites/cutscenes/static/15.png" id="22_oosxp"]
 [ext_resource type="Texture2D" uid="uid://cn6vf4kt7cuev" path="res://sprites/static/437.png" id="22_xl448"]
+[ext_resource type="Texture2D" uid="uid://bs5g6yr4vxcjo" path="res://sprites/cutscenes/static/16.png" id="23_314h7"]
 [ext_resource type="Texture2D" uid="uid://b21xor2lidyqp" path="res://sprites/static/438.png" id="23_nft4l"]
+[ext_resource type="Texture2D" uid="uid://2wdbnrndpgta" path="res://sprites/cutscenes/static/17.png" id="24_jqrdo"]
 [ext_resource type="Texture2D" uid="uid://ul05miqcikby" path="res://sprites/static/439.png" id="24_skto6"]
+[ext_resource type="Texture2D" uid="uid://hkklnyb011vt" path="res://sprites/cutscenes/static/18.png" id="25_413mx"]
+[ext_resource type="Texture2D" uid="uid://bt4cn08wyb3vk" path="res://sprites/cutscenes/static/20.png" id="26_661he"]
 [ext_resource type="Script" path="res://scripts/misc/credits.gd" id="26_lpeo8"]
+[ext_resource type="Shader" path="res://shaders/vignette.gdshader" id="27_kk0sx"]
 [ext_resource type="Script" path="res://scripts/misc/reset_data.gd" id="31_s0btl"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_kc32x"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bxlxp"]
-shader = ExtResource("4_aqevc")
-shader_parameter/shake_amount_x = 250.0
-shader_parameter/shake_amount_y = 40.0
-shader_parameter/white_hlines = 50.0
-shader_parameter/white_vlines = 80.0
-
-[sub_resource type="Gradient" id="Gradient_e7jlp"]
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_2tesq"]
-gradient = SubResource("Gradient_e7jlp")
-
-[sub_resource type="Animation" id="Animation_nijg6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_kgtwc")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:flip_v")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_vt5h7"]
-resource_name = "freddy_glitching"
-length = 7.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(1, 1.1, 1.2, 5.9, 6, 6.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("1_kgtwc"), ExtResource("5_6q3u6"), ExtResource("1_kgtwc"), ExtResource("1_kgtwc"), ExtResource("5_6q3u6"), ExtResource("1_kgtwc")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:flip_v")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(3.3, 3.4, 3.5, 5.9, 6, 6.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [false, true, false, false, true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_qa2lr"]
-_data = {
-"RESET": SubResource("Animation_nijg6"),
-"freddy_glitching": SubResource("Animation_vt5h7")
-}
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_aiyko"]
-shader = ExtResource("2_calxo")
-shader_parameter/amount = 0.3
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_siy6n"]
-shader = ExtResource("3_r6rn2")
-shader_parameter/vertJerkOpt = 0.2
-shader_parameter/vertMovementOpt = 0.0
-shader_parameter/bottomStaticOpt = 0.0
-shader_parameter/bottomStaticStrenth = 0.7
-shader_parameter/scalinesOpt = 0.8
-shader_parameter/rgbOffsetOpt = 0.2
-shader_parameter/horzFuzzOpt = 0.15
-
-[sub_resource type="LabelSettings" id="LabelSettings_xl3br"]
-line_spacing = 12.0
-font_size = 64
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tpg4w"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5l8k2"]
+[ext_resource type="Texture2D" uid="uid://nlfjaynqc0ju" path="res://sprites/characters/animatronics/faceless/springtrap_faceless.png" id="32_gj6dq"]
+[ext_resource type="Texture2D" uid="uid://bick201tl4mns" path="res://sprites/characters/animatronics/faceless/foxy_faceless.png" id="33_yxtwo"]
+[ext_resource type="Texture2D" uid="uid://jspa06423k34" path="res://sprites/ui/menu_button.png" id="34_jh2eb"]
+[ext_resource type="Texture2D" uid="uid://07xhsuabo35f" path="res://sprites/characters/animatronics/faceless/chica_faceless.png" id="34_kfm7a"]
+[ext_resource type="Texture2D" uid="uid://6qmdrb300y2g" path="res://sprites/characters/animatronics/faceless/bonnie_faceless.png" id="35_5ttwh"]
+[ext_resource type="Texture2D" uid="uid://dsu8cablxpsbh" path="res://sprites/characters/animatronics/faceless/freddy_faceless.png" id="36_kem5p"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2ijog"]
 animations = [{
@@ -190,7 +100,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("static:frame")
+tracks/0/path = NodePath("transition/static:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -202,7 +112,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("static:visible")
+tracks/1/path = NodePath("transition/static:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -218,7 +128,7 @@ length = 1.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("static:frame")
+tracks/0/path = NodePath("transition/static:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -230,7 +140,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("static:visible")
+tracks/1/path = NodePath("transition/static:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -246,6 +156,100 @@ _data = {
 "static": SubResource("Animation_jyja3")
 }
 
+[sub_resource type="Gradient" id="Gradient_adh6j"]
+colors = PackedColorArray(0, 0, 0, 1, 0.533333, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_allgc"]
+gradient = SubResource("Gradient_adh6j")
+width = 128
+height = 128
+fill_from = Vector2(0.0042735, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qu7dr"]
+blend_mode = 2
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0f2d0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_sgk1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_2hr40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_otbmm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_oosxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_314h7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_jqrdo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_413mx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_661he")
+}],
+"loop": true,
+"name": &"default",
+"speed": 50.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n17ph"]
+shader = ExtResource("27_kk0sx")
+shader_parameter/alpha = 1.0
+shader_parameter/inner_radius = 0.33
+shader_parameter/outer_radius = 1.5
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_x34ak"]
+
+[sub_resource type="Gradient" id="Gradient_fqqfl"]
+offsets = PackedFloat32Array(0, 0.356757)
+colors = PackedColorArray(0, 0, 0, 0.533333, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_f4lfu"]
+gradient = SubResource("Gradient_fqqfl")
+width = 128
+height = 128
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0.141026)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wfmah"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m0h71"]
+texture = ExtResource("34_jh2eb")
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pjkuo"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gclx0"]
+texture = ExtResource("34_jh2eb")
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sj4rm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q15rl"]
+texture = ExtResource("34_jh2eb")
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xgmv1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mig85"]
+texture = ExtResource("34_jh2eb")
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l6u81"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hw6e7"]
+texture = ExtResource("34_jh2eb")
+modulate_color = Color(0, 0, 0, 1)
+
 [node name="menu_main" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -254,402 +258,469 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="local_audio_manager" type="Node" parent="."]
+[node name="manager" type="Node" parent="."]
+
+[node name="local_audio_manager" type="Node" parent="manager"]
 script = ExtResource("1_75gly")
 
-[node name="scene_loader" type="Node" parent="."]
-script = ExtResource("1_6afx2")
-
-[node name="bg_black" type="TextureRect" parent="."]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("CanvasTexture_kc32x")
-
-[node name="BackBufferCopy4" type="BackBufferCopy" parent="."]
-position = Vector2(639.5, 360)
-scale = Vector2(6.405, 3.6)
-copy_mode = 2
-
-[node name="vhs_ntsc" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_bxlxp")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="gradient_left" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 906.0
-offset_bottom = 720.0
-texture = SubResource("GradientTexture1D_2tesq")
-
-[node name="gradient_right" type="TextureRect" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 1280.0
-offset_top = 720.0
-offset_right = 1822.0
-offset_bottom = 1440.0
-rotation = 3.14159
-texture = SubResource("GradientTexture1D_2tesq")
-
-[node name="freddy" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 328.0
-offset_top = -5.0
-offset_right = 1608.0
-offset_bottom = 1275.0
-texture = ExtResource("1_kgtwc")
-stretch_mode = 4
-
-[node name="freddy_player" type="AnimationPlayer" parent="."]
-root_node = NodePath("../freddy")
-libraries = {
-"": SubResource("AnimationLibrary_qa2lr")
-}
-autoplay = "freddy_glitching"
-
-[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
-visible = false
-position = Vector2(639.5, 360)
-scale = Vector2(6.405, 3.6)
-copy_mode = 2
-
-[node name="vhs_grain" type="ColorRect" parent="."]
-visible = false
-material = SubResource("ShaderMaterial_aiyko")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="BackBufferCopy2" type="BackBufferCopy" parent="."]
-position = Vector2(639.5, 360)
-scale = Vector2(6.405, 3.6)
-copy_mode = 2
-
-[node name="vhs_tv" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_siy6n")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="BackBufferCopy3" type="BackBufferCopy" parent="."]
-visible = false
-position = Vector2(639.5, 360)
-scale = Vector2(6.405, 3.6)
-copy_mode = 2
-
-[node name="vhs_blur" type="ColorRect" parent="."]
-visible = false
-material = SubResource("ShaderMaterial_aiyko")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="title" type="Label" parent="."]
-layout_mode = 2
-offset_left = 160.0
-offset_top = 40.0
-offset_right = 520.0
-offset_bottom = 400.0
-theme_override_fonts/font = ExtResource("2_qxmd5")
-text = "One
-Night
-In 
-2D"
-label_settings = SubResource("LabelSettings_xl3br")
-
-[node name="star_ranking" type="Node" parent="title" node_paths=PackedStringArray("star_normal_gfx", "star_cheat_gfx", "star_20d_gfx")]
-script = ExtResource("9_emtr0")
-star_normal_gfx = NodePath("star_normal")
-star_cheat_gfx = NodePath("star_cheat")
-star_20d_gfx = NodePath("star_20d")
-
-[node name="star_normal" type="TextureRect" parent="title/star_ranking"]
-visible = false
-offset_left = 160.0
-offset_top = 316.0
-offset_right = 252.0
-offset_bottom = 408.0
-texture = ExtResource("9_gacgs")
-expand_mode = 1
-
-[node name="star_cheat" type="TextureRect" parent="title/star_ranking"]
-visible = false
-self_modulate = Color(1, 0, 0, 1)
-offset_left = 260.0
-offset_top = 316.0
-offset_right = 352.0
-offset_bottom = 408.0
-texture = ExtResource("9_xstaa")
-expand_mode = 1
-
-[node name="star_cheat_text" type="Label" parent="title/star_ranking/star_cheat"]
-layout_mode = 0
-offset_left = 14.0
-offset_top = 37.0
-offset_right = 80.0
-offset_bottom = 70.0
-theme_override_fonts/font = ExtResource("2_qxmd5")
-text = "CHEAT
-ER"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="star_20d" type="TextureRect" parent="title/star_ranking"]
-visible = false
-modulate = Color(1, 0.878431, 0, 1)
-offset_left = 360.0
-offset_top = 316.0
-offset_right = 452.0
-offset_bottom = 408.0
-texture = ExtResource("9_xstaa")
-expand_mode = 1
-
-[node name="star_full_glow" type="PointLight2D" parent="title/star_ranking/star_20d"]
-position = Vector2(46, 51)
-scale = Vector2(0.453125, 0.453125)
-color = Color(1, 1, 0, 1)
-energy = 2.0
-texture = ExtResource("11_5fvmq")
-
-[node name="menu_buttons" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 163.0
-offset_top = 651.0
-offset_right = 203.0
-offset_bottom = 691.0
-scale = Vector2(0.8, 0.8)
-
-[node name="button_newgame" type="Button" parent="menu_buttons"]
-layout_mode = 2
-offset_left = -3.0
-offset_top = -288.0
-offset_right = 301.0
-offset_bottom = -231.0
-theme_override_fonts/font = ExtResource("2_qxmd5")
-theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = SubResource("StyleBoxEmpty_tpg4w")
-text = "New Game"
-alignment = 0
-script = ExtResource("8_q3obw")
-
-[node name="button_20dmode" type="Button" parent="menu_buttons"]
-layout_mode = 2
-offset_left = -3.0
-offset_top = -219.0
-offset_right = 301.0
-offset_bottom = -162.0
-theme_override_fonts/font = ExtResource("2_qxmd5")
-theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = SubResource("StyleBoxEmpty_5l8k2")
-text = "20D Mode"
-alignment = 0
-script = ExtResource("8_q3obw")
-
-[node name="button_cheatmode" type="Button" parent="menu_buttons"]
-layout_mode = 2
-offset_left = -3.0
-offset_top = -123.0
-offset_right = 377.0
-offset_bottom = -66.0
-theme_override_fonts/font = ExtResource("2_qxmd5")
-theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = SubResource("StyleBoxEmpty_5l8k2")
-text = "Cheat Mode"
-alignment = 0
-script = ExtResource("8_q3obw")
-
-[node name="time_labels" type="Control" parent="menu_buttons" node_paths=PackedStringArray("best_time_label", "last_time_label")]
-anchors_preset = 0
-offset_top = -156.0
-offset_right = 40.0
-offset_bottom = -116.0
-script = ExtResource("14_78c3y")
-best_time_label = NodePath("best_time")
-last_time_label = NodePath("last_time")
-
-[node name="best_time" type="Label" parent="menu_buttons/time_labels"]
-layout_mode = 2
-offset_top = -2.0
-offset_right = 304.0
-offset_bottom = 13.0
-theme_override_fonts/font = ExtResource("2_qxmd5")
-text = "Best Time: 0:00.00"
-
-[node name="last_time" type="Label" parent="menu_buttons/time_labels"]
-layout_mode = 2
-offset_top = 16.0
-offset_right = 304.0
-offset_bottom = 31.0
-theme_override_fonts/font = ExtResource("2_qxmd5")
-text = "Last Time: 0:00.00"
-
-[node name="button_exit" type="Button" parent="menu_buttons"]
-modulate = Color(1, 1, 1, 0.533333)
-layout_mode = 2
-offset_left = -3.0
-offset_top = -54.0
-offset_right = 301.0
-offset_bottom = 3.0
-theme_override_fonts/font = ExtResource("2_qxmd5")
-theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = SubResource("StyleBoxEmpty_5l8k2")
-text = "Exit"
-alignment = 0
-script = ExtResource("8_q3obw")
-
-[node name="menu_music" type="AudioStreamPlayer" parent="."]
+[node name="menu_music" type="AudioStreamPlayer" parent="manager/local_audio_manager"]
 stream = ExtResource("3_21r8m")
 volume_db = -8.0
 autoplay = true
 
-[node name="static" type="AnimatedSprite2D" parent="."]
+[node name="scene_loader" type="Node" parent="manager"]
+script = ExtResource("1_6afx2")
+
+[node name="transition" type="Node" parent="."]
+
+[node name="static" type="AnimatedSprite2D" parent="transition"]
 visible = false
 position = Vector2(640, 352)
 sprite_frames = SubResource("SpriteFrames_2ijog")
 animation = &"static"
 
-[node name="static_player" type="AnimationPlayer" parent="."]
+[node name="static_player" type="AnimationPlayer" parent="transition"]
+root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_he8l4")
 }
 autoplay = "static"
 speed_scale = 5.0
 
-[node name="credit_container" type="Control" parent="."]
+[node name="menu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg" type="Control" parent="menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="gradient_red" type="TextureRect" parent="menu/bg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_allgc")
+
+[node name="static_bg" type="AnimatedSprite2D" parent="menu/bg"]
+modulate = Color(1, 1, 1, 0.533333)
+material = SubResource("CanvasItemMaterial_qu7dr")
+position = Vector2(640, 360)
+scale = Vector2(16, 16)
+sprite_frames = SubResource("SpriteFrames_0f2d0")
+autoplay = "default"
+frame_progress = 0.175905
+
+[node name="shaders" type="Control" parent="menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="vignette" type="TextureRect" parent="menu/shaders"]
+material = SubResource("ShaderMaterial_n17ph")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_x34ak")
+
+[node name="animatronics" type="Control" parent="menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="springtrap" type="TextureRect" parent="menu/animatronics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 983.0
+offset_top = 334.0
+offset_right = 63.0
+offset_bottom = 206.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(435, 318)
+texture = ExtResource("32_gj6dq")
+stretch_mode = 6
+
+[node name="foxy" type="TextureRect" parent="menu/animatronics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -73.0
+offset_top = 353.0
+offset_right = -993.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(435, 318)
+texture = ExtResource("33_yxtwo")
+stretch_mode = 6
+
+[node name="chica" type="TextureRect" parent="menu/animatronics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 743.0
+offset_top = 283.0
+offset_right = -177.0
+offset_bottom = 341.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("34_kfm7a")
+stretch_mode = 6
+
+[node name="bonnie" type="TextureRect" parent="menu/animatronics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 167.0
+offset_top = 255.0
+offset_right = -754.0
+offset_bottom = 323.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("35_5ttwh")
+stretch_mode = 6
+
+[node name="freddy" type="TextureRect" parent="menu/animatronics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 460.0
+offset_top = 161.0
+offset_right = -460.0
+offset_bottom = 544.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("36_kem5p")
+stretch_mode = 6
+
+[node name="text_shadow" type="TextureRect" parent="menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_f4lfu")
+
+[node name="title" type="Control" parent="menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="One" type="Label" parent="menu/title"]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 98.0
+offset_right = 433.0
+offset_bottom = 169.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 75
+text = "One"
+
+[node name="Night" type="Label" parent="menu/title"]
+layout_mode = 0
+offset_left = 802.0
+offset_top = 98.0
+offset_right = 1022.0
+offset_bottom = 169.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 75
+text = "Night
+"
+
+[node name="2D" type="Label" parent="menu/title"]
+layout_mode = 0
+offset_left = 506.0
+offset_top = 38.0
+offset_right = 740.0
+offset_bottom = 214.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 200
+text = "2D"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="button_newgame" type="Button" parent="menu"]
+layout_mode = 2
+offset_left = 536.0
+offset_top = 334.0
+offset_right = 709.0
+offset_bottom = 506.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxTexture_wfmah")
+theme_override_styles/hover = SubResource("StyleBoxTexture_m0h71")
+text = "New
+Game"
+script = ExtResource("8_q3obw")
+
+[node name="button_20dmode" type="Button" parent="menu"]
+layout_mode = 2
+offset_left = 850.0
+offset_top = 404.0
+offset_right = 972.0
+offset_bottom = 527.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pjkuo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gclx0")
+text = "20D 
+Mode"
+script = ExtResource("8_q3obw")
+
+[node name="time_labels" type="Control" parent="menu" node_paths=PackedStringArray("best_time_label", "last_time_label")]
+anchors_preset = 0
+offset_left = 856.0
+offset_top = 533.0
+offset_right = 978.0
+offset_bottom = 564.0
+scale = Vector2(0.9, 0.9)
+script = ExtResource("14_78c3y")
+best_time_label = NodePath("best_time")
+last_time_label = NodePath("last_time")
+
+[node name="best_time" type="Label" parent="menu/time_labels"]
+layout_mode = 2
+offset_top = -2.0
+offset_right = 122.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+text = "Best: 0:00.00"
+
+[node name="last_time" type="Label" parent="menu/time_labels"]
+layout_mode = 2
+offset_top = 16.0
+offset_right = 122.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+text = "Last: 0:00.00"
+
+[node name="button_cheatmode" type="Button" parent="menu"]
+layout_mode = 2
+offset_left = 272.0
+offset_top = 403.0
+offset_right = 396.0
+offset_bottom = 526.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sj4rm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_q15rl")
+text = "Cheat
+Mode"
+script = ExtResource("8_q3obw")
+
+[node name="button_exit" type="Button" parent="menu"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -380.0
-offset_top = -106.0
-offset_right = -8.0
-offset_bottom = -8.0
+offset_left = -147.0
+offset_top = -69.0
+offset_right = -12.0
+offset_bottom = -12.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 56
+text = "Exit"
+alignment = 2
+script = ExtResource("8_q3obw")
+
+[node name="button_godot" type="Button" parent="menu"]
+layout_mode = 2
+offset_left = 9.0
+offset_top = 659.0
+offset_right = 140.0
+offset_bottom = 689.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 16
+text = "Made In Godot"
+alignment = 0
 script = ExtResource("26_lpeo8")
 
-[node name="button_godot" type="Button" parent="credit_container"]
+[node name="button_jujuprodgames" type="Button" parent="menu"]
 layout_mode = 2
-offset_left = 165.0
-offset_right = 372.0
-offset_bottom = 30.0
+offset_left = 1108.0
+offset_top = 445.0
+offset_right = 1200.0
+offset_bottom = 538.0
+theme_type_variation = &"FlatButton"
 theme_override_fonts/font = ExtResource("2_qxmd5")
-theme_override_font_sizes/font_size = 24
-text = "Made In: Godot"
-alignment = 2
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xgmv1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mig85")
+text = "About
+Dev"
+script = ExtResource("26_lpeo8")
 
-[node name="button_jujuprodgames" type="Button" parent="credit_container"]
+[node name="button_scottcawthon" type="Button" parent="menu"]
 layout_mode = 2
-offset_left = 28.0
-offset_top = 34.0
-offset_right = 372.0
-offset_bottom = 64.0
+offset_left = 51.0
+offset_top = 445.0
+offset_right = 144.0
+offset_bottom = 538.0
 theme_override_fonts/font = ExtResource("2_qxmd5")
-theme_override_font_sizes/font_size = 24
-text = "Remake By: JujuProdGames"
-alignment = 2
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxEmpty_l6u81")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hw6e7")
+text = "OG
+Game"
+script = ExtResource("26_lpeo8")
 
-[node name="button_scottcawthon" type="Button" parent="credit_container"]
-layout_mode = 2
-offset_top = 68.0
-offset_right = 372.0
-offset_bottom = 98.0
+[node name="label_scottcawthon" type="Label" parent="menu/button_scottcawthon"]
+layout_mode = 0
+offset_left = -19.0
+offset_top = 95.0
+offset_right = 111.0
+offset_bottom = 107.0
 theme_override_fonts/font = ExtResource("2_qxmd5")
-theme_override_font_sizes/font_size = 24
-text = "Original By: Scott Cawthon"
-alignment = 2
+theme_override_font_sizes/font_size = 13
+text = "By Scott Cawthon"
+horizontal_alignment = 1
 
-[node name="button_resetdata" type="Button" parent="."]
-layout_mode = 2
-offset_left = 1012.0
-offset_top = 8.0
-offset_right = 1272.0
-offset_bottom = 38.0
+[node name="button_resetdata" type="Button" parent="menu"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -276.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 46.0
+grow_horizontal = 0
 theme_override_fonts/font = ExtResource("2_qxmd5")
 theme_override_font_sizes/font_size = 24
 text = "Hold to Reset Data"
 alignment = 2
 script = ExtResource("31_s0btl")
 
-[node name="resetdata_timer" type="Timer" parent="button_resetdata"]
+[node name="resetdata_timer" type="Timer" parent="menu/button_resetdata"]
 wait_time = 5.0
 one_shot = true
 
-[node name="credit_label" type="Label" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -510.0
-offset_top = -80.0
-offset_right = -16.0
-offset_bottom = -16.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("2_qxmd5")
-theme_override_font_sizes/font_size = 32
-text = "Original By: Scott Cawthon
-Remake By: JujuProdGames"
-horizontal_alignment = 2
-
-[node name="version_label" type="Label" parent="."]
+[node name="version_label" type="Label" parent="menu"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 16.0
-offset_top = -41.0
-offset_right = 72.0
-offset_bottom = -16.0
+offset_left = 12.0
+offset_top = -36.0
+offset_right = 82.0
+offset_bottom = -11.0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_qxmd5")
 theme_override_font_sizes/font_size = 24
-text = "V1.10"
+text = "V1.11"
 vertical_alignment = 2
 
-[connection signal="button_down" from="menu_buttons/button_newgame" to="local_audio_manager" method="play_sound" binds= ["res://sounds/menu/menu_button.wav"]]
-[connection signal="button_down" from="menu_buttons/button_newgame" to="scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/scene_night_number_1.tscn"]]
-[connection signal="button_down" from="menu_buttons/button_newgame" to="menu_buttons/button_newgame" method="set_use_cheat_mode" binds= [false]]
-[connection signal="button_down" from="menu_buttons/button_newgame" to="menu_buttons/button_newgame" method="set_use_20d_mode" binds= [false]]
-[connection signal="button_down" from="menu_buttons/button_20dmode" to="local_audio_manager" method="play_sound" binds= ["res://sounds/menu/menu_button.wav"]]
-[connection signal="button_down" from="menu_buttons/button_20dmode" to="scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/scene_night_number_20D.tscn"]]
-[connection signal="button_down" from="menu_buttons/button_20dmode" to="menu_buttons/button_20dmode" method="set_use_cheat_mode" binds= [false]]
-[connection signal="button_down" from="menu_buttons/button_20dmode" to="menu_buttons/button_20dmode" method="set_use_20d_mode" binds= [true]]
-[connection signal="button_down" from="menu_buttons/button_cheatmode" to="local_audio_manager" method="play_sound" binds= ["res://sounds/menu/menu_button.wav"]]
-[connection signal="button_down" from="menu_buttons/button_cheatmode" to="scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/scene_night_number_cheat.tscn"]]
-[connection signal="button_down" from="menu_buttons/button_cheatmode" to="menu_buttons/button_cheatmode" method="set_use_cheat_mode" binds= [true]]
-[connection signal="button_down" from="menu_buttons/button_cheatmode" to="menu_buttons/button_cheatmode" method="set_use_20d_mode" binds= [false]]
-[connection signal="button_down" from="menu_buttons/button_exit" to="local_audio_manager" method="play_sound"]
-[connection signal="button_down" from="menu_buttons/button_exit" to="menu_buttons/button_exit" method="quit_game"]
-[connection signal="button_down" from="credit_container/button_godot" to="credit_container" method="open_link" binds= ["https://godotengine.org/license"]]
-[connection signal="button_down" from="credit_container/button_jujuprodgames" to="credit_container" method="open_link" binds= ["https://www.youtube.com/@JujuProdGames"]]
-[connection signal="button_down" from="credit_container/button_scottcawthon" to="credit_container" method="open_link" binds= ["https://store.steampowered.com/app/319510/Five_Nights_at_Freddys/", "https://play.google.com/store/apps/details?id=com.scottgames.fivenightsatfreddys&hl=en_US&gl=US"]]
-[connection signal="button_down" from="button_resetdata" to="button_resetdata/resetdata_timer" method="start"]
-[connection signal="button_up" from="button_resetdata" to="button_resetdata/resetdata_timer" method="stop"]
-[connection signal="data_reset" from="button_resetdata" to="title/star_ranking" method="update_star_state"]
-[connection signal="data_reset" from="button_resetdata" to="menu_buttons/time_labels" method="update_best_time"]
-[connection signal="timeout" from="button_resetdata/resetdata_timer" to="button_resetdata" method="reset_data"]
+[node name="star_ranking" type="Control" parent="menu" node_paths=PackedStringArray("star_normal_gfx", "star_cheat_gfx", "star_20d_gfx")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 263.0
+offset_top = 556.0
+offset_right = -297.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_emtr0")
+star_normal_gfx = NodePath("star_normal")
+star_cheat_gfx = NodePath("star_cheat")
+star_20d_gfx = NodePath("star_20d")
+
+[node name="star_normal" type="TextureRect" parent="menu/star_ranking"]
+offset_left = 279.0
+offset_right = 423.0
+offset_bottom = 144.0
+texture = ExtResource("9_xstaa")
+expand_mode = 1
+
+[node name="star_cheat" type="TextureRect" parent="menu/star_ranking"]
+self_modulate = Color(1, 0, 0, 1)
+offset_right = 144.0
+offset_bottom = 144.0
+texture = ExtResource("9_xstaa")
+expand_mode = 1
+
+[node name="star_cheat_text" type="Label" parent="menu/star_ranking/star_cheat"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 51.0
+offset_right = 120.0
+offset_bottom = 112.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 27
+text = "CHEAT
+ER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="star_20d" type="TextureRect" parent="menu/star_ranking"]
+modulate = Color(1, 0.878431, 0, 1)
+offset_left = 575.0
+offset_right = 719.0
+offset_bottom = 144.0
+texture = ExtResource("9_xstaa")
+expand_mode = 1
+
+[node name="star_full_glow" type="PointLight2D" parent="menu/star_ranking/star_20d"]
+position = Vector2(74, 76)
+scale = Vector2(0.453125, 0.453125)
+color = Color(1, 1, 0, 1)
+energy = 3.12
+texture = ExtResource("11_5fvmq")
+
+[connection signal="button_down" from="menu/button_newgame" to="manager/local_audio_manager" method="play_sound" binds= ["res://sounds/menu/menu_button.wav"]]
+[connection signal="button_down" from="menu/button_newgame" to="manager/scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/scene_night_number_1.tscn"]]
+[connection signal="button_down" from="menu/button_newgame" to="menu/button_newgame" method="set_use_cheat_mode" binds= [false]]
+[connection signal="button_down" from="menu/button_newgame" to="menu/button_newgame" method="set_use_20d_mode" binds= [false]]
+[connection signal="button_down" from="menu/button_20dmode" to="manager/local_audio_manager" method="play_sound" binds= ["res://sounds/menu/menu_button.wav"]]
+[connection signal="button_down" from="menu/button_20dmode" to="manager/scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/scene_night_number_20D.tscn"]]
+[connection signal="button_down" from="menu/button_20dmode" to="menu/button_20dmode" method="set_use_cheat_mode" binds= [false]]
+[connection signal="button_down" from="menu/button_20dmode" to="menu/button_20dmode" method="set_use_20d_mode" binds= [true]]
+[connection signal="button_down" from="menu/button_cheatmode" to="manager/local_audio_manager" method="play_sound" binds= ["res://sounds/menu/menu_button.wav"]]
+[connection signal="button_down" from="menu/button_cheatmode" to="manager/scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/scene_night_number_cheat.tscn"]]
+[connection signal="button_down" from="menu/button_cheatmode" to="menu/button_cheatmode" method="set_use_cheat_mode" binds= [true]]
+[connection signal="button_down" from="menu/button_cheatmode" to="menu/button_cheatmode" method="set_use_20d_mode" binds= [false]]
+[connection signal="button_down" from="menu/button_exit" to="manager/local_audio_manager" method="play_sound"]
+[connection signal="button_down" from="menu/button_exit" to="menu/button_exit" method="quit_game"]
+[connection signal="button_down" from="menu/button_godot" to="menu/button_godot" method="open_link" binds= ["https://godotengine.org/license"]]
+[connection signal="button_down" from="menu/button_jujuprodgames" to="menu/button_jujuprodgames" method="open_link" binds= ["https://www.youtube.com/@JujuProdGames"]]
+[connection signal="button_down" from="menu/button_scottcawthon" to="menu/button_scottcawthon" method="open_link" binds= ["https://store.steampowered.com/app/319510/Five_Nights_at_Freddys/", "https://play.google.com/store/apps/details?id=com.scottgames.fivenightsatfreddys&hl=en_US&gl=US"]]
+[connection signal="button_down" from="menu/button_resetdata" to="menu/button_resetdata/resetdata_timer" method="start"]
+[connection signal="button_up" from="menu/button_resetdata" to="menu/button_resetdata/resetdata_timer" method="stop"]
+[connection signal="data_reset" from="menu/button_resetdata" to="menu/time_labels" method="update_best_time"]
+[connection signal="data_reset" from="menu/button_resetdata" to="menu/star_ranking" method="update_star_state"]
+[connection signal="timeout" from="menu/button_resetdata/resetdata_timer" to="menu/button_resetdata" method="reset_data"]

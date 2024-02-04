@@ -1,0 +1,655 @@
+[gd_scene load_steps=49 format=3 uid="uid://mkh8ja63pnlt"]
+
+[ext_resource type="Script" path="res://scripts/audio/audio_manager_local.gd" id="1_7kwvw"]
+[ext_resource type="Script" path="res://scripts/misc/scene_loader.gd" id="2_0yivs"]
+[ext_resource type="Shader" path="res://shaders/GodotRetro - Ahopness/Screen Shaders/VHSPause.gdshader" id="3_q0gv5"]
+[ext_resource type="Texture2D" uid="uid://m4ahsdeb8hs4" path="res://sprites/characters/animatronics/freddy.png" id="4_gflvo"]
+[ext_resource type="Texture2D" uid="uid://bb0gjj5buo4s0" path="res://sprites/characters/animatronics/freddy_inverted.png" id="5_mpn1o"]
+[ext_resource type="Shader" path="res://shaders/GodotRetro - Ahopness/Screen Shaders/Aditional Shaders/Blur.gdshader" id="6_52xbp"]
+[ext_resource type="Shader" path="res://shaders/GodotRetro - Ahopness/Screen Shaders/TV.gdshader" id="7_nnxpt"]
+[ext_resource type="FontFile" uid="uid://c458otts8ji68" path="res://ui/fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" id="8_5dtqh"]
+[ext_resource type="Script" path="res://scripts/ui/star_ranking_local.gd" id="9_knp1v"]
+[ext_resource type="Texture2D" uid="uid://b34eatpnubpry" path="res://sprites/star_outline.png" id="10_yvwqr"]
+[ext_resource type="Texture2D" uid="uid://cb5kijdc2gycv" path="res://sprites/star.png" id="11_xon8n"]
+[ext_resource type="Texture2D" uid="uid://caroegfhu8p6o" path="res://sprites/circle_faded.png" id="12_a43fx"]
+[ext_resource type="Script" path="res://scripts/ui/main_menu_button.gd" id="13_tdy4t"]
+[ext_resource type="Script" path="res://scripts/ui/best_time_local.gd" id="14_mkfn2"]
+[ext_resource type="AudioStream" uid="uid://cl1bpactm4fm7" path="res://sounds/menu/menu_music.mp3" id="15_2g0ni"]
+[ext_resource type="Texture2D" uid="uid://bs7b1qfv6r66q" path="res://sprites/static/4.png" id="16_6c44t"]
+[ext_resource type="Texture2D" uid="uid://cbvf2blkod7d8" path="res://sprites/static/6.png" id="17_rny70"]
+[ext_resource type="Texture2D" uid="uid://cmdr3qb5u6fb1" path="res://sprites/static/8.png" id="18_00v3j"]
+[ext_resource type="Texture2D" uid="uid://c86doagu88wwg" path="res://sprites/static/9.png" id="19_j8vco"]
+[ext_resource type="Texture2D" uid="uid://bnnn73x60baqk" path="res://sprites/static/10.png" id="20_i5wml"]
+[ext_resource type="Texture2D" uid="uid://dx1t6agw3at0b" path="res://sprites/static/21.png" id="21_mh3vh"]
+[ext_resource type="Texture2D" uid="uid://crr0y42npgguf" path="res://sprites/static/22.png" id="22_1npmg"]
+[ext_resource type="Texture2D" uid="uid://duvsh68d3ln6v" path="res://sprites/static/25.png" id="23_w86p7"]
+[ext_resource type="Texture2D" uid="uid://b0tiiv7uo3jyy" path="res://sprites/static/430.png" id="24_05wf6"]
+[ext_resource type="Texture2D" uid="uid://yqe6eym8s2t5" path="res://sprites/static/434.png" id="25_x3ogi"]
+[ext_resource type="Texture2D" uid="uid://c0n6pgoih70ok" path="res://sprites/static/435.png" id="26_dgomw"]
+[ext_resource type="Texture2D" uid="uid://dk4ws78nw1jrt" path="res://sprites/static/436.png" id="27_kj52f"]
+[ext_resource type="Texture2D" uid="uid://cn6vf4kt7cuev" path="res://sprites/static/437.png" id="28_7xlr1"]
+[ext_resource type="Texture2D" uid="uid://b21xor2lidyqp" path="res://sprites/static/438.png" id="29_ryyrv"]
+[ext_resource type="Texture2D" uid="uid://ul05miqcikby" path="res://sprites/static/439.png" id="30_qy4vg"]
+[ext_resource type="Script" path="res://scripts/misc/credits.gd" id="31_4cf8j"]
+[ext_resource type="Script" path="res://scripts/misc/reset_data.gd" id="32_h3xjo"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_kc32x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bxlxp"]
+shader = ExtResource("3_q0gv5")
+shader_parameter/shake_amount_x = 250.0
+shader_parameter/shake_amount_y = 40.0
+shader_parameter/white_hlines = 50.0
+shader_parameter/white_vlines = 80.0
+
+[sub_resource type="Gradient" id="Gradient_e7jlp"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2tesq"]
+gradient = SubResource("Gradient_e7jlp")
+
+[sub_resource type="Animation" id="Animation_nijg6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_gflvo")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_v")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_vt5h7"]
+resource_name = "freddy_glitching"
+length = 7.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 1.1, 1.2, 5.9, 6, 6.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_gflvo"), ExtResource("5_mpn1o"), ExtResource("4_gflvo"), ExtResource("4_gflvo"), ExtResource("5_mpn1o"), ExtResource("4_gflvo")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_v")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3.3, 3.4, 3.5, 5.9, 6, 6.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qa2lr"]
+_data = {
+"RESET": SubResource("Animation_nijg6"),
+"freddy_glitching": SubResource("Animation_vt5h7")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aiyko"]
+shader = ExtResource("6_52xbp")
+shader_parameter/amount = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_siy6n"]
+shader = ExtResource("7_nnxpt")
+shader_parameter/vertJerkOpt = 0.2
+shader_parameter/vertMovementOpt = 0.0
+shader_parameter/bottomStaticOpt = 0.0
+shader_parameter/bottomStaticStrenth = 0.7
+shader_parameter/scalinesOpt = 0.8
+shader_parameter/rgbOffsetOpt = 0.2
+shader_parameter/horzFuzzOpt = 0.15
+
+[sub_resource type="LabelSettings" id="LabelSettings_xl3br"]
+line_spacing = 12.0
+font_size = 64
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tpg4w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5l8k2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ijog"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_6c44t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_rny70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_00v3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_j8vco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_i5wml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_mh3vh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_1npmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_w86p7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_05wf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_x3ogi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_dgomw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_kj52f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_7xlr1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ryyrv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_qy4vg")
+}],
+"loop": true,
+"name": &"static",
+"speed": 50.0
+}]
+
+[sub_resource type="Animation" id="Animation_7uvcd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("static:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("static:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_jyja3"]
+resource_name = "static"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("static:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("static:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_he8l4"]
+_data = {
+"RESET": SubResource("Animation_7uvcd"),
+"static": SubResource("Animation_jyja3")
+}
+
+[node name="menu_main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="local_audio_manager" type="Node" parent="."]
+script = ExtResource("1_7kwvw")
+
+[node name="scene_loader" type="Node" parent="."]
+script = ExtResource("2_0yivs")
+
+[node name="bg_black" type="TextureRect" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_kc32x")
+
+[node name="BackBufferCopy4" type="BackBufferCopy" parent="."]
+position = Vector2(639.5, 360)
+scale = Vector2(6.405, 3.6)
+copy_mode = 2
+
+[node name="vhs_ntsc" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_bxlxp")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="gradient_left" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 906.0
+offset_bottom = 720.0
+texture = SubResource("GradientTexture1D_2tesq")
+
+[node name="gradient_right" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1280.0
+offset_top = 720.0
+offset_right = 1822.0
+offset_bottom = 1440.0
+rotation = 3.14159
+texture = SubResource("GradientTexture1D_2tesq")
+
+[node name="freddy" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 328.0
+offset_top = -5.0
+offset_right = 1608.0
+offset_bottom = 1275.0
+texture = ExtResource("4_gflvo")
+stretch_mode = 4
+
+[node name="freddy_player" type="AnimationPlayer" parent="."]
+root_node = NodePath("../freddy")
+libraries = {
+"": SubResource("AnimationLibrary_qa2lr")
+}
+autoplay = "freddy_glitching"
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+visible = false
+position = Vector2(639.5, 360)
+scale = Vector2(6.405, 3.6)
+copy_mode = 2
+
+[node name="vhs_grain" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_aiyko")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackBufferCopy2" type="BackBufferCopy" parent="."]
+position = Vector2(639.5, 360)
+scale = Vector2(6.405, 3.6)
+copy_mode = 2
+
+[node name="vhs_tv" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_siy6n")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackBufferCopy3" type="BackBufferCopy" parent="."]
+visible = false
+position = Vector2(639.5, 360)
+scale = Vector2(6.405, 3.6)
+copy_mode = 2
+
+[node name="vhs_blur" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_aiyko")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="title" type="Label" parent="."]
+layout_mode = 2
+offset_left = 160.0
+offset_top = 40.0
+offset_right = 520.0
+offset_bottom = 400.0
+theme_override_fonts/font = ExtResource("8_5dtqh")
+text = "One
+Night
+In 
+2D"
+label_settings = SubResource("LabelSettings_xl3br")
+
+[node name="star_ranking" type="Node" parent="title" node_paths=PackedStringArray("star_normal_gfx", "star_cheat_gfx", "star_20d_gfx")]
+script = ExtResource("9_knp1v")
+star_normal_gfx = NodePath("star_normal")
+star_cheat_gfx = NodePath("star_cheat")
+star_20d_gfx = NodePath("star_20d")
+
+[node name="star_normal" type="TextureRect" parent="title/star_ranking"]
+visible = false
+offset_left = 160.0
+offset_top = 316.0
+offset_right = 252.0
+offset_bottom = 408.0
+texture = ExtResource("10_yvwqr")
+expand_mode = 1
+
+[node name="star_cheat" type="TextureRect" parent="title/star_ranking"]
+visible = false
+self_modulate = Color(1, 0, 0, 1)
+offset_left = 260.0
+offset_top = 316.0
+offset_right = 352.0
+offset_bottom = 408.0
+texture = ExtResource("11_xon8n")
+expand_mode = 1
+
+[node name="star_cheat_text" type="Label" parent="title/star_ranking/star_cheat"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 37.0
+offset_right = 80.0
+offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("8_5dtqh")
+text = "CHEAT
+ER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="star_20d" type="TextureRect" parent="title/star_ranking"]
+visible = false
+modulate = Color(1, 0.878431, 0, 1)
+offset_left = 360.0
+offset_top = 316.0
+offset_right = 452.0
+offset_bottom = 408.0
+texture = ExtResource("11_xon8n")
+expand_mode = 1
+
+[node name="star_full_glow" type="PointLight2D" parent="title/star_ranking/star_20d"]
+position = Vector2(46, 51)
+scale = Vector2(0.453125, 0.453125)
+color = Color(1, 1, 0, 1)
+energy = 2.0
+texture = ExtResource("12_a43fx")
+
+[node name="menu_buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 163.0
+offset_top = 651.0
+offset_right = 203.0
+offset_bottom = 691.0
+scale = Vector2(0.8, 0.8)
+
+[node name="button_newgame" type="Button" parent="menu_buttons"]
+layout_mode = 2
+offset_left = -3.0
+offset_top = -288.0
+offset_right = 301.0
+offset_bottom = -231.0
+theme_override_fonts/font = ExtResource("8_5dtqh")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tpg4w")
+text = "New Game"
+alignment = 0
+script = ExtResource("13_tdy4t")
+
+[node name="button_20dmode" type="Button" parent="menu_buttons"]
+layout_mode = 2
+offset_left = -3.0
+offset_top = -219.0
+offset_right = 301.0
+offset_bottom = -162.0
+theme_override_fonts/font = ExtResource("8_5dtqh")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5l8k2")
+text = "20D Mode"
+alignment = 0
+script = ExtResource("13_tdy4t")
+
+[node name="button_cheatmode" type="Button" parent="menu_buttons"]
+layout_mode = 2
+offset_left = -3.0
+offset_top = -123.0
+offset_right = 377.0
+offset_bottom = -66.0
+theme_override_fonts/font = ExtResource("8_5dtqh")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5l8k2")
+text = "Cheat Mode"
+alignment = 0
+script = ExtResource("13_tdy4t")
+
+[node name="time_labels" type="Control" parent="menu_buttons" node_paths=PackedStringArray("best_time_label", "last_time_label")]
+anchors_preset = 0
+offset_top = -156.0
+offset_right = 40.0
+offset_bottom = -116.0
+script = ExtResource("14_mkfn2")
+best_time_label = NodePath("best_time")
+last_time_label = NodePath("last_time")
+
+[node name="best_time" type="Label" parent="menu_buttons/time_labels"]
+layout_mode = 2
+offset_top = -2.0
+offset_right = 304.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("8_5dtqh")
+text = "Best Time: 0:00.00"
+
+[node name="last_time" type="Label" parent="menu_buttons/time_labels"]
+layout_mode = 2
+offset_top = 16.0
+offset_right = 304.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("8_5dtqh")
+text = "Last Time: 0:00.00"
+
+[node name="button_exit" type="Button" parent="menu_buttons"]
+modulate = Color(1, 1, 1, 0.533333)
+layout_mode = 2
+offset_left = -3.0
+offset_top = -54.0
+offset_right = 301.0
+offset_bottom = 3.0
+theme_override_fonts/font = ExtResource("8_5dtqh")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5l8k2")
+text = "Exit"
+alignment = 0
+script = ExtResource("13_tdy4t")
+
+[node name="menu_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_2g0ni")
+volume_db = -8.0
+autoplay = true
+
+[node name="static" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(640, 352)
+sprite_frames = SubResource("SpriteFrames_2ijog")
+animation = &"static"
+
+[node name="static_player" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_he8l4")
+}
+autoplay = "static"
+speed_scale = 5.0
+
+[node name="credit_container" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -380.0
+offset_top = -106.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("31_4cf8j")
+
+[node name="button_godot" type="Button" parent="credit_container"]
+layout_mode = 2
+offset_left = 165.0
+offset_right = 372.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("8_5dtqh")
+theme_override_font_sizes/font_size = 24
+text = "Made In: Godot"
+alignment = 2
+
+[node name="button_jujuprodgames" type="Button" parent="credit_container"]
+layout_mode = 2
+offset_left = 28.0
+offset_top = 34.0
+offset_right = 372.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("8_5dtqh")
+theme_override_font_sizes/font_size = 24
+text = "Remake By: JujuProdGames"
+alignment = 2
+
+[node name="button_scottcawthon" type="Button" parent="credit_container"]
+layout_mode = 2
+offset_top = 68.0
+offset_right = 372.0
+offset_bottom = 98.0
+theme_override_fonts/font = ExtResource("8_5dtqh")
+theme_override_font_sizes/font_size = 24
+text = "Original By: Scott Cawthon"
+alignment = 2
+
+[node name="button_resetdata" type="Button" parent="."]
+layout_mode = 2
+offset_left = 1012.0
+offset_top = 8.0
+offset_right = 1272.0
+offset_bottom = 38.0
+theme_override_fonts/font = ExtResource("8_5dtqh")
+theme_override_font_sizes/font_size = 24
+text = "Hold to Reset Data"
+alignment = 2
+script = ExtResource("32_h3xjo")
+
+[node name="resetdata_timer" type="Timer" parent="button_resetdata"]
+wait_time = 5.0
+one_shot = true
+
+[node name="credit_label" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -510.0
+offset_top = -80.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("8_5dtqh")
+theme_override_font_sizes/font_size = 32
+text = "Original By: Scott Cawthon
+Remake By: JujuProdGames"
+horizontal_alignment = 2
+
+[node name="version_label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -41.0
+offset_right = 72.0
+offset_bottom = -16.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("8_5dtqh")
+theme_override_font_sizes/font_size = 24
+text = "V1.10"
+vertical_alignment = 2
+
+[connection signal="button_down" from="menu_buttons/button_newgame" to="local_audio_manager" method="play_sound" binds= ["res://sounds/menu/menu_button.wav"]]
+[connection signal="button_down" from="menu_buttons/button_newgame" to="scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/scene_night_number_1.tscn"]]
+[connection signal="button_down" from="menu_buttons/button_newgame" to="menu_buttons/button_newgame" method="set_use_cheat_mode" binds= [false]]
+[connection signal="button_down" from="menu_buttons/button_newgame" to="menu_buttons/button_newgame" method="set_use_20d_mode" binds= [false]]
+[connection signal="button_down" from="menu_buttons/button_20dmode" to="local_audio_manager" method="play_sound" binds= ["res://sounds/menu/menu_button.wav"]]
+[connection signal="button_down" from="menu_buttons/button_20dmode" to="scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/scene_night_number_20D.tscn"]]
+[connection signal="button_down" from="menu_buttons/button_20dmode" to="menu_buttons/button_20dmode" method="set_use_cheat_mode" binds= [false]]
+[connection signal="button_down" from="menu_buttons/button_20dmode" to="menu_buttons/button_20dmode" method="set_use_20d_mode" binds= [true]]
+[connection signal="button_down" from="menu_buttons/button_cheatmode" to="local_audio_manager" method="play_sound" binds= ["res://sounds/menu/menu_button.wav"]]
+[connection signal="button_down" from="menu_buttons/button_cheatmode" to="scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/scene_night_number_cheat.tscn"]]
+[connection signal="button_down" from="menu_buttons/button_cheatmode" to="menu_buttons/button_cheatmode" method="set_use_cheat_mode" binds= [true]]
+[connection signal="button_down" from="menu_buttons/button_cheatmode" to="menu_buttons/button_cheatmode" method="set_use_20d_mode" binds= [false]]
+[connection signal="button_down" from="menu_buttons/button_exit" to="local_audio_manager" method="play_sound"]
+[connection signal="button_down" from="menu_buttons/button_exit" to="menu_buttons/button_exit" method="quit_game"]
+[connection signal="button_down" from="credit_container/button_godot" to="credit_container" method="open_link" binds= ["https://godotengine.org/license"]]
+[connection signal="button_down" from="credit_container/button_jujuprodgames" to="credit_container" method="open_link" binds= ["https://www.youtube.com/@JujuProdGames"]]
+[connection signal="button_down" from="credit_container/button_scottcawthon" to="credit_container" method="open_link" binds= ["https://store.steampowered.com/app/319510/Five_Nights_at_Freddys/", "https://play.google.com/store/apps/details?id=com.scottgames.fivenightsatfreddys&hl=en_US&gl=US"]]
+[connection signal="button_down" from="button_resetdata" to="button_resetdata/resetdata_timer" method="start"]
+[connection signal="button_up" from="button_resetdata" to="button_resetdata/resetdata_timer" method="stop"]
+[connection signal="data_reset" from="button_resetdata" to="title/star_ranking" method="update_star_state"]
+[connection signal="data_reset" from="button_resetdata" to="menu_buttons/time_labels" method="update_best_time"]
+[connection signal="timeout" from="button_resetdata/resetdata_timer" to="button_resetdata" method="reset_data"]

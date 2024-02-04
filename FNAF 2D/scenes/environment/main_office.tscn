@@ -309,7 +309,6 @@ one_shot = true
 
 [node name="controls_manager" type="Node" parent="game_manager"]
 script = ExtResource("8_xyoyc")
-show_mobile_controls = false
 
 [node name="environment" type="Node2D" parent="."]
 
@@ -944,7 +943,7 @@ stream = ExtResource("58_a0s5q")
 [connection signal="button_down" from="environment/poster_celebrate/poster_celebrate_freddyhonk" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/nose_honk.wav"]]
 [connection signal="using_20d_mode" from="environment/animatronics" to="phone_call" method="stop"]
 [connection signal="using_20d_mode" from="environment/animatronics" to="phone_call_youded" method="play"]
-[connection signal="using_20d_mode" from="environment/animatronics" to="ui/ui_topbar/night_text" method="set_text" binds= ["Night:-20D-"]]
+[connection signal="using_20d_mode" from="environment/animatronics" to="ui/ui_topbar/night_text" method="set_text" binds= ["Night: -20D-"]]
 [connection signal="using_cheat_mode" from="environment/animatronics" to="phone_call" method="stop"]
 [connection signal="using_cheat_mode" from="environment/animatronics" to="phone_call_cheater" method="play"]
 [connection signal="using_cheat_mode" from="environment/animatronics" to="environment/monitor/monitor_screen" method="set_cheat_mode" binds= [true]]
