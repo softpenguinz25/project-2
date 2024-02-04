@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://gce66gknn2m8"]
+[gd_scene load_steps=62 format=3 uid="uid://gce66gknn2m8"]
 
 [ext_resource type="Script" path="res://scripts/monitor/monitor_scene.gd" id="1_20jul"]
 [ext_resource type="Texture2D" uid="uid://i08yjr748wt6" path="res://sprites/environment/monitor/monitor_map.png" id="1_evw1b"]
@@ -13,11 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cqoahgwik4jad" path="res://sprites/characters/animatronics/chica.png" id="5_3nkbq"]
 [ext_resource type="Texture2D" uid="uid://b61rgbl882m5c" path="res://sprites/environment/monitor/monitor_scenes/pirate_cove_3.png" id="5_16cnb"]
 [ext_resource type="Texture2D" uid="uid://drebcrtv0836i" path="res://sprites/environment/monitor/monitor_scenes/hall.png" id="5_gjyeg"]
-[ext_resource type="Texture2D" uid="uid://ccr5wtvhqhsfx" path="res://sprites/characters/animatronics/placeholder/placeholder_icon_chica.png" id="6_1erd1"]
-[ext_resource type="Texture2D" uid="uid://ckyyaww1k4028" path="res://sprites/characters/animatronics/placeholder/placeholder_icon_bonnie.png" id="6_2iw3h"]
-[ext_resource type="Texture2D" uid="uid://b82ka5cdnk2ui" path="res://sprites/characters/animatronics/placeholder/placeholder_icon_freddy.png" id="6_eiy07"]
 [ext_resource type="Texture2D" uid="uid://cfyuikbm070gp" path="res://sprites/environment/monitor/monitor_scenes/dining_room_1.png" id="6_mvl5q"]
-[ext_resource type="Texture2D" uid="uid://bdfutn7boc1bi" path="res://sprites/characters/animatronics/placeholder/placeholder_icon_foxy.png" id="6_vlpr8"]
 [ext_resource type="Texture2D" uid="uid://b00yvpujsf3kv" path="res://sprites/environment/monitor/monitor_scenes/dining_room_2.png" id="7_bt2rh"]
 [ext_resource type="Texture2D" uid="uid://bg43yix30oy1r" path="res://sprites/characters/animatronics/bonnie.png" id="7_ulw5k"]
 [ext_resource type="Texture2D" uid="uid://cjt124bp3qw2a" path="res://sprites/environment/monitor/monitor_scenes/hall_west.png" id="9_tucfd"]
@@ -25,7 +21,11 @@
 [ext_resource type="Texture2D" uid="uid://c0utk2gg3lix1" path="res://sprites/environment/monitor/monitor_scenes/pirate_cove_1.png" id="11_bg3jj"]
 [ext_resource type="Texture2D" uid="uid://dtsog62kbgndl" path="res://sprites/environment/monitor/monitor_scenes/pirate_cove_4.png" id="14_8k27i"]
 [ext_resource type="Texture2D" uid="uid://db0bt4txiypl7" path="res://sprites/environment/monitor/monitor_scenes/pirate_cove_3_1.png" id="15_jw1sw"]
+[ext_resource type="Texture2D" uid="uid://dh8jew77lxpug" path="res://sprites/characters/animatronics/placeholder/2d/foxy_placeholder.png" id="22_17dx6"]
+[ext_resource type="Texture2D" uid="uid://bjhrygu0y2asu" path="res://sprites/characters/animatronics/placeholder/2d/chica_placeholder.png" id="23_sghqx"]
+[ext_resource type="Texture2D" uid="uid://dn7tmgmae58qm" path="res://sprites/characters/animatronics/placeholder/2d/bonnie_placeholder.png" id="24_7ngur"]
 [ext_resource type="Script" path="res://scripts/environment/interactable.gd" id="25_3xutd"]
+[ext_resource type="Texture2D" uid="uid://dlsqpf1cgfudd" path="res://sprites/characters/animatronics/placeholder/2d/freddy_placeholder.png" id="25_k5vp7"]
 [ext_resource type="Texture2D" uid="uid://bs7b1qfv6r66q" path="res://sprites/static/4.png" id="26_dgqmx"]
 [ext_resource type="Texture2D" uid="uid://cbvf2blkod7d8" path="res://sprites/static/6.png" id="27_6p1vi"]
 [ext_resource type="Texture2D" uid="uid://cmdr3qb5u6fb1" path="res://sprites/static/8.png" id="28_8uhqu"]
@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://duvsh68d3ln6v" path="res://sprites/static/25.png" id="33_acum6"]
 [ext_resource type="Shader" path="res://shaders/vignette.gdshader" id="33_csidv"]
 [ext_resource type="Texture2D" uid="uid://b0tiiv7uo3jyy" path="res://sprites/static/430.png" id="34_gad1m"]
+[ext_resource type="Shader" path="res://shaders/vhs_tv_vignette.gdshader" id="34_gct8u"]
 [ext_resource type="Texture2D" uid="uid://yqe6eym8s2t5" path="res://sprites/static/434.png" id="35_0ptnk"]
 [ext_resource type="Texture2D" uid="uid://c0n6pgoih70ok" path="res://sprites/static/435.png" id="36_2wfc0"]
 [ext_resource type="Texture2D" uid="uid://dk4ws78nw1jrt" path="res://sprites/static/436.png" id="37_v7yjn"]
@@ -97,6 +98,14 @@ shader = ExtResource("33_csidv")
 shader_parameter/alpha = 1.25
 shader_parameter/inner_radius = 0.2
 shader_parameter/outer_radius = 1.33
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wclkk"]
+shader = ExtResource("34_gct8u")
+shader_parameter/scalinesOpt = 0.8
+shader_parameter/horzFuzzOpt = 0.325
+shader_parameter/alpha = 1.0
+shader_parameter/inner_radius = 0.0
+shader_parameter/outer_radius = 1.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vlj1m"]
 animations = [{
@@ -737,50 +746,50 @@ cam_display_name = "CAM
 
 [node name="visual_foxy" type="TextureRect" parent="monitor_map"]
 visible = false
-z_index = 1
+z_index = 2
 layout_mode = 0
 offset_left = 29.0
 offset_top = 175.0
 offset_right = 61.0
 offset_bottom = 207.0
 mouse_filter = 2
-texture = ExtResource("6_vlpr8")
+texture = ExtResource("22_17dx6")
 expand_mode = 1
 
 [node name="visual_chica" type="TextureRect" parent="monitor_map"]
 visible = false
-z_index = 1
+z_index = 2
 layout_mode = 0
 offset_left = 335.0
 offset_top = 27.0
 offset_right = 367.0
 offset_bottom = 59.0
 mouse_filter = 2
-texture = ExtResource("6_1erd1")
+texture = ExtResource("23_sghqx")
 expand_mode = 1
 
 [node name="visual_bonnie" type="TextureRect" parent="monitor_map"]
 visible = false
-z_index = 1
+z_index = 2
 layout_mode = 0
 offset_left = 325.0
 offset_top = 27.0
 offset_right = 357.0
 offset_bottom = 59.0
 mouse_filter = 2
-texture = ExtResource("6_2iw3h")
+texture = ExtResource("24_7ngur")
 expand_mode = 1
 
 [node name="visual_freddy" type="TextureRect" parent="monitor_map"]
 visible = false
-z_index = 1
+z_index = 2
 layout_mode = 0
 offset_left = 315.0
 offset_top = 27.0
 offset_right = 347.0
 offset_bottom = 59.0
 mouse_filter = 2
-texture = ExtResource("6_eiy07")
+texture = ExtResource("25_k5vp7")
 expand_mode = 1
 
 [node name="you_text" type="Label" parent="monitor_map"]
@@ -812,6 +821,7 @@ position = Vector2(640, 360)
 shape = SubResource("RectangleShape2D_slyru")
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+visible = false
 position = Vector2(640, 360)
 scale = Vector2(6.4, 3.6)
 copy_mode = 2
@@ -830,10 +840,12 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="BackBufferCopy2" type="BackBufferCopy" parent="."]
+visible = false
 position = Vector2(640, 360)
 scale = Vector2(6.4, 3.6)
 
 [node name="vhs_sharpness" type="ColorRect" parent="BackBufferCopy2"]
+visible = false
 material = SubResource("ShaderMaterial_oqgcq")
 anchors_preset = 15
 anchor_right = 1.0
@@ -847,10 +859,12 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="BackBufferCopy3" type="BackBufferCopy" parent="."]
+visible = false
 position = Vector2(640, 360)
 scale = Vector2(6.4, 3.6)
 
 [node name="vhs_lensdistortion" type="ColorRect" parent="BackBufferCopy3"]
+visible = false
 material = SubResource("ShaderMaterial_s8tuk")
 anchors_preset = 15
 anchor_right = 1.0
@@ -864,10 +878,12 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="BackBufferCopy4" type="BackBufferCopy" parent="."]
+visible = false
 position = Vector2(640, 360)
 scale = Vector2(6.4, 3.6)
 
 [node name="vhs_grain" type="ColorRect" parent="BackBufferCopy4"]
+visible = false
 material = SubResource("ShaderMaterial_1qn07")
 anchors_preset = 15
 anchor_right = 1.0
@@ -881,6 +897,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="BackBufferCopy5" type="BackBufferCopy" parent="."]
+visible = false
 position = Vector2(640, 360)
 scale = Vector2(6.4, 3.6)
 
@@ -893,6 +910,22 @@ offset_left = -100.0
 offset_top = -100.0
 offset_right = -100.0
 offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BackBufferCopy6" type="BackBufferCopy" parent="."]
+visible = false
+position = Vector2(640, 360)
+scale = Vector2(6.4, 3.6)
+
+[node name="vhs_tv_vignette" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_wclkk")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.05176e-05
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -923,6 +956,14 @@ text = "EXIT CAMERA"
 [connection signal="animatronic_moved_out_of_camera_queue" from="." to="static_player" method="play" binds= ["static"]]
 [connection signal="camera_scene_switched_no_params" from="." to="static_player" method="stop"]
 [connection signal="camera_scene_switched_no_params" from="." to="static_player" method="play" binds= ["static"]]
+[connection signal="cheat_mode_off" from="." to="monitor_map/visual_foxy" method="set_visible" binds= [false]]
+[connection signal="cheat_mode_off" from="." to="monitor_map/visual_chica" method="set_visible" binds= [false]]
+[connection signal="cheat_mode_off" from="." to="monitor_map/visual_bonnie" method="set_visible" binds= [false]]
+[connection signal="cheat_mode_off" from="." to="monitor_map/visual_freddy" method="set_visible" binds= [false]]
+[connection signal="cheat_mode_on" from="." to="monitor_map/visual_foxy" method="set_visible" binds= [true]]
+[connection signal="cheat_mode_on" from="." to="monitor_map/visual_chica" method="set_visible" binds= [true]]
+[connection signal="cheat_mode_on" from="." to="monitor_map/visual_bonnie" method="set_visible" binds= [true]]
+[connection signal="cheat_mode_on" from="." to="monitor_map/visual_freddy" method="set_visible" binds= [true]]
 [connection signal="map_toggled" from="." to="monitor_map" method="set_visible"]
 [connection signal="map_toggled" from="." to="exit_button" method="set_visible"]
 [connection signal="monitor_focus" from="." to="monitor_map" method="set_visible" binds= [true]]

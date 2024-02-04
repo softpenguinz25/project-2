@@ -23,7 +23,9 @@ func set_active_state(active_state : bool):
 	can_move = active_state
 	visible = active_state
 	
-	if active_state: set_active.emit(player_footsteps_to_play)
+	if active_state: 
+		emited_is_moving_signal = false
+		set_active.emit(player_footsteps_to_play)
 	else: not_set_active.emit(player_footsteps_to_play)
 
 func _process(_delta):
@@ -61,3 +63,6 @@ func interact_with_interactables(area_2d : Area2D, interact_state : bool) -> voi
 	interactable_node.set_interact_state(interact_state)
 
 func muffle_footstep_sfx(): player_footsteps_to_play = muffled_player_footsteps
+
+func set_interact_area_scale(new_scale : Vector2):
+	$interact_area.scale = new_scale

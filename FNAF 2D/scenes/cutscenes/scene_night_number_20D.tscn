@@ -152,11 +152,11 @@ horizontal_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../static")
-autoplay = "static_transition"
-speed_scale = 5.0
 libraries = {
 "": SubResource("AnimationLibrary_mhico")
 }
+autoplay = "static_transition"
+speed_scale = 5.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 self_modulate = Color(0, 0, 0, 0)

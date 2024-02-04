@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckyyaww1k4028"
-path="res://.godot/imported/placeholder_icon_bonnie.png-20f6aa39c300f3ff83b312ebeadc0964.ctex"
+uid="uid://dh8jew77lxpug"
+path="res://.godot/imported/foxy_placeholder.png-2faf45fffc9f2fe32f744e19b1b90183.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/characters/animatronics/placeholder/placeholder_icon_bonnie.png"
-dest_files=["res://.godot/imported/placeholder_icon_bonnie.png-20f6aa39c300f3ff83b312ebeadc0964.ctex"]
+source_file="res://sprites/characters/animatronics/placeholder/2d/foxy_placeholder.png"
+dest_files=["res://.godot/imported/foxy_placeholder.png-2faf45fffc9f2fe32f744e19b1b90183.ctex"]
 
 [params]
 

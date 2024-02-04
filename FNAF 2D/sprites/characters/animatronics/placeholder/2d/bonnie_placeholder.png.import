@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccr5wtvhqhsfx"
-path="res://.godot/imported/placeholder_icon_chica.png-04c94bdae416e40a0a398b2c993b68fa.ctex"
+uid="uid://dn7tmgmae58qm"
+path="res://.godot/imported/bonnie_placeholder.png-c8325805314fae7ab97746320db172a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/characters/animatronics/placeholder/placeholder_icon_chica.png"
-dest_files=["res://.godot/imported/placeholder_icon_chica.png-04c94bdae416e40a0a398b2c993b68fa.ctex"]
+source_file="res://sprites/characters/animatronics/placeholder/2d/bonnie_placeholder.png"
+dest_files=["res://.godot/imported/bonnie_placeholder.png-c8325805314fae7ab97746320db172a5.ctex"]
 
 [params]
 

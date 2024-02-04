@@ -211,11 +211,11 @@ sprite_frames = SubResource("SpriteFrames_5tdqn")
 animation = &"static"
 
 [node name="static_player" type="AnimationPlayer" parent="."]
-autoplay = "static"
-speed_scale = 5.0
 libraries = {
 "": SubResource("AnimationLibrary_he8l4")
 }
+autoplay = "static"
+speed_scale = 5.0
 
 [connection signal="timeout" from="game_over_timer" to="scene_switcher" method="load_scene" binds= ["res://scenes/cutscenes/scene_game_over.tscn"]]
 [connection signal="timeout" from="spring_trap_timer" to="scene_switcher" method="load_scene" binds= ["res://scenes/cutscenes/scene_game_over_springtrap.tscn"]]

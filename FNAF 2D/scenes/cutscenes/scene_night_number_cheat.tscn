@@ -1,22 +1,22 @@
-[gd_scene load_steps=23 format=3 uid="uid://bjdhbabvr0rcr"]
+[gd_scene load_steps=23 format=3 uid="uid://dmvehdhfi6lyr"]
 
-[ext_resource type="FontFile" uid="uid://c458otts8ji68" path="res://ui/fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" id="1_rclyi"]
-[ext_resource type="Script" path="res://scripts/misc/scene_loader.gd" id="1_s6vro"]
-[ext_resource type="Texture2D" uid="uid://bs7b1qfv6r66q" path="res://sprites/static/4.png" id="2_i3fw7"]
-[ext_resource type="Texture2D" uid="uid://cbvf2blkod7d8" path="res://sprites/static/6.png" id="4_6aa3g"]
-[ext_resource type="Texture2D" uid="uid://cmdr3qb5u6fb1" path="res://sprites/static/8.png" id="5_remr0"]
-[ext_resource type="Texture2D" uid="uid://c86doagu88wwg" path="res://sprites/static/9.png" id="6_4tmaq"]
-[ext_resource type="Texture2D" uid="uid://bnnn73x60baqk" path="res://sprites/static/10.png" id="7_78okj"]
-[ext_resource type="Texture2D" uid="uid://dx1t6agw3at0b" path="res://sprites/static/21.png" id="8_00hsi"]
-[ext_resource type="Texture2D" uid="uid://crr0y42npgguf" path="res://sprites/static/22.png" id="9_piub7"]
-[ext_resource type="Texture2D" uid="uid://duvsh68d3ln6v" path="res://sprites/static/25.png" id="10_5dw64"]
-[ext_resource type="Texture2D" uid="uid://b0tiiv7uo3jyy" path="res://sprites/static/430.png" id="11_1ndsq"]
-[ext_resource type="Texture2D" uid="uid://yqe6eym8s2t5" path="res://sprites/static/434.png" id="12_pllg8"]
-[ext_resource type="Texture2D" uid="uid://c0n6pgoih70ok" path="res://sprites/static/435.png" id="13_834k8"]
-[ext_resource type="Texture2D" uid="uid://dk4ws78nw1jrt" path="res://sprites/static/436.png" id="14_4r3n6"]
-[ext_resource type="Texture2D" uid="uid://cn6vf4kt7cuev" path="res://sprites/static/437.png" id="15_7d86f"]
-[ext_resource type="Texture2D" uid="uid://b21xor2lidyqp" path="res://sprites/static/438.png" id="16_v70xx"]
-[ext_resource type="Texture2D" uid="uid://ul05miqcikby" path="res://sprites/static/439.png" id="17_3pu47"]
+[ext_resource type="Script" path="res://scripts/misc/scene_loader.gd" id="1_dt7aq"]
+[ext_resource type="Texture2D" uid="uid://bs7b1qfv6r66q" path="res://sprites/static/4.png" id="2_0nkfc"]
+[ext_resource type="FontFile" uid="uid://c458otts8ji68" path="res://ui/fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" id="3_4ckgv"]
+[ext_resource type="Texture2D" uid="uid://cbvf2blkod7d8" path="res://sprites/static/6.png" id="4_bw8qh"]
+[ext_resource type="Texture2D" uid="uid://cmdr3qb5u6fb1" path="res://sprites/static/8.png" id="5_x1hub"]
+[ext_resource type="Texture2D" uid="uid://c86doagu88wwg" path="res://sprites/static/9.png" id="6_af5h8"]
+[ext_resource type="Texture2D" uid="uid://bnnn73x60baqk" path="res://sprites/static/10.png" id="7_x751o"]
+[ext_resource type="Texture2D" uid="uid://dx1t6agw3at0b" path="res://sprites/static/21.png" id="8_lm2t3"]
+[ext_resource type="Texture2D" uid="uid://crr0y42npgguf" path="res://sprites/static/22.png" id="9_644jx"]
+[ext_resource type="Texture2D" uid="uid://duvsh68d3ln6v" path="res://sprites/static/25.png" id="10_e5ohk"]
+[ext_resource type="Texture2D" uid="uid://b0tiiv7uo3jyy" path="res://sprites/static/430.png" id="11_k4pg4"]
+[ext_resource type="Texture2D" uid="uid://yqe6eym8s2t5" path="res://sprites/static/434.png" id="12_ksk2n"]
+[ext_resource type="Texture2D" uid="uid://c0n6pgoih70ok" path="res://sprites/static/435.png" id="13_388nn"]
+[ext_resource type="Texture2D" uid="uid://dk4ws78nw1jrt" path="res://sprites/static/436.png" id="14_8g5m5"]
+[ext_resource type="Texture2D" uid="uid://cn6vf4kt7cuev" path="res://sprites/static/437.png" id="15_5g04g"]
+[ext_resource type="Texture2D" uid="uid://b21xor2lidyqp" path="res://sprites/static/438.png" id="16_kj4ll"]
+[ext_resource type="Texture2D" uid="uid://ul05miqcikby" path="res://sprites/static/439.png" id="17_p322k"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_y4kvj"]
 
@@ -32,7 +32,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_i3fw7")]
+"values": [ExtResource("2_0nkfc")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -44,7 +44,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0, 0, 1)]
+"values": [Color(0, 0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_gwinq"]
@@ -60,7 +60,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("2_i3fw7"), ExtResource("4_6aa3g"), ExtResource("5_remr0"), ExtResource("6_4tmaq"), ExtResource("7_78okj"), ExtResource("8_00hsi"), ExtResource("9_piub7"), ExtResource("10_5dw64"), ExtResource("11_1ndsq"), ExtResource("12_pllg8"), ExtResource("13_834k8"), ExtResource("14_4r3n6"), ExtResource("15_7d86f"), ExtResource("16_v70xx"), ExtResource("17_3pu47"), null]
+"values": [ExtResource("2_0nkfc"), ExtResource("4_bw8qh"), ExtResource("5_x1hub"), ExtResource("6_af5h8"), ExtResource("7_x751o"), ExtResource("8_lm2t3"), ExtResource("9_644jx"), ExtResource("10_e5ohk"), ExtResource("11_k4pg4"), ExtResource("12_ksk2n"), ExtResource("13_388nn"), ExtResource("14_8g5m5"), ExtResource("15_5g04g"), ExtResource("16_kj4ll"), ExtResource("17_p322k"), null]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -81,7 +81,7 @@ _data = {
 "static_transition": SubResource("Animation_gwinq")
 }
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_vu7hh"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_kb2wp"]
 
 [node name="scene_night_number" type="Control"]
 layout_mode = 3
@@ -92,7 +92,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="scene_switcher" type="Node" parent="."]
-script = ExtResource("1_s6vro")
+script = ExtResource("1_dt7aq")
 
 [node name="bg_black" type="TextureRect" parent="."]
 self_modulate = Color(0, 0, 0, 1)
@@ -111,7 +111,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_i3fw7")
+texture = ExtResource("2_0nkfc")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -120,16 +120,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -35.5
-offset_top = -13.0
-offset_right = 35.5
-offset_bottom = 13.0
+offset_left = -324.5
+offset_top = -82.0
+offset_right = 324.5
+offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_rclyi")
-theme_override_font_sizes/font_size = 50
-text = "12:00 AM
-1st Night"
+theme_override_fonts/font = ExtResource("3_4ckgv")
+theme_override_font_sizes/font_size = 100
+text = "Night CHEAT"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
@@ -139,20 +138,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -130.0
-offset_top = 57.0
-offset_right = 131.0
-offset_bottom = 82.0
+offset_left = -425.5
+offset_top = 35.0
+offset_right = 425.5
+offset_bottom = 110.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_rclyi")
-theme_override_font_sizes/font_size = 25
-text = "(the only night)"
+theme_override_fonts/font = ExtResource("3_4ckgv")
+theme_override_font_sizes/font_size = 40
+text = "-Animatronics are visible on map
+-Buttons can be pressed from anywhere"
 horizontal_alignment = 1
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
-autostart = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../static")
@@ -163,13 +159,17 @@ autoplay = "static_transition"
 speed_scale = 5.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
-self_modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("CanvasTexture_vu7hh")
+texture = SubResource("CanvasTexture_kb2wp")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
 
 [connection signal="timeout" from="Timer" to="scene_switcher" method="load_scene" binds= ["res://scenes/environment/main_office.tscn"]]

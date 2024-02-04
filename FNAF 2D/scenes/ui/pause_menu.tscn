@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://s7y7la06qtuq"]
+[gd_scene load_steps=7 format=3 uid="uid://s7y7la06qtuq"]
 
 [ext_resource type="Texture2D" uid="uid://dd561y450030a" path="res://sprites/ui/pause_button_idle.png" id="1_kqa4n"]
+[ext_resource type="Script" path="res://scenes/ui/pause_menu_parent.gd" id="1_ns4x5"]
 [ext_resource type="Texture2D" uid="uid://cod1y2qxgc6bx" path="res://sprites/ui/pause_button_pressed.png" id="2_i2ww6"]
 [ext_resource type="FontFile" uid="uid://c458otts8ji68" path="res://ui/fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" id="3_210y3"]
 [ext_resource type="Script" path="res://scenes/ui/pause_menu.gd" id="3_adn8n"]
 [ext_resource type="Script" path="res://scripts/misc/scene_loader.gd" id="4_b7wmj"]
 
 [node name="pause" type="CanvasLayer"]
+script = ExtResource("1_ns4x5")
 
 [node name="pause_button" type="TouchScreenButton" parent="."]
 modulate = Color(1, 1, 1, 0.2)
@@ -91,3 +93,4 @@ script = ExtResource("4_b7wmj")
 [connection signal="pressed" from="pause_button" to="pause_menu" method="set_pause_state" binds= [true]]
 [connection signal="button_down" from="pause_menu/pause_bg_overlay/pause_vbox/resume_button" to="pause_menu" method="set_pause_state" binds= [false]]
 [connection signal="button_down" from="pause_menu/pause_bg_overlay/pause_vbox/exit_button" to="scene_loader" method="load_scene" binds= ["res://scenes/menu/menu_main.tscn"]]
+[connection signal="scene_switched" from="scene_loader" to="." method="emit_scene_switched"]

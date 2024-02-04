@@ -8,6 +8,8 @@ signal jumpscare_finished
 
 @export var jumpscare_timer : Timer
 
+@export var night_timer : Timer
+
 func play_jumpscare(animatronic_name : String):
 	if in_jumpscare: return
 	
@@ -19,4 +21,6 @@ func play_jumpscare(animatronic_name : String):
 	in_jumpscare = true
 
 func finish_jumpscare():
+	if AiManager.use_20d_mode: BestTimeManager.set_time_in_s(night_timer.wait_time - night_timer.time_left)
+	
 	jumpscare_finished.emit()

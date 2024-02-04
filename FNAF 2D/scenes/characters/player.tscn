@@ -358,9 +358,11 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="." node_paths=PackedStringArray("player_body")]
+libraries = {
+"": SubResource("AnimationLibrary_olpun")
+}
 tree_root = SubResource("AnimationNodeStateMachine_c6uhk")
 anim_player = NodePath("../AnimationPlayer")
-active = true
 parameters/conditions/is_moving = false
 parameters/conditions/not_is_moving = false
 parameters/Idle/blend_position = 0.0

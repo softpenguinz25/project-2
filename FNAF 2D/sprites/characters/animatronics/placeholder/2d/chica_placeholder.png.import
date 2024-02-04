@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdfutn7boc1bi"
-path="res://.godot/imported/placeholder_icon_foxy.png-bffb261eb3683f7cf0273b0bb91632e8.ctex"
+uid="uid://bjhrygu0y2asu"
+path="res://.godot/imported/chica_placeholder.png-12049f3e716c497214536943c4d3cd38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/characters/animatronics/placeholder/placeholder_icon_foxy.png"
-dest_files=["res://.godot/imported/placeholder_icon_foxy.png-bffb261eb3683f7cf0273b0bb91632e8.ctex"]
+source_file="res://sprites/characters/animatronics/placeholder/2d/chica_placeholder.png"
+dest_files=["res://.godot/imported/chica_placeholder.png-12049f3e716c497214536943c4d3cd38.ctex"]
 
 [params]
 

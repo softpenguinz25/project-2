@@ -29,6 +29,9 @@ signal map_toggled(toggle_state : bool)
 @export var exit_camera_button : Button
 signal exit_camera_button_toggled(toggle_state : bool)
 
+signal cheat_mode_on
+signal cheat_mode_off
+
 func set_active_state(active_state : bool):
 	if active_state_permanent: return
 	
@@ -74,8 +77,17 @@ func animatronic_moved_to(_animatronic_name : String, _cam_name_to : String, _nu
 	if !is_focused: return
 	if _cam_name_to == current_cam_scene: animatronic_moved_in_camera_queue.emit()
 
+func set_animatronic_stalled(_animatronic_name : String, _stalled : bool):
+	#if _animatronic_name.is_empty() or _cam_name.is_empty(): return
+	for monitor_script in monitor_scripts:
+		monitor_script.set_animatronic_stalled(_animatronic_name, _stalled)
+
 func toggle_map():
 	map_toggled.emit(!monitor_map.is_visible_in_tree())
 
 func toggle_exit_cam_button():
 	exit_camera_button_toggled.emit(!exit_camera_button.is_visible_in_tree())
+
+func set_cheat_mode(use : bool):
+	if use: cheat_mode_on.emit()
+	else: cheat_mode_off.emit()

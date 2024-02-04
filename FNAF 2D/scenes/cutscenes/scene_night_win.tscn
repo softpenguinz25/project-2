@@ -146,10 +146,10 @@ text = "6
 "
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "5 AM to 6 AM"
 libraries = {
 "": SubResource("AnimationLibrary_6ca4e")
 }
+autoplay = "5 AM to 6 AM"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 9.0
