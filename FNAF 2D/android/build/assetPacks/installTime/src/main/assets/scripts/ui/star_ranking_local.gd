@@ -1,9 +1,12 @@
 extends Node
 
-@export var star_outline : TextureRect
-@export var star_full : TextureRect
+var star_normal_local : bool
+var star_cheat_local : bool
+var star_20d_local : bool
 
-var star_state_local = 0
+@export var star_normal_gfx : TextureRect
+@export var star_cheat_gfx : TextureRect
+@export var star_20d_gfx : TextureRect
 
 func _ready():
 	update_star_state()
@@ -11,16 +14,10 @@ func _ready():
 func update_star_state():
 	StarRankingManager.load_data()
 	
-	if star_state_local == StarRankingManager.star_state: return
-	star_state_local = StarRankingManager.star_state
+	star_normal_local = StarRankingManager.star_normal
+	star_cheat_local = StarRankingManager.star_cheat
+	star_20d_local = StarRankingManager.star_20d
 	
-	match(star_state_local):
-		0: 
-			star_outline.visible = false
-			star_full.visible = false
-		1: 
-			star_outline.visible = true
-			star_full.visible = false
-		2: 
-			star_outline.visible = false
-			star_full.visible = true
+	star_normal_gfx.visible = star_normal_local
+	star_cheat_gfx.visible = star_cheat_local
+	star_20d_gfx.visible = star_20d_local

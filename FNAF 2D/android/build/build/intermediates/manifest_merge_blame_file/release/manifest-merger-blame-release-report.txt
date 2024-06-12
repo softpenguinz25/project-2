@@ -2,8 +2,8 @@
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.jujuprodgames.fnaf2d"
 4    android:installLocation="auto"
-5    android:versionCode="4"
-6    android:versionName="1.00" >
+5    android:versionCode="7"
+6    android:versionName="1.11" >
 7
 8    <uses-sdk
 9        android:minSdkVersion="21"

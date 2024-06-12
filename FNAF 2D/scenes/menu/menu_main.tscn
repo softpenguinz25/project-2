@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://budmy4i04lgtg"]
+[gd_scene load_steps=65 format=3 uid="uid://budmy4i04lgtg"]
 
 [ext_resource type="Script" path="res://scripts/misc/scene_loader.gd" id="1_6afx2"]
 [ext_resource type="Script" path="res://scripts/audio/audio_manager_local.gd" id="1_75gly"]
@@ -41,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://07xhsuabo35f" path="res://sprites/characters/animatronics/faceless/chica_faceless.png" id="34_kfm7a"]
 [ext_resource type="Texture2D" uid="uid://6qmdrb300y2g" path="res://sprites/characters/animatronics/faceless/bonnie_faceless.png" id="35_5ttwh"]
 [ext_resource type="Texture2D" uid="uid://dsu8cablxpsbh" path="res://sprites/characters/animatronics/faceless/freddy_faceless.png" id="36_kem5p"]
+[ext_resource type="Texture2D" uid="uid://c4f7fg0235k5q" path="res://sprites/ui/menu_button_yt.png" id="38_f682b"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2ijog"]
 animations = [{
@@ -238,17 +239,18 @@ modulate_color = Color(0, 0, 0, 1)
 texture = ExtResource("34_jh2eb")
 modulate_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xgmv1"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mi3vk"]
+texture = ExtResource("38_f682b")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mig85"]
-texture = ExtResource("34_jh2eb")
-modulate_color = Color(0, 0, 0, 1)
+texture = ExtResource("38_f682b")
+modulate_color = Color(0.533333, 0.533333, 0.533333, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f7dma"]
+texture = ExtResource("38_f682b")
+modulate_color = Color(0.266667, 0.266667, 0.266667, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l6u81"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hw6e7"]
-texture = ExtResource("34_jh2eb")
-modulate_color = Color(0, 0, 0, 1)
 
 [node name="menu_main" type="Control"]
 layout_mode = 3
@@ -578,36 +580,60 @@ offset_bottom = 538.0
 theme_type_variation = &"FlatButton"
 theme_override_fonts/font = ExtResource("2_qxmd5")
 theme_override_font_sizes/font_size = 27
-theme_override_styles/normal = SubResource("StyleBoxEmpty_xgmv1")
+theme_override_styles/normal = SubResource("StyleBoxTexture_mi3vk")
 theme_override_styles/hover = SubResource("StyleBoxTexture_mig85")
-text = "About
-Dev"
+theme_override_styles/pressed = SubResource("StyleBoxTexture_f7dma")
 script = ExtResource("26_lpeo8")
 
-[node name="button_scottcawthon" type="Button" parent="menu"]
+[node name="label_devlog" type="Label" parent="menu/button_jujuprodgames"]
+layout_mode = 0
+offset_top = 93.0
+offset_right = 92.0
+offset_bottom = 111.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 15
+text = "Devlog"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="label_redirectwarning" type="Label" parent="menu/button_jujuprodgames/label_devlog"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 92.0
+offset_bottom = 47.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 11
+text = "(link)"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="button_scottcawthon" type="Label" parent="menu"]
 layout_mode = 2
 offset_left = 51.0
 offset_top = 445.0
 offset_right = 144.0
 offset_bottom = 538.0
 theme_override_fonts/font = ExtResource("2_qxmd5")
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxEmpty_l6u81")
-theme_override_styles/hover = SubResource("StyleBoxTexture_hw6e7")
-text = "OG
-Game"
+text = "Scott
+Cawthon"
+horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("26_lpeo8")
 
 [node name="label_scottcawthon" type="Label" parent="menu/button_scottcawthon"]
-layout_mode = 0
-offset_left = -19.0
+offset_left = -17.0
 offset_top = 95.0
-offset_right = 111.0
-offset_bottom = 107.0
+offset_right = 113.0
+offset_bottom = 116.0
 theme_override_fonts/font = ExtResource("2_qxmd5")
-theme_override_font_sizes/font_size = 13
-text = "By Scott Cawthon"
+theme_override_font_sizes/font_size = 10
+text = "HUGE THANKS For The Original Games!"
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="button_resetdata" type="Button" parent="menu"]
 layout_mode = 1
@@ -661,6 +687,7 @@ star_cheat_gfx = NodePath("star_cheat")
 star_20d_gfx = NodePath("star_20d")
 
 [node name="star_normal" type="TextureRect" parent="menu/star_ranking"]
+layout_mode = 0
 offset_left = 279.0
 offset_right = 423.0
 offset_bottom = 144.0
@@ -669,6 +696,7 @@ expand_mode = 1
 
 [node name="star_cheat" type="TextureRect" parent="menu/star_ranking"]
 self_modulate = Color(1, 0, 0, 1)
+layout_mode = 0
 offset_right = 144.0
 offset_bottom = 144.0
 texture = ExtResource("9_xstaa")
@@ -689,6 +717,7 @@ vertical_alignment = 1
 
 [node name="star_20d" type="TextureRect" parent="menu/star_ranking"]
 modulate = Color(1, 0.878431, 0, 1)
+layout_mode = 0
 offset_left = 575.0
 offset_right = 719.0
 offset_bottom = 144.0
@@ -717,8 +746,7 @@ texture = ExtResource("11_5fvmq")
 [connection signal="button_down" from="menu/button_exit" to="manager/local_audio_manager" method="play_sound"]
 [connection signal="button_down" from="menu/button_exit" to="menu/button_exit" method="quit_game"]
 [connection signal="button_down" from="menu/button_godot" to="menu/button_godot" method="open_link" binds= ["https://godotengine.org/license"]]
-[connection signal="button_down" from="menu/button_jujuprodgames" to="menu/button_jujuprodgames" method="open_link" binds= ["https://www.youtube.com/@JujuProdGames"]]
-[connection signal="button_down" from="menu/button_scottcawthon" to="menu/button_scottcawthon" method="open_link" binds= ["https://store.steampowered.com/app/319510/Five_Nights_at_Freddys/", "https://play.google.com/store/apps/details?id=com.scottgames.fivenightsatfreddys&hl=en_US&gl=US"]]
+[connection signal="button_down" from="menu/button_jujuprodgames" to="menu/button_jujuprodgames" method="open_link" binds= ["https://youtu.be/FJq34KQwLn8?si=yWcg-oDnZm5wCEyx"]]
 [connection signal="button_down" from="menu/button_resetdata" to="menu/button_resetdata/resetdata_timer" method="start"]
 [connection signal="button_up" from="menu/button_resetdata" to="menu/button_resetdata/resetdata_timer" method="stop"]
 [connection signal="data_reset" from="menu/button_resetdata" to="menu/time_labels" method="update_best_time"]

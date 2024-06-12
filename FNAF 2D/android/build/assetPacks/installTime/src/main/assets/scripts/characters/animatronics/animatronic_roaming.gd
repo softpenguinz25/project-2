@@ -50,6 +50,8 @@ var current_pos:
 signal animatronic_moved(animatronic_name : String, cam_name : String)
 signal animatronic_moved_from(animatronic_name : String, cam_name_from : String)
 
+signal animatronic_stalled(animatronic_name : String, is_stalled : bool)
+
 var is_in_office : bool
 signal in_office_cue
 @export var in_office_cue_played : bool
@@ -111,6 +113,7 @@ func set_current_motitor_cam(monitor_cam : String):
 
 func pause_animatronic(do_pause : bool):
 	movement_timer.paused = do_pause
+	animatronic_stalled.emit(animatronic_name, do_pause)
 
 func set_can_pause(can_pause : bool):
 	can_pause_animatronic = can_pause

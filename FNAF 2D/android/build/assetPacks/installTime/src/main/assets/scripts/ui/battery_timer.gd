@@ -10,7 +10,7 @@ var is_out_of_power : bool
 signal usage_changed(int)
 signal out_of_power
 
-signal incremented_power(amount : int)
+signal incremented_power(amount : float)
 
 func _ready():
 	power = start_power
@@ -24,11 +24,11 @@ func _physics_process(_delta):
 		out_of_power.emit()
 		is_out_of_power = true
 
-func set_power(new_power : int):
+func set_power(new_power : float):
 	power = new_power
 
-func increment_power(increment_value : int):
-	set_power(int(power + increment_value))
+func increment_power(increment_value : float):
+	set_power(power + increment_value)
 	incremented_power.emit(increment_value)
 
 func set_usage(new_usage : int):
