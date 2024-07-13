@@ -122,10 +122,10 @@ states/door_open/position = Vector2(340, 100)
 transitions = ["door_close", "door_open", SubResource("AnimationNodeStateMachineTransition_qgeug"), "door_open", "door_close", SubResource("AnimationNodeStateMachineTransition_bmmu5"), "Start", "door_open", SubResource("AnimationNodeStateMachineTransition_cil6y")]
 graph_offset = Vector2(6, 8)
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_58k4a"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_bbbh0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_emur7"]
-texture = SubResource("CanvasTexture_58k4a")
+texture = SubResource("CanvasTexture_bbbh0")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kgycj"]
 size = Vector2(50, 50)
@@ -155,9 +155,11 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_k38iy")
+}
 tree_root = SubResource("AnimationNodeStateMachine_unumu")
 anim_player = NodePath("../AnimationPlayer")
-active = true
 parameters/conditions/trigger_close = false
 parameters/conditions/trigger_open = false
 

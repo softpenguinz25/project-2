@@ -9,8 +9,8 @@ var last_move_dir : int
 @onready var acceleration_turn_around_multiplier : float = 2.5
 
 @export_category("Jump")
-var gravity_in_px : float = 64
-var jump_velocity = 1000
+@export var gravity_in_px : float = 64
+@export var jump_velocity = 1000
 
 @export_category("Roll")
 var in_roll : bool = false
@@ -90,7 +90,7 @@ func get_velocity_x(_delta : float) -> void:
 	if in_roll:
 		current_roll_multiplier_time += _delta / roll_time
 		velocity.x *= roll_speed_curve.sample(current_roll_multiplier_time)
-		print("vel x mult: " + str(roll_speed_curve.sample(current_roll_multiplier_time)))
+		#print("vel x mult: " + str(roll_speed_curve.sample(current_roll_multiplier_time)))
 		
 		if current_roll_multiplier_time >= 1:
 			in_roll = false

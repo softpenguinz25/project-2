@@ -1,33 +1,252 @@
-[gd_scene load_steps=5 format=3 uid="uid://k235u75p8tw4"]
+[gd_scene load_steps=17 format=3 uid="uid://k235u75p8tw4"]
 
-[ext_resource type="Texture2D" uid="uid://dbscm3uwttied" path="res://icon.svg" id="1_3k4xk"]
+[ext_resource type="Script" path="res://scripts/environment/camera_tweener.gd" id="2_1cvln"]
 [ext_resource type="PackedScene" uid="uid://tbiaxc7dxu03" path="res://scenes/characters/player_fnaf2.tscn" id="2_6okfi"]
+[ext_resource type="Texture2D" uid="uid://dm6gd5iggigeq" path="res://sprites/circle.png" id="2_jhh1c"]
+[ext_resource type="Texture2D" uid="uid://iavdw7y2t4ka" path="res://sprites/environment/main_office/checkerboard.png" id="2_t0500"]
+[ext_resource type="Script" path="res://scripts/environment/interactable_button.gd" id="4_ip4so"]
+[ext_resource type="FontFile" uid="uid://c458otts8ji68" path="res://ui/fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" id="4_qf4tt"]
+[ext_resource type="Texture2D" uid="uid://4mb717pe7bls" path="res://sprites/ui/battery.png" id="6_6mugf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_23ks6"]
-size = Vector2(2612, 74)
+[sub_resource type="CanvasTexture" id="CanvasTexture_dokc6"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_o3owp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1kcr"]
+size = Vector2(1946, 72)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_shv7k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2kgle"]
+size = Vector2(120, 432)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_58k4a"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ei2iu"]
+texture = SubResource("CanvasTexture_58k4a")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wy162"]
+size = Vector2(75, 75)
 
 [sub_resource type="Curve" id="Curve_oat7q"]
 min_value = 1.0
-max_value = 2.0
+max_value = 3.0
 _data = [Vector2(0, 2), 0.0, -3.07573, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [node name="office_fnaf2" type="Node2D"]
 
-[node name="camera" type="Camera2D" parent="."]
+[node name="camera_manager" type="Node" parent="." node_paths=PackedStringArray("camera", "camera_parent", "start_node")]
+script = ExtResource("2_1cvln")
+camera = NodePath("../player/camera")
+camera_parent = NodePath("camera_manager_parent")
+start_node = NodePath("default")
 
-[node name="floor_body" type="StaticBody2D" parent="."]
+[node name="camera_manager_parent" type="Node2D" parent="camera_manager"]
 
-[node name="floor_collision" type="CollisionShape2D" parent="floor_body"]
-position = Vector2(0, 323)
-shape = SubResource("RectangleShape2D_23ks6")
+[node name="default" type="Node2D" parent="camera_manager"]
+position = Vector2(640, 360)
 
-[node name="floor_sprite" type="Sprite2D" parent="floor_body"]
-position = Vector2(0, 323.5)
-scale = Vector2(20.375, 0.585938)
-texture = ExtResource("1_3k4xk")
+[node name="door_left" type="Node2D" parent="camera_manager"]
+position = Vector2(320, 360)
+
+[node name="door_right" type="Node2D" parent="camera_manager"]
+position = Vector2(960, 360)
+
+[node name="environment" type="Node2D" parent="."]
+
+[node name="hall" type="Sprite2D" parent="environment"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(640, 360)
+scale = Vector2(560, 640)
+texture = SubResource("CanvasTexture_dokc6")
+
+[node name="light" type="Sprite2D" parent="environment"]
+self_modulate = Color(1, 0.945098, 0.760784, 1)
+position = Vector2(640, 100)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_jhh1c")
+
+[node name="ceiling" type="Sprite2D" parent="environment"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(640, 50)
+scale = Vector2(1890, 100)
+texture = SubResource("CanvasTexture_o3owp")
+
+[node name="floor" type="StaticBody2D" parent="environment"]
+position = Vector2(640, 360)
+
+[node name="floor_texturerect" type="TextureRect" parent="environment/floor"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -427.0
+offset_top = 308.0
+offset_right = 438.0
+offset_bottom = 340.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.25, 2.25)
+pivot_offset = Vector2(426.75, 16)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_t0500")
+stretch_mode = 1
+
+[node name="floor_collision" type="CollisionShape2D" parent="environment/floor"]
+position = Vector2(13, 324)
+shape = SubResource("RectangleShape2D_n1kcr")
+
+[node name="wall_left" type="StaticBody2D" parent="environment"]
+position = Vector2(655, 360)
+
+[node name="wall_left_sprite" type="Sprite2D" parent="environment/wall_left"]
+position = Vector2(-900, -144)
+scale = Vector2(120, 432)
+texture = SubResource("CanvasTexture_shv7k")
+
+[node name="wall_left_col" type="CollisionShape2D" parent="environment/wall_left"]
+position = Vector2(-900, -144)
+shape = SubResource("RectangleShape2D_2kgle")
+
+[node name="wall_right" type="StaticBody2D" parent="environment"]
+position = Vector2(2425, 360)
+
+[node name="wall_right_sprite" type="Sprite2D" parent="environment/wall_right"]
+position = Vector2(-900, -144)
+scale = Vector2(120, 432)
+texture = SubResource("CanvasTexture_shv7k")
+
+[node name="wall_right_col" type="CollisionShape2D" parent="environment/wall_right"]
+position = Vector2(-900, -144)
+shape = SubResource("RectangleShape2D_2kgle")
+
+[node name="vent_light_left" type="Button" parent="environment"]
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = 357.0
+offset_right = -50.0
+offset_bottom = 432.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(25, 25)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_ei2iu")
+script = ExtResource("4_ip4so")
+
+[node name="interact_area" type="Area2D" parent="environment/vent_light_left" groups=["interactable"]]
+
+[node name="interact_collider" type="CollisionShape2D" parent="environment/vent_light_left/interact_area"]
+position = Vector2(37.5, 37.5)
+shape = SubResource("RectangleShape2D_wy162")
+
+[node name="vent_light_right" type="Button" parent="environment"]
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1330.0
+offset_top = 357.0
+offset_right = 1405.0
+offset_bottom = 432.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(25, 25)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_ei2iu")
+script = ExtResource("4_ip4so")
+
+[node name="interact_area" type="Area2D" parent="environment/vent_light_right" groups=["interactable"]]
+
+[node name="interact_collider" type="CollisionShape2D" parent="environment/vent_light_right/interact_area"]
+position = Vector2(37.5, 37.5)
+shape = SubResource("RectangleShape2D_wy162")
 
 [node name="player" parent="." instance=ExtResource("2_6okfi")]
-position = Vector2(0, -46)
+position = Vector2(640, 516)
+jump_velocity = 0
 roll_time = 0.75
 roll_speed_curve = SubResource("Curve_oat7q")
+
+[node name="camera" type="Camera2D" parent="player"]
+position = Vector2(2.60206e-13, -19.5)
+scale = Vector2(1.35, 1.35)
+limit_left = -185
+limit_top = 0
+limit_right = 1465
+limit_bottom = 720
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="ui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ui_topbar" type="Control" parent="ui"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_right = 1280.0
+offset_bottom = 144.0
+grow_horizontal = 2
+
+[node name="time" type="Label" parent="ui/ui_topbar"]
+layout_mode = 0
+offset_top = -18.0
+offset_right = 1280.0
+offset_bottom = 106.0
+theme_override_fonts/font = ExtResource("4_qf4tt")
+theme_override_font_sizes/font_size = 120
+text = "-12 AM-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="battery" type="TextureRect" parent="ui/ui_topbar"]
+layout_mode = 0
+offset_top = 9.0
+offset_right = 128.0
+offset_bottom = 89.0
+texture = ExtResource("6_6mugf")
+stretch_mode = 5
+
+[node name="battery_label" type="Label" parent="ui/ui_topbar/battery"]
+layout_mode = 0
+offset_left = 128.0
+offset_right = 272.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_qf4tt")
+theme_override_font_sizes/font_size = 56
+text = ":69%"
+vertical_alignment = 1
+
+[node name="night_text" type="Label" parent="ui/ui_topbar"]
+layout_mode = 0
+offset_left = 972.0
+offset_right = 1280.0
+offset_bottom = 99.0
+theme_override_fonts/font = ExtResource("4_qf4tt")
+theme_override_font_sizes/font_size = 64
+text = "Night:1"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="button_down" from="environment/vent_light_left" to="camera_manager" method="remove_camera_limits"]
+[connection signal="button_down" from="environment/vent_light_left" to="camera_manager" method="set_camera_pos" binds= ["door_left", 0.5]]
+[connection signal="button_down" from="environment/vent_light_left" to="camera_manager" method="set_camera_follow" binds= ["camera_manager/camera_manager_parent"]]
+[connection signal="button_up" from="environment/vent_light_left" to="camera_manager" method="reset_camera_limits"]
+[connection signal="button_up" from="environment/vent_light_left" to="camera_manager" method="set_camera_follow" binds= ["player"]]
