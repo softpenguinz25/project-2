@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://budmy4i04lgtg"]
+[gd_scene load_steps=81 format=3 uid="uid://budmy4i04lgtg"]
 
 [ext_resource type="Script" path="res://scripts/misc/scene_loader.gd" id="1_6afx2"]
 [ext_resource type="Script" path="res://scripts/audio/audio_manager_local.gd" id="1_75gly"]
@@ -40,8 +40,18 @@
 [ext_resource type="Texture2D" uid="uid://jspa06423k34" path="res://sprites/ui/menu_button.png" id="34_jh2eb"]
 [ext_resource type="Texture2D" uid="uid://07xhsuabo35f" path="res://sprites/characters/animatronics/faceless/chica_faceless.png" id="34_kfm7a"]
 [ext_resource type="Texture2D" uid="uid://6qmdrb300y2g" path="res://sprites/characters/animatronics/faceless/bonnie_faceless.png" id="35_5ttwh"]
+[ext_resource type="Texture2D" uid="uid://cfy5byynjsa6s" path="res://sprites/characters/animatronics/puppet.png" id="36_5aymx"]
 [ext_resource type="Texture2D" uid="uid://dsu8cablxpsbh" path="res://sprites/characters/animatronics/faceless/freddy_faceless.png" id="36_kem5p"]
+[ext_resource type="Texture2D" uid="uid://extpgbvgt676" path="res://sprites/characters/animatronics/toy_chica.png" id="36_ndwmm"]
+[ext_resource type="Texture2D" uid="uid://da0mcpey8hs48" path="res://sprites/characters/animatronics/toy_freddy.png" id="36_wtanf"]
+[ext_resource type="Texture2D" uid="uid://dpgtdkqni3iil" path="res://sprites/characters/animatronics/toy_bonnie.png" id="37_6usq5"]
 [ext_resource type="Texture2D" uid="uid://c4f7fg0235k5q" path="res://sprites/ui/menu_button_yt.png" id="38_f682b"]
+[ext_resource type="Texture2D" uid="uid://bwq6xlg7v5hwo" path="res://sprites/controls/left_button_idle.png" id="43_3acog"]
+[ext_resource type="Texture2D" uid="uid://e3qxn3lklqhh" path="res://sprites/controls/left_button_hover.png" id="44_55clw"]
+[ext_resource type="Texture2D" uid="uid://douxcqi1hty0r" path="res://sprites/controls/left_button_pressed.png" id="44_daido"]
+[ext_resource type="Texture2D" uid="uid://b7wuol0twshp5" path="res://sprites/controls/right_button_hover.png" id="44_sla3m"]
+[ext_resource type="Texture2D" uid="uid://bkb15so0k6g1v" path="res://sprites/controls/right_button_idle.png" id="45_3gbn2"]
+[ext_resource type="Texture2D" uid="uid://bjy3ipwfd2ikh" path="res://sprites/controls/right_button_pressed.png" id="46_m2byy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2ijog"]
 animations = [{
@@ -202,14 +212,6 @@ animations = [{
 "speed": 50.0
 }]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_n17ph"]
-shader = ExtResource("27_kk0sx")
-shader_parameter/alpha = 1.0
-shader_parameter/inner_radius = 0.33
-shader_parameter/outer_radius = 1.5
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_x34ak"]
-
 [sub_resource type="Gradient" id="Gradient_fqqfl"]
 offsets = PackedFloat32Array(0, 0.356757)
 colors = PackedColorArray(0, 0, 0, 0.533333, 0, 0, 0, 0)
@@ -220,6 +222,14 @@ width = 128
 height = 128
 fill_from = Vector2(0, 1)
 fill_to = Vector2(0, 0.141026)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n17ph"]
+shader = ExtResource("27_kk0sx")
+shader_parameter/alpha = 1.0
+shader_parameter/inner_radius = 0.33
+shader_parameter/outer_radius = 1.5
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_x34ak"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wfmah"]
 
@@ -251,6 +261,24 @@ texture = ExtResource("38_f682b")
 modulate_color = Color(0.266667, 0.266667, 0.266667, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l6u81"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yqu6r"]
+texture = ExtResource("43_3acog")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5c13y"]
+texture = ExtResource("44_55clw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7kd8x"]
+texture = ExtResource("44_daido")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tkrwy"]
+texture = ExtResource("45_3gbn2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ixj0l"]
+texture = ExtResource("44_sla3m")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3aabh"]
+texture = ExtResource("46_m2byy")
 
 [node name="menu_main" type="Control"]
 layout_mode = 3
@@ -297,7 +325,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="bg" type="Control" parent="menu"]
+[node name="fnaf_1" type="Control" parent="menu"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="bg" type="Control" parent="menu/fnaf_1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -305,7 +343,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="gradient_red" type="TextureRect" parent="menu/bg"]
+[node name="gradient_red" type="TextureRect" parent="menu/fnaf_1/bg"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -314,7 +352,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_allgc")
 
-[node name="static_bg" type="AnimatedSprite2D" parent="menu/bg"]
+[node name="static_bg" type="AnimatedSprite2D" parent="menu/fnaf_1/bg"]
 modulate = Color(1, 1, 1, 0.533333)
 material = SubResource("CanvasItemMaterial_qu7dr")
 position = Vector2(640, 360)
@@ -322,6 +360,270 @@ scale = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_0f2d0")
 autoplay = "default"
 frame_progress = 0.175905
+
+[node name="animatronics" type="Control" parent="menu/fnaf_1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="springtrap" type="TextureRect" parent="menu/fnaf_1/animatronics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 983.0
+offset_top = 334.0
+offset_right = 63.0
+offset_bottom = 206.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(435, 318)
+texture = ExtResource("32_gj6dq")
+stretch_mode = 6
+
+[node name="foxy" type="TextureRect" parent="menu/fnaf_1/animatronics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -73.0
+offset_top = 353.0
+offset_right = -993.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(435, 318)
+texture = ExtResource("33_yxtwo")
+stretch_mode = 6
+
+[node name="chica" type="TextureRect" parent="menu/fnaf_1/animatronics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 743.0
+offset_top = 283.0
+offset_right = -177.0
+offset_bottom = 341.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("34_kfm7a")
+stretch_mode = 6
+
+[node name="bonnie" type="TextureRect" parent="menu/fnaf_1/animatronics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 167.0
+offset_top = 255.0
+offset_right = -754.0
+offset_bottom = 323.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("35_5ttwh")
+stretch_mode = 6
+
+[node name="freddy" type="TextureRect" parent="menu/fnaf_1/animatronics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 460.0
+offset_top = 161.0
+offset_right = -460.0
+offset_bottom = 544.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("36_kem5p")
+stretch_mode = 6
+
+[node name="text_shadow" type="TextureRect" parent="menu/fnaf_1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_f4lfu")
+
+[node name="title" type="Control" parent="menu/fnaf_1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="One" type="Label" parent="menu/fnaf_1/title"]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 98.0
+offset_right = 433.0
+offset_bottom = 169.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 75
+text = "One"
+
+[node name="Night" type="Label" parent="menu/fnaf_1/title"]
+layout_mode = 0
+offset_left = 802.0
+offset_top = 98.0
+offset_right = 1022.0
+offset_bottom = 169.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 75
+text = "Night
+"
+
+[node name="2D" type="Label" parent="menu/fnaf_1/title"]
+layout_mode = 0
+offset_left = 506.0
+offset_top = 38.0
+offset_right = 740.0
+offset_bottom = 214.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 200
+text = "2D"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="star_ranking" type="Control" parent="menu/fnaf_1" node_paths=PackedStringArray("star_normal_gfx", "star_cheat_gfx", "star_20d_gfx")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 263.0
+offset_top = 556.0
+offset_right = -297.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_emtr0")
+star_normal_gfx = NodePath("star_normal")
+star_cheat_gfx = NodePath("star_cheat")
+star_20d_gfx = NodePath("star_20d")
+
+[node name="star_normal" type="TextureRect" parent="menu/fnaf_1/star_ranking"]
+layout_mode = 0
+offset_left = 279.0
+offset_right = 423.0
+offset_bottom = 144.0
+texture = ExtResource("9_xstaa")
+expand_mode = 1
+
+[node name="star_cheat" type="TextureRect" parent="menu/fnaf_1/star_ranking"]
+self_modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_right = 144.0
+offset_bottom = 144.0
+texture = ExtResource("9_xstaa")
+expand_mode = 1
+
+[node name="star_cheat_text" type="Label" parent="menu/fnaf_1/star_ranking/star_cheat"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 51.0
+offset_right = 120.0
+offset_bottom = 112.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 27
+text = "CHEAT
+ER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="star_20d" type="TextureRect" parent="menu/fnaf_1/star_ranking"]
+modulate = Color(1, 0.878431, 0, 1)
+layout_mode = 0
+offset_left = 575.0
+offset_right = 719.0
+offset_bottom = 144.0
+texture = ExtResource("9_xstaa")
+expand_mode = 1
+
+[node name="star_full_glow" type="PointLight2D" parent="menu/fnaf_1/star_ranking/star_20d"]
+position = Vector2(74, 76)
+scale = Vector2(0.453125, 0.453125)
+color = Color(1, 1, 0, 1)
+energy = 3.12
+texture = ExtResource("11_5fvmq")
+
+[node name="fnaf_2" type="Control" parent="menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="animatronics" type="Control" parent="menu/fnaf_2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="springtrap" type="TextureRect" parent="menu/fnaf_2/animatronics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 884.0
+offset_top = 365.0
+offset_right = 144.0
+offset_bottom = 533.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(435, 318)
+texture = ExtResource("36_5aymx")
+stretch_mode = 6
+
+[node name="toy_chica" type="TextureRect" parent="menu/fnaf_2/animatronics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 741.0
+offset_top = 313.0
+offset_right = -179.0
+offset_bottom = 371.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("36_ndwmm")
+stretch_mode = 6
+
+[node name="toy_bonnie" type="TextureRect" parent="menu/fnaf_2/animatronics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 165.0
+offset_top = 260.0
+offset_right = -756.0
+offset_bottom = 328.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("37_6usq5")
+stretch_mode = 6
+
+[node name="toy_freddy" type="TextureRect" parent="menu/fnaf_2/animatronics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 441.0
+offset_top = 150.0
+offset_right = -479.0
+offset_bottom = 533.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("36_wtanf")
+stretch_mode = 6
 
 [node name="shaders" type="Control" parent="menu"]
 layout_mode = 1
@@ -341,137 +643,8 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CanvasTexture_x34ak")
 
-[node name="animatronics" type="Control" parent="menu"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="springtrap" type="TextureRect" parent="menu/animatronics"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 983.0
-offset_top = 334.0
-offset_right = 63.0
-offset_bottom = 206.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(435, 318)
-texture = ExtResource("32_gj6dq")
-stretch_mode = 6
-
-[node name="foxy" type="TextureRect" parent="menu/animatronics"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -73.0
-offset_top = 353.0
-offset_right = -993.0
-offset_bottom = 225.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(435, 318)
-texture = ExtResource("33_yxtwo")
-stretch_mode = 6
-
-[node name="chica" type="TextureRect" parent="menu/animatronics"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 743.0
-offset_top = 283.0
-offset_right = -177.0
-offset_bottom = 341.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("34_kfm7a")
-stretch_mode = 6
-
-[node name="bonnie" type="TextureRect" parent="menu/animatronics"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 167.0
-offset_top = 255.0
-offset_right = -754.0
-offset_bottom = 323.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("35_5ttwh")
-stretch_mode = 6
-
-[node name="freddy" type="TextureRect" parent="menu/animatronics"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 460.0
-offset_top = 161.0
-offset_right = -460.0
-offset_bottom = 544.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("36_kem5p")
-stretch_mode = 6
-
-[node name="text_shadow" type="TextureRect" parent="menu"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("GradientTexture2D_f4lfu")
-
-[node name="title" type="Control" parent="menu"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="One" type="Label" parent="menu/title"]
-layout_mode = 0
-offset_left = 292.0
-offset_top = 98.0
-offset_right = 433.0
-offset_bottom = 169.0
-theme_override_fonts/font = ExtResource("2_qxmd5")
-theme_override_font_sizes/font_size = 75
-text = "One"
-
-[node name="Night" type="Label" parent="menu/title"]
-layout_mode = 0
-offset_left = 802.0
-offset_top = 98.0
-offset_right = 1022.0
-offset_bottom = 169.0
-theme_override_fonts/font = ExtResource("2_qxmd5")
-theme_override_font_sizes/font_size = 75
-text = "Night
-"
-
-[node name="2D" type="Label" parent="menu/title"]
-layout_mode = 0
-offset_left = 506.0
-offset_top = 38.0
-offset_right = 740.0
-offset_bottom = 214.0
-theme_override_fonts/font = ExtResource("2_qxmd5")
-theme_override_font_sizes/font_size = 200
-text = "2D"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="button_newgame" type="Button" parent="menu"]
+visible = false
 layout_mode = 2
 offset_left = 536.0
 offset_top = 334.0
@@ -486,6 +659,7 @@ Game"
 script = ExtResource("8_q3obw")
 
 [node name="button_20dmode" type="Button" parent="menu"]
+visible = false
 layout_mode = 2
 offset_left = 850.0
 offset_top = 404.0
@@ -500,6 +674,7 @@ Mode"
 script = ExtResource("8_q3obw")
 
 [node name="time_labels" type="Control" parent="menu" node_paths=PackedStringArray("best_time_label", "last_time_label")]
+visible = false
 anchors_preset = 0
 offset_left = 856.0
 offset_top = 533.0
@@ -527,6 +702,7 @@ theme_override_fonts/font = ExtResource("2_qxmd5")
 text = "Last: 0:00.00"
 
 [node name="button_cheatmode" type="Button" parent="menu"]
+visible = false
 layout_mode = 2
 offset_left = 272.0
 offset_top = 403.0
@@ -572,6 +748,7 @@ alignment = 0
 script = ExtResource("26_lpeo8")
 
 [node name="button_jujuprodgames" type="Button" parent="menu"]
+visible = false
 layout_mode = 2
 offset_left = 1108.0
 offset_top = 445.0
@@ -610,6 +787,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="button_scottcawthon" type="Label" parent="menu"]
+visible = false
 layout_mode = 2
 offset_left = 51.0
 offset_top = 445.0
@@ -625,6 +803,7 @@ vertical_alignment = 1
 script = ExtResource("26_lpeo8")
 
 [node name="label_scottcawthon" type="Label" parent="menu/button_scottcawthon"]
+layout_mode = 0
 offset_left = -17.0
 offset_top = 95.0
 offset_right = 113.0
@@ -670,66 +849,25 @@ theme_override_font_sizes/font_size = 24
 text = "V1.11"
 vertical_alignment = 2
 
-[node name="star_ranking" type="Control" parent="menu" node_paths=PackedStringArray("star_normal_gfx", "star_cheat_gfx", "star_20d_gfx")]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 263.0
-offset_top = 556.0
-offset_right = -297.0
-offset_bottom = -20.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("9_emtr0")
-star_normal_gfx = NodePath("star_normal")
-star_cheat_gfx = NodePath("star_cheat")
-star_20d_gfx = NodePath("star_20d")
-
-[node name="star_normal" type="TextureRect" parent="menu/star_ranking"]
+[node name="menu_switcher_left" type="Button" parent="menu"]
 layout_mode = 0
-offset_left = 279.0
-offset_right = 423.0
-offset_bottom = 144.0
-texture = ExtResource("9_xstaa")
-expand_mode = 1
+offset_left = 30.0
+offset_top = 71.0
+offset_right = 173.0
+offset_bottom = 214.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_yqu6r")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5c13y")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7kd8x")
 
-[node name="star_cheat" type="TextureRect" parent="menu/star_ranking"]
-self_modulate = Color(1, 0, 0, 1)
+[node name="menu_switcher_right" type="Button" parent="menu"]
 layout_mode = 0
-offset_right = 144.0
-offset_bottom = 144.0
-texture = ExtResource("9_xstaa")
-expand_mode = 1
-
-[node name="star_cheat_text" type="Label" parent="menu/star_ranking/star_cheat"]
-layout_mode = 0
-offset_left = 25.0
-offset_top = 51.0
-offset_right = 120.0
-offset_bottom = 112.0
-theme_override_fonts/font = ExtResource("2_qxmd5")
-theme_override_font_sizes/font_size = 27
-text = "CHEAT
-ER"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="star_20d" type="TextureRect" parent="menu/star_ranking"]
-modulate = Color(1, 0.878431, 0, 1)
-layout_mode = 0
-offset_left = 575.0
-offset_right = 719.0
-offset_bottom = 144.0
-texture = ExtResource("9_xstaa")
-expand_mode = 1
-
-[node name="star_full_glow" type="PointLight2D" parent="menu/star_ranking/star_20d"]
-position = Vector2(74, 76)
-scale = Vector2(0.453125, 0.453125)
-color = Color(1, 1, 0, 1)
-energy = 3.12
-texture = ExtResource("11_5fvmq")
+offset_left = 1106.0
+offset_top = 71.0
+offset_right = 1249.0
+offset_bottom = 214.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_tkrwy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ixj0l")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3aabh")
 
 [connection signal="button_down" from="menu/button_newgame" to="manager/local_audio_manager" method="play_sound" binds= ["res://sounds/menu/menu_button.wav"]]
 [connection signal="button_down" from="menu/button_newgame" to="manager/scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/scene_night_number_1.tscn"]]
@@ -750,5 +888,5 @@ texture = ExtResource("11_5fvmq")
 [connection signal="button_down" from="menu/button_resetdata" to="menu/button_resetdata/resetdata_timer" method="start"]
 [connection signal="button_up" from="menu/button_resetdata" to="menu/button_resetdata/resetdata_timer" method="stop"]
 [connection signal="data_reset" from="menu/button_resetdata" to="menu/time_labels" method="update_best_time"]
-[connection signal="data_reset" from="menu/button_resetdata" to="menu/star_ranking" method="update_star_state"]
+[connection signal="data_reset" from="menu/button_resetdata" to="menu/fnaf_1/star_ranking" method="update_star_state"]
 [connection signal="timeout" from="menu/button_resetdata/resetdata_timer" to="menu/button_resetdata" method="reset_data"]

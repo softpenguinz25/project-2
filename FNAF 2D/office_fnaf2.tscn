@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://k235u75p8tw4"]
+
+[ext_resource type="Texture2D" uid="uid://dbscm3uwttied" path="res://icon.svg" id="1_3k4xk"]
+[ext_resource type="PackedScene" uid="uid://tbiaxc7dxu03" path="res://scenes/characters/player_fnaf2.tscn" id="2_6okfi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23ks6"]
+size = Vector2(2612, 74)
+
+[sub_resource type="Curve" id="Curve_oat7q"]
+min_value = 1.0
+max_value = 2.0
+_data = [Vector2(0, 2), 0.0, -3.07573, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="office_fnaf2" type="Node2D"]
+
+[node name="camera" type="Camera2D" parent="."]
+
+[node name="floor_body" type="StaticBody2D" parent="."]
+
+[node name="floor_collision" type="CollisionShape2D" parent="floor_body"]
+position = Vector2(0, 323)
+shape = SubResource("RectangleShape2D_23ks6")
+
+[node name="floor_sprite" type="Sprite2D" parent="floor_body"]
+position = Vector2(0, 323.5)
+scale = Vector2(20.375, 0.585938)
+texture = ExtResource("1_3k4xk")
+
+[node name="player" parent="." instance=ExtResource("2_6okfi")]
+position = Vector2(0, -46)
+roll_time = 0.75
+roll_speed_curve = SubResource("Curve_oat7q")
