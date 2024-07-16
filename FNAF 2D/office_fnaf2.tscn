@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://k235u75p8tw4"]
+[gd_scene load_steps=28 format=3 uid="uid://k235u75p8tw4"]
 
 [ext_resource type="Script" path="res://scripts/environment/camera_tweener.gd" id="2_1cvln"]
 [ext_resource type="PackedScene" uid="uid://tbiaxc7dxu03" path="res://scenes/characters/player_fnaf2.tscn" id="2_6okfi"]
@@ -7,6 +7,11 @@
 [ext_resource type="Script" path="res://scripts/environment/interactable_button.gd" id="4_ip4so"]
 [ext_resource type="FontFile" uid="uid://c458otts8ji68" path="res://ui/fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" id="4_qf4tt"]
 [ext_resource type="Texture2D" uid="uid://4mb717pe7bls" path="res://sprites/ui/battery.png" id="6_6mugf"]
+[ext_resource type="Texture2D" uid="uid://y6yqx1oqxrhd" path="res://sprites/environment/main_office/tv.png" id="6_82c7a"]
+[ext_resource type="PackedScene" uid="uid://deybknyvrm48a" path="res://scenes/monitor/monitor_screen_fnaf2.tscn" id="7_0mcjl"]
+[ext_resource type="Shader" path="res://shaders/static_noise.gdshader" id="8_xndo0"]
+[ext_resource type="Script" path="res://scripts/characters/animatronics/ai_manager_local.gd" id="9_5p00e"]
+[ext_resource type="PackedScene" uid="uid://bwnpe16r7li8q" path="res://scenes/characters/animatronics/toy_freddy.tscn" id="10_n7ow3"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_dokc6"]
 
@@ -18,7 +23,7 @@ size = Vector2(1946, 72)
 [sub_resource type="CanvasTexture" id="CanvasTexture_shv7k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2kgle"]
-size = Vector2(120, 432)
+size = Vector2(120, 464)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_58k4a"]
 
@@ -28,6 +33,76 @@ texture = SubResource("CanvasTexture_58k4a")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wy162"]
 size = Vector2(75, 75)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v3bqu"]
+shader = ExtResource("8_xndo0")
+shader_parameter/amount = 40.0
+shader_parameter/transparency = 1.0
+
+[sub_resource type="Animation" id="Animation_a75qs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("static_preview:material:shader_parameter/transparency")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_q2rb5"]
+resource_name = "static_preview_fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.133333), Color(1, 1, 1, 0.133333), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("static_preview:material:shader_parameter/transparency")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.125, 0.125, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aepmt"]
+_data = {
+"RESET": SubResource("Animation_a75qs"),
+"static_preview_fade_in": SubResource("Animation_q2rb5")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_swbs2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56u2q"]
+size = Vector2(264, 184)
+
 [sub_resource type="Curve" id="Curve_oat7q"]
 min_value = 1.0
 max_value = 3.0
@@ -36,11 +111,10 @@ point_count = 2
 
 [node name="office_fnaf2" type="Node2D"]
 
-[node name="camera_manager" type="Node" parent="." node_paths=PackedStringArray("camera", "camera_parent", "start_node")]
+[node name="camera_manager" type="Node" parent="." node_paths=PackedStringArray("camera", "camera_parent")]
 script = ExtResource("2_1cvln")
-camera = NodePath("../player/camera")
+camera = NodePath("../player/player_camera")
 camera_parent = NodePath("camera_manager_parent")
-start_node = NodePath("default")
 
 [node name="camera_manager_parent" type="Node2D" parent="camera_manager"]
 
@@ -52,6 +126,10 @@ position = Vector2(320, 360)
 
 [node name="door_right" type="Node2D" parent="camera_manager"]
 position = Vector2(960, 360)
+
+[node name="monitor" type="Node2D" parent="camera_manager"]
+position = Vector2(124.757, 466.325)
+scale = Vector2(10.8, 10.8)
 
 [node name="environment" type="Node2D" parent="."]
 
@@ -103,20 +181,20 @@ shape = SubResource("RectangleShape2D_n1kcr")
 position = Vector2(655, 360)
 
 [node name="wall_left_sprite" type="Sprite2D" parent="environment/wall_left"]
-position = Vector2(-900, -144)
-scale = Vector2(120, 432)
+position = Vector2(-900, -128)
+scale = Vector2(120, 464)
 texture = SubResource("CanvasTexture_shv7k")
 
 [node name="wall_left_col" type="CollisionShape2D" parent="environment/wall_left"]
-position = Vector2(-900, -144)
+position = Vector2(-900, -128)
 shape = SubResource("RectangleShape2D_2kgle")
 
 [node name="wall_right" type="StaticBody2D" parent="environment"]
 position = Vector2(2425, 360)
 
 [node name="wall_right_sprite" type="Sprite2D" parent="environment/wall_right"]
-position = Vector2(-900, -144)
-scale = Vector2(120, 432)
+position = Vector2(-900, -136)
+scale = Vector2(120, 448)
 texture = SubResource("CanvasTexture_shv7k")
 
 [node name="wall_right_col" type="CollisionShape2D" parent="environment/wall_right"]
@@ -169,15 +247,98 @@ script = ExtResource("4_ip4so")
 position = Vector2(37.5, 37.5)
 shape = SubResource("RectangleShape2D_wy162")
 
+[node name="hall_light" type="Button" parent="environment"]
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 603.0
+offset_top = 447.0
+offset_right = 678.0
+offset_bottom = 522.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(37, 37)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_ei2iu")
+script = ExtResource("4_ip4so")
+
+[node name="interact_area" type="Area2D" parent="environment/hall_light" groups=["interactable"]]
+
+[node name="interact_collider" type="CollisionShape2D" parent="environment/hall_light/interact_area"]
+position = Vector2(37.5, 37.5)
+shape = SubResource("RectangleShape2D_wy162")
+
+[node name="monitor" type="Sprite2D" parent="environment"]
+position = Vector2(125, 450)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_82c7a")
+
+[node name="monitor_screen_fnaf2" parent="environment/monitor" node_paths=PackedStringArray("monitor_focus_button") instance=ExtResource("7_0mcjl")]
+offset_left = -119.0
+offset_top = -34.0
+offset_right = 898.0
+offset_bottom = 436.0
+scale = Vector2(0.185, 0.185)
+monitor_focus_button = NodePath("../monitor_focus_button")
+
+[node name="static_preview_bg" type="ColorRect" parent="environment/monitor"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -119.0
+offset_top = -34.0
+offset_right = -145.0
+offset_bottom = -152.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.466667, 0.466667, 0.466667, 1)
+
+[node name="static_preview" type="ColorRect" parent="environment/monitor/static_preview_bg"]
+material = SubResource("ShaderMaterial_v3bqu")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="static_preview_animation" type="AnimationPlayer" parent="environment/monitor/static_preview_bg"]
+libraries = {
+"": SubResource("AnimationLibrary_aepmt")
+}
+autoplay = "static_preview_fade_in"
+
+[node name="monitor_focus_button" type="Button" parent="environment/monitor"]
+offset_left = -132.0
+offset_top = -58.0
+offset_right = 132.0
+offset_bottom = 126.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_swbs2")
+script = ExtResource("4_ip4so")
+
+[node name="interact_area" type="Area2D" parent="environment/monitor/monitor_focus_button" groups=["interactable"]]
+
+[node name="interact_collider" type="CollisionShape2D" parent="environment/monitor/monitor_focus_button/interact_area"]
+position = Vector2(132, 92)
+shape = SubResource("RectangleShape2D_56u2q")
+
+[node name="animatronics" type="Node2D" parent="environment"]
+script = ExtResource("9_5p00e")
+
+[node name="toy_freddy" parent="environment/animatronics" node_paths=PackedStringArray("monitor_screen") instance=ExtResource("10_n7ow3")]
+cam_path = Array[Array]([["show_stage", "hall_east", "dining_room_2", "hall"]])
+monitor_screen = NodePath("../../monitor/monitor_screen_fnaf2")
+set_ai_to_max_on_ready = true
+
 [node name="player" parent="." instance=ExtResource("2_6okfi")]
 position = Vector2(640, 516)
 jump_velocity = 0
 roll_time = 0.75
 roll_speed_curve = SubResource("Curve_oat7q")
 
-[node name="camera" type="Camera2D" parent="player"]
-position = Vector2(2.60206e-13, -19.5)
-scale = Vector2(1.35, 1.35)
+[node name="player_camera" type="Camera2D" parent="player"]
 limit_left = -185
 limit_top = 0
 limit_right = 1465
@@ -245,8 +406,21 @@ horizontal_alignment = 2
 vertical_alignment = 1
 autowrap_mode = 3
 
-[connection signal="button_down" from="environment/vent_light_left" to="camera_manager" method="remove_camera_limits"]
-[connection signal="button_down" from="environment/vent_light_left" to="camera_manager" method="set_camera_pos" binds= ["door_left", 0.5]]
-[connection signal="button_down" from="environment/vent_light_left" to="camera_manager" method="set_camera_follow" binds= ["camera_manager/camera_manager_parent"]]
-[connection signal="button_up" from="environment/vent_light_left" to="camera_manager" method="reset_camera_limits"]
-[connection signal="button_up" from="environment/vent_light_left" to="camera_manager" method="set_camera_follow" binds= ["player"]]
+[connection signal="button_down" from="environment/vent_light_left" to="camera_manager" method="set_camera_limit" binds= [Vector4(-305, 0, 1585, 720)]]
+[connection signal="button_down" from="environment/vent_light_left" to="camera_manager" method="set_position_smoothing" binds= [25.0]]
+[connection signal="button_up" from="environment/vent_light_left" to="camera_manager" method="reset_position_smoothing"]
+[connection signal="button_up" from="environment/vent_light_left" to="camera_manager" method="reset_camera_limit"]
+[connection signal="button_down" from="environment/vent_light_right" to="camera_manager" method="set_camera_limit" binds= [Vector4(-305, 0, 1585, 720)]]
+[connection signal="button_down" from="environment/vent_light_right" to="camera_manager" method="set_position_smoothing" binds= [25.0]]
+[connection signal="button_up" from="environment/vent_light_right" to="camera_manager" method="reset_position_smoothing"]
+[connection signal="button_up" from="environment/vent_light_right" to="camera_manager" method="reset_camera_limit"]
+[connection signal="button_down" from="environment/hall_light" to="camera_manager" method="set_camera_limit" binds= [Vector4(-305, 0, 1585, 720)]]
+[connection signal="button_down" from="environment/hall_light" to="camera_manager" method="set_position_smoothing" binds= [25.0]]
+[connection signal="button_up" from="environment/hall_light" to="camera_manager" method="reset_position_smoothing"]
+[connection signal="button_up" from="environment/hall_light" to="camera_manager" method="reset_camera_limit"]
+[connection signal="button_down" from="environment/monitor/monitor_focus_button" to="camera_manager" method="set_position_smoothing_enabled" binds= [false]]
+[connection signal="button_down" from="environment/monitor/monitor_focus_button" to="camera_manager" method="set_camera_pos" binds= ["monitor", 0.5]]
+[connection signal="animatronic_moved" from="environment/animatronics/toy_freddy" to="environment/monitor/monitor_screen_fnaf2" method="set_animatronic_pos"]
+[connection signal="animatronic_moved" from="environment/animatronics/toy_freddy" to="environment/monitor/monitor_screen_fnaf2" method="animatronic_moved_to"]
+[connection signal="animatronic_moved_from" from="environment/animatronics/toy_freddy" to="environment/monitor/monitor_screen_fnaf2" method="animatronic_moved_from"]
+[connection signal="animatronic_stalled" from="environment/animatronics/toy_freddy" to="environment/monitor/monitor_screen_fnaf2" method="set_animatronic_stalled"]

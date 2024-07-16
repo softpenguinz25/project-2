@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://5hwq0g4ps3vo"]
+
+[ext_resource type="Texture2D" uid="uid://bkwpw4jkh22c2" path="res://sprites/environment/main_office/controlled_shock.png" id="1_w0t1a"]
+[ext_resource type="Script" path="res://sprites/environment/main_office/controlled_shock.gd" id="2_dojps"]
+[ext_resource type="Script" path="res://scripts/environment/interactable_button.gd" id="3_n0wq6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1u3f3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5kkp"]
+size = Vector2(24, 40)
+
+[node name="hall_light" type="Sprite2D"]
+texture = ExtResource("1_w0t1a")
+script = ExtResource("2_dojps")
+
+[node name="hall_light_button" type="Button" parent="." node_paths=PackedStringArray("cooldown_timer")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_top = -88.0
+offset_right = -8.0
+offset_bottom = -48.0
+grow_horizontal = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1u3f3")
+script = ExtResource("3_n0wq6")
+cooldown_timer = NodePath("../hall_light_cooldown")
+
+[node name="interact_area" type="Area2D" parent="hall_light_button" groups=["interactable"]]
+position = Vector2(30, 186)
+
+[node name="interact_collider" type="CollisionShape2D" parent="hall_light_button/interact_area"]
+position = Vector2(-18, -166)
+shape = SubResource("RectangleShape2D_y5kkp")
+
+[node name="hall_light_cooldown" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="button_disabled" from="." to="hall_light_button" method="set_interact_state_absolute"]
+[connection signal="button_disabled" from="." to="hall_light_button/interact_area" method="set_monitoring"]
+[connection signal="button_disabled" from="." to="hall_light_button/interact_area" method="set_monitorable"]
+[connection signal="button_enabled" from="." to="hall_light_button" method="set_interact_state_absolute"]
+[connection signal="button_enabled" from="." to="hall_light_button/interact_area" method="set_monitoring"]
+[connection signal="button_enabled" from="." to="hall_light_button/interact_area" method="set_monitorable"]
+[connection signal="button_down" from="hall_light_button" to="." method="shock"]
+[connection signal="button_down" from="hall_light_button" to="hall_light_button" method="button_pressed"]
+[connection signal="timeout" from="hall_light_cooldown" to="hall_light_button" method="unfreeze_disabled_state"]
