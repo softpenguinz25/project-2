@@ -36,12 +36,6 @@ shape = SubResource("RectangleShape2D_y5kkp")
 [node name="hall_light_cooldown" type="Timer" parent="."]
 one_shot = true
 
-[connection signal="button_disabled" from="." to="hall_light_button" method="set_interact_state_absolute"]
-[connection signal="button_disabled" from="." to="hall_light_button/interact_area" method="set_monitoring"]
-[connection signal="button_disabled" from="." to="hall_light_button/interact_area" method="set_monitorable"]
-[connection signal="button_enabled" from="." to="hall_light_button" method="set_interact_state_absolute"]
-[connection signal="button_enabled" from="." to="hall_light_button/interact_area" method="set_monitoring"]
-[connection signal="button_enabled" from="." to="hall_light_button/interact_area" method="set_monitorable"]
 [connection signal="button_down" from="hall_light_button" to="." method="shock"]
 [connection signal="button_down" from="hall_light_button" to="hall_light_button" method="button_pressed"]
 [connection signal="timeout" from="hall_light_cooldown" to="hall_light_button" method="unfreeze_disabled_state"]

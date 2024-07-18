@@ -4,15 +4,11 @@
 [ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_in_office.gd" id="2_aprr7"]
 [ext_resource type="Texture2D" uid="uid://m4ahsdeb8hs4" path="res://sprites/characters/animatronics/freddy.png" id="2_t86ti"]
 
-[node name="freddy" type="Node2D" node_paths=PackedStringArray("movement_timer", "animatronic_in_office", "pause_animatronic_timer", "pause_animatronic_timer_cooldown")]
+[node name="freddy" type="Node2D"]
 script = ExtResource("1_nfrfi")
-movement_timer = NodePath("freddy_timer")
 min_move_time = 2.75
 max_move_time = 3.25
 cam_path = Array[Array]([["show_stage", "supply_closet", "hall_west", "dining_room_1", "hall"], ["show_stage", "hall_east", "dining_room_2", "hall"]])
-animatronic_in_office = NodePath("freddy_in_office")
-pause_animatronic_timer = NodePath("freddy_timer_pause")
-pause_animatronic_timer_cooldown = NodePath("freddy_timer_pause_cooldown")
 animatronic_name = "freddy"
 ai_level_by_hour = {
 1: 2,
@@ -22,6 +18,21 @@ ai_level_by_hour = {
 5: 10,
 12: 0
 }
+movement_timer = Object(Timer,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","process_callback":1,"wait_time":5.0,"one_shot":false,"autostart":true,"script":null)
+
+animatronic_in_office = Object(Sprite2D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","visible":false,"modulate":Color(1, 1, 1, 1),"self_modulate":Color(1, 1, 1, 1),"show_behind_parent":false,"top_level":false,"clip_children":0,"light_mask":1,"visibility_layer":1,"z_index":0,"z_as_relative":true,"y_sort_enabled":false,"texture_filter":0,"texture_repeat":0,"material":null,"use_parent_material":false,"position":Vector2(640, 456),"rotation":0.0,"scale":Vector2(12, 12),"skew":0.0,"texture":ExtResource("2_t86ti"),"centered":true,"offset":Vector2(0, 0),"flip_h":false,"flip_v":false,"hframes":1,"vframes":1,"frame":0,"region_enabled":false,"region_rect":Rect2(0, 0, 0, 0),"region_filter_clip_enabled":false,"script":ExtResource("2_aprr7"),"animatronic_name":"freddy","ai_level_by_hour":{
+1: 4,
+2: 8,
+3: 12,
+4: 16,
+5: 20,
+12: 0
+},"set_ai_to_max_on_ready":false)
+
+pause_animatronic_timer = Object(Timer,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","process_callback":1,"wait_time":3.0,"one_shot":false,"autostart":false,"script":null)
+
+pause_animatronic_timer_cooldown = Object(Timer,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","process_callback":1,"wait_time":4.0,"one_shot":false,"autostart":false,"script":null)
+
 
 [node name="freddy_in_office" type="Sprite2D" parent="."]
 visible = false
@@ -42,5 +53,3 @@ wait_time = 3.0
 wait_time = 4.0
 
 [connection signal="timeout" from="freddy_timer" to="." method="movement_opportunity"]
-[connection signal="timeout" from="freddy_timer_pause" to="." method="pause_animatronic" binds= [false]]
-[connection signal="timeout" from="freddy_timer_pause_cooldown" to="." method="set_can_pause" binds= [true]]
