@@ -73,18 +73,18 @@ func set_ai_level(new_ai_level : int): super(new_ai_level)
 
 func _ready():
 	super()
-	print_debug("fnaf 2 ready")
+	#print_debug("fnaf 2 ready")
 	cam_path_num = randi_range(0, cam_path.size() - 1)
 
 func movement_opportunity() -> void:
-	print_debug("fnaf 2 movement opp at ai lvl: " + str(ai_level_property))
-	print_debug("ai_level at hr 12: " + str(ai_level_by_hour[12]))
+	#print_debug("fnaf 2 movement opp at ai lvl: " + str(ai_level_property))
+	#print_debug("ai_level at hr 12: " + str(ai_level_by_hour[12]))
 	movement_timer.wait_time = randf_range(min_move_time, max_move_time)
 	if randi_range(1, max_ai_level) <= ai_level_property and can_move:
 		move()
 
 func move() -> void:
-	print_debug("fnaf 2 move")
+	#print_debug("fnaf 2 move")
 	
 	if animatronic_in_office.is_in_office:
 		attack_opportunity()
