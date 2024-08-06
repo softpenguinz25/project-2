@@ -402,19 +402,21 @@ texture = SubResource("CanvasTexture_2xu5p")
 
 [node name="animatronics" type="Node2D" parent="environment" node_paths=PackedStringArray("animatronics_to_set")]
 script = ExtResource("19_i2y4a")
-animatronics_to_set = [null, null, null, null]
+animatronics_to_set = [NodePath("freddy"), NodePath("bonnie"), NodePath("chica"), NodePath("foxy")]
 
-[node name="freddy" parent="environment/animatronics" node_paths=PackedStringArray("movement_timer", "animatronic_in_office", "pause_animatronic_timer", "pause_animatronic_timer_cooldown") instance=ExtResource("8_8st2l")]
-movement_timer = NodePath("")
-animatronic_in_office = NodePath("")
-pause_animatronic_timer = NodePath("")
-pause_animatronic_timer_cooldown = NodePath("")
+[node name="freddy" parent="environment/animatronics" node_paths=PackedStringArray("monitor_screen") instance=ExtResource("8_8st2l")]
+monitor_screen = NodePath("../../monitor/monitor_screen")
 
-[node name="bonnie" parent="environment/animatronics" instance=ExtResource("8_w172p")]
+[node name="bonnie" parent="environment/animatronics" node_paths=PackedStringArray("door_obstacle", "monitor_screen") instance=ExtResource("8_w172p")]
+door_obstacle = NodePath("../../door_left")
+monitor_screen = NodePath("../../monitor/monitor_screen")
 
-[node name="chica" parent="environment/animatronics" instance=ExtResource("9_vuwfo")]
+[node name="chica" parent="environment/animatronics" node_paths=PackedStringArray("door_obstacle", "monitor_screen") instance=ExtResource("9_vuwfo")]
+door_obstacle = NodePath("../../door_right")
+monitor_screen = NodePath("../../monitor/monitor_screen")
 
-[node name="foxy" parent="environment/animatronics" instance=ExtResource("11_rr8c6")]
+[node name="foxy" parent="environment/animatronics" node_paths=PackedStringArray("monitor_screen") instance=ExtResource("11_rr8c6")]
+monitor_screen = NodePath("../../monitor/monitor_screen")
 
 [node name="power_off_sequence" parent="environment/animatronics" node_paths=PackedStringArray("timer_until_animatronic_footstep", "timer_until_animatronic_footstep_darkness") instance=ExtResource("24_76qqo")]
 position = Vector2(-2, 0)
@@ -458,9 +460,10 @@ libraries = {
 }
 speed_scale = 4.0
 
-[node name="controlled_shock" parent="environment" instance=ExtResource("7_5di67")]
+[node name="controlled_shock" parent="environment" node_paths=PackedStringArray("animatronic_to_shock") instance=ExtResource("7_5di67")]
 position = Vector2(640, 568)
 scale = Vector2(1.25, 1.25)
+animatronic_to_shock = NodePath("../animatronics/freddy")
 
 [node name="floor" type="StaticBody2D" parent="environment"]
 
@@ -619,9 +622,10 @@ script = ExtResource("32_ewhl3")
 position = Vector2(132, 92)
 shape = SubResource("RectangleShape2D_rcoei")
 
-[node name="vent" parent="environment" instance=ExtResource("15_ksk3m")]
+[node name="vent" parent="environment" node_paths=PackedStringArray("animatronic_to_shock") instance=ExtResource("15_ksk3m")]
 light_mask = 3
 position = Vector2(376, 448)
+animatronic_to_shock = NodePath("../animatronics/foxy")
 
 [node name="player" type="Node2D" parent="."]
 
@@ -945,6 +949,36 @@ stream = ExtResource("58_a0s5q")
 [connection signal="using_cheat_mode" from="environment/animatronics" to="environment/monitor/monitor_screen" method="set_cheat_mode" binds= [true]]
 [connection signal="using_cheat_mode" from="environment/animatronics" to="player/player" method="set_interact_area_scale" binds= [Vector2(100, 100)]]
 [connection signal="using_cheat_mode" from="environment/animatronics" to="ui/ui_topbar/night_text" method="set_text" binds= ["Night: -CHEAT-"]]
+[connection signal="animatronic_jumpscare" from="environment/animatronics/freddy" to="game_manager/jumpscare_manager" method="play_jumpscare"]
+[connection signal="animatronic_moved" from="environment/animatronics/freddy" to="environment/monitor/monitor_screen" method="animatronic_moved_to"]
+[connection signal="animatronic_moved" from="environment/animatronics/freddy" to="environment/monitor/monitor_screen" method="set_animatronic_pos"]
+[connection signal="animatronic_moved_from" from="environment/animatronics/freddy" to="environment/monitor/monitor_screen" method="animatronic_moved_from"]
+[connection signal="animatronic_stalled" from="environment/animatronics/freddy" to="environment/monitor/monitor_screen" method="set_animatronic_stalled"]
+[connection signal="in_office_cue" from="environment/animatronics/freddy" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_scare.wav"]]
+[connection signal="in_office_flashed" from="environment/animatronics/freddy" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_scare.wav"]]
+[connection signal="movement_cue" from="environment/animatronics/freddy" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_footstep.wav"]]
+[connection signal="animatronic_jumpscare" from="environment/animatronics/bonnie" to="game_manager/jumpscare_manager" method="play_jumpscare"]
+[connection signal="animatronic_moved" from="environment/animatronics/bonnie" to="environment/monitor/monitor_screen" method="animatronic_moved_to"]
+[connection signal="animatronic_moved" from="environment/animatronics/bonnie" to="environment/monitor/monitor_screen" method="set_animatronic_pos"]
+[connection signal="animatronic_moved_from" from="environment/animatronics/bonnie" to="environment/monitor/monitor_screen" method="animatronic_moved_from"]
+[connection signal="animatronic_stalled" from="environment/animatronics/bonnie" to="environment/monitor/monitor_screen" method="set_animatronic_stalled"]
+[connection signal="in_office_flashed" from="environment/animatronics/bonnie" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_scare.wav"]]
+[connection signal="movement_cue" from="environment/animatronics/bonnie" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_footstep.wav"]]
+[connection signal="animatronic_jumpscare" from="environment/animatronics/chica" to="game_manager/jumpscare_manager" method="play_jumpscare"]
+[connection signal="animatronic_moved" from="environment/animatronics/chica" to="environment/monitor/monitor_screen" method="animatronic_moved_to"]
+[connection signal="animatronic_moved" from="environment/animatronics/chica" to="environment/monitor/monitor_screen" method="set_animatronic_pos"]
+[connection signal="animatronic_moved_from" from="environment/animatronics/chica" to="environment/monitor/monitor_screen" method="animatronic_moved_from"]
+[connection signal="animatronic_stalled" from="environment/animatronics/chica" to="environment/monitor/monitor_screen" method="set_animatronic_stalled"]
+[connection signal="in_office_flashed" from="environment/animatronics/chica" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_scare.wav"]]
+[connection signal="movement_cue" from="environment/animatronics/chica" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_footstep.wav"]]
+[connection signal="animatronic_jumpscare" from="environment/animatronics/foxy" to="game_manager/jumpscare_manager" method="play_jumpscare"]
+[connection signal="animatronic_moved" from="environment/animatronics/foxy" to="environment/monitor/monitor_screen" method="animatronic_moved_to"]
+[connection signal="animatronic_moved" from="environment/animatronics/foxy" to="environment/monitor/monitor_screen" method="set_animatronic_pos"]
+[connection signal="animatronic_moved_from" from="environment/animatronics/foxy" to="environment/monitor/monitor_screen" method="animatronic_moved_from"]
+[connection signal="animatronic_stalled" from="environment/animatronics/foxy" to="environment/monitor/monitor_screen" method="set_animatronic_stalled"]
+[connection signal="in_office_cue" from="environment/animatronics/foxy" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_scare.wav"]]
+[connection signal="in_office_flashed" from="environment/animatronics/foxy" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_scare.wav"]]
+[connection signal="movement_cue" from="environment/animatronics/foxy" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_footstep.wav"]]
 [connection signal="freddy_flicker_started" from="environment/animatronics/power_off_sequence" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_music_box.wav"]]
 [connection signal="freddy_flicker_started" from="environment/animatronics/power_off_sequence" to="game_manager/audio_manager_local" method="stop_sound" binds= ["res://sounds/animatronics/animatronic_footstep.wav"]]
 [connection signal="jumpscare_played" from="environment/animatronics/power_off_sequence" to="game_manager/jumpscare_manager" method="play_jumpscare" binds= ["freddy"]]
@@ -969,25 +1003,38 @@ stream = ExtResource("58_a0s5q")
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="phone_call" method="stop"]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="phone_call_youded" method="stop"]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_power_down.wav"]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/freddy" method="set_ai_level" binds= [0]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/freddy" method="pause_animatronic" binds= [true]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/bonnie" method="set_ai_level" binds= [0]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/bonnie" method="pause_animatronic" binds= [true]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/chica" method="set_ai_level" binds= [0]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/chica" method="pause_animatronic" binds= [true]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/foxy" method="set_ai_level" binds= [0]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/foxy" method="pause_animatronic" binds= [true]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/power_off_sequence/freddy_eyes_lighting" method="set_enabled" binds= [true]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/power_off_sequence/power_off_light/power_off_lighting" method="set_enabled" binds= [true]]
-[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/door_left" method="change_button_disabled_state" binds= [true]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/controlled_shock" method="change_button_disabled_state_permanently" binds= [true]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/door_left" method="change_door_state" binds= [false]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/door_left" method="change_button_disabled_state" binds= [true]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/door_left/PointLight2D" method="set_visible" binds= [false]]
-[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/door_right" method="change_button_disabled_state" binds= [true]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/door_right" method="change_door_state" binds= [false]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/door_right" method="change_button_disabled_state" binds= [true]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/door_right/PointLight2D" method="set_visible" binds= [false]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/shelf/PointLight2D" method="set_visible" binds= [false]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/light" method="set_modulate" binds= [Color(0.0156863, 0.0156863, 0.0156863, 1)]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/light/PointLight2D" method="set_visible" binds= [false]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/monitor/monitor_screen" method="set_visible" binds= [false]]
-[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/monitor/monitor_screen" method="set_active_state_permanently" binds= [false]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/monitor/monitor_screen" method="set_monitor_focus" binds= [false]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/monitor/monitor_screen" method="set_active_state_permanently" binds= [false]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/monitor/static_preview_bg" method="set_visible" binds= [false]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/monitor/monitor_focus_button" method="set_interact_state_absolute" binds= [false]]
+[connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="environment/vent" method="change_button_disabled_state_permanently" binds= [true]]
 [connection signal="power_off_started" from="environment/animatronics/power_off_sequence" to="ui/ui_topbar" method="set_visible" binds= [false]]
 [connection signal="timeout" from="environment/animatronics/power_off_sequence/animatronic_footstep_sfx_timer" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_footstep.wav"]]
 [connection signal="timeout" from="environment/animatronics/power_off_sequence/animatronic_footstep_darkness_sfx_timer" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_footstep.wav"]]
+[connection signal="attempt_shock" from="environment/controlled_shock" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/office/controlled_shock.wav"]]
+[connection signal="attempt_shock" from="environment/controlled_shock" to="game_manager/battery_timer" method="increment_power" binds= [-3.0]]
+[connection signal="shock_trigger" from="environment/controlled_shock" to="environment/animatronics/freddy" method="reset_pos"]
 [connection signal="door_off" from="environment/door_left" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_close.wav"]]
 [connection signal="door_off" from="environment/door_left" to="game_manager/battery_timer" method="increment_usage" binds= [-1]]
 [connection signal="door_on" from="environment/door_left" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_close.wav"]]
@@ -1042,6 +1089,9 @@ stream = ExtResource("58_a0s5q")
 [connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="ui/ui_bottombar/ui_mobile_controls" method="set_visible" binds= [true]]
 [connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="ui/pause" method="set_visible" binds= [false]]
 [connection signal="button_down" from="environment/monitor/monitor_focus_button" to="environment/monitor/monitor_screen" method="set_monitor_focus" binds= [true]]
+[connection signal="attempt_shock" from="environment/vent" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/office/light_vent.wav"]]
+[connection signal="attempt_shock" from="environment/vent" to="game_manager/battery_timer" method="increment_power" binds= [-3.0]]
+[connection signal="shock_trigger" from="environment/vent" to="environment/animatronics/foxy" method="reset_pos"]
 [connection signal="is_moving" from="player/player" to="game_manager/audio_manager_local" method="play_sound"]
 [connection signal="not_is_moving" from="player/player" to="game_manager/audio_manager_local" method="stop_sound"]
 [connection signal="not_set_active" from="player/player" to="game_manager/audio_manager_local" method="stop_sound"]

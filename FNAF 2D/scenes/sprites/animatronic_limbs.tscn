@@ -1,0 +1,59 @@
+[gd_scene load_steps=14 format=3 uid="uid://c6nbcnjvimip7"]
+
+[ext_resource type="Texture2D" uid="uid://d26sd3vgei73a" path="res://sprites/characters/animatronics/puppet/body.png" id="1_nb0y2"]
+[ext_resource type="Texture2D" uid="uid://dppltrgj4y4gr" path="res://sprites/characters/animatronics/puppet/arm_left_upper.png" id="2_2ejbh"]
+[ext_resource type="Texture2D" uid="uid://bik1ikbqthg86" path="res://sprites/characters/animatronics/puppet/arm_left_lower.png" id="3_8fci2"]
+[ext_resource type="Texture2D" uid="uid://mp5hfbjwsnf3" path="res://sprites/characters/animatronics/puppet/hand_left.png" id="4_t5q2m"]
+[ext_resource type="Texture2D" uid="uid://3thmrxrx27eo" path="res://sprites/characters/animatronics/puppet/arm_right_upper.png" id="5_v55a3"]
+[ext_resource type="Texture2D" uid="uid://dnewpjffvkoqv" path="res://sprites/characters/animatronics/puppet/arm_right_lower.png" id="6_om5uj"]
+[ext_resource type="Texture2D" uid="uid://baqiohnrm1ul3" path="res://sprites/characters/animatronics/puppet/hand_right.png" id="7_ncyvq"]
+[ext_resource type="Texture2D" uid="uid://vdad7ydeppw" path="res://sprites/characters/animatronics/puppet/leg_left_upper.png" id="8_1smb3"]
+[ext_resource type="Texture2D" uid="uid://cmip61aich3gj" path="res://sprites/characters/animatronics/puppet/leg_left_lower.png" id="9_lu8b4"]
+[ext_resource type="Texture2D" uid="uid://pr8enib2ma1j" path="res://sprites/characters/animatronics/puppet/leg_right_upper.png" id="10_v0413"]
+[ext_resource type="Texture2D" uid="uid://chhd0qhurrb7w" path="res://sprites/characters/animatronics/puppet/leg_right_lower.png" id="11_xyd3x"]
+[ext_resource type="Texture2D" uid="uid://cbc3covln0tja" path="res://sprites/characters/animatronics/puppet/neck.png" id="12_mjqw5"]
+[ext_resource type="Texture2D" uid="uid://g26wsw1hh3wp" path="res://sprites/characters/animatronics/puppet/head.png" id="13_xfrlf"]
+
+[node name="animatronic_limbs" type="Node2D"]
+
+[node name="puppet_sprite" type="Node2D" parent="."]
+scale = Vector2(8, 8)
+
+[node name="Body" type="Sprite2D" parent="puppet_sprite"]
+texture = ExtResource("1_nb0y2")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="puppet_sprite/Body"]
+texture = ExtResource("2_2ejbh")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="puppet_sprite/Body/ArmLeftUpper"]
+texture = ExtResource("3_8fci2")
+
+[node name="HandLeft" type="Sprite2D" parent="puppet_sprite/Body/ArmLeftUpper/ArmLeftLower"]
+texture = ExtResource("4_t5q2m")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="puppet_sprite/Body"]
+texture = ExtResource("5_v55a3")
+
+[node name="ArmRightLower" type="Sprite2D" parent="puppet_sprite/Body/ArmRightUpper"]
+texture = ExtResource("6_om5uj")
+
+[node name="HandRight" type="Sprite2D" parent="puppet_sprite/Body/ArmRightUpper/ArmRightLower"]
+texture = ExtResource("7_ncyvq")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="puppet_sprite/Body"]
+texture = ExtResource("8_1smb3")
+
+[node name="LegLeftLower" type="Sprite2D" parent="puppet_sprite/Body/LegLeftUpper"]
+texture = ExtResource("9_lu8b4")
+
+[node name="LegRightUpper" type="Sprite2D" parent="puppet_sprite/Body"]
+texture = ExtResource("10_v0413")
+
+[node name="LegRightLower" type="Sprite2D" parent="puppet_sprite/Body/LegRightUpper"]
+texture = ExtResource("11_xyd3x")
+
+[node name="Neck" type="Sprite2D" parent="puppet_sprite/Body"]
+texture = ExtResource("12_mjqw5")
+
+[node name="Head" type="Sprite2D" parent="puppet_sprite/Body/Neck"]
+texture = ExtResource("13_xfrlf")

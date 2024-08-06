@@ -40,7 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://jspa06423k34" path="res://sprites/ui/menu_button.png" id="34_jh2eb"]
 [ext_resource type="Texture2D" uid="uid://07xhsuabo35f" path="res://sprites/characters/animatronics/faceless/chica_faceless.png" id="34_kfm7a"]
 [ext_resource type="Texture2D" uid="uid://6qmdrb300y2g" path="res://sprites/characters/animatronics/faceless/bonnie_faceless.png" id="35_5ttwh"]
-[ext_resource type="Texture2D" uid="uid://cfy5byynjsa6s" path="res://sprites/characters/animatronics/puppet.png" id="36_5aymx"]
+[ext_resource type="Texture2D" uid="uid://cfy5byynjsa6s" path="res://sprites/characters/animatronics/puppet/puppet.png" id="36_5aymx"]
 [ext_resource type="Texture2D" uid="uid://dsu8cablxpsbh" path="res://sprites/characters/animatronics/faceless/freddy_faceless.png" id="36_kem5p"]
 [ext_resource type="Texture2D" uid="uid://extpgbvgt676" path="res://sprites/characters/animatronics/toy_chica.png" id="36_ndwmm"]
 [ext_resource type="Texture2D" uid="uid://da0mcpey8hs48" path="res://sprites/characters/animatronics/toy_freddy.png" id="36_wtanf"]
@@ -326,7 +326,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="fnaf_1" type="Control" parent="menu"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -553,6 +552,7 @@ energy = 3.12
 texture = ExtResource("11_5fvmq")
 
 [node name="fnaf_2" type="Control" parent="menu"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -644,7 +644,6 @@ grow_vertical = 2
 texture = SubResource("CanvasTexture_x34ak")
 
 [node name="button_newgame" type="Button" parent="menu"]
-visible = false
 layout_mode = 2
 offset_left = 536.0
 offset_top = 334.0
@@ -659,7 +658,6 @@ Game"
 script = ExtResource("8_q3obw")
 
 [node name="button_20dmode" type="Button" parent="menu"]
-visible = false
 layout_mode = 2
 offset_left = 850.0
 offset_top = 404.0
@@ -674,7 +672,6 @@ Mode"
 script = ExtResource("8_q3obw")
 
 [node name="time_labels" type="Control" parent="menu" node_paths=PackedStringArray("best_time_label", "last_time_label")]
-visible = false
 anchors_preset = 0
 offset_left = 856.0
 offset_top = 533.0
@@ -702,7 +699,6 @@ theme_override_fonts/font = ExtResource("2_qxmd5")
 text = "Last: 0:00.00"
 
 [node name="button_cheatmode" type="Button" parent="menu"]
-visible = false
 layout_mode = 2
 offset_left = 272.0
 offset_top = 403.0
@@ -748,7 +744,6 @@ alignment = 0
 script = ExtResource("26_lpeo8")
 
 [node name="button_jujuprodgames" type="Button" parent="menu"]
-visible = false
 layout_mode = 2
 offset_left = 1108.0
 offset_top = 445.0
@@ -787,7 +782,6 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="button_scottcawthon" type="Label" parent="menu"]
-visible = false
 layout_mode = 2
 offset_left = 51.0
 offset_top = 445.0
@@ -871,16 +865,16 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_3aabh")
 
 [connection signal="button_down" from="menu/button_newgame" to="manager/local_audio_manager" method="play_sound" binds= ["res://sounds/menu/menu_button.wav"]]
 [connection signal="button_down" from="menu/button_newgame" to="manager/scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/scene_night_number_1.tscn"]]
-[connection signal="button_down" from="menu/button_newgame" to="menu/button_newgame" method="set_use_cheat_mode" binds= [false]]
 [connection signal="button_down" from="menu/button_newgame" to="menu/button_newgame" method="set_use_20d_mode" binds= [false]]
+[connection signal="button_down" from="menu/button_newgame" to="menu/button_newgame" method="set_use_cheat_mode" binds= [false]]
 [connection signal="button_down" from="menu/button_20dmode" to="manager/local_audio_manager" method="play_sound" binds= ["res://sounds/menu/menu_button.wav"]]
 [connection signal="button_down" from="menu/button_20dmode" to="manager/scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/scene_night_number_20D.tscn"]]
-[connection signal="button_down" from="menu/button_20dmode" to="menu/button_20dmode" method="set_use_cheat_mode" binds= [false]]
 [connection signal="button_down" from="menu/button_20dmode" to="menu/button_20dmode" method="set_use_20d_mode" binds= [true]]
+[connection signal="button_down" from="menu/button_20dmode" to="menu/button_20dmode" method="set_use_cheat_mode" binds= [false]]
 [connection signal="button_down" from="menu/button_cheatmode" to="manager/local_audio_manager" method="play_sound" binds= ["res://sounds/menu/menu_button.wav"]]
 [connection signal="button_down" from="menu/button_cheatmode" to="manager/scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/scene_night_number_cheat.tscn"]]
-[connection signal="button_down" from="menu/button_cheatmode" to="menu/button_cheatmode" method="set_use_cheat_mode" binds= [true]]
 [connection signal="button_down" from="menu/button_cheatmode" to="menu/button_cheatmode" method="set_use_20d_mode" binds= [false]]
+[connection signal="button_down" from="menu/button_cheatmode" to="menu/button_cheatmode" method="set_use_cheat_mode" binds= [true]]
 [connection signal="button_down" from="menu/button_exit" to="manager/local_audio_manager" method="play_sound"]
 [connection signal="button_down" from="menu/button_exit" to="menu/button_exit" method="quit_game"]
 [connection signal="button_down" from="menu/button_godot" to="menu/button_godot" method="open_link" binds= ["https://godotengine.org/license"]]

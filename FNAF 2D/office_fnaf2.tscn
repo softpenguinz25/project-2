@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://k235u75p8tw4"]
+[gd_scene load_steps=58 format=3 uid="uid://k235u75p8tw4"]
 
 [ext_resource type="Script" path="res://scripts/environment/camera_tweener.gd" id="2_1cvln"]
 [ext_resource type="PackedScene" uid="uid://tbiaxc7dxu03" path="res://scenes/characters/player_fnaf2.tscn" id="2_6okfi"]
@@ -15,6 +15,23 @@
 [ext_resource type="PackedScene" uid="uid://bwnpe16r7li8q" path="res://scenes/characters/animatronics/toy_freddy.tscn" id="10_n7ow3"]
 [ext_resource type="Texture2D" uid="uid://cybfaea64nbje" path="res://sprites/environment/main_office_fnaf2/mask/object/mask_object.png" id="11_iy51w"]
 [ext_resource type="Texture2D" uid="uid://hn4dxwuru21e" path="res://sprites/environment/main_office_fnaf2/mask/overlay/mask_overlay.png" id="12_i0blb"]
+[ext_resource type="Texture2D" uid="uid://ds10607oithwm" path="res://sprites/square.png" id="14_7mk13"]
+[ext_resource type="Script" path="res://scripts/environment/music_box.gd" id="14_cor0g"]
+[ext_resource type="Texture2D" uid="uid://diyhljcrt17mb" path="res://sprites/environment/main_office_fnaf2/music_box/music_box.png" id="14_sykm2"]
+[ext_resource type="Texture2D" uid="uid://d26sd3vgei73a" path="res://sprites/characters/animatronics/puppet/body.png" id="18_o82ap"]
+[ext_resource type="Texture2D" uid="uid://dppltrgj4y4gr" path="res://sprites/characters/animatronics/puppet/arm_left_upper.png" id="19_0nb7t"]
+[ext_resource type="Texture2D" uid="uid://bik1ikbqthg86" path="res://sprites/characters/animatronics/puppet/arm_left_lower.png" id="20_dsafg"]
+[ext_resource type="Texture2D" uid="uid://mp5hfbjwsnf3" path="res://sprites/characters/animatronics/puppet/hand_left.png" id="21_ahf50"]
+[ext_resource type="Texture2D" uid="uid://3thmrxrx27eo" path="res://sprites/characters/animatronics/puppet/arm_right_upper.png" id="22_qms57"]
+[ext_resource type="Texture2D" uid="uid://dnewpjffvkoqv" path="res://sprites/characters/animatronics/puppet/arm_right_lower.png" id="23_kd2xm"]
+[ext_resource type="Texture2D" uid="uid://baqiohnrm1ul3" path="res://sprites/characters/animatronics/puppet/hand_right.png" id="24_y0xml"]
+[ext_resource type="Texture2D" uid="uid://vdad7ydeppw" path="res://sprites/characters/animatronics/puppet/leg_left_upper.png" id="25_adqwj"]
+[ext_resource type="Texture2D" uid="uid://cmip61aich3gj" path="res://sprites/characters/animatronics/puppet/leg_left_lower.png" id="26_6axd0"]
+[ext_resource type="Texture2D" uid="uid://pr8enib2ma1j" path="res://sprites/characters/animatronics/puppet/leg_right_upper.png" id="27_iuwbh"]
+[ext_resource type="Texture2D" uid="uid://chhd0qhurrb7w" path="res://sprites/characters/animatronics/puppet/leg_right_lower.png" id="28_2cf3b"]
+[ext_resource type="Script" path="res://scripts/environment/music_box_gfx.gd" id="29_glq2p"]
+[ext_resource type="Texture2D" uid="uid://cbc3covln0tja" path="res://sprites/characters/animatronics/puppet/neck.png" id="29_mhbeo"]
+[ext_resource type="Texture2D" uid="uid://g26wsw1hh3wp" path="res://sprites/characters/animatronics/puppet/head.png" id="30_q47tp"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_dokc6"]
 
@@ -122,6 +139,23 @@ modulate_color = Color(0.266667, 0.266667, 0.266667, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4vevr"]
 size = Vector2(96, 95)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yqnwh"]
+texture = ExtResource("14_sykm2")
+modulate_color = Color(0.733333, 0.733333, 0.733333, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k3tff"]
+texture = ExtResource("14_sykm2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a1lf5"]
+texture = ExtResource("14_sykm2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sqn1x"]
+texture = ExtResource("14_sykm2")
+modulate_color = Color(0.266667, 0.266667, 0.266667, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkv5q"]
+size = Vector2(255, 256)
 
 [sub_resource type="Curve" id="Curve_oat7q"]
 min_value = 1.0
@@ -392,6 +426,88 @@ theme_override_fonts/font = ExtResource("4_qf4tt")
 theme_override_font_sizes/font_size = 52
 text = "EXIT MASK"
 
+[node name="music_box" type="Node2D" parent="environment"]
+script = ExtResource("14_cor0g")
+music_box_current_time_easing = 0.3
+crank_amount_in_sec = 1.5
+
+[node name="rope" type="Sprite2D" parent="environment/music_box"]
+modulate = Color(0.0705882, 0.0705882, 0.0705882, 1)
+position = Vector2(1132, 374.3)
+scale = Vector2(0.05, 2.13828)
+texture = ExtResource("14_7mk13")
+
+[node name="puppet_sprite" type="Node2D" parent="environment/music_box"]
+scale = Vector2(6.7, 6.7)
+
+[node name="Body" type="Sprite2D" parent="environment/music_box/puppet_sprite"]
+texture = ExtResource("18_o82ap")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="environment/music_box/puppet_sprite/Body"]
+position = Vector2(7.625, -8.5)
+rotation = -1.0472
+texture = ExtResource("19_0nb7t")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="environment/music_box/puppet_sprite/Body/ArmLeftUpper"]
+texture = ExtResource("20_dsafg")
+
+[node name="HandLeft" type="Sprite2D" parent="environment/music_box/puppet_sprite/Body/ArmLeftUpper/ArmLeftLower"]
+texture = ExtResource("21_ahf50")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="environment/music_box/puppet_sprite/Body"]
+position = Vector2(-7.625, -8.5)
+rotation = 1.0472
+texture = ExtResource("22_qms57")
+
+[node name="ArmRightLower" type="Sprite2D" parent="environment/music_box/puppet_sprite/Body/ArmRightUpper"]
+texture = ExtResource("23_kd2xm")
+
+[node name="HandRight" type="Sprite2D" parent="environment/music_box/puppet_sprite/Body/ArmRightUpper/ArmRightLower"]
+texture = ExtResource("24_y0xml")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="environment/music_box/puppet_sprite/Body"]
+texture = ExtResource("25_adqwj")
+
+[node name="LegLeftLower" type="Sprite2D" parent="environment/music_box/puppet_sprite/Body/LegLeftUpper"]
+texture = ExtResource("26_6axd0")
+
+[node name="LegRightUpper" type="Sprite2D" parent="environment/music_box/puppet_sprite/Body"]
+texture = ExtResource("27_iuwbh")
+
+[node name="LegRightLower" type="Sprite2D" parent="environment/music_box/puppet_sprite/Body/LegRightUpper"]
+texture = ExtResource("28_2cf3b")
+
+[node name="Neck" type="Sprite2D" parent="environment/music_box/puppet_sprite/Body"]
+texture = ExtResource("29_mhbeo")
+
+[node name="Head" type="Sprite2D" parent="environment/music_box/puppet_sprite/Body/Neck"]
+texture = ExtResource("30_q47tp")
+
+[node name="puppet_controller" type="RemoteTransform2D" parent="environment/music_box"]
+scale = Vector2(6.7, 6.7)
+remote_path = NodePath("../puppet_sprite")
+script = ExtResource("29_glq2p")
+music_box_ratio_remaining_property = 1.0
+in_box_pos = Vector2(1133, 581)
+out_box_pos = Vector2(1133, 261)
+
+[node name="music_box_button" type="Button" parent="environment/music_box"]
+offset_left = 1004.0
+offset_top = 392.0
+offset_right = 1260.0
+offset_bottom = 648.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_yqnwh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_k3tff")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_a1lf5")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_sqn1x")
+script = ExtResource("4_ip4so")
+
+[node name="music_box_area" type="Area2D" parent="environment/music_box/music_box_button" groups=["interactable"]]
+
+[node name="music_box_col" type="CollisionShape2D" parent="environment/music_box/music_box_button/music_box_area"]
+position = Vector2(127.5, 128)
+shape = SubResource("RectangleShape2D_kkv5q")
+
 [node name="player" parent="." instance=ExtResource("2_6okfi")]
 position = Vector2(640, 516)
 jump_velocity = 0
@@ -486,3 +602,6 @@ autowrap_mode = 3
 [connection signal="animatronic_stalled" from="environment/animatronics/toy_freddy" to="environment/monitor/monitor_screen_fnaf2" method="set_animatronic_stalled"]
 [connection signal="button_down" from="environment/mask/mask_button" to="environment/mask" method="set_mask_state" binds= [true]]
 [connection signal="button_down" from="environment/mask/mask_clayer/exit_button" to="environment/mask" method="set_mask_state" binds= [false]]
+[connection signal="music_box_ratio_remaining" from="environment/music_box" to="environment/music_box/puppet_controller" method="set_music_box_ratio_remaining"]
+[connection signal="button_down" from="environment/music_box/music_box_button" to="environment/music_box" method="toggle_music_box" binds= [true]]
+[connection signal="button_up" from="environment/music_box/music_box_button" to="environment/music_box" method="toggle_music_box" binds= [false]]

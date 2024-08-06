@@ -11,5 +11,5 @@ func _process(_delta):
 	self["parameters/conditions/not_is_moving"] = !is_moving
 	
 	if is_moving:
-		self["parameters/Idle/blend_position"] = relative_player_speed
-		self["parameters/Walk/blend_position"] = relative_player_speed
+		self["parameters/Idle/blout_box_position"] = relative_player_speed
+		self["parameters/Walk/blout_box_position"] = relative_player_speed
