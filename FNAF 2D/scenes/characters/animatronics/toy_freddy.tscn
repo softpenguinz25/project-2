@@ -39,5 +39,3 @@ wait_time = 3.0
 wait_time = 4.0
 
 [connection signal="timeout" from="toy_freddy_timer" to="." method="movement_opportunity"]
-[connection signal="timeout" from="toy_freddy_timer_pause" to="." method="pause_animatronic" binds= [false]]
-[connection signal="timeout" from="toy_freddy_timer_pause_cooldown" to="." method="set_can_pause" binds= [true]]

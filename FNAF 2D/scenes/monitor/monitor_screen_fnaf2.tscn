@@ -1,23 +1,22 @@
-[gd_scene load_steps=59 format=3 uid="uid://deybknyvrm48a"]
+[gd_scene load_steps=58 format=3 uid="uid://deybknyvrm48a"]
 
 [ext_resource type="Script" path="res://scripts/monitor/monitor_screen.gd" id="1_8ro68"]
 [ext_resource type="Script" path="res://scripts/monitor/monitor_scene.gd" id="2_ve4w3"]
-[ext_resource type="Texture2D" uid="uid://bguxtivtmhotq" path="res://sprites/environment/monitor/fnaf_1/monitor_scenes/supply_closet.png" id="3_ux8x5"]
+[ext_resource type="Texture2D" uid="uid://ylg76bhqnnv7" path="res://sprites/environment/monitor/fnaf_2/monitor_scenes/show_stage.png" id="3_3beim"]
 [ext_resource type="Texture2D" uid="uid://m4ahsdeb8hs4" path="res://sprites/characters/animatronics/freddy.png" id="4_rya01"]
 [ext_resource type="Texture2D" uid="uid://cqoahgwik4jad" path="res://sprites/characters/animatronics/chica.png" id="5_d70mf"]
-[ext_resource type="Texture2D" uid="uid://cawnt80dviwug" path="res://sprites/environment/monitor/fnaf_1/monitor_scenes/show_stage.png" id="6_m5mk2"]
 [ext_resource type="Texture2D" uid="uid://bg43yix30oy1r" path="res://sprites/characters/animatronics/bonnie.png" id="7_lbf48"]
-[ext_resource type="Texture2D" uid="uid://drebcrtv0836i" path="res://sprites/environment/monitor/fnaf_1/monitor_scenes/hall.png" id="8_03f0p"]
-[ext_resource type="Texture2D" uid="uid://cfyuikbm070gp" path="res://sprites/environment/monitor/fnaf_1/monitor_scenes/dining_room_1.png" id="9_qvbdh"]
-[ext_resource type="Texture2D" uid="uid://b00yvpujsf3kv" path="res://sprites/environment/monitor/fnaf_1/monitor_scenes/dining_room_2.png" id="10_n667e"]
-[ext_resource type="Texture2D" uid="uid://dtsog62kbgndl" path="res://sprites/environment/monitor/fnaf_1/monitor_scenes/pirate_cove_4.png" id="11_m0441"]
-[ext_resource type="Texture2D" uid="uid://c0utk2gg3lix1" path="res://sprites/environment/monitor/fnaf_1/monitor_scenes/pirate_cove_1.png" id="12_bksxj"]
-[ext_resource type="Texture2D" uid="uid://dqbgk7lhb5pkl" path="res://sprites/environment/monitor/fnaf_1/monitor_scenes/pirate_cove_2.png" id="13_khe2p"]
-[ext_resource type="Texture2D" uid="uid://b61rgbl882m5c" path="res://sprites/environment/monitor/fnaf_1/monitor_scenes/pirate_cove_3.png" id="14_m6ow5"]
-[ext_resource type="Texture2D" uid="uid://db0bt4txiypl7" path="res://sprites/environment/monitor/fnaf_1/monitor_scenes/pirate_cove_3_1.png" id="15_fqasy"]
-[ext_resource type="Texture2D" uid="uid://cjt124bp3qw2a" path="res://sprites/environment/monitor/fnaf_1/monitor_scenes/hall_west.png" id="16_2wtwf"]
-[ext_resource type="Texture2D" uid="uid://yawqeupa1i8x" path="res://sprites/environment/monitor/fnaf_1/monitor_scenes/hall_east.png" id="17_d1jsh"]
-[ext_resource type="Texture2D" uid="uid://i08yjr748wt6" path="res://sprites/environment/monitor/fnaf_1/monitor_map.png" id="18_kkfgi"]
+[ext_resource type="Texture2D" uid="uid://14f4ec0rngj0" path="res://sprites/environment/monitor/fnaf_2/monitor_scenes/game_area.png" id="7_w4emu"]
+[ext_resource type="Texture2D" uid="uid://bjlxf6kes1f7y" path="res://sprites/environment/monitor/fnaf_2/monitor_scenes/kids_cove.png" id="8_7j6y0"]
+[ext_resource type="Texture2D" uid="uid://d28y23b2stu4d" path="res://sprites/environment/monitor/fnaf_2/monitor_scenes/main_hall.png" id="9_jmbaf"]
+[ext_resource type="Texture2D" uid="uid://bpvfh27stoubu" path="res://sprites/environment/monitor/fnaf_2/monitor_scenes/parts_and_service.png" id="10_5y3d2"]
+[ext_resource type="Texture2D" uid="uid://cb1kcfbs5456k" path="res://sprites/environment/monitor/fnaf_2/monitor_scenes/party_room_1.png" id="11_0wo7n"]
+[ext_resource type="Texture2D" uid="uid://cutefdyuhngrg" path="res://sprites/environment/monitor/fnaf_2/camera_map_fnaf2.png" id="12_8us1v"]
+[ext_resource type="Texture2D" uid="uid://c4lgvbeua6ode" path="res://sprites/environment/monitor/fnaf_2/monitor_scenes/party_room_2.png" id="12_stfrt"]
+[ext_resource type="Texture2D" uid="uid://y5gt5im1pohx" path="res://sprites/environment/monitor/fnaf_2/monitor_scenes/party_room_3.png" id="13_v0v2f"]
+[ext_resource type="Texture2D" uid="uid://xafl0hiqcaq7" path="res://sprites/environment/monitor/fnaf_2/monitor_scenes/party_room_4.png" id="14_qkguv"]
+[ext_resource type="Texture2D" uid="uid://cyq0tfb2lk5yu" path="res://sprites/environment/monitor/fnaf_2/monitor_scenes/vent_left.png" id="15_7xhu3"]
+[ext_resource type="Texture2D" uid="uid://b3f6qcgwsclne" path="res://sprites/environment/monitor/fnaf_2/monitor_scenes/vent_right.png" id="16_gemun"]
 [ext_resource type="Script" path="res://scripts/monitor/monitor_map.gd" id="19_2h7gx"]
 [ext_resource type="FontFile" uid="uid://c458otts8ji68" path="res://ui/fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" id="20_kckev"]
 [ext_resource type="PackedScene" uid="uid://k6w3gp7lc80w" path="res://scenes/monitor/cam_box.tscn" id="21_da2kf"]
@@ -237,46 +236,17 @@ offset_right = 1280.0
 offset_bottom = 720.0
 script = ExtResource("2_ve4w3")
 cam_scenes = {
-"dining_room_1": [NodePath("../monitor_map/cam_box_4"), NodePath("cam_dining_room_1"), {
-"bonnie": NodePath("cam_dining_room_1/bonnie_dining_room_1"),
-"chica": NodePath("cam_dining_room_1/chica_dining_room_1"),
-"freddy": NodePath("cam_dining_room_1/freddy_dining_room_1")
-}],
-"dining_room_2": [NodePath("../monitor_map/cam_box_5"), NodePath("cam_dining_room_2"), {
-"bonnie": NodePath("cam_dining_room_2/bonnie_dining_room_2"),
-"chica": NodePath("cam_dining_room_2/chica_dining_room_2"),
-"freddy": NodePath("cam_dining_room_2/freddy_dining_room_2"),
-"toy_freddy": NodePath("cam_dining_room_2/freddy_dining_room_2")
-}],
-"hall": [NodePath("../monitor_map/cam_box_3"), NodePath("cam_hall"), {
-"bonnie": NodePath("cam_hall/bonnie_hall"),
-"chica": NodePath("cam_hall/chica_hall"),
-"freddy": NodePath("cam_hall/freddy_hall"),
-"toy_freddy": NodePath("cam_hall/freddy_hall")
-}],
-"hall_east": [NodePath("../monitor_map/cam_box_8"), NodePath("cam_hall_east"), {
-"chica": NodePath("cam_hall_east/chica_hall_east"),
-"freddy": NodePath("cam_hall_east/freddy_hall_east"),
-"toy_freddy": NodePath("cam_hall/freddy_hall")
-}],
-"hall_west": [NodePath("../monitor_map/cam_box_7"), NodePath("cam_hall_west"), {
-"bonnie": NodePath("cam_hall_west/bonnie_hall_west"),
-"freddy": NodePath("cam_hall_west/freddy_hall_west")
-}],
-"pirate_cove": [NodePath("../monitor_map/cam_box_6"), NodePath("cam_pirate_cove"), {
-"bonnie": NodePath("cam_pirate_cove/bonnie_pirate_cove"),
-"foxy": [NodePath("cam_pirate_cove/foxy_pirate_cove_1"), NodePath("cam_pirate_cove/foxy_pirate_cove_2"), NodePath("cam_pirate_cove/foxy_pirate_cove_3"), NodePath("cam_pirate_cove/foxy_pirate_cove_4")]
-}],
-"show_stage": [NodePath("../monitor_map/cam_box_2"), NodePath("cam_show_stage"), {
-"bonnie": NodePath("cam_show_stage/bonnie_show_stage"),
-"chica": NodePath("cam_show_stage/chica_show_stage"),
-"freddy": NodePath("cam_show_stage/freddy_show_stage"),
-"toy_freddy": NodePath("cam_show_stage/freddy_show_stage")
-}, null],
-"supply_closet": [NodePath("../monitor_map/cam_box_1"), NodePath("cam_supply_closet"), {
-"chica": NodePath("cam_supply_closet/chica_supply_closet"),
-"freddy": NodePath("cam_supply_closet/freddy_supply_closet")
-}]
+"game_area": [NodePath("../monitor_map/cam_box_2"), NodePath("cam_game_area"), {}],
+"kids_cove": [NodePath("../monitor_map/cam_box_3"), NodePath("cam_kids_cove"), {}],
+"main_hall": [NodePath("../monitor_map/cam_box_4"), NodePath("cam_main_hall"), {}],
+"parts_and_service": [NodePath("../monitor_map/cam_box_5"), NodePath("cam_parts_and_service"), {}],
+"party_room_1": [NodePath("../monitor_map/cam_box_6"), NodePath("cam_party_room_1"), {}],
+"party_room_2": [NodePath("../monitor_map/cam_box_7"), NodePath("cam_party_room_2"), {}],
+"party_room_3": [NodePath("../monitor_map/cam_box_8"), NodePath("cam_party_room_3"), {}],
+"party_room_4": [NodePath("../monitor_map/cam_box_9"), NodePath("cam_party_room_4"), {}],
+"show_stage": [NodePath("../monitor_map/cam_box_1"), NodePath("cam_show_stage"), {}],
+"vent_left": [NodePath("../monitor_map/cam_box_10"), NodePath("cam_vent_left"), {}],
+"vent_right": [NodePath("../monitor_map/cam_box_11"), NodePath("cam_vent_right"), {}]
 }
 animatronics_on_camera = {
 "bonnie": NodePath("cam_show_stage/bonnie_show_stage"),
@@ -285,41 +255,7 @@ animatronics_on_camera = {
 "toy_freddy": NodePath("cam_show_stage/freddy_show_stage")
 }
 
-[node name="cam_supply_closet" type="TextureRect" parent="monitor_scene"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -640.0
-offset_top = -360.0
-offset_right = 640.0
-offset_bottom = 360.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_ux8x5")
-
-[node name="freddy_supply_closet" type="TextureRect" parent="monitor_scene/cam_supply_closet"]
-visible = false
-layout_mode = 0
-offset_left = 400.0
-offset_top = 144.0
-offset_right = 912.0
-offset_bottom = 656.0
-texture = ExtResource("4_rya01")
-
-[node name="chica_supply_closet" type="TextureRect" parent="monitor_scene/cam_supply_closet"]
-visible = false
-layout_mode = 0
-offset_left = 32.0
-offset_top = 144.0
-offset_right = 544.0
-offset_bottom = 656.0
-texture = ExtResource("5_d70mf")
-
 [node name="cam_show_stage" type="TextureRect" parent="monitor_scene"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -332,10 +268,10 @@ offset_right = 640.0
 offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6_m5mk2")
+texture = ExtResource("3_3beim")
+expand_mode = 3
 
 [node name="freddy_show_stage" type="TextureRect" parent="monitor_scene/cam_show_stage"]
-visible = false
 layout_mode = 0
 offset_left = 400.0
 offset_top = 64.0
@@ -344,7 +280,6 @@ offset_bottom = 576.0
 texture = ExtResource("4_rya01")
 
 [node name="bonnie_show_stage" type="TextureRect" parent="monitor_scene/cam_show_stage"]
-visible = false
 layout_mode = 0
 offset_left = 112.0
 offset_top = 64.0
@@ -353,7 +288,6 @@ offset_bottom = 576.0
 texture = ExtResource("7_lbf48")
 
 [node name="chica_show_stage" type="TextureRect" parent="monitor_scene/cam_show_stage"]
-visible = false
 layout_mode = 0
 offset_left = 672.0
 offset_top = 64.0
@@ -361,7 +295,7 @@ offset_right = 1184.0
 offset_bottom = 576.0
 texture = ExtResource("5_d70mf")
 
-[node name="cam_hall" type="TextureRect" parent="monitor_scene"]
+[node name="cam_game_area" type="TextureRect" parent="monitor_scene"]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -375,9 +309,45 @@ offset_right = 640.0
 offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("8_03f0p")
+texture = ExtResource("7_w4emu")
+expand_mode = 3
 
-[node name="freddy_hall" type="TextureRect" parent="monitor_scene/cam_hall"]
+[node name="freddy_supply_closet" type="TextureRect" parent="monitor_scene/cam_game_area"]
+visible = false
+layout_mode = 0
+offset_left = 400.0
+offset_top = 144.0
+offset_right = 912.0
+offset_bottom = 656.0
+texture = ExtResource("4_rya01")
+
+[node name="chica_supply_closet" type="TextureRect" parent="monitor_scene/cam_game_area"]
+visible = false
+layout_mode = 0
+offset_left = 32.0
+offset_top = 144.0
+offset_right = 544.0
+offset_bottom = 656.0
+texture = ExtResource("5_d70mf")
+
+[node name="cam_kids_cove" type="TextureRect" parent="monitor_scene"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_7j6y0")
+expand_mode = 3
+
+[node name="freddy_hall" type="TextureRect" parent="monitor_scene/cam_kids_cove"]
 visible = false
 layout_mode = 0
 offset_left = 384.0
@@ -386,7 +356,7 @@ offset_right = 896.0
 offset_bottom = 656.0
 texture = ExtResource("4_rya01")
 
-[node name="bonnie_hall" type="TextureRect" parent="monitor_scene/cam_hall"]
+[node name="bonnie_hall" type="TextureRect" parent="monitor_scene/cam_kids_cove"]
 visible = false
 layout_mode = 0
 offset_left = 832.0
@@ -395,7 +365,7 @@ offset_right = 1344.0
 offset_bottom = 656.0
 texture = ExtResource("7_lbf48")
 
-[node name="chica_hall" type="TextureRect" parent="monitor_scene/cam_hall"]
+[node name="chica_hall" type="TextureRect" parent="monitor_scene/cam_kids_cove"]
 visible = false
 layout_mode = 0
 offset_left = -48.0
@@ -404,7 +374,7 @@ offset_right = 464.0
 offset_bottom = 656.0
 texture = ExtResource("5_d70mf")
 
-[node name="cam_dining_room_1" type="TextureRect" parent="monitor_scene"]
+[node name="cam_main_hall" type="TextureRect" parent="monitor_scene"]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -418,9 +388,10 @@ offset_right = 640.0
 offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("9_qvbdh")
+texture = ExtResource("9_jmbaf")
+expand_mode = 3
 
-[node name="freddy_dining_room_1" type="TextureRect" parent="monitor_scene/cam_dining_room_1"]
+[node name="freddy_dining_room_1" type="TextureRect" parent="monitor_scene/cam_main_hall"]
 visible = false
 layout_mode = 0
 offset_left = -48.0
@@ -429,7 +400,7 @@ offset_right = 464.0
 offset_bottom = 656.0
 texture = ExtResource("4_rya01")
 
-[node name="bonnie_dining_room_1" type="TextureRect" parent="monitor_scene/cam_dining_room_1"]
+[node name="bonnie_dining_room_1" type="TextureRect" parent="monitor_scene/cam_main_hall"]
 visible = false
 layout_mode = 0
 offset_left = 400.0
@@ -438,7 +409,7 @@ offset_right = 912.0
 offset_bottom = 656.0
 texture = ExtResource("7_lbf48")
 
-[node name="chica_dining_room_1" type="TextureRect" parent="monitor_scene/cam_dining_room_1"]
+[node name="chica_dining_room_1" type="TextureRect" parent="monitor_scene/cam_main_hall"]
 visible = false
 layout_mode = 0
 offset_left = 864.0
@@ -447,7 +418,7 @@ offset_right = 1376.0
 offset_bottom = 656.0
 texture = ExtResource("5_d70mf")
 
-[node name="cam_dining_room_2" type="TextureRect" parent="monitor_scene"]
+[node name="cam_parts_and_service" type="TextureRect" parent="monitor_scene"]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -461,9 +432,10 @@ offset_right = 640.0
 offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("10_n667e")
+texture = ExtResource("10_5y3d2")
+expand_mode = 3
 
-[node name="freddy_dining_room_2" type="TextureRect" parent="monitor_scene/cam_dining_room_2"]
+[node name="freddy_dining_room_2" type="TextureRect" parent="monitor_scene/cam_parts_and_service"]
 visible = false
 layout_mode = 0
 offset_left = 832.0
@@ -472,7 +444,7 @@ offset_right = 1344.0
 offset_bottom = 656.0
 texture = ExtResource("4_rya01")
 
-[node name="bonnie_dining_room_2" type="TextureRect" parent="monitor_scene/cam_dining_room_2"]
+[node name="bonnie_dining_room_2" type="TextureRect" parent="monitor_scene/cam_parts_and_service"]
 visible = false
 layout_mode = 0
 offset_left = -64.0
@@ -481,7 +453,7 @@ offset_right = 448.0
 offset_bottom = 656.0
 texture = ExtResource("7_lbf48")
 
-[node name="chica_dining_room_2" type="TextureRect" parent="monitor_scene/cam_dining_room_2"]
+[node name="chica_dining_room_2" type="TextureRect" parent="monitor_scene/cam_parts_and_service"]
 visible = false
 layout_mode = 0
 offset_left = 384.0
@@ -490,7 +462,7 @@ offset_right = 896.0
 offset_bottom = 656.0
 texture = ExtResource("5_d70mf")
 
-[node name="cam_pirate_cove" type="TextureRect" parent="monitor_scene"]
+[node name="cam_party_room_1" type="TextureRect" parent="monitor_scene"]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -504,81 +476,10 @@ offset_right = 640.0
 offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("11_0wo7n")
+expand_mode = 3
 
-[node name="foxy_pirate_cove_0" type="TextureRect" parent="monitor_scene/cam_pirate_cove"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("11_m0441")
-
-[node name="foxy_pirate_cove_1" type="TextureRect" parent="monitor_scene/cam_pirate_cove"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("12_bksxj")
-
-[node name="foxy_pirate_cove_2" type="TextureRect" parent="monitor_scene/cam_pirate_cove"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("13_khe2p")
-
-[node name="foxy_pirate_cove_3" type="TextureRect" parent="monitor_scene/cam_pirate_cove"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("14_m6ow5")
-
-[node name="foxy_pirate_cove_4" type="TextureRect" parent="monitor_scene/cam_pirate_cove"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("15_fqasy")
-
-[node name="bonnie_pirate_cove" type="TextureRect" parent="monitor_scene/cam_pirate_cove"]
-visible = false
-layout_mode = 0
-offset_left = 832.0
-offset_top = 144.0
-offset_right = 1344.0
-offset_bottom = 656.0
-texture = ExtResource("7_lbf48")
-
-[node name="cam_hall_west" type="TextureRect" parent="monitor_scene"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -640.0
-offset_top = -360.0
-offset_right = 640.0
-offset_bottom = 360.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("16_2wtwf")
-
-[node name="bonnie_hall_west" type="TextureRect" parent="monitor_scene/cam_hall_west"]
+[node name="bonnie_hall_west" type="TextureRect" parent="monitor_scene/cam_party_room_1"]
 visible = false
 layout_mode = 0
 offset_left = 720.0
@@ -587,7 +488,7 @@ offset_right = 1232.0
 offset_bottom = 656.0
 texture = ExtResource("7_lbf48")
 
-[node name="freddy_hall_west" type="TextureRect" parent="monitor_scene/cam_hall_west"]
+[node name="freddy_hall_west" type="TextureRect" parent="monitor_scene/cam_party_room_1"]
 visible = false
 layout_mode = 0
 offset_left = 109.0
@@ -596,7 +497,7 @@ offset_right = 621.0
 offset_bottom = 656.0
 texture = ExtResource("4_rya01")
 
-[node name="cam_hall_east" type="TextureRect" parent="monitor_scene"]
+[node name="cam_party_room_2" type="TextureRect" parent="monitor_scene"]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -610,23 +511,164 @@ offset_right = 640.0
 offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("17_d1jsh")
+texture = ExtResource("12_stfrt")
+expand_mode = 3
 
-[node name="chica_hall_east" type="TextureRect" parent="monitor_scene/cam_hall_east"]
+[node name="bonnie_hall_west" type="TextureRect" parent="monitor_scene/cam_party_room_2"]
 visible = false
 layout_mode = 0
-offset_left = -16.0
+offset_left = 720.0
 offset_top = 144.0
-offset_right = 496.0
+offset_right = 1232.0
 offset_bottom = 656.0
-texture = ExtResource("5_d70mf")
+texture = ExtResource("7_lbf48")
 
-[node name="freddy_hall_east" type="TextureRect" parent="monitor_scene/cam_hall_east"]
+[node name="freddy_hall_west" type="TextureRect" parent="monitor_scene/cam_party_room_2"]
 visible = false
 layout_mode = 0
-offset_left = 818.0
+offset_left = 109.0
 offset_top = 144.0
-offset_right = 1330.0
+offset_right = 621.0
+offset_bottom = 656.0
+texture = ExtResource("4_rya01")
+
+[node name="cam_party_room_3" type="TextureRect" parent="monitor_scene"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_v0v2f")
+expand_mode = 3
+
+[node name="bonnie_hall_west" type="TextureRect" parent="monitor_scene/cam_party_room_3"]
+visible = false
+layout_mode = 0
+offset_left = 720.0
+offset_top = 144.0
+offset_right = 1232.0
+offset_bottom = 656.0
+texture = ExtResource("7_lbf48")
+
+[node name="freddy_hall_west" type="TextureRect" parent="monitor_scene/cam_party_room_3"]
+visible = false
+layout_mode = 0
+offset_left = 109.0
+offset_top = 144.0
+offset_right = 621.0
+offset_bottom = 656.0
+texture = ExtResource("4_rya01")
+
+[node name="cam_party_room_4" type="TextureRect" parent="monitor_scene"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_qkguv")
+expand_mode = 3
+
+[node name="bonnie_hall_west" type="TextureRect" parent="monitor_scene/cam_party_room_4"]
+visible = false
+layout_mode = 0
+offset_left = 720.0
+offset_top = 144.0
+offset_right = 1232.0
+offset_bottom = 656.0
+texture = ExtResource("7_lbf48")
+
+[node name="freddy_hall_west" type="TextureRect" parent="monitor_scene/cam_party_room_4"]
+visible = false
+layout_mode = 0
+offset_left = 109.0
+offset_top = 144.0
+offset_right = 621.0
+offset_bottom = 656.0
+texture = ExtResource("4_rya01")
+
+[node name="cam_vent_left" type="TextureRect" parent="monitor_scene"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_7xhu3")
+expand_mode = 3
+
+[node name="bonnie_hall_west" type="TextureRect" parent="monitor_scene/cam_vent_left"]
+visible = false
+layout_mode = 0
+offset_left = 720.0
+offset_top = 144.0
+offset_right = 1232.0
+offset_bottom = 656.0
+texture = ExtResource("7_lbf48")
+
+[node name="freddy_hall_west" type="TextureRect" parent="monitor_scene/cam_vent_left"]
+visible = false
+layout_mode = 0
+offset_left = 109.0
+offset_top = 144.0
+offset_right = 621.0
+offset_bottom = 656.0
+texture = ExtResource("4_rya01")
+
+[node name="cam_vent_right" type="TextureRect" parent="monitor_scene"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_gemun")
+expand_mode = 3
+
+[node name="bonnie_hall_west" type="TextureRect" parent="monitor_scene/cam_vent_right"]
+visible = false
+layout_mode = 0
+offset_left = 720.0
+offset_top = 144.0
+offset_right = 1232.0
+offset_bottom = 656.0
+texture = ExtResource("7_lbf48")
+
+[node name="freddy_hall_west" type="TextureRect" parent="monitor_scene/cam_vent_right"]
+visible = false
+layout_mode = 0
+offset_left = 109.0
+offset_top = 144.0
+offset_right = 621.0
 offset_bottom = 656.0
 texture = ExtResource("4_rya01")
 
@@ -639,7 +681,7 @@ offset_bottom = 670.0
 scale = Vector2(1.1, 1.1)
 pivot_offset = Vector2(360, 360)
 size_flags_vertical = 3
-texture = ExtResource("18_kkfgi")
+texture = ExtResource("12_8us1v")
 expand_mode = 1
 script = ExtResource("19_2h7gx")
 monitor_scene = NodePath("../monitor_scene")
@@ -654,9 +696,9 @@ animatronic_placeholder = {
 [node name="cam_title" type="Label" parent="monitor_map"]
 z_index = 1
 layout_mode = 0
-offset_top = -51.8182
+offset_top = -10.9091
 offset_right = 319.0
-offset_bottom = -7.81818
+offset_bottom = 33.0909
 theme_override_fonts/font = ExtResource("20_kckev")
 theme_override_font_sizes/font_size = 35
 text = "Supply Closet"
@@ -665,86 +707,123 @@ vertical_alignment = 2
 [node name="cam_box_1" parent="monitor_map" instance=ExtResource("21_da2kf")]
 z_index = 2
 layout_mode = 0
+offset_left = 292.727
+offset_top = 77.2727
+offset_right = 351.727
+offset_bottom = 116.273
 cam_name = "supply_closet"
 cam_display_name = "CAM
-6"
+09"
 
 [node name="cam_box_2" parent="monitor_map" instance=ExtResource("21_da2kf")]
 z_index = 2
 layout_mode = 0
-offset_left = 315.0
-offset_top = 27.0
-offset_right = 374.0
-offset_bottom = 66.0
+offset_left = 255.455
+offset_top = 172.727
+offset_right = 314.455
+offset_bottom = 211.727
 cam_name = "show_stage"
 cam_display_name = "CAM
-1"
+10"
 
 [node name="cam_box_3" parent="monitor_map" instance=ExtResource("21_da2kf")]
 z_index = 2
 layout_mode = 0
-offset_left = 151.0
-offset_top = 83.0
-offset_right = 210.0
-offset_bottom = 122.0
+offset_left = 311.818
+offset_top = 220.909
+offset_right = 370.818
+offset_bottom = 259.909
 cam_name = "hall"
 cam_display_name = "CAM
-3"
+12"
 
 [node name="cam_box_4" parent="monitor_map" instance=ExtResource("21_da2kf")]
 z_index = 2
 layout_mode = 0
-offset_left = 44.0001
-offset_top = 102.0
-offset_right = 103.0
-offset_bottom = 141.0
+offset_left = 163.636
+offset_top = 109.091
+offset_right = 222.636
+offset_bottom = 148.091
 cam_name = "dining_room_1"
 cam_display_name = "CAM
-5A"
+07"
 
 [node name="cam_box_5" parent="monitor_map" instance=ExtResource("21_da2kf")]
 z_index = 2
 layout_mode = 0
-offset_left = 200.0
-offset_top = 124.0
-offset_right = 259.0
-offset_bottom = 163.0
+offset_left = 20.0
+offset_top = 99.0909
+offset_right = 79.0
+offset_bottom = 138.091
 cam_name = "dining_room_2"
 cam_display_name = "CAM
-5B"
+08"
 
 [node name="cam_box_6" parent="monitor_map" instance=ExtResource("21_da2kf")]
 z_index = 2
 layout_mode = 0
-offset_left = 29.0001
-offset_top = 175.0
-offset_right = 88.0001
-offset_bottom = 214.0
+offset_left = 19.0909
+offset_top = 225.455
+offset_right = 78.0909
+offset_bottom = 264.455
 cam_name = "pirate_cove"
 cam_display_name = "CAM
-4"
+01"
 
 [node name="cam_box_7" parent="monitor_map" instance=ExtResource("21_da2kf")]
 z_index = 2
 layout_mode = 0
-offset_left = -13.9999
-offset_top = 224.0
-offset_right = 45.0001
-offset_bottom = 263.0
+offset_left = 159.091
+offset_top = 225.455
+offset_right = 218.091
+offset_bottom = 264.455
 cam_name = "hall_west"
 cam_display_name = "CAM
-2A"
+02"
 
 [node name="cam_box_8" parent="monitor_map" instance=ExtResource("21_da2kf")]
 z_index = 2
 layout_mode = 0
-offset_left = 317.0
-offset_top = 224.0
-offset_right = 376.0
-offset_bottom = 263.0
+offset_left = 19.091
+offset_top = 171.818
+offset_right = 78.091
+offset_bottom = 210.818
 cam_name = "hall_east"
 cam_display_name = "CAM
-2B"
+03"
+
+[node name="cam_box_9" parent="monitor_map" instance=ExtResource("21_da2kf")]
+z_index = 2
+layout_mode = 0
+offset_left = 159.091
+offset_top = 171.818
+offset_right = 218.091
+offset_bottom = 210.818
+cam_name = "hall_east"
+cam_display_name = "CAM
+04"
+
+[node name="cam_box_10" parent="monitor_map" instance=ExtResource("21_da2kf")]
+z_index = 2
+layout_mode = 0
+offset_left = 27.2727
+offset_top = 302.727
+offset_right = 86.2727
+offset_bottom = 341.727
+cam_name = "hall_east"
+cam_display_name = "CAM
+05"
+
+[node name="cam_box_11" parent="monitor_map" instance=ExtResource("21_da2kf")]
+z_index = 2
+layout_mode = 0
+offset_left = 145.455
+offset_top = 302.727
+offset_right = 204.455
+offset_bottom = 341.727
+cam_name = "hall_east"
+cam_display_name = "CAM
+06"
 
 [node name="visual_toy_freddy" type="TextureRect" parent="monitor_map"]
 z_index = 2
@@ -759,10 +838,10 @@ expand_mode = 1
 
 [node name="you_text" type="Label" parent="monitor_map"]
 layout_mode = 0
-offset_left = 161.667
-offset_top = 281.667
-offset_right = 203.667
-offset_bottom = 332.667
+offset_left = 94.5454
+offset_top = 268.182
+offset_right = 136.545
+offset_bottom = 319.182
 theme_override_fonts/font = ExtResource("20_kckev")
 theme_override_font_sizes/font_size = 20
 text = "YOU"
@@ -944,5 +1023,11 @@ text = "EXIT CAMERA"
 [connection signal="cam_clicked" from="monitor_map/cam_box_7" to="monitor_map/cam_title" method="set_text" binds= ["West Hall"]]
 [connection signal="cam_clicked" from="monitor_map/cam_box_8" to="monitor_scene" method="switch_cam_scene" binds= ["hall_east"]]
 [connection signal="cam_clicked" from="monitor_map/cam_box_8" to="monitor_map/cam_title" method="set_text" binds= ["East Hall"]]
+[connection signal="cam_clicked" from="monitor_map/cam_box_9" to="monitor_scene" method="switch_cam_scene" binds= ["hall_east"]]
+[connection signal="cam_clicked" from="monitor_map/cam_box_9" to="monitor_map/cam_title" method="set_text" binds= ["East Hall"]]
+[connection signal="cam_clicked" from="monitor_map/cam_box_10" to="monitor_scene" method="switch_cam_scene" binds= ["hall_east"]]
+[connection signal="cam_clicked" from="monitor_map/cam_box_10" to="monitor_map/cam_title" method="set_text" binds= ["East Hall"]]
+[connection signal="cam_clicked" from="monitor_map/cam_box_11" to="monitor_scene" method="switch_cam_scene" binds= ["hall_east"]]
+[connection signal="cam_clicked" from="monitor_map/cam_box_11" to="monitor_map/cam_title" method="set_text" binds= ["East Hall"]]
 [connection signal="changed_interact_state" from="interact_obj" to="." method="set_active_state"]
 [connection signal="button_down" from="exit_button" to="." method="set_monitor_focus" binds= [false]]

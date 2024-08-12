@@ -22,7 +22,7 @@ func _ready():
 
 func _process(delta):
 	if music_box_timed_out: 
-		print_debug("jumpscare")
+		#print_debug("jumpscare")
 		return
 	
 	music_box_target_time_in_sec -= delta
