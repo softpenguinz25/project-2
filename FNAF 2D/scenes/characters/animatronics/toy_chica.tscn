@@ -1,0 +1,103 @@
+[gd_scene load_steps=15 format=3 uid="uid://co27ndsvfmjo0"]
+
+[ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_roaming_fnaf2.gd" id="1_uarb1"]
+[ext_resource type="Texture2D" uid="uid://bbbqpeqe62q6" path="res://sprites/characters/animatronics/toy_chica/leg_left_upper.png" id="3_ubrg2"]
+[ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_in_office_fnaf2.gd" id="3_yejjo"]
+[ext_resource type="Texture2D" uid="uid://cqdpgm5l6hqcv" path="res://sprites/characters/animatronics/toy_chica/leg_left_lower.png" id="4_av72y"]
+[ext_resource type="Texture2D" uid="uid://dac0l22d5mbl2" path="res://sprites/characters/animatronics/toy_chica/leg_right_upper.png" id="5_ltnd7"]
+[ext_resource type="Texture2D" uid="uid://c6oh3d4gnjn63" path="res://sprites/characters/animatronics/toy_chica/leg_right_lower.png" id="6_t0t42"]
+[ext_resource type="Texture2D" uid="uid://imxnv7vr017" path="res://sprites/characters/animatronics/toy_chica/body.png" id="7_1kysh"]
+[ext_resource type="Texture2D" uid="uid://6uffaquljg3x" path="res://sprites/characters/animatronics/toy_chica/arm_left_upper.png" id="8_urnhh"]
+[ext_resource type="Texture2D" uid="uid://wedfuerpdadw" path="res://sprites/characters/animatronics/toy_chica/arm_left_lower.png" id="9_65qjl"]
+[ext_resource type="Texture2D" uid="uid://btjo01g0a0dwb" path="res://sprites/characters/animatronics/toy_chica/cupcake.png" id="10_20klp"]
+[ext_resource type="Texture2D" uid="uid://dups1h3hbw2ei" path="res://sprites/characters/animatronics/toy_chica/arm_right_upper.png" id="11_lwo7p"]
+[ext_resource type="Texture2D" uid="uid://xfujiu2wlecc" path="res://sprites/characters/animatronics/toy_chica/arm_right_lower.png" id="12_k8ypg"]
+[ext_resource type="Texture2D" uid="uid://cjxnmlo14jia0" path="res://sprites/characters/animatronics/toy_chica/head.png" id="13_1r5ef"]
+[ext_resource type="Texture2D" uid="uid://xed5iyi7ywod" path="res://sprites/characters/animatronics/toy_chica/hair.png" id="14_tnvp3"]
+
+[node name="toy_chica" type="Node2D" node_paths=PackedStringArray("movement_timer", "pause_animatronic_timer", "pause_animatronic_timer_cooldown")]
+script = ExtResource("1_uarb1")
+movement_timer = NodePath("toy_chica_timer")
+cam_path = Array[Array]([["show_stage", "main_hall", "party_room_4", "hall", "party_room_1", "vent_left"]])
+pause_animatronic_timer = NodePath("toy_chica_timer_pause")
+pause_animatronic_timer_cooldown = NodePath("toy_chica_timer_pause_cooldown")
+animatronic_name = "toy_chica"
+ai_level_by_hour = {
+1: 20,
+2: 20,
+3: 20,
+4: 20,
+5: 20,
+12: 20
+}
+
+[node name="toy_chica_in_office" type="Node2D" parent="."]
+visible = false
+position = Vector2(-394, 670)
+scale = Vector2(16, 16)
+script = ExtResource("3_yejjo")
+animatronic_name = "toy_chica"
+
+[node name="LegLeftUpper" type="Sprite2D" parent="toy_chica_in_office"]
+position = Vector2(-0.203728, -4.07605)
+rotation = 1.65806
+texture = ExtResource("3_ubrg2")
+
+[node name="LegLeftLower" type="Sprite2D" parent="toy_chica_in_office/LegLeftUpper"]
+texture = ExtResource("4_av72y")
+
+[node name="LegRightUpper" type="Sprite2D" parent="toy_chica_in_office"]
+position = Vector2(-0.203728, -4.07605)
+rotation = 1.65806
+texture = ExtResource("5_ltnd7")
+
+[node name="LegRightLower" type="Sprite2D" parent="toy_chica_in_office/LegRightUpper"]
+texture = ExtResource("6_t0t42")
+
+[node name="Body" type="Sprite2D" parent="toy_chica_in_office"]
+position = Vector2(-1.01623, -5.38855)
+rotation = 1.39626
+texture = ExtResource("7_1kysh")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="toy_chica_in_office/Body"]
+position = Vector2(0.166719, -8.10813)
+rotation = -1.48353
+texture = ExtResource("8_urnhh")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="toy_chica_in_office/Body/ArmLeftUpper"]
+texture = ExtResource("9_65qjl")
+
+[node name="Cupcake" type="Sprite2D" parent="toy_chica_in_office/Body/ArmLeftUpper/ArmLeftLower"]
+position = Vector2(-9.02471, 9.07068)
+rotation = 0.174533
+texture = ExtResource("10_20klp")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="toy_chica_in_office/Body"]
+position = Vector2(1.95415, -8.01742)
+rotation = 1.8326
+texture = ExtResource("11_lwo7p")
+
+[node name="ArmRightLower" type="Sprite2D" parent="toy_chica_in_office/Body/ArmRightUpper"]
+texture = ExtResource("12_k8ypg")
+
+[node name="Head" type="Sprite2D" parent="toy_chica_in_office/Body"]
+position = Vector2(-1.75306, 1.47141)
+rotation = 0.349066
+texture = ExtResource("13_1r5ef")
+
+[node name="Hair" type="Sprite2D" parent="toy_chica_in_office/Body/Head"]
+texture = ExtResource("14_tnvp3")
+
+[node name="toy_chica_timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="toy_chica_timer_pause" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="toy_chica_timer_pause_cooldown" type="Timer" parent="."]
+wait_time = 4.0
+
+[connection signal="timeout" from="toy_chica_timer" to="." method="movement_opportunity"]
+[connection signal="timeout" from="toy_chica_timer_pause" to="." method="pause_animatronic" binds= [false]]
+[connection signal="timeout" from="toy_chica_timer_pause_cooldown" to="." method="set_can_pause" binds= [true]]

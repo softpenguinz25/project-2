@@ -1,4 +1,5 @@
 extends Monitor
+class_name MonitorScene
 
 @export var cam_scenes : Dictionary
 @export var animatronics_on_camera : Dictionary
@@ -17,12 +18,12 @@ func switch_cam_scene(new_cam_scene : String):
 	
 func set_animatronic_pos(_animatronic_name : String, _cam_name : String, _num_times_been_to_cam : int = -1):
 	if animatronics_on_camera.has(_animatronic_name):
-		var old_animatronic_on_camera : TextureRect = animatronics_on_camera[_animatronic_name] if animatronics_on_camera[_animatronic_name] is Object else get_node(animatronics_on_camera[_animatronic_name])
+		var old_animatronic_on_camera = animatronics_on_camera[_animatronic_name] if animatronics_on_camera[_animatronic_name] is Object else get_node(animatronics_on_camera[_animatronic_name])
 		old_animatronic_on_camera.visible = false
 	
 	if _cam_name.is_empty(): return
-	
-	var animatronic_on_camera : TextureRect = get_node(cam_scenes[_cam_name][2][_animatronic_name]) if _num_times_been_to_cam <= -1 else get_node(cam_scenes[_cam_name][2][_animatronic_name][_num_times_been_to_cam])
+	#print_debug("%s going to %s" % [_animatronic_name, _cam_name]) 
+	var animatronic_on_camera = get_node(cam_scenes[_cam_name][2][_animatronic_name]) if _num_times_been_to_cam <= -1 else get_node(cam_scenes[_cam_name][2][_animatronic_name][_num_times_been_to_cam])
 	animatronics_on_camera[_animatronic_name] = animatronic_on_camera
 	
 	if animatronic_on_camera != null: animatronic_on_camera.visible = true

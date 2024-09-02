@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://boh8ybxawbrs3"]
+
+[ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_roaming_fnaf2.gd" id="1_gxx08"]
+[ext_resource type="Texture2D" uid="uid://m4ahsdeb8hs4" path="res://sprites/characters/animatronics/freddy.png" id="2_2u050"]
+[ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_in_office_fnaf2.gd" id="3_g746d"]
+
+[node name="withered_bonnie" type="Node2D" node_paths=PackedStringArray("movement_timer", "pause_animatronic_timer", "pause_animatronic_timer_cooldown")]
+script = ExtResource("1_gxx08")
+movement_timer = NodePath("withered_bonnie_timer")
+cam_path = Array[Array]([["parts_and_service", "main_hall", "hall", "hall_2", "party_room_1", "vent_left"]])
+pause_animatronic_timer = NodePath("withered_bonnie_timer_pause")
+pause_animatronic_timer_cooldown = NodePath("withered_bonnie_timer_pause_cooldown")
+animatronic_name = "withered_bonnie"
+ai_level_by_hour = {
+1: 20,
+2: 20,
+3: 20,
+4: 20,
+5: 20,
+12: 20
+}
+
+[node name="withered_bonnie_in_office" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(640, 456)
+scale = Vector2(12, 12)
+texture = ExtResource("2_2u050")
+script = ExtResource("3_g746d")
+
+[node name="withered_bonnie_timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="withered_bonnie_timer_pause" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="withered_bonnie_timer_pause_cooldown" type="Timer" parent="."]
+wait_time = 4.0
+
+[connection signal="timeout" from="withered_bonnie_timer" to="." method="movement_opportunity"]
+[connection signal="timeout" from="withered_bonnie_timer_pause" to="." method="pause_animatronic" binds= [false]]
+[connection signal="timeout" from="withered_bonnie_timer_pause_cooldown" to="." method="set_can_pause" binds= [true]]

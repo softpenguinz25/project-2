@@ -1,0 +1,635 @@
+[gd_scene load_steps=62 format=3 uid="uid://bt45kndo4wq2g"]
+
+[ext_resource type="Texture2D" uid="uid://bpvfh27stoubu" path="res://sprites/environment/monitor/fnaf_2/monitor_scenes/parts_and_service.png" id="1_tiqd6"]
+[ext_resource type="Texture2D" uid="uid://c2v3c3arqxus4" path="res://sprites/characters/animatronics/withered_bonnie/arm_left_upper.png" id="2_pv1ft"]
+[ext_resource type="Texture2D" uid="uid://b30jwsseoue0q" path="res://sprites/characters/animatronics/withered_bonnie/arm_left_lower.png" id="3_vaafx"]
+[ext_resource type="Texture2D" uid="uid://dnri6clu4octa" path="res://sprites/characters/animatronics/withered_bonnie/head.png" id="4_lledh"]
+[ext_resource type="Texture2D" uid="uid://beevilbp5rs22" path="res://sprites/characters/animatronics/withered_bonnie/ear_left.png" id="5_cs2jq"]
+[ext_resource type="Texture2D" uid="uid://crha1sgcrp0yt" path="res://sprites/characters/animatronics/withered_bonnie/ear_right.png" id="6_knwfv"]
+[ext_resource type="Texture2D" uid="uid://o2gxy6poqm7m" path="res://sprites/characters/animatronics/withered_bonnie/body.png" id="7_cm51u"]
+[ext_resource type="Texture2D" uid="uid://cdhrwtw1xsmde" path="res://sprites/characters/animatronics/withered_bonnie/arm_right.png" id="8_6s2uo"]
+[ext_resource type="Texture2D" uid="uid://bej7mqj6h0jc1" path="res://sprites/characters/animatronics/withered_bonnie/leg_left_upper.png" id="9_wyja1"]
+[ext_resource type="Texture2D" uid="uid://wvfnv7i1n11c" path="res://sprites/characters/animatronics/withered_bonnie/leg_right_upper.png" id="10_7n20h"]
+[ext_resource type="Texture2D" uid="uid://ba5flbnpnniem" path="res://sprites/characters/animatronics/withered_bonnie/foot_left.png" id="11_f86bm"]
+[ext_resource type="Texture2D" uid="uid://bviacknf1q0ha" path="res://sprites/characters/animatronics/withered_bonnie/foot_right.png" id="12_ts6co"]
+[ext_resource type="Texture2D" uid="uid://bha2pmb74mc0l" path="res://sprites/characters/animatronics/withered_freddy/arm_right_upper.png" id="13_3hk4d"]
+[ext_resource type="Texture2D" uid="uid://67gob1bfa5ge" path="res://sprites/characters/animatronics/withered_freddy/arm_right_lower.png" id="14_usxjs"]
+[ext_resource type="Texture2D" uid="uid://gcllo75hre7g" path="res://sprites/characters/animatronics/withered_freddy/hand_right.png" id="15_odiol"]
+[ext_resource type="Texture2D" uid="uid://br4148525etou" path="res://sprites/characters/animatronics/withered_freddy/leg_left.png" id="16_m5anf"]
+[ext_resource type="Texture2D" uid="uid://bpw3d0gt7sdis" path="res://sprites/characters/animatronics/withered_freddy/foot_left.png" id="17_n8d6h"]
+[ext_resource type="Texture2D" uid="uid://dq1d8sm4gjag" path="res://sprites/characters/animatronics/withered_freddy/leg_right.png" id="18_d6f6d"]
+[ext_resource type="Texture2D" uid="uid://bmc0txvtswoto" path="res://sprites/characters/animatronics/withered_freddy/foot_right.png" id="19_bc7ke"]
+[ext_resource type="Texture2D" uid="uid://cip4c5xydicvi" path="res://sprites/characters/animatronics/withered_freddy/neck.png" id="20_a6xp8"]
+[ext_resource type="Texture2D" uid="uid://lrgq16jsxehi" path="res://sprites/characters/animatronics/withered_freddy/body.png" id="21_7r0te"]
+[ext_resource type="Texture2D" uid="uid://cs6k6p5h064yx" path="res://sprites/characters/animatronics/withered_freddy/head_upper.png" id="22_c58e7"]
+[ext_resource type="Texture2D" uid="uid://b6j74jne3gx3w" path="res://sprites/characters/animatronics/withered_freddy/arm_left_upper.png" id="23_gincv"]
+[ext_resource type="Texture2D" uid="uid://fso8i3ectq36" path="res://sprites/characters/animatronics/withered_freddy/arm_left_lower.png" id="24_k0cpp"]
+[ext_resource type="Texture2D" uid="uid://cgjlnskjjci3e" path="res://sprites/characters/animatronics/withered_freddy/hand_left.png" id="25_4phhb"]
+[ext_resource type="Texture2D" uid="uid://d233gv1ogps3l" path="res://sprites/characters/animatronics/withered_freddy/mic.png" id="26_01v2u"]
+[ext_resource type="Texture2D" uid="uid://dnjpawkq4a47j" path="res://sprites/characters/animatronics/withered_chica/arm_left_upper.png" id="27_x5h6r"]
+[ext_resource type="Texture2D" uid="uid://elgv0dyijykb" path="res://sprites/characters/animatronics/withered_chica/arm_left_lower.png" id="28_qpoek"]
+[ext_resource type="Texture2D" uid="uid://gs2sjn1846gd" path="res://sprites/characters/animatronics/withered_chica/hand_left.png" id="29_8bvhr"]
+[ext_resource type="Texture2D" uid="uid://dg87d2bktkfa" path="res://sprites/characters/animatronics/withered_chica/arm_right_lower.png" id="30_6tpvw"]
+[ext_resource type="Texture2D" uid="uid://dbmbe51csvhqi" path="res://sprites/characters/animatronics/withered_chica/arm_right_upper.png" id="31_nqm8x"]
+[ext_resource type="Texture2D" uid="uid://cfl7qmiqhxefp" path="res://sprites/characters/animatronics/withered_chica/hand_right.png" id="32_bi2us"]
+[ext_resource type="Texture2D" uid="uid://duim4inwg65e6" path="res://sprites/characters/animatronics/withered_chica/neck.png" id="33_bp8ya"]
+[ext_resource type="Texture2D" uid="uid://dodto2url6nrh" path="res://sprites/characters/animatronics/withered_chica/head.png" id="34_exscl"]
+[ext_resource type="Texture2D" uid="uid://beft1cakk2qn3" path="res://sprites/characters/animatronics/withered_chica/hair.png" id="35_n5itm"]
+[ext_resource type="Texture2D" uid="uid://darnco3hymcbn" path="res://sprites/characters/animatronics/withered_chica/leg_left_upper.png" id="36_p33vs"]
+[ext_resource type="Texture2D" uid="uid://bg837xtli3mwe" path="res://sprites/characters/animatronics/withered_chica/leg_left_lower.png" id="37_q11kd"]
+[ext_resource type="Texture2D" uid="uid://orbhitf6ss0g" path="res://sprites/characters/animatronics/withered_chica/leg_right_upper.png" id="38_pcofh"]
+[ext_resource type="Texture2D" uid="uid://c3veqvhlvl8rh" path="res://sprites/characters/animatronics/withered_chica/leg_right_lower.png" id="39_dfxxa"]
+[ext_resource type="Texture2D" uid="uid://1754um7447yq" path="res://sprites/characters/animatronics/withered_chica/body.png" id="40_xmokt"]
+[ext_resource type="Texture2D" uid="uid://2fj1wq723wsu" path="res://sprites/characters/animatronics/withered_foxy/neck.png" id="41_65fuv"]
+[ext_resource type="Texture2D" uid="uid://ww3d3efu8sy6" path="res://sprites/characters/animatronics/withered_foxy/head.png" id="42_j4sgo"]
+[ext_resource type="Texture2D" uid="uid://cxdtgyo87igqf" path="res://sprites/characters/animatronics/withered_foxy/ear_left.png" id="43_fuyfd"]
+[ext_resource type="Texture2D" uid="uid://ckty72ii0lemo" path="res://sprites/characters/animatronics/withered_foxy/ear_right.png" id="44_e75m4"]
+[ext_resource type="Texture2D" uid="uid://d1fbg1b8h488y" path="res://sprites/characters/animatronics/withered_foxy/arm_left_upper.png" id="45_22v7o"]
+[ext_resource type="Texture2D" uid="uid://88o1cxhracq7" path="res://sprites/characters/animatronics/withered_foxy/arm_left_lower.png" id="46_1bm6d"]
+[ext_resource type="Texture2D" uid="uid://cpvfkcwyoch3r" path="res://sprites/characters/animatronics/withered_foxy/hand_left.png" id="47_8kf5j"]
+[ext_resource type="Texture2D" uid="uid://dxw8sax54o0yr" path="res://sprites/characters/animatronics/withered_foxy/arm_right_upper.png" id="48_yi3rq"]
+[ext_resource type="Texture2D" uid="uid://bp0ykxquk3j8p" path="res://sprites/characters/animatronics/withered_foxy/arm_right_lower.png" id="49_i2rvi"]
+[ext_resource type="Texture2D" uid="uid://dlte38oepnep3" path="res://sprites/characters/animatronics/withered_foxy/hand_right.png" id="50_2giwf"]
+[ext_resource type="Texture2D" uid="uid://b6chkh3d3oa52" path="res://sprites/characters/animatronics/withered_foxy/leg_left_upper.png" id="51_368pw"]
+[ext_resource type="Texture2D" uid="uid://jd8ux4ym5be2" path="res://sprites/characters/animatronics/withered_foxy/leg_left_lower.png" id="52_34lkl"]
+[ext_resource type="Texture2D" uid="uid://dywa1m76gp6ll" path="res://sprites/characters/animatronics/withered_foxy/leg_right_upper.png" id="53_yyou5"]
+[ext_resource type="Texture2D" uid="uid://bibu74lnvm73r" path="res://sprites/characters/animatronics/withered_foxy/leg_right_lower.png" id="54_eg4wu"]
+[ext_resource type="Texture2D" uid="uid://cdhdctr35y5ub" path="res://sprites/characters/animatronics/withered_foxy/body.png" id="55_dtkgf"]
+[ext_resource type="Shader" path="res://shaders/GodotRetro - Ahopness/Screen Shaders/TV.gdshader" id="56_8pmed"]
+[ext_resource type="Shader" path="res://shaders/vignette.gdshader" id="57_sja0x"]
+[ext_resource type="Shader" path="res://shaders/vhs_tv_vignette.gdshader" id="58_f8f6t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6qren"]
+shader = ExtResource("56_8pmed")
+shader_parameter/vertJerkOpt = 0.0
+shader_parameter/vertMovementOpt = 0.0
+shader_parameter/bottomStaticOpt = 0.0
+shader_parameter/bottomStaticStrenth = 0.7
+shader_parameter/scalinesOpt = 0.8
+shader_parameter/rgbOffsetOpt = 0.2
+shader_parameter/horzFuzzOpt = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3sd1b"]
+shader = ExtResource("57_sja0x")
+shader_parameter/alpha = 1.25
+shader_parameter/inner_radius = 0.2
+shader_parameter/outer_radius = 1.33
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n2ece"]
+shader = ExtResource("58_f8f6t")
+shader_parameter/scalinesOpt = 0.8
+shader_parameter/horzFuzzOpt = 0.325
+shader_parameter/alpha = 1.0
+shader_parameter/inner_radius = 0.0
+shader_parameter/outer_radius = 1.0
+
+[node name="TeaserImage5" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="cam_parts_and_service" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1011.0
+offset_top = -360.0
+offset_right = 493.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tiqd6")
+expand_mode = 3
+
+[node name="withered_freddy2" type="Node2D" parent="cam_parts_and_service"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1094, 166)
+scale = Vector2(16, 16)
+
+[node name="ArmRightUpper" type="Sprite2D" parent="cam_parts_and_service/withered_freddy2"]
+position = Vector2(-5.5, 8.9375)
+rotation = -0.349066
+texture = ExtResource("13_3hk4d")
+
+[node name="ArmRightLower" type="Sprite2D" parent="cam_parts_and_service/withered_freddy2/ArmRightUpper"]
+texture = ExtResource("14_usxjs")
+
+[node name="HandRight" type="Sprite2D" parent="cam_parts_and_service/withered_freddy2/ArmRightUpper/ArmRightLower"]
+texture = ExtResource("15_odiol")
+
+[node name="LegLeft" type="Sprite2D" parent="cam_parts_and_service/withered_freddy2"]
+position = Vector2(0, 10.5)
+rotation = -1.5708
+texture = ExtResource("16_m5anf")
+
+[node name="FootLeft" type="Sprite2D" parent="cam_parts_and_service/withered_freddy2/LegLeft"]
+texture = ExtResource("17_n8d6h")
+
+[node name="LegRight" type="Sprite2D" parent="cam_parts_and_service/withered_freddy2"]
+position = Vector2(-1.875, 6.875)
+rotation = -0.872665
+texture = ExtResource("18_d6f6d")
+
+[node name="FootRight" type="Sprite2D" parent="cam_parts_and_service/withered_freddy2/LegRight"]
+texture = ExtResource("19_bc7ke")
+
+[node name="Neck" type="Sprite2D" parent="cam_parts_and_service/withered_freddy2"]
+position = Vector2(0.3125, 10.75)
+rotation = -1.13446
+texture = ExtResource("20_a6xp8")
+
+[node name="Body" type="Sprite2D" parent="cam_parts_and_service/withered_freddy2"]
+position = Vector2(-0.0249405, 10.8364)
+rotation = -1.74533
+texture = ExtResource("21_7r0te")
+
+[node name="HeadUpper" type="Sprite2D" parent="cam_parts_and_service/withered_freddy2"]
+position = Vector2(-0.593811, 10.3274)
+rotation = -1.13446
+texture = ExtResource("22_c58e7")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_parts_and_service/withered_freddy2"]
+position = Vector2(5.0625, 15)
+texture = ExtResource("23_gincv")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_parts_and_service/withered_freddy2/ArmLeftUpper"]
+texture = ExtResource("24_k0cpp")
+
+[node name="HandLeft" type="Sprite2D" parent="cam_parts_and_service/withered_freddy2/ArmLeftUpper/ArmLeftLower"]
+texture = ExtResource("25_4phhb")
+
+[node name="Mic" type="Sprite2D" parent="cam_parts_and_service/withered_freddy2/ArmLeftUpper/ArmLeftLower/HandLeft"]
+position = Vector2(-14.5, -14.5)
+rotation = -1.5708
+texture = ExtResource("26_01v2u")
+
+[node name="withered_freddy" type="Node2D" parent="cam_parts_and_service"]
+position = Vector2(1078, 150)
+scale = Vector2(16, 16)
+
+[node name="ArmRightUpper" type="Sprite2D" parent="cam_parts_and_service/withered_freddy"]
+position = Vector2(-5.5, 8.9375)
+rotation = -0.349066
+texture = ExtResource("13_3hk4d")
+
+[node name="ArmRightLower" type="Sprite2D" parent="cam_parts_and_service/withered_freddy/ArmRightUpper"]
+texture = ExtResource("14_usxjs")
+
+[node name="HandRight" type="Sprite2D" parent="cam_parts_and_service/withered_freddy/ArmRightUpper/ArmRightLower"]
+texture = ExtResource("15_odiol")
+
+[node name="LegLeft" type="Sprite2D" parent="cam_parts_and_service/withered_freddy"]
+position = Vector2(0, 10.5)
+rotation = -1.5708
+texture = ExtResource("16_m5anf")
+
+[node name="FootLeft" type="Sprite2D" parent="cam_parts_and_service/withered_freddy/LegLeft"]
+texture = ExtResource("17_n8d6h")
+
+[node name="LegRight" type="Sprite2D" parent="cam_parts_and_service/withered_freddy"]
+position = Vector2(-1.875, 6.875)
+rotation = -0.872665
+texture = ExtResource("18_d6f6d")
+
+[node name="FootRight" type="Sprite2D" parent="cam_parts_and_service/withered_freddy/LegRight"]
+texture = ExtResource("19_bc7ke")
+
+[node name="Neck" type="Sprite2D" parent="cam_parts_and_service/withered_freddy"]
+position = Vector2(0.3125, 10.75)
+rotation = -1.13446
+texture = ExtResource("20_a6xp8")
+
+[node name="Body" type="Sprite2D" parent="cam_parts_and_service/withered_freddy"]
+position = Vector2(-0.0249405, 10.8364)
+rotation = -1.74533
+texture = ExtResource("21_7r0te")
+
+[node name="HeadUpper" type="Sprite2D" parent="cam_parts_and_service/withered_freddy"]
+position = Vector2(-0.593811, 10.3274)
+rotation = -1.13446
+texture = ExtResource("22_c58e7")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_parts_and_service/withered_freddy"]
+position = Vector2(5.0625, 15)
+texture = ExtResource("23_gincv")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_parts_and_service/withered_freddy/ArmLeftUpper"]
+texture = ExtResource("24_k0cpp")
+
+[node name="HandLeft" type="Sprite2D" parent="cam_parts_and_service/withered_freddy/ArmLeftUpper/ArmLeftLower"]
+texture = ExtResource("25_4phhb")
+
+[node name="Mic" type="Sprite2D" parent="cam_parts_and_service/withered_freddy/ArmLeftUpper/ArmLeftLower/HandLeft"]
+position = Vector2(-14.5, -14.5)
+rotation = -1.5708
+texture = ExtResource("26_01v2u")
+
+[node name="withered_bonnie2" type="Node2D" parent="cam_parts_and_service"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(851, 543)
+scale = Vector2(16, 16)
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie2"]
+position = Vector2(-0.118904, -3.8064)
+rotation = -0.785398
+texture = ExtResource("2_pv1ft")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie2/ArmLeftUpper"]
+texture = ExtResource("3_vaafx")
+
+[node name="Head" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie2"]
+position = Vector2(0.625, 0.625)
+rotation = -0.0872665
+texture = ExtResource("4_lledh")
+
+[node name="EarLeft" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie2/Head"]
+texture = ExtResource("5_cs2jq")
+
+[node name="EarRight" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie2/Head"]
+texture = ExtResource("6_knwfv")
+
+[node name="Body" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie2"]
+position = Vector2(-0.306404, 0.131096)
+rotation = 0.261799
+texture = ExtResource("7_cm51u")
+
+[node name="ArmRight" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie2"]
+position = Vector2(1.4436, -5.3064)
+rotation = 1.13446
+texture = ExtResource("8_6s2uo")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie2"]
+position = Vector2(6.1875, 8.5)
+rotation = 2.26893
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("9_wyja1")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie2"]
+position = Vector2(-6.375, 8.6875)
+rotation = -2.0944
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("10_7n20h")
+
+[node name="FootLeft" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie2"]
+position = Vector2(-0.1875, -7.875)
+texture = ExtResource("11_f86bm")
+
+[node name="FootRight" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie2"]
+position = Vector2(-0.1875, -7.875)
+texture = ExtResource("12_ts6co")
+
+[node name="withered_bonnie" type="Node2D" parent="cam_parts_and_service"]
+position = Vector2(835, 527)
+scale = Vector2(16, 16)
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie"]
+position = Vector2(-0.118904, -3.8064)
+rotation = -0.785398
+texture = ExtResource("2_pv1ft")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie/ArmLeftUpper"]
+texture = ExtResource("3_vaafx")
+
+[node name="Head" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie"]
+position = Vector2(0.625, 0.625)
+rotation = -0.0872665
+texture = ExtResource("4_lledh")
+
+[node name="EarLeft" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie/Head"]
+texture = ExtResource("5_cs2jq")
+
+[node name="EarRight" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie/Head"]
+texture = ExtResource("6_knwfv")
+
+[node name="Body" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie"]
+position = Vector2(-0.306404, 0.131096)
+rotation = 0.261799
+texture = ExtResource("7_cm51u")
+
+[node name="ArmRight" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie"]
+position = Vector2(1.4436, -5.3064)
+rotation = 1.13446
+texture = ExtResource("8_6s2uo")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie"]
+position = Vector2(6.1875, 8.5)
+rotation = 2.26893
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("9_wyja1")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie"]
+position = Vector2(-6.375, 8.6875)
+rotation = -2.0944
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("10_7n20h")
+
+[node name="FootLeft" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie"]
+position = Vector2(-0.1875, -7.875)
+texture = ExtResource("11_f86bm")
+
+[node name="FootRight" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie"]
+position = Vector2(-0.1875, -7.875)
+texture = ExtResource("12_ts6co")
+
+[node name="withered_chica2" type="Node2D" parent="cam_parts_and_service"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(237, 114)
+rotation = -0.785398
+scale = Vector2(16, 16)
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_parts_and_service/withered_chica2"]
+position = Vector2(-1.05472, 8.47312)
+rotation = 2.53073
+texture = ExtResource("27_x5h6r")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_parts_and_service/withered_chica2/ArmLeftUpper"]
+texture = ExtResource("28_qpoek")
+
+[node name="HandLeft" type="Sprite2D" parent="cam_parts_and_service/withered_chica2/ArmLeftUpper/ArmLeftLower"]
+texture = ExtResource("29_8bvhr")
+
+[node name="ArmRightLower" type="Sprite2D" parent="cam_parts_and_service/withered_chica2"]
+position = Vector2(-0.067035, 15.9677)
+rotation = 0.436332
+texture = ExtResource("30_6tpvw")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="cam_parts_and_service/withered_chica2/ArmRightLower"]
+texture = ExtResource("31_nqm8x")
+
+[node name="HandRight" type="Sprite2D" parent="cam_parts_and_service/withered_chica2/ArmRightLower/ArmRightUpper"]
+texture = ExtResource("32_bi2us")
+
+[node name="Neck" type="Sprite2D" parent="cam_parts_and_service/withered_chica2"]
+position = Vector2(2, 14.0699)
+rotation = 1.22173
+texture = ExtResource("33_bp8ya")
+
+[node name="Head" type="Sprite2D" parent="cam_parts_and_service/withered_chica2/Neck"]
+position = Vector2(0.0891274, 0.0989509)
+rotation = 0.0872665
+texture = ExtResource("34_exscl")
+
+[node name="Hair" type="Sprite2D" parent="cam_parts_and_service/withered_chica2/Neck/Head"]
+texture = ExtResource("35_n5itm")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_parts_and_service/withered_chica2"]
+position = Vector2(2.6875, 10.4375)
+rotation = 1.309
+texture = ExtResource("36_p33vs")
+
+[node name="LegLeftLower" type="Sprite2D" parent="cam_parts_and_service/withered_chica2/LegLeftUpper"]
+texture = ExtResource("37_q11kd")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_parts_and_service/withered_chica2"]
+position = Vector2(2, 11)
+rotation = 1.5708
+texture = ExtResource("38_pcofh")
+
+[node name="LegRightLower" type="Sprite2D" parent="cam_parts_and_service/withered_chica2/LegRightUpper"]
+texture = ExtResource("39_dfxxa")
+
+[node name="Body" type="Sprite2D" parent="cam_parts_and_service/withered_chica2"]
+position = Vector2(2, 11.9449)
+rotation = 1.65806
+texture = ExtResource("40_xmokt")
+
+[node name="withered_chica" type="Node2D" parent="cam_parts_and_service"]
+position = Vector2(221, 98)
+rotation = -0.785398
+scale = Vector2(16, 16)
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_parts_and_service/withered_chica"]
+position = Vector2(-1.05472, 8.47312)
+rotation = 2.53073
+texture = ExtResource("27_x5h6r")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_parts_and_service/withered_chica/ArmLeftUpper"]
+texture = ExtResource("28_qpoek")
+
+[node name="HandLeft" type="Sprite2D" parent="cam_parts_and_service/withered_chica/ArmLeftUpper/ArmLeftLower"]
+texture = ExtResource("29_8bvhr")
+
+[node name="ArmRightLower" type="Sprite2D" parent="cam_parts_and_service/withered_chica"]
+position = Vector2(-0.067035, 15.9677)
+rotation = 0.436332
+texture = ExtResource("30_6tpvw")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="cam_parts_and_service/withered_chica/ArmRightLower"]
+texture = ExtResource("31_nqm8x")
+
+[node name="HandRight" type="Sprite2D" parent="cam_parts_and_service/withered_chica/ArmRightLower/ArmRightUpper"]
+texture = ExtResource("32_bi2us")
+
+[node name="Neck" type="Sprite2D" parent="cam_parts_and_service/withered_chica"]
+position = Vector2(2, 14.0699)
+rotation = 1.22173
+texture = ExtResource("33_bp8ya")
+
+[node name="Head" type="Sprite2D" parent="cam_parts_and_service/withered_chica/Neck"]
+position = Vector2(0.0891274, 0.0989509)
+rotation = 0.0872665
+texture = ExtResource("34_exscl")
+
+[node name="Hair" type="Sprite2D" parent="cam_parts_and_service/withered_chica/Neck/Head"]
+texture = ExtResource("35_n5itm")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_parts_and_service/withered_chica"]
+position = Vector2(2.6875, 10.4375)
+rotation = 1.309
+texture = ExtResource("36_p33vs")
+
+[node name="LegLeftLower" type="Sprite2D" parent="cam_parts_and_service/withered_chica/LegLeftUpper"]
+texture = ExtResource("37_q11kd")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_parts_and_service/withered_chica"]
+position = Vector2(2, 11)
+rotation = 1.5708
+texture = ExtResource("38_pcofh")
+
+[node name="LegRightLower" type="Sprite2D" parent="cam_parts_and_service/withered_chica/LegRightUpper"]
+texture = ExtResource("39_dfxxa")
+
+[node name="Body" type="Sprite2D" parent="cam_parts_and_service/withered_chica"]
+position = Vector2(2, 11.9449)
+rotation = 1.65806
+texture = ExtResource("40_xmokt")
+
+[node name="withered_foxy2" type="Node2D" parent="cam_parts_and_service"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(616, 424)
+scale = Vector2(16, 16)
+
+[node name="Neck" type="Sprite2D" parent="cam_parts_and_service/withered_foxy2"]
+position = Vector2(-0.5625, -0.1875)
+rotation = 0.174533
+texture = ExtResource("41_65fuv")
+
+[node name="Head" type="Sprite2D" parent="cam_parts_and_service/withered_foxy2/Neck"]
+position = Vector2(3.5625, -0.4375)
+rotation = -0.523599
+texture = ExtResource("42_j4sgo")
+
+[node name="EarLeft" type="Sprite2D" parent="cam_parts_and_service/withered_foxy2/Neck/Head"]
+position = Vector2(4.56458, -1.40609)
+rotation = -0.349066
+texture = ExtResource("43_fuyfd")
+
+[node name="EarRight" type="Sprite2D" parent="cam_parts_and_service/withered_foxy2/Neck/Head"]
+position = Vector2(-2.36094, -0.785737)
+rotation = 0.174533
+texture = ExtResource("44_e75m4")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_parts_and_service/withered_foxy2"]
+position = Vector2(0.8125, -6.1875)
+rotation = -1.22173
+texture = ExtResource("45_22v7o")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_parts_and_service/withered_foxy2/ArmLeftUpper"]
+texture = ExtResource("46_1bm6d")
+
+[node name="HandLeft" type="Sprite2D" parent="cam_parts_and_service/withered_foxy2/ArmLeftUpper/ArmLeftLower"]
+texture = ExtResource("47_8kf5j")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="cam_parts_and_service/withered_foxy2"]
+position = Vector2(1.4375, -7.4375)
+rotation = 1.39626
+texture = ExtResource("48_yi3rq")
+
+[node name="ArmRightLower" type="Sprite2D" parent="cam_parts_and_service/withered_foxy2/ArmRightUpper"]
+texture = ExtResource("49_i2rvi")
+
+[node name="HandRight" type="Sprite2D" parent="cam_parts_and_service/withered_foxy2/ArmRightUpper/ArmRightLower"]
+texture = ExtResource("50_2giwf")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_parts_and_service/withered_foxy2"]
+texture = ExtResource("51_368pw")
+
+[node name="LegLeftLower" type="Sprite2D" parent="cam_parts_and_service/withered_foxy2/LegLeftUpper"]
+texture = ExtResource("52_34lkl")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_parts_and_service/withered_foxy2"]
+texture = ExtResource("53_yyou5")
+
+[node name="LegRightLower" type="Sprite2D" parent="cam_parts_and_service/withered_foxy2/LegRightUpper"]
+texture = ExtResource("54_eg4wu")
+
+[node name="Body" type="Sprite2D" parent="cam_parts_and_service/withered_foxy2"]
+rotation = 0.174533
+texture = ExtResource("55_dtkgf")
+
+[node name="withered_foxy" type="Node2D" parent="cam_parts_and_service"]
+position = Vector2(600, 408)
+scale = Vector2(16, 16)
+
+[node name="Neck" type="Sprite2D" parent="cam_parts_and_service/withered_foxy"]
+position = Vector2(-0.5625, -0.1875)
+rotation = 0.174533
+texture = ExtResource("41_65fuv")
+
+[node name="Head" type="Sprite2D" parent="cam_parts_and_service/withered_foxy/Neck"]
+position = Vector2(3.5625, -0.4375)
+rotation = -0.523599
+texture = ExtResource("42_j4sgo")
+
+[node name="EarLeft" type="Sprite2D" parent="cam_parts_and_service/withered_foxy/Neck/Head"]
+position = Vector2(4.56458, -1.40609)
+rotation = -0.349066
+texture = ExtResource("43_fuyfd")
+
+[node name="EarRight" type="Sprite2D" parent="cam_parts_and_service/withered_foxy/Neck/Head"]
+position = Vector2(-2.36094, -0.785737)
+rotation = 0.174533
+texture = ExtResource("44_e75m4")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_parts_and_service/withered_foxy"]
+position = Vector2(0.8125, -6.1875)
+rotation = -1.22173
+texture = ExtResource("45_22v7o")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_parts_and_service/withered_foxy/ArmLeftUpper"]
+texture = ExtResource("46_1bm6d")
+
+[node name="HandLeft" type="Sprite2D" parent="cam_parts_and_service/withered_foxy/ArmLeftUpper/ArmLeftLower"]
+texture = ExtResource("47_8kf5j")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="cam_parts_and_service/withered_foxy"]
+position = Vector2(1.4375, -7.4375)
+rotation = 1.39626
+texture = ExtResource("48_yi3rq")
+
+[node name="ArmRightLower" type="Sprite2D" parent="cam_parts_and_service/withered_foxy/ArmRightUpper"]
+texture = ExtResource("49_i2rvi")
+
+[node name="HandRight" type="Sprite2D" parent="cam_parts_and_service/withered_foxy/ArmRightUpper/ArmRightLower"]
+texture = ExtResource("50_2giwf")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_parts_and_service/withered_foxy"]
+texture = ExtResource("51_368pw")
+
+[node name="LegLeftLower" type="Sprite2D" parent="cam_parts_and_service/withered_foxy/LegLeftUpper"]
+texture = ExtResource("52_34lkl")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_parts_and_service/withered_foxy"]
+texture = ExtResource("53_yyou5")
+
+[node name="LegRightLower" type="Sprite2D" parent="cam_parts_and_service/withered_foxy/LegRightUpper"]
+texture = ExtResource("54_eg4wu")
+
+[node name="Body" type="Sprite2D" parent="cam_parts_and_service/withered_foxy"]
+rotation = 0.174533
+texture = ExtResource("55_dtkgf")
+
+[node name="vhs_tv" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_6qren")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -560.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+visible = false
+position = Vector2(1360, 360)
+scale = Vector2(6.4, 3.6)
+copy_mode = 2
+
+[node name="vhs_vignette" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_3sd1b")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = -199.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="vhs_tv_vignette" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_n2ece")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -560.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="reference" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 720.0
+offset_right = 1440.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)

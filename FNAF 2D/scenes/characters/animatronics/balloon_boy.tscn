@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://bv74gjg1c0dta"]
+
+[ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_roaming_fnaf2.gd" id="1_2mkfl"]
+[ext_resource type="Texture2D" uid="uid://cu8cvyxacd0pm" path="res://sprites/characters/animatronics/balloon_boy.png" id="2_rf3pj"]
+[ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_in_office_fnaf2.gd" id="3_6ilcs"]
+
+[node name="balloon_boy" type="Node2D" node_paths=PackedStringArray("movement_timer", "pause_animatronic_timer", "pause_animatronic_timer_cooldown")]
+script = ExtResource("1_2mkfl")
+movement_timer = NodePath("balloon_boy_timer")
+cam_path = Array[Array]([["game_area", "vent_left"]])
+pause_animatronic_timer = NodePath("balloon_boy_timer_pause")
+pause_animatronic_timer_cooldown = NodePath("balloon_boy_timer_pause_cooldown")
+animatronic_name = "balloon_boy"
+ai_level_by_hour = {
+1: 20,
+2: 20,
+3: 20,
+4: 20,
+5: 20,
+12: 20
+}
+
+[node name="balloon_boy_in_office" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-368, 526)
+rotation = 1.309
+scale = Vector2(16, 16)
+texture = ExtResource("2_rf3pj")
+script = ExtResource("3_6ilcs")
+animatronic_name = "balloon_boy"
+
+[node name="balloon_boy_timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="balloon_boy_timer_pause" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="balloon_boy_timer_pause_cooldown" type="Timer" parent="."]
+wait_time = 4.0
+
+[connection signal="timeout" from="balloon_boy_timer" to="." method="movement_opportunity"]
+[connection signal="timeout" from="balloon_boy_timer_pause" to="." method="pause_animatronic" binds= [false]]
+[connection signal="timeout" from="balloon_boy_timer_pause_cooldown" to="." method="set_can_pause" binds= [true]]

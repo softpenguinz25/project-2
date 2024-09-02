@@ -1,0 +1,164 @@
+[gd_scene load_steps=27 format=3 uid="uid://t1u8mpbqiao4"]
+
+[ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_roaming_fnaf2.gd" id="1_ke3g1"]
+[ext_resource type="Texture2D" uid="uid://dbteu0rk8uxpv" path="res://sprites/characters/animatronics/mangle/buddy_connector.png" id="2_oj1ag"]
+[ext_resource type="Texture2D" uid="uid://eu8qrnmh0m4l" path="res://sprites/characters/animatronics/mangle/buddy_neck.png" id="3_cg5ro"]
+[ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_in_office_fnaf2.gd" id="3_r2o4y"]
+[ext_resource type="Texture2D" uid="uid://0o3k8imjqi4e" path="res://sprites/characters/animatronics/mangle/buddy.png" id="4_wsenb"]
+[ext_resource type="Texture2D" uid="uid://b4shwejyel075" path="res://sprites/characters/animatronics/mangle/neck_connector.png" id="5_ur7qo"]
+[ext_resource type="Texture2D" uid="uid://bt7ltq2dcvnbi" path="res://sprites/characters/animatronics/mangle/neck.png" id="6_77cwb"]
+[ext_resource type="Texture2D" uid="uid://d0w17baauv6p7" path="res://sprites/characters/animatronics/mangle/head.png" id="7_ss83n"]
+[ext_resource type="Texture2D" uid="uid://cuxkllw5lc8m7" path="res://sprites/characters/animatronics/mangle/ear_left.png" id="8_xmrgg"]
+[ext_resource type="Texture2D" uid="uid://b6plkn6h3h77a" path="res://sprites/characters/animatronics/mangle/ear_right.png" id="9_ln4h2"]
+[ext_resource type="Texture2D" uid="uid://bhkm2qs7qek7t" path="res://sprites/characters/animatronics/mangle/connector_main.png" id="10_t21rt"]
+[ext_resource type="Texture2D" uid="uid://ceo21lx6asd6x" path="res://sprites/characters/animatronics/mangle/hand_top.png" id="11_wiwxb"]
+[ext_resource type="Texture2D" uid="uid://c8xwcymso83hj" path="res://sprites/characters/animatronics/mangle/leg_left_upper.png" id="12_2n6id"]
+[ext_resource type="Texture2D" uid="uid://rfnaj0yjcsyf" path="res://sprites/characters/animatronics/mangle/leg_left_lower.png" id="13_nwx00"]
+[ext_resource type="Texture2D" uid="uid://b7sm20uhmyi5l" path="res://sprites/characters/animatronics/mangle/leg_middle_upper.png" id="14_oi602"]
+[ext_resource type="Texture2D" uid="uid://ds8qodks26mm6" path="res://sprites/characters/animatronics/mangle/leg_middle_lower.png" id="15_mhqlk"]
+[ext_resource type="Texture2D" uid="uid://d38kpf0hmnqit" path="res://sprites/characters/animatronics/mangle/hand_upper_connector_upper.png" id="16_wd1vm"]
+[ext_resource type="Texture2D" uid="uid://qjnmigxyjb07" path="res://sprites/characters/animatronics/mangle/hand_lower_connector_upper.png" id="17_65d0r"]
+[ext_resource type="Texture2D" uid="uid://m5d6j0pgchtj" path="res://sprites/characters/animatronics/mangle/hand_lower.png" id="18_p4jxc"]
+[ext_resource type="Texture2D" uid="uid://cj2fvcbef57d3" path="res://sprites/characters/animatronics/mangle/leg_right_upper.png" id="19_0fgqu"]
+[ext_resource type="Texture2D" uid="uid://dwhffmyb7hrj4" path="res://sprites/characters/animatronics/mangle/leg_right_lower.png" id="20_k0381"]
+[ext_resource type="Texture2D" uid="uid://dl423y5mym85a" path="res://sprites/characters/animatronics/mangle/tail_1.png" id="21_322iq"]
+[ext_resource type="Texture2D" uid="uid://drolya68tmmyu" path="res://sprites/characters/animatronics/mangle/tail_2.png" id="22_bscud"]
+[ext_resource type="Texture2D" uid="uid://d2j3p42874v6c" path="res://sprites/characters/animatronics/mangle/tail_3.png" id="23_horpo"]
+[ext_resource type="Texture2D" uid="uid://vlh6jdvkmmwh" path="res://sprites/characters/animatronics/mangle/tail_4.png" id="24_vyib0"]
+[ext_resource type="Texture2D" uid="uid://dwgydordvbsmf" path="res://sprites/characters/animatronics/mangle/body_connector.png" id="25_dsooo"]
+
+[node name="mangle" type="Node2D" node_paths=PackedStringArray("movement_timer", "pause_animatronic_timer", "pause_animatronic_timer_cooldown")]
+script = ExtResource("1_ke3g1")
+movement_timer = NodePath("mangle_timer")
+cam_path = Array[Array]([["kids_cove", "game_area", "main_hall", "hall", "hall_2", "party_room_1", "party_room_2", "vent_right"]])
+pause_animatronic_timer = NodePath("mangle_timer_pause")
+pause_animatronic_timer_cooldown = NodePath("mangle_timer_pause_cooldown")
+animatronic_name = "mangle"
+ai_level_by_hour = {
+1: 20,
+2: 20,
+3: 20,
+4: 20,
+5: 20,
+12: 20
+}
+
+[node name="mangle_in_office" type="Node2D" parent="."]
+visible = false
+position = Vector2(1710, 751)
+rotation = -1.5708
+scale = Vector2(16, 16)
+script = ExtResource("3_r2o4y")
+animatronic_name = "mangle"
+
+[node name="BuddyConnector" type="Sprite2D" parent="mangle_in_office"]
+position = Vector2(14.9375, 12.4375)
+rotation = 0.872665
+texture = ExtResource("2_oj1ag")
+
+[node name="BuddyNeck" type="Sprite2D" parent="mangle_in_office/BuddyConnector"]
+texture = ExtResource("3_cg5ro")
+
+[node name="Buddy" type="Sprite2D" parent="mangle_in_office/BuddyConnector/BuddyNeck"]
+texture = ExtResource("4_wsenb")
+
+[node name="NeckConnector" type="Sprite2D" parent="mangle_in_office"]
+position = Vector2(10.5, 3.50001)
+rotation = -1.5708
+texture = ExtResource("5_ur7qo")
+
+[node name="Neck" type="Sprite2D" parent="mangle_in_office/NeckConnector"]
+texture = ExtResource("6_77cwb")
+
+[node name="Head" type="Sprite2D" parent="mangle_in_office"]
+texture = ExtResource("7_ss83n")
+
+[node name="EarLeft" type="Sprite2D" parent="mangle_in_office/Head"]
+texture = ExtResource("8_xmrgg")
+
+[node name="EarRight" type="Sprite2D" parent="mangle_in_office/Head"]
+texture = ExtResource("9_ln4h2")
+
+[node name="ConnectorMain" type="Sprite2D" parent="mangle_in_office"]
+position = Vector2(13.25, 2.12501)
+rotation = -1.74533
+texture = ExtResource("10_t21rt")
+
+[node name="HandTop" type="Sprite2D" parent="mangle_in_office/ConnectorMain"]
+texture = ExtResource("11_wiwxb")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="mangle_in_office"]
+position = Vector2(20.5, 10.5)
+rotation = 1.5708
+texture = ExtResource("12_2n6id")
+
+[node name="LegLeftLower" type="Sprite2D" parent="mangle_in_office/LegLeftUpper"]
+texture = ExtResource("13_nwx00")
+
+[node name="LegMiddleUpper" type="Sprite2D" parent="mangle_in_office"]
+position = Vector2(20.5, 10.5)
+rotation = 1.5708
+texture = ExtResource("14_oi602")
+
+[node name="LegMiddleLower" type="Sprite2D" parent="mangle_in_office/LegMiddleUpper"]
+texture = ExtResource("15_mhqlk")
+
+[node name="HandUpperConnectorUpper" type="Sprite2D" parent="mangle_in_office"]
+position = Vector2(19.4375, 5.68752)
+rotation = 1.48353
+texture = ExtResource("16_wd1vm")
+
+[node name="HandLowerConnectorUpper" type="Sprite2D" parent="mangle_in_office/HandUpperConnectorUpper"]
+position = Vector2(-16.634, 2.39263)
+rotation = -2.18166
+texture = ExtResource("17_65d0r")
+
+[node name="HandLower" type="Sprite2D" parent="mangle_in_office/HandUpperConnectorUpper/HandLowerConnectorUpper"]
+texture = ExtResource("18_p4jxc")
+
+[node name="LegRightUpper" type="Sprite2D" parent="mangle_in_office"]
+position = Vector2(20.5, 10.5)
+rotation = 1.5708
+texture = ExtResource("19_0fgqu")
+
+[node name="LegRightLower" type="Sprite2D" parent="mangle_in_office/LegRightUpper"]
+texture = ExtResource("20_k0381")
+
+[node name="Tail1" type="Sprite2D" parent="mangle_in_office"]
+position = Vector2(18.5, 9.50001)
+rotation = 1.5708
+texture = ExtResource("21_322iq")
+
+[node name="Tail2" type="Sprite2D" parent="mangle_in_office/Tail1"]
+position = Vector2(4.5625, -1)
+rotation = 0.785398
+texture = ExtResource("22_bscud")
+
+[node name="Tail3" type="Sprite2D" parent="mangle_in_office/Tail1/Tail2"]
+position = Vector2(5.74524, -3.8007)
+rotation = 0.785398
+texture = ExtResource("23_horpo")
+
+[node name="Tail4" type="Sprite2D" parent="mangle_in_office/Tail1/Tail2/Tail3"]
+position = Vector2(6.875, -6.68751)
+rotation = 0.785398
+texture = ExtResource("24_vyib0")
+
+[node name="BodyConnector" type="Sprite2D" parent="mangle_in_office"]
+position = Vector2(15.25, 2.50001)
+rotation = 0.174533
+texture = ExtResource("25_dsooo")
+
+[node name="mangle_timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="mangle_timer_pause" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="mangle_timer_pause_cooldown" type="Timer" parent="."]
+wait_time = 4.0
+
+[connection signal="timeout" from="mangle_timer" to="." method="movement_opportunity"]
+[connection signal="timeout" from="mangle_timer_pause" to="." method="pause_animatronic" binds= [false]]
+[connection signal="timeout" from="mangle_timer_pause_cooldown" to="." method="set_can_pause" binds= [true]]

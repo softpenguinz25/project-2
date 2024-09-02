@@ -1,0 +1,1924 @@
+[gd_scene load_steps=131 format=3 uid="uid://cct6h6d6f6mvf"]
+
+[ext_resource type="Texture2D" uid="uid://ylg76bhqnnv7" path="res://sprites/environment/monitor/fnaf_2/monitor_scenes/show_stage.png" id="1_kay3j"]
+[ext_resource type="Texture2D" uid="uid://imxnv7vr017" path="res://sprites/characters/animatronics/toy_chica/body.png" id="2_utxq2"]
+[ext_resource type="Texture2D" uid="uid://6uffaquljg3x" path="res://sprites/characters/animatronics/toy_chica/arm_left_upper.png" id="3_4ex0f"]
+[ext_resource type="Texture2D" uid="uid://wedfuerpdadw" path="res://sprites/characters/animatronics/toy_chica/arm_left_lower.png" id="4_jnddl"]
+[ext_resource type="Texture2D" uid="uid://dups1h3hbw2ei" path="res://sprites/characters/animatronics/toy_chica/arm_right_upper.png" id="5_pcgtw"]
+[ext_resource type="Texture2D" uid="uid://xfujiu2wlecc" path="res://sprites/characters/animatronics/toy_chica/arm_right_lower.png" id="6_3w2vj"]
+[ext_resource type="Texture2D" uid="uid://cjxnmlo14jia0" path="res://sprites/characters/animatronics/toy_chica/head.png" id="7_06fje"]
+[ext_resource type="Texture2D" uid="uid://xed5iyi7ywod" path="res://sprites/characters/animatronics/toy_chica/hair.png" id="8_1bj51"]
+[ext_resource type="Texture2D" uid="uid://bbbqpeqe62q6" path="res://sprites/characters/animatronics/toy_chica/leg_left_upper.png" id="9_qqxoa"]
+[ext_resource type="Texture2D" uid="uid://cqdpgm5l6hqcv" path="res://sprites/characters/animatronics/toy_chica/leg_left_lower.png" id="10_xi11v"]
+[ext_resource type="Texture2D" uid="uid://dac0l22d5mbl2" path="res://sprites/characters/animatronics/toy_chica/leg_right_upper.png" id="11_miea1"]
+[ext_resource type="Texture2D" uid="uid://c6oh3d4gnjn63" path="res://sprites/characters/animatronics/toy_chica/leg_right_lower.png" id="12_q1qir"]
+[ext_resource type="Texture2D" uid="uid://btjo01g0a0dwb" path="res://sprites/characters/animatronics/toy_chica/cupcake.png" id="13_y73vh"]
+[ext_resource type="Texture2D" uid="uid://b8fmicn5rl2qg" path="res://sprites/characters/animatronics/toy_bonnie/body.png" id="14_yp5ct"]
+[ext_resource type="Texture2D" uid="uid://ucwi8rd2pjmf" path="res://sprites/characters/animatronics/toy_bonnie/tie.png" id="15_fak75"]
+[ext_resource type="Texture2D" uid="uid://72xyv1s5la25" path="res://sprites/characters/animatronics/toy_bonnie/leg_left_upper.png" id="16_n6htk"]
+[ext_resource type="Texture2D" uid="uid://b4lxrgyeklqdo" path="res://sprites/characters/animatronics/toy_bonnie/leg_left_lower.png" id="17_k1ciw"]
+[ext_resource type="Texture2D" uid="uid://d35tokv0cwo17" path="res://sprites/characters/animatronics/toy_bonnie/leg_right_upper.png" id="18_bpmia"]
+[ext_resource type="Texture2D" uid="uid://blp703tvliv7e" path="res://sprites/characters/animatronics/toy_bonnie/leg_right_lower.png" id="19_4lcwj"]
+[ext_resource type="Texture2D" uid="uid://bpnfnel3dfbn2" path="res://sprites/characters/animatronics/toy_bonnie/guitar.png" id="20_tl4bm"]
+[ext_resource type="Texture2D" uid="uid://cr5yaxlox5oos" path="res://sprites/characters/animatronics/toy_bonnie/arm_left_upper.png" id="21_y5ntw"]
+[ext_resource type="Texture2D" uid="uid://cwrqdlbg7qaxd" path="res://sprites/characters/animatronics/toy_bonnie/arm_left_lower.png" id="22_p0sgm"]
+[ext_resource type="Texture2D" uid="uid://ccstolam8xym8" path="res://sprites/characters/animatronics/toy_bonnie/arm_right_upper.png" id="23_hc1uw"]
+[ext_resource type="Texture2D" uid="uid://cp0p4yck73dry" path="res://sprites/characters/animatronics/toy_bonnie/arm_right_lower.png" id="24_j4bpr"]
+[ext_resource type="Texture2D" uid="uid://drdtxa3sfqivv" path="res://sprites/characters/animatronics/toy_bonnie/ear_left.png" id="25_82vbt"]
+[ext_resource type="Texture2D" uid="uid://bqtbk0pykbht7" path="res://sprites/characters/animatronics/toy_bonnie/ear_right.png" id="26_xcg8a"]
+[ext_resource type="Texture2D" uid="uid://g8pg1uc5s8i2" path="res://sprites/characters/animatronics/toy_bonnie/head.png" id="27_mx4sn"]
+[ext_resource type="Texture2D" uid="uid://byexlb8vuyavq" path="res://sprites/characters/animatronics/toy_freddy/body.png" id="28_a3t53"]
+[ext_resource type="Texture2D" uid="uid://5rjqv6ld2x6s" path="res://sprites/characters/animatronics/toy_freddy/arm_left.png" id="29_gs4e8"]
+[ext_resource type="Texture2D" uid="uid://bwa83frmpie1v" path="res://sprites/characters/animatronics/toy_freddy/hand_left.png" id="30_joghv"]
+[ext_resource type="Texture2D" uid="uid://rp4yocciaj6b" path="res://sprites/characters/animatronics/toy_freddy/arm_right.png" id="31_w4e0g"]
+[ext_resource type="Texture2D" uid="uid://i4pi7s6fq4ei" path="res://sprites/characters/animatronics/toy_freddy/hand_right.png" id="32_amknl"]
+[ext_resource type="Texture2D" uid="uid://ch8l7p4imja0s" path="res://sprites/characters/animatronics/toy_freddy/head.png" id="33_kqy2g"]
+[ext_resource type="Texture2D" uid="uid://cbsblnm76doc7" path="res://sprites/characters/animatronics/toy_freddy/ear_left.png" id="34_r2b0w"]
+[ext_resource type="Texture2D" uid="uid://36pigy0ixlwo" path="res://sprites/characters/animatronics/toy_freddy/ear_right.png" id="35_3egaw"]
+[ext_resource type="Texture2D" uid="uid://86jt2hrv8j8o" path="res://sprites/characters/animatronics/toy_freddy/hat.png" id="36_w8v8v"]
+[ext_resource type="Texture2D" uid="uid://bp27swmpmo6tj" path="res://sprites/characters/animatronics/toy_freddy/leg_left_upper.png" id="37_ew10o"]
+[ext_resource type="Texture2D" uid="uid://burx7bur2iyb2" path="res://sprites/characters/animatronics/toy_freddy/leg_left_lower.png" id="38_7jb1r"]
+[ext_resource type="Texture2D" uid="uid://bgver8jn3ledb" path="res://sprites/characters/animatronics/toy_freddy/leg_right_upper.png" id="39_0eiax"]
+[ext_resource type="Texture2D" uid="uid://c5mbdwpc3qih7" path="res://sprites/characters/animatronics/toy_freddy/leg_right_lower.png" id="40_ffbrv"]
+[ext_resource type="Texture2D" uid="uid://deue4nvja55cf" path="res://sprites/characters/animatronics/toy_freddy/mic.png" id="41_i5jpt"]
+[ext_resource type="Texture2D" uid="uid://14f4ec0rngj0" path="res://sprites/environment/monitor/fnaf_2/monitor_scenes/game_area.png" id="42_2454f"]
+[ext_resource type="Texture2D" uid="uid://cu8cvyxacd0pm" path="res://sprites/characters/animatronics/balloon_boy.png" id="43_eg18m"]
+[ext_resource type="Texture2D" uid="uid://bjlxf6kes1f7y" path="res://sprites/environment/monitor/fnaf_2/monitor_scenes/kids_cove.png" id="44_rs2st"]
+[ext_resource type="Texture2D" uid="uid://bhkm2qs7qek7t" path="res://sprites/characters/animatronics/mangle/connector_main.png" id="45_g8bsq"]
+[ext_resource type="Texture2D" uid="uid://b4shwejyel075" path="res://sprites/characters/animatronics/mangle/neck_connector.png" id="46_0jbc3"]
+[ext_resource type="Texture2D" uid="uid://bt7ltq2dcvnbi" path="res://sprites/characters/animatronics/mangle/neck.png" id="47_3n5a1"]
+[ext_resource type="Texture2D" uid="uid://d0w17baauv6p7" path="res://sprites/characters/animatronics/mangle/head.png" id="48_snha5"]
+[ext_resource type="Texture2D" uid="uid://cuxkllw5lc8m7" path="res://sprites/characters/animatronics/mangle/ear_left.png" id="49_voavk"]
+[ext_resource type="Texture2D" uid="uid://b6plkn6h3h77a" path="res://sprites/characters/animatronics/mangle/ear_right.png" id="50_ikdoq"]
+[ext_resource type="Texture2D" uid="uid://dwgydordvbsmf" path="res://sprites/characters/animatronics/mangle/body_connector.png" id="51_ti4og"]
+[ext_resource type="Texture2D" uid="uid://d38kpf0hmnqit" path="res://sprites/characters/animatronics/mangle/hand_upper_connector_upper.png" id="52_303nk"]
+[ext_resource type="Texture2D" uid="uid://qjnmigxyjb07" path="res://sprites/characters/animatronics/mangle/hand_lower_connector_upper.png" id="53_lm4yc"]
+[ext_resource type="Texture2D" uid="uid://m5d6j0pgchtj" path="res://sprites/characters/animatronics/mangle/hand_lower.png" id="54_i2n16"]
+[ext_resource type="Texture2D" uid="uid://c8xwcymso83hj" path="res://sprites/characters/animatronics/mangle/leg_left_upper.png" id="55_qav0e"]
+[ext_resource type="Texture2D" uid="uid://rfnaj0yjcsyf" path="res://sprites/characters/animatronics/mangle/leg_left_lower.png" id="56_k05ye"]
+[ext_resource type="Texture2D" uid="uid://b7sm20uhmyi5l" path="res://sprites/characters/animatronics/mangle/leg_middle_upper.png" id="57_uawws"]
+[ext_resource type="Texture2D" uid="uid://ds8qodks26mm6" path="res://sprites/characters/animatronics/mangle/leg_middle_lower.png" id="58_0kjlw"]
+[ext_resource type="Texture2D" uid="uid://cj2fvcbef57d3" path="res://sprites/characters/animatronics/mangle/leg_right_upper.png" id="59_lhhd8"]
+[ext_resource type="Texture2D" uid="uid://dwhffmyb7hrj4" path="res://sprites/characters/animatronics/mangle/leg_right_lower.png" id="60_jj61s"]
+[ext_resource type="Texture2D" uid="uid://dl423y5mym85a" path="res://sprites/characters/animatronics/mangle/tail_1.png" id="61_g8jht"]
+[ext_resource type="Texture2D" uid="uid://drolya68tmmyu" path="res://sprites/characters/animatronics/mangle/tail_2.png" id="62_euo16"]
+[ext_resource type="Texture2D" uid="uid://d2j3p42874v6c" path="res://sprites/characters/animatronics/mangle/tail_3.png" id="63_k1fwd"]
+[ext_resource type="Texture2D" uid="uid://vlh6jdvkmmwh" path="res://sprites/characters/animatronics/mangle/tail_4.png" id="64_n7xon"]
+[ext_resource type="Texture2D" uid="uid://ceo21lx6asd6x" path="res://sprites/characters/animatronics/mangle/hand_top.png" id="65_02vl1"]
+[ext_resource type="Texture2D" uid="uid://dbteu0rk8uxpv" path="res://sprites/characters/animatronics/mangle/buddy_connector.png" id="66_vqqpq"]
+[ext_resource type="Texture2D" uid="uid://eu8qrnmh0m4l" path="res://sprites/characters/animatronics/mangle/buddy_neck.png" id="67_n04ey"]
+[ext_resource type="Texture2D" uid="uid://0o3k8imjqi4e" path="res://sprites/characters/animatronics/mangle/buddy.png" id="68_gdrct"]
+[ext_resource type="Texture2D" uid="uid://d28y23b2stu4d" path="res://sprites/environment/monitor/fnaf_2/monitor_scenes/main_hall.png" id="69_5xbd7"]
+[ext_resource type="Texture2D" uid="uid://o2gxy6poqm7m" path="res://sprites/characters/animatronics/withered_bonnie/body.png" id="70_q4qe1"]
+[ext_resource type="Texture2D" uid="uid://c2v3c3arqxus4" path="res://sprites/characters/animatronics/withered_bonnie/arm_left_upper.png" id="71_owr4t"]
+[ext_resource type="Texture2D" uid="uid://b30jwsseoue0q" path="res://sprites/characters/animatronics/withered_bonnie/arm_left_lower.png" id="72_sn03x"]
+[ext_resource type="Texture2D" uid="uid://cdhrwtw1xsmde" path="res://sprites/characters/animatronics/withered_bonnie/arm_right.png" id="73_467bv"]
+[ext_resource type="Texture2D" uid="uid://dnri6clu4octa" path="res://sprites/characters/animatronics/withered_bonnie/head.png" id="74_bddb6"]
+[ext_resource type="Texture2D" uid="uid://beevilbp5rs22" path="res://sprites/characters/animatronics/withered_bonnie/ear_left.png" id="75_x8iv5"]
+[ext_resource type="Texture2D" uid="uid://crha1sgcrp0yt" path="res://sprites/characters/animatronics/withered_bonnie/ear_right.png" id="76_lqb6y"]
+[ext_resource type="Texture2D" uid="uid://bej7mqj6h0jc1" path="res://sprites/characters/animatronics/withered_bonnie/leg_left_upper.png" id="77_fy6v8"]
+[ext_resource type="Texture2D" uid="uid://ba5flbnpnniem" path="res://sprites/characters/animatronics/withered_bonnie/foot_left.png" id="78_lgfas"]
+[ext_resource type="Texture2D" uid="uid://wvfnv7i1n11c" path="res://sprites/characters/animatronics/withered_bonnie/leg_right_upper.png" id="79_d05at"]
+[ext_resource type="Texture2D" uid="uid://bviacknf1q0ha" path="res://sprites/characters/animatronics/withered_bonnie/foot_right.png" id="80_7kwxk"]
+[ext_resource type="Texture2D" uid="uid://lrgq16jsxehi" path="res://sprites/characters/animatronics/withered_freddy/body.png" id="81_0bbmf"]
+[ext_resource type="Texture2D" uid="uid://b6j74jne3gx3w" path="res://sprites/characters/animatronics/withered_freddy/arm_left_upper.png" id="82_cshfj"]
+[ext_resource type="Texture2D" uid="uid://fso8i3ectq36" path="res://sprites/characters/animatronics/withered_freddy/arm_left_lower.png" id="83_pkmcg"]
+[ext_resource type="Texture2D" uid="uid://d233gv1ogps3l" path="res://sprites/characters/animatronics/withered_freddy/mic.png" id="84_qm0xw"]
+[ext_resource type="Texture2D" uid="uid://cgjlnskjjci3e" path="res://sprites/characters/animatronics/withered_freddy/hand_left.png" id="85_qchy8"]
+[ext_resource type="Texture2D" uid="uid://bha2pmb74mc0l" path="res://sprites/characters/animatronics/withered_freddy/arm_right_upper.png" id="86_ucty2"]
+[ext_resource type="Texture2D" uid="uid://67gob1bfa5ge" path="res://sprites/characters/animatronics/withered_freddy/arm_right_lower.png" id="87_khqtc"]
+[ext_resource type="Texture2D" uid="uid://gcllo75hre7g" path="res://sprites/characters/animatronics/withered_freddy/hand_right.png" id="88_vhohb"]
+[ext_resource type="Texture2D" uid="uid://br4148525etou" path="res://sprites/characters/animatronics/withered_freddy/leg_left.png" id="89_k6eop"]
+[ext_resource type="Texture2D" uid="uid://bpw3d0gt7sdis" path="res://sprites/characters/animatronics/withered_freddy/foot_left.png" id="90_iq33x"]
+[ext_resource type="Texture2D" uid="uid://dq1d8sm4gjag" path="res://sprites/characters/animatronics/withered_freddy/leg_right.png" id="91_gwxgw"]
+[ext_resource type="Texture2D" uid="uid://bmc0txvtswoto" path="res://sprites/characters/animatronics/withered_freddy/foot_right.png" id="92_yigke"]
+[ext_resource type="Texture2D" uid="uid://cip4c5xydicvi" path="res://sprites/characters/animatronics/withered_freddy/neck.png" id="93_7xjf3"]
+[ext_resource type="Texture2D" uid="uid://cs6k6p5h064yx" path="res://sprites/characters/animatronics/withered_freddy/head_upper.png" id="94_w23g7"]
+[ext_resource type="Texture2D" uid="uid://bpvfh27stoubu" path="res://sprites/environment/monitor/fnaf_2/monitor_scenes/parts_and_service.png" id="95_ebrgg"]
+[ext_resource type="Texture2D" uid="uid://dnjpawkq4a47j" path="res://sprites/characters/animatronics/withered_chica/arm_left_upper.png" id="96_5q722"]
+[ext_resource type="Texture2D" uid="uid://elgv0dyijykb" path="res://sprites/characters/animatronics/withered_chica/arm_left_lower.png" id="97_kxau2"]
+[ext_resource type="Texture2D" uid="uid://gs2sjn1846gd" path="res://sprites/characters/animatronics/withered_chica/hand_left.png" id="98_6ydl1"]
+[ext_resource type="Texture2D" uid="uid://dg87d2bktkfa" path="res://sprites/characters/animatronics/withered_chica/arm_right_lower.png" id="99_e6y5h"]
+[ext_resource type="Texture2D" uid="uid://dbmbe51csvhqi" path="res://sprites/characters/animatronics/withered_chica/arm_right_upper.png" id="100_bj2ep"]
+[ext_resource type="Texture2D" uid="uid://cfl7qmiqhxefp" path="res://sprites/characters/animatronics/withered_chica/hand_right.png" id="101_cyhnd"]
+[ext_resource type="Texture2D" uid="uid://duim4inwg65e6" path="res://sprites/characters/animatronics/withered_chica/neck.png" id="102_wowg4"]
+[ext_resource type="Texture2D" uid="uid://dodto2url6nrh" path="res://sprites/characters/animatronics/withered_chica/head.png" id="103_nx1ne"]
+[ext_resource type="Texture2D" uid="uid://beft1cakk2qn3" path="res://sprites/characters/animatronics/withered_chica/hair.png" id="104_fgkub"]
+[ext_resource type="Texture2D" uid="uid://darnco3hymcbn" path="res://sprites/characters/animatronics/withered_chica/leg_left_upper.png" id="105_1s4vh"]
+[ext_resource type="Texture2D" uid="uid://bg837xtli3mwe" path="res://sprites/characters/animatronics/withered_chica/leg_left_lower.png" id="106_4os81"]
+[ext_resource type="Texture2D" uid="uid://orbhitf6ss0g" path="res://sprites/characters/animatronics/withered_chica/leg_right_upper.png" id="107_kpapc"]
+[ext_resource type="Texture2D" uid="uid://c3veqvhlvl8rh" path="res://sprites/characters/animatronics/withered_chica/leg_right_lower.png" id="108_3rd43"]
+[ext_resource type="Texture2D" uid="uid://1754um7447yq" path="res://sprites/characters/animatronics/withered_chica/body.png" id="109_b4he2"]
+[ext_resource type="Texture2D" uid="uid://2fj1wq723wsu" path="res://sprites/characters/animatronics/withered_foxy/neck.png" id="110_hgr0h"]
+[ext_resource type="Texture2D" uid="uid://ww3d3efu8sy6" path="res://sprites/characters/animatronics/withered_foxy/head.png" id="111_k1vjl"]
+[ext_resource type="Texture2D" uid="uid://cxdtgyo87igqf" path="res://sprites/characters/animatronics/withered_foxy/ear_left.png" id="112_mb6yf"]
+[ext_resource type="Texture2D" uid="uid://ckty72ii0lemo" path="res://sprites/characters/animatronics/withered_foxy/ear_right.png" id="113_n8fm7"]
+[ext_resource type="Texture2D" uid="uid://d1fbg1b8h488y" path="res://sprites/characters/animatronics/withered_foxy/arm_left_upper.png" id="114_cjwk7"]
+[ext_resource type="Texture2D" uid="uid://88o1cxhracq7" path="res://sprites/characters/animatronics/withered_foxy/arm_left_lower.png" id="115_a0xir"]
+[ext_resource type="Texture2D" uid="uid://cpvfkcwyoch3r" path="res://sprites/characters/animatronics/withered_foxy/hand_left.png" id="116_8r57l"]
+[ext_resource type="Texture2D" uid="uid://dxw8sax54o0yr" path="res://sprites/characters/animatronics/withered_foxy/arm_right_upper.png" id="117_8o8ko"]
+[ext_resource type="Texture2D" uid="uid://bp0ykxquk3j8p" path="res://sprites/characters/animatronics/withered_foxy/arm_right_lower.png" id="118_m3ynq"]
+[ext_resource type="Texture2D" uid="uid://dlte38oepnep3" path="res://sprites/characters/animatronics/withered_foxy/hand_right.png" id="119_o51xg"]
+[ext_resource type="Texture2D" uid="uid://b6chkh3d3oa52" path="res://sprites/characters/animatronics/withered_foxy/leg_left_upper.png" id="120_na46v"]
+[ext_resource type="Texture2D" uid="uid://jd8ux4ym5be2" path="res://sprites/characters/animatronics/withered_foxy/leg_left_lower.png" id="121_lv15w"]
+[ext_resource type="Texture2D" uid="uid://dywa1m76gp6ll" path="res://sprites/characters/animatronics/withered_foxy/leg_right_upper.png" id="122_ba2u8"]
+[ext_resource type="Texture2D" uid="uid://bibu74lnvm73r" path="res://sprites/characters/animatronics/withered_foxy/leg_right_lower.png" id="123_dmt3j"]
+[ext_resource type="Texture2D" uid="uid://cdhdctr35y5ub" path="res://sprites/characters/animatronics/withered_foxy/body.png" id="124_jf2ch"]
+[ext_resource type="Texture2D" uid="uid://xafl0hiqcaq7" path="res://sprites/environment/monitor/fnaf_2/monitor_scenes/party_room_1.png" id="125_ij1ue"]
+[ext_resource type="Texture2D" uid="uid://y5gt5im1pohx" path="res://sprites/environment/monitor/fnaf_2/monitor_scenes/party_room_2.png" id="126_kc7py"]
+[ext_resource type="Texture2D" uid="uid://c4lgvbeua6ode" path="res://sprites/environment/monitor/fnaf_2/monitor_scenes/party_room_3.png" id="127_ke4ag"]
+[ext_resource type="Texture2D" uid="uid://cb1kcfbs5456k" path="res://sprites/environment/monitor/fnaf_2/monitor_scenes/party_room_4.png" id="128_4oe6y"]
+[ext_resource type="Texture2D" uid="uid://cyq0tfb2lk5yu" path="res://sprites/environment/monitor/fnaf_2/monitor_scenes/vent_left.png" id="129_u864n"]
+[ext_resource type="Texture2D" uid="uid://b3f6qcgwsclne" path="res://sprites/environment/monitor/fnaf_2/monitor_scenes/vent_right.png" id="130_606w6"]
+
+[node name="monitor_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="cam_show_stage" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kay3j")
+expand_mode = 3
+
+[node name="toy_chica_show_stage" type="Node2D" parent="cam_show_stage"]
+visible = false
+position = Vector2(1080, 344)
+scale = Vector2(16, 16)
+
+[node name="Body" type="Sprite2D" parent="cam_show_stage/toy_chica_show_stage"]
+texture = ExtResource("2_utxq2")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_show_stage/toy_chica_show_stage/Body"]
+position = Vector2(0.375, -5.87116)
+rotation = -1.0472
+texture = ExtResource("3_4ex0f")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_show_stage/toy_chica_show_stage/Body/ArmLeftUpper"]
+position = Vector2(1.25208, -4.33133)
+rotation = -0.523598
+texture = ExtResource("4_jnddl")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="cam_show_stage/toy_chica_show_stage/Body"]
+position = Vector2(-0.375, -5.87116)
+rotation = 1.0472
+texture = ExtResource("5_pcgtw")
+
+[node name="ArmRightLower" type="Sprite2D" parent="cam_show_stage/toy_chica_show_stage/Body/ArmRightUpper"]
+position = Vector2(-1.25208, -4.33133)
+rotation = 0.523598
+texture = ExtResource("6_3w2vj")
+
+[node name="Head" type="Sprite2D" parent="cam_show_stage/toy_chica_show_stage/Body"]
+texture = ExtResource("7_06fje")
+
+[node name="Hair" type="Sprite2D" parent="cam_show_stage/toy_chica_show_stage/Body/Head"]
+texture = ExtResource("8_1bj51")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_show_stage/toy_chica_show_stage/Body"]
+texture = ExtResource("9_qqxoa")
+
+[node name="LegLeftLower" type="Sprite2D" parent="cam_show_stage/toy_chica_show_stage/Body/LegLeftUpper"]
+texture = ExtResource("10_xi11v")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_show_stage/toy_chica_show_stage/Body"]
+texture = ExtResource("11_miea1")
+
+[node name="LegRightLower" type="Sprite2D" parent="cam_show_stage/toy_chica_show_stage/Body/LegRightUpper"]
+texture = ExtResource("12_q1qir")
+
+[node name="Cupcake" type="Sprite2D" parent="cam_show_stage/toy_chica_show_stage/Body"]
+position = Vector2(-2, 14.75)
+rotation = 0.785399
+texture = ExtResource("13_y73vh")
+
+[node name="toy_bonnie_show_stage" type="Node2D" parent="cam_show_stage"]
+visible = false
+position = Vector2(432, 336)
+scale = Vector2(16, 16)
+
+[node name="Body" type="Sprite2D" parent="cam_show_stage/toy_bonnie_show_stage"]
+texture = ExtResource("14_yp5ct")
+
+[node name="Tie" type="Sprite2D" parent="cam_show_stage/toy_bonnie_show_stage/Body"]
+texture = ExtResource("15_fak75")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_show_stage/toy_bonnie_show_stage/Body"]
+texture = ExtResource("16_n6htk")
+
+[node name="LegLeftLower" type="Sprite2D" parent="cam_show_stage/toy_bonnie_show_stage/Body/LegLeftUpper"]
+texture = ExtResource("17_k1ciw")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_show_stage/toy_bonnie_show_stage/Body"]
+texture = ExtResource("18_bpmia")
+
+[node name="LegRightLower" type="Sprite2D" parent="cam_show_stage/toy_bonnie_show_stage/Body/LegRightUpper"]
+texture = ExtResource("19_4lcwj")
+
+[node name="Guitar" type="Sprite2D" parent="cam_show_stage/toy_bonnie_show_stage/Body"]
+position = Vector2(5.0625, 13.125)
+rotation = 1.1781
+texture = ExtResource("20_tl4bm")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_show_stage/toy_bonnie_show_stage/Body"]
+position = Vector2(-2.125, -5.3125)
+rotation = -1.309
+texture = ExtResource("21_y5ntw")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_show_stage/toy_bonnie_show_stage/Body/ArmLeftUpper"]
+position = Vector2(0.222979, -2.0656)
+rotation = -0.261799
+texture = ExtResource("22_p0sgm")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="cam_show_stage/toy_bonnie_show_stage/Body"]
+position = Vector2(0.4375, -4)
+rotation = 0.785397
+texture = ExtResource("23_hc1uw")
+
+[node name="ArmRightLower" type="Sprite2D" parent="cam_show_stage/toy_bonnie_show_stage/Body/ArmRightUpper"]
+position = Vector2(7.07108, -8.57366)
+rotation = 1.57079
+texture = ExtResource("24_j4bpr")
+
+[node name="EarLeft" type="Sprite2D" parent="cam_show_stage/toy_bonnie_show_stage/Body"]
+position = Vector2(2.75, -0.738632)
+rotation = -0.261799
+texture = ExtResource("25_82vbt")
+
+[node name="EarRight" type="Sprite2D" parent="cam_show_stage/toy_bonnie_show_stage/Body"]
+position = Vector2(-2.75, -0.738632)
+rotation = 0.261799
+texture = ExtResource("26_xcg8a")
+
+[node name="Head" type="Sprite2D" parent="cam_show_stage/toy_bonnie_show_stage/Body"]
+texture = ExtResource("27_mx4sn")
+
+[node name="toy_freddy_show_stage" type="Node2D" parent="cam_show_stage"]
+visible = false
+position = Vector2(764, 320)
+scale = Vector2(16, 16)
+
+[node name="Body" type="Sprite2D" parent="cam_show_stage/toy_freddy_show_stage"]
+texture = ExtResource("28_a3t53")
+
+[node name="ArmLeft" type="Sprite2D" parent="cam_show_stage/toy_freddy_show_stage/Body"]
+position = Vector2(-3.4375, -7.25)
+rotation = -1.0472
+texture = ExtResource("29_gs4e8")
+
+[node name="HandLeft" type="Sprite2D" parent="cam_show_stage/toy_freddy_show_stage/Body/ArmLeft"]
+position = Vector2(-1.44873, -5.00925)
+rotation = -0.523598
+texture = ExtResource("30_joghv")
+
+[node name="ArmRight" type="Sprite2D" parent="cam_show_stage/toy_freddy_show_stage/Body"]
+position = Vector2(8.625, 7.125)
+rotation = -2.09439
+texture = ExtResource("31_w4e0g")
+
+[node name="HandRight" type="Sprite2D" parent="cam_show_stage/toy_freddy_show_stage/Body/ArmRight"]
+position = Vector2(13.5942, 7.7042)
+rotation = -2.618
+texture = ExtResource("32_amknl")
+
+[node name="Head" type="Sprite2D" parent="cam_show_stage/toy_freddy_show_stage/Body"]
+texture = ExtResource("33_kqy2g")
+
+[node name="EarLeft" type="Sprite2D" parent="cam_show_stage/toy_freddy_show_stage/Body/Head"]
+texture = ExtResource("34_r2b0w")
+
+[node name="EarRight" type="Sprite2D" parent="cam_show_stage/toy_freddy_show_stage/Body/Head"]
+texture = ExtResource("35_3egaw")
+
+[node name="Hat" type="Sprite2D" parent="cam_show_stage/toy_freddy_show_stage/Body/Head"]
+texture = ExtResource("36_w8v8v")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_show_stage/toy_freddy_show_stage/Body"]
+texture = ExtResource("37_ew10o")
+
+[node name="LegLeftLower" type="Sprite2D" parent="cam_show_stage/toy_freddy_show_stage/Body/LegLeftUpper"]
+texture = ExtResource("38_7jb1r")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_show_stage/toy_freddy_show_stage/Body"]
+texture = ExtResource("39_0eiax")
+
+[node name="LegRightLower" type="Sprite2D" parent="cam_show_stage/toy_freddy_show_stage/Body/LegRightUpper"]
+texture = ExtResource("40_ffbrv")
+
+[node name="Mic" type="Sprite2D" parent="cam_show_stage/toy_freddy_show_stage/Body"]
+position = Vector2(2.875, 12.1875)
+rotation = 0.785398
+texture = ExtResource("41_i5jpt")
+
+[node name="cam_game_area" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("42_2454f")
+expand_mode = 3
+
+[node name="toy_freddy_game_area" type="Node2D" parent="cam_game_area"]
+visible = false
+position = Vector2(664, 384)
+scale = Vector2(16, 16)
+
+[node name="Body" type="Sprite2D" parent="cam_game_area/toy_freddy_game_area"]
+texture = ExtResource("28_a3t53")
+
+[node name="ArmLeft" type="Sprite2D" parent="cam_game_area/toy_freddy_game_area/Body"]
+position = Vector2(-3.4375, -7.25)
+rotation = -1.0472
+texture = ExtResource("29_gs4e8")
+
+[node name="HandLeft" type="Sprite2D" parent="cam_game_area/toy_freddy_game_area/Body/ArmLeft"]
+position = Vector2(-1.44873, -5.00925)
+rotation = -0.523598
+texture = ExtResource("30_joghv")
+
+[node name="ArmRight" type="Sprite2D" parent="cam_game_area/toy_freddy_game_area/Body"]
+position = Vector2(8.625, 7.125)
+rotation = -2.09439
+texture = ExtResource("31_w4e0g")
+
+[node name="HandRight" type="Sprite2D" parent="cam_game_area/toy_freddy_game_area/Body/ArmRight"]
+position = Vector2(13.5942, 7.7042)
+rotation = -2.618
+texture = ExtResource("32_amknl")
+
+[node name="Head" type="Sprite2D" parent="cam_game_area/toy_freddy_game_area/Body"]
+texture = ExtResource("33_kqy2g")
+
+[node name="EarLeft" type="Sprite2D" parent="cam_game_area/toy_freddy_game_area/Body/Head"]
+texture = ExtResource("34_r2b0w")
+
+[node name="EarRight" type="Sprite2D" parent="cam_game_area/toy_freddy_game_area/Body/Head"]
+texture = ExtResource("35_3egaw")
+
+[node name="Hat" type="Sprite2D" parent="cam_game_area/toy_freddy_game_area/Body/Head"]
+texture = ExtResource("36_w8v8v")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_game_area/toy_freddy_game_area/Body"]
+texture = ExtResource("37_ew10o")
+
+[node name="LegLeftLower" type="Sprite2D" parent="cam_game_area/toy_freddy_game_area/Body/LegLeftUpper"]
+texture = ExtResource("38_7jb1r")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_game_area/toy_freddy_game_area/Body"]
+texture = ExtResource("39_0eiax")
+
+[node name="LegRightLower" type="Sprite2D" parent="cam_game_area/toy_freddy_game_area/Body/LegRightUpper"]
+texture = ExtResource("40_ffbrv")
+
+[node name="Mic" type="Sprite2D" parent="cam_game_area/toy_freddy_game_area/Body"]
+position = Vector2(-20, 8)
+rotation = 3.14159
+texture = ExtResource("41_i5jpt")
+
+[node name="balloon_boy_game_area" type="Node2D" parent="cam_game_area"]
+visible = false
+scale = Vector2(16, 16)
+
+[node name="BalloonBoy" type="Sprite2D" parent="cam_game_area/balloon_boy_game_area"]
+position = Vector2(16, 25)
+texture = ExtResource("43_eg18m")
+
+[node name="cam_kids_cove" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("44_rs2st")
+expand_mode = 3
+
+[node name="mangle_kids_cove" type="Node2D" parent="cam_kids_cove"]
+visible = false
+position = Vector2(1219, 416)
+scale = Vector2(16, 16)
+
+[node name="ConnectorMain" type="Sprite2D" parent="cam_kids_cove/mangle_kids_cove"]
+position = Vector2(1.4375, 9.875)
+rotation = -2.61799
+texture = ExtResource("45_g8bsq")
+
+[node name="NeckConnector" type="Sprite2D" parent="cam_kids_cove/mangle_kids_cove/ConnectorMain"]
+position = Vector2(5.1661, 0.697956)
+texture = ExtResource("46_0jbc3")
+
+[node name="Neck" type="Sprite2D" parent="cam_kids_cove/mangle_kids_cove/ConnectorMain/NeckConnector"]
+texture = ExtResource("47_3n5a1")
+
+[node name="Head" type="Sprite2D" parent="cam_kids_cove/mangle_kids_cove/ConnectorMain/NeckConnector/Neck"]
+texture = ExtResource("48_snha5")
+
+[node name="EarLeft" type="Sprite2D" parent="cam_kids_cove/mangle_kids_cove/ConnectorMain/NeckConnector/Neck/Head"]
+texture = ExtResource("49_voavk")
+
+[node name="EarRight" type="Sprite2D" parent="cam_kids_cove/mangle_kids_cove/ConnectorMain/NeckConnector/Neck/Head"]
+texture = ExtResource("50_ikdoq")
+
+[node name="BodyConnector" type="Sprite2D" parent="cam_kids_cove/mangle_kids_cove"]
+position = Vector2(-3.8125, 0)
+rotation = 0.261799
+scale = Vector2(-1, 1)
+texture = ExtResource("51_ti4og")
+
+[node name="HandUpperConnectorUpper" type="Sprite2D" parent="cam_kids_cove/mangle_kids_cove/BodyConnector"]
+position = Vector2(3.22215, 2.22217)
+rotation = 0.785398
+texture = ExtResource("52_303nk")
+
+[node name="HandLowerConnectorUpper" type="Sprite2D" parent="cam_kids_cove/mangle_kids_cove/BodyConnector/HandUpperConnectorUpper"]
+texture = ExtResource("53_lm4yc")
+
+[node name="HandLower" type="Sprite2D" parent="cam_kids_cove/mangle_kids_cove/BodyConnector/HandUpperConnectorUpper/HandLowerConnectorUpper"]
+texture = ExtResource("54_i2n16")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_kids_cove/mangle_kids_cove/BodyConnector"]
+position = Vector2(1.81111, 0.485286)
+rotation = 0.261799
+texture = ExtResource("55_qav0e")
+
+[node name="LegLeftLower" type="Sprite2D" parent="cam_kids_cove/mangle_kids_cove/BodyConnector/LegLeftUpper"]
+texture = ExtResource("56_k05ye")
+
+[node name="LegMiddleUpper" type="Sprite2D" parent="cam_kids_cove/mangle_kids_cove/BodyConnector"]
+position = Vector2(1.81111, 0.485286)
+rotation = 0.261799
+texture = ExtResource("57_uawws")
+
+[node name="LegMiddleLower" type="Sprite2D" parent="cam_kids_cove/mangle_kids_cove/BodyConnector/LegMiddleUpper"]
+texture = ExtResource("58_0kjlw")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_kids_cove/mangle_kids_cove/BodyConnector"]
+position = Vector2(1.81111, 0.485286)
+rotation = 0.261799
+texture = ExtResource("59_lhhd8")
+
+[node name="LegRightLower" type="Sprite2D" parent="cam_kids_cove/mangle_kids_cove/BodyConnector/LegRightUpper"]
+texture = ExtResource("60_jj61s")
+
+[node name="Tail1" type="Sprite2D" parent="cam_kids_cove/mangle_kids_cove/BodyConnector"]
+position = Vector2(-0.0233723, -4.01796)
+texture = ExtResource("61_g8jht")
+
+[node name="Tail2" type="Sprite2D" parent="cam_kids_cove/mangle_kids_cove/BodyConnector/Tail1"]
+position = Vector2(-2.55955, 2.54941)
+rotation = -0.523599
+texture = ExtResource("62_euo16")
+
+[node name="Tail3" type="Sprite2D" parent="cam_kids_cove/mangle_kids_cove/BodyConnector/Tail1/Tail2"]
+position = Vector2(-1.98619, 4.51477)
+rotation = -0.523599
+texture = ExtResource("63_k1fwd")
+
+[node name="Tail4" type="Sprite2D" parent="cam_kids_cove/mangle_kids_cove/BodyConnector/Tail1/Tail2/Tail3"]
+position = Vector2(-1.429, 6.54051)
+rotation = -0.523599
+texture = ExtResource("64_n7xon")
+
+[node name="HandTop" type="Sprite2D" parent="cam_kids_cove/mangle_kids_cove/BodyConnector"]
+position = Vector2(-10.9407, 12.8564)
+rotation = -2.35619
+scale = Vector2(1, -1)
+texture = ExtResource("65_02vl1")
+
+[node name="BuddyConnector" type="Sprite2D" parent="cam_kids_cove/mangle_kids_cove/BodyConnector"]
+position = Vector2(-6.9744, 12.3016)
+rotation = 1.309
+scale = Vector2(1, -1)
+texture = ExtResource("66_vqqpq")
+
+[node name="BuddyNeck" type="Sprite2D" parent="cam_kids_cove/mangle_kids_cove/BodyConnector/BuddyConnector"]
+texture = ExtResource("67_n04ey")
+
+[node name="Buddy" type="Sprite2D" parent="cam_kids_cove/mangle_kids_cove/BodyConnector/BuddyConnector/BuddyNeck"]
+texture = ExtResource("68_gdrct")
+
+[node name="cam_main_hall" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("69_5xbd7")
+expand_mode = 3
+
+[node name="withered_bonnie_main_hall" type="Node2D" parent="cam_main_hall"]
+visible = false
+position = Vector2(744, 400)
+scale = Vector2(16, 16)
+
+[node name="Body" type="Sprite2D" parent="cam_main_hall/withered_bonnie_main_hall"]
+position = Vector2(0, 0.375)
+rotation = -0.0872665
+texture = ExtResource("70_q4qe1")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_main_hall/withered_bonnie_main_hall/Body"]
+position = Vector2(-1.5, -4.0625)
+rotation = -1.0472
+texture = ExtResource("71_owr4t")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_main_hall/withered_bonnie_main_hall/Body/ArmLeftUpper"]
+texture = ExtResource("72_sn03x")
+
+[node name="ArmRight" type="Sprite2D" parent="cam_main_hall/withered_bonnie_main_hall/Body"]
+position = Vector2(1.5, -4.8125)
+rotation = 1.0472
+texture = ExtResource("73_467bv")
+
+[node name="Head" type="Sprite2D" parent="cam_main_hall/withered_bonnie_main_hall/Body"]
+position = Vector2(-0.208575, 0.232707)
+rotation = 0.0872665
+texture = ExtResource("74_bddb6")
+
+[node name="EarLeft" type="Sprite2D" parent="cam_main_hall/withered_bonnie_main_hall/Body/Head"]
+position = Vector2(3.4375, -0.625)
+rotation = -0.261799
+texture = ExtResource("75_x8iv5")
+
+[node name="EarRight" type="Sprite2D" parent="cam_main_hall/withered_bonnie_main_hall/Body/Head"]
+position = Vector2(-3.5625, -0.875)
+rotation = 0.261799
+texture = ExtResource("76_lqb6y")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_main_hall/withered_bonnie_main_hall/Body"]
+position = Vector2(0.281732, -0.351784)
+rotation = 0.0872665
+texture = ExtResource("77_fy6v8")
+
+[node name="FootLeft" type="Sprite2D" parent="cam_main_hall/withered_bonnie_main_hall/Body/LegLeftUpper"]
+texture = ExtResource("78_lgfas")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_main_hall/withered_bonnie_main_hall/Body"]
+position = Vector2(0.281732, -0.351784)
+rotation = 0.0872665
+texture = ExtResource("79_d05at")
+
+[node name="FootRight" type="Sprite2D" parent="cam_main_hall/withered_bonnie_main_hall/Body/LegRightUpper"]
+texture = ExtResource("80_7kwxk")
+
+[node name="withered_freddy_main_hall" type="Node2D" parent="cam_main_hall"]
+visible = false
+position = Vector2(1142, 400)
+scale = Vector2(16, 16)
+
+[node name="Body" type="Sprite2D" parent="cam_main_hall/withered_freddy_main_hall"]
+position = Vector2(0, 0.375)
+rotation = -0.0872665
+texture = ExtResource("81_0bbmf")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_main_hall/withered_freddy_main_hall/Body"]
+position = Vector2(-2.50847, -7.18346)
+rotation = -1.309
+texture = ExtResource("82_cshfj")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_main_hall/withered_freddy_main_hall/Body/ArmLeftUpper"]
+texture = ExtResource("83_pkmcg")
+
+[node name="Mic" type="Sprite2D" parent="cam_main_hall/withered_freddy_main_hall/Body/ArmLeftUpper/ArmLeftLower"]
+position = Vector2(-6.80131, -11.9378)
+rotation = -1.0472
+scale = Vector2(1, 1)
+texture = ExtResource("84_qm0xw")
+
+[node name="HandLeft" type="Sprite2D" parent="cam_main_hall/withered_freddy_main_hall/Body/ArmLeftUpper/ArmLeftLower"]
+texture = ExtResource("85_qchy8")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="cam_main_hall/withered_freddy_main_hall/Body"]
+position = Vector2(1.89112, -7.99058)
+rotation = 1.309
+texture = ExtResource("86_ucty2")
+
+[node name="ArmRightLower" type="Sprite2D" parent="cam_main_hall/withered_freddy_main_hall/Body/ArmRightUpper"]
+texture = ExtResource("87_khqtc")
+
+[node name="HandRight" type="Sprite2D" parent="cam_main_hall/withered_freddy_main_hall/Body/ArmRightUpper/ArmRightLower"]
+texture = ExtResource("88_vhohb")
+
+[node name="LegLeft" type="Sprite2D" parent="cam_main_hall/withered_freddy_main_hall/Body"]
+position = Vector2(0.0326834, -0.373573)
+rotation = 0.0872665
+texture = ExtResource("89_k6eop")
+
+[node name="FootLeft" type="Sprite2D" parent="cam_main_hall/withered_freddy_main_hall/Body/LegLeft"]
+texture = ExtResource("90_iq33x")
+
+[node name="LegRight" type="Sprite2D" parent="cam_main_hall/withered_freddy_main_hall/Body"]
+position = Vector2(0.0326834, -0.373573)
+rotation = 0.0872665
+texture = ExtResource("91_gwxgw")
+
+[node name="FootRight" type="Sprite2D" parent="cam_main_hall/withered_freddy_main_hall/Body/LegRight"]
+texture = ExtResource("92_yigke")
+
+[node name="Neck" type="Sprite2D" parent="cam_main_hall/withered_freddy_main_hall/Body"]
+rotation = 0.0872665
+texture = ExtResource("93_7xjf3")
+
+[node name="HeadUpper" type="Sprite2D" parent="cam_main_hall/withered_freddy_main_hall/Body/Neck"]
+rotation = -0.0872665
+texture = ExtResource("94_w23g7")
+
+[node name="toy_chica_main_hall" type="Node2D" parent="cam_main_hall"]
+visible = false
+position = Vector2(328, 408)
+scale = Vector2(16, 16)
+
+[node name="Body" type="Sprite2D" parent="cam_main_hall/toy_chica_main_hall"]
+position = Vector2(3.5, 0.4375)
+rotation = -0.0872665
+texture = ExtResource("2_utxq2")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_main_hall/toy_chica_main_hall/Body"]
+position = Vector2(-0.296606, -7.36638)
+rotation = -1.309
+texture = ExtResource("3_4ex0f")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_main_hall/toy_chica_main_hall/Body/ArmLeftUpper"]
+texture = ExtResource("4_jnddl")
+
+[node name="Cupcake" type="Sprite2D" parent="cam_main_hall/toy_chica_main_hall/Body/ArmLeftUpper/ArmLeftLower"]
+texture = ExtResource("13_y73vh")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="cam_main_hall/toy_chica_main_hall/Body"]
+position = Vector2(-0.0366632, -7.46912)
+rotation = 1.309
+texture = ExtResource("5_pcgtw")
+
+[node name="ArmRightLower" type="Sprite2D" parent="cam_main_hall/toy_chica_main_hall/Body/ArmRightUpper"]
+texture = ExtResource("6_3w2vj")
+
+[node name="Head" type="Sprite2D" parent="cam_main_hall/toy_chica_main_hall/Body"]
+position = Vector2(0.357231, 0.21947)
+rotation = -0.0872665
+texture = ExtResource("7_06fje")
+
+[node name="Hair" type="Sprite2D" parent="cam_main_hall/toy_chica_main_hall/Body/Head"]
+position = Vector2(2.42574, -0.0799895)
+rotation = -0.174533
+texture = ExtResource("8_1bj51")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_main_hall/toy_chica_main_hall/Body"]
+position = Vector2(0.536228, -0.392257)
+rotation = 0.0872665
+texture = ExtResource("9_qqxoa")
+
+[node name="LegLeftLower" type="Sprite2D" parent="cam_main_hall/toy_chica_main_hall/Body/LegLeftUpper"]
+texture = ExtResource("10_xi11v")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_main_hall/toy_chica_main_hall/Body"]
+position = Vector2(0.536228, -0.392257)
+rotation = 0.0872665
+texture = ExtResource("11_miea1")
+
+[node name="LegRightLower" type="Sprite2D" parent="cam_main_hall/toy_chica_main_hall/Body/LegRightUpper"]
+texture = ExtResource("12_q1qir")
+
+[node name="cam_parts_and_service" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("95_ebrgg")
+expand_mode = 3
+
+[node name="withered_bonnie_parts_and_service" type="Node2D" parent="cam_parts_and_service"]
+visible = false
+position = Vector2(835, 527)
+scale = Vector2(16, 16)
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie_parts_and_service"]
+position = Vector2(-0.118904, -3.8064)
+rotation = -0.785398
+texture = ExtResource("71_owr4t")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie_parts_and_service/ArmLeftUpper"]
+texture = ExtResource("72_sn03x")
+
+[node name="Head" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie_parts_and_service"]
+position = Vector2(0.625, 0.625)
+rotation = -0.0872665
+texture = ExtResource("74_bddb6")
+
+[node name="EarLeft" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie_parts_and_service/Head"]
+texture = ExtResource("75_x8iv5")
+
+[node name="EarRight" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie_parts_and_service/Head"]
+texture = ExtResource("76_lqb6y")
+
+[node name="Body" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie_parts_and_service"]
+position = Vector2(-0.306404, 0.131096)
+rotation = 0.261799
+texture = ExtResource("70_q4qe1")
+
+[node name="ArmRight" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie_parts_and_service"]
+position = Vector2(1.4436, -5.3064)
+rotation = 1.13446
+texture = ExtResource("73_467bv")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie_parts_and_service"]
+position = Vector2(6.1875, 8.5)
+rotation = 2.26893
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("77_fy6v8")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie_parts_and_service"]
+position = Vector2(-6.375, 8.6875)
+rotation = -2.0944
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("79_d05at")
+
+[node name="FootLeft" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie_parts_and_service"]
+position = Vector2(-0.1875, -7.875)
+texture = ExtResource("78_lgfas")
+
+[node name="FootRight" type="Sprite2D" parent="cam_parts_and_service/withered_bonnie_parts_and_service"]
+position = Vector2(-0.1875, -7.875)
+texture = ExtResource("80_7kwxk")
+
+[node name="withered_freddy_parts_and_service" type="Node2D" parent="cam_parts_and_service"]
+visible = false
+position = Vector2(1272, 400)
+scale = Vector2(16, 16)
+
+[node name="ArmRightUpper" type="Sprite2D" parent="cam_parts_and_service/withered_freddy_parts_and_service"]
+position = Vector2(-5.5, 8.9375)
+rotation = -0.349066
+texture = ExtResource("86_ucty2")
+
+[node name="ArmRightLower" type="Sprite2D" parent="cam_parts_and_service/withered_freddy_parts_and_service/ArmRightUpper"]
+texture = ExtResource("87_khqtc")
+
+[node name="HandRight" type="Sprite2D" parent="cam_parts_and_service/withered_freddy_parts_and_service/ArmRightUpper/ArmRightLower"]
+texture = ExtResource("88_vhohb")
+
+[node name="LegLeft" type="Sprite2D" parent="cam_parts_and_service/withered_freddy_parts_and_service"]
+position = Vector2(0, 10.5)
+rotation = -1.5708
+texture = ExtResource("89_k6eop")
+
+[node name="FootLeft" type="Sprite2D" parent="cam_parts_and_service/withered_freddy_parts_and_service/LegLeft"]
+texture = ExtResource("90_iq33x")
+
+[node name="LegRight" type="Sprite2D" parent="cam_parts_and_service/withered_freddy_parts_and_service"]
+position = Vector2(-1.875, 6.875)
+rotation = -0.872665
+texture = ExtResource("91_gwxgw")
+
+[node name="FootRight" type="Sprite2D" parent="cam_parts_and_service/withered_freddy_parts_and_service/LegRight"]
+texture = ExtResource("92_yigke")
+
+[node name="Neck" type="Sprite2D" parent="cam_parts_and_service/withered_freddy_parts_and_service"]
+position = Vector2(0.3125, 10.75)
+rotation = -1.13446
+texture = ExtResource("93_7xjf3")
+
+[node name="Body" type="Sprite2D" parent="cam_parts_and_service/withered_freddy_parts_and_service"]
+position = Vector2(-0.0249405, 10.8364)
+rotation = -1.74533
+texture = ExtResource("81_0bbmf")
+
+[node name="HeadUpper" type="Sprite2D" parent="cam_parts_and_service/withered_freddy_parts_and_service"]
+position = Vector2(-0.593811, 10.3274)
+rotation = -1.13446
+texture = ExtResource("94_w23g7")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_parts_and_service/withered_freddy_parts_and_service"]
+position = Vector2(5.0625, 15)
+texture = ExtResource("82_cshfj")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_parts_and_service/withered_freddy_parts_and_service/ArmLeftUpper"]
+texture = ExtResource("83_pkmcg")
+
+[node name="HandLeft" type="Sprite2D" parent="cam_parts_and_service/withered_freddy_parts_and_service/ArmLeftUpper/ArmLeftLower"]
+texture = ExtResource("85_qchy8")
+
+[node name="Mic" type="Sprite2D" parent="cam_parts_and_service/withered_freddy_parts_and_service/ArmLeftUpper/ArmLeftLower/HandLeft"]
+position = Vector2(-14.5, -14.5)
+rotation = -1.5708
+texture = ExtResource("84_qm0xw")
+
+[node name="withered_chica_parts_and_service" type="Node2D" parent="cam_parts_and_service"]
+visible = false
+position = Vector2(304, 400)
+scale = Vector2(16, 16)
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_parts_and_service/withered_chica_parts_and_service"]
+position = Vector2(0.75, 7.0625)
+rotation = 3.40339
+texture = ExtResource("96_5q722")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_parts_and_service/withered_chica_parts_and_service/ArmLeftUpper"]
+texture = ExtResource("97_kxau2")
+
+[node name="HandLeft" type="Sprite2D" parent="cam_parts_and_service/withered_chica_parts_and_service/ArmLeftUpper/ArmLeftLower"]
+texture = ExtResource("98_6ydl1")
+
+[node name="ArmRightLower" type="Sprite2D" parent="cam_parts_and_service/withered_chica_parts_and_service"]
+position = Vector2(2.4375, 17)
+texture = ExtResource("99_e6y5h")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="cam_parts_and_service/withered_chica_parts_and_service/ArmRightLower"]
+texture = ExtResource("100_bj2ep")
+
+[node name="HandRight" type="Sprite2D" parent="cam_parts_and_service/withered_chica_parts_and_service/ArmRightLower/ArmRightUpper"]
+texture = ExtResource("101_cyhnd")
+
+[node name="Neck" type="Sprite2D" parent="cam_parts_and_service/withered_chica_parts_and_service"]
+position = Vector2(2, 14.0699)
+rotation = 1.22173
+texture = ExtResource("102_wowg4")
+
+[node name="Head" type="Sprite2D" parent="cam_parts_and_service/withered_chica_parts_and_service/Neck"]
+position = Vector2(0.0891274, 0.0989509)
+rotation = 0.0872665
+texture = ExtResource("103_nx1ne")
+
+[node name="Hair" type="Sprite2D" parent="cam_parts_and_service/withered_chica_parts_and_service/Neck/Head"]
+texture = ExtResource("104_fgkub")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_parts_and_service/withered_chica_parts_and_service"]
+position = Vector2(2.6875, 10.4375)
+rotation = 1.309
+texture = ExtResource("105_1s4vh")
+
+[node name="LegLeftLower" type="Sprite2D" parent="cam_parts_and_service/withered_chica_parts_and_service/LegLeftUpper"]
+texture = ExtResource("106_4os81")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_parts_and_service/withered_chica_parts_and_service"]
+position = Vector2(2, 11)
+rotation = 1.5708
+texture = ExtResource("107_kpapc")
+
+[node name="LegRightLower" type="Sprite2D" parent="cam_parts_and_service/withered_chica_parts_and_service/LegRightUpper"]
+texture = ExtResource("108_3rd43")
+
+[node name="Body" type="Sprite2D" parent="cam_parts_and_service/withered_chica_parts_and_service"]
+position = Vector2(2, 11.9449)
+rotation = 1.65806
+texture = ExtResource("109_b4he2")
+
+[node name="withered_foxy_parts_and_service" type="Node2D" parent="cam_parts_and_service"]
+visible = false
+position = Vector2(600, 408)
+scale = Vector2(16, 16)
+
+[node name="Neck" type="Sprite2D" parent="cam_parts_and_service/withered_foxy_parts_and_service"]
+position = Vector2(-0.5625, -0.1875)
+rotation = 0.174533
+texture = ExtResource("110_hgr0h")
+
+[node name="Head" type="Sprite2D" parent="cam_parts_and_service/withered_foxy_parts_and_service/Neck"]
+position = Vector2(3.5625, -0.4375)
+rotation = -0.523599
+texture = ExtResource("111_k1vjl")
+
+[node name="EarLeft" type="Sprite2D" parent="cam_parts_and_service/withered_foxy_parts_and_service/Neck/Head"]
+position = Vector2(4.56458, -1.40609)
+rotation = -0.349066
+texture = ExtResource("112_mb6yf")
+
+[node name="EarRight" type="Sprite2D" parent="cam_parts_and_service/withered_foxy_parts_and_service/Neck/Head"]
+position = Vector2(-2.36094, -0.785737)
+rotation = 0.174533
+texture = ExtResource("113_n8fm7")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_parts_and_service/withered_foxy_parts_and_service"]
+position = Vector2(0.8125, -6.1875)
+rotation = -1.22173
+texture = ExtResource("114_cjwk7")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_parts_and_service/withered_foxy_parts_and_service/ArmLeftUpper"]
+texture = ExtResource("115_a0xir")
+
+[node name="HandLeft" type="Sprite2D" parent="cam_parts_and_service/withered_foxy_parts_and_service/ArmLeftUpper/ArmLeftLower"]
+texture = ExtResource("116_8r57l")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="cam_parts_and_service/withered_foxy_parts_and_service"]
+position = Vector2(1.4375, -7.4375)
+rotation = 1.39626
+texture = ExtResource("117_8o8ko")
+
+[node name="ArmRightLower" type="Sprite2D" parent="cam_parts_and_service/withered_foxy_parts_and_service/ArmRightUpper"]
+texture = ExtResource("118_m3ynq")
+
+[node name="HandRight" type="Sprite2D" parent="cam_parts_and_service/withered_foxy_parts_and_service/ArmRightUpper/ArmRightLower"]
+texture = ExtResource("119_o51xg")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_parts_and_service/withered_foxy_parts_and_service"]
+texture = ExtResource("120_na46v")
+
+[node name="LegLeftLower" type="Sprite2D" parent="cam_parts_and_service/withered_foxy_parts_and_service/LegLeftUpper"]
+texture = ExtResource("121_lv15w")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_parts_and_service/withered_foxy_parts_and_service"]
+texture = ExtResource("122_ba2u8")
+
+[node name="LegRightLower" type="Sprite2D" parent="cam_parts_and_service/withered_foxy_parts_and_service/LegRightUpper"]
+texture = ExtResource("123_dmt3j")
+
+[node name="Body" type="Sprite2D" parent="cam_parts_and_service/withered_foxy_parts_and_service"]
+rotation = 0.174533
+texture = ExtResource("124_jf2ch")
+
+[node name="cam_party_room_1" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -752.0
+offset_top = -360.0
+offset_right = 752.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("125_ij1ue")
+expand_mode = 3
+
+[node name="withered_bonnie_party_room_1" type="Node2D" parent="cam_party_room_1"]
+visible = false
+position = Vector2(608, 400)
+scale = Vector2(16, 16)
+
+[node name="Body" type="Sprite2D" parent="cam_party_room_1/withered_bonnie_party_room_1"]
+texture = ExtResource("70_q4qe1")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_party_room_1/withered_bonnie_party_room_1/Body"]
+position = Vector2(-2.9375, -5.125)
+rotation = -1.309
+texture = ExtResource("71_owr4t")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_party_room_1/withered_bonnie_party_room_1/Body/ArmLeftUpper"]
+texture = ExtResource("72_sn03x")
+
+[node name="ArmRight" type="Sprite2D" parent="cam_party_room_1/withered_bonnie_party_room_1/Body"]
+position = Vector2(3.1875, -5.9375)
+rotation = 1.309
+texture = ExtResource("73_467bv")
+
+[node name="Head" type="Sprite2D" parent="cam_party_room_1/withered_bonnie_party_room_1/Body"]
+position = Vector2(-0.75, 0.125)
+rotation = 0.261799
+texture = ExtResource("74_bddb6")
+
+[node name="EarLeft" type="Sprite2D" parent="cam_party_room_1/withered_bonnie_party_room_1/Body/Head"]
+position = Vector2(2.51187, -0.284826)
+rotation = -0.174533
+texture = ExtResource("75_x8iv5")
+
+[node name="EarRight" type="Sprite2D" parent="cam_party_room_1/withered_bonnie_party_room_1/Body/Head"]
+position = Vector2(-2.27906, -0.295195)
+rotation = 0.174533
+texture = ExtResource("76_lqb6y")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_party_room_1/withered_bonnie_party_room_1/Body"]
+texture = ExtResource("77_fy6v8")
+
+[node name="FootLeft" type="Sprite2D" parent="cam_party_room_1/withered_bonnie_party_room_1/Body/LegLeftUpper"]
+texture = ExtResource("78_lgfas")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_party_room_1/withered_bonnie_party_room_1/Body"]
+texture = ExtResource("79_d05at")
+
+[node name="FootRight" type="Sprite2D" parent="cam_party_room_1/withered_bonnie_party_room_1/Body/LegRightUpper"]
+texture = ExtResource("80_7kwxk")
+
+[node name="toy_chica_party_room_1" type="Node2D" parent="cam_party_room_1"]
+visible = false
+position = Vector2(224, 408)
+scale = Vector2(16, 16)
+
+[node name="Body" type="Sprite2D" parent="cam_party_room_1/toy_chica_party_room_1"]
+position = Vector2(1.4375, 7.375)
+rotation = -0.785398
+texture = ExtResource("2_utxq2")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_party_room_1/toy_chica_party_room_1/Body"]
+position = Vector2(1.3125, -4.625)
+rotation = -0.785398
+scale = Vector2(1, 1)
+texture = ExtResource("3_4ex0f")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_party_room_1/toy_chica_party_room_1/Body/ArmLeftUpper"]
+position = Vector2(0.309361, -6.0546)
+rotation = -0.785398
+texture = ExtResource("4_jnddl")
+
+[node name="Cupcake" type="Sprite2D" parent="cam_party_room_1/toy_chica_party_room_1/Body/ArmLeftUpper/ArmLeftLower"]
+position = Vector2(-13.2351, 7.74393)
+rotation = 1.39626
+texture = ExtResource("13_y73vh")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="cam_party_room_1/toy_chica_party_room_1/Body"]
+position = Vector2(-1.5, -4.8125)
+rotation = 0.785398
+scale = Vector2(1, 1)
+texture = ExtResource("5_pcgtw")
+
+[node name="ArmRightLower" type="Sprite2D" parent="cam_party_room_1/toy_chica_party_room_1/Body/ArmRightUpper"]
+position = Vector2(-0.39775, -6.23138)
+rotation = 0.785398
+texture = ExtResource("6_3w2vj")
+
+[node name="Head" type="Sprite2D" parent="cam_party_room_1/toy_chica_party_room_1"]
+position = Vector2(0.4375, 8.75)
+rotation = -0.523599
+texture = ExtResource("7_06fje")
+
+[node name="Hair" type="Sprite2D" parent="cam_party_room_1/toy_chica_party_room_1/Head"]
+texture = ExtResource("8_1bj51")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_party_room_1/toy_chica_party_room_1"]
+position = Vector2(-1.75, 11.75)
+rotation = -1.7017
+texture = ExtResource("9_qqxoa")
+
+[node name="LegLeftLower" type="Sprite2D" parent="cam_party_room_1/toy_chica_party_room_1/LegLeftUpper"]
+position = Vector2(0, -0.99262)
+texture = ExtResource("10_xi11v")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_party_room_1/toy_chica_party_room_1"]
+position = Vector2(-1.5, 12.125)
+rotation = -1.5708
+texture = ExtResource("11_miea1")
+
+[node name="LegRightLower" type="Sprite2D" parent="cam_party_room_1/toy_chica_party_room_1/LegRightUpper"]
+position = Vector2(0, -0.99262)
+texture = ExtResource("12_q1qir")
+
+[node name="cam_party_room_2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -752.0
+offset_top = -360.0
+offset_right = 752.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("126_kc7py")
+expand_mode = 3
+
+[node name="toy_bonnie_party_room_2" type="Node2D" parent="cam_party_room_2"]
+visible = false
+position = Vector2(1192, 400)
+scale = Vector2(16, 16)
+
+[node name="Body" type="Sprite2D" parent="cam_party_room_2/toy_bonnie_party_room_2"]
+position = Vector2(-0.0625, 10)
+rotation = 1.0472
+texture = ExtResource("14_yp5ct")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_party_room_2/toy_bonnie_party_room_2"]
+position = Vector2(2.50001, 11.5)
+rotation = 1.5708
+texture = ExtResource("16_n6htk")
+
+[node name="LegLeftLower" type="Sprite2D" parent="cam_party_room_2/toy_bonnie_party_room_2/LegLeftUpper"]
+position = Vector2(5.3125, 2.1875)
+rotation = 0.523599
+texture = ExtResource("17_k1ciw")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_party_room_2/toy_bonnie_party_room_2"]
+position = Vector2(2.50001, 11.5)
+rotation = 1.5708
+texture = ExtResource("18_bpmia")
+
+[node name="LegRightLower" type="Sprite2D" parent="cam_party_room_2/toy_bonnie_party_room_2/LegRightUpper"]
+position = Vector2(6.125, -0.8125)
+rotation = 0.523599
+texture = ExtResource("19_4lcwj")
+
+[node name="Guitar" type="Sprite2D" parent="cam_party_room_2/toy_bonnie_party_room_2"]
+position = Vector2(5.5, 2.5)
+rotation = -1.5708
+texture = ExtResource("20_tl4bm")
+
+[node name="Tie" type="Sprite2D" parent="cam_party_room_2/toy_bonnie_party_room_2"]
+position = Vector2(-0.0625, 10)
+rotation = 1.0472
+texture = ExtResource("15_fak75")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_party_room_2/toy_bonnie_party_room_2"]
+position = Vector2(-2.6875, 3.9375)
+rotation = -1.8326
+scale = Vector2(1, 1)
+texture = ExtResource("21_y5ntw")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_party_room_2/toy_bonnie_party_room_2/ArmLeftUpper"]
+position = Vector2(0.0208246, -3.94141)
+rotation = -0.523599
+texture = ExtResource("22_p0sgm")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="cam_party_room_2/toy_bonnie_party_room_2"]
+position = Vector2(-2.4375, 12.5625)
+texture = ExtResource("23_hc1uw")
+
+[node name="ArmRightLower" type="Sprite2D" parent="cam_party_room_2/toy_bonnie_party_room_2/ArmRightUpper"]
+position = Vector2(0.1875, -4.125)
+rotation = 0.523599
+texture = ExtResource("24_j4bpr")
+
+[node name="Head" type="Sprite2D" parent="cam_party_room_2/toy_bonnie_party_room_2"]
+position = Vector2(2.0625, 11.3125)
+rotation = 0.610865
+texture = ExtResource("27_mx4sn")
+
+[node name="EarLeft" type="Sprite2D" parent="cam_party_room_2/toy_bonnie_party_room_2/Head"]
+texture = ExtResource("25_82vbt")
+
+[node name="EarRight" type="Sprite2D" parent="cam_party_room_2/toy_bonnie_party_room_2/Head"]
+texture = ExtResource("26_xcg8a")
+
+[node name="withered_chica_party_room_2" type="Node2D" parent="cam_party_room_2"]
+visible = false
+position = Vector2(768, 400)
+scale = Vector2(16, 16)
+
+[node name="Neck" type="Sprite2D" parent="cam_party_room_2/withered_chica_party_room_2"]
+position = Vector2(0.722795, -0.0272045)
+rotation = -0.174533
+texture = ExtResource("102_wowg4")
+
+[node name="Body" type="Sprite2D" parent="cam_party_room_2/withered_chica_party_room_2"]
+texture = ExtResource("109_b4he2")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_party_room_2/withered_chica_party_room_2/Body"]
+texture = ExtResource("96_5q722")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_party_room_2/withered_chica_party_room_2/Body/ArmLeftUpper"]
+texture = ExtResource("97_kxau2")
+
+[node name="HandLeft" type="Sprite2D" parent="cam_party_room_2/withered_chica_party_room_2/Body/ArmLeftUpper/ArmLeftLower"]
+texture = ExtResource("98_6ydl1")
+
+[node name="ArmRightLower" type="Sprite2D" parent="cam_party_room_2/withered_chica_party_room_2/Body"]
+texture = ExtResource("99_e6y5h")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="cam_party_room_2/withered_chica_party_room_2/Body/ArmRightLower"]
+texture = ExtResource("100_bj2ep")
+
+[node name="HandRight" type="Sprite2D" parent="cam_party_room_2/withered_chica_party_room_2/Body/ArmRightLower/ArmRightUpper"]
+texture = ExtResource("101_cyhnd")
+
+[node name="Head" type="Sprite2D" parent="cam_party_room_2/withered_chica_party_room_2/Body"]
+position = Vector2(0.722795, -0.0272045)
+rotation = -0.174533
+texture = ExtResource("103_nx1ne")
+
+[node name="Hair" type="Sprite2D" parent="cam_party_room_2/withered_chica_party_room_2/Body/Head"]
+texture = ExtResource("104_fgkub")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_party_room_2/withered_chica_party_room_2/Body"]
+texture = ExtResource("105_1s4vh")
+
+[node name="LegLeftLower" type="Sprite2D" parent="cam_party_room_2/withered_chica_party_room_2/Body/LegLeftUpper"]
+texture = ExtResource("106_4os81")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_party_room_2/withered_chica_party_room_2/Body"]
+texture = ExtResource("107_kpapc")
+
+[node name="LegRightLower" type="Sprite2D" parent="cam_party_room_2/withered_chica_party_room_2/Body/LegRightUpper"]
+texture = ExtResource("108_3rd43")
+
+[node name="cam_party_room_3" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -752.0
+offset_top = -360.0
+offset_right = 752.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("127_ke4ag")
+expand_mode = 3
+
+[node name="toy_bonnie_party_room_3" type="Node2D" parent="cam_party_room_3"]
+visible = false
+position = Vector2(472, 400)
+scale = Vector2(16, 16)
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_party_room_3/toy_bonnie_party_room_3"]
+texture = ExtResource("16_n6htk")
+
+[node name="LegLeftLower" type="Sprite2D" parent="cam_party_room_3/toy_bonnie_party_room_3/LegLeftUpper"]
+texture = ExtResource("17_k1ciw")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_party_room_3/toy_bonnie_party_room_3"]
+texture = ExtResource("18_bpmia")
+
+[node name="LegRightLower" type="Sprite2D" parent="cam_party_room_3/toy_bonnie_party_room_3/LegRightUpper"]
+texture = ExtResource("19_4lcwj")
+
+[node name="Body" type="Sprite2D" parent="cam_party_room_3/toy_bonnie_party_room_3"]
+position = Vector2(-0.5625, 0.375)
+rotation = -0.0872665
+texture = ExtResource("14_yp5ct")
+
+[node name="Tie" type="Sprite2D" parent="cam_party_room_3/toy_bonnie_party_room_3/Body"]
+texture = ExtResource("15_fak75")
+
+[node name="Guitar" type="Sprite2D" parent="cam_party_room_3/toy_bonnie_party_room_3/Body"]
+position = Vector2(4.73983, 11.0803)
+rotation = 1.22173
+texture = ExtResource("20_tl4bm")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_party_room_3/toy_bonnie_party_room_3/Body"]
+position = Vector2(0.553332, -2.02197)
+rotation = -0.523599
+texture = ExtResource("21_y5ntw")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_party_room_3/toy_bonnie_party_room_3/Body/ArmLeftUpper"]
+position = Vector2(-8.45212, -9.50427)
+rotation = -1.5708
+texture = ExtResource("22_p0sgm")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="cam_party_room_3/toy_bonnie_party_room_3/Body"]
+position = Vector2(-0.361154, -3.04306)
+rotation = 0.785398
+texture = ExtResource("23_hc1uw")
+
+[node name="ArmRightLower" type="Sprite2D" parent="cam_party_room_3/toy_bonnie_party_room_3/Body/ArmRightUpper"]
+position = Vector2(13.4856, -6.58369)
+rotation = 2.3562
+texture = ExtResource("24_j4bpr")
+
+[node name="Head" type="Sprite2D" parent="cam_party_room_3/toy_bonnie_party_room_3/Body"]
+texture = ExtResource("27_mx4sn")
+
+[node name="EarLeft" type="Sprite2D" parent="cam_party_room_3/toy_bonnie_party_room_3/Body/Head"]
+texture = ExtResource("25_82vbt")
+
+[node name="EarRight" type="Sprite2D" parent="cam_party_room_3/toy_bonnie_party_room_3/Body/Head"]
+texture = ExtResource("26_xcg8a")
+
+[node name="withered_freddy_party_room_3" type="Node2D" parent="cam_party_room_3"]
+visible = false
+position = Vector2(872, 400)
+scale = Vector2(16, 16)
+
+[node name="Body" type="Sprite2D" parent="cam_party_room_3/withered_freddy_party_room_3"]
+texture = ExtResource("81_0bbmf")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_party_room_3/withered_freddy_party_room_3/Body"]
+position = Vector2(-2.6875, -7.1875)
+rotation = -1.309
+texture = ExtResource("82_cshfj")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_party_room_3/withered_freddy_party_room_3/Body/ArmLeftUpper"]
+texture = ExtResource("83_pkmcg")
+
+[node name="HandLeft" type="Sprite2D" parent="cam_party_room_3/withered_freddy_party_room_3/Body/ArmLeftUpper/ArmLeftLower"]
+texture = ExtResource("85_qchy8")
+
+[node name="Mic" type="Sprite2D" parent="cam_party_room_3/withered_freddy_party_room_3/Body/ArmLeftUpper/ArmLeftLower/HandLeft"]
+position = Vector2(-14.5, -14.5)
+rotation = -1.5708
+texture = ExtResource("84_qm0xw")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="cam_party_room_3/withered_freddy_party_room_3/Body"]
+position = Vector2(2.125, -7.1875)
+rotation = 1.309
+texture = ExtResource("86_ucty2")
+
+[node name="ArmRightLower" type="Sprite2D" parent="cam_party_room_3/withered_freddy_party_room_3/Body/ArmRightUpper"]
+texture = ExtResource("87_khqtc")
+
+[node name="HandRight" type="Sprite2D" parent="cam_party_room_3/withered_freddy_party_room_3/Body/ArmRightUpper/ArmRightLower"]
+texture = ExtResource("88_vhohb")
+
+[node name="LegLeft" type="Sprite2D" parent="cam_party_room_3/withered_freddy_party_room_3/Body"]
+texture = ExtResource("89_k6eop")
+
+[node name="FootLeft" type="Sprite2D" parent="cam_party_room_3/withered_freddy_party_room_3/Body/LegLeft"]
+texture = ExtResource("90_iq33x")
+
+[node name="LegRight" type="Sprite2D" parent="cam_party_room_3/withered_freddy_party_room_3/Body"]
+texture = ExtResource("91_gwxgw")
+
+[node name="FootRight" type="Sprite2D" parent="cam_party_room_3/withered_freddy_party_room_3/Body/LegRight"]
+texture = ExtResource("92_yigke")
+
+[node name="Neck" type="Sprite2D" parent="cam_party_room_3/withered_freddy_party_room_3/Body"]
+position = Vector2(1.6875, 0.625)
+rotation = -0.349066
+texture = ExtResource("93_7xjf3")
+
+[node name="HeadUpper" type="Sprite2D" parent="cam_party_room_3/withered_freddy_party_room_3/Body/Neck"]
+position = Vector2(0, -1)
+texture = ExtResource("94_w23g7")
+
+[node name="cam_party_room_4" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("128_4oe6y")
+expand_mode = 3
+
+[node name="toy_bonnie_party_room_4" type="Node2D" parent="cam_party_room_4"]
+visible = false
+position = Vector2(1224, 400)
+scale = Vector2(16, 16)
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_party_room_4/toy_bonnie_party_room_4"]
+texture = ExtResource("16_n6htk")
+
+[node name="LegLeftLower" type="Sprite2D" parent="cam_party_room_4/toy_bonnie_party_room_4/LegLeftUpper"]
+texture = ExtResource("17_k1ciw")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_party_room_4/toy_bonnie_party_room_4"]
+texture = ExtResource("18_bpmia")
+
+[node name="LegRightLower" type="Sprite2D" parent="cam_party_room_4/toy_bonnie_party_room_4/LegRightUpper"]
+texture = ExtResource("19_4lcwj")
+
+[node name="Body" type="Sprite2D" parent="cam_party_room_4/toy_bonnie_party_room_4"]
+texture = ExtResource("14_yp5ct")
+
+[node name="Tie" type="Sprite2D" parent="cam_party_room_4/toy_bonnie_party_room_4/Body"]
+texture = ExtResource("15_fak75")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_party_room_4/toy_bonnie_party_room_4/Body"]
+position = Vector2(-3.0625, -5.5)
+rotation = -1.309
+texture = ExtResource("21_y5ntw")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_party_room_4/toy_bonnie_party_room_4/Body/ArmLeftUpper"]
+texture = ExtResource("22_p0sgm")
+
+[node name="Guitar" type="Sprite2D" parent="cam_party_room_4/toy_bonnie_party_room_4/Body/ArmLeftUpper/ArmLeftLower"]
+position = Vector2(-2.47, -1.73224)
+rotation = -0.523599
+texture = ExtResource("20_tl4bm")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="cam_party_room_4/toy_bonnie_party_room_4/Body"]
+position = Vector2(2.875, -5.5)
+rotation = 1.309
+texture = ExtResource("23_hc1uw")
+
+[node name="ArmRightLower" type="Sprite2D" parent="cam_party_room_4/toy_bonnie_party_room_4/Body/ArmRightUpper"]
+texture = ExtResource("24_j4bpr")
+
+[node name="Head" type="Sprite2D" parent="cam_party_room_4/toy_bonnie_party_room_4/Body"]
+texture = ExtResource("27_mx4sn")
+
+[node name="EarLeft" type="Sprite2D" parent="cam_party_room_4/toy_bonnie_party_room_4/Body/Head"]
+texture = ExtResource("25_82vbt")
+
+[node name="EarRight" type="Sprite2D" parent="cam_party_room_4/toy_bonnie_party_room_4/Body/Head"]
+texture = ExtResource("26_xcg8a")
+
+[node name="withered_chica_party_room_4" type="Node2D" parent="cam_party_room_4"]
+visible = false
+position = Vector2(776, 400)
+scale = Vector2(16, 16)
+
+[node name="Neck" type="Sprite2D" parent="cam_party_room_4/withered_chica_party_room_4"]
+position = Vector2(0.847797, -0.0897045)
+rotation = -0.174533
+texture = ExtResource("102_wowg4")
+
+[node name="Body" type="Sprite2D" parent="cam_party_room_4/withered_chica_party_room_4"]
+texture = ExtResource("109_b4he2")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_party_room_4/withered_chica_party_room_4/Body"]
+texture = ExtResource("96_5q722")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_party_room_4/withered_chica_party_room_4/Body/ArmLeftUpper"]
+texture = ExtResource("97_kxau2")
+
+[node name="HandLeft" type="Sprite2D" parent="cam_party_room_4/withered_chica_party_room_4/Body/ArmLeftUpper/ArmLeftLower"]
+texture = ExtResource("98_6ydl1")
+
+[node name="ArmRightLower" type="Sprite2D" parent="cam_party_room_4/withered_chica_party_room_4/Body"]
+texture = ExtResource("99_e6y5h")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="cam_party_room_4/withered_chica_party_room_4/Body/ArmRightLower"]
+texture = ExtResource("100_bj2ep")
+
+[node name="HandRight" type="Sprite2D" parent="cam_party_room_4/withered_chica_party_room_4/Body/ArmRightLower/ArmRightUpper"]
+texture = ExtResource("101_cyhnd")
+
+[node name="Head" type="Sprite2D" parent="cam_party_room_4/withered_chica_party_room_4/Body"]
+position = Vector2(0.847797, -0.0897045)
+rotation = -0.174533
+texture = ExtResource("103_nx1ne")
+
+[node name="Hair" type="Sprite2D" parent="cam_party_room_4/withered_chica_party_room_4/Body/Head"]
+texture = ExtResource("104_fgkub")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_party_room_4/withered_chica_party_room_4/Body"]
+texture = ExtResource("105_1s4vh")
+
+[node name="LegLeftLower" type="Sprite2D" parent="cam_party_room_4/withered_chica_party_room_4/Body/LegLeftUpper"]
+texture = ExtResource("106_4os81")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_party_room_4/withered_chica_party_room_4/Body"]
+texture = ExtResource("107_kpapc")
+
+[node name="LegRightLower" type="Sprite2D" parent="cam_party_room_4/withered_chica_party_room_4/Body/LegRightUpper"]
+texture = ExtResource("108_3rd43")
+
+[node name="toy_chica_party_room_4" type="Node2D" parent="cam_party_room_4"]
+visible = false
+position = Vector2(328, 408)
+scale = Vector2(16, 16)
+
+[node name="Body" type="Sprite2D" parent="cam_party_room_4/toy_chica_party_room_4"]
+position = Vector2(-0.4375, 0.4375)
+rotation = -0.0872665
+texture = ExtResource("2_utxq2")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_party_room_4/toy_chica_party_room_4/Body"]
+position = Vector2(-0.670179, -7.39907)
+rotation = -1.309
+texture = ExtResource("3_4ex0f")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_party_room_4/toy_chica_party_room_4/Body/ArmLeftUpper"]
+texture = ExtResource("4_jnddl")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="cam_party_room_4/toy_chica_party_room_4/Body"]
+position = Vector2(-2.17531, -2.38617)
+rotation = 0.523599
+texture = ExtResource("5_pcgtw")
+
+[node name="ArmRightLower" type="Sprite2D" parent="cam_party_room_4/toy_chica_party_room_4/Body/ArmRightUpper"]
+position = Vector2(5.0253, -11.9979)
+rotation = 1.5708
+texture = ExtResource("6_3w2vj")
+
+[node name="Cupcake" type="Sprite2D" parent="cam_party_room_4/toy_chica_party_room_4/Body/ArmRightUpper/ArmRightLower"]
+position = Vector2(12.1357, -14.3481)
+rotation = -2.18166
+texture = ExtResource("13_y73vh")
+
+[node name="Head" type="Sprite2D" parent="cam_party_room_4/toy_chica_party_room_4/Body"]
+position = Vector2(-2.83682, -0.561883)
+rotation = 0.523599
+texture = ExtResource("7_06fje")
+
+[node name="Hair" type="Sprite2D" parent="cam_party_room_4/toy_chica_party_room_4/Body/Head"]
+texture = ExtResource("8_1bj51")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_party_room_4/toy_chica_party_room_4"]
+texture = ExtResource("9_qqxoa")
+
+[node name="LegLeftLower" type="Sprite2D" parent="cam_party_room_4/toy_chica_party_room_4/LegLeftUpper"]
+texture = ExtResource("10_xi11v")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_party_room_4/toy_chica_party_room_4"]
+texture = ExtResource("11_miea1")
+
+[node name="LegRightLower" type="Sprite2D" parent="cam_party_room_4/toy_chica_party_room_4/LegRightUpper"]
+texture = ExtResource("12_q1qir")
+
+[node name="cam_vent_left" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("129_u864n")
+expand_mode = 3
+
+[node name="toy_chica_vent_left" type="Node2D" parent="cam_vent_left"]
+visible = false
+position = Vector2(1272, 408)
+scale = Vector2(16, 16)
+
+[node name="Body" type="Sprite2D" parent="cam_vent_left/toy_chica_vent_left"]
+position = Vector2(-7, 11)
+rotation = 1.5708
+texture = ExtResource("2_utxq2")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_vent_left/toy_chica_vent_left/Body"]
+position = Vector2(-6, 0)
+rotation = 1.5708
+texture = ExtResource("3_4ex0f")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_vent_left/toy_chica_vent_left/Body/ArmLeftUpper"]
+texture = ExtResource("4_jnddl")
+
+[node name="Head" type="Sprite2D" parent="cam_vent_left/toy_chica_vent_left/Body"]
+texture = ExtResource("7_06fje")
+
+[node name="Hair" type="Sprite2D" parent="cam_vent_left/toy_chica_vent_left/Body/Head"]
+texture = ExtResource("8_1bj51")
+
+[node name="Cupcake" type="Sprite2D" parent="cam_vent_left/toy_chica_vent_left/Body"]
+position = Vector2(8.99998, -29)
+rotation = -1.5708
+texture = ExtResource("13_y73vh")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="cam_vent_left/toy_chica_vent_left/Body"]
+position = Vector2(6, -7.62939e-06)
+rotation = -1.5708
+texture = ExtResource("5_pcgtw")
+
+[node name="ArmRightLower" type="Sprite2D" parent="cam_vent_left/toy_chica_vent_left/Body/ArmRightUpper"]
+texture = ExtResource("6_3w2vj")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_vent_left/toy_chica_vent_left/Body"]
+position = Vector2(-1.5625, -0.999999)
+rotation = -0.261799
+texture = ExtResource("9_qqxoa")
+
+[node name="LegLeftLower" type="Sprite2D" parent="cam_vent_left/toy_chica_vent_left/Body/LegLeftUpper"]
+texture = ExtResource("10_xi11v")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_vent_left/toy_chica_vent_left/Body"]
+position = Vector2(1.5625, -1.25)
+rotation = 0.261799
+texture = ExtResource("11_miea1")
+
+[node name="LegRightLower" type="Sprite2D" parent="cam_vent_left/toy_chica_vent_left/Body/LegRightUpper"]
+texture = ExtResource("12_q1qir")
+
+[node name="balloon_boy_vent_left" type="Node2D" parent="cam_vent_left"]
+visible = false
+position = Vector2(684, 584)
+rotation = 1.5708
+scale = Vector2(16, 16)
+
+[node name="BalloonBoy" type="Sprite2D" parent="cam_vent_left/balloon_boy_vent_left"]
+position = Vector2(-3.19879e-06, -5)
+texture = ExtResource("43_eg18m")
+
+[node name="withered_bonnie_vent_left" type="Node2D" parent="cam_vent_left"]
+visible = false
+position = Vector2(256, 576)
+rotation = 1.5708
+scale = Vector2(16, 16)
+
+[node name="Body" type="Sprite2D" parent="cam_vent_left/withered_bonnie_vent_left"]
+texture = ExtResource("70_q4qe1")
+
+[node name="ArmRight" type="Sprite2D" parent="cam_vent_left/withered_bonnie_vent_left/Body"]
+position = Vector2(4, 3)
+rotation = -1.5708
+texture = ExtResource("73_467bv")
+
+[node name="Head" type="Sprite2D" parent="cam_vent_left/withered_bonnie_vent_left/Body"]
+texture = ExtResource("74_bddb6")
+
+[node name="EarLeft" type="Sprite2D" parent="cam_vent_left/withered_bonnie_vent_left/Body/Head"]
+texture = ExtResource("75_x8iv5")
+
+[node name="EarRight" type="Sprite2D" parent="cam_vent_left/withered_bonnie_vent_left/Body/Head"]
+texture = ExtResource("76_lqb6y")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_vent_left/withered_bonnie_vent_left/Body"]
+position = Vector2(-3, 2)
+rotation = 2.0944
+texture = ExtResource("71_owr4t")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_vent_left/withered_bonnie_vent_left/Body/ArmLeftUpper"]
+texture = ExtResource("72_sn03x")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_vent_left/withered_bonnie_vent_left/Body"]
+position = Vector2(-0.5, -0.25)
+rotation = -0.0872665
+texture = ExtResource("77_fy6v8")
+
+[node name="FootLeft" type="Sprite2D" parent="cam_vent_left/withered_bonnie_vent_left/Body/LegLeftUpper"]
+position = Vector2(-3.10221, -0.396884)
+rotation = -0.261799
+texture = ExtResource("78_lgfas")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_vent_left/withered_bonnie_vent_left/Body"]
+position = Vector2(0.4375, -0.3125)
+rotation = 0.0872665
+texture = ExtResource("79_d05at")
+
+[node name="FootRight" type="Sprite2D" parent="cam_vent_left/withered_bonnie_vent_left/Body/LegRightUpper"]
+position = Vector2(2.88819, -0.691857)
+rotation = 0.261799
+texture = ExtResource("80_7kwxk")
+
+[node name="cam_vent_right" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("130_606w6")
+expand_mode = 3
+
+[node name="toy_bonnie_vent_right" type="Node2D" parent="cam_vent_right"]
+visible = false
+position = Vector2(257, 584)
+rotation = -1.5708
+scale = Vector2(16, 16)
+
+[node name="Body" type="Sprite2D" parent="cam_vent_right/toy_bonnie_vent_right"]
+texture = ExtResource("14_yp5ct")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_vent_right/toy_bonnie_vent_right/Body"]
+position = Vector2(-1.125, -0.500001)
+rotation = -0.174533
+scale = Vector2(1, 1)
+texture = ExtResource("16_n6htk")
+
+[node name="LegLeftLower" type="Sprite2D" parent="cam_vent_right/toy_bonnie_vent_right/Body/LegLeftUpper"]
+texture = ExtResource("17_k1ciw")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_vent_right/toy_bonnie_vent_right/Body"]
+position = Vector2(1.125, -0.5)
+rotation = 0.174533
+scale = Vector2(1, 1)
+texture = ExtResource("18_bpmia")
+
+[node name="LegRightLower" type="Sprite2D" parent="cam_vent_right/toy_bonnie_vent_right/Body/LegRightUpper"]
+texture = ExtResource("19_4lcwj")
+
+[node name="Guitar" type="Sprite2D" parent="cam_vent_right/toy_bonnie_vent_right/Body"]
+position = Vector2(8.06249, 11.9375)
+rotation = -0.15708
+texture = ExtResource("20_tl4bm")
+
+[node name="Tie" type="Sprite2D" parent="cam_vent_right/toy_bonnie_vent_right/Body"]
+texture = ExtResource("15_fak75")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="cam_vent_right/toy_bonnie_vent_right/Body"]
+position = Vector2(3.5, 3.5)
+rotation = -1.5708
+texture = ExtResource("23_hc1uw")
+
+[node name="ArmRightLower" type="Sprite2D" parent="cam_vent_right/toy_bonnie_vent_right/Body/ArmRightUpper"]
+texture = ExtResource("24_j4bpr")
+
+[node name="Head" type="Sprite2D" parent="cam_vent_right/toy_bonnie_vent_right/Body"]
+texture = ExtResource("27_mx4sn")
+
+[node name="EarLeft" type="Sprite2D" parent="cam_vent_right/toy_bonnie_vent_right/Body/Head"]
+texture = ExtResource("25_82vbt")
+
+[node name="EarRight" type="Sprite2D" parent="cam_vent_right/toy_bonnie_vent_right/Body/Head"]
+texture = ExtResource("26_xcg8a")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_vent_right/toy_bonnie_vent_right/Body"]
+position = Vector2(-2.5, -5.5)
+rotation = 4.71239
+texture = ExtResource("21_y5ntw")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_vent_right/toy_bonnie_vent_right/Body/ArmLeftUpper"]
+position = Vector2(0.317519, -1.47795)
+rotation = -0.174533
+texture = ExtResource("22_p0sgm")
+
+[node name="withered_chica_vent_right" type="Node2D" parent="cam_vent_right"]
+visible = false
+position = Vector2(799, 576)
+rotation = -1.5708
+scale = Vector2(16, 16)
+
+[node name="Neck" type="Sprite2D" parent="cam_vent_right/withered_chica_vent_right"]
+texture = ExtResource("102_wowg4")
+
+[node name="Body" type="Sprite2D" parent="cam_vent_right/withered_chica_vent_right"]
+texture = ExtResource("109_b4he2")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="cam_vent_right/withered_chica_vent_right/Body"]
+position = Vector2(-6, 4)
+rotation = -4.71239
+texture = ExtResource("96_5q722")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="cam_vent_right/withered_chica_vent_right/Body/ArmLeftUpper"]
+position = Vector2(-0.500005, 2.0625)
+rotation = 0.261799
+texture = ExtResource("97_kxau2")
+
+[node name="HandLeft" type="Sprite2D" parent="cam_vent_right/withered_chica_vent_right/Body/ArmLeftUpper/ArmLeftLower"]
+texture = ExtResource("98_6ydl1")
+
+[node name="Head" type="Sprite2D" parent="cam_vent_right/withered_chica_vent_right/Body"]
+texture = ExtResource("103_nx1ne")
+
+[node name="Hair" type="Sprite2D" parent="cam_vent_right/withered_chica_vent_right/Body/Head"]
+texture = ExtResource("104_fgkub")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="cam_vent_right/withered_chica_vent_right/Body/Head"]
+position = Vector2(5, 3)
+rotation = -1.5708
+texture = ExtResource("100_bj2ep")
+
+[node name="ArmRightLower" type="Sprite2D" parent="cam_vent_right/withered_chica_vent_right/Body/Head/ArmRightUpper"]
+position = Vector2(0.749998, 1.75)
+rotation = -0.261799
+texture = ExtResource("99_e6y5h")
+
+[node name="HandRight" type="Sprite2D" parent="cam_vent_right/withered_chica_vent_right/Body/Head/ArmRightUpper/ArmRightLower"]
+position = Vector2(0, 1.90735e-06)
+texture = ExtResource("101_cyhnd")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_vent_right/withered_chica_vent_right/Body"]
+position = Vector2(-0.4375, -0.3125)
+rotation = -0.0872665
+texture = ExtResource("105_1s4vh")
+
+[node name="LegLeftLower" type="Sprite2D" parent="cam_vent_right/withered_chica_vent_right/Body/LegLeftUpper"]
+position = Vector2(-1.62661, -0.769698)
+rotation = -0.174533
+texture = ExtResource("106_4os81")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_vent_right/withered_chica_vent_right/Body"]
+position = Vector2(0.375, -0.25)
+rotation = 0.0872665
+texture = ExtResource("107_kpapc")
+
+[node name="LegRightLower" type="Sprite2D" parent="cam_vent_right/withered_chica_vent_right/Body/LegRightUpper"]
+position = Vector2(1.58069, -0.577462)
+rotation = 0.174533
+texture = ExtResource("108_3rd43")
+
+[node name="mangle_vent_right" type="Node2D" parent="cam_vent_right"]
+visible = false
+position = Vector2(1232, 744)
+rotation = -1.5708
+scale = Vector2(16, 16)
+
+[node name="BuddyConnector" type="Sprite2D" parent="cam_vent_right/mangle_vent_right"]
+position = Vector2(14.9375, 12.4375)
+rotation = 0.872665
+texture = ExtResource("66_vqqpq")
+
+[node name="BuddyNeck" type="Sprite2D" parent="cam_vent_right/mangle_vent_right/BuddyConnector"]
+texture = ExtResource("67_n04ey")
+
+[node name="Buddy" type="Sprite2D" parent="cam_vent_right/mangle_vent_right/BuddyConnector/BuddyNeck"]
+texture = ExtResource("68_gdrct")
+
+[node name="NeckConnector" type="Sprite2D" parent="cam_vent_right/mangle_vent_right"]
+position = Vector2(10.5, 3.50001)
+rotation = -1.5708
+texture = ExtResource("46_0jbc3")
+
+[node name="Neck" type="Sprite2D" parent="cam_vent_right/mangle_vent_right/NeckConnector"]
+texture = ExtResource("47_3n5a1")
+
+[node name="Head" type="Sprite2D" parent="cam_vent_right/mangle_vent_right"]
+texture = ExtResource("48_snha5")
+
+[node name="EarLeft" type="Sprite2D" parent="cam_vent_right/mangle_vent_right/Head"]
+texture = ExtResource("49_voavk")
+
+[node name="EarRight" type="Sprite2D" parent="cam_vent_right/mangle_vent_right/Head"]
+texture = ExtResource("50_ikdoq")
+
+[node name="ConnectorMain" type="Sprite2D" parent="cam_vent_right/mangle_vent_right"]
+position = Vector2(13.25, 2.12501)
+rotation = -1.74533
+scale = Vector2(1, 1)
+texture = ExtResource("45_g8bsq")
+
+[node name="HandTop" type="Sprite2D" parent="cam_vent_right/mangle_vent_right/ConnectorMain"]
+texture = ExtResource("65_02vl1")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="cam_vent_right/mangle_vent_right"]
+position = Vector2(20.5, 10.5)
+rotation = 1.5708
+texture = ExtResource("55_qav0e")
+
+[node name="LegLeftLower" type="Sprite2D" parent="cam_vent_right/mangle_vent_right/LegLeftUpper"]
+texture = ExtResource("56_k05ye")
+
+[node name="LegMiddleUpper" type="Sprite2D" parent="cam_vent_right/mangle_vent_right"]
+position = Vector2(20.5, 10.5)
+rotation = 1.5708
+texture = ExtResource("57_uawws")
+
+[node name="LegMiddleLower" type="Sprite2D" parent="cam_vent_right/mangle_vent_right/LegMiddleUpper"]
+texture = ExtResource("58_0kjlw")
+
+[node name="HandUpperConnectorUpper" type="Sprite2D" parent="cam_vent_right/mangle_vent_right"]
+position = Vector2(19.4375, 5.68752)
+rotation = 1.48353
+texture = ExtResource("52_303nk")
+
+[node name="HandLowerConnectorUpper" type="Sprite2D" parent="cam_vent_right/mangle_vent_right/HandUpperConnectorUpper"]
+position = Vector2(-16.634, 2.39263)
+rotation = -2.18166
+texture = ExtResource("53_lm4yc")
+
+[node name="HandLower" type="Sprite2D" parent="cam_vent_right/mangle_vent_right/HandUpperConnectorUpper/HandLowerConnectorUpper"]
+texture = ExtResource("54_i2n16")
+
+[node name="LegRightUpper" type="Sprite2D" parent="cam_vent_right/mangle_vent_right"]
+position = Vector2(20.5, 10.5)
+rotation = 1.5708
+texture = ExtResource("59_lhhd8")
+
+[node name="LegRightLower" type="Sprite2D" parent="cam_vent_right/mangle_vent_right/LegRightUpper"]
+texture = ExtResource("60_jj61s")
+
+[node name="Tail1" type="Sprite2D" parent="cam_vent_right/mangle_vent_right"]
+position = Vector2(18.5, 9.50001)
+rotation = 1.5708
+texture = ExtResource("61_g8jht")
+
+[node name="Tail2" type="Sprite2D" parent="cam_vent_right/mangle_vent_right/Tail1"]
+position = Vector2(4.5625, -1)
+rotation = 0.785398
+texture = ExtResource("62_euo16")
+
+[node name="Tail3" type="Sprite2D" parent="cam_vent_right/mangle_vent_right/Tail1/Tail2"]
+position = Vector2(5.74524, -3.8007)
+rotation = 0.785398
+texture = ExtResource("63_k1fwd")
+
+[node name="Tail4" type="Sprite2D" parent="cam_vent_right/mangle_vent_right/Tail1/Tail2/Tail3"]
+position = Vector2(6.875, -6.68751)
+rotation = 0.785398
+texture = ExtResource("64_n7xon")
+
+[node name="BodyConnector" type="Sprite2D" parent="cam_vent_right/mangle_vent_right"]
+position = Vector2(15.25, 2.50001)
+rotation = 0.174533
+texture = ExtResource("51_ti4og")

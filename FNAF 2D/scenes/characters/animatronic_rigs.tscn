@@ -148,46 +148,46 @@
 
 [node name="animatronic_rigs" type="Node2D"]
 
-[node name="puppet_sprite" type="Node2D" parent="."]
+[node name="puppet" type="Node2D" parent="."]
 
-[node name="Body" type="Sprite2D" parent="puppet_sprite"]
+[node name="Body" type="Sprite2D" parent="puppet"]
 texture = ExtResource("1_8kgfi")
 
-[node name="ArmLeftUpper" type="Sprite2D" parent="puppet_sprite/Body"]
+[node name="ArmLeftUpper" type="Sprite2D" parent="puppet/Body"]
 position = Vector2(0, 1.49012e-08)
 texture = ExtResource("2_o36yp")
 
-[node name="ArmLeftLower" type="Sprite2D" parent="puppet_sprite/Body/ArmLeftUpper"]
+[node name="ArmLeftLower" type="Sprite2D" parent="puppet/Body/ArmLeftUpper"]
 texture = ExtResource("3_myvqp")
 
-[node name="HandLeft" type="Sprite2D" parent="puppet_sprite/Body/ArmLeftUpper/ArmLeftLower"]
+[node name="HandLeft" type="Sprite2D" parent="puppet/Body/ArmLeftUpper/ArmLeftLower"]
 texture = ExtResource("4_lt1wu")
 
-[node name="ArmRightUpper" type="Sprite2D" parent="puppet_sprite/Body"]
+[node name="ArmRightUpper" type="Sprite2D" parent="puppet/Body"]
 texture = ExtResource("5_mi4uu")
 
-[node name="ArmRightLower" type="Sprite2D" parent="puppet_sprite/Body/ArmRightUpper"]
+[node name="ArmRightLower" type="Sprite2D" parent="puppet/Body/ArmRightUpper"]
 texture = ExtResource("6_sgvkx")
 
-[node name="HandRight" type="Sprite2D" parent="puppet_sprite/Body/ArmRightUpper/ArmRightLower"]
+[node name="HandRight" type="Sprite2D" parent="puppet/Body/ArmRightUpper/ArmRightLower"]
 texture = ExtResource("7_ic3dy")
 
-[node name="LegLeftUpper" type="Sprite2D" parent="puppet_sprite/Body"]
+[node name="LegLeftUpper" type="Sprite2D" parent="puppet/Body"]
 texture = ExtResource("8_tnhcf")
 
-[node name="LegLeftLower" type="Sprite2D" parent="puppet_sprite/Body/LegLeftUpper"]
+[node name="LegLeftLower" type="Sprite2D" parent="puppet/Body/LegLeftUpper"]
 texture = ExtResource("9_jxcyb")
 
-[node name="LegRightUpper" type="Sprite2D" parent="puppet_sprite/Body"]
+[node name="LegRightUpper" type="Sprite2D" parent="puppet/Body"]
 texture = ExtResource("10_m62yn")
 
-[node name="LegRightLower" type="Sprite2D" parent="puppet_sprite/Body/LegRightUpper"]
+[node name="LegRightLower" type="Sprite2D" parent="puppet/Body/LegRightUpper"]
 texture = ExtResource("11_wxtay")
 
-[node name="Neck" type="Sprite2D" parent="puppet_sprite/Body"]
+[node name="Neck" type="Sprite2D" parent="puppet/Body"]
 texture = ExtResource("12_ybf1o")
 
-[node name="Head" type="Sprite2D" parent="puppet_sprite/Body/Neck"]
+[node name="Head" type="Sprite2D" parent="puppet/Body/Neck"]
 texture = ExtResource("13_e3pop")
 
 [node name="toy_freddy" type="Node2D" parent="."]
@@ -241,20 +241,23 @@ position = Vector2(64, 0)
 [node name="Body" type="Sprite2D" parent="toy_bonnie"]
 texture = ExtResource("28_sa68m")
 
+[node name="Tie" type="Sprite2D" parent="toy_bonnie/Body"]
+texture = ExtResource("41_em4hj")
+
 [node name="ArmLeftUpper" type="Sprite2D" parent="toy_bonnie/Body"]
 texture = ExtResource("30_sif72")
 
 [node name="ArmLeftLower" type="Sprite2D" parent="toy_bonnie/Body/ArmLeftUpper"]
 texture = ExtResource("29_vruy3")
 
+[node name="Guitar" type="Sprite2D" parent="toy_bonnie/Body/ArmLeftUpper/ArmLeftLower"]
+texture = ExtResource("35_7cg6i")
+
 [node name="ArmRightUpper" type="Sprite2D" parent="toy_bonnie/Body"]
 texture = ExtResource("32_jwsbu")
 
 [node name="ArmRightLower" type="Sprite2D" parent="toy_bonnie/Body/ArmRightUpper"]
 texture = ExtResource("31_a7wnq")
-
-[node name="Guitar" type="Sprite2D" parent="toy_bonnie/Body"]
-texture = ExtResource("35_7cg6i")
 
 [node name="Head" type="Sprite2D" parent="toy_bonnie/Body"]
 texture = ExtResource("36_kb3ms")
@@ -265,21 +268,17 @@ texture = ExtResource("33_5p52e")
 [node name="EarRight" type="Sprite2D" parent="toy_bonnie/Body/Head"]
 texture = ExtResource("34_61m42")
 
-[node name="LegLeftLower" type="Sprite2D" parent="toy_bonnie/Body"]
-texture = ExtResource("37_qatji")
-
 [node name="LegLeftUpper" type="Sprite2D" parent="toy_bonnie/Body"]
-position = Vector2(-3, 0)
 texture = ExtResource("38_xcv2i")
 
-[node name="LegRightLower" type="Sprite2D" parent="toy_bonnie/Body"]
-texture = ExtResource("39_vgf4d")
+[node name="LegLeftLower" type="Sprite2D" parent="toy_bonnie/Body/LegLeftUpper"]
+texture = ExtResource("37_qatji")
 
 [node name="LegRightUpper" type="Sprite2D" parent="toy_bonnie/Body"]
 texture = ExtResource("40_w12xa")
 
-[node name="Tie" type="Sprite2D" parent="toy_bonnie/Body"]
-texture = ExtResource("41_em4hj")
+[node name="LegRightLower" type="Sprite2D" parent="toy_bonnie/Body/LegRightUpper"]
+texture = ExtResource("39_vgf4d")
 
 [node name="toy_chica" type="Node2D" parent="."]
 position = Vector2(96, 0)
@@ -287,38 +286,38 @@ position = Vector2(96, 0)
 [node name="Body" type="Sprite2D" parent="toy_chica"]
 texture = ExtResource("42_j0k1t")
 
-[node name="ArmLeftLower" type="Sprite2D" parent="toy_chica/Body"]
-texture = ExtResource("43_jyxcx")
-
 [node name="ArmLeftUpper" type="Sprite2D" parent="toy_chica/Body"]
 texture = ExtResource("44_saaly")
 
-[node name="ArmRightLower" type="Sprite2D" parent="toy_chica/Body"]
-texture = ExtResource("45_o10xs")
+[node name="ArmLeftLower" type="Sprite2D" parent="toy_chica/Body/ArmLeftUpper"]
+texture = ExtResource("43_jyxcx")
+
+[node name="Cupcake" type="Sprite2D" parent="toy_chica/Body/ArmLeftUpper/ArmLeftLower"]
+texture = ExtResource("47_i4xmr")
 
 [node name="ArmRightUpper" type="Sprite2D" parent="toy_chica/Body"]
 texture = ExtResource("46_gk0vv")
 
-[node name="Cupcake" type="Sprite2D" parent="toy_chica/Body"]
-texture = ExtResource("47_i4xmr")
-
-[node name="Hair" type="Sprite2D" parent="toy_chica/Body"]
-texture = ExtResource("48_trlbg")
+[node name="ArmRightLower" type="Sprite2D" parent="toy_chica/Body/ArmRightUpper"]
+texture = ExtResource("45_o10xs")
 
 [node name="Head" type="Sprite2D" parent="toy_chica/Body"]
 texture = ExtResource("49_4dir2")
 
-[node name="LegLeftLower" type="Sprite2D" parent="toy_chica/Body"]
-texture = ExtResource("50_r21nr")
+[node name="Hair" type="Sprite2D" parent="toy_chica/Body/Head"]
+texture = ExtResource("48_trlbg")
 
 [node name="LegLeftUpper" type="Sprite2D" parent="toy_chica/Body"]
 texture = ExtResource("51_843ys")
 
-[node name="LegRightLower" type="Sprite2D" parent="toy_chica/Body"]
-texture = ExtResource("52_eo2yy")
+[node name="LegLeftLower" type="Sprite2D" parent="toy_chica/Body/LegLeftUpper"]
+texture = ExtResource("50_r21nr")
 
 [node name="LegRightUpper" type="Sprite2D" parent="toy_chica/Body"]
 texture = ExtResource("53_mqajd")
+
+[node name="LegRightLower" type="Sprite2D" parent="toy_chica/Body/LegRightUpper"]
+texture = ExtResource("52_eo2yy")
 
 [node name="mangle" type="Node2D" parent="."]
 position = Vector2(128, 0)
@@ -326,73 +325,73 @@ position = Vector2(128, 0)
 [node name="BodyConnector" type="Sprite2D" parent="mangle"]
 texture = ExtResource("54_s748l")
 
-[node name="Buddy" type="Sprite2D" parent="mangle/BodyConnector"]
-texture = ExtResource("55_c7ksr")
-
-[node name="BuddyConnector" type="Sprite2D" parent="mangle/BodyConnector"]
-texture = ExtResource("56_osmov")
-
-[node name="BuddyNeck" type="Sprite2D" parent="mangle/BodyConnector"]
-texture = ExtResource("57_sm76c")
-
 [node name="ConnectorMain" type="Sprite2D" parent="mangle/BodyConnector"]
 texture = ExtResource("58_og0l0")
 
-[node name="EarLeft" type="Sprite2D" parent="mangle/BodyConnector"]
+[node name="HandTop" type="Sprite2D" parent="mangle/BodyConnector/ConnectorMain"]
+texture = ExtResource("63_2mswp")
+
+[node name="NeckConnector" type="Sprite2D" parent="mangle/BodyConnector/ConnectorMain"]
+texture = ExtResource("73_83gou")
+
+[node name="Neck" type="Sprite2D" parent="mangle/BodyConnector/ConnectorMain/NeckConnector"]
+texture = ExtResource("72_noeo5")
+
+[node name="Head" type="Sprite2D" parent="mangle/BodyConnector/ConnectorMain/NeckConnector/Neck"]
+texture = ExtResource("65_6poq8")
+
+[node name="EarLeft" type="Sprite2D" parent="mangle/BodyConnector/ConnectorMain/NeckConnector/Neck/Head"]
 texture = ExtResource("59_pggb6")
 
-[node name="EarRight" type="Sprite2D" parent="mangle/BodyConnector"]
+[node name="EarRight" type="Sprite2D" parent="mangle/BodyConnector/ConnectorMain/NeckConnector/Neck/Head"]
 texture = ExtResource("60_u81cy")
 
-[node name="HandLower" type="Sprite2D" parent="mangle/BodyConnector"]
-texture = ExtResource("61_fr1rq")
+[node name="BuddyConnector" type="Sprite2D" parent="mangle/BodyConnector/ConnectorMain"]
+texture = ExtResource("56_osmov")
 
-[node name="HandLowerConnectorUpper" type="Sprite2D" parent="mangle/BodyConnector"]
-texture = ExtResource("62_mblv8")
+[node name="BuddyNeck" type="Sprite2D" parent="mangle/BodyConnector/ConnectorMain/BuddyConnector"]
+texture = ExtResource("57_sm76c")
 
-[node name="HandTop" type="Sprite2D" parent="mangle/BodyConnector"]
-texture = ExtResource("63_2mswp")
+[node name="Buddy" type="Sprite2D" parent="mangle/BodyConnector/ConnectorMain/BuddyConnector/BuddyNeck"]
+texture = ExtResource("55_c7ksr")
 
 [node name="HandUpperConnectorUpper" type="Sprite2D" parent="mangle/BodyConnector"]
 texture = ExtResource("64_jj1bt")
 
-[node name="Head" type="Sprite2D" parent="mangle/BodyConnector"]
-texture = ExtResource("65_6poq8")
+[node name="HandLowerConnectorUpper" type="Sprite2D" parent="mangle/BodyConnector/HandUpperConnectorUpper"]
+texture = ExtResource("62_mblv8")
 
-[node name="LegLeftLower" type="Sprite2D" parent="mangle/BodyConnector"]
-texture = ExtResource("66_e37ay")
+[node name="HandLower" type="Sprite2D" parent="mangle/BodyConnector/HandUpperConnectorUpper/HandLowerConnectorUpper"]
+texture = ExtResource("61_fr1rq")
 
 [node name="LegLeftUpper" type="Sprite2D" parent="mangle/BodyConnector"]
 texture = ExtResource("67_0x6nb")
 
-[node name="LegMiddleLower" type="Sprite2D" parent="mangle/BodyConnector"]
-texture = ExtResource("68_rf530")
+[node name="LegLeftLower" type="Sprite2D" parent="mangle/BodyConnector/LegLeftUpper"]
+texture = ExtResource("66_e37ay")
 
 [node name="LegMiddleUpper" type="Sprite2D" parent="mangle/BodyConnector"]
 texture = ExtResource("69_4f7nc")
 
-[node name="LegRightLower" type="Sprite2D" parent="mangle/BodyConnector"]
-texture = ExtResource("70_hesk0")
+[node name="LegMiddleLower" type="Sprite2D" parent="mangle/BodyConnector/LegMiddleUpper"]
+texture = ExtResource("68_rf530")
 
 [node name="LegRightUpper" type="Sprite2D" parent="mangle/BodyConnector"]
 texture = ExtResource("71_tl0jp")
 
-[node name="Neck" type="Sprite2D" parent="mangle/BodyConnector"]
-texture = ExtResource("72_noeo5")
-
-[node name="NeckConnector" type="Sprite2D" parent="mangle/BodyConnector"]
-texture = ExtResource("73_83gou")
+[node name="LegRightLower" type="Sprite2D" parent="mangle/BodyConnector/LegRightUpper"]
+texture = ExtResource("70_hesk0")
 
 [node name="Tail1" type="Sprite2D" parent="mangle/BodyConnector"]
 texture = ExtResource("74_22vax")
 
-[node name="Tail2" type="Sprite2D" parent="mangle/BodyConnector"]
+[node name="Tail2" type="Sprite2D" parent="mangle/BodyConnector/Tail1"]
 texture = ExtResource("75_eiti4")
 
-[node name="Tail3" type="Sprite2D" parent="mangle/BodyConnector"]
+[node name="Tail3" type="Sprite2D" parent="mangle/BodyConnector/Tail1/Tail2"]
 texture = ExtResource("76_ufvk5")
 
-[node name="Tail4" type="Sprite2D" parent="mangle/BodyConnector"]
+[node name="Tail4" type="Sprite2D" parent="mangle/BodyConnector/Tail1/Tail2/Tail3"]
 texture = ExtResource("77_jjtm4")
 
 [node name="withered_freddy" type="Node2D" parent="."]
@@ -401,44 +400,44 @@ position = Vector2(32, 32)
 [node name="Body" type="Sprite2D" parent="withered_freddy"]
 texture = ExtResource("78_4xt4t")
 
-[node name="ArmLeftLower" type="Sprite2D" parent="withered_freddy/Body"]
-texture = ExtResource("79_pl3ji")
-
 [node name="ArmLeftUpper" type="Sprite2D" parent="withered_freddy/Body"]
 texture = ExtResource("80_mgpfs")
 
-[node name="ArmRightLower" type="Sprite2D" parent="withered_freddy/Body"]
-texture = ExtResource("81_0s41l")
+[node name="ArmLeftLower" type="Sprite2D" parent="withered_freddy/Body/ArmLeftUpper"]
+texture = ExtResource("79_pl3ji")
+
+[node name="HandLeft" type="Sprite2D" parent="withered_freddy/Body/ArmLeftUpper/ArmLeftLower"]
+texture = ExtResource("85_vikib")
+
+[node name="Mic" type="Sprite2D" parent="withered_freddy/Body/ArmLeftUpper/ArmLeftLower/HandLeft"]
+texture = ExtResource("90_ovwst")
 
 [node name="ArmRightUpper" type="Sprite2D" parent="withered_freddy/Body"]
 texture = ExtResource("82_l3k4f")
 
-[node name="FootLeft" type="Sprite2D" parent="withered_freddy/Body"]
-texture = ExtResource("83_kqw8i")
+[node name="ArmRightLower" type="Sprite2D" parent="withered_freddy/Body/ArmRightUpper"]
+texture = ExtResource("81_0s41l")
 
-[node name="FootRight" type="Sprite2D" parent="withered_freddy/Body"]
-texture = ExtResource("84_8yp4t")
-
-[node name="HandLeft" type="Sprite2D" parent="withered_freddy/Body"]
-texture = ExtResource("85_vikib")
-
-[node name="HandRight" type="Sprite2D" parent="withered_freddy/Body"]
+[node name="HandRight" type="Sprite2D" parent="withered_freddy/Body/ArmRightUpper/ArmRightLower"]
 texture = ExtResource("86_doxja")
-
-[node name="HeadUpper" type="Sprite2D" parent="withered_freddy/Body"]
-texture = ExtResource("87_sx4yx")
 
 [node name="LegLeft" type="Sprite2D" parent="withered_freddy/Body"]
 texture = ExtResource("88_5utgs")
 
+[node name="FootLeft" type="Sprite2D" parent="withered_freddy/Body/LegLeft"]
+texture = ExtResource("83_kqw8i")
+
 [node name="LegRight" type="Sprite2D" parent="withered_freddy/Body"]
 texture = ExtResource("89_xvmav")
 
-[node name="Mic" type="Sprite2D" parent="withered_freddy/Body"]
-texture = ExtResource("90_ovwst")
+[node name="FootRight" type="Sprite2D" parent="withered_freddy/Body/LegRight"]
+texture = ExtResource("84_8yp4t")
 
 [node name="Neck" type="Sprite2D" parent="withered_freddy/Body"]
 texture = ExtResource("91_fjo8s")
+
+[node name="HeadUpper" type="Sprite2D" parent="withered_freddy/Body/Neck"]
+texture = ExtResource("87_sx4yx")
 
 [node name="withered_bonnie" type="Node2D" parent="."]
 position = Vector2(64, 32)
@@ -446,35 +445,35 @@ position = Vector2(64, 32)
 [node name="Body" type="Sprite2D" parent="withered_bonnie"]
 texture = ExtResource("92_xogc3")
 
-[node name="ArmLeftLower" type="Sprite2D" parent="withered_bonnie/Body"]
-texture = ExtResource("93_1fj8y")
-
 [node name="ArmLeftUpper" type="Sprite2D" parent="withered_bonnie/Body"]
 texture = ExtResource("94_kx2kw")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="withered_bonnie/Body/ArmLeftUpper"]
+texture = ExtResource("93_1fj8y")
 
 [node name="ArmRight" type="Sprite2D" parent="withered_bonnie/Body"]
 texture = ExtResource("95_tqwh2")
 
-[node name="EarLeft" type="Sprite2D" parent="withered_bonnie/Body"]
-texture = ExtResource("96_n302u")
-
-[node name="EarRight" type="Sprite2D" parent="withered_bonnie/Body"]
-texture = ExtResource("97_gsw06")
-
-[node name="FootLeft" type="Sprite2D" parent="withered_bonnie/Body"]
-texture = ExtResource("98_mo0tq")
-
-[node name="FootRight" type="Sprite2D" parent="withered_bonnie/Body"]
-texture = ExtResource("99_esotx")
-
 [node name="Head" type="Sprite2D" parent="withered_bonnie/Body"]
 texture = ExtResource("100_fmrk0")
+
+[node name="EarLeft" type="Sprite2D" parent="withered_bonnie/Body/Head"]
+texture = ExtResource("96_n302u")
+
+[node name="EarRight" type="Sprite2D" parent="withered_bonnie/Body/Head"]
+texture = ExtResource("97_gsw06")
 
 [node name="LegLeftUpper" type="Sprite2D" parent="withered_bonnie/Body"]
 texture = ExtResource("101_wnrve")
 
+[node name="FootLeft" type="Sprite2D" parent="withered_bonnie/Body/LegLeftUpper"]
+texture = ExtResource("98_mo0tq")
+
 [node name="LegRightUpper" type="Sprite2D" parent="withered_bonnie/Body"]
 texture = ExtResource("102_wp55x")
+
+[node name="FootRight" type="Sprite2D" parent="withered_bonnie/Body/LegRightUpper"]
+texture = ExtResource("99_esotx")
 
 [node name="withered_chica" type="Node2D" parent="."]
 position = Vector2(96, 32)
@@ -482,44 +481,45 @@ position = Vector2(96, 32)
 [node name="Body" type="Sprite2D" parent="withered_chica"]
 texture = ExtResource("103_y5wog")
 
-[node name="ArmLeftLower" type="Sprite2D" parent="withered_chica/Body"]
-texture = ExtResource("104_iiofs")
-
 [node name="ArmLeftUpper" type="Sprite2D" parent="withered_chica/Body"]
 texture = ExtResource("105_73ho8")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="withered_chica/Body/ArmLeftUpper"]
+texture = ExtResource("104_iiofs")
+
+[node name="HandLeft" type="Sprite2D" parent="withered_chica/Body/ArmLeftUpper/ArmLeftLower"]
+texture = ExtResource("109_4jk4y")
 
 [node name="ArmRightLower" type="Sprite2D" parent="withered_chica/Body"]
 texture = ExtResource("106_u1nuq")
 
-[node name="ArmRightUpper" type="Sprite2D" parent="withered_chica/Body"]
+[node name="ArmRightUpper" type="Sprite2D" parent="withered_chica/Body/ArmRightLower"]
 texture = ExtResource("107_nb45a")
 
-[node name="Hair" type="Sprite2D" parent="withered_chica/Body"]
-texture = ExtResource("108_vi84e")
-
-[node name="HandLeft" type="Sprite2D" parent="withered_chica/Body"]
-texture = ExtResource("109_4jk4y")
-
-[node name="HandRight" type="Sprite2D" parent="withered_chica/Body"]
+[node name="HandRight" type="Sprite2D" parent="withered_chica/Body/ArmRightLower/ArmRightUpper"]
 texture = ExtResource("110_odmng")
 
-[node name="Head" type="Sprite2D" parent="withered_chica/Body"]
+[node name="Neck" type="Sprite2D" parent="withered_chica/Body"]
+z_index = -1
+texture = ExtResource("116_8wauw")
+
+[node name="Head" type="Sprite2D" parent="withered_chica/Body/Neck"]
 texture = ExtResource("111_dqlrk")
 
-[node name="LegLeftLower" type="Sprite2D" parent="withered_chica/Body"]
-texture = ExtResource("112_aes31")
+[node name="Hair" type="Sprite2D" parent="withered_chica/Body/Neck/Head"]
+texture = ExtResource("108_vi84e")
 
 [node name="LegLeftUpper" type="Sprite2D" parent="withered_chica/Body"]
 texture = ExtResource("113_j8elr")
 
-[node name="LegRightLower" type="Sprite2D" parent="withered_chica/Body"]
-texture = ExtResource("114_fgyu5")
+[node name="LegLeftLower" type="Sprite2D" parent="withered_chica/Body/LegLeftUpper"]
+texture = ExtResource("112_aes31")
 
 [node name="LegRightUpper" type="Sprite2D" parent="withered_chica/Body"]
 texture = ExtResource("115_ihbwe")
 
-[node name="Neck" type="Sprite2D" parent="withered_chica/Body"]
-texture = ExtResource("116_8wauw")
+[node name="LegRightLower" type="Sprite2D" parent="withered_chica/Body/LegRightUpper"]
+texture = ExtResource("114_fgyu5")
 
 [node name="withered_foxy" type="Node2D" parent="."]
 position = Vector2(128, 32)
@@ -527,47 +527,48 @@ position = Vector2(128, 32)
 [node name="Body" type="Sprite2D" parent="withered_foxy"]
 texture = ExtResource("117_bfcgp")
 
-[node name="ArmLeftLower" type="Sprite2D" parent="withered_foxy/Body"]
-texture = ExtResource("118_1a5g7")
+[node name="Neck" type="Sprite2D" parent="withered_foxy/Body"]
+z_index = -1
+texture = ExtResource("131_lj4ak")
+
+[node name="Head" type="Sprite2D" parent="withered_foxy/Body/Neck"]
+texture = ExtResource("126_n8juw")
+
+[node name="EarLeft" type="Sprite2D" parent="withered_foxy/Body/Neck/Head"]
+texture = ExtResource("122_h2a0v")
+
+[node name="EarRight" type="Sprite2D" parent="withered_foxy/Body/Neck/Head"]
+texture = ExtResource("123_2e0aw")
 
 [node name="ArmLeftUpper" type="Sprite2D" parent="withered_foxy/Body"]
 texture = ExtResource("119_m42ce")
 
-[node name="ArmRightLower" type="Sprite2D" parent="withered_foxy/Body"]
-texture = ExtResource("120_1vwjl")
+[node name="ArmLeftLower" type="Sprite2D" parent="withered_foxy/Body/ArmLeftUpper"]
+texture = ExtResource("118_1a5g7")
+
+[node name="HandLeft" type="Sprite2D" parent="withered_foxy/Body/ArmLeftUpper/ArmLeftLower"]
+texture = ExtResource("124_fc3w0")
 
 [node name="ArmRightUpper" type="Sprite2D" parent="withered_foxy/Body"]
 texture = ExtResource("121_imee7")
 
-[node name="EarLeft" type="Sprite2D" parent="withered_foxy/Body"]
-texture = ExtResource("122_h2a0v")
+[node name="ArmRightLower" type="Sprite2D" parent="withered_foxy/Body/ArmRightUpper"]
+texture = ExtResource("120_1vwjl")
 
-[node name="EarRight" type="Sprite2D" parent="withered_foxy/Body"]
-texture = ExtResource("123_2e0aw")
-
-[node name="HandLeft" type="Sprite2D" parent="withered_foxy/Body"]
-texture = ExtResource("124_fc3w0")
-
-[node name="HandRight" type="Sprite2D" parent="withered_foxy/Body"]
+[node name="HandRight" type="Sprite2D" parent="withered_foxy/Body/ArmRightUpper/ArmRightLower"]
 texture = ExtResource("125_3l5q4")
-
-[node name="Head" type="Sprite2D" parent="withered_foxy/Body"]
-texture = ExtResource("126_n8juw")
-
-[node name="LegLeftLower" type="Sprite2D" parent="withered_foxy/Body"]
-texture = ExtResource("127_kl3vg")
 
 [node name="LegLeftUpper" type="Sprite2D" parent="withered_foxy/Body"]
 texture = ExtResource("128_t3gs5")
 
-[node name="LegRightLower" type="Sprite2D" parent="withered_foxy/Body"]
-texture = ExtResource("129_xp57o")
+[node name="LegLeftLower" type="Sprite2D" parent="withered_foxy/Body/LegLeftUpper"]
+texture = ExtResource("127_kl3vg")
 
 [node name="LegRightUpper" type="Sprite2D" parent="withered_foxy/Body"]
 texture = ExtResource("130_btunj")
 
-[node name="Neck" type="Sprite2D" parent="withered_foxy/Body"]
-texture = ExtResource("131_lj4ak")
+[node name="LegRightLower" type="Sprite2D" parent="withered_foxy/Body/LegRightUpper"]
+texture = ExtResource("129_xp57o")
 
 [node name="balloon_boy" type="Node2D" parent="."]
 position = Vector2(160, 32)
@@ -581,38 +582,38 @@ position = Vector2(0, 32)
 [node name="Body" type="Sprite2D" parent="withered_golden_freddy"]
 texture = ExtResource("133_n4xu7")
 
-[node name="ArmLeftLower" type="Sprite2D" parent="withered_golden_freddy/Body"]
-texture = ExtResource("134_ulbrr")
-
 [node name="ArmLeftUpper" type="Sprite2D" parent="withered_golden_freddy/Body"]
 texture = ExtResource("135_c5jg1")
 
-[node name="ArmRightLower" type="Sprite2D" parent="withered_golden_freddy/Body"]
-texture = ExtResource("136_f8nas")
+[node name="ArmLeftLower" type="Sprite2D" parent="withered_golden_freddy/Body/ArmLeftUpper"]
+texture = ExtResource("134_ulbrr")
+
+[node name="HandLeft" type="Sprite2D" parent="withered_golden_freddy/Body/ArmLeftUpper/ArmLeftLower"]
+texture = ExtResource("137_681h4")
+
+[node name="Mic" type="Sprite2D" parent="withered_golden_freddy/Body/ArmLeftUpper/ArmLeftLower/HandLeft"]
+texture = ExtResource("144_wgwam")
 
 [node name="ArmRightUpper" type="Sprite2D" parent="withered_golden_freddy/Body"]
 texture = ExtResource("137_8rj5f")
 
-[node name="HandLeft" type="Sprite2D" parent="withered_golden_freddy/Body"]
-texture = ExtResource("137_681h4")
+[node name="ArmRightLower" type="Sprite2D" parent="withered_golden_freddy/Body/ArmRightUpper"]
+texture = ExtResource("136_f8nas")
 
-[node name="HandRight" type="Sprite2D" parent="withered_golden_freddy/Body"]
+[node name="HandRight" type="Sprite2D" parent="withered_golden_freddy/Body/ArmRightUpper/ArmRightLower"]
 texture = ExtResource("138_ib5d8")
 
 [node name="Head" type="Sprite2D" parent="withered_golden_freddy/Body"]
 texture = ExtResource("139_o533j")
 
-[node name="LegLeftLower" type="Sprite2D" parent="withered_golden_freddy/Body"]
-texture = ExtResource("140_grxrh")
-
 [node name="LegLeftUpper" type="Sprite2D" parent="withered_golden_freddy/Body"]
 texture = ExtResource("141_cuylw")
 
-[node name="LegRightLower" type="Sprite2D" parent="withered_golden_freddy/Body"]
-texture = ExtResource("142_rqqt0")
+[node name="LegLeftLower" type="Sprite2D" parent="withered_golden_freddy/Body/LegLeftUpper"]
+texture = ExtResource("140_grxrh")
 
 [node name="LegRightUpper" type="Sprite2D" parent="withered_golden_freddy/Body"]
 texture = ExtResource("143_xusa5")
 
-[node name="Mic" type="Sprite2D" parent="withered_golden_freddy/Body"]
-texture = ExtResource("144_wgwam")
+[node name="LegRightLower" type="Sprite2D" parent="withered_golden_freddy/Body/LegRightUpper"]
+texture = ExtResource("142_rqqt0")

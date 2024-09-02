@@ -12,6 +12,9 @@ var active_state_permanent : bool = false
 
 signal camera_scene_switched_no_params
 signal camera_scene_switched
+signal camera_scene_flashed
+signal camera_scene_flashed_on
+signal camera_scene_flashed_off
 
 @export var monitor_focus_button : Button
 
@@ -20,6 +23,8 @@ signal camera_scene_switched
 @export var nodes_to_set_active : Array[Node]
 signal active_state_on
 signal active_state_off
+
+signal animatronic_moved_from_cam
 
 signal animatronic_moved_out_of_camera_queue
 signal animatronic_moved_in_camera_queue
@@ -64,21 +69,28 @@ func set_current_camera_scene(camera_scene : String):
 	current_cam_scene = camera_scene
 	camera_scene_switched.emit(camera_scene)
 
-func set_animatronic_pos(_animatronic_name : String, _cam_name : String, _num_times_been_to_cam : int = -1):
-	#if _animatronic_name.is_empty() or _cam_name.is_empty(): return
-	for monitor_script in monitor_scripts:
-		monitor_script.set_animatronic_pos(_animatronic_name, _cam_name, _num_times_been_to_cam)
+func set_current_camera_flashed(camera_scene : String, flash_on : bool):
+	camera_scene_flashed.emit(camera_scene, flash_on)
+	
+	if flash_on: camera_scene_flashed_on.emit()
+	else: camera_scene_flashed_off.emit()
 
 func animatronic_moved_from(_animatronic_name : String, _cam_name_from : String):
+	#print_debug("(ms) %s moved from %s {%s}" % [_animatronic_name, _cam_name_from, Time.get_ticks_msec() / 1000.0])
+	
+	animatronic_moved_from_cam.emit(_animatronic_name, _cam_name_from)
 	if !is_focused: return
 	if _cam_name_from == current_cam_scene: animatronic_moved_out_of_camera_queue.emit()
 	
-func animatronic_moved_to(_animatronic_name : String, _cam_name_to : String, _num_times_to_thing : int = -1):
+func animatronic_moved_to(_animatronic_name : String, _cam_name_to : String, _num_times_been_to_cam : int = -1):
+	#print_debug("(ms) %s moved to %s {%s}" % [_animatronic_name, _cam_name_to, Time.get_ticks_msec() / 1000.0])
+	for monitor_script in monitor_scripts:
+		monitor_script.set_animatronic_pos(_animatronic_name, _cam_name_to, _num_times_been_to_cam)
+	
 	if !is_focused: return
 	if _cam_name_to == current_cam_scene: animatronic_moved_in_camera_queue.emit()
 
 func set_animatronic_stalled(_animatronic_name : String, _stalled : bool):
-	#if _animatronic_name.is_empty() or _cam_name.is_empty(): return
 	for monitor_script in monitor_scripts:
 		monitor_script.set_animatronic_stalled(_animatronic_name, _stalled)
 

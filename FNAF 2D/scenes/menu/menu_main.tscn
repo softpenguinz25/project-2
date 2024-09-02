@@ -326,6 +326,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="fnaf_1" type="Control" parent="menu"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -552,7 +553,6 @@ energy = 3.12
 texture = ExtResource("11_5fvmq")
 
 [node name="fnaf_2" type="Control" parent="menu"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -865,16 +865,16 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_3aabh")
 
 [connection signal="button_down" from="menu/button_newgame" to="manager/local_audio_manager" method="play_sound" binds= ["res://sounds/menu/menu_button.wav"]]
 [connection signal="button_down" from="menu/button_newgame" to="manager/scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/scene_night_number_1.tscn"]]
-[connection signal="button_down" from="menu/button_newgame" to="menu/button_newgame" method="set_use_cheat_mode" binds= [false]]
 [connection signal="button_down" from="menu/button_newgame" to="menu/button_newgame" method="set_use_20d_mode" binds= [false]]
+[connection signal="button_down" from="menu/button_newgame" to="menu/button_newgame" method="set_use_cheat_mode" binds= [false]]
 [connection signal="button_down" from="menu/button_20dmode" to="manager/local_audio_manager" method="play_sound" binds= ["res://sounds/menu/menu_button.wav"]]
 [connection signal="button_down" from="menu/button_20dmode" to="manager/scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/scene_night_number_20D.tscn"]]
-[connection signal="button_down" from="menu/button_20dmode" to="menu/button_20dmode" method="set_use_cheat_mode" binds= [false]]
 [connection signal="button_down" from="menu/button_20dmode" to="menu/button_20dmode" method="set_use_20d_mode" binds= [true]]
+[connection signal="button_down" from="menu/button_20dmode" to="menu/button_20dmode" method="set_use_cheat_mode" binds= [false]]
 [connection signal="button_down" from="menu/button_cheatmode" to="manager/local_audio_manager" method="play_sound" binds= ["res://sounds/menu/menu_button.wav"]]
 [connection signal="button_down" from="menu/button_cheatmode" to="manager/scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/scene_night_number_cheat.tscn"]]
-[connection signal="button_down" from="menu/button_cheatmode" to="menu/button_cheatmode" method="set_use_cheat_mode" binds= [true]]
 [connection signal="button_down" from="menu/button_cheatmode" to="menu/button_cheatmode" method="set_use_20d_mode" binds= [false]]
+[connection signal="button_down" from="menu/button_cheatmode" to="menu/button_cheatmode" method="set_use_cheat_mode" binds= [true]]
 [connection signal="button_down" from="menu/button_exit" to="manager/local_audio_manager" method="play_sound"]
 [connection signal="button_down" from="menu/button_exit" to="menu/button_exit" method="quit_game"]
 [connection signal="button_down" from="menu/button_godot" to="menu/button_godot" method="open_link" binds= ["https://godotengine.org/license"]]
