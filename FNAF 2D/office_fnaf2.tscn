@@ -1,12 +1,15 @@
-[gd_scene load_steps=202 format=3 uid="uid://k235u75p8tw4"]
+[gd_scene load_steps=205 format=3 uid="uid://k235u75p8tw4"]
 
+[ext_resource type="Script" path="res://scripts/misc/scene_loader.gd" id="1_yo40j"]
 [ext_resource type="Script" path="res://scripts/environment/camera_tweener.gd" id="2_1cvln"]
 [ext_resource type="Script" path="res://scripts/ui/jumpscare_manager.gd" id="2_4qasu"]
 [ext_resource type="PackedScene" uid="uid://tbiaxc7dxu03" path="res://scenes/characters/player_fnaf2.tscn" id="2_6okfi"]
 [ext_resource type="Texture2D" uid="uid://dm6gd5iggigeq" path="res://sprites/circle.png" id="2_jhh1c"]
 [ext_resource type="Texture2D" uid="uid://iavdw7y2t4ka" path="res://sprites/environment/main_office/checkerboard.png" id="2_t0500"]
+[ext_resource type="Script" path="res://scripts/ui/night_timer.gd" id="3_3h11i"]
 [ext_resource type="Script" path="res://scripts/environment/interactable_button.gd" id="4_ip4so"]
 [ext_resource type="FontFile" uid="uid://c458otts8ji68" path="res://ui/fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" id="4_qf4tt"]
+[ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_in_vent_fnaf2.gd" id="5_iwtvp"]
 [ext_resource type="Texture2D" uid="uid://4mb717pe7bls" path="res://sprites/ui/battery.png" id="6_6mugf"]
 [ext_resource type="Texture2D" uid="uid://y6yqx1oqxrhd" path="res://sprites/environment/main_office/tv.png" id="6_82c7a"]
 [ext_resource type="PackedScene" uid="uid://deybknyvrm48a" path="res://scenes/monitor/monitor_screen_fnaf2.tscn" id="7_0mcjl"]
@@ -311,6 +314,9 @@ point_count = 2
 
 [node name="game_manager" type="Node" parent="."]
 
+[node name="scene_loader" type="Node" parent="game_manager"]
+script = ExtResource("1_yo40j")
+
 [node name="camera_manager" type="Node" parent="game_manager" node_paths=PackedStringArray("camera", "camera_parent", "start_node")]
 script = ExtResource("2_1cvln")
 camera = NodePath("camera_manager_parent/player_camera")
@@ -343,11 +349,19 @@ position = Vector2(960, 360)
 position = Vector2(124.757, 466.325)
 scale = Vector2(10.8, 10.8)
 
-[node name="jumpscare_manager" type="Node" parent="game_manager"]
+[node name="jumpscare_manager" type="Node" parent="game_manager" node_paths=PackedStringArray("jumpscare_timer", "night_timer")]
 script = ExtResource("2_4qasu")
+jumpscare_timer = NodePath("jumpscare_timer")
+night_timer = NodePath("../night_timer")
 
 [node name="jumpscare_timer" type="Timer" parent="game_manager/jumpscare_manager"]
 one_shot = true
+
+[node name="night_timer" type="Timer" parent="game_manager"]
+wait_time = 360.0
+one_shot = true
+autostart = true
+script = ExtResource("3_3h11i")
 
 [node name="environment" type="Node2D" parent="."]
 
@@ -369,226 +383,277 @@ position = Vector2(640, 50)
 scale = Vector2(1890, 100)
 texture = SubResource("CanvasTexture_o3owp")
 
-[node name="InVentTest" type="Node2D" parent="environment"]
-visible = false
+[node name="in_vent" type="Node2D" parent="environment"]
 
-[node name="BalloonBoy" type="Sprite2D" parent="environment/InVentTest"]
+[node name="balloon_boy_in_vent" type="Sprite2D" parent="environment/in_vent" node_paths=PackedStringArray("timer_jumpscare", "timer_mask", "player_mask", "animatronic_roaming", "monitor_screen")]
 position = Vector2(-368, 526)
 rotation = 1.309
 scale = Vector2(16, 16)
 texture = ExtResource("108_ukt6r")
+script = ExtResource("5_iwtvp")
+timer_jumpscare = NodePath("balloon_boy_in_vent_timer_jumpscare")
+timer_mask = NodePath("balloon_boy_in_vent_timer_mask")
+player_mask = NodePath("../../mask")
+animatronic_roaming = NodePath("../../animatronics/balloon_boy")
+monitor_screen = NodePath("../../monitor/monitor_screen_fnaf2")
+animatronic_name = "balloon_boy"
 
-[node name="toy_chica" type="Node2D" parent="environment/InVentTest"]
+[node name="balloon_boy_in_vent_timer_jumpscare" type="Timer" parent="environment/in_vent/balloon_boy_in_vent"]
+one_shot = true
+
+[node name="balloon_boy_in_vent_timer_mask" type="Timer" parent="environment/in_vent/balloon_boy_in_vent"]
+one_shot = true
+
+[node name="toy_chica_in_vent" type="Node2D" parent="environment/in_vent" node_paths=PackedStringArray("timer_jumpscare", "timer_mask", "player_mask", "animatronic_roaming", "monitor_screen")]
 position = Vector2(-394, 670)
 scale = Vector2(16, 16)
+script = ExtResource("5_iwtvp")
+timer_jumpscare = NodePath("toy_chica_in_vent_timer_jumpscare")
+timer_mask = NodePath("toy_chica_in_vent_timer_mask")
+player_mask = NodePath("../../mask")
+animatronic_roaming = NodePath("../../animatronics/toy_chica")
+monitor_screen = NodePath("../../monitor/monitor_screen_fnaf2")
+animatronic_name = "toy_chica"
 
-[node name="LegLeftUpper" type="Sprite2D" parent="environment/InVentTest/toy_chica"]
+[node name="LegLeftUpper" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent"]
 position = Vector2(-0.203728, -4.07605)
 rotation = 1.65806
 texture = ExtResource("72_2asla")
 
-[node name="LegLeftLower" type="Sprite2D" parent="environment/InVentTest/toy_chica/LegLeftUpper"]
+[node name="LegLeftLower" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent/LegLeftUpper"]
 texture = ExtResource("73_ffqm8")
 
-[node name="LegRightUpper" type="Sprite2D" parent="environment/InVentTest/toy_chica"]
+[node name="LegRightUpper" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent"]
 position = Vector2(-0.203728, -4.07605)
 rotation = 1.65806
 texture = ExtResource("74_ixpfy")
 
-[node name="LegRightLower" type="Sprite2D" parent="environment/InVentTest/toy_chica/LegRightUpper"]
+[node name="LegRightLower" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent/LegRightUpper"]
 texture = ExtResource("75_k1qk8")
 
-[node name="Body" type="Sprite2D" parent="environment/InVentTest/toy_chica"]
+[node name="Body" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent"]
 position = Vector2(-1.01623, -5.38855)
 rotation = 1.39626
 texture = ExtResource("64_7uxwk")
 
-[node name="ArmLeftUpper" type="Sprite2D" parent="environment/InVentTest/toy_chica/Body"]
+[node name="ArmLeftUpper" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent/Body"]
 position = Vector2(0.166719, -8.10813)
 rotation = -1.48353
 texture = ExtResource("65_6scs5")
 
-[node name="ArmLeftLower" type="Sprite2D" parent="environment/InVentTest/toy_chica/Body/ArmLeftUpper"]
+[node name="ArmLeftLower" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent/Body/ArmLeftUpper"]
 texture = ExtResource("66_4r4c0")
 
-[node name="Cupcake" type="Sprite2D" parent="environment/InVentTest/toy_chica/Body/ArmLeftUpper/ArmLeftLower"]
+[node name="Cupcake" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent/Body/ArmLeftUpper/ArmLeftLower"]
 position = Vector2(-9.02471, 9.07068)
 rotation = 0.174533
 texture = ExtResource("69_q4sry")
 
-[node name="ArmRightUpper" type="Sprite2D" parent="environment/InVentTest/toy_chica/Body"]
+[node name="ArmRightUpper" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent/Body"]
 position = Vector2(1.95415, -8.01742)
 rotation = 1.8326
 texture = ExtResource("67_8q0u3")
 
-[node name="ArmRightLower" type="Sprite2D" parent="environment/InVentTest/toy_chica/Body/ArmRightUpper"]
+[node name="ArmRightLower" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent/Body/ArmRightUpper"]
 texture = ExtResource("68_ptic3")
 
-[node name="Head" type="Sprite2D" parent="environment/InVentTest/toy_chica/Body"]
+[node name="Head" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent/Body"]
 position = Vector2(-1.75306, 1.47141)
 rotation = 0.349066
 texture = ExtResource("70_l5s0m")
 
-[node name="Hair" type="Sprite2D" parent="environment/InVentTest/toy_chica/Body/Head"]
+[node name="Hair" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent/Body/Head"]
 texture = ExtResource("71_gyroi")
 
-[node name="mangle" type="Node2D" parent="environment/InVentTest"]
+[node name="toy_chica_in_vent_timer_jumpscare" type="Timer" parent="environment/in_vent/toy_chica_in_vent"]
+one_shot = true
+
+[node name="toy_chica_in_vent_timer_mask" type="Timer" parent="environment/in_vent/toy_chica_in_vent"]
+one_shot = true
+
+[node name="mangle_in_vent" type="Node2D" parent="environment/in_vent" node_paths=PackedStringArray("timer_jumpscare", "timer_mask", "player_mask", "animatronic_roaming", "monitor_screen")]
 position = Vector2(1710, 751)
 rotation = -1.5708
 scale = Vector2(16, 16)
+script = ExtResource("5_iwtvp")
+timer_jumpscare = NodePath("mangle_in_vent_timer_jumpscare")
+timer_mask = NodePath("mangle_in_vent_timer_mask")
+player_mask = NodePath("../../mask")
+animatronic_roaming = NodePath("../../animatronics/mangle")
+monitor_screen = NodePath("../../monitor/monitor_screen_fnaf2")
+animatronic_name = "mangle"
 
-[node name="BuddyConnector" type="Sprite2D" parent="environment/InVentTest/mangle"]
+[node name="BuddyConnector" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
 position = Vector2(14.9375, 12.4375)
 rotation = 0.872665
 texture = ExtResource("99_aiwps")
 
-[node name="BuddyNeck" type="Sprite2D" parent="environment/InVentTest/mangle/BuddyConnector"]
+[node name="BuddyNeck" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/BuddyConnector"]
 texture = ExtResource("84_yqivt")
 
-[node name="Buddy" type="Sprite2D" parent="environment/InVentTest/mangle/BuddyConnector/BuddyNeck"]
+[node name="Buddy" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/BuddyConnector/BuddyNeck"]
 texture = ExtResource("85_enpcy")
 
-[node name="NeckConnector" type="Sprite2D" parent="environment/InVentTest/mangle"]
+[node name="NeckConnector" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
 position = Vector2(10.5, 3.50001)
 rotation = -1.5708
 texture = ExtResource("79_s2ney")
 
-[node name="Neck" type="Sprite2D" parent="environment/InVentTest/mangle/NeckConnector"]
+[node name="Neck" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/NeckConnector"]
 texture = ExtResource("80_r0cho")
 
-[node name="Head" type="Sprite2D" parent="environment/InVentTest/mangle"]
+[node name="Head" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
 texture = ExtResource("81_jipl3")
 
-[node name="EarLeft" type="Sprite2D" parent="environment/InVentTest/mangle/Head"]
+[node name="EarLeft" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/Head"]
 texture = ExtResource("82_my4pa")
 
-[node name="EarRight" type="Sprite2D" parent="environment/InVentTest/mangle/Head"]
+[node name="EarRight" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/Head"]
 texture = ExtResource("83_yktmv")
 
-[node name="ConnectorMain" type="Sprite2D" parent="environment/InVentTest/mangle"]
+[node name="ConnectorMain" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
 position = Vector2(13.25, 2.12501)
 rotation = -1.74533
 texture = ExtResource("77_egjux")
 
-[node name="HandTop" type="Sprite2D" parent="environment/InVentTest/mangle/ConnectorMain"]
+[node name="HandTop" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/ConnectorMain"]
 texture = ExtResource("78_6p070")
 
-[node name="LegLeftUpper" type="Sprite2D" parent="environment/InVentTest/mangle"]
+[node name="LegLeftUpper" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
 position = Vector2(20.5, 10.5)
 rotation = 1.5708
 texture = ExtResource("89_jvgvh")
 
-[node name="LegLeftLower" type="Sprite2D" parent="environment/InVentTest/mangle/LegLeftUpper"]
+[node name="LegLeftLower" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/LegLeftUpper"]
 texture = ExtResource("90_b1ohs")
 
-[node name="LegMiddleUpper" type="Sprite2D" parent="environment/InVentTest/mangle"]
+[node name="LegMiddleUpper" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
 position = Vector2(20.5, 10.5)
 rotation = 1.5708
 texture = ExtResource("91_pl003")
 
-[node name="LegMiddleLower" type="Sprite2D" parent="environment/InVentTest/mangle/LegMiddleUpper"]
+[node name="LegMiddleLower" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/LegMiddleUpper"]
 texture = ExtResource("92_f1eh5")
 
-[node name="HandUpperConnectorUpper" type="Sprite2D" parent="environment/InVentTest/mangle"]
+[node name="HandUpperConnectorUpper" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
 position = Vector2(19.4375, 5.68752)
 rotation = 1.48353
 texture = ExtResource("86_su53a")
 
-[node name="HandLowerConnectorUpper" type="Sprite2D" parent="environment/InVentTest/mangle/HandUpperConnectorUpper"]
+[node name="HandLowerConnectorUpper" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/HandUpperConnectorUpper"]
 position = Vector2(-16.634, 2.39263)
 rotation = -2.18166
 texture = ExtResource("87_2rs8b")
 
-[node name="HandLower" type="Sprite2D" parent="environment/InVentTest/mangle/HandUpperConnectorUpper/HandLowerConnectorUpper"]
+[node name="HandLower" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/HandUpperConnectorUpper/HandLowerConnectorUpper"]
 texture = ExtResource("88_wcrgx")
 
-[node name="LegRightUpper" type="Sprite2D" parent="environment/InVentTest/mangle"]
+[node name="LegRightUpper" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
 position = Vector2(20.5, 10.5)
 rotation = 1.5708
 texture = ExtResource("93_5o4au")
 
-[node name="LegRightLower" type="Sprite2D" parent="environment/InVentTest/mangle/LegRightUpper"]
+[node name="LegRightLower" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/LegRightUpper"]
 texture = ExtResource("94_nwppr")
 
-[node name="Tail1" type="Sprite2D" parent="environment/InVentTest/mangle"]
+[node name="Tail1" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
 position = Vector2(18.5, 9.50001)
 rotation = 1.5708
 texture = ExtResource("95_qxgxn")
 
-[node name="Tail2" type="Sprite2D" parent="environment/InVentTest/mangle/Tail1"]
+[node name="Tail2" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/Tail1"]
 position = Vector2(4.5625, -1)
 rotation = 0.785398
 texture = ExtResource("96_t44f0")
 
-[node name="Tail3" type="Sprite2D" parent="environment/InVentTest/mangle/Tail1/Tail2"]
+[node name="Tail3" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/Tail1/Tail2"]
 position = Vector2(5.74524, -3.8007)
 rotation = 0.785398
 texture = ExtResource("97_ufmq4")
 
-[node name="Tail4" type="Sprite2D" parent="environment/InVentTest/mangle/Tail1/Tail2/Tail3"]
+[node name="Tail4" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/Tail1/Tail2/Tail3"]
 position = Vector2(6.875, -6.68751)
 rotation = 0.785398
 texture = ExtResource("98_7xc3p")
 
-[node name="BodyConnector" type="Sprite2D" parent="environment/InVentTest/mangle"]
+[node name="BodyConnector" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
 position = Vector2(15.25, 2.50001)
 rotation = 0.174533
 texture = ExtResource("76_tco34")
 
-[node name="toy_bonnie" type="Node2D" parent="environment/InVentTest"]
+[node name="mangle_in_vent_timer_jumpscare" type="Timer" parent="environment/in_vent/mangle_in_vent"]
+one_shot = true
+
+[node name="mangle_in_vent_timer_mask" type="Timer" parent="environment/in_vent/mangle_in_vent"]
+one_shot = true
+
+[node name="toy_bonnie_in_vent" type="Node2D" parent="environment/in_vent" node_paths=PackedStringArray("timer_jumpscare", "timer_mask", "player_mask", "animatronic_roaming", "monitor_screen")]
 position = Vector2(1717, 537)
 rotation = -1.5708
 scale = Vector2(16, 16)
+script = ExtResource("5_iwtvp")
+timer_jumpscare = NodePath("toy_bonnie_in_vent_timer_jumpscare")
+timer_mask = NodePath("toy_bonnie_in_vent_timer_mask")
+player_mask = NodePath("../../mask")
+animatronic_roaming = NodePath("../../animatronics/toy_bonnie")
+monitor_screen = NodePath("../../monitor/monitor_screen_fnaf2")
+animatronic_name = "toy_bonnie"
 
-[node name="LegLeftUpper" type="Sprite2D" parent="environment/InVentTest/toy_bonnie"]
+[node name="LegLeftUpper" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent"]
 texture = ExtResource("109_o6ak3")
 
-[node name="LegLeftLower" type="Sprite2D" parent="environment/InVentTest/toy_bonnie/LegLeftUpper"]
+[node name="LegLeftLower" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/LegLeftUpper"]
 texture = ExtResource("110_2kpfp")
 
-[node name="LegRightUpper" type="Sprite2D" parent="environment/InVentTest/toy_bonnie"]
+[node name="LegRightUpper" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent"]
 texture = ExtResource("111_47gsb")
 
-[node name="LegRightLower" type="Sprite2D" parent="environment/InVentTest/toy_bonnie/LegRightUpper"]
+[node name="LegRightLower" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/LegRightUpper"]
 texture = ExtResource("112_3mg3x")
 
-[node name="Body" type="Sprite2D" parent="environment/InVentTest/toy_bonnie"]
+[node name="Body" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent"]
 texture = ExtResource("113_8mbhq")
 
-[node name="Tie" type="Sprite2D" parent="environment/InVentTest/toy_bonnie/Body"]
+[node name="Tie" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/Body"]
 texture = ExtResource("114_0ugfp")
 
-[node name="ArmLeftUpper" type="Sprite2D" parent="environment/InVentTest/toy_bonnie/Body"]
+[node name="ArmLeftUpper" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/Body"]
 position = Vector2(-4.9375, -5.3125)
 rotation = -1.8326
 texture = ExtResource("115_40q8h")
 
-[node name="ArmLeftLower" type="Sprite2D" parent="environment/InVentTest/toy_bonnie/Body/ArmLeftUpper"]
+[node name="ArmLeftLower" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/Body/ArmLeftUpper"]
 texture = ExtResource("116_tmfeb")
 
-[node name="ArmRightUpper" type="Sprite2D" parent="environment/InVentTest/toy_bonnie/Body"]
+[node name="ArmRightUpper" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/Body"]
 position = Vector2(4.5, -5.5)
 rotation = 1.5708
 texture = ExtResource("117_ptbb1")
 
-[node name="ArmRightLower" type="Sprite2D" parent="environment/InVentTest/toy_bonnie/Body/ArmRightUpper"]
+[node name="ArmRightLower" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/Body/ArmRightUpper"]
 texture = ExtResource("118_h8ntb")
 
-[node name="Guitar" type="Sprite2D" parent="environment/InVentTest/toy_bonnie/Body/ArmRightUpper/ArmRightLower"]
+[node name="Guitar" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/Body/ArmRightUpper/ArmRightLower"]
 position = Vector2(19.6875, -6.875)
 rotation = -1.309
 texture = ExtResource("119_r0aey")
 
-[node name="Head" type="Sprite2D" parent="environment/InVentTest/toy_bonnie/Body"]
+[node name="Head" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/Body"]
 position = Vector2(-0.9375, 0.75)
 rotation = 0.261799
 texture = ExtResource("120_rga2l")
 
-[node name="EarLeft" type="Sprite2D" parent="environment/InVentTest/toy_bonnie/Body/Head"]
+[node name="EarLeft" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/Body/Head"]
 texture = ExtResource("121_aaugw")
 
-[node name="EarRight" type="Sprite2D" parent="environment/InVentTest/toy_bonnie/Body/Head"]
+[node name="EarRight" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/Body/Head"]
 texture = ExtResource("122_4d7cj")
+
+[node name="toy_bonnie_in_vent_timer_jumpscare" type="Timer" parent="environment/in_vent/toy_bonnie_in_vent"]
+one_shot = true
+
+[node name="toy_bonnie_in_vent_timer_mask" type="Timer" parent="environment/in_vent/toy_bonnie_in_vent"]
+one_shot = true
 
 [node name="floor" type="StaticBody2D" parent="environment"]
 position = Vector2(640, 360)
@@ -1460,7 +1525,6 @@ texture = ExtResource("82_my4pa")
 texture = ExtResource("83_yktmv")
 
 [node name="mask" type="Node2D" parent="environment" node_paths=PackedStringArray("mask_overlay_gfx")]
-visible = false
 script = ExtResource("10_dallr")
 mask_overlay_gfx = NodePath("mask_clayer")
 
@@ -1624,9 +1688,10 @@ grow_vertical = 2
 pivot_offset = Vector2(201, 309)
 script = ExtResource("135_dhly0")
 jumpscare_sprites = {
-"golden_freddy": NodePath(""),
+"balloon_boy": NodePath("balloon_boy_jumpscare"),
+"golden_freddy": NodePath("withered_golden_freddy_jumpscare"),
 "mangle": NodePath("mangle_jumpscare"),
-"puppet": NodePath(""),
+"puppet": NodePath("puppet_jumpscare"),
 "toy_bonnie": NodePath("toy_bonnie_jumpscare"),
 "toy_chica": NodePath("toy_chica_jumpscare"),
 "toy_freddy": NodePath("toy_freddy_jumpscare"),
@@ -2129,13 +2194,37 @@ texture = ExtResource("175_dhc5r")
 [node name="LegRightLower" type="Sprite2D" parent="ui/ui_jumpscare/withered_golden_freddy_jumpscare/Body/LegRightUpper"]
 texture = ExtResource("176_l4d3y")
 
+[node name="balloon_boy_jumpscare" type="Node2D" parent="ui/ui_jumpscare"]
+visible = false
+position = Vector2(632, 480)
+scale = Vector2(40, 40)
+script = ExtResource("136_ky8jr")
+
+[node name="BalloonBoy" type="Sprite2D" parent="ui/ui_jumpscare/balloon_boy_jumpscare"]
+texture = ExtResource("108_ukt6r")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(455, 360)
 
 [node name="Camera2D2" type="Camera2D" parent="."]
 position = Vector2(825, 360)
 
+[connection signal="jumpscare_finished" from="game_manager/jumpscare_manager" to="game_manager/scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/scene_static.tscn"]]
+[connection signal="jumpscare_played_with_name" from="game_manager/jumpscare_manager" to="ui/ui_jumpscare" method="show_jumpscare_sprite"]
 [connection signal="timeout" from="game_manager/jumpscare_manager/jumpscare_timer" to="game_manager/jumpscare_manager" method="finish_jumpscare"]
+[connection signal="timeout" from="game_manager/night_timer" to="game_manager/night_timer" method="night_won"]
+[connection signal="animatronic_jumpscare" from="environment/in_vent/balloon_boy_in_vent" to="game_manager/jumpscare_manager" method="play_jumpscare"]
+[connection signal="timeout" from="environment/in_vent/balloon_boy_in_vent/balloon_boy_in_vent_timer_jumpscare" to="environment/in_vent/balloon_boy_in_vent" method="on_jumpscare_timer_timeout"]
+[connection signal="timeout" from="environment/in_vent/balloon_boy_in_vent/balloon_boy_in_vent_timer_mask" to="environment/in_vent/balloon_boy_in_vent" method="on_mask_timer_timeout"]
+[connection signal="animatronic_jumpscare" from="environment/in_vent/toy_chica_in_vent" to="game_manager/jumpscare_manager" method="play_jumpscare"]
+[connection signal="timeout" from="environment/in_vent/toy_chica_in_vent/toy_chica_in_vent_timer_jumpscare" to="environment/in_vent/toy_chica_in_vent" method="on_jumpscare_timer_timeout"]
+[connection signal="timeout" from="environment/in_vent/toy_chica_in_vent/toy_chica_in_vent_timer_mask" to="environment/in_vent/toy_chica_in_vent" method="on_mask_timer_timeout"]
+[connection signal="animatronic_jumpscare" from="environment/in_vent/mangle_in_vent" to="game_manager/jumpscare_manager" method="play_jumpscare"]
+[connection signal="timeout" from="environment/in_vent/mangle_in_vent/mangle_in_vent_timer_jumpscare" to="environment/in_vent/mangle_in_vent" method="on_jumpscare_timer_timeout"]
+[connection signal="timeout" from="environment/in_vent/mangle_in_vent/mangle_in_vent_timer_mask" to="environment/in_vent/mangle_in_vent" method="on_mask_timer_timeout"]
+[connection signal="animatronic_jumpscare" from="environment/in_vent/toy_bonnie_in_vent" to="game_manager/jumpscare_manager" method="play_jumpscare"]
+[connection signal="timeout" from="environment/in_vent/toy_bonnie_in_vent/toy_bonnie_in_vent_timer_jumpscare" to="environment/in_vent/toy_bonnie_in_vent" method="on_jumpscare_timer_timeout"]
+[connection signal="timeout" from="environment/in_vent/toy_bonnie_in_vent/toy_bonnie_in_vent_timer_mask" to="environment/in_vent/toy_bonnie_in_vent" method="on_mask_timer_timeout"]
 [connection signal="button_down" from="environment/vent_light_left" to="game_manager/camera_manager" method="reset_limit_smoothing_enabled"]
 [connection signal="button_down" from="environment/vent_light_left" to="player/player_camera_rtrans" method="remove_limit"]
 [connection signal="button_down" from="environment/vent_light_left" to="game_manager/camera_manager" method="set_camera_limit" binds= [Vector4(-305, 0, 1585, 720)]]
@@ -2166,12 +2255,15 @@ position = Vector2(825, 360)
 [connection signal="animatronic_stalled" from="environment/animatronics/toy_freddy" to="environment/monitor/monitor_screen_fnaf2" method="set_animatronic_stalled"]
 [connection signal="animatronic_moved" from="environment/animatronics/toy_bonnie" to="environment/monitor/monitor_screen_fnaf2" method="animatronic_moved_to"]
 [connection signal="animatronic_moved_from" from="environment/animatronics/toy_bonnie" to="environment/monitor/monitor_screen_fnaf2" method="animatronic_moved_from"]
+[connection signal="animatronic_path_ran_out" from="environment/animatronics/toy_bonnie" to="environment/in_vent/toy_bonnie_in_vent" method="trigger_in_office" binds= [true]]
 [connection signal="animatronic_stalled" from="environment/animatronics/toy_bonnie" to="environment/monitor/monitor_screen_fnaf2" method="set_animatronic_stalled"]
 [connection signal="animatronic_moved" from="environment/animatronics/toy_chica" to="environment/monitor/monitor_screen_fnaf2" method="animatronic_moved_to"]
 [connection signal="animatronic_moved_from" from="environment/animatronics/toy_chica" to="environment/monitor/monitor_screen_fnaf2" method="animatronic_moved_from"]
+[connection signal="animatronic_path_ran_out" from="environment/animatronics/toy_chica" to="environment/in_vent/toy_chica_in_vent" method="trigger_in_office" binds= [true]]
 [connection signal="animatronic_stalled" from="environment/animatronics/toy_chica" to="environment/monitor/monitor_screen_fnaf2" method="set_animatronic_stalled"]
 [connection signal="animatronic_moved" from="environment/animatronics/mangle" to="environment/monitor/monitor_screen_fnaf2" method="animatronic_moved_to"]
 [connection signal="animatronic_moved_from" from="environment/animatronics/mangle" to="environment/monitor/monitor_screen_fnaf2" method="animatronic_moved_from"]
+[connection signal="animatronic_path_ran_out" from="environment/animatronics/mangle" to="environment/in_vent/mangle_in_vent" method="trigger_in_office" binds= [true]]
 [connection signal="animatronic_stalled" from="environment/animatronics/mangle" to="environment/monitor/monitor_screen_fnaf2" method="set_animatronic_stalled"]
 [connection signal="animatronic_moved" from="environment/animatronics/withered_freddy" to="environment/monitor/monitor_screen_fnaf2" method="animatronic_moved_to"]
 [connection signal="animatronic_moved_from" from="environment/animatronics/withered_freddy" to="environment/monitor/monitor_screen_fnaf2" method="animatronic_moved_from"]
@@ -2187,6 +2279,7 @@ position = Vector2(825, 360)
 [connection signal="animatronic_stalled" from="environment/animatronics/withered_foxy" to="environment/monitor/monitor_screen_fnaf2" method="set_animatronic_stalled"]
 [connection signal="animatronic_moved" from="environment/animatronics/balloon_boy" to="environment/monitor/monitor_screen_fnaf2" method="animatronic_moved_to"]
 [connection signal="animatronic_moved_from" from="environment/animatronics/balloon_boy" to="environment/monitor/monitor_screen_fnaf2" method="animatronic_moved_from"]
+[connection signal="animatronic_path_ran_out" from="environment/animatronics/balloon_boy" to="environment/in_vent/balloon_boy_in_vent" method="trigger_in_office" binds= [true]]
 [connection signal="animatronic_stalled" from="environment/animatronics/balloon_boy" to="environment/monitor/monitor_screen_fnaf2" method="set_animatronic_stalled"]
 [connection signal="button_down" from="environment/mask/mask_button" to="environment/mask" method="set_mask_state" binds= [true]]
 [connection signal="button_down" from="environment/mask/mask_clayer/exit_button" to="environment/mask" method="set_mask_state" binds= [false]]

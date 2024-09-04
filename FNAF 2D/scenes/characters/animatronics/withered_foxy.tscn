@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjcngkst8361t"]
+[gd_scene load_steps=2 format=3 uid="uid://cjcngkst8361t"]
 
 [ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_roaming_fnaf2.gd" id="1_rfhcb"]
-[ext_resource type="Texture2D" uid="uid://m4ahsdeb8hs4" path="res://sprites/characters/animatronics/freddy.png" id="2_7raix"]
-[ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_in_office_fnaf2.gd" id="3_uobcs"]
 
 [node name="withered_foxy" type="Node2D" node_paths=PackedStringArray("movement_timer", "pause_animatronic_timer", "pause_animatronic_timer_cooldown")]
 script = ExtResource("1_rfhcb")
@@ -19,13 +17,6 @@ ai_level_by_hour = {
 5: 20,
 12: 20
 }
-
-[node name="withered_foxy_in_office" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(640, 456)
-scale = Vector2(12, 12)
-texture = ExtResource("2_7raix")
-script = ExtResource("3_uobcs")
 
 [node name="withered_foxy_timer" type="Timer" parent="."]
 wait_time = 5.0

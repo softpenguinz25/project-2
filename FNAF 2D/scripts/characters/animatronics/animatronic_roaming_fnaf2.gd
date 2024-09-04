@@ -34,7 +34,7 @@ var current_pos:
 
 @export_range(0, 1) var move_backward_probability : float = .25
 
-@export var early_camera_nums : int = 2##first X cameras in camera path that animatronic can go to after being reset from door
+@export var early_camera_nums : int = 1##first X cameras in camera path that animatronic can go to after being reset from door
 
 signal animatronic_moved(animatronic_name : String, cam_name : String)
 signal animatronic_moved_from(animatronic_name : String, cam_name_from : String)
@@ -48,8 +48,6 @@ var current_monitor_cam : String = "no camera has been set yet, also subscribe t
 var can_pause_animatronic : bool = true
 @export var pause_animatronic_timer : Timer
 @export var pause_animatronic_timer_cooldown : Timer
-
-signal animatronic_jumpscare(animatronic_name : String)
 
 @export var monitor_screen : MonitorScreen
 @export_range(0, 1) var movement_cue_probability : float = .05
@@ -85,7 +83,6 @@ func set_current_monitor_cam(monitor_cam : String, cam_is_flashed : bool):
 	if cam_is_flashed and monitor_cam == current_pos and can_pause_animatronic:
 		pause_animatronic(true)
 
-#pause timer (false)
 func pause_animatronic(do_pause : bool):
 	movement_timer.paused = do_pause
 	animatronic_stalled.emit(animatronic_name, do_pause)
@@ -97,7 +94,6 @@ func pause_animatronic(do_pause : bool):
 	set_can_pause(false)
 	pause_animatronic_timer_cooldown.start()
 
-#pause cooldown timer (true)
 func set_can_pause(can_pause : bool):
 	can_pause_animatronic = can_pause
 

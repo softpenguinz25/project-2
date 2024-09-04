@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bv74gjg1c0dta"]
+[gd_scene load_steps=2 format=3 uid="uid://bv74gjg1c0dta"]
 
 [ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_roaming_fnaf2.gd" id="1_2mkfl"]
-[ext_resource type="Texture2D" uid="uid://cu8cvyxacd0pm" path="res://sprites/characters/animatronics/balloon_boy.png" id="2_rf3pj"]
-[ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_in_office_fnaf2.gd" id="3_6ilcs"]
 
 [node name="balloon_boy" type="Node2D" node_paths=PackedStringArray("movement_timer", "pause_animatronic_timer", "pause_animatronic_timer_cooldown")]
 script = ExtResource("1_2mkfl")
@@ -19,15 +17,6 @@ ai_level_by_hour = {
 5: 20,
 12: 20
 }
-
-[node name="balloon_boy_in_office" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-368, 526)
-rotation = 1.309
-scale = Vector2(16, 16)
-texture = ExtResource("2_rf3pj")
-script = ExtResource("3_6ilcs")
-animatronic_name = "balloon_boy"
 
 [node name="balloon_boy_timer" type="Timer" parent="."]
 wait_time = 5.0
