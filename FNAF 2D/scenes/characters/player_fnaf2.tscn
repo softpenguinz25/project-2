@@ -1,8 +1,9 @@
-[gd_scene load_steps=39 format=3 uid="uid://tbiaxc7dxu03"]
+[gd_scene load_steps=44 format=3 uid="uid://tbiaxc7dxu03"]
 
 [ext_resource type="Script" path="res://scripts/characters/player_fnaf2.gd" id="1_8xtbb"]
 [ext_resource type="Texture2D" uid="uid://dgcs3ce0qfxe4" path="res://sprites/characters/player_spritesheet.png" id="2_7crpd"]
 [ext_resource type="Script" path="res://scripts/characters/player_gfx.gd" id="3_cspt1"]
+[ext_resource type="Texture2D" uid="uid://cybfaea64nbje" path="res://sprites/environment/main_office_fnaf2/mask/object/mask_object.png" id="4_3onre"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p8tar"]
 atlas = ExtResource("2_7crpd")
@@ -165,6 +166,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("mask:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_pmetw"]
 resource_name = "idle_left"
@@ -193,6 +206,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("mask:position")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_n5lp0"]
 resource_name = "idle_right"
@@ -220,6 +245,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("mask:position")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_i72fo"]
@@ -250,6 +287,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("mask:position")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(0, 0), Vector2(0, 1), Vector2(-1, 0), Vector2(0, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_cyf2w"]
 resource_name = "walk_right"
@@ -278,6 +327,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("mask:position")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(1, 0), Vector2(0, 1), Vector2(1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_olpun"]
@@ -343,10 +404,25 @@ size = Vector2(11, 29)
 [sub_resource type="CircleShape2D" id="CircleShape2D_kxxd3"]
 radius = 30.0
 
-[node name="player" type="CharacterBody2D"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gnq6l"]
+texture = ExtResource("4_3onre")
+modulate_color = Color(0.733333, 0.733333, 0.733333, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_unuhh"]
+texture = ExtResource("4_3onre")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_unqs1"]
+texture = ExtResource("4_3onre")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wek5u"]
+texture = ExtResource("4_3onre")
+modulate_color = Color(0.266667, 0.266667, 0.266667, 1)
+
+[node name="player" type="CharacterBody2D" node_paths=PackedStringArray("mask_gfx") groups=["player"]]
 texture_filter = 1
 scale = Vector2(8, 8)
 script = ExtResource("1_8xtbb")
+mask_gfx = NodePath("mask")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gfs8i")
@@ -379,5 +455,20 @@ shape = SubResource("RectangleShape2D_2y5pm")
 [node name="interact_area_collider" type="CollisionShape2D" parent="interact_area"]
 shape = SubResource("CircleShape2D_kxxd3")
 
+[node name="mask" type="Node2D" parent="."]
+visible = false
+scale = Vector2(0.125, 0.125)
+
+[node name="mask_button" type="Button" parent="mask"]
+offset_left = -64.0
+offset_top = -144.0
+offset_right = 64.0
+offset_bottom = -16.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_gnq6l")
+theme_override_styles/hover = SubResource("StyleBoxTexture_unuhh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_unqs1")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_wek5u")
+
 [connection signal="area_entered" from="interact_area" to="." method="interact_with_interactables" binds= [true]]
 [connection signal="area_exited" from="interact_area" to="." method="interact_with_interactables" binds= [false]]
+[connection signal="button_down" from="mask/mask_button" to="." method="set_mask_state" binds= [false]]

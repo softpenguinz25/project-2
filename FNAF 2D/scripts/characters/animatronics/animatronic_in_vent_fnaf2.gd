@@ -10,12 +10,12 @@ var is_in_office : bool
 @export_subgroup("GFX")
 @onready var sprite = $"."
 
-@export_subgroup("Testing")
+@export_subgroup("Mask")
+@export var player : player_fnaf2
 var mask_on : bool
 var mask_state_old : bool
 
 @export_subgroup("Retreat")
-@export var player_mask : player_mask
 @export var animatronic_roaming : animatronic_roaming_fnaf2
 
 @export_subgroup("Jumpscare")
@@ -27,10 +27,12 @@ func _ready():
 	handle_gfx(false)
 	monitor_screen.monitor_unfocus.connect(on_monitor_unfocus)
 	
-	mask_on = player_mask.is_on
-	player_mask.mask_state_changed.connect(on_mask_state_changed)
+	mask_on = player.is_wearing_mask
+	player.mask_state_changed.connect(on_mask_state_changed)
 
 func trigger_in_office(in_office : bool) -> void:
+	#print_debug("%s in_office: %s {%s}" % [animatronic_name, in_office, Time.get_ticks_msec() / 1000.0])
+	
 	is_in_office = in_office
 	
 	handle_gfx(in_office)
@@ -66,6 +68,9 @@ func retreat():
 	
 	animatronic_roaming.reset_pos()
 	animatronic_roaming.set_can_move(true)
+	
+	timer_jumpscare.stop()
+	timer_mask.stop()
 
 func on_jumpscare_timer_timeout():
 	jumpscare_queued = true

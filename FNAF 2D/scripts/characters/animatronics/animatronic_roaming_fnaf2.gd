@@ -26,6 +26,7 @@ var current_cam_index_property:##-1 = not on camera
 		animatronic_moved.emit(animatronic_name, cam_name)
 		
 		if current_cam_index_property < 0:
+			#print_debug("%s path ran out {%s}" % [animatronic_name, Time.get_ticks_msec() / 1000.0])
 			animatronic_path_ran_out.emit()
 
 var current_pos:
@@ -66,6 +67,7 @@ func movement_opportunity() -> void:
 
 func regenerate_movement_timer() -> void:
 	movement_timer.wait_time = randf_range(min_move_time, max_move_time)
+	movement_timer.start()
 
 func move() -> void:
 	var move_forward : bool = randf() > move_backward_probability
@@ -80,12 +82,14 @@ func reset_pos() -> void:
 	cam_path_num = randi_range(0, cam_path.size() - 1)
 
 func set_current_monitor_cam(monitor_cam : String, cam_is_flashed : bool):
-	if cam_is_flashed and monitor_cam == current_pos and can_pause_animatronic:
+	if cam_is_flashed and monitor_cam == current_pos:
 		pause_animatronic(true)
 
 func pause_animatronic(do_pause : bool):
+	if do_pause and not can_pause_animatronic: return
+	
 	movement_timer.paused = do_pause
-	animatronic_stalled.emit(animatronic_name, do_pause)
+	animatronic_stalled.emit(animatronic_name, do_pause)#todo: this may be buggin out the stalling stuff
 	
 	if not do_pause: return
 	
@@ -98,6 +102,7 @@ func set_can_pause(can_pause : bool):
 	can_pause_animatronic = can_pause
 
 func set_can_move(can_move : bool):
+	#print_debug("%s can_move: %s {%s}" % [animatronic_name, can_move, Time.get_ticks_msec() / 1000.0])
 	self.can_move = can_move
 	
 	movement_timer.paused = not can_move

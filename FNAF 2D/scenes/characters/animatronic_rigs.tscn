@@ -478,6 +478,15 @@ texture = ExtResource("99_esotx")
 [node name="withered_chica" type="Node2D" parent="."]
 position = Vector2(96, 32)
 
+[node name="Neck" type="Sprite2D" parent="withered_chica"]
+texture = ExtResource("116_8wauw")
+
+[node name="Head" type="Sprite2D" parent="withered_chica/Neck"]
+texture = ExtResource("111_dqlrk")
+
+[node name="Hair" type="Sprite2D" parent="withered_chica/Neck/Head"]
+texture = ExtResource("108_vi84e")
+
 [node name="Body" type="Sprite2D" parent="withered_chica"]
 texture = ExtResource("103_y5wog")
 
@@ -498,16 +507,6 @@ texture = ExtResource("107_nb45a")
 
 [node name="HandRight" type="Sprite2D" parent="withered_chica/Body/ArmRightLower/ArmRightUpper"]
 texture = ExtResource("110_odmng")
-
-[node name="Neck" type="Sprite2D" parent="withered_chica/Body"]
-z_index = -1
-texture = ExtResource("116_8wauw")
-
-[node name="Head" type="Sprite2D" parent="withered_chica/Body/Neck"]
-texture = ExtResource("111_dqlrk")
-
-[node name="Hair" type="Sprite2D" parent="withered_chica/Body/Neck/Head"]
-texture = ExtResource("108_vi84e")
 
 [node name="LegLeftUpper" type="Sprite2D" parent="withered_chica/Body"]
 texture = ExtResource("113_j8elr")

@@ -1,18 +1,19 @@
 extends CharacterBody2D
+class_name player_fnaf2
 
 var can_move : bool = true
 
-@export_category("Run")
+@export_subgroup("Run")
 var last_move_dir : int
 @onready var top_speed : float = 600
 @onready var acceleration : float = 3600
 @onready var acceleration_turn_around_multiplier : float = 2.5
 
-@export_category("Jump")
+@export_subgroup("Jump")
 @export var gravity_in_px : float = 64
 @export var jump_velocity = 1000
 
-@export_category("Roll")
+@export_subgroup("Roll")
 var in_roll : bool = false
 @export var roll_time : float = 1
 @export var roll_speed_curve : Curve
@@ -23,7 +24,12 @@ var is_roll_cooling_down : bool = false
 @export var roll_speed_epsilon : float = 100
 @export var roll_idle_initial_speed : float = 100
 
-@export_category("GFX")
+@export_subgroup("Mask")
+var is_wearing_mask : bool
+@export var mask_gfx : Node2D
+var can_take_off : bool = true
+
+@export_subgroup("GFX")
 @export var player_footsteps : String = "res://sounds/player/player_footsteps.wav"
 @export var muffled_player_footsteps : String = "res://sounds/player/player_footsteps_muffled.wav"
 var player_footsteps_to_play : String = player_footsteps
@@ -33,6 +39,11 @@ signal is_moving
 signal not_is_moving
 signal set_active
 signal not_set_active
+
+signal mask_state_changed(is_wearing_mask : bool)
+signal not_mask_state_changed(not_is_wearing_mask : bool)
+signal mask_on
+signal mask_off
 
 func set_active_state(active_state : bool):
 	can_move = active_state
@@ -114,3 +125,16 @@ func interact_with_interactables(area_2d : Area2D, interact_state : bool) -> voi
 	var interactable_node : interactable = area_2d.get_parent()
 	interactable_node.set_interact_state(interact_state)
 	#$interact_area.scale = new_scale
+
+func set_mask_state(mask_state : bool):
+	if not mask_state and not can_take_off: return
+	
+	is_wearing_mask = mask_state
+	#mask_gfx.visible = mask_state
+	mask_state_changed.emit(mask_state)
+	not_mask_state_changed.emit(not mask_state)
+	if mask_state: mask_on.emit()
+	else: mask_off.emit()
+
+func set_can_take_off(can_take_off : bool):
+	self.can_take_off = can_take_off

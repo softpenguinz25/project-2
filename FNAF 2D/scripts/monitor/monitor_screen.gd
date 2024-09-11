@@ -37,6 +37,8 @@ signal exit_camera_button_toggled(toggle_state : bool)
 signal cheat_mode_on
 signal cheat_mode_off
 
+signal hall_light_state_set(state : bool)
+
 func set_active_state(active_state : bool):
 	if active_state_permanent: return
 	
@@ -103,3 +105,6 @@ func toggle_exit_cam_button():
 func set_cheat_mode(use : bool):
 	if use: cheat_mode_on.emit()
 	else: cheat_mode_off.emit()
+
+func set_hall_light_state(state : bool):
+	hall_light_state_set.emit(state)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=185 format=3 uid="uid://deybknyvrm48a"]
+[gd_scene load_steps=186 format=3 uid="uid://deybknyvrm48a"]
 
 [ext_resource type="Script" path="res://scripts/monitor/monitor_screen.gd" id="1_8ro68"]
 [ext_resource type="Script" path="res://scripts/monitor/monitor_scene.gd" id="2_ve4w3"]
@@ -163,6 +163,7 @@
 [ext_resource type="Texture2D" uid="uid://cdhdctr35y5ub" path="res://sprites/characters/animatronics/withered_foxy/body.png" id="126_1dvs2"]
 [ext_resource type="Script" path="res://scripts/monitor/monitor_eyes_blacked.gd" id="133_3eitw"]
 [ext_resource type="Texture2D" uid="uid://bdwredcxhdtj1" path="res://sprites/vignette.png" id="133_wubgc"]
+[ext_resource type="Script" path="res://scripts/monitor/monitor_eyes_blacked_hall_gfx.gd" id="136_k1j6v"]
 [ext_resource type="Texture2D" uid="uid://crtictvbsvevf" path="res://sprites/characters/animatronics/placeholder/2d/toy_bonnie_placeholder.png" id="138_fgpiy"]
 [ext_resource type="Texture2D" uid="uid://m16gms80qs0p" path="res://sprites/characters/animatronics/placeholder/2d/toy_chica_placeholder.png" id="139_ldead"]
 [ext_resource type="Texture2D" uid="uid://bf2kkssjxm64o" path="res://sprites/characters/animatronics/placeholder/2d/mangle_placeholder.png" id="140_n0v3n"]
@@ -2782,6 +2783,20 @@ black_eyes = {
 "mangle": NodePath("game_area/eyes_blacked_mangle_game_area"),
 "toy_freddy": NodePath("game_area/eyes_blacked_toy_freddy_game_area")
 }],
+"hall": [NodePath("../../../eyes_blacked_hall/hall"), {
+"mangle": NodePath("../../../hall_animatronics/eyes_blacked_mangle_hall"),
+"toy_chica": NodePath("../../../hall_animatronics/eyes_blacked_toy_chica_hall"),
+"toy_freddy": NodePath("../../../hall_animatronics/eyes_blacked_toy_freddy_hall"),
+"withered_bonnie": NodePath("../../../hall_animatronics/eyes_blacked_withered_bonnie_hall"),
+"withered_foxy": NodePath("../../../hall_animatronics/eyes_blacked_withered_foxy_hall"),
+"withered_freddy": NodePath("../../../hall_animatronics/eyes_blacked_withered_freddy_hall")
+}],
+"hall_2": [NodePath("../../../eyes_blacked_hall/hall_2"), {
+"mangle": NodePath("../../../hall_animatronics/eyes_blacked_mangle_hall_2"),
+"toy_freddy": NodePath("../../../hall_animatronics/eyes_blacked_toy_freddy_hall_2"),
+"withered_bonnie": NodePath("../../../hall_animatronics/eyes_blacked_withered_bonnie_hall_2"),
+"withered_foxy": NodePath("../../../hall_animatronics/withered_foxy_2/eyes_blacked_withered_foxy_hall_2")
+}],
 "kids_cove": [NodePath("kids_cove"), {
 "mangle": NodePath("kids_cove/eyes_blacked_mangle_kids_cove")
 }],
@@ -3693,6 +3708,163 @@ texture = ExtResource("133_wubgc")
 position = Vector2(-708.108, -4681.08)
 scale = Vector2(10.811, 10.811)
 
+[node name="toy_freddy_1" type="Node2D" parent="hall_animatronics"]
+visible = false
+position = Vector2(542.99, 376)
+scale = Vector2(8, 8)
+
+[node name="Body" type="Sprite2D" parent="hall_animatronics/toy_freddy_1"]
+texture = ExtResource("30_vuwm1")
+
+[node name="ArmLeft" type="Sprite2D" parent="hall_animatronics/toy_freddy_1/Body"]
+position = Vector2(-5.125, -8.125)
+rotation = -1.309
+texture = ExtResource("31_lohk3")
+
+[node name="HandLeft" type="Sprite2D" parent="hall_animatronics/toy_freddy_1/Body/ArmLeft"]
+texture = ExtResource("32_hq061")
+
+[node name="ArmRight" type="Sprite2D" parent="hall_animatronics/toy_freddy_1/Body"]
+position = Vector2(5, -8)
+rotation = 1.309
+texture = ExtResource("33_nx52a")
+
+[node name="HandRight" type="Sprite2D" parent="hall_animatronics/toy_freddy_1/Body/ArmRight"]
+texture = ExtResource("34_k6vv0")
+
+[node name="Head" type="Sprite2D" parent="hall_animatronics/toy_freddy_1/Body"]
+position = Vector2(0.125, 0.25)
+rotation = -0.0523599
+texture = ExtResource("35_1uucr")
+
+[node name="EarLeft" type="Sprite2D" parent="hall_animatronics/toy_freddy_1/Body/Head"]
+texture = ExtResource("36_bqoyf")
+
+[node name="EarRight" type="Sprite2D" parent="hall_animatronics/toy_freddy_1/Body/Head"]
+texture = ExtResource("37_7pg55")
+
+[node name="Hat" type="Sprite2D" parent="hall_animatronics/toy_freddy_1/Body/Head"]
+texture = ExtResource("38_egimd")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="hall_animatronics/toy_freddy_1/Body"]
+texture = ExtResource("39_sj6a4")
+
+[node name="LegLeftLower" type="Sprite2D" parent="hall_animatronics/toy_freddy_1/Body/LegLeftUpper"]
+texture = ExtResource("40_6sbsc")
+
+[node name="LegRightUpper" type="Sprite2D" parent="hall_animatronics/toy_freddy_1/Body"]
+texture = ExtResource("41_lud8c")
+
+[node name="LegRightLower" type="Sprite2D" parent="hall_animatronics/toy_freddy_1/Body/LegRightUpper"]
+texture = ExtResource("42_vkbgx")
+
+[node name="Mic" type="Sprite2D" parent="hall_animatronics/toy_freddy_1/Body"]
+position = Vector2(-17.875, -2)
+rotation = -2.35619
+texture = ExtResource("43_toewx")
+
+[node name="eyes_blacked_toy_freddy_hall" type="Node2D" parent="hall_animatronics"]
+visible = false
+position = Vector2(540.222, 306.099)
+rotation = -0.0523599
+scale = Vector2(8, 8)
+
+[node name="eye_left" type="Sprite2D" parent="hall_animatronics/eyes_blacked_toy_freddy_hall"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(-1.5, 0)
+scale = Vector2(2, 2)
+texture = SubResource("CanvasTexture_v0m4v")
+
+[node name="eye_left_pupil" type="Sprite2D" parent="hall_animatronics/eyes_blacked_toy_freddy_hall/eye_left"]
+scale = Vector2(0.15, 0.15)
+texture = SubResource("CanvasTexture_v0m4v")
+
+[node name="eye_right" type="Sprite2D" parent="hall_animatronics/eyes_blacked_toy_freddy_hall"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(1.5, 0)
+scale = Vector2(2, 2)
+texture = SubResource("CanvasTexture_v0m4v")
+
+[node name="eye_right_pupil" type="Sprite2D" parent="hall_animatronics/eyes_blacked_toy_freddy_hall/eye_right"]
+scale = Vector2(0.15, 0.15)
+texture = SubResource("CanvasTexture_v0m4v")
+
+[node name="toy_chica" type="Node2D" parent="hall_animatronics"]
+visible = false
+position = Vector2(721.987, 400)
+scale = Vector2(8, 8)
+
+[node name="Body" type="Sprite2D" parent="hall_animatronics/toy_chica"]
+texture = ExtResource("4_lkhjo")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="hall_animatronics/toy_chica/Body"]
+position = Vector2(0.75, -5.8125)
+rotation = -0.959931
+texture = ExtResource("5_o0b8f")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="hall_animatronics/toy_chica/Body/ArmLeftUpper"]
+position = Vector2(1.08581, -3.36931)
+rotation = -0.401426
+texture = ExtResource("6_dyn15")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="hall_animatronics/toy_chica/Body"]
+position = Vector2(-1.5, -1.75)
+rotation = 0.401426
+texture = ExtResource("7_apa2e")
+
+[node name="ArmRightLower" type="Sprite2D" parent="hall_animatronics/toy_chica/Body/ArmRightUpper"]
+position = Vector2(1.19661, 2.81905)
+rotation = -0.401426
+texture = ExtResource("8_iuif6")
+
+[node name="Cupcake" type="Sprite2D" parent="hall_animatronics/toy_chica/Body/ArmRightUpper/ArmRightLower"]
+position = Vector2(18.75, -1.125)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("15_khaih")
+
+[node name="Head" type="Sprite2D" parent="hall_animatronics/toy_chica/Body"]
+texture = ExtResource("9_b37ep")
+
+[node name="Hair" type="Sprite2D" parent="hall_animatronics/toy_chica/Body/Head"]
+texture = ExtResource("10_42heq")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="hall_animatronics/toy_chica/Body"]
+texture = ExtResource("11_mwb88")
+
+[node name="LegLeftLower" type="Sprite2D" parent="hall_animatronics/toy_chica/Body/LegLeftUpper"]
+texture = ExtResource("12_nyg6u")
+
+[node name="LegRightUpper" type="Sprite2D" parent="hall_animatronics/toy_chica/Body"]
+texture = ExtResource("13_clops")
+
+[node name="LegRightLower" type="Sprite2D" parent="hall_animatronics/toy_chica/Body/LegRightUpper"]
+texture = ExtResource("14_lkw87")
+
+[node name="eyes_blacked_toy_chica_hall" type="Node2D" parent="hall_animatronics"]
+visible = false
+position = Vector2(721.987, 324)
+scale = Vector2(8, 8)
+
+[node name="eye_left" type="Sprite2D" parent="hall_animatronics/eyes_blacked_toy_chica_hall"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(-1.5, 0)
+scale = Vector2(2, 2)
+texture = SubResource("CanvasTexture_v0m4v")
+
+[node name="eye_left_pupil" type="Sprite2D" parent="hall_animatronics/eyes_blacked_toy_chica_hall/eye_left"]
+scale = Vector2(0.15, 0.15)
+texture = SubResource("CanvasTexture_v0m4v")
+
+[node name="eye_right" type="Sprite2D" parent="hall_animatronics/eyes_blacked_toy_chica_hall"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(1.5, 0)
+scale = Vector2(2, 2)
+texture = SubResource("CanvasTexture_v0m4v")
+
+[node name="eye_right_pupil" type="Sprite2D" parent="hall_animatronics/eyes_blacked_toy_chica_hall/eye_right"]
+scale = Vector2(0.15, 0.15)
+texture = SubResource("CanvasTexture_v0m4v")
+
 [node name="withered_foxy_1" type="Node2D" parent="hall_animatronics"]
 visible = false
 position = Vector2(633, 400)
@@ -3753,115 +3925,113 @@ texture = ExtResource("124_kfohq")
 [node name="LegRightLower" type="Sprite2D" parent="hall_animatronics/withered_foxy_1/Body/LegRightUpper"]
 texture = ExtResource("125_pugtr")
 
-[node name="toy_freddy_1" type="Node2D" parent="hall_animatronics"]
+[node name="eyes_blacked_withered_foxy_hall" type="Node2D" parent="hall_animatronics"]
 visible = false
-position = Vector2(640, 376)
+position = Vector2(638.292, 320.887)
+rotation = -0.174533
 scale = Vector2(8, 8)
 
-[node name="Body" type="Sprite2D" parent="hall_animatronics/toy_freddy_1"]
-texture = ExtResource("30_vuwm1")
+[node name="eye_left" type="Sprite2D" parent="hall_animatronics/eyes_blacked_withered_foxy_hall"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(-1.5, 0)
+scale = Vector2(2, 2)
+texture = SubResource("CanvasTexture_v0m4v")
 
-[node name="ArmLeft" type="Sprite2D" parent="hall_animatronics/toy_freddy_1/Body"]
-position = Vector2(-5.125, -8.125)
-rotation = -1.309
-texture = ExtResource("31_lohk3")
+[node name="eye_left_pupil" type="Sprite2D" parent="hall_animatronics/eyes_blacked_withered_foxy_hall/eye_left"]
+scale = Vector2(0.15, 0.15)
+texture = SubResource("CanvasTexture_v0m4v")
 
-[node name="HandLeft" type="Sprite2D" parent="hall_animatronics/toy_freddy_1/Body/ArmLeft"]
-texture = ExtResource("32_hq061")
+[node name="eye_right" type="Sprite2D" parent="hall_animatronics/eyes_blacked_withered_foxy_hall"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(1.5, 0)
+scale = Vector2(2, 2)
+texture = SubResource("CanvasTexture_v0m4v")
 
-[node name="ArmRight" type="Sprite2D" parent="hall_animatronics/toy_freddy_1/Body"]
-position = Vector2(5, -8)
-rotation = 1.309
-texture = ExtResource("33_nx52a")
+[node name="eye_right_pupil" type="Sprite2D" parent="hall_animatronics/eyes_blacked_withered_foxy_hall/eye_right"]
+scale = Vector2(0.15, 0.15)
+texture = SubResource("CanvasTexture_v0m4v")
 
-[node name="HandRight" type="Sprite2D" parent="hall_animatronics/toy_freddy_1/Body/ArmRight"]
-texture = ExtResource("34_k6vv0")
-
-[node name="Head" type="Sprite2D" parent="hall_animatronics/toy_freddy_1/Body"]
-position = Vector2(0.125, 0.25)
-rotation = -0.0523599
-texture = ExtResource("35_1uucr")
-
-[node name="EarLeft" type="Sprite2D" parent="hall_animatronics/toy_freddy_1/Body/Head"]
-texture = ExtResource("36_bqoyf")
-
-[node name="EarRight" type="Sprite2D" parent="hall_animatronics/toy_freddy_1/Body/Head"]
-texture = ExtResource("37_7pg55")
-
-[node name="Hat" type="Sprite2D" parent="hall_animatronics/toy_freddy_1/Body/Head"]
-texture = ExtResource("38_egimd")
-
-[node name="LegLeftUpper" type="Sprite2D" parent="hall_animatronics/toy_freddy_1/Body"]
-texture = ExtResource("39_sj6a4")
-
-[node name="LegLeftLower" type="Sprite2D" parent="hall_animatronics/toy_freddy_1/Body/LegLeftUpper"]
-texture = ExtResource("40_6sbsc")
-
-[node name="LegRightUpper" type="Sprite2D" parent="hall_animatronics/toy_freddy_1/Body"]
-texture = ExtResource("41_lud8c")
-
-[node name="LegRightLower" type="Sprite2D" parent="hall_animatronics/toy_freddy_1/Body/LegRightUpper"]
-texture = ExtResource("42_vkbgx")
-
-[node name="Mic" type="Sprite2D" parent="hall_animatronics/toy_freddy_1/Body"]
-position = Vector2(-17.875, -2)
-rotation = -2.35619
-texture = ExtResource("43_toewx")
-
-[node name="toy_chica" type="Node2D" parent="hall_animatronics"]
+[node name="withered_bonnie_1" type="Node2D" parent="hall_animatronics"]
 visible = false
-position = Vector2(656, 400)
-scale = Vector2(8, 8)
+position = Vector2(779.216, 392)
+scale = Vector2(12, 12)
 
-[node name="Body" type="Sprite2D" parent="hall_animatronics/toy_chica"]
-texture = ExtResource("4_lkhjo")
+[node name="Body" type="Sprite2D" parent="hall_animatronics/withered_bonnie_1"]
+position = Vector2(-0.666672, 0.75)
+rotation = -0.174533
+texture = ExtResource("72_dvupw")
 
-[node name="ArmLeftUpper" type="Sprite2D" parent="hall_animatronics/toy_chica/Body"]
-position = Vector2(0.75, -5.8125)
+[node name="ArmLeftUpper" type="Sprite2D" parent="hall_animatronics/withered_bonnie_1/Body"]
+position = Vector2(-1.30417, -5.56095)
 rotation = -0.959931
-texture = ExtResource("5_o0b8f")
+texture = ExtResource("73_uys2q")
 
-[node name="ArmLeftLower" type="Sprite2D" parent="hall_animatronics/toy_chica/Body/ArmLeftUpper"]
-position = Vector2(1.08581, -3.36931)
-rotation = -0.401426
-texture = ExtResource("6_dyn15")
+[node name="ArmLeftLower" type="Sprite2D" parent="hall_animatronics/withered_bonnie_1/Body/ArmLeftUpper"]
+position = Vector2(0.0708434, -1.22836)
+rotation = -0.174533
+texture = ExtResource("74_g8xqo")
 
-[node name="ArmRightUpper" type="Sprite2D" parent="hall_animatronics/toy_chica/Body"]
-position = Vector2(-1.5, -1.75)
-rotation = 0.401426
-texture = ExtResource("7_apa2e")
+[node name="ArmRight" type="Sprite2D" parent="hall_animatronics/withered_bonnie_1/Body"]
+position = Vector2(1.54381, -6.83577)
+rotation = 1.13446
+texture = ExtResource("75_wcncf")
 
-[node name="ArmRightLower" type="Sprite2D" parent="hall_animatronics/toy_chica/Body/ArmRightUpper"]
-position = Vector2(1.19661, 2.81905)
-rotation = -0.401426
-texture = ExtResource("8_iuif6")
+[node name="Head" type="Sprite2D" parent="hall_animatronics/withered_bonnie_1/Body"]
+position = Vector2(-1.125, -1.8125)
+rotation = 0.261799
+texture = ExtResource("76_jvvif")
 
-[node name="Cupcake" type="Sprite2D" parent="hall_animatronics/toy_chica/Body/ArmRightUpper/ArmRightLower"]
-position = Vector2(18.75, -1.125)
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("15_khaih")
+[node name="EarLeft" type="Sprite2D" parent="hall_animatronics/withered_bonnie_1/Body/Head"]
+position = Vector2(1.41778, -0.117739)
+rotation = -0.0872665
+texture = ExtResource("77_pg70x")
 
-[node name="Head" type="Sprite2D" parent="hall_animatronics/toy_chica/Body"]
-texture = ExtResource("9_b37ep")
+[node name="EarRight" type="Sprite2D" parent="hall_animatronics/withered_bonnie_1/Body/Head"]
+position = Vector2(-0.762429, -0.177951)
+rotation = 0.0872665
+texture = ExtResource("78_wc0r7")
 
-[node name="Hair" type="Sprite2D" parent="hall_animatronics/toy_chica/Body/Head"]
-texture = ExtResource("10_42heq")
+[node name="LegLeftUpper" type="Sprite2D" parent="hall_animatronics/withered_bonnie_1"]
+texture = ExtResource("79_ebpdq")
 
-[node name="LegLeftUpper" type="Sprite2D" parent="hall_animatronics/toy_chica/Body"]
-texture = ExtResource("11_mwb88")
+[node name="FootLeft" type="Sprite2D" parent="hall_animatronics/withered_bonnie_1/LegLeftUpper"]
+texture = ExtResource("80_a62ao")
 
-[node name="LegLeftLower" type="Sprite2D" parent="hall_animatronics/toy_chica/Body/LegLeftUpper"]
-texture = ExtResource("12_nyg6u")
+[node name="LegRightUpper" type="Sprite2D" parent="hall_animatronics/withered_bonnie_1"]
+texture = ExtResource("81_4mkib")
 
-[node name="LegRightUpper" type="Sprite2D" parent="hall_animatronics/toy_chica/Body"]
-texture = ExtResource("13_clops")
+[node name="FootRight" type="Sprite2D" parent="hall_animatronics/withered_bonnie_1/LegRightUpper"]
+texture = ExtResource("82_ti5us")
 
-[node name="LegRightLower" type="Sprite2D" parent="hall_animatronics/toy_chica/Body/LegRightUpper"]
-texture = ExtResource("14_lkw87")
+[node name="eyes_blacked_withered_bonnie_hall" type="Node2D" parent="hall_animatronics"]
+visible = false
+position = Vector2(763.034, 280.313)
+rotation = 0.087266
+scale = Vector2(12, 12)
+
+[node name="eye_left" type="Sprite2D" parent="hall_animatronics/eyes_blacked_withered_bonnie_hall"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(-1.5, 0)
+scale = Vector2(2, 2)
+texture = SubResource("CanvasTexture_v0m4v")
+
+[node name="eye_left_pupil" type="Sprite2D" parent="hall_animatronics/eyes_blacked_withered_bonnie_hall/eye_left"]
+scale = Vector2(0.15, 0.15)
+texture = SubResource("CanvasTexture_v0m4v")
+
+[node name="eye_right" type="Sprite2D" parent="hall_animatronics/eyes_blacked_withered_bonnie_hall"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(2.5, 0)
+scale = Vector2(2, 2)
+texture = SubResource("CanvasTexture_v0m4v")
+
+[node name="eye_right_pupil" type="Sprite2D" parent="hall_animatronics/eyes_blacked_withered_bonnie_hall/eye_right"]
+scale = Vector2(0.15, 0.15)
+texture = SubResource("CanvasTexture_v0m4v")
 
 [node name="withered_freddy" type="Node2D" parent="hall_animatronics"]
 visible = false
-position = Vector2(656, 392)
+position = Vector2(540.016, 392)
 scale = Vector2(12, 12)
 
 [node name="Body" type="Sprite2D" parent="hall_animatronics/withered_freddy"]
@@ -3920,57 +4090,114 @@ texture = ExtResource("93_7b1k7")
 [node name="FootRight" type="Sprite2D" parent="hall_animatronics/withered_freddy/LegRight"]
 texture = ExtResource("94_g504l")
 
-[node name="withered_bonnie_1" type="Node2D" parent="hall_animatronics"]
+[node name="eyes_blacked_withered_freddy_hall" type="Node2D" parent="hall_animatronics"]
 visible = false
-position = Vector2(712, 392)
+position = Vector2(536.364, 287.148)
+rotation = -0.0523599
 scale = Vector2(12, 12)
 
-[node name="Body" type="Sprite2D" parent="hall_animatronics/withered_bonnie_1"]
-position = Vector2(-0.666672, 0.75)
-rotation = -0.174533
-texture = ExtResource("72_dvupw")
+[node name="eye_left" type="Sprite2D" parent="hall_animatronics/eyes_blacked_withered_freddy_hall"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(-1.5, 0)
+scale = Vector2(2, 2)
+texture = SubResource("CanvasTexture_v0m4v")
 
-[node name="ArmLeftUpper" type="Sprite2D" parent="hall_animatronics/withered_bonnie_1/Body"]
-position = Vector2(-1.30417, -5.56095)
-rotation = -0.959931
-texture = ExtResource("73_uys2q")
+[node name="eye_left_pupil" type="Sprite2D" parent="hall_animatronics/eyes_blacked_withered_freddy_hall/eye_left"]
+scale = Vector2(0.15, 0.15)
+texture = SubResource("CanvasTexture_v0m4v")
 
-[node name="ArmLeftLower" type="Sprite2D" parent="hall_animatronics/withered_bonnie_1/Body/ArmLeftUpper"]
-position = Vector2(0.0708434, -1.22836)
-rotation = -0.174533
-texture = ExtResource("74_g8xqo")
+[node name="eye_right" type="Sprite2D" parent="hall_animatronics/eyes_blacked_withered_freddy_hall"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(1.5, 0)
+scale = Vector2(2, 2)
+texture = SubResource("CanvasTexture_v0m4v")
 
-[node name="ArmRight" type="Sprite2D" parent="hall_animatronics/withered_bonnie_1/Body"]
-position = Vector2(1.54381, -6.83577)
-rotation = 1.13446
-texture = ExtResource("75_wcncf")
+[node name="eye_right_pupil" type="Sprite2D" parent="hall_animatronics/eyes_blacked_withered_freddy_hall/eye_right"]
+scale = Vector2(0.15, 0.15)
+texture = SubResource("CanvasTexture_v0m4v")
 
-[node name="Head" type="Sprite2D" parent="hall_animatronics/withered_bonnie_1/Body"]
-position = Vector2(-1.125, -1.8125)
-rotation = 0.261799
-texture = ExtResource("76_jvvif")
+[node name="withered_foxy_2" type="Node2D" parent="hall_animatronics"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(633, 400)
+scale = Vector2(12, 12)
 
-[node name="EarLeft" type="Sprite2D" parent="hall_animatronics/withered_bonnie_1/Body/Head"]
-position = Vector2(1.41778, -0.117739)
-rotation = -0.0872665
-texture = ExtResource("77_pg70x")
+[node name="Neck" type="Sprite2D" parent="hall_animatronics/withered_foxy_2"]
+texture = ExtResource("112_mb65b")
 
-[node name="EarRight" type="Sprite2D" parent="hall_animatronics/withered_bonnie_1/Body/Head"]
-position = Vector2(-0.762429, -0.177951)
-rotation = 0.0872665
-texture = ExtResource("78_wc0r7")
+[node name="Head" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/Neck"]
+texture = ExtResource("113_ej0gh")
 
-[node name="LegLeftUpper" type="Sprite2D" parent="hall_animatronics/withered_bonnie_1"]
-texture = ExtResource("79_ebpdq")
+[node name="EarLeft" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/Neck/Head"]
+texture = ExtResource("114_hcqfn")
 
-[node name="FootLeft" type="Sprite2D" parent="hall_animatronics/withered_bonnie_1/LegLeftUpper"]
-texture = ExtResource("80_a62ao")
+[node name="EarRight" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/Neck/Head"]
+texture = ExtResource("115_6frqg")
 
-[node name="LegRightUpper" type="Sprite2D" parent="hall_animatronics/withered_bonnie_1"]
-texture = ExtResource("81_4mkib")
+[node name="Body" type="Sprite2D" parent="hall_animatronics/withered_foxy_2"]
+texture = ExtResource("126_1dvs2")
 
-[node name="FootRight" type="Sprite2D" parent="hall_animatronics/withered_bonnie_1/LegRightUpper"]
-texture = ExtResource("82_ti5us")
+[node name="ArmLeftUpper" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/Body"]
+position = Vector2(1.125, -0.75)
+rotation = -0.261799
+texture = ExtResource("116_yd7j0")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/Body/ArmLeftUpper"]
+position = Vector2(-10.9407, 5.09185)
+rotation = 1.57079
+texture = ExtResource("117_qs0uj")
+
+[node name="HandLeft" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/Body/ArmLeftUpper/ArmLeftLower"]
+texture = ExtResource("118_qt2sg")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/Body"]
+position = Vector2(-1.75, -2.875)
+rotation = 0.523598
+texture = ExtResource("119_mos08")
+
+[node name="ArmRightLower" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/Body/ArmRightUpper"]
+position = Vector2(-0.795488, -6.62913)
+rotation = 0.698132
+texture = ExtResource("120_43f85")
+
+[node name="HandRight" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/Body/ArmRightUpper/ArmRightLower"]
+texture = ExtResource("121_cvj2c")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/Body"]
+texture = ExtResource("122_0cph4")
+
+[node name="LegLeftLower" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/Body/LegLeftUpper"]
+texture = ExtResource("123_shiu2")
+
+[node name="LegRightUpper" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/Body"]
+texture = ExtResource("124_kfohq")
+
+[node name="LegRightLower" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/Body/LegRightUpper"]
+texture = ExtResource("125_pugtr")
+
+[node name="eyes_blacked_withered_foxy_hall_2" type="Node2D" parent="hall_animatronics/withered_foxy_2"]
+visible = false
+position = Vector2(1, -10.5)
+
+[node name="eye_left" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/eyes_blacked_withered_foxy_hall_2"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(-1.5, 0)
+scale = Vector2(2, 2)
+texture = SubResource("CanvasTexture_v0m4v")
+
+[node name="eye_left_pupil" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/eyes_blacked_withered_foxy_hall_2/eye_left"]
+scale = Vector2(0.15, 0.15)
+texture = SubResource("CanvasTexture_v0m4v")
+
+[node name="eye_right" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/eyes_blacked_withered_foxy_hall_2"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(1.5, 0)
+scale = Vector2(2, 2)
+texture = SubResource("CanvasTexture_v0m4v")
+
+[node name="eye_right_pupil" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/eyes_blacked_withered_foxy_hall_2/eye_right"]
+scale = Vector2(0.15, 0.15)
+texture = SubResource("CanvasTexture_v0m4v")
 
 [node name="mangle_1" type="Node2D" parent="hall_animatronics"]
 visible = false
@@ -4077,6 +4304,32 @@ position = Vector2(-1.46086, 6.55622)
 rotation = -0.523599
 texture = ExtResource("66_sl4v6")
 
+[node name="eyes_blacked_mangle_hall" type="Node2D" parent="hall_animatronics"]
+visible = false
+position = Vector2(718.75, 401.75)
+rotation = 3.14159
+scale = Vector2(12, 12)
+
+[node name="eye_left" type="Sprite2D" parent="hall_animatronics/eyes_blacked_mangle_hall"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(-1.5, 0)
+scale = Vector2(2, 2)
+texture = SubResource("CanvasTexture_v0m4v")
+
+[node name="eye_left_pupil" type="Sprite2D" parent="hall_animatronics/eyes_blacked_mangle_hall/eye_left"]
+scale = Vector2(0.15, 0.15)
+texture = SubResource("CanvasTexture_v0m4v")
+
+[node name="eye_right" type="Sprite2D" parent="hall_animatronics/eyes_blacked_mangle_hall"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(1.5, 0)
+scale = Vector2(2, 2)
+texture = SubResource("CanvasTexture_v0m4v")
+
+[node name="eye_right_pupil" type="Sprite2D" parent="hall_animatronics/eyes_blacked_mangle_hall/eye_right"]
+scale = Vector2(0.15, 0.15)
+texture = SubResource("CanvasTexture_v0m4v")
+
 [node name="withered_bonnie_2" type="Node2D" parent="hall_animatronics"]
 visible = false
 position = Vector2(776, 392)
@@ -4123,67 +4376,35 @@ texture = ExtResource("81_4mkib")
 [node name="FootRight" type="Sprite2D" parent="hall_animatronics/withered_bonnie_2/Body/LegRightUpper"]
 texture = ExtResource("82_ti5us")
 
-[node name="withered_foxy_2" type="Node2D" parent="hall_animatronics"]
+[node name="eyes_blacked_withered_bonnie_hall_2" type="Node2D" parent="hall_animatronics"]
 visible = false
-position = Vector2(633, 400)
-scale = Vector2(12, 12)
+position = Vector2(793.199, 231.634)
+rotation = 0.261799
+scale = Vector2(16, 16)
 
-[node name="Neck" type="Sprite2D" parent="hall_animatronics/withered_foxy_2"]
-texture = ExtResource("112_mb65b")
+[node name="eye_left" type="Sprite2D" parent="hall_animatronics/eyes_blacked_withered_bonnie_hall_2"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(-1.5, 0)
+scale = Vector2(2, 2)
+texture = SubResource("CanvasTexture_v0m4v")
 
-[node name="Head" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/Neck"]
-texture = ExtResource("113_ej0gh")
+[node name="eye_left_pupil" type="Sprite2D" parent="hall_animatronics/eyes_blacked_withered_bonnie_hall_2/eye_left"]
+scale = Vector2(0.15, 0.15)
+texture = SubResource("CanvasTexture_v0m4v")
 
-[node name="EarLeft" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/Neck/Head"]
-texture = ExtResource("114_hcqfn")
+[node name="eye_right" type="Sprite2D" parent="hall_animatronics/eyes_blacked_withered_bonnie_hall_2"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(2.5, 0)
+scale = Vector2(2, 2)
+texture = SubResource("CanvasTexture_v0m4v")
 
-[node name="EarRight" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/Neck/Head"]
-texture = ExtResource("115_6frqg")
-
-[node name="Body" type="Sprite2D" parent="hall_animatronics/withered_foxy_2"]
-texture = ExtResource("126_1dvs2")
-
-[node name="ArmLeftUpper" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/Body"]
-position = Vector2(1.125, -0.75)
-rotation = -0.261799
-texture = ExtResource("116_yd7j0")
-
-[node name="ArmLeftLower" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/Body/ArmLeftUpper"]
-position = Vector2(-10.9407, 5.09185)
-rotation = 1.57079
-texture = ExtResource("117_qs0uj")
-
-[node name="HandLeft" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/Body/ArmLeftUpper/ArmLeftLower"]
-texture = ExtResource("118_qt2sg")
-
-[node name="ArmRightUpper" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/Body"]
-position = Vector2(-1.75, -2.875)
-rotation = 0.523598
-texture = ExtResource("119_mos08")
-
-[node name="ArmRightLower" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/Body/ArmRightUpper"]
-position = Vector2(-0.795488, -6.62913)
-rotation = 0.698132
-texture = ExtResource("120_43f85")
-
-[node name="HandRight" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/Body/ArmRightUpper/ArmRightLower"]
-texture = ExtResource("121_cvj2c")
-
-[node name="LegLeftUpper" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/Body"]
-texture = ExtResource("122_0cph4")
-
-[node name="LegLeftLower" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/Body/LegLeftUpper"]
-texture = ExtResource("123_shiu2")
-
-[node name="LegRightUpper" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/Body"]
-texture = ExtResource("124_kfohq")
-
-[node name="LegRightLower" type="Sprite2D" parent="hall_animatronics/withered_foxy_2/Body/LegRightUpper"]
-texture = ExtResource("125_pugtr")
+[node name="eye_right_pupil" type="Sprite2D" parent="hall_animatronics/eyes_blacked_withered_bonnie_hall_2/eye_right"]
+scale = Vector2(0.15, 0.15)
+texture = SubResource("CanvasTexture_v0m4v")
 
 [node name="toy_freddy_2" type="Node2D" parent="hall_animatronics"]
 visible = false
-position = Vector2(748, 376)
+position = Vector2(592.99, 376)
 scale = Vector2(16, 16)
 
 [node name="Body" type="Sprite2D" parent="hall_animatronics/toy_freddy_2"]
@@ -4249,6 +4470,32 @@ texture = ExtResource("41_lud8c")
 position = Vector2(0.633956, -0.154533)
 rotation = 0.0523599
 texture = ExtResource("42_vkbgx")
+
+[node name="eyes_blacked_toy_freddy_hall_2" type="Node2D" parent="hall_animatronics"]
+visible = false
+position = Vector2(547.441, 245.073)
+rotation = -0.122173
+scale = Vector2(16, 16)
+
+[node name="eye_left" type="Sprite2D" parent="hall_animatronics/eyes_blacked_toy_freddy_hall_2"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(-1.5, 0)
+scale = Vector2(2, 2)
+texture = SubResource("CanvasTexture_v0m4v")
+
+[node name="eye_left_pupil" type="Sprite2D" parent="hall_animatronics/eyes_blacked_toy_freddy_hall_2/eye_left"]
+scale = Vector2(0.15, 0.15)
+texture = SubResource("CanvasTexture_v0m4v")
+
+[node name="eye_right" type="Sprite2D" parent="hall_animatronics/eyes_blacked_toy_freddy_hall_2"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(1.5, 0)
+scale = Vector2(2, 2)
+texture = SubResource("CanvasTexture_v0m4v")
+
+[node name="eye_right_pupil" type="Sprite2D" parent="hall_animatronics/eyes_blacked_toy_freddy_hall_2/eye_right"]
+scale = Vector2(0.15, 0.15)
+texture = SubResource("CanvasTexture_v0m4v")
 
 [node name="mangle_2" type="Node2D" parent="hall_animatronics"]
 visible = false
@@ -4356,6 +4603,46 @@ texture = ExtResource("51_40lkq")
 
 [node name="EarRight" type="Sprite2D" parent="hall_animatronics/mangle_2/ConnectorMain/Head"]
 texture = ExtResource("52_erlwx")
+
+[node name="eyes_blacked_mangle_hall_2" type="Node2D" parent="hall_animatronics"]
+visible = false
+position = Vector2(725, 208)
+scale = Vector2(16, 16)
+
+[node name="eye_left" type="Sprite2D" parent="hall_animatronics/eyes_blacked_mangle_hall_2"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(-1.5, 0)
+scale = Vector2(2, 2)
+texture = SubResource("CanvasTexture_v0m4v")
+
+[node name="eye_left_pupil" type="Sprite2D" parent="hall_animatronics/eyes_blacked_mangle_hall_2/eye_left"]
+scale = Vector2(0.15, 0.15)
+texture = SubResource("CanvasTexture_v0m4v")
+
+[node name="eye_right" type="Sprite2D" parent="hall_animatronics/eyes_blacked_mangle_hall_2"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(1.5, 0)
+scale = Vector2(2, 2)
+texture = SubResource("CanvasTexture_v0m4v")
+
+[node name="eye_right_pupil" type="Sprite2D" parent="hall_animatronics/eyes_blacked_mangle_hall_2/eye_right"]
+scale = Vector2(0.15, 0.15)
+texture = SubResource("CanvasTexture_v0m4v")
+
+[node name="eyes_blacked_hall" type="Node2D" parent="." node_paths=PackedStringArray("eyes_blacked_hall")]
+z_index = 1
+script = ExtResource("136_k1j6v")
+eyes_blacked_hall = [NodePath("../hall_animatronics/eyes_blacked_toy_freddy_hall"), NodePath("../hall_animatronics/eyes_blacked_toy_chica_hall"), NodePath("../hall_animatronics/eyes_blacked_withered_foxy_hall"), NodePath("../hall_animatronics/eyes_blacked_withered_bonnie_hall"), NodePath("../hall_animatronics/eyes_blacked_withered_freddy_hall"), NodePath("../hall_animatronics/withered_foxy_2/eyes_blacked_withered_foxy_hall_2"), NodePath("../hall_animatronics/eyes_blacked_mangle_hall"), NodePath("../hall_animatronics/eyes_blacked_withered_bonnie_hall_2"), NodePath("../hall_animatronics/eyes_blacked_toy_freddy_hall_2"), NodePath("../hall_animatronics/eyes_blacked_mangle_hall_2")]
+
+[node name="hall" type="Node2D" parent="eyes_blacked_hall"]
+visible = false
+position = Vector2(640, 360)
+scale = Vector2(16, 16)
+
+[node name="hall_2" type="Node2D" parent="eyes_blacked_hall"]
+visible = false
+position = Vector2(640, 360)
+scale = Vector2(16, 16)
 
 [node name="monitor_map" type="TextureRect" parent="." node_paths=PackedStringArray("monitor_scene")]
 layout_mode = 1
@@ -4802,6 +5089,7 @@ text = "EXIT CAMERA"
 [connection signal="camera_scene_switched_no_params" from="." to="static_player" method="play" binds= ["static"]]
 [connection signal="cheat_mode_off" from="." to="monitor_map/visual_toy_freddy" method="set_visible" binds= [false]]
 [connection signal="cheat_mode_on" from="." to="monitor_map/visual_toy_freddy" method="set_visible" binds= [true]]
+[connection signal="hall_light_state_set" from="." to="eyes_blacked_hall" method="hall_light_state_set"]
 [connection signal="map_toggled" from="." to="monitor_map" method="set_visible"]
 [connection signal="map_toggled" from="." to="exit_button" method="set_visible"]
 [connection signal="monitor_focus" from="." to="monitor_map" method="set_visible" binds= [true]]
