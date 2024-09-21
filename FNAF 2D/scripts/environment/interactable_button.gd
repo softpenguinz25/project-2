@@ -1,4 +1,5 @@
 extends interactable
+class_name InteractableButton
 
 @onready var button : Button = $"."
 
@@ -6,6 +7,8 @@ extends interactable
 
 var should_be_enabled : bool = false
 var disabled_state_frozen : bool = false
+
+signal on_disabled_state_unfreeze
 
 func _ready():
 	button.disabled = true
@@ -29,12 +32,15 @@ func set_interact_state_absolute(interact_state_absolute : bool):
 	disabled_state_frozen = true
 
 func set_button_disabled_state_absolute(state : bool):
+	#print_debug("absolutelty set disabled state to: %s" % state)
 	set_button_disabled_state(state)
 	disabled_state_frozen = true
 
 func unfreeze_disabled_state():
 	disabled_state_frozen = false
 	set_interact_state(should_be_enabled)
+	
+	on_disabled_state_unfreeze.emit()
 
 func button_pressed():
 	if cooldown_timer != null: 

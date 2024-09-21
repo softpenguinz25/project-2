@@ -12,7 +12,7 @@ var active_state_permanent : bool = false
 
 signal camera_scene_switched_no_params
 signal camera_scene_switched
-signal camera_scene_flashed
+signal camera_scene_flash_set
 signal camera_scene_flashed_on
 signal camera_scene_flashed_off
 
@@ -38,6 +38,14 @@ signal cheat_mode_on
 signal cheat_mode_off
 
 signal hall_light_state_set(state : bool)
+
+signal popup_toggled(popup_name : String)
+
+signal jumpscare(animatronic_name : String)
+
+signal flash_disabled_set(is_disabled : bool)
+
+@export var animatronics_fnaf2 : animatronics_fnaf2
 
 func set_active_state(active_state : bool):
 	if active_state_permanent: return
@@ -72,10 +80,12 @@ func set_current_camera_scene(camera_scene : String):
 	camera_scene_switched.emit(camera_scene)
 
 func set_current_camera_flashed(camera_scene : String, flash_on : bool):
-	camera_scene_flashed.emit(camera_scene, flash_on)
+	camera_scene_flash_set.emit(camera_scene, flash_on)
 	
-	if flash_on: camera_scene_flashed_on.emit()
-	else: camera_scene_flashed_off.emit()
+	if flash_on: 
+		camera_scene_flashed_on.emit()
+	else: 
+		camera_scene_flashed_off.emit()
 
 func animatronic_moved_from(_animatronic_name : String, _cam_name_from : String):
 	#print_debug("(ms) %s moved from %s {%s}" % [_animatronic_name, _cam_name_from, Time.get_ticks_msec() / 1000.0])
@@ -108,3 +118,12 @@ func set_cheat_mode(use : bool):
 
 func set_hall_light_state(state : bool):
 	hall_light_state_set.emit(state)
+
+func toggle_popup(popup_name : String):
+	popup_toggled.emit(popup_name)
+
+func emit_jumpscare(animatronic_name : String):
+	jumpscare.emit(animatronic_name)
+
+func set_flash_disable(is_disabled : bool):
+	flash_disabled_set.emit(is_disabled)

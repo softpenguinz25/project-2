@@ -8,6 +8,9 @@ var is_in_hall : bool
 @export_subgroup("Functionality")
 @export var timer_retreat : Timer
 @export var timer_jumpscare : Timer
+@export var timer_jumpscare_start_timer_over_ai : Curve
+var timer_jumpscare_wait_time : float:
+	get: return timer_jumpscare_start_timer_over_ai.sample(ai_level / max_ai_level)
 var retreat_queued : bool
 
 @export_subgroup("GFX")
@@ -30,6 +33,8 @@ func handle_func(in_office : bool):
 	
 	if in_office:
 		timer_retreat.start()
+		
+		timer_jumpscare.wait_time = timer_jumpscare_wait_time
 		timer_jumpscare.start()
 	else:
 		timer_retreat.stop()
@@ -56,6 +61,7 @@ func hall_light_state_set(state : bool):
 			trigger_in_office(false)
 			return
 		
+		timer_jumpscare.wait_time = timer_jumpscare_wait_time
 		timer_jumpscare.start()
 	
 	animatronic_eyes.visible = not state

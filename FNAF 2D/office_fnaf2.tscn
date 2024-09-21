@@ -1,4 +1,4 @@
-[gd_scene load_steps=223 format=3 uid="uid://k235u75p8tw4"]
+[gd_scene load_steps=240 format=3 uid="uid://k235u75p8tw4"]
 
 [ext_resource type="Script" path="res://scripts/misc/scene_loader.gd" id="1_yo40j"]
 [ext_resource type="Script" path="res://scripts/environment/camera_tweener.gd" id="2_1cvln"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scripts/ui/night_timer.gd" id="3_3h11i"]
 [ext_resource type="Script" path="res://scripts/environment/interactable_button.gd" id="4_ip4so"]
 [ext_resource type="FontFile" uid="uid://c458otts8ji68" path="res://ui/fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" id="4_qf4tt"]
+[ext_resource type="Script" path="res://scripts/ui/flashlight_battery.gd" id="5_d8a7v"]
 [ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_in_vent_fnaf2.gd" id="5_iwtvp"]
 [ext_resource type="Texture2D" uid="uid://4mb717pe7bls" path="res://sprites/ui/battery.png" id="6_6mugf"]
 [ext_resource type="Texture2D" uid="uid://y6yqx1oqxrhd" path="res://sprites/environment/main_office/tv.png" id="6_82c7a"]
@@ -116,6 +117,7 @@
 [ext_resource type="Texture2D" uid="uid://c8xwcymso83hj" path="res://sprites/characters/animatronics/mangle/leg_left_upper.png" id="89_jvgvh"]
 [ext_resource type="Texture2D" uid="uid://rfnaj0yjcsyf" path="res://sprites/characters/animatronics/mangle/leg_left_lower.png" id="90_b1ohs"]
 [ext_resource type="Texture2D" uid="uid://b7sm20uhmyi5l" path="res://sprites/characters/animatronics/mangle/leg_middle_upper.png" id="91_pl003"]
+[ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_withered_golden_freddy.gd" id="92_86r2j"]
 [ext_resource type="Texture2D" uid="uid://ds8qodks26mm6" path="res://sprites/characters/animatronics/mangle/leg_middle_lower.png" id="92_f1eh5"]
 [ext_resource type="Texture2D" uid="uid://cj2fvcbef57d3" path="res://sprites/characters/animatronics/mangle/leg_right_upper.png" id="93_5o4au"]
 [ext_resource type="Texture2D" uid="uid://dwhffmyb7hrj4" path="res://sprites/characters/animatronics/mangle/leg_right_lower.png" id="94_nwppr"]
@@ -124,13 +126,21 @@
 [ext_resource type="Texture2D" uid="uid://d2j3p42874v6c" path="res://sprites/characters/animatronics/mangle/tail_3.png" id="97_ufmq4"]
 [ext_resource type="Texture2D" uid="uid://vlh6jdvkmmwh" path="res://sprites/characters/animatronics/mangle/tail_4.png" id="98_7xc3p"]
 [ext_resource type="Texture2D" uid="uid://dbteu0rk8uxpv" path="res://sprites/characters/animatronics/mangle/buddy_connector.png" id="99_aiwps"]
+[ext_resource type="Texture2D" uid="uid://d3h0y2dihu71b" path="res://sprites/environment/main_office_fnaf2/decoration/poster_celebrate.png" id="107_vid7n"]
 [ext_resource type="Texture2D" uid="uid://cu8cvyxacd0pm" path="res://sprites/characters/animatronics/balloon_boy.png" id="108_ukt6r"]
 [ext_resource type="Texture2D" uid="uid://72xyv1s5la25" path="res://sprites/characters/animatronics/toy_bonnie/leg_left_upper.png" id="109_o6ak3"]
+[ext_resource type="Texture2D" uid="uid://dn3qsm2lr3yys" path="res://sprites/environment/main_office_fnaf2/decoration/warning_sign.png" id="109_thu3v"]
 [ext_resource type="Texture2D" uid="uid://b4lxrgyeklqdo" path="res://sprites/characters/animatronics/toy_bonnie/leg_left_lower.png" id="110_2kpfp"]
+[ext_resource type="Texture2D" uid="uid://bufpgwpjv7ftm" path="res://sprites/environment/main_office_fnaf2/decoration/ceiling_lamp.png" id="110_e6ybe"]
 [ext_resource type="Texture2D" uid="uid://d35tokv0cwo17" path="res://sprites/characters/animatronics/toy_bonnie/leg_right_upper.png" id="111_47gsb"]
+[ext_resource type="Texture2D" uid="uid://ickyp2a5j2oo" path="res://sprites/environment/main_office_fnaf2/decoration/bg_monitor_large.png" id="111_qrmun"]
 [ext_resource type="Texture2D" uid="uid://blp703tvliv7e" path="res://sprites/characters/animatronics/toy_bonnie/leg_right_lower.png" id="112_3mg3x"]
+[ext_resource type="Texture2D" uid="uid://bgl3ouvtsdvua" path="res://sprites/environment/main_office_fnaf2/decoration/bg_monitor_small.png" id="112_7y7p2"]
 [ext_resource type="Texture2D" uid="uid://b8fmicn5rl2qg" path="res://sprites/characters/animatronics/toy_bonnie/body.png" id="113_8mbhq"]
+[ext_resource type="Texture2D" uid="uid://dyrcml60nafg5" path="res://sprites/environment/main_office_fnaf2/decoration/table_fnaf2.png" id="113_ns5tr"]
 [ext_resource type="Texture2D" uid="uid://ucwi8rd2pjmf" path="res://sprites/characters/animatronics/toy_bonnie/tie.png" id="114_0ugfp"]
+[ext_resource type="Texture2D" uid="uid://citdq6t84q5td" path="res://sprites/environment/main_office_fnaf2/decoration/tv_fnaf2.png" id="114_1rmee"]
+[ext_resource type="Texture2D" uid="uid://c7uqulbusm0v0" path="res://sprites/environment/main_office_fnaf2/decoration/poster_repp.png" id="114_8b0g5"]
 [ext_resource type="Texture2D" uid="uid://cr5yaxlox5oos" path="res://sprites/characters/animatronics/toy_bonnie/arm_left_upper.png" id="115_40q8h"]
 [ext_resource type="Texture2D" uid="uid://cwrqdlbg7qaxd" path="res://sprites/characters/animatronics/toy_bonnie/arm_left_lower.png" id="116_tmfeb"]
 [ext_resource type="Texture2D" uid="uid://ccstolam8xym8" path="res://sprites/characters/animatronics/toy_bonnie/arm_right_upper.png" id="117_ptbb1"]
@@ -142,7 +152,9 @@
 [ext_resource type="Texture2D" uid="uid://ubf6m7fi8414" path="res://sprites/environment/main_office_fnaf2/mask/overlay/mask_overlay_black.png" id="131_7ec8m"]
 [ext_resource type="Script" path="res://scripts/environment/mask_area.gd" id="132_b3n5k"]
 [ext_resource type="Script" path="res://scripts/ui/jumpscare_gfx.gd" id="135_dhly0"]
+[ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_in_office_balloon_boy.gd" id="135_krpfd"]
 [ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_jumpscare_fnaf2.gd" id="136_ky8jr"]
+[ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_in_office_mangle.gd" id="136_ob0me"]
 [ext_resource type="Texture2D" uid="uid://duim4inwg65e6" path="res://sprites/characters/animatronics/withered_chica/neck.png" id="137_job5d"]
 [ext_resource type="Script" path="res://scripts/environment/hall_fnaf2.gd" id="138_m2hpk"]
 [ext_resource type="Texture2D" uid="uid://dodto2url6nrh" path="res://sprites/characters/animatronics/withered_chica/head.png" id="138_tq3tt"]
@@ -172,6 +184,7 @@
 [ext_resource type="Texture2D" uid="uid://cmip61aich3gj" path="res://sprites/characters/animatronics/puppet/leg_left_lower.png" id="159_1e00q"]
 [ext_resource type="Texture2D" uid="uid://pr8enib2ma1j" path="res://sprites/characters/animatronics/puppet/leg_right_upper.png" id="160_qjrtv"]
 [ext_resource type="Texture2D" uid="uid://chhd0qhurrb7w" path="res://sprites/characters/animatronics/puppet/leg_right_lower.png" id="161_26pgu"]
+[ext_resource type="Script" path="res://scripts/ui/flashlight_battery_gfx.gd" id="161_46ets"]
 [ext_resource type="Texture2D" uid="uid://cbc3covln0tja" path="res://sprites/characters/animatronics/puppet/neck.png" id="162_becwl"]
 [ext_resource type="Texture2D" uid="uid://g26wsw1hh3wp" path="res://sprites/characters/animatronics/puppet/head.png" id="163_rvs3r"]
 [ext_resource type="Texture2D" uid="uid://xpiijv4xsrq1" path="res://sprites/characters/animatronics/withered_golden_freddy/body.png" id="164_o73qe"]
@@ -189,6 +202,11 @@
 [ext_resource type="Texture2D" uid="uid://xpikcshuf5qt" path="res://sprites/characters/animatronics/withered_golden_freddy/leg_right_upper.png" id="175_dhc5r"]
 [ext_resource type="Texture2D" uid="uid://bchxx086v3t7q" path="res://sprites/characters/animatronics/withered_golden_freddy/leg_right_lower.png" id="176_l4d3y"]
 [ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_blackout_fnaf2_manager.gd" id="179_c8js0"]
+
+[sub_resource type="Curve" id="Curve_4llrh"]
+max_value = 60.0
+_data = [Vector2(0, 45), 0.0, -30.0, 0, 1, Vector2(1, 15), -30.0, 0.0, 1, 0]
+point_count = 2
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v3bqu"]
 shader = ExtResource("8_xndo0")
@@ -262,6 +280,27 @@ size = Vector2(264, 184)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_o3owp"]
 
+[sub_resource type="Curve" id="Curve_gheap"]
+_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yqnwh"]
+texture = ExtResource("14_sykm2")
+modulate_color = Color(0.733333, 0.733333, 0.733333, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k3tff"]
+texture = ExtResource("14_sykm2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a1lf5"]
+texture = ExtResource("14_sykm2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sqn1x"]
+texture = ExtResource("14_sykm2")
+modulate_color = Color(0.266667, 0.266667, 0.266667, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkv5q"]
+size = Vector2(255, 256)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n1kcr"]
 size = Vector2(1946, 72)
 
@@ -295,27 +334,20 @@ modulate_color = Color(0.266667, 0.266667, 0.266667, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4vevr"]
 size = Vector2(96, 95)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yqnwh"]
-texture = ExtResource("14_sykm2")
-modulate_color = Color(0.733333, 0.733333, 0.733333, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k3tff"]
-texture = ExtResource("14_sykm2")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a1lf5"]
-texture = ExtResource("14_sykm2")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sqn1x"]
-texture = ExtResource("14_sykm2")
-modulate_color = Color(0.266667, 0.266667, 0.266667, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkv5q"]
-size = Vector2(255, 256)
+[sub_resource type="Curve" id="Curve_c41pc"]
+max_value = 50.0
+_data = [Vector2(0, 27.5), 0.0, -20.0, 0, 1, Vector2(1, 7.5), -20.0, 0.0, 1, 0]
+point_count = 2
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_dokc6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vo66h"]
 size = Vector2(560, 548)
+
+[sub_resource type="Curve" id="Curve_goadj"]
+max_value = 3.0
+_data = [Vector2(0, 2), 0.0, -1.0, 0, 1, Vector2(1, 1), -1.0, 0.0, 1, 0]
+point_count = 2
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_1sag3"]
 
@@ -381,6 +413,57 @@ _data = {
 "blackout": SubResource("Animation_ihqjs")
 }
 
+[sub_resource type="Animation" id="Animation_eyylj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("toy_bonnie_blackout_gfx:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("toy_bonnie_blackout_gfx/ArmRightUpper:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1.2, 2.9)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("toy_bonnie_blackout_gfx/ArmRightUpper:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [5.58506]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("toy_bonnie_blackout_gfx:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_bbum2"]
 resource_name = "blackout"
 length = 5.0
@@ -431,57 +514,6 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_eyylj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("toy_bonnie_blackout_gfx:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("toy_bonnie_blackout_gfx/ArmRightUpper:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-1.2, 2.9)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("toy_bonnie_blackout_gfx/ArmRightUpper:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [5.58506]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("toy_bonnie_blackout_gfx:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rmk6a"]
@@ -549,449 +581,12 @@ one_shot = true
 autostart = true
 script = ExtResource("3_3h11i")
 
+[node name="flashlight_battery" type="Node" parent="game_manager" node_paths=PackedStringArray("hall_button", "monitor")]
+script = ExtResource("5_d8a7v")
+hall_button = NodePath("../../environment/hall/hall_light_button")
+monitor = NodePath("../../environment/monitor/monitor_screen_fnaf2")
+
 [node name="environment" type="Node2D" parent="."]
-
-[node name="monitor" type="Sprite2D" parent="environment"]
-position = Vector2(125, 450)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_82c7a")
-
-[node name="monitor_screen_fnaf2" parent="environment/monitor" node_paths=PackedStringArray("monitor_focus_button") instance=ExtResource("7_0mcjl")]
-offset_left = -119.0
-offset_top = -34.0
-offset_right = 898.0
-offset_bottom = 436.0
-scale = Vector2(0.185, 0.185)
-monitor_focus_button = NodePath("../monitor_focus_button")
-
-[node name="static_preview_bg" type="ColorRect" parent="environment/monitor"]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -119.0
-offset_top = -34.0
-offset_right = -145.0
-offset_bottom = -152.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.466667, 0.466667, 0.466667, 1)
-
-[node name="static_preview" type="ColorRect" parent="environment/monitor/static_preview_bg"]
-material = SubResource("ShaderMaterial_v3bqu")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="static_preview_animation" type="AnimationPlayer" parent="environment/monitor/static_preview_bg"]
-libraries = {
-"": SubResource("AnimationLibrary_aepmt")
-}
-autoplay = "static_preview_fade_in"
-
-[node name="monitor_focus_button" type="Button" parent="environment/monitor"]
-offset_left = -132.0
-offset_top = -58.0
-offset_right = 132.0
-offset_bottom = 126.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_swbs2")
-script = ExtResource("4_ip4so")
-
-[node name="interact_area" type="Area2D" parent="environment/monitor/monitor_focus_button" groups=["interactable"]]
-
-[node name="interact_collider" type="CollisionShape2D" parent="environment/monitor/monitor_focus_button/interact_area"]
-position = Vector2(132, 92)
-shape = SubResource("RectangleShape2D_56u2q")
-
-[node name="hall_vignette" type="Sprite2D" parent="environment/monitor"]
-position = Vector2(1030, -152)
-scale = Vector2(14, 24.3556)
-texture = ExtResource("63_1b12m")
-
-[node name="light" type="Sprite2D" parent="environment"]
-visible = false
-self_modulate = Color(1, 0.945098, 0.760784, 1)
-position = Vector2(640, 100)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_jhh1c")
-
-[node name="ceiling" type="Sprite2D" parent="environment"]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(640, 50)
-scale = Vector2(1890, 100)
-texture = SubResource("CanvasTexture_o3owp")
-
-[node name="in_vent" type="Node2D" parent="environment"]
-
-[node name="balloon_boy_in_vent" type="Sprite2D" parent="environment/in_vent" node_paths=PackedStringArray("timer_jumpscare", "timer_mask", "player", "animatronic_roaming", "monitor_screen")]
-position = Vector2(-368, 526)
-rotation = 1.309
-scale = Vector2(16, 16)
-texture = ExtResource("108_ukt6r")
-script = ExtResource("5_iwtvp")
-timer_jumpscare = NodePath("balloon_boy_in_vent_timer_jumpscare")
-timer_mask = NodePath("balloon_boy_in_vent_timer_mask")
-player = NodePath("../../../player")
-animatronic_roaming = NodePath("../../animatronics/balloon_boy")
-monitor_screen = NodePath("../../monitor/monitor_screen_fnaf2")
-animatronic_name = "balloon_boy"
-
-[node name="balloon_boy_in_vent_timer_jumpscare" type="Timer" parent="environment/in_vent/balloon_boy_in_vent"]
-one_shot = true
-
-[node name="balloon_boy_in_vent_timer_mask" type="Timer" parent="environment/in_vent/balloon_boy_in_vent"]
-one_shot = true
-
-[node name="toy_chica_in_vent" type="Node2D" parent="environment/in_vent" node_paths=PackedStringArray("timer_jumpscare", "timer_mask", "player", "animatronic_roaming", "monitor_screen")]
-position = Vector2(-394, 670)
-scale = Vector2(16, 16)
-script = ExtResource("5_iwtvp")
-timer_jumpscare = NodePath("toy_chica_in_vent_timer_jumpscare")
-timer_mask = NodePath("toy_chica_in_vent_timer_mask")
-player = NodePath("../../../player")
-animatronic_roaming = NodePath("../../animatronics/toy_chica")
-monitor_screen = NodePath("../../monitor/monitor_screen_fnaf2")
-animatronic_name = "toy_chica"
-
-[node name="LegLeftUpper" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent"]
-position = Vector2(-0.203728, -4.07605)
-rotation = 1.65806
-texture = ExtResource("72_2asla")
-
-[node name="LegLeftLower" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent/LegLeftUpper"]
-texture = ExtResource("73_ffqm8")
-
-[node name="LegRightUpper" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent"]
-position = Vector2(-0.203728, -4.07605)
-rotation = 1.65806
-texture = ExtResource("74_ixpfy")
-
-[node name="LegRightLower" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent/LegRightUpper"]
-texture = ExtResource("75_k1qk8")
-
-[node name="Body" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent"]
-position = Vector2(-1.01623, -5.38855)
-rotation = 1.39626
-texture = ExtResource("64_7uxwk")
-
-[node name="ArmLeftUpper" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent/Body"]
-position = Vector2(0.166719, -8.10813)
-rotation = -1.48353
-texture = ExtResource("65_6scs5")
-
-[node name="ArmLeftLower" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent/Body/ArmLeftUpper"]
-texture = ExtResource("66_4r4c0")
-
-[node name="Cupcake" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent/Body/ArmLeftUpper/ArmLeftLower"]
-position = Vector2(-9.02471, 9.07068)
-rotation = 0.174533
-texture = ExtResource("69_q4sry")
-
-[node name="ArmRightUpper" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent/Body"]
-position = Vector2(1.95415, -8.01742)
-rotation = 1.8326
-texture = ExtResource("67_8q0u3")
-
-[node name="ArmRightLower" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent/Body/ArmRightUpper"]
-texture = ExtResource("68_ptic3")
-
-[node name="Head" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent/Body"]
-position = Vector2(-1.75306, 1.47141)
-rotation = 0.349066
-texture = ExtResource("70_l5s0m")
-
-[node name="Hair" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent/Body/Head"]
-texture = ExtResource("71_gyroi")
-
-[node name="toy_chica_in_vent_timer_jumpscare" type="Timer" parent="environment/in_vent/toy_chica_in_vent"]
-one_shot = true
-
-[node name="toy_chica_in_vent_timer_mask" type="Timer" parent="environment/in_vent/toy_chica_in_vent"]
-one_shot = true
-
-[node name="mangle_in_vent" type="Node2D" parent="environment/in_vent" node_paths=PackedStringArray("timer_jumpscare", "timer_mask", "player", "animatronic_roaming", "monitor_screen")]
-position = Vector2(1710, 751)
-rotation = -1.5708
-scale = Vector2(16, 16)
-script = ExtResource("5_iwtvp")
-timer_jumpscare = NodePath("mangle_in_vent_timer_jumpscare")
-timer_mask = NodePath("mangle_in_vent_timer_mask")
-player = NodePath("../../../player")
-animatronic_roaming = NodePath("../../animatronics/mangle")
-monitor_screen = NodePath("../../monitor/monitor_screen_fnaf2")
-animatronic_name = "mangle"
-
-[node name="BuddyConnector" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
-position = Vector2(14.9375, 12.4375)
-rotation = 0.872665
-texture = ExtResource("99_aiwps")
-
-[node name="BuddyNeck" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/BuddyConnector"]
-texture = ExtResource("84_yqivt")
-
-[node name="Buddy" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/BuddyConnector/BuddyNeck"]
-texture = ExtResource("85_enpcy")
-
-[node name="NeckConnector" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
-position = Vector2(10.5, 3.50001)
-rotation = -1.5708
-texture = ExtResource("79_s2ney")
-
-[node name="Neck" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/NeckConnector"]
-texture = ExtResource("80_r0cho")
-
-[node name="Head" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
-texture = ExtResource("81_jipl3")
-
-[node name="EarLeft" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/Head"]
-texture = ExtResource("82_my4pa")
-
-[node name="EarRight" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/Head"]
-texture = ExtResource("83_yktmv")
-
-[node name="ConnectorMain" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
-position = Vector2(13.25, 2.12501)
-rotation = -1.74533
-texture = ExtResource("77_egjux")
-
-[node name="HandTop" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/ConnectorMain"]
-texture = ExtResource("78_6p070")
-
-[node name="LegLeftUpper" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
-position = Vector2(20.5, 10.5)
-rotation = 1.5708
-texture = ExtResource("89_jvgvh")
-
-[node name="LegLeftLower" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/LegLeftUpper"]
-texture = ExtResource("90_b1ohs")
-
-[node name="LegMiddleUpper" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
-position = Vector2(20.5, 10.5)
-rotation = 1.5708
-texture = ExtResource("91_pl003")
-
-[node name="LegMiddleLower" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/LegMiddleUpper"]
-texture = ExtResource("92_f1eh5")
-
-[node name="HandUpperConnectorUpper" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
-position = Vector2(19.4375, 5.68752)
-rotation = 1.48353
-texture = ExtResource("86_su53a")
-
-[node name="HandLowerConnectorUpper" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/HandUpperConnectorUpper"]
-position = Vector2(-16.634, 2.39263)
-rotation = -2.18166
-texture = ExtResource("87_2rs8b")
-
-[node name="HandLower" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/HandUpperConnectorUpper/HandLowerConnectorUpper"]
-texture = ExtResource("88_wcrgx")
-
-[node name="LegRightUpper" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
-position = Vector2(20.5, 10.5)
-rotation = 1.5708
-texture = ExtResource("93_5o4au")
-
-[node name="LegRightLower" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/LegRightUpper"]
-texture = ExtResource("94_nwppr")
-
-[node name="Tail1" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
-position = Vector2(18.5, 9.50001)
-rotation = 1.5708
-texture = ExtResource("95_qxgxn")
-
-[node name="Tail2" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/Tail1"]
-position = Vector2(4.5625, -1)
-rotation = 0.785398
-texture = ExtResource("96_t44f0")
-
-[node name="Tail3" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/Tail1/Tail2"]
-position = Vector2(5.74524, -3.8007)
-rotation = 0.785398
-texture = ExtResource("97_ufmq4")
-
-[node name="Tail4" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/Tail1/Tail2/Tail3"]
-position = Vector2(6.875, -6.68751)
-rotation = 0.785398
-texture = ExtResource("98_7xc3p")
-
-[node name="BodyConnector" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
-position = Vector2(15.25, 2.50001)
-rotation = 0.174533
-texture = ExtResource("76_tco34")
-
-[node name="mangle_in_vent_timer_jumpscare" type="Timer" parent="environment/in_vent/mangle_in_vent"]
-one_shot = true
-
-[node name="mangle_in_vent_timer_mask" type="Timer" parent="environment/in_vent/mangle_in_vent"]
-one_shot = true
-
-[node name="toy_bonnie_in_vent" type="Node2D" parent="environment/in_vent" node_paths=PackedStringArray("animatronic_blackout", "timer_jumpscare", "timer_mask", "player", "animatronic_roaming", "monitor_screen")]
-position = Vector2(1717, 537)
-rotation = -1.5708
-scale = Vector2(16, 16)
-script = ExtResource("49_w5dry")
-animatronic_blackout = NodePath("../../blackout/toy_bonnie_blackout")
-timer_jumpscare = NodePath("toy_bonnie_in_vent_timer_jumpscare")
-timer_mask = NodePath("toy_bonnie_in_vent_timer_mask")
-player = NodePath("../../../player")
-animatronic_roaming = NodePath("../../animatronics/toy_bonnie")
-monitor_screen = NodePath("../../monitor/monitor_screen_fnaf2")
-animatronic_name = "toy_bonnie"
-
-[node name="LegLeftUpper" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent"]
-texture = ExtResource("109_o6ak3")
-
-[node name="LegLeftLower" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/LegLeftUpper"]
-texture = ExtResource("110_2kpfp")
-
-[node name="LegRightUpper" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent"]
-texture = ExtResource("111_47gsb")
-
-[node name="LegRightLower" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/LegRightUpper"]
-texture = ExtResource("112_3mg3x")
-
-[node name="Body" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent"]
-texture = ExtResource("113_8mbhq")
-
-[node name="Tie" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/Body"]
-texture = ExtResource("114_0ugfp")
-
-[node name="ArmLeftUpper" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/Body"]
-position = Vector2(-4.9375, -5.3125)
-rotation = -1.8326
-texture = ExtResource("115_40q8h")
-
-[node name="ArmLeftLower" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/Body/ArmLeftUpper"]
-texture = ExtResource("116_tmfeb")
-
-[node name="ArmRightUpper" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/Body"]
-position = Vector2(4.5, -5.5)
-rotation = 1.5708
-texture = ExtResource("117_ptbb1")
-
-[node name="ArmRightLower" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/Body/ArmRightUpper"]
-texture = ExtResource("118_h8ntb")
-
-[node name="Guitar" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/Body/ArmRightUpper/ArmRightLower"]
-position = Vector2(19.6875, -6.875)
-rotation = -1.309
-texture = ExtResource("119_r0aey")
-
-[node name="Head" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/Body"]
-position = Vector2(-0.9375, 0.75)
-rotation = 0.261799
-texture = ExtResource("120_rga2l")
-
-[node name="EarLeft" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/Body/Head"]
-texture = ExtResource("121_aaugw")
-
-[node name="EarRight" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/Body/Head"]
-texture = ExtResource("122_4d7cj")
-
-[node name="toy_bonnie_in_vent_timer_jumpscare" type="Timer" parent="environment/in_vent/toy_bonnie_in_vent"]
-one_shot = true
-
-[node name="toy_bonnie_in_vent_timer_mask" type="Timer" parent="environment/in_vent/toy_bonnie_in_vent"]
-one_shot = true
-
-[node name="floor" type="StaticBody2D" parent="environment"]
-position = Vector2(640, 360)
-
-[node name="floor_texturerect" type="TextureRect" parent="environment/floor"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -427.0
-offset_top = 308.0
-offset_right = 438.0
-offset_bottom = 340.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(2.25, 2.25)
-pivot_offset = Vector2(426.75, 16)
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("2_t0500")
-stretch_mode = 1
-
-[node name="floor_collision" type="CollisionShape2D" parent="environment/floor"]
-position = Vector2(13, 324)
-shape = SubResource("RectangleShape2D_n1kcr")
-
-[node name="wall_left" type="StaticBody2D" parent="environment"]
-position = Vector2(655, 360)
-
-[node name="wall_left_sprite" type="Sprite2D" parent="environment/wall_left"]
-position = Vector2(-900, -128)
-scale = Vector2(120, 464)
-texture = SubResource("CanvasTexture_shv7k")
-
-[node name="wall_left_col" type="CollisionShape2D" parent="environment/wall_left"]
-position = Vector2(-900, -128)
-shape = SubResource("RectangleShape2D_2kgle")
-
-[node name="wall_right" type="StaticBody2D" parent="environment"]
-position = Vector2(2425, 360)
-
-[node name="wall_right_sprite" type="Sprite2D" parent="environment/wall_right"]
-position = Vector2(-900, -136)
-scale = Vector2(120, 448)
-texture = SubResource("CanvasTexture_shv7k")
-
-[node name="wall_right_col" type="CollisionShape2D" parent="environment/wall_right"]
-position = Vector2(-900, -144)
-shape = SubResource("RectangleShape2D_2kgle")
-
-[node name="vent_light_left" type="Button" parent="environment"]
-anchors_preset = -1
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -125.0
-offset_top = 357.0
-offset_right = -50.0
-offset_bottom = 432.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(25, 25)
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/normal = SubResource("StyleBoxTexture_ei2iu")
-script = ExtResource("4_ip4so")
-
-[node name="interact_area" type="Area2D" parent="environment/vent_light_left" groups=["interactable"]]
-
-[node name="interact_collider" type="CollisionShape2D" parent="environment/vent_light_left/interact_area"]
-position = Vector2(37.5, 37.5)
-shape = SubResource("RectangleShape2D_wy162")
-
-[node name="vent_light_right" type="Button" parent="environment"]
-anchors_preset = -1
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 1330.0
-offset_top = 357.0
-offset_right = 1405.0
-offset_bottom = 432.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(25, 25)
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/normal = SubResource("StyleBoxTexture_ei2iu")
-script = ExtResource("4_ip4so")
-
-[node name="interact_area" type="Area2D" parent="environment/vent_light_right" groups=["interactable"]]
-
-[node name="interact_collider" type="CollisionShape2D" parent="environment/vent_light_right/interact_area"]
-position = Vector2(37.5, 37.5)
-shape = SubResource("RectangleShape2D_wy162")
 
 [node name="animatronics" type="Node2D" parent="environment"]
 script = ExtResource("60_m6364")
@@ -1001,7 +596,6 @@ monitor_screen = NodePath("../../monitor/monitor_screen_fnaf2")
 
 [node name="toy_bonnie" parent="environment/animatronics" node_paths=PackedStringArray("monitor_screen") instance=ExtResource("10_ti5gr")]
 monitor_screen = NodePath("../../monitor/monitor_screen_fnaf2")
-set_ai_to_max_on_ready = true
 
 [node name="toy_chica" parent="environment/animatronics" node_paths=PackedStringArray("monitor_screen") instance=ExtResource("11_tkul0")]
 monitor_screen = NodePath("../../monitor/monitor_screen_fnaf2")
@@ -1023,6 +617,18 @@ cam_path = Array[Array]([["parts_and_service", "hall"]])
 monitor_screen = NodePath("../../monitor/monitor_screen_fnaf2")
 
 [node name="balloon_boy" parent="environment/animatronics" instance=ExtResource("17_4wkj6")]
+
+[node name="withered_golden_freddy" type="Node2D" parent="environment/animatronics" node_paths=PackedStringArray("monitor", "timer_popup")]
+script = ExtResource("92_86r2j")
+monitor = NodePath("../../monitor/monitor_screen_fnaf2")
+timer_popup = NodePath("timer_popup")
+timer_popup_start_time_over_ai = SubResource("Curve_4llrh")
+timer_popup_start_time_deviation = 5.0
+animatronic_name = "withered_golden_freddy"
+
+[node name="timer_popup" type="Timer" parent="environment/animatronics/withered_golden_freddy"]
+one_shot = true
+autostart = true
 
 [node name="[DEPREC] InHallTest" type="Node2D" parent="environment/animatronics"]
 visible = false
@@ -1681,27 +1287,690 @@ texture = ExtResource("82_my4pa")
 [node name="EarRight" type="Sprite2D" parent="environment/animatronics/[DEPREC] InHallTest/mangle_2/ConnectorMain/Head"]
 texture = ExtResource("83_yktmv")
 
-[node name="[DEPREC] hall_light" type="Button" parent="environment"]
+[node name="decorations" type="Node2D" parent="environment"]
+
+[node name="comp_ref" type="Node2D" parent="environment/decorations"]
+
+[node name="warning sign ref 1" type="ColorRect" parent="environment/decorations/comp_ref"]
 visible = false
+z_index = 1
+offset_left = 390.0
+offset_top = 114.0
+offset_right = 486.0
+offset_bottom = 210.0
+
+[node name="warning sign ref 2" type="ColorRect" parent="environment/decorations/comp_ref"]
+visible = false
+z_index = 1
+offset_left = 794.0
+offset_top = 114.0
+offset_right = 890.0
+offset_bottom = 210.0
+
+[node name="light" type="Sprite2D" parent="environment/decorations/comp_ref"]
+visible = false
+self_modulate = Color(1, 0.945098, 0.760784, 1)
+z_index = 1
+position = Vector2(640, 100)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_jhh1c")
+
+[node name="monitor 1" type="ColorRect" parent="environment/decorations/comp_ref"]
+visible = false
+z_index = 1
+offset_left = 295.0
+offset_top = 552.0
+offset_right = 423.0
+offset_bottom = 648.0
+
+[node name="monitor 5" type="ColorRect" parent="environment/decorations/comp_ref"]
+visible = false
+z_index = 1
+offset_left = 876.0
+offset_top = 529.0
+offset_right = 1004.0
+offset_bottom = 625.0
+rotation = 0.174533
+
+[node name="monitor 2" type="ColorRect" parent="environment/decorations/comp_ref"]
+visible = false
+z_index = 1
+offset_left = 344.0
+offset_top = 471.0
+offset_right = 424.0
+offset_bottom = 551.0
+color = Color(0.533333, 0.533333, 0.533333, 1)
+
+[node name="monitor 3" type="ColorRect" parent="environment/decorations/comp_ref"]
+visible = false
+z_index = 1
+offset_left = 198.0
+offset_top = 570.0
+offset_right = 278.0
+offset_bottom = 650.0
+rotation = -0.261799
+color = Color(0.533333, 0.533333, 0.533333, 1)
+
+[node name="monitor 4" type="ColorRect" parent="environment/decorations/comp_ref"]
+visible = false
+z_index = 1
+offset_left = 816.0
+offset_top = 566.0
+offset_right = 896.0
+offset_bottom = 646.0
+color = Color(0.533333, 0.533333, 0.533333, 1)
+
+[node name="repp poster" type="ColorRect" parent="environment/decorations/comp_ref"]
+visible = false
+offset_left = 1005.0
+offset_top = 119.0
+offset_right = 1257.0
+offset_bottom = 242.0
+
+[node name="poster_celebrate" type="Sprite2D" parent="environment/decorations"]
+position = Vector2(128, 256)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("107_vid7n")
+
+[node name="warning_sign_left" type="Sprite2D" parent="environment/decorations"]
+z_index = 1
+position = Vector2(456, 168)
+scale = Vector2(4, 4)
+texture = ExtResource("109_thu3v")
+
+[node name="warning_sign_rope_left" type="ColorRect" parent="environment/decorations/warning_sign_left"]
+offset_left = -1.0
+offset_top = -17.0
+offset_right = 1.0
+offset_bottom = -9.0
+color = Color(0.85098, 0.85098, 0.85098, 1)
+
+[node name="warning_sign_right" type="Sprite2D" parent="environment/decorations"]
+z_index = 1
+position = Vector2(824, 168)
+scale = Vector2(4, 4)
+texture = ExtResource("109_thu3v")
+
+[node name="warning_sign_rope_right" type="ColorRect" parent="environment/decorations/warning_sign_right"]
+offset_left = -1.0
+offset_top = -17.0
+offset_right = 1.0
+offset_bottom = -9.0
+color = Color(0.85098, 0.85098, 0.85098, 1)
+
+[node name="ceiling_lamp" type="Sprite2D" parent="environment/decorations"]
+z_index = 1
+position = Vector2(640, 132)
+scale = Vector2(8, 8)
+texture = ExtResource("110_e6ybe")
+
+[node name="monitor_1" type="Sprite2D" parent="environment/decorations"]
+z_index = 1
+position = Vector2(360, 600)
+scale = Vector2(8, 8)
+texture = ExtResource("111_qrmun")
+
+[node name="monitor_2" type="Sprite2D" parent="environment/decorations"]
+z_index = 1
+position = Vector2(384, 512)
+scale = Vector2(8, 8)
+texture = ExtResource("112_7y7p2")
+
+[node name="monitor_3" type="Sprite2D" parent="environment/decorations"]
+z_index = 1
+position = Vector2(247, 599)
+rotation = -0.261799
+scale = Vector2(8, 8)
+texture = ExtResource("112_7y7p2")
+
+[node name="monitor_5" type="Sprite2D" parent="environment/decorations"]
+z_index = 1
+position = Vector2(931, 589)
+rotation = 0.174533
+scale = Vector2(8, 8)
+texture = ExtResource("111_qrmun")
+
+[node name="monitor_4" type="Sprite2D" parent="environment/decorations"]
+z_index = 1
+position = Vector2(856, 608)
+scale = Vector2(8, 8)
+texture = ExtResource("112_7y7p2")
+
+[node name="table" type="Sprite2D" parent="environment/decorations"]
+z_index = 1
+position = Vector2(125, 596)
+scale = Vector2(8, 8)
+texture = ExtResource("113_ns5tr")
+
+[node name="poster_repp" type="Sprite2D" parent="environment/decorations"]
+position = Vector2(1132, 180)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("114_8b0g5")
+
+[node name="monitor" type="Sprite2D" parent="environment"]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(125, 450)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_82c7a")
+
+[node name="monitor_gfx" type="Sprite2D" parent="environment/monitor"]
+position = Vector2(-0.62, 10.4)
+scale = Vector2(14.8, 14.8)
+texture = ExtResource("114_1rmee")
+
+[node name="monitor_screen_fnaf2" parent="environment/monitor" node_paths=PackedStringArray("monitor_focus_button", "animatronics_fnaf2") instance=ExtResource("7_0mcjl")]
+offset_left = -119.0
+offset_top = -34.0
+offset_right = 898.0
+offset_bottom = 436.0
+scale = Vector2(0.185, 0.185)
+monitor_focus_button = NodePath("../monitor_focus_button")
+animatronics_fnaf2 = NodePath("../../animatronics")
+
+[node name="static_preview_bg" type="ColorRect" parent="environment/monitor"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -119.0
+offset_top = -34.0
+offset_right = -145.0
+offset_bottom = -152.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.466667, 0.466667, 0.466667, 1)
+
+[node name="static_preview" type="ColorRect" parent="environment/monitor/static_preview_bg"]
+material = SubResource("ShaderMaterial_v3bqu")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="static_preview_animation" type="AnimationPlayer" parent="environment/monitor/static_preview_bg"]
+libraries = {
+"": SubResource("AnimationLibrary_aepmt")
+}
+autoplay = "static_preview_fade_in"
+
+[node name="monitor_focus_button" type="Button" parent="environment/monitor"]
+offset_left = -132.0
+offset_top = -58.0
+offset_right = 132.0
+offset_bottom = 126.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_swbs2")
+script = ExtResource("4_ip4so")
+
+[node name="interact_area" type="Area2D" parent="environment/monitor/monitor_focus_button" groups=["interactable"]]
+
+[node name="interact_collider" type="CollisionShape2D" parent="environment/monitor/monitor_focus_button/interact_area"]
+position = Vector2(132, 92)
+shape = SubResource("RectangleShape2D_56u2q")
+
+[node name="hall_vignette" type="Sprite2D" parent="environment/monitor"]
+position = Vector2(1030, -152)
+scale = Vector2(14, 24.3556)
+texture = ExtResource("63_1b12m")
+
+[node name="ceiling" type="Sprite2D" parent="environment"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(640, 50)
+scale = Vector2(1890, 100)
+texture = SubResource("CanvasTexture_o3owp")
+
+[node name="in_vent" type="Node2D" parent="environment"]
+
+[node name="balloon_boy_in_vent" type="Sprite2D" parent="environment/in_vent" node_paths=PackedStringArray("timer_jumpscare", "timer_mask", "player", "animatronic_roaming", "monitor_screen")]
+position = Vector2(-368, 526)
+rotation = 1.309
+scale = Vector2(16, 16)
+texture = ExtResource("108_ukt6r")
+script = ExtResource("5_iwtvp")
+timer_jumpscare = NodePath("balloon_boy_in_vent_timer_jumpscare")
+timer_mask = NodePath("balloon_boy_in_vent_timer_mask")
+player = NodePath("../../../player")
+animatronic_roaming = NodePath("../../animatronics/balloon_boy")
+monitor_screen = NodePath("../../monitor/monitor_screen_fnaf2")
+animatronic_name = "balloon_boy"
+
+[node name="balloon_boy_in_vent_timer_jumpscare" type="Timer" parent="environment/in_vent/balloon_boy_in_vent"]
+one_shot = true
+
+[node name="balloon_boy_in_vent_timer_mask" type="Timer" parent="environment/in_vent/balloon_boy_in_vent"]
+one_shot = true
+
+[node name="toy_chica_in_vent" type="Node2D" parent="environment/in_vent" node_paths=PackedStringArray("timer_jumpscare", "timer_mask", "player", "animatronic_roaming", "monitor_screen")]
+position = Vector2(-394, 670)
+scale = Vector2(16, 16)
+script = ExtResource("5_iwtvp")
+timer_jumpscare = NodePath("toy_chica_in_vent_timer_jumpscare")
+timer_mask = NodePath("toy_chica_in_vent_timer_mask")
+player = NodePath("../../../player")
+animatronic_roaming = NodePath("../../animatronics/toy_chica")
+monitor_screen = NodePath("../../monitor/monitor_screen_fnaf2")
+animatronic_name = "toy_chica"
+
+[node name="LegLeftUpper" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent"]
+position = Vector2(-0.203728, -4.07605)
+rotation = 1.65806
+texture = ExtResource("72_2asla")
+
+[node name="LegLeftLower" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent/LegLeftUpper"]
+texture = ExtResource("73_ffqm8")
+
+[node name="LegRightUpper" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent"]
+position = Vector2(-0.203728, -4.07605)
+rotation = 1.65806
+texture = ExtResource("74_ixpfy")
+
+[node name="LegRightLower" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent/LegRightUpper"]
+texture = ExtResource("75_k1qk8")
+
+[node name="Body" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent"]
+position = Vector2(-1.01623, -5.38855)
+rotation = 1.39626
+texture = ExtResource("64_7uxwk")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent/Body"]
+position = Vector2(0.166719, -8.10813)
+rotation = -1.48353
+texture = ExtResource("65_6scs5")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent/Body/ArmLeftUpper"]
+texture = ExtResource("66_4r4c0")
+
+[node name="Cupcake" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent/Body/ArmLeftUpper/ArmLeftLower"]
+position = Vector2(-9.02471, 9.07068)
+rotation = 0.174533
+texture = ExtResource("69_q4sry")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent/Body"]
+position = Vector2(1.95415, -8.01742)
+rotation = 1.8326
+texture = ExtResource("67_8q0u3")
+
+[node name="ArmRightLower" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent/Body/ArmRightUpper"]
+texture = ExtResource("68_ptic3")
+
+[node name="Head" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent/Body"]
+position = Vector2(-1.75306, 1.47141)
+rotation = 0.349066
+texture = ExtResource("70_l5s0m")
+
+[node name="Hair" type="Sprite2D" parent="environment/in_vent/toy_chica_in_vent/Body/Head"]
+texture = ExtResource("71_gyroi")
+
+[node name="toy_chica_in_vent_timer_jumpscare" type="Timer" parent="environment/in_vent/toy_chica_in_vent"]
+one_shot = true
+
+[node name="toy_chica_in_vent_timer_mask" type="Timer" parent="environment/in_vent/toy_chica_in_vent"]
+one_shot = true
+
+[node name="mangle_in_vent" type="Node2D" parent="environment/in_vent" node_paths=PackedStringArray("timer_jumpscare", "timer_mask", "player", "animatronic_roaming", "monitor_screen")]
+position = Vector2(1710, 751)
+rotation = -1.5708
+scale = Vector2(16, 16)
+script = ExtResource("5_iwtvp")
+timer_jumpscare = NodePath("mangle_in_vent_timer_jumpscare")
+timer_mask = NodePath("mangle_in_vent_timer_mask")
+player = NodePath("../../../player")
+animatronic_roaming = NodePath("../../animatronics/mangle")
+monitor_screen = NodePath("../../monitor/monitor_screen_fnaf2")
+animatronic_name = "mangle"
+
+[node name="BuddyConnector" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
+position = Vector2(14.9375, 12.4375)
+rotation = 0.872665
+texture = ExtResource("99_aiwps")
+
+[node name="BuddyNeck" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/BuddyConnector"]
+texture = ExtResource("84_yqivt")
+
+[node name="Buddy" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/BuddyConnector/BuddyNeck"]
+texture = ExtResource("85_enpcy")
+
+[node name="NeckConnector" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
+position = Vector2(10.5, 3.50001)
+rotation = -1.5708
+texture = ExtResource("79_s2ney")
+
+[node name="Neck" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/NeckConnector"]
+texture = ExtResource("80_r0cho")
+
+[node name="Head" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
+texture = ExtResource("81_jipl3")
+
+[node name="EarLeft" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/Head"]
+texture = ExtResource("82_my4pa")
+
+[node name="EarRight" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/Head"]
+texture = ExtResource("83_yktmv")
+
+[node name="ConnectorMain" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
+position = Vector2(13.25, 2.12501)
+rotation = -1.74533
+texture = ExtResource("77_egjux")
+
+[node name="HandTop" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/ConnectorMain"]
+texture = ExtResource("78_6p070")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
+position = Vector2(20.5, 10.5)
+rotation = 1.5708
+texture = ExtResource("89_jvgvh")
+
+[node name="LegLeftLower" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/LegLeftUpper"]
+texture = ExtResource("90_b1ohs")
+
+[node name="LegMiddleUpper" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
+position = Vector2(20.5, 10.5)
+rotation = 1.5708
+texture = ExtResource("91_pl003")
+
+[node name="LegMiddleLower" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/LegMiddleUpper"]
+texture = ExtResource("92_f1eh5")
+
+[node name="HandUpperConnectorUpper" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
+position = Vector2(19.4375, 5.68752)
+rotation = 1.48353
+texture = ExtResource("86_su53a")
+
+[node name="HandLowerConnectorUpper" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/HandUpperConnectorUpper"]
+position = Vector2(-16.634, 2.39263)
+rotation = -2.18166
+texture = ExtResource("87_2rs8b")
+
+[node name="HandLower" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/HandUpperConnectorUpper/HandLowerConnectorUpper"]
+texture = ExtResource("88_wcrgx")
+
+[node name="LegRightUpper" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
+position = Vector2(20.5, 10.5)
+rotation = 1.5708
+texture = ExtResource("93_5o4au")
+
+[node name="LegRightLower" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/LegRightUpper"]
+texture = ExtResource("94_nwppr")
+
+[node name="Tail1" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
+position = Vector2(18.5, 9.50001)
+rotation = 1.5708
+texture = ExtResource("95_qxgxn")
+
+[node name="Tail2" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/Tail1"]
+position = Vector2(4.5625, -1)
+rotation = 0.785398
+texture = ExtResource("96_t44f0")
+
+[node name="Tail3" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/Tail1/Tail2"]
+position = Vector2(5.74524, -3.8007)
+rotation = 0.785398
+texture = ExtResource("97_ufmq4")
+
+[node name="Tail4" type="Sprite2D" parent="environment/in_vent/mangle_in_vent/Tail1/Tail2/Tail3"]
+position = Vector2(6.875, -6.68751)
+rotation = 0.785398
+texture = ExtResource("98_7xc3p")
+
+[node name="BodyConnector" type="Sprite2D" parent="environment/in_vent/mangle_in_vent"]
+position = Vector2(15.25, 2.50001)
+rotation = 0.174533
+texture = ExtResource("76_tco34")
+
+[node name="mangle_in_vent_timer_jumpscare" type="Timer" parent="environment/in_vent/mangle_in_vent"]
+one_shot = true
+
+[node name="mangle_in_vent_timer_mask" type="Timer" parent="environment/in_vent/mangle_in_vent"]
+one_shot = true
+
+[node name="toy_bonnie_in_vent" type="Node2D" parent="environment/in_vent" node_paths=PackedStringArray("animatronic_blackout", "timer_jumpscare", "timer_mask", "player", "animatronic_roaming", "monitor_screen")]
+position = Vector2(1717, 537)
+rotation = -1.5708
+scale = Vector2(16, 16)
+script = ExtResource("49_w5dry")
+animatronic_blackout = NodePath("../../blackout/toy_bonnie_blackout")
+timer_jumpscare = NodePath("toy_bonnie_in_vent_timer_jumpscare")
+timer_mask = NodePath("toy_bonnie_in_vent_timer_mask")
+player = NodePath("../../../player")
+animatronic_roaming = NodePath("../../animatronics/toy_bonnie")
+monitor_screen = NodePath("../../monitor/monitor_screen_fnaf2")
+animatronic_name = "toy_bonnie"
+
+[node name="LegLeftUpper" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent"]
+texture = ExtResource("109_o6ak3")
+
+[node name="LegLeftLower" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/LegLeftUpper"]
+texture = ExtResource("110_2kpfp")
+
+[node name="LegRightUpper" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent"]
+texture = ExtResource("111_47gsb")
+
+[node name="LegRightLower" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/LegRightUpper"]
+texture = ExtResource("112_3mg3x")
+
+[node name="Body" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent"]
+texture = ExtResource("113_8mbhq")
+
+[node name="Tie" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/Body"]
+texture = ExtResource("114_0ugfp")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/Body"]
+position = Vector2(-4.9375, -5.3125)
+rotation = -1.8326
+texture = ExtResource("115_40q8h")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/Body/ArmLeftUpper"]
+texture = ExtResource("116_tmfeb")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/Body"]
+position = Vector2(4.5, -5.5)
+rotation = 1.5708
+texture = ExtResource("117_ptbb1")
+
+[node name="ArmRightLower" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/Body/ArmRightUpper"]
+texture = ExtResource("118_h8ntb")
+
+[node name="Guitar" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/Body/ArmRightUpper/ArmRightLower"]
+position = Vector2(19.6875, -6.875)
+rotation = -1.309
+texture = ExtResource("119_r0aey")
+
+[node name="Head" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/Body"]
+position = Vector2(-0.9375, 0.75)
+rotation = 0.261799
+texture = ExtResource("120_rga2l")
+
+[node name="EarLeft" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/Body/Head"]
+texture = ExtResource("121_aaugw")
+
+[node name="EarRight" type="Sprite2D" parent="environment/in_vent/toy_bonnie_in_vent/Body/Head"]
+texture = ExtResource("122_4d7cj")
+
+[node name="toy_bonnie_in_vent_timer_jumpscare" type="Timer" parent="environment/in_vent/toy_bonnie_in_vent"]
+one_shot = true
+
+[node name="toy_bonnie_in_vent_timer_mask" type="Timer" parent="environment/in_vent/toy_bonnie_in_vent"]
+one_shot = true
+
+[node name="music_box" type="Node2D" parent="environment"]
+script = ExtResource("14_cor0g")
+music_box_current_time_easing = 0.3
+decrease_per_sec_over_ai = SubResource("Curve_gheap")
+crank_delay_in_sec = 0.25
+crank_amount_in_sec = 1.0
+animatronic_name = "puppet"
+
+[node name="rope" type="Sprite2D" parent="environment/music_box"]
+modulate = Color(0.0705882, 0.0705882, 0.0705882, 1)
+position = Vector2(1132, 374.3)
+scale = Vector2(0.05, 2.13828)
+texture = ExtResource("14_7mk13")
+
+[node name="puppet_controller" type="RemoteTransform2D" parent="environment/music_box"]
+scale = Vector2(6.7, 6.7)
+remote_path = NodePath("../puppet_gfx")
+script = ExtResource("29_glq2p")
+music_box_ratio_remaining_property = 1.0
+in_box_pos = Vector2(1133, 581)
+out_box_pos = Vector2(1133, 261)
+
+[node name="puppet_gfx" type="Node2D" parent="environment/music_box"]
+scale = Vector2(6.7, 6.7)
+
+[node name="Body" type="Sprite2D" parent="environment/music_box/puppet_gfx"]
+texture = ExtResource("151_rx7ba")
+
+[node name="ArmLeftUpper" type="Sprite2D" parent="environment/music_box/puppet_gfx/Body"]
+position = Vector2(7.76119, -8.50746)
+rotation = -1.0472
+texture = ExtResource("152_3s5ld")
+
+[node name="ArmLeftLower" type="Sprite2D" parent="environment/music_box/puppet_gfx/Body/ArmLeftUpper"]
+texture = ExtResource("153_w5te1")
+
+[node name="HandLeft" type="Sprite2D" parent="environment/music_box/puppet_gfx/Body/ArmLeftUpper/ArmLeftLower"]
+texture = ExtResource("154_rk33e")
+
+[node name="ArmRightUpper" type="Sprite2D" parent="environment/music_box/puppet_gfx/Body"]
+position = Vector2(-7.76119, -8.50746)
+rotation = 1.0472
+texture = ExtResource("155_707ut")
+
+[node name="ArmRightLower" type="Sprite2D" parent="environment/music_box/puppet_gfx/Body/ArmRightUpper"]
+texture = ExtResource("156_4riql")
+
+[node name="HandRight" type="Sprite2D" parent="environment/music_box/puppet_gfx/Body/ArmRightUpper/ArmRightLower"]
+texture = ExtResource("157_m2eaf")
+
+[node name="LegLeftUpper" type="Sprite2D" parent="environment/music_box/puppet_gfx/Body"]
+texture = ExtResource("158_7st8t")
+
+[node name="LegLeftLower" type="Sprite2D" parent="environment/music_box/puppet_gfx/Body/LegLeftUpper"]
+texture = ExtResource("159_1e00q")
+
+[node name="LegRightUpper" type="Sprite2D" parent="environment/music_box/puppet_gfx/Body"]
+texture = ExtResource("160_qjrtv")
+
+[node name="LegRightLower" type="Sprite2D" parent="environment/music_box/puppet_gfx/Body/LegRightUpper"]
+texture = ExtResource("161_26pgu")
+
+[node name="Neck" type="Sprite2D" parent="environment/music_box/puppet_gfx/Body"]
+texture = ExtResource("162_becwl")
+
+[node name="Head" type="Sprite2D" parent="environment/music_box/puppet_gfx/Body/Neck"]
+texture = ExtResource("163_rvs3r")
+
+[node name="music_box_button" type="Button" parent="environment/music_box"]
+offset_left = 1004.0
+offset_top = 392.0
+offset_right = 1260.0
+offset_bottom = 648.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_yqnwh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_k3tff")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_a1lf5")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_sqn1x")
+script = ExtResource("4_ip4so")
+
+[node name="music_box_area" type="Area2D" parent="environment/music_box/music_box_button" groups=["interactable"]]
+
+[node name="music_box_col" type="CollisionShape2D" parent="environment/music_box/music_box_button/music_box_area"]
+position = Vector2(127.5, 128)
+shape = SubResource("RectangleShape2D_kkv5q")
+
+[node name="floor" type="StaticBody2D" parent="environment"]
+position = Vector2(640, 360)
+
+[node name="floor_texturerect" type="TextureRect" parent="environment/floor"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -427.0
+offset_top = 308.0
+offset_right = 438.0
+offset_bottom = 340.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.25, 2.25)
+pivot_offset = Vector2(426.75, 16)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_t0500")
+stretch_mode = 1
+
+[node name="floor_collision" type="CollisionShape2D" parent="environment/floor"]
+position = Vector2(13, 324)
+shape = SubResource("RectangleShape2D_n1kcr")
+
+[node name="wall_left" type="StaticBody2D" parent="environment"]
+position = Vector2(655, 360)
+
+[node name="wall_left_sprite" type="Sprite2D" parent="environment/wall_left"]
+position = Vector2(-900, -128)
+scale = Vector2(120, 464)
+texture = SubResource("CanvasTexture_shv7k")
+
+[node name="wall_left_col" type="CollisionShape2D" parent="environment/wall_left"]
+position = Vector2(-900, -128)
+shape = SubResource("RectangleShape2D_2kgle")
+
+[node name="wall_right" type="StaticBody2D" parent="environment"]
+position = Vector2(2425, 360)
+
+[node name="wall_right_sprite" type="Sprite2D" parent="environment/wall_right"]
+position = Vector2(-900, -136)
+scale = Vector2(120, 448)
+texture = SubResource("CanvasTexture_shv7k")
+
+[node name="wall_right_col" type="CollisionShape2D" parent="environment/wall_right"]
+position = Vector2(-900, -144)
+shape = SubResource("RectangleShape2D_2kgle")
+
+[node name="vent_light_left" type="Button" parent="environment"]
 anchors_preset = -1
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 603.0
-offset_top = 447.0
-offset_right = 678.0
-offset_bottom = 522.0
+offset_left = -125.0
+offset_top = 357.0
+offset_right = -50.0
+offset_bottom = 432.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(37, 37)
+pivot_offset = Vector2(25, 25)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/normal = SubResource("StyleBoxTexture_ei2iu")
 script = ExtResource("4_ip4so")
 
-[node name="interact_area" type="Area2D" parent="environment/[DEPREC] hall_light" groups=["interactable"]]
+[node name="interact_area" type="Area2D" parent="environment/vent_light_left" groups=["interactable"]]
 
-[node name="interact_collider" type="CollisionShape2D" parent="environment/[DEPREC] hall_light/interact_area"]
+[node name="interact_collider" type="CollisionShape2D" parent="environment/vent_light_left/interact_area"]
+position = Vector2(37.5, 37.5)
+shape = SubResource("RectangleShape2D_wy162")
+
+[node name="vent_light_right" type="Button" parent="environment"]
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1330.0
+offset_top = 357.0
+offset_right = 1405.0
+offset_bottom = 432.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(25, 25)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_ei2iu")
+script = ExtResource("4_ip4so")
+
+[node name="interact_area" type="Area2D" parent="environment/vent_light_right" groups=["interactable"]]
+
+[node name="interact_collider" type="CollisionShape2D" parent="environment/vent_light_right/interact_area"]
 position = Vector2(37.5, 37.5)
 shape = SubResource("RectangleShape2D_wy162")
 
@@ -1784,40 +2053,131 @@ position = Vector2(-32, 0)
 [node name="mask_area_pos_2" type="Node2D" parent="environment/mask/mask_area"]
 position = Vector2(32, 0)
 
-[node name="music_box" type="Node2D" parent="environment"]
-script = ExtResource("14_cor0g")
-music_box_current_time_easing = 0.3
-crank_amount_in_sec = 1.5
+[node name="in_office_animatronics" type="Node2D" parent="environment"]
+position = Vector2(603, 447)
 
-[node name="rope" type="Sprite2D" parent="environment/music_box"]
-modulate = Color(0.0705882, 0.0705882, 0.0705882, 1)
-position = Vector2(1132, 374.3)
-scale = Vector2(0.05, 2.13828)
-texture = ExtResource("14_7mk13")
+[node name="balloon_boy_in_office" type="Node2D" parent="environment/in_office_animatronics" node_paths=PackedStringArray("hall_button", "gfx_body")]
+script = ExtResource("135_krpfd")
+hall_button = NodePath("../../hall/hall_light_button")
+gfx_body = NodePath("balloon_boy_in_office_gfx")
+animatronic_name = "balloon_boy"
 
-[node name="puppet_controller" type="RemoteTransform2D" parent="environment/music_box"]
-scale = Vector2(6.7, 6.7)
-script = ExtResource("29_glq2p")
-music_box_ratio_remaining_property = 1.0
-in_box_pos = Vector2(1133, 581)
-out_box_pos = Vector2(1133, 261)
+[node name="balloon_boy_in_office_gfx" type="Node2D" parent="environment/in_office_animatronics/balloon_boy_in_office"]
+visible = false
+z_index = 1
+position = Vector2(-224, 9)
+scale = Vector2(12, 12)
 
-[node name="music_box_button" type="Button" parent="environment/music_box"]
-offset_left = 1004.0
-offset_top = 392.0
-offset_right = 1260.0
-offset_bottom = 648.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_yqnwh")
-theme_override_styles/hover = SubResource("StyleBoxTexture_k3tff")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_a1lf5")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_sqn1x")
-script = ExtResource("4_ip4so")
+[node name="BalloonBoy" type="Sprite2D" parent="environment/in_office_animatronics/balloon_boy_in_office/balloon_boy_in_office_gfx"]
+texture = ExtResource("108_ukt6r")
 
-[node name="music_box_area" type="Area2D" parent="environment/music_box/music_box_button" groups=["interactable"]]
+[node name="mangle_in_office" type="Node2D" parent="environment/in_office_animatronics" node_paths=PackedStringArray("monitor", "gfx_body")]
+script = ExtResource("136_ob0me")
+monitor = NodePath("../../monitor/monitor_screen_fnaf2")
+gfx_body = NodePath("mangle_gfx")
+animatronic_name = "mangle"
+set_ai_to_max_on_ready = true
 
-[node name="music_box_col" type="CollisionShape2D" parent="environment/music_box/music_box_button/music_box_area"]
-position = Vector2(127.5, 128)
-shape = SubResource("RectangleShape2D_kkv5q")
+[node name="mangle_gfx" type="Node2D" parent="environment/in_office_animatronics/mangle_in_office"]
+visible = false
+z_index = 1
+position = Vector2(12.5, -167)
+rotation = 3.14159
+scale = Vector2(12, 12)
+
+[node name="LegLeftUpper" type="Sprite2D" parent="environment/in_office_animatronics/mangle_in_office/mangle_gfx"]
+texture = ExtResource("89_jvgvh")
+
+[node name="LegLeftLower" type="Sprite2D" parent="environment/in_office_animatronics/mangle_in_office/mangle_gfx/LegLeftUpper"]
+texture = ExtResource("90_b1ohs")
+
+[node name="LegMiddleUpper" type="Sprite2D" parent="environment/in_office_animatronics/mangle_in_office/mangle_gfx"]
+texture = ExtResource("91_pl003")
+
+[node name="LegMiddleLower" type="Sprite2D" parent="environment/in_office_animatronics/mangle_in_office/mangle_gfx/LegMiddleUpper"]
+texture = ExtResource("92_f1eh5")
+
+[node name="LegRightUpper" type="Sprite2D" parent="environment/in_office_animatronics/mangle_in_office/mangle_gfx"]
+texture = ExtResource("93_5o4au")
+
+[node name="LegRightLower" type="Sprite2D" parent="environment/in_office_animatronics/mangle_in_office/mangle_gfx/LegRightUpper"]
+texture = ExtResource("94_nwppr")
+
+[node name="HandUpperConnectorUpper" type="Sprite2D" parent="environment/in_office_animatronics/mangle_in_office/mangle_gfx"]
+position = Vector2(-7.29167, -4.33332)
+rotation = -0.959931
+texture = ExtResource("86_su53a")
+
+[node name="HandLowerConnectorUpper" type="Sprite2D" parent="environment/in_office_animatronics/mangle_in_office/mangle_gfx/HandUpperConnectorUpper"]
+texture = ExtResource("87_2rs8b")
+
+[node name="HandLower" type="Sprite2D" parent="environment/in_office_animatronics/mangle_in_office/mangle_gfx/HandUpperConnectorUpper/HandLowerConnectorUpper"]
+texture = ExtResource("88_wcrgx")
+
+[node name="BuddyConnector" type="Sprite2D" parent="environment/in_office_animatronics/mangle_in_office/mangle_gfx"]
+position = Vector2(3.79167, 1.66666)
+rotation = -0.785398
+texture = ExtResource("99_aiwps")
+
+[node name="BuddyNeck" type="Sprite2D" parent="environment/in_office_animatronics/mangle_in_office/mangle_gfx/BuddyConnector"]
+texture = ExtResource("84_yqivt")
+
+[node name="Buddy" type="Sprite2D" parent="environment/in_office_animatronics/mangle_in_office/mangle_gfx/BuddyConnector/BuddyNeck"]
+texture = ExtResource("85_enpcy")
+
+[node name="BodyConnector" type="Sprite2D" parent="environment/in_office_animatronics/mangle_in_office/mangle_gfx"]
+position = Vector2(-3.73219, 7.36211)
+rotation = 2.44346
+texture = ExtResource("76_tco34")
+
+[node name="ConnectorMain" type="Sprite2D" parent="environment/in_office_animatronics/mangle_in_office/mangle_gfx/BodyConnector"]
+position = Vector2(-3.8147e-06, -1.90735e-06)
+texture = ExtResource("77_egjux")
+
+[node name="HandTop" type="Sprite2D" parent="environment/in_office_animatronics/mangle_in_office/mangle_gfx/BodyConnector"]
+position = Vector2(-4.08932, 3.96596)
+rotation = 3.14159
+texture = ExtResource("78_6p070")
+
+[node name="Tail1" type="Sprite2D" parent="environment/in_office_animatronics/mangle_in_office/mangle_gfx"]
+position = Vector2(-5.29167, -2.74999)
+rotation = -0.436333
+texture = ExtResource("95_qxgxn")
+
+[node name="Tail2" type="Sprite2D" parent="environment/in_office_animatronics/mangle_in_office/mangle_gfx/Tail1"]
+position = Vector2(2.98057, -1.08888)
+rotation = 0.523599
+texture = ExtResource("96_t44f0")
+
+[node name="Tail3" type="Sprite2D" parent="environment/in_office_animatronics/mangle_in_office/mangle_gfx/Tail1/Tail2"]
+position = Vector2(3.52353, -3.18656)
+rotation = 0.523599
+texture = ExtResource("97_ufmq4")
+
+[node name="Tail4" type="Sprite2D" parent="environment/in_office_animatronics/mangle_in_office/mangle_gfx/Tail1/Tail2/Tail3"]
+texture = ExtResource("98_7xc3p")
+
+[node name="Neck" type="Sprite2D" parent="environment/in_office_animatronics/mangle_in_office/mangle_gfx"]
+position = Vector2(-5.29166, 8.25001)
+rotation = 0.436332
+texture = ExtResource("80_r0cho")
+
+[node name="Head" type="Sprite2D" parent="environment/in_office_animatronics/mangle_in_office/mangle_gfx/Neck"]
+position = Vector2(20, -1.14441e-05)
+rotation = 3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("81_jipl3")
+
+[node name="EarLeft" type="Sprite2D" parent="environment/in_office_animatronics/mangle_in_office/mangle_gfx/Neck/Head"]
+texture = ExtResource("82_my4pa")
+
+[node name="EarRight" type="Sprite2D" parent="environment/in_office_animatronics/mangle_in_office/mangle_gfx/Neck/Head"]
+texture = ExtResource("83_yktmv")
+
+[node name="NeckConnector" type="Sprite2D" parent="environment/in_office_animatronics/mangle_in_office/mangle_gfx"]
+position = Vector2(-4.70832, 7.41667)
+rotation = 0.872665
+texture = ExtResource("79_s2ney")
 
 [node name="hall_animatronics" type="Node2D" parent="environment"]
 
@@ -1826,6 +2186,7 @@ script = ExtResource("139_qcb6b")
 animatronic_roaming = NodePath("../../animatronics/withered_foxy")
 timer_retreat = NodePath("timer_retreat")
 timer_jumpscare = NodePath("timer_jumpscare")
+timer_jumpscare_start_timer_over_ai = SubResource("Curve_c41pc")
 animatronic_gfx = NodePath("withered_foxy_hall_gfx")
 animatronic_eyes = NodePath("withered_foxy_hall_eyes")
 animatronic_name = "withered_foxy"
@@ -1926,24 +2287,48 @@ position = Vector2(640, 360)
 script = ExtResource("138_m2hpk")
 animatronics = NodePath("../animatronics")
 
-[node name="hall_button" type="Button" parent="environment/hall"]
+[node name="hall_light_button" type="Button" parent="environment/hall"]
 offset_left = -280.0
 offset_top = -260.0
 offset_right = 280.0
 offset_bottom = 288.0
 script = ExtResource("4_ip4so")
 
-[node name="hall_cover" type="Sprite2D" parent="environment/hall/hall_button"]
+[node name="hall_cover" type="Sprite2D" parent="environment/hall/hall_light_button"]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(280, 274)
 scale = Vector2(560, 548)
 texture = SubResource("CanvasTexture_dokc6")
 
-[node name="hall_area" type="Area2D" parent="environment/hall/hall_button" groups=["interactable"]]
+[node name="hall_area" type="Area2D" parent="environment/hall/hall_light_button" groups=["interactable"]]
 
-[node name="hall_col" type="CollisionShape2D" parent="environment/hall/hall_button/hall_area"]
+[node name="hall_col" type="CollisionShape2D" parent="environment/hall/hall_light_button/hall_area"]
 position = Vector2(280, 274)
 shape = SubResource("RectangleShape2D_vo66h")
+
+[node name="[DEPREC] hall_light" type="Button" parent="environment/hall"]
+visible = false
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = 87.0
+offset_right = 38.0
+offset_bottom = 162.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(37, 37)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_ei2iu")
+script = ExtResource("4_ip4so")
+
+[node name="interact_area" type="Area2D" parent="environment/hall/[DEPREC] hall_light" groups=["interactable"]]
+
+[node name="interact_collider" type="CollisionShape2D" parent="environment/hall/[DEPREC] hall_light/interact_area"]
+position = Vector2(37.5, 37.5)
+shape = SubResource("RectangleShape2D_wy162")
 
 [node name="ui" type="Control" parent="environment"]
 layout_mode = 3
@@ -1973,13 +2358,16 @@ text = "-12 AM-"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="battery" type="TextureRect" parent="environment/ui/ui_topbar"]
+[node name="battery" type="TextureRect" parent="environment/ui/ui_topbar" node_paths=PackedStringArray("battery_manager", "battery_indicators")]
 layout_mode = 0
 offset_top = 9.0
 offset_right = 128.0
 offset_bottom = 89.0
 texture = ExtResource("6_6mugf")
 stretch_mode = 5
+script = ExtResource("161_46ets")
+battery_manager = NodePath("../../../../game_manager/flashlight_battery")
+battery_indicators = [NodePath("bar_1"), NodePath("bar_2"), NodePath("bar_3"), NodePath("bar_4")]
 
 [node name="battery_label" type="Label" parent="environment/ui/ui_topbar/battery"]
 layout_mode = 0
@@ -1989,8 +2377,52 @@ offset_bottom = 80.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_qf4tt")
 theme_override_font_sizes/font_size = 56
-text = ":69%"
+text = ":Light"
 vertical_alignment = 1
+
+[node name="bar_1" type="ColorRect" parent="environment/ui/ui_topbar/battery"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 39.0
+offset_bottom = 60.0
+scale = Vector2(0.875, 0.875)
+pivot_offset = Vector2(7.5, 20)
+
+[node name="bar_2" type="ColorRect" parent="environment/ui/ui_topbar/battery"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 20.0
+offset_right = 54.0
+offset_bottom = 60.0
+scale = Vector2(0.875, 0.875)
+pivot_offset = Vector2(7.5, 20)
+
+[node name="bar_3" type="ColorRect" parent="environment/ui/ui_topbar/battery"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 20.0
+offset_right = 69.0
+offset_bottom = 60.0
+scale = Vector2(0.875, 0.875)
+pivot_offset = Vector2(7.5, 20)
+
+[node name="bar_4" type="ColorRect" parent="environment/ui/ui_topbar/battery"]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 20.0
+offset_right = 84.0
+offset_bottom = 60.0
+scale = Vector2(0.875, 0.875)
+pivot_offset = Vector2(7.5, 20)
+
+[node name="ColorRect" type="ColorRect" parent="environment/ui/ui_topbar/battery"]
+visible = false
+layout_mode = 0
+offset_left = 29.0
+offset_top = 25.0
+offset_right = 79.0
+offset_bottom = 55.0
 
 [node name="night_text" type="Label" parent="environment/ui/ui_topbar"]
 layout_mode = 0
@@ -2019,7 +2451,6 @@ mouse_filter = 2
 script = ExtResource("135_dhly0")
 jumpscare_sprites = {
 "balloon_boy": NodePath("balloon_boy_jumpscare"),
-"golden_freddy": NodePath("withered_golden_freddy_jumpscare"),
 "mangle": NodePath("mangle_jumpscare"),
 "puppet": NodePath("puppet_jumpscare"),
 "toy_bonnie": NodePath("toy_bonnie_jumpscare"),
@@ -2028,7 +2459,8 @@ jumpscare_sprites = {
 "withered_bonnie": NodePath("withered_bonnie_jumpscare"),
 "withered_chica": NodePath("withered_chica_jumpscare"),
 "withered_foxy": NodePath("withered_foxy_jumpscare"),
-"withered_freddy": NodePath("withered_freddy_jumpscare")
+"withered_freddy": NodePath("withered_freddy_jumpscare"),
+"withered_golden_freddy": NodePath("withered_golden_freddy_jumpscare")
 }
 
 [node name="toy_freddy_jumpscare" type="Node2D" parent="environment/ui/ui_jumpscare_clayer/ui_jumpscare"]
@@ -2544,6 +2976,7 @@ scale = Vector2(20, 20)
 script = ExtResource("172_04hhi")
 timer_blackout = NodePath("withered_freddy_blackout_timer_blackout")
 timer_mask_reaction = NodePath("withered_freddy_blackout_timer_mask_reaction")
+timer_mask_reaction_start_timer_over_ai = SubResource("Curve_goadj")
 blackout_manager = NodePath("..")
 player = NodePath("../../../player")
 animatronic_roaming = NodePath("../../animatronics/withered_freddy")
@@ -2654,6 +3087,7 @@ scale = Vector2(20, 20)
 script = ExtResource("172_04hhi")
 timer_blackout = NodePath("withered_bonnie_blackout_timer_blackout")
 timer_mask_reaction = NodePath("withered_bonnie_blackout_timer_mask_reaction")
+timer_mask_reaction_start_timer_over_ai = SubResource("Curve_goadj")
 blackout_manager = NodePath("..")
 player = NodePath("../../../player")
 animatronic_roaming = NodePath("../../animatronics/withered_bonnie")
@@ -2722,6 +3156,7 @@ scale = Vector2(20, 20)
 script = ExtResource("172_04hhi")
 timer_blackout = NodePath("withered_chica_blackout_timer_blackout")
 timer_mask_reaction = NodePath("withered_chica_blackout_timer_mask_reaction")
+timer_mask_reaction_start_timer_over_ai = SubResource("Curve_goadj")
 blackout_manager = NodePath("..")
 player = NodePath("../../../player")
 animatronic_roaming = NodePath("../../animatronics/withered_chica")
@@ -2828,6 +3263,7 @@ scale = Vector2(20, 20)
 script = ExtResource("172_04hhi")
 timer_blackout = NodePath("toy_freddy_blackout_timer_blackout")
 timer_mask_reaction = NodePath("toy_freddy_blackout_timer_mask_reaction")
+timer_mask_reaction_start_timer_over_ai = SubResource("Curve_goadj")
 blackout_manager = NodePath("..")
 player = NodePath("../../../player")
 animatronic_roaming = NodePath("../../animatronics/toy_freddy")
@@ -2947,11 +3383,13 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="toy_bonnie_blackout" type="Node2D" parent="environment/blackout" node_paths=PackedStringArray("timer_blackout", "timer_mask_reaction", "blackout_manager", "player", "animatronic_roaming", "monitor_screen", "animations")]
+visible = false
 position = Vector2(640, 328)
 scale = Vector2(20, 20)
 script = ExtResource("172_04hhi")
 timer_blackout = NodePath("toy_bonnie_blackout_timer_blackout")
 timer_mask_reaction = NodePath("toy_bonnie_blackout_timer_mask_reaction")
+timer_mask_reaction_start_timer_over_ai = SubResource("Curve_goadj")
 blackout_manager = NodePath("..")
 player = NodePath("../../../player")
 animatronic_roaming = NodePath("../../animatronics/toy_bonnie")
@@ -2966,18 +3404,15 @@ libraries = {
 
 [node name="toy_bonnie_blackout_gfx" type="Node2D" parent="environment/blackout/toy_bonnie_blackout"]
 visible = false
-scale = Vector2(1, 1)
 
 [node name="Guitar" type="Sprite2D" parent="environment/blackout/toy_bonnie_blackout/toy_bonnie_blackout_gfx"]
 position = Vector2(0, 22.55)
 rotation = 1.6967
-scale = Vector2(1, 1)
 texture = ExtResource("119_r0aey")
 
 [node name="ArmRightUpper" type="Sprite2D" parent="environment/blackout/toy_bonnie_blackout/toy_bonnie_blackout_gfx"]
 position = Vector2(-1.2, 2.9)
 rotation = 5.58506
-scale = Vector2(1, 1)
 texture = ExtResource("117_ptbb1")
 
 [node name="ArmRightLower" type="Sprite2D" parent="environment/blackout/toy_bonnie_blackout/toy_bonnie_blackout_gfx/ArmRightUpper"]
@@ -2995,7 +3430,6 @@ texture = ExtResource("114_0ugfp")
 
 [node name="Head" type="Sprite2D" parent="environment/blackout/toy_bonnie_blackout/toy_bonnie_blackout_gfx/Body"]
 position = Vector2(0, 0.5)
-scale = Vector2(1, 1)
 texture = ExtResource("120_rga2l")
 
 [node name="EarLeft" type="Sprite2D" parent="environment/blackout/toy_bonnie_blackout/toy_bonnie_blackout_gfx/Body/Head"]
@@ -3075,7 +3509,6 @@ texture = ExtResource("112_3mg3x")
 [node name="ArmLeftUpper" type="Sprite2D" parent="environment/blackout/toy_bonnie_blackout/toy_bonnie_blackout_gfx"]
 position = Vector2(-3.55, -3.6)
 rotation = -1.309
-scale = Vector2(1, 1)
 texture = ExtResource("115_40q8h")
 
 [node name="ArmLeftLower" type="Sprite2D" parent="environment/blackout/toy_bonnie_blackout/toy_bonnie_blackout_gfx/ArmLeftUpper"]
@@ -3113,50 +3546,16 @@ position = Vector2(455, 360)
 position = Vector2(825, 360)
 
 [connection signal="jumpscare_finished" from="game_manager/jumpscare_manager" to="game_manager/scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/scene_static.tscn"]]
+[connection signal="jumpscare_played" from="game_manager/jumpscare_manager" to="environment/monitor/monitor_screen_fnaf2" method="set_monitor_focus" binds= [false]]
 [connection signal="jumpscare_played_with_name" from="game_manager/jumpscare_manager" to="environment/ui/ui_jumpscare_clayer/ui_jumpscare" method="show_jumpscare_sprite"]
 [connection signal="timeout" from="game_manager/jumpscare_manager/jumpscare_timer" to="game_manager/jumpscare_manager" method="finish_jumpscare"]
 [connection signal="timeout" from="game_manager/night_timer" to="game_manager/night_timer" method="night_won"]
-[connection signal="camera_scene_flashed" from="environment/monitor/monitor_screen_fnaf2" to="environment/animatronics" method="set_current_monitor_cam"]
-[connection signal="camera_scene_switched" from="environment/monitor/monitor_screen_fnaf2" to="environment/monitor/monitor_screen_fnaf2/monitor_scene_clipper/monitor_scene/eyes_blacked" method="camera_scene_switched"]
-[connection signal="hall_light_state_set" from="environment/monitor/monitor_screen_fnaf2" to="environment/monitor/monitor_screen_fnaf2/eyes_blacked_hall" method="hall_light_state_set"]
-[connection signal="monitor_focus" from="environment/monitor/monitor_screen_fnaf2" to="game_manager/camera_manager" method="set_camera_pos" binds= ["monitor", 0.25]]
-[connection signal="monitor_focus" from="environment/monitor/monitor_screen_fnaf2" to="game_manager/camera_manager" method="set_rtrans" binds= [NodePath("%player_camera_rtrans"), false]]
-[connection signal="monitor_unfocus" from="environment/monitor/monitor_screen_fnaf2" to="player/player_camera_rtrans" method="reset_limit"]
-[connection signal="monitor_unfocus" from="environment/monitor/monitor_screen_fnaf2" to="game_manager/camera_manager" method="set_limit_smoothing_enabled" binds= [false]]
-[connection signal="monitor_unfocus" from="environment/monitor/monitor_screen_fnaf2" to="game_manager/camera_manager" method="set_camera_pos" binds= ["default", 0.25]]
-[connection signal="monitor_unfocus" from="environment/monitor/monitor_screen_fnaf2" to="game_manager/camera_manager" method="set_rtrans" binds= [NodePath("%player_camera_rtrans"), true]]
-[connection signal="button_down" from="environment/monitor/monitor_focus_button" to="environment/monitor/monitor_screen_fnaf2" method="set_monitor_focus" binds= [true]]
-[connection signal="animatronic_jumpscare" from="environment/in_vent/balloon_boy_in_vent" to="game_manager/jumpscare_manager" method="play_jumpscare"]
-[connection signal="timeout" from="environment/in_vent/balloon_boy_in_vent/balloon_boy_in_vent_timer_jumpscare" to="environment/in_vent/balloon_boy_in_vent" method="on_jumpscare_timer_timeout"]
-[connection signal="timeout" from="environment/in_vent/balloon_boy_in_vent/balloon_boy_in_vent_timer_mask" to="environment/in_vent/balloon_boy_in_vent" method="on_mask_timer_timeout"]
-[connection signal="animatronic_jumpscare" from="environment/in_vent/toy_chica_in_vent" to="game_manager/jumpscare_manager" method="play_jumpscare"]
-[connection signal="timeout" from="environment/in_vent/toy_chica_in_vent/toy_chica_in_vent_timer_jumpscare" to="environment/in_vent/toy_chica_in_vent" method="on_jumpscare_timer_timeout"]
-[connection signal="timeout" from="environment/in_vent/toy_chica_in_vent/toy_chica_in_vent_timer_mask" to="environment/in_vent/toy_chica_in_vent" method="on_mask_timer_timeout"]
-[connection signal="animatronic_jumpscare" from="environment/in_vent/mangle_in_vent" to="game_manager/jumpscare_manager" method="play_jumpscare"]
-[connection signal="timeout" from="environment/in_vent/mangle_in_vent/mangle_in_vent_timer_jumpscare" to="environment/in_vent/mangle_in_vent" method="on_jumpscare_timer_timeout"]
-[connection signal="timeout" from="environment/in_vent/mangle_in_vent/mangle_in_vent_timer_mask" to="environment/in_vent/mangle_in_vent" method="on_mask_timer_timeout"]
-[connection signal="animatronic_jumpscare" from="environment/in_vent/toy_bonnie_in_vent" to="game_manager/jumpscare_manager" method="play_jumpscare"]
-[connection signal="timeout" from="environment/in_vent/toy_bonnie_in_vent/toy_bonnie_in_vent_timer_jumpscare" to="environment/in_vent/toy_bonnie_in_vent" method="on_jumpscare_timer_timeout"]
-[connection signal="timeout" from="environment/in_vent/toy_bonnie_in_vent/toy_bonnie_in_vent_timer_mask" to="environment/in_vent/toy_bonnie_in_vent" method="on_mask_timer_timeout"]
-[connection signal="button_down" from="environment/vent_light_left" to="game_manager/camera_manager" method="reset_limit_smoothing_enabled"]
-[connection signal="button_down" from="environment/vent_light_left" to="player/player_camera_rtrans" method="remove_limit"]
-[connection signal="button_down" from="environment/vent_light_left" to="game_manager/camera_manager" method="set_position_smoothing" binds= [25.0]]
-[connection signal="button_down" from="environment/vent_light_left" to="game_manager/camera_manager" method="set_camera_limit" binds= [Vector4(-305, 0, 1585, 720)]]
-[connection signal="button_up" from="environment/vent_light_left" to="game_manager/camera_manager" method="reset_camera_limit"]
-[connection signal="button_up" from="environment/vent_light_left" to="game_manager/camera_manager" method="reset_position_smoothing"]
-[connection signal="button_down" from="environment/vent_light_right" to="game_manager/camera_manager" method="reset_limit_smoothing_enabled"]
-[connection signal="button_down" from="environment/vent_light_right" to="player/player_camera_rtrans" method="remove_limit"]
-[connection signal="button_down" from="environment/vent_light_right" to="game_manager/camera_manager" method="set_position_smoothing" binds= [25.0]]
-[connection signal="button_down" from="environment/vent_light_right" to="game_manager/camera_manager" method="set_camera_limit" binds= [Vector4(-305, 0, 1585, 720)]]
-[connection signal="button_up" from="environment/vent_light_right" to="game_manager/camera_manager" method="reset_camera_limit"]
-[connection signal="button_up" from="environment/vent_light_right" to="game_manager/camera_manager" method="reset_position_smoothing"]
 [connection signal="animatronic_moved" from="environment/animatronics/toy_freddy" to="environment/monitor/monitor_screen_fnaf2" method="animatronic_moved_to"]
 [connection signal="animatronic_moved_from" from="environment/animatronics/toy_freddy" to="environment/monitor/monitor_screen_fnaf2" method="animatronic_moved_from"]
 [connection signal="animatronic_path_ran_out" from="environment/animatronics/toy_freddy" to="environment/blackout/toy_freddy_blackout" method="trigger_in_office" binds= [true]]
 [connection signal="animatronic_stalled" from="environment/animatronics/toy_freddy" to="environment/monitor/monitor_screen_fnaf2" method="set_animatronic_stalled"]
 [connection signal="animatronic_moved" from="environment/animatronics/toy_bonnie" to="environment/monitor/monitor_screen_fnaf2" method="animatronic_moved_to"]
 [connection signal="animatronic_moved_from" from="environment/animatronics/toy_bonnie" to="environment/monitor/monitor_screen_fnaf2" method="animatronic_moved_from"]
-[connection signal="animatronic_path_ran_out" from="environment/animatronics/toy_bonnie" to="environment/in_vent/toy_bonnie_in_vent" method="trigger_in_office" binds= [true]]
 [connection signal="animatronic_stalled" from="environment/animatronics/toy_bonnie" to="environment/monitor/monitor_screen_fnaf2" method="set_animatronic_stalled"]
 [connection signal="animatronic_moved" from="environment/animatronics/toy_chica" to="environment/monitor/monitor_screen_fnaf2" method="animatronic_moved_to"]
 [connection signal="animatronic_moved_from" from="environment/animatronics/toy_chica" to="environment/monitor/monitor_screen_fnaf2" method="animatronic_moved_from"]
@@ -3186,26 +3585,64 @@ position = Vector2(825, 360)
 [connection signal="animatronic_moved_from" from="environment/animatronics/balloon_boy" to="environment/monitor/monitor_screen_fnaf2" method="animatronic_moved_from"]
 [connection signal="animatronic_path_ran_out" from="environment/animatronics/balloon_boy" to="environment/in_vent/balloon_boy_in_vent" method="trigger_in_office" binds= [true]]
 [connection signal="animatronic_stalled" from="environment/animatronics/balloon_boy" to="environment/monitor/monitor_screen_fnaf2" method="set_animatronic_stalled"]
-[connection signal="button_down" from="environment/[DEPREC] hall_light" to="game_manager/camera_manager" method="set_position_smoothing" binds= [25.0]]
-[connection signal="button_down" from="environment/[DEPREC] hall_light" to="game_manager/camera_manager" method="set_camera_limit" binds= [Vector4(-305, 0, 1585, 720)]]
-[connection signal="button_up" from="environment/[DEPREC] hall_light" to="game_manager/camera_manager" method="reset_camera_limit"]
-[connection signal="button_up" from="environment/[DEPREC] hall_light" to="game_manager/camera_manager" method="reset_position_smoothing"]
-[connection signal="button_down" from="environment/mask/mask_button" to="player" method="set_mask_state" binds= [true]]
-[connection signal="button_down" from="environment/mask/mask_clayer/exit_button" to="environment/mask" method="set_mask_state" binds= [false]]
+[connection signal="timeout" from="environment/animatronics/withered_golden_freddy/timer_popup" to="environment/animatronics/withered_golden_freddy" method="_on_timer_popup_timeout"]
+[connection signal="camera_scene_flash_set" from="environment/monitor/monitor_screen_fnaf2" to="environment/animatronics" method="set_current_monitor_cam"]
+[connection signal="camera_scene_switched" from="environment/monitor/monitor_screen_fnaf2" to="environment/monitor/monitor_screen_fnaf2/monitor_scene_clipper/monitor_scene/eyes_blacked" method="camera_scene_switched"]
+[connection signal="hall_light_state_set" from="environment/monitor/monitor_screen_fnaf2" to="environment/monitor/monitor_screen_fnaf2/eyes_blacked_hall" method="hall_light_state_set"]
+[connection signal="jumpscare" from="environment/monitor/monitor_screen_fnaf2" to="game_manager/jumpscare_manager" method="play_jumpscare"]
+[connection signal="monitor_focus" from="environment/monitor/monitor_screen_fnaf2" to="game_manager/camera_manager" method="set_rtrans" binds= [NodePath("%player_camera_rtrans"), false]]
+[connection signal="monitor_focus" from="environment/monitor/monitor_screen_fnaf2" to="game_manager/camera_manager" method="set_camera_pos" binds= ["monitor", 0.25]]
+[connection signal="monitor_unfocus" from="environment/monitor/monitor_screen_fnaf2" to="player/player_camera_rtrans" method="reset_limit"]
+[connection signal="monitor_unfocus" from="environment/monitor/monitor_screen_fnaf2" to="game_manager/camera_manager" method="set_limit_smoothing_enabled" binds= [false]]
+[connection signal="monitor_unfocus" from="environment/monitor/monitor_screen_fnaf2" to="game_manager/camera_manager" method="set_rtrans" binds= [NodePath("%player_camera_rtrans"), true]]
+[connection signal="monitor_unfocus" from="environment/monitor/monitor_screen_fnaf2" to="game_manager/camera_manager" method="set_camera_pos" binds= ["default", 0.25]]
+[connection signal="button_down" from="environment/monitor/monitor_focus_button" to="environment/monitor/monitor_screen_fnaf2" method="set_monitor_focus" binds= [true]]
+[connection signal="animatronic_jumpscare" from="environment/in_vent/balloon_boy_in_vent" to="environment/in_office_animatronics/balloon_boy_in_office" method="trigger_in_office" unbinds=1]
+[connection signal="timeout" from="environment/in_vent/balloon_boy_in_vent/balloon_boy_in_vent_timer_jumpscare" to="environment/in_vent/balloon_boy_in_vent" method="on_jumpscare_timer_timeout"]
+[connection signal="timeout" from="environment/in_vent/balloon_boy_in_vent/balloon_boy_in_vent_timer_mask" to="environment/in_vent/balloon_boy_in_vent" method="on_mask_timer_timeout"]
+[connection signal="animatronic_jumpscare" from="environment/in_vent/toy_chica_in_vent" to="game_manager/jumpscare_manager" method="play_jumpscare"]
+[connection signal="timeout" from="environment/in_vent/toy_chica_in_vent/toy_chica_in_vent_timer_jumpscare" to="environment/in_vent/toy_chica_in_vent" method="on_jumpscare_timer_timeout"]
+[connection signal="timeout" from="environment/in_vent/toy_chica_in_vent/toy_chica_in_vent_timer_mask" to="environment/in_vent/toy_chica_in_vent" method="on_mask_timer_timeout"]
+[connection signal="animatronic_jumpscare" from="environment/in_vent/mangle_in_vent" to="environment/in_office_animatronics/mangle_in_office" method="trigger_in_office" unbinds=1]
+[connection signal="timeout" from="environment/in_vent/mangle_in_vent/mangle_in_vent_timer_jumpscare" to="environment/in_vent/mangle_in_vent" method="on_jumpscare_timer_timeout"]
+[connection signal="timeout" from="environment/in_vent/mangle_in_vent/mangle_in_vent_timer_mask" to="environment/in_vent/mangle_in_vent" method="on_mask_timer_timeout"]
+[connection signal="animatronic_jumpscare" from="environment/in_vent/toy_bonnie_in_vent" to="game_manager/jumpscare_manager" method="play_jumpscare"]
+[connection signal="timeout" from="environment/in_vent/toy_bonnie_in_vent/toy_bonnie_in_vent_timer_jumpscare" to="environment/in_vent/toy_bonnie_in_vent" method="on_jumpscare_timer_timeout"]
+[connection signal="timeout" from="environment/in_vent/toy_bonnie_in_vent/toy_bonnie_in_vent_timer_mask" to="environment/in_vent/toy_bonnie_in_vent" method="on_mask_timer_timeout"]
+[connection signal="jumpscare" from="environment/music_box" to="game_manager/jumpscare_manager" method="play_jumpscare"]
 [connection signal="music_box_ratio_remaining" from="environment/music_box" to="environment/music_box/puppet_controller" method="set_music_box_ratio_remaining"]
 [connection signal="button_down" from="environment/music_box/music_box_button" to="environment/music_box" method="toggle_music_box" binds= [true]]
 [connection signal="button_up" from="environment/music_box/music_box_button" to="environment/music_box" method="toggle_music_box" binds= [false]]
+[connection signal="button_down" from="environment/vent_light_left" to="game_manager/camera_manager" method="reset_limit_smoothing_enabled"]
+[connection signal="button_down" from="environment/vent_light_left" to="player/player_camera_rtrans" method="remove_limit"]
+[connection signal="button_down" from="environment/vent_light_left" to="game_manager/camera_manager" method="set_camera_limit" binds= [Vector4(-305, 0, 1585, 720)]]
+[connection signal="button_down" from="environment/vent_light_left" to="game_manager/camera_manager" method="set_position_smoothing" binds= [25.0]]
+[connection signal="button_up" from="environment/vent_light_left" to="game_manager/camera_manager" method="reset_camera_limit"]
+[connection signal="button_up" from="environment/vent_light_left" to="game_manager/camera_manager" method="reset_position_smoothing"]
+[connection signal="button_down" from="environment/vent_light_right" to="game_manager/camera_manager" method="reset_limit_smoothing_enabled"]
+[connection signal="button_down" from="environment/vent_light_right" to="player/player_camera_rtrans" method="remove_limit"]
+[connection signal="button_down" from="environment/vent_light_right" to="game_manager/camera_manager" method="set_camera_limit" binds= [Vector4(-305, 0, 1585, 720)]]
+[connection signal="button_down" from="environment/vent_light_right" to="game_manager/camera_manager" method="set_position_smoothing" binds= [25.0]]
+[connection signal="button_up" from="environment/vent_light_right" to="game_manager/camera_manager" method="reset_camera_limit"]
+[connection signal="button_up" from="environment/vent_light_right" to="game_manager/camera_manager" method="reset_position_smoothing"]
+[connection signal="button_down" from="environment/mask/mask_button" to="player" method="set_mask_state" binds= [true]]
+[connection signal="button_down" from="environment/mask/mask_clayer/exit_button" to="environment/mask" method="set_mask_state" binds= [false]]
+[connection signal="jumpscare" from="environment/in_office_animatronics/mangle_in_office" to="game_manager/jumpscare_manager" method="play_jumpscare"]
 [connection signal="animatronic_jumpscare" from="environment/hall_animatronics/withered_foxy_hall" to="game_manager/jumpscare_manager" method="play_jumpscare"]
 [connection signal="timeout" from="environment/hall_animatronics/withered_foxy_hall/timer_retreat" to="environment/hall_animatronics/withered_foxy_hall" method="_on_timer_retreat_timeout"]
 [connection signal="timeout" from="environment/hall_animatronics/withered_foxy_hall/timer_jumpscare" to="environment/hall_animatronics/withered_foxy_hall" method="_on_timer_jumpscare_timeout"]
-[connection signal="button_down" from="environment/hall/hall_button" to="environment/hall" method="hall_light_flashed"]
-[connection signal="button_down" from="environment/hall/hall_button" to="environment/monitor/monitor_screen_fnaf2" method="set_hall_light_state" binds= [true]]
-[connection signal="button_down" from="environment/hall/hall_button" to="environment/hall_animatronics/withered_foxy_hall" method="hall_light_state_set" binds= [true]]
-[connection signal="button_down" from="environment/hall/hall_button" to="environment/hall/hall_button/hall_cover" method="set_visible" binds= [false]]
-[connection signal="button_up" from="environment/hall/hall_button" to="environment/monitor/monitor_screen_fnaf2" method="set_hall_light_state" binds= [false]]
-[connection signal="button_up" from="environment/hall/hall_button" to="environment/hall_animatronics/withered_foxy_hall" method="hall_light_state_set" binds= [false]]
-[connection signal="button_up" from="environment/hall/hall_button" to="environment/hall/hall_button/hall_cover" method="set_visible" binds= [true]]
-[connection signal="ready" from="environment/hall/hall_button/hall_cover" to="environment/hall/hall_button/hall_cover" method="set_visible" binds= [true]]
+[connection signal="button_down" from="environment/hall/hall_light_button" to="environment/hall" method="hall_light_flashed"]
+[connection signal="button_down" from="environment/hall/hall_light_button" to="environment/monitor/monitor_screen_fnaf2" method="set_hall_light_state" binds= [true]]
+[connection signal="button_down" from="environment/hall/hall_light_button" to="environment/hall_animatronics/withered_foxy_hall" method="hall_light_state_set" binds= [true]]
+[connection signal="button_down" from="environment/hall/hall_light_button" to="environment/hall/hall_light_button/hall_cover" method="set_visible" binds= [false]]
+[connection signal="button_up" from="environment/hall/hall_light_button" to="environment/monitor/monitor_screen_fnaf2" method="set_hall_light_state" binds= [false]]
+[connection signal="button_up" from="environment/hall/hall_light_button" to="environment/hall_animatronics/withered_foxy_hall" method="hall_light_state_set" binds= [false]]
+[connection signal="button_up" from="environment/hall/hall_light_button" to="environment/hall/hall_light_button/hall_cover" method="set_visible" binds= [true]]
+[connection signal="ready" from="environment/hall/hall_light_button/hall_cover" to="environment/hall/hall_light_button/hall_cover" method="set_visible" binds= [true]]
+[connection signal="button_down" from="environment/hall/[DEPREC] hall_light" to="game_manager/camera_manager" method="set_camera_limit" binds= [Vector4(-305, 0, 1585, 720)]]
+[connection signal="button_down" from="environment/hall/[DEPREC] hall_light" to="game_manager/camera_manager" method="set_position_smoothing" binds= [25.0]]
+[connection signal="button_up" from="environment/hall/[DEPREC] hall_light" to="game_manager/camera_manager" method="reset_camera_limit"]
+[connection signal="button_up" from="environment/hall/[DEPREC] hall_light" to="game_manager/camera_manager" method="reset_position_smoothing"]
 [connection signal="animatronic_jumpscare" from="environment/blackout/withered_freddy_blackout" to="game_manager/jumpscare_manager" method="play_jumpscare"]
 [connection signal="timeout" from="environment/blackout/withered_freddy_blackout/withered_freddy_blackout_timer_blackout" to="environment/blackout/withered_freddy_blackout" method="on_blackout_timer_timeout"]
 [connection signal="timeout" from="environment/blackout/withered_freddy_blackout/withered_freddy_blackout_timer_mask_reaction" to="environment/blackout/withered_freddy_blackout" method="on_mask_reaction_timer_timeout"]
@@ -3221,5 +3658,5 @@ position = Vector2(825, 360)
 [connection signal="animatronic_jumpscare" from="environment/blackout/toy_bonnie_blackout" to="game_manager/jumpscare_manager" method="play_jumpscare"]
 [connection signal="timeout" from="environment/blackout/toy_bonnie_blackout/toy_bonnie_blackout_timer_blackout" to="environment/blackout/toy_bonnie_blackout" method="on_blackout_timer_timeout"]
 [connection signal="timeout" from="environment/blackout/toy_bonnie_blackout/toy_bonnie_blackout_timer_mask_reaction" to="environment/blackout/toy_bonnie_blackout" method="on_mask_reaction_timer_timeout"]
-[connection signal="mask_off" from="player" to="environment/hall/hall_button" method="unfreeze_disabled_state"]
-[connection signal="mask_on" from="player" to="environment/hall/hall_button" method="set_button_disabled_state_absolute" binds= [true]]
+[connection signal="mask_off" from="player" to="environment/hall/hall_light_button" method="unfreeze_disabled_state"]
+[connection signal="mask_on" from="player" to="environment/hall/hall_light_button" method="set_button_disabled_state_absolute" binds= [true]]

@@ -9,5 +9,5 @@ func on_mask_timer_timeout():
 	trigger_in_office(false)
 	animatronic_blackout.trigger_in_office_immediate(true)
 
-func trigger_in_office(in_office : bool) -> void:
-	super.trigger_in_office(in_office)
+#func trigger_in_office(in_office : bool) -> void:
+	#super.trigger_in_office(in_office)

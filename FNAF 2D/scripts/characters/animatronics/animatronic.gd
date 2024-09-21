@@ -12,8 +12,10 @@ const max_ai_level = 20
 
 func _ready():
 	if set_ai_to_max_on_ready:
-		ai_level = max_ai_level
+		set_ai_level(max_ai_level)
 
 func set_ai_level(new_ai_level : int): ai_level = new_ai_level
 func set_ai_level_by_hour(hour : int): if use_ai_level_by_hour and ai_level_by_hour.has(hour): set_ai_level(ai_level_by_hour[hour])
 func increment_ai_level(increment_value : int): set_ai_level(ai_level + increment_value)
+
+func ai_opportunity_passed() -> bool: return randf_range(1, max_ai_level) <= ai_level

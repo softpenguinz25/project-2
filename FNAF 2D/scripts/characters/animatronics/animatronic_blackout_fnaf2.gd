@@ -6,6 +6,7 @@ var is_in_office_queued : bool
 @export_subgroup("Functionality")
 @export var timer_blackout : Timer
 @export var timer_mask_reaction : Timer
+@export var timer_mask_reaction_start_timer_over_ai : Curve
 var is_in_blackout : bool
 @export var blackout_manager : animatronic_blackout_fnaf2_manager
 
@@ -55,6 +56,8 @@ func handle_gfx(in_office : bool):
 
 func handle_func():
 	timer_blackout.start()
+	
+	timer_mask_reaction.wait_time = timer_mask_reaction_start_timer_over_ai.sample(ai_level / max_ai_level)
 	timer_mask_reaction.start()
 	
 	#player.set_can_take_off(false)

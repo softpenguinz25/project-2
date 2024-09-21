@@ -1,4 +1,4 @@
-[gd_scene load_steps=186 format=3 uid="uid://deybknyvrm48a"]
+[gd_scene load_steps=189 format=3 uid="uid://deybknyvrm48a"]
 
 [ext_resource type="Script" path="res://scripts/monitor/monitor_screen.gd" id="1_8ro68"]
 [ext_resource type="Script" path="res://scripts/monitor/monitor_scene.gd" id="2_ve4w3"]
@@ -164,6 +164,9 @@
 [ext_resource type="Script" path="res://scripts/monitor/monitor_eyes_blacked.gd" id="133_3eitw"]
 [ext_resource type="Texture2D" uid="uid://bdwredcxhdtj1" path="res://sprites/vignette.png" id="133_wubgc"]
 [ext_resource type="Script" path="res://scripts/monitor/monitor_eyes_blacked_hall_gfx.gd" id="136_k1j6v"]
+[ext_resource type="Texture2D" uid="uid://cb7bcp375og3m" path="res://sprites/characters/animatronics/withered_golden_freddy/withered_golden_freddy_head.png" id="137_71w4j"]
+[ext_resource type="Texture2D" uid="uid://dya1os0ctorgh" path="res://sprites/icon_crying_child.png" id="137_bbe6m"]
+[ext_resource type="Script" path="res://scripts/ui/popup_withered_golden_freddy.gd" id="137_q2xfp"]
 [ext_resource type="Texture2D" uid="uid://crtictvbsvevf" path="res://sprites/characters/animatronics/placeholder/2d/toy_bonnie_placeholder.png" id="138_fgpiy"]
 [ext_resource type="Texture2D" uid="uid://m16gms80qs0p" path="res://sprites/characters/animatronics/placeholder/2d/toy_chica_placeholder.png" id="139_ldead"]
 [ext_resource type="Texture2D" uid="uid://bf2kkssjxm64o" path="res://sprites/characters/animatronics/placeholder/2d/mangle_placeholder.png" id="140_n0v3n"]
@@ -290,7 +293,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("static:frame")
+tracks/0/path = NodePath("gfx_overlays/static:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -302,7 +305,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("static:visible")
+tracks/1/path = NodePath("gfx_overlays/static:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -318,7 +321,7 @@ length = 1.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("static:frame")
+tracks/0/path = NodePath("gfx_overlays/static:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -330,7 +333,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("static:visible")
+tracks/1/path = NodePath("gfx_overlays/static:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -453,6 +456,19 @@ animatronics_on_camera = {
 "withered_chica": NodePath("cam_parts_and_service/withered_chica_parts_and_service"),
 "withered_foxy": NodePath("cam_parts_and_service/withered_foxy_parts_and_service"),
 "withered_freddy": NodePath("cam_parts_and_service/withered_freddy_parts_and_service")
+}
+flash_buttons_dictionary = {
+"game_area": NodePath("cam_game_area/flash_game_area"),
+"kids_cove": NodePath("cam_kids_cove/flash_kids_cove"),
+"main_hall": NodePath("cam_main_hall/flash_main_hall"),
+"parts_and_service": NodePath("cam_parts_and_service/flash_parts_and_service"),
+"party_room_1": NodePath("cam_party_room_1/flash_party_room_1"),
+"party_room_2": NodePath("cam_party_room_2/flash_party_room_2"),
+"party_room_3": NodePath("cam_party_room_3/flash_party_room_3"),
+"party_room_4": NodePath("cam_party_room_4/flash_party_room_4"),
+"show_stage": NodePath("cam_show_stage/flash_show_stage"),
+"vent_left": NodePath("cam_vent_left/flash_vent_left"),
+"vent_right": NodePath("cam_vent_right/flash_vent_right")
 }
 
 [node name="empty_bg" type="ColorRect" parent="monitor_scene_clipper/monitor_scene"]
@@ -2773,7 +2789,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="eyes_blacked" type="Node2D" parent="monitor_scene_clipper/monitor_scene" node_paths=PackedStringArray("monitor_scene")]
+[node name="eyes_blacked" type="Node2D" parent="monitor_scene_clipper/monitor_scene" node_paths=PackedStringArray("monitor_screen", "monitor_scene")]
 position = Vector2(640, 360)
 scale = Vector2(16, 16)
 script = ExtResource("133_3eitw")
@@ -2847,6 +2863,7 @@ black_eyes = {
 "withered_chica": NodePath("vent_right/eyes_blacked_withered_chica_vent_right")
 }]
 }
+monitor_screen = NodePath("../../..")
 monitor_scene = NodePath("..")
 
 [node name="show_stage" type="Node2D" parent="monitor_scene_clipper/monitor_scene/eyes_blacked"]
@@ -4644,6 +4661,157 @@ visible = false
 position = Vector2(640, 360)
 scale = Vector2(16, 16)
 
+[node name="popups" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="popup_golden_freddy" type="Control" parent="popups"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="popup_golden_freddy_gfx" type="ColorRect" parent="popups/popup_golden_freddy" node_paths=PackedStringArray("jumpscare_increments", "timer_jumpscare_increment", "pos_bound_topleft", "pos_bound_bottomright", "monitor")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -148.0
+offset_bottom = -180.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+script = ExtResource("137_q2xfp")
+jumpscare_increments = [NodePath("timer_outline_box_1"), NodePath("timer_outline_box_2"), NodePath("timer_outline_box_3"), NodePath("timer_outline_box_4"), NodePath("timer_outline_box_5")]
+timer_jumpscare_increment = NodePath("timer_jumpscare_increment")
+pos_bound_topleft = NodePath("../bound_topleft")
+pos_bound_bottomright = NodePath("../bound_bottomright")
+monitor = NodePath("../../..")
+animatronic_name = "withered_golden_freddy"
+
+[node name="bar_top" type="ColorRect" parent="popups/popup_golden_freddy/popup_golden_freddy_gfx"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 67.5
+grow_horizontal = 2
+color = Color(0.133333, 0.133333, 0.133333, 1)
+
+[node name="text_program" type="Label" parent="popups/popup_golden_freddy/popup_golden_freddy_gfx/bar_top"]
+layout_mode = 0
+offset_left = 82.0
+offset_right = 602.0
+offset_bottom = 68.0
+theme_override_fonts/font = ExtResource("20_kckev")
+theme_override_font_sizes/font_size = 46
+text = "GOLDENFREDDY.EXE	"
+vertical_alignment = 1
+
+[node name="icon_program" type="TextureRect" parent="popups/popup_golden_freddy/popup_golden_freddy_gfx/bar_top"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 12.0
+offset_right = 66.0
+offset_bottom = 60.0
+texture = ExtResource("137_bbe6m")
+
+[node name="icon" type="TextureRect" parent="popups/popup_golden_freddy/popup_golden_freddy_gfx"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 101.5
+offset_right = 405.25
+offset_bottom = 472.75
+texture = ExtResource("137_71w4j")
+
+[node name="timer_outline_box_1" type="ColorRect" parent="popups/popup_golden_freddy/popup_golden_freddy_gfx"]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 281.5
+offset_right = 587.5
+offset_bottom = 349.0
+color = Color(0, 0, 0, 1)
+
+[node name="timer_outline_box_2" type="ColorRect" parent="popups/popup_golden_freddy/popup_golden_freddy_gfx"]
+layout_mode = 0
+offset_left = 638.0
+offset_top = 281.5
+offset_right = 705.5
+offset_bottom = 349.0
+color = Color(0, 0, 0, 1)
+
+[node name="timer_outline_box_3" type="ColorRect" parent="popups/popup_golden_freddy/popup_golden_freddy_gfx"]
+layout_mode = 0
+offset_left = 756.0
+offset_top = 281.5
+offset_right = 823.5
+offset_bottom = 349.0
+color = Color(0, 0, 0, 1)
+
+[node name="timer_outline_box_4" type="ColorRect" parent="popups/popup_golden_freddy/popup_golden_freddy_gfx"]
+layout_mode = 0
+offset_left = 874.0
+offset_top = 281.5
+offset_right = 941.5
+offset_bottom = 349.0
+color = Color(0, 0, 0, 1)
+
+[node name="timer_outline_box_5" type="ColorRect" parent="popups/popup_golden_freddy/popup_golden_freddy_gfx"]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 281.5
+offset_right = 1059.5
+offset_bottom = 349.0
+color = Color(0, 0, 0, 1)
+
+[node name="button_ok" type="Button" parent="popups/popup_golden_freddy/popup_golden_freddy_gfx"]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 371.25
+offset_right = 1060.0
+offset_bottom = 472.5
+theme_override_fonts/font = ExtResource("20_kckev")
+theme_override_font_sizes/font_size = 80
+text = "OK"
+
+[node name="text_error" type="Label" parent="popups/popup_golden_freddy/popup_golden_freddy_gfx"]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 142.0
+offset_right = 1078.0
+offset_bottom = 269.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("20_kckev")
+theme_override_font_sizes/font_size = 138
+text = "IT'S ME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="timer_jumpscare_increment" type="Timer" parent="popups/popup_golden_freddy/popup_golden_freddy_gfx"]
+
+[node name="bound_topleft" type="Control" parent="popups/popup_golden_freddy"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="bound_bottomright" type="Control" parent="popups/popup_golden_freddy"]
+anchors_preset = 0
+offset_left = 267.0
+offset_top = 386.0
+offset_right = 307.0
+offset_bottom = 426.0
+mouse_filter = 2
+
 [node name="monitor_map" type="TextureRect" parent="." node_paths=PackedStringArray("monitor_scene")]
 layout_mode = 1
 offset_left = 848.0
@@ -4949,13 +5117,22 @@ script = ExtResource("28_481i1")
 position = Vector2(640, 360)
 shape = SubResource("RectangleShape2D_slyru")
 
-[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+[node name="gfx_overlays" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="gfx_overlays"]
 visible = false
 position = Vector2(640, 360)
 scale = Vector2(6.4, 3.6)
 copy_mode = 2
 
-[node name="vhs_tv" type="ColorRect" parent="BackBufferCopy"]
+[node name="vhs_tv" type="ColorRect" parent="gfx_overlays/BackBufferCopy"]
 material = SubResource("ShaderMaterial_ifptp")
 anchors_preset = 15
 anchor_right = 1.0
@@ -4968,12 +5145,12 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="BackBufferCopy2" type="BackBufferCopy" parent="."]
+[node name="BackBufferCopy2" type="BackBufferCopy" parent="gfx_overlays"]
 visible = false
 position = Vector2(640, 360)
 scale = Vector2(6.4, 3.6)
 
-[node name="vhs_sharpness" type="ColorRect" parent="BackBufferCopy2"]
+[node name="vhs_sharpness" type="ColorRect" parent="gfx_overlays/BackBufferCopy2"]
 material = SubResource("ShaderMaterial_oqgcq")
 anchors_preset = 15
 anchor_right = 1.0
@@ -4986,12 +5163,12 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="BackBufferCopy3" type="BackBufferCopy" parent="."]
+[node name="BackBufferCopy3" type="BackBufferCopy" parent="gfx_overlays"]
 visible = false
 position = Vector2(640, 360)
 scale = Vector2(6.4, 3.6)
 
-[node name="vhs_lensdistortion" type="ColorRect" parent="BackBufferCopy3"]
+[node name="vhs_lensdistortion" type="ColorRect" parent="gfx_overlays/BackBufferCopy3"]
 material = SubResource("ShaderMaterial_s8tuk")
 anchors_preset = 15
 anchor_right = 1.0
@@ -5004,12 +5181,12 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="BackBufferCopy4" type="BackBufferCopy" parent="."]
+[node name="BackBufferCopy4" type="BackBufferCopy" parent="gfx_overlays"]
 visible = false
 position = Vector2(640, 360)
 scale = Vector2(6.4, 3.6)
 
-[node name="vhs_grain" type="ColorRect" parent="BackBufferCopy4"]
+[node name="vhs_grain" type="ColorRect" parent="gfx_overlays/BackBufferCopy4"]
 material = SubResource("ShaderMaterial_1qn07")
 anchors_preset = 15
 anchor_right = 1.0
@@ -5022,12 +5199,12 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="BackBufferCopy5" type="BackBufferCopy" parent="."]
+[node name="BackBufferCopy5" type="BackBufferCopy" parent="gfx_overlays"]
 visible = false
 position = Vector2(640, 360)
 scale = Vector2(6.4, 3.6)
 
-[node name="vhs_vignette" type="ColorRect" parent="BackBufferCopy5"]
+[node name="vhs_vignette" type="ColorRect" parent="gfx_overlays/BackBufferCopy5"]
 material = SubResource("ShaderMaterial_8nhd0")
 anchors_preset = 15
 anchor_right = 1.0
@@ -5040,12 +5217,12 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="BackBufferCopy6" type="BackBufferCopy" parent="."]
+[node name="BackBufferCopy6" type="BackBufferCopy" parent="gfx_overlays"]
 visible = false
 position = Vector2(640, 360)
 scale = Vector2(6.4, 3.6)
 
-[node name="vhs_tv_vignette" type="ColorRect" parent="."]
+[node name="vhs_tv_vignette" type="ColorRect" parent="gfx_overlays"]
 visible = false
 material = SubResource("ShaderMaterial_wclkk")
 layout_mode = 1
@@ -5057,13 +5234,14 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="static" type="AnimatedSprite2D" parent="."]
+[node name="static" type="AnimatedSprite2D" parent="gfx_overlays"]
 visible = false
 position = Vector2(640, 352)
 sprite_frames = SubResource("SpriteFrames_vlj1m")
 animation = &"static"
 
-[node name="static_player" type="AnimationPlayer" parent="."]
+[node name="static_player" type="AnimationPlayer" parent="gfx_overlays"]
+root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_he8l4")
 }
@@ -5080,15 +5258,16 @@ theme_override_font_sizes/font_size = 52
 text = "EXIT CAMERA"
 
 [connection signal="animatronic_moved_from_cam" from="." to="monitor_scene_clipper/monitor_scene/eyes_blacked" method="animatronic_moved_from"]
-[connection signal="animatronic_moved_in_camera_queue" from="." to="static_player" method="play" binds= ["static"]]
-[connection signal="animatronic_moved_out_of_camera_queue" from="." to="static_player" method="play" binds= ["static"]]
+[connection signal="animatronic_moved_in_camera_queue" from="." to="gfx_overlays/static_player" method="play" binds= ["static"]]
+[connection signal="animatronic_moved_out_of_camera_queue" from="." to="gfx_overlays/static_player" method="play" binds= ["static"]]
 [connection signal="camera_scene_flashed_off" from="." to="monitor_scene_clipper/monitor_scene/flash_off" method="set_visible" binds= [true]]
 [connection signal="camera_scene_flashed_on" from="." to="monitor_scene_clipper/monitor_scene/flash_off" method="set_visible" binds= [false]]
 [connection signal="camera_scene_switched" from="." to="monitor_scene_clipper/monitor_scene/eyes_blacked" method="camera_scene_switched"]
-[connection signal="camera_scene_switched_no_params" from="." to="static_player" method="stop"]
-[connection signal="camera_scene_switched_no_params" from="." to="static_player" method="play" binds= ["static"]]
+[connection signal="camera_scene_switched_no_params" from="." to="gfx_overlays/static_player" method="stop"]
+[connection signal="camera_scene_switched_no_params" from="." to="gfx_overlays/static_player" method="play" binds= ["static"]]
 [connection signal="cheat_mode_off" from="." to="monitor_map/visual_toy_freddy" method="set_visible" binds= [false]]
 [connection signal="cheat_mode_on" from="." to="monitor_map/visual_toy_freddy" method="set_visible" binds= [true]]
+[connection signal="flash_disabled_set" from="." to="monitor_scene_clipper/monitor_scene" method="_on_flash_disabled_set"]
 [connection signal="hall_light_state_set" from="." to="eyes_blacked_hall" method="hall_light_state_set"]
 [connection signal="map_toggled" from="." to="monitor_map" method="set_visible"]
 [connection signal="map_toggled" from="." to="exit_button" method="set_visible"]
@@ -5117,6 +5296,8 @@ text = "EXIT CAMERA"
 [connection signal="button_up" from="monitor_scene_clipper/monitor_scene/cam_vent_left/flash_vent_left" to="." method="set_current_camera_flashed" binds= ["vent_left", false]]
 [connection signal="button_down" from="monitor_scene_clipper/monitor_scene/cam_vent_right/flash_vent_right" to="." method="set_current_camera_flashed" binds= ["vent_right", true]]
 [connection signal="button_up" from="monitor_scene_clipper/monitor_scene/cam_vent_right/flash_vent_right" to="." method="set_current_camera_flashed" binds= ["vent_right", false]]
+[connection signal="button_down" from="popups/popup_golden_freddy/popup_golden_freddy_gfx/button_ok" to="popups/popup_golden_freddy/popup_golden_freddy_gfx" method="_on_popup_off"]
+[connection signal="timeout" from="popups/popup_golden_freddy/popup_golden_freddy_gfx/timer_jumpscare_increment" to="popups/popup_golden_freddy/popup_golden_freddy_gfx" method="_on_timer_jumpscare_increment_timeout"]
 [connection signal="cam_clicked" from="monitor_map/cam_box_1" to="monitor_scene_clipper/monitor_scene" method="switch_cam_scene" binds= ["show_stage"]]
 [connection signal="cam_clicked" from="monitor_map/cam_box_1" to="monitor_map/cam_title" method="set_text" binds= ["Show Stage"]]
 [connection signal="cam_clicked" from="monitor_map/cam_box_2" to="monitor_scene_clipper/monitor_scene" method="switch_cam_scene" binds= ["game_area"]]

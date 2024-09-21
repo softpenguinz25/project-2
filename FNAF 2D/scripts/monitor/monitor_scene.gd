@@ -3,6 +3,7 @@ class_name MonitorScene
 
 @export var cam_scenes : Dictionary
 @export var animatronics_on_camera : Dictionary
+@export var flash_buttons_dictionary : Dictionary
 
 signal cam_scene_switched(new_cam_scene : String)
 
@@ -27,3 +28,7 @@ func set_animatronic_pos(_animatronic_name : String, _cam_name : String, _num_ti
 	animatronics_on_camera[_animatronic_name] = animatronic_on_camera
 	
 	if animatronic_on_camera != null: animatronic_on_camera.visible = true
+
+func _on_flash_disabled_set(is_disabled : bool):
+	for flash_button_key in flash_buttons_dictionary:
+		self.get_node(flash_buttons_dictionary[flash_button_key]).disabled = is_disabled

@@ -73,7 +73,10 @@ func retreat():
 	timer_mask.stop()
 
 func on_jumpscare_timer_timeout():
-	jumpscare_queued = true
+	if not ai_opportunity_passed():
+		timer_jumpscare.start()
+	else:
+		jumpscare_queued = true
 
 func on_monitor_unfocus():
 	if jumpscare_queued:

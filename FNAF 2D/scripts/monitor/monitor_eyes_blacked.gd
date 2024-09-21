@@ -7,12 +7,14 @@ var current_camera_scene : String
 
 var animatronic_pos : Dictionary
 
+@export var monitor_screen : MonitorScreen
 @export var monitor_scene : MonitorScene
 
 func _ready():
 	for animatronic_on_cam in monitor_scene.animatronics_on_camera:
-		#print_debug("(black_eyes) starting animatronic: %s" % animatronic_on_cam)
-		animatronic_pos[animatronic_on_cam] = ""
+		#print_debug(monitor_screen.animatronics_fnaf2.animatronic_dict.size())
+		animatronic_pos[animatronic_on_cam] = monitor_screen.animatronics_fnaf2.animatronic_dict[animatronic_on_cam].current_pos
+		#print_debug("(black_eyes) starting animatronic: %s at %s" % [animatronic_on_cam, animatronic_pos[animatronic_on_cam]])
 
 func camera_scene_switched(camera_scene : String):
 	if black_eyes.has(current_camera_scene): 
