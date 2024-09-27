@@ -23,8 +23,11 @@ var jumpscare_queued : bool
 @export var monitor_screen : MonitorScreen
 signal animatronic_jumpscare(animatronic_name : String)
 
+@export_subgroup("Debug")
+@export var enable_gfx_on_ready : bool
+
 func _ready():
-	handle_gfx(false)
+	if not enable_gfx_on_ready: handle_gfx(false)
 	monitor_screen.monitor_unfocus.connect(on_monitor_unfocus)
 	
 	mask_on = player.is_wearing_mask

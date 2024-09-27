@@ -1,4 +1,4 @@
-[gd_scene load_steps=189 format=3 uid="uid://deybknyvrm48a"]
+[gd_scene load_steps=190 format=3 uid="uid://deybknyvrm48a"]
 
 [ext_resource type="Script" path="res://scripts/monitor/monitor_screen.gd" id="1_8ro68"]
 [ext_resource type="Script" path="res://scripts/monitor/monitor_scene.gd" id="2_ve4w3"]
@@ -177,6 +177,8 @@
 [ext_resource type="Texture2D" uid="uid://chh2dk4a0t5ta" path="res://sprites/characters/animatronics/placeholder/2d/balloon_boy_placeholder.png" id="145_bbxfp"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_v0m4v"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_5g333"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jsf5v"]
 animations = [{
@@ -3727,7 +3729,7 @@ scale = Vector2(10.811, 10.811)
 
 [node name="toy_freddy_1" type="Node2D" parent="hall_animatronics"]
 visible = false
-position = Vector2(542.99, 376)
+position = Vector2(542.99, 388)
 scale = Vector2(8, 8)
 
 [node name="Body" type="Sprite2D" parent="hall_animatronics/toy_freddy_1"]
@@ -3782,7 +3784,7 @@ texture = ExtResource("43_toewx")
 
 [node name="eyes_blacked_toy_freddy_hall" type="Node2D" parent="hall_animatronics"]
 visible = false
-position = Vector2(540.222, 306.099)
+position = Vector2(540.222, 318.099)
 rotation = -0.0523599
 scale = Vector2(8, 8)
 
@@ -4645,6 +4647,24 @@ texture = SubResource("CanvasTexture_v0m4v")
 [node name="eye_right_pupil" type="Sprite2D" parent="hall_animatronics/eyes_blacked_mangle_hall_2/eye_right"]
 scale = Vector2(0.15, 0.15)
 texture = SubResource("CanvasTexture_v0m4v")
+
+[node name="Sprite2D" type="Sprite2D" parent="hall_animatronics"]
+visible = false
+position = Vector2(614.592, 525)
+scale = Vector2(100, 2)
+texture = SubResource("CanvasTexture_5g333")
+
+[node name="Sprite2D2" type="Sprite2D" parent="hall_animatronics"]
+visible = false
+position = Vector2(614.477, 585.245)
+scale = Vector2(100, 2)
+texture = SubResource("CanvasTexture_5g333")
+
+[node name="Sprite2D3" type="Sprite2D" parent="hall_animatronics"]
+visible = false
+position = Vector2(614.477, 648.791)
+scale = Vector2(100, 2)
+texture = SubResource("CanvasTexture_5g333")
 
 [node name="eyes_blacked_hall" type="Node2D" parent="." node_paths=PackedStringArray("eyes_blacked_hall")]
 z_index = 1

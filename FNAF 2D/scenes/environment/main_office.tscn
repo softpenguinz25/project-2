@@ -61,12 +61,12 @@
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ry0vv"]
 
-[sub_resource type="Gradient" id="Gradient_3qded"]
+[sub_resource type="Gradient" id="Gradient_0x4fe"]
 offsets = PackedFloat32Array(0, 0.2, 0.787097, 1)
 colors = PackedColorArray(0.0352941, 0.0352941, 0.0352941, 1, 0.156863, 0.156863, 0.156863, 1, 0.156863, 0.156863, 0.156863, 1, 0.0352941, 0.0352941, 0.0352941, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_cetqn"]
-gradient = SubResource("Gradient_3qded")
+gradient = SubResource("Gradient_0x4fe")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_shwq5"]
 
@@ -936,8 +936,8 @@ stream = ExtResource("58_a0s5q")
 [connection signal="jumpscare_played_with_name" from="game_manager/jumpscare_manager" to="ui/ui_jumpscare" method="show_jumpscare_sprite"]
 [connection signal="timeout" from="game_manager/jumpscare_manager/jumpscare_timer" to="game_manager/audio_manager_local" method="stop_all_sounds"]
 [connection signal="timeout" from="game_manager/jumpscare_manager/jumpscare_timer" to="game_manager/jumpscare_manager" method="finish_jumpscare"]
-[connection signal="map_toggled" from="game_manager/controls_manager" to="environment/monitor/monitor_screen" method="toggle_map"]
 [connection signal="map_toggled" from="game_manager/controls_manager" to="environment/monitor/monitor_screen" method="toggle_exit_cam_button"]
+[connection signal="map_toggled" from="game_manager/controls_manager" to="environment/monitor/monitor_screen" method="toggle_map"]
 [connection signal="mobile_controls_toggled" from="game_manager/controls_manager" to="ui/ui_bottombar/ui_mobile_controls/mobile_move_left" method="set_visible"]
 [connection signal="mobile_controls_toggled" from="game_manager/controls_manager" to="ui/ui_bottombar/ui_mobile_controls/mobile_move_right" method="set_visible"]
 [connection signal="button_down" from="environment/poster_celebrate/poster_celebrate_freddyhonk" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/nose_honk.wav"]]
@@ -979,12 +979,12 @@ stream = ExtResource("58_a0s5q")
 [connection signal="in_office_cue" from="environment/animatronics/foxy" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_scare.wav"]]
 [connection signal="in_office_flashed" from="environment/animatronics/foxy" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/door/door_scare.wav"]]
 [connection signal="movement_cue" from="environment/animatronics/foxy" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_footstep.wav"]]
-[connection signal="freddy_flicker_started" from="environment/animatronics/power_off_sequence" to="game_manager/audio_manager_local" method="stop_sound" binds= ["res://sounds/animatronics/animatronic_footstep.wav"]]
 [connection signal="freddy_flicker_started" from="environment/animatronics/power_off_sequence" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_music_box.wav"]]
+[connection signal="freddy_flicker_started" from="environment/animatronics/power_off_sequence" to="game_manager/audio_manager_local" method="stop_sound" binds= ["res://sounds/animatronics/animatronic_footstep.wav"]]
 [connection signal="jumpscare_played" from="environment/animatronics/power_off_sequence" to="game_manager/jumpscare_manager" method="play_jumpscare" binds= ["freddy"]]
 [connection signal="power_darkness_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/power_off_sequence/animatronic_footstep_darkness_sfx_timer" method="start"]
-[connection signal="power_darkness_started" from="environment/animatronics/power_off_sequence" to="game_manager/audio_manager_local" method="stop_sound" binds= ["res://sounds/animatronics/animatronic_music_box.wav"]]
 [connection signal="power_darkness_started" from="environment/animatronics/power_off_sequence" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/animatronics/animatronic_flicker_off.wav"]]
+[connection signal="power_darkness_started" from="environment/animatronics/power_off_sequence" to="game_manager/audio_manager_local" method="stop_sound" binds= ["res://sounds/animatronics/animatronic_music_box.wav"]]
 [connection signal="power_darkness_started" from="environment/animatronics/power_off_sequence" to="environment/animatronics/power_off_sequence/power_off_light/power_off_completely_animation" method="play" binds= ["power_off_completely_flicker"]]
 [connection signal="power_darkness_started" from="environment/animatronics/power_off_sequence" to="player/player" method="set_active_state" binds= [false]]
 [connection signal="power_darkness_started" from="environment/animatronics/power_off_sequence" to="ui/ui_bottombar/ui_mobile_controls" method="set_visible" binds= [false]]
@@ -1079,8 +1079,8 @@ stream = ExtResource("58_a0s5q")
 [connection signal="monitor_focus" from="environment/monitor/monitor_screen" to="ui/pause" method="set_visible" binds= [true]]
 [connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="environment/animatronics/freddy" method="attempt_flash"]
 [connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="environment/animatronics/foxy" method="attempt_flash"]
-[connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="game_manager/audio_manager_local" method="stop_sound" binds= ["res://sounds/monitor/monitor_open.wav"]]
 [connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="game_manager/audio_manager_local" method="play_sound" binds= ["res://sounds/monitor/monitor_close.wav"]]
+[connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="game_manager/audio_manager_local" method="stop_sound" binds= ["res://sounds/monitor/monitor_open.wav"]]
 [connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="game_manager/battery_timer" method="increment_usage" binds= [-1]]
 [connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="game_manager/camera_manager" method="set_camera_pos" binds= ["default", 0.33]]
 [connection signal="monitor_unfocus" from="environment/monitor/monitor_screen" to="environment/monitor/static_preview_bg" method="set_visible" binds= [true]]

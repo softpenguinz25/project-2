@@ -1,4 +1,4 @@
-[gd_scene load_steps=240 format=3 uid="uid://k235u75p8tw4"]
+[gd_scene load_steps=281 format=3 uid="uid://k235u75p8tw4"]
 
 [ext_resource type="Script" path="res://scripts/misc/scene_loader.gd" id="1_yo40j"]
 [ext_resource type="Script" path="res://scripts/environment/camera_tweener.gd" id="2_1cvln"]
@@ -133,15 +133,19 @@
 [ext_resource type="Texture2D" uid="uid://b4lxrgyeklqdo" path="res://sprites/characters/animatronics/toy_bonnie/leg_left_lower.png" id="110_2kpfp"]
 [ext_resource type="Texture2D" uid="uid://bufpgwpjv7ftm" path="res://sprites/environment/main_office_fnaf2/decoration/ceiling_lamp.png" id="110_e6ybe"]
 [ext_resource type="Texture2D" uid="uid://d35tokv0cwo17" path="res://sprites/characters/animatronics/toy_bonnie/leg_right_upper.png" id="111_47gsb"]
+[ext_resource type="Texture2D" uid="uid://cmcmuov4aca2m" path="res://sprites/triangle.png" id="111_jku6h"]
 [ext_resource type="Texture2D" uid="uid://ickyp2a5j2oo" path="res://sprites/environment/main_office_fnaf2/decoration/bg_monitor_large.png" id="111_qrmun"]
 [ext_resource type="Texture2D" uid="uid://blp703tvliv7e" path="res://sprites/characters/animatronics/toy_bonnie/leg_right_lower.png" id="112_3mg3x"]
 [ext_resource type="Texture2D" uid="uid://bgl3ouvtsdvua" path="res://sprites/environment/main_office_fnaf2/decoration/bg_monitor_small.png" id="112_7y7p2"]
+[ext_resource type="Texture2D" uid="uid://clk2g12ncijll" path="res://sprites/particle.png" id="112_ppbtc"]
 [ext_resource type="Texture2D" uid="uid://b8fmicn5rl2qg" path="res://sprites/characters/animatronics/toy_bonnie/body.png" id="113_8mbhq"]
 [ext_resource type="Texture2D" uid="uid://dyrcml60nafg5" path="res://sprites/environment/main_office_fnaf2/decoration/table_fnaf2.png" id="113_ns5tr"]
 [ext_resource type="Texture2D" uid="uid://ucwi8rd2pjmf" path="res://sprites/characters/animatronics/toy_bonnie/tie.png" id="114_0ugfp"]
 [ext_resource type="Texture2D" uid="uid://citdq6t84q5td" path="res://sprites/environment/main_office_fnaf2/decoration/tv_fnaf2.png" id="114_1rmee"]
 [ext_resource type="Texture2D" uid="uid://c7uqulbusm0v0" path="res://sprites/environment/main_office_fnaf2/decoration/poster_repp.png" id="114_8b0g5"]
 [ext_resource type="Texture2D" uid="uid://cr5yaxlox5oos" path="res://sprites/characters/animatronics/toy_bonnie/arm_left_upper.png" id="115_40q8h"]
+[ext_resource type="Texture2D" uid="uid://c7qjeb6lw0taa" path="res://sprites/environment/main_office_fnaf2/decoration/balloon_group_big_1.png" id="115_yd7ov"]
+[ext_resource type="Texture2D" uid="uid://4rtnherkinga" path="res://sprites/environment/main_office_fnaf2/decoration/balloon_group_small_1.png" id="116_iun1b"]
 [ext_resource type="Texture2D" uid="uid://cwrqdlbg7qaxd" path="res://sprites/characters/animatronics/toy_bonnie/arm_left_lower.png" id="116_tmfeb"]
 [ext_resource type="Texture2D" uid="uid://ccstolam8xym8" path="res://sprites/characters/animatronics/toy_bonnie/arm_right_upper.png" id="117_ptbb1"]
 [ext_resource type="Texture2D" uid="uid://cp0p4yck73dry" path="res://sprites/characters/animatronics/toy_bonnie/arm_right_lower.png" id="118_h8ntb"]
@@ -185,7 +189,11 @@
 [ext_resource type="Texture2D" uid="uid://pr8enib2ma1j" path="res://sprites/characters/animatronics/puppet/leg_right_upper.png" id="160_qjrtv"]
 [ext_resource type="Texture2D" uid="uid://chhd0qhurrb7w" path="res://sprites/characters/animatronics/puppet/leg_right_lower.png" id="161_26pgu"]
 [ext_resource type="Script" path="res://scripts/ui/flashlight_battery_gfx.gd" id="161_46ets"]
+[ext_resource type="Texture2D" uid="uid://7hpmyyo1a4wr" path="res://sprites/environment/main_office_fnaf2/decoration/brick_texture_1.png" id="161_c6cud"]
 [ext_resource type="Texture2D" uid="uid://cbc3covln0tja" path="res://sprites/characters/animatronics/puppet/neck.png" id="162_becwl"]
+[ext_resource type="Texture2D" uid="uid://c0ob2jeaa0rbg" path="res://sprites/environment/main_office_fnaf2/decoration/brick_texture_3.png" id="162_cof08"]
+[ext_resource type="Texture2D" uid="uid://dy1pqvie7n7uw" path="res://sprites/environment/main_office_fnaf2/decoration/brick_texture_2.png" id="162_yq76v"]
+[ext_resource type="Texture2D" uid="uid://bqmeo70g6oi3i" path="res://sprites/environment/main_office_fnaf2/decoration/brick_texture_4.png" id="163_it4na"]
 [ext_resource type="Texture2D" uid="uid://g26wsw1hh3wp" path="res://sprites/characters/animatronics/puppet/head.png" id="163_rvs3r"]
 [ext_resource type="Texture2D" uid="uid://xpiijv4xsrq1" path="res://sprites/characters/animatronics/withered_golden_freddy/body.png" id="164_o73qe"]
 [ext_resource type="Texture2D" uid="uid://bs4hllo8cpjl2" path="res://sprites/characters/animatronics/withered_golden_freddy/arm_left_upper.png" id="165_2ah36"]
@@ -200,6 +208,7 @@
 [ext_resource type="Texture2D" uid="uid://b5pkrb2u45d0l" path="res://sprites/characters/animatronics/withered_golden_freddy/leg_left_upper.png" id="173_nn1r0"]
 [ext_resource type="Texture2D" uid="uid://bfnxux2b1ba8o" path="res://sprites/characters/animatronics/withered_golden_freddy/leg_left_lower.png" id="174_3jivm"]
 [ext_resource type="Texture2D" uid="uid://xpikcshuf5qt" path="res://sprites/characters/animatronics/withered_golden_freddy/leg_right_upper.png" id="175_dhc5r"]
+[ext_resource type="Texture2D" uid="uid://dmsldyf4c34b7" path="res://sprites/checkerboard.png" id="176_i31pb"]
 [ext_resource type="Texture2D" uid="uid://bchxx086v3t7q" path="res://sprites/characters/animatronics/withered_golden_freddy/leg_right_lower.png" id="176_l4d3y"]
 [ext_resource type="Script" path="res://scripts/characters/animatronics/animatronic_blackout_fnaf2_manager.gd" id="179_c8js0"]
 
@@ -207,6 +216,77 @@
 max_value = 60.0
 _data = [Vector2(0, 45), 0.0, -30.0, 0, 1, Vector2(1, 15), -30.0, 0.0, 1, 0]
 point_count = 2
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ec4ik"]
+
+[sub_resource type="Gradient" id="Gradient_3qded"]
+offsets = PackedFloat32Array(0, 0.2, 0.787097, 1)
+colors = PackedColorArray(0.0352941, 0.0352941, 0.0352941, 1, 0.32, 0.32, 0.32, 1, 0.32, 0.32, 0.32, 1, 0.0352941, 0.0352941, 0.0352941, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kokq0"]
+gradient = SubResource("Gradient_3qded")
+
+[sub_resource type="Gradient" id="Gradient_k5vv4"]
+colors = PackedColorArray(0.33, 0.33, 0.33, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kx4km"]
+noise_type = 2
+frequency = 0.25
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ngp4t"]
+width = 207
+height = 69
+normalize = false
+color_ramp = SubResource("Gradient_k5vv4")
+noise = SubResource("FastNoiseLite_kx4km")
+
+[sub_resource type="Gradient" id="Gradient_golxd"]
+colors = PackedColorArray(0.25098, 0.623529, 1, 1, 1, 0.611765, 0.25098, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sopgr"]
+gradient = SubResource("Gradient_golxd")
+width = 69
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jn7v4"]
+width = 3
+height = 35
+normalize = false
+color_ramp = SubResource("Gradient_k5vv4")
+noise = SubResource("FastNoiseLite_kx4km")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_w0ufi"]
+
+[sub_resource type="Gradient" id="Gradient_epf3e"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qgit6"]
+gradient = SubResource("Gradient_epf3e")
+width = 4
+
+[sub_resource type="Gradient" id="Gradient_10nr5"]
+colors = PackedColorArray(1, 0.611765, 0.25098, 1, 1, 0.611765, 0.25098, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lwy27"]
+gradient = SubResource("Gradient_10nr5")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ki7lr"]
+
+[sub_resource type="Gradient" id="Gradient_bdvoj"]
+colors = PackedColorArray(0.941176, 0.764706, 0.235294, 1, 0.611, 0.235, 0.94, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_x8xkb"]
+gradient = SubResource("Gradient_bdvoj")
+
+[sub_resource type="Gradient" id="Gradient_w72yo"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_8y76l"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3aq5y"]
+gradient = SubResource("Gradient_8y76l")
+width = 4
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v3bqu"]
 shader = ExtResource("8_xndo0")
@@ -304,10 +384,58 @@ size = Vector2(255, 256)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n1kcr"]
 size = Vector2(1946, 72)
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_shv7k"]
+[sub_resource type="Gradient" id="Gradient_rb02l"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.501961)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3tyds"]
+gradient = SubResource("Gradient_rb02l")
+width = 24
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_x4ao8"]
+width = 24
+height = 58
+normalize = false
+color_ramp = SubResource("Gradient_k5vv4")
+noise = SubResource("FastNoiseLite_kx4km")
+
+[sub_resource type="Gradient" id="Gradient_hjtsp"]
+offsets = PackedFloat32Array(0, 0.64)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6c324"]
+gradient = SubResource("Gradient_hjtsp")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2kgle"]
-size = Vector2(120, 464)
+size = Vector2(120, 480)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_huke8"]
+width = 24
+height = 24
+normalize = false
+color_ramp = SubResource("Gradient_k5vv4")
+noise = SubResource("FastNoiseLite_kx4km")
+
+[sub_resource type="Gradient" id="Gradient_80pms"]
+colors = PackedColorArray(0.08, 0.2, 0.32, 1, 0.235, 0.588, 0.941, 0.33)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dxamd"]
+gradient = SubResource("Gradient_80pms")
+width = 24
+
+[sub_resource type="Gradient" id="Gradient_kvyt2"]
+offsets = PackedFloat32Array(0, 0.64)
+colors = PackedColorArray(1, 1, 1, 0.64, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gallk"]
+gradient = SubResource("Gradient_kvyt2")
+width = 12
+
+[sub_resource type="Gradient" id="Gradient_25xmp"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_j7nod"]
+gradient = SubResource("Gradient_25xmp")
+width = 4
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_58k4a"]
 
@@ -333,6 +461,13 @@ modulate_color = Color(0.266667, 0.266667, 0.266667, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4vevr"]
 size = Vector2(96, 95)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_g3itv"]
+width = 2
+height = 53
+normalize = false
+color_ramp = SubResource("Gradient_k5vv4")
+noise = SubResource("FastNoiseLite_kx4km")
 
 [sub_resource type="Curve" id="Curve_c41pc"]
 max_value = 50.0
@@ -1287,6 +1422,12 @@ texture = ExtResource("82_my4pa")
 [node name="EarRight" type="Sprite2D" parent="environment/animatronics/[DEPREC] InHallTest/mangle_2/ConnectorMain/Head"]
 texture = ExtResource("83_yktmv")
 
+[node name="hall_bg" type="Sprite2D" parent="environment"]
+modulate = Color(0.266667, 0.266667, 0.266667, 1)
+position = Vector2(640, 374)
+scale = Vector2(560, 548)
+texture = SubResource("CanvasTexture_ec4ik")
+
 [node name="decorations" type="Node2D" parent="environment"]
 
 [node name="comp_ref" type="Node2D" parent="environment/decorations"]
@@ -1367,9 +1508,205 @@ offset_top = 119.0
 offset_right = 1257.0
 offset_bottom = 242.0
 
+[node name="bg_ref" type="ColorRect" parent="environment/decorations/comp_ref"]
+visible = false
+offset_left = -185.0
+offset_top = 100.0
+offset_right = 1465.0
+offset_bottom = 648.0
+
+[node name="bg_gradient_ref" type="Sprite2D" parent="environment/decorations/comp_ref"]
+visible = false
+light_mask = 3
+position = Vector2(640, 374)
+rotation = 1.57079
+scale = Vector2(2.141, 1650)
+texture = SubResource("GradientTexture1D_kokq0")
+
+[node name="bolt_left" type="ColorRect" parent="environment/decorations/comp_ref"]
+visible = false
+offset_left = 360.0
+offset_top = 100.0
+offset_right = 408.0
+offset_bottom = 648.0
+scale = Vector2(-1, 1)
+
+[node name="bolt_right" type="ColorRect" parent="environment/decorations/comp_ref"]
+visible = false
+offset_left = 920.0
+offset_top = 100.0
+offset_right = 968.0
+offset_bottom = 648.0
+
+[node name="bg" type="Sprite2D" parent="environment/decorations"]
+self_modulate = Color(0.74902, 0.74902, 0.74902, 1)
+z_index = -1
+position = Vector2(639, 372)
+scale = Vector2(8, 8)
+texture = SubResource("NoiseTexture2D_ngp4t")
+
+[node name="[DEPREC] bg_gradient_blorange" type="Sprite2D" parent="environment/decorations/bg"]
+visible = false
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(-1.19209e-06, 0.249997)
+rotation = 1.5708
+scale = Vector2(1, 206.245)
+texture = SubResource("GradientTexture1D_sopgr")
+
+[node name="hall_bolt" type="Sprite2D" parent="environment/decorations"]
+
+[node name="bolt_deprec" type="Sprite2D" parent="environment/decorations/hall_bolt"]
+visible = false
+
+[node name="bolt_left" type="ColorRect" parent="environment/decorations/hall_bolt/bolt_deprec"]
+offset_left = 360.0
+offset_top = 100.0
+offset_right = 408.0
+offset_bottom = 648.0
+scale = Vector2(-1, 1)
+color = Color(0, 0, 0, 0.375)
+
+[node name="bolt_right" type="ColorRect" parent="environment/decorations/hall_bolt/bolt_deprec"]
+offset_left = 920.0
+offset_top = 100.0
+offset_right = 968.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.375)
+
+[node name="bolt_left" type="Sprite2D" parent="environment/decorations/hall_bolt"]
+self_modulate = Color(0.33, 0.33, 0.33, 1)
+position = Vector2(336, 374)
+scale = Vector2(16, 16)
+texture = SubResource("NoiseTexture2D_jn7v4")
+
+[node name="bolt_1" type="Sprite2D" parent="environment/decorations/hall_bolt/bolt_left"]
+self_modulate = Color(0.05, 0.05, 0.05, 1)
+position = Vector2(0, -13.625)
+texture = SubResource("CanvasTexture_w0ufi")
+
+[node name="bolt_2" type="Sprite2D" parent="environment/decorations/hall_bolt/bolt_left"]
+self_modulate = Color(0.05, 0.05, 0.05, 1)
+position = Vector2(0, -9.625)
+texture = SubResource("CanvasTexture_w0ufi")
+
+[node name="bolt_3" type="Sprite2D" parent="environment/decorations/hall_bolt/bolt_left"]
+self_modulate = Color(0.05, 0.05, 0.05, 1)
+position = Vector2(0, -5.625)
+texture = SubResource("CanvasTexture_w0ufi")
+
+[node name="bolt_4" type="Sprite2D" parent="environment/decorations/hall_bolt/bolt_left"]
+self_modulate = Color(0.05, 0.05, 0.05, 1)
+position = Vector2(0, -1.625)
+texture = SubResource("CanvasTexture_w0ufi")
+
+[node name="bolt_5" type="Sprite2D" parent="environment/decorations/hall_bolt/bolt_left"]
+self_modulate = Color(0.05, 0.05, 0.05, 1)
+position = Vector2(0, 2.375)
+texture = SubResource("CanvasTexture_w0ufi")
+
+[node name="bolt_6" type="Sprite2D" parent="environment/decorations/hall_bolt/bolt_left"]
+self_modulate = Color(0.05, 0.05, 0.05, 1)
+position = Vector2(0, 6.375)
+texture = SubResource("CanvasTexture_w0ufi")
+
+[node name="bolt_7" type="Sprite2D" parent="environment/decorations/hall_bolt/bolt_left"]
+self_modulate = Color(0.05, 0.05, 0.05, 1)
+position = Vector2(0, 10.375)
+texture = SubResource("CanvasTexture_w0ufi")
+
+[node name="bolt_shadow" type="Sprite2D" parent="environment/decorations/hall_bolt/bolt_left"]
+modulate = Color(1, 1, 1, 0.74902)
+position = Vector2(-2.5, 0)
+rotation = -3.14159
+scale = Vector2(0.5, 34.25)
+texture = SubResource("GradientTexture1D_qgit6")
+
+[node name="bolt_right" type="Sprite2D" parent="environment/decorations/hall_bolt"]
+self_modulate = Color(0.329412, 0.329412, 0.329412, 1)
+position = Vector2(944, 374)
+scale = Vector2(16, 16)
+texture = SubResource("NoiseTexture2D_jn7v4")
+
+[node name="bolt_1" type="Sprite2D" parent="environment/decorations/hall_bolt/bolt_right"]
+self_modulate = Color(0.05, 0.05, 0.05, 1)
+position = Vector2(0, -13.625)
+texture = SubResource("CanvasTexture_w0ufi")
+
+[node name="bolt_2" type="Sprite2D" parent="environment/decorations/hall_bolt/bolt_right"]
+self_modulate = Color(0.05, 0.05, 0.05, 1)
+position = Vector2(0, -9.625)
+texture = SubResource("CanvasTexture_w0ufi")
+
+[node name="bolt_3" type="Sprite2D" parent="environment/decorations/hall_bolt/bolt_right"]
+self_modulate = Color(0.05, 0.05, 0.05, 1)
+position = Vector2(0, -5.625)
+texture = SubResource("CanvasTexture_w0ufi")
+
+[node name="bolt_4" type="Sprite2D" parent="environment/decorations/hall_bolt/bolt_right"]
+self_modulate = Color(0.05, 0.05, 0.05, 1)
+position = Vector2(0, -1.625)
+texture = SubResource("CanvasTexture_w0ufi")
+
+[node name="bolt_5" type="Sprite2D" parent="environment/decorations/hall_bolt/bolt_right"]
+self_modulate = Color(0.05, 0.05, 0.05, 1)
+position = Vector2(0, 2.375)
+texture = SubResource("CanvasTexture_w0ufi")
+
+[node name="bolt_6" type="Sprite2D" parent="environment/decorations/hall_bolt/bolt_right"]
+self_modulate = Color(0.05, 0.05, 0.05, 1)
+position = Vector2(0, 6.375)
+texture = SubResource("CanvasTexture_w0ufi")
+
+[node name="bolt_7" type="Sprite2D" parent="environment/decorations/hall_bolt/bolt_right"]
+self_modulate = Color(0.05, 0.05, 0.05, 1)
+position = Vector2(0, 10.375)
+texture = SubResource("CanvasTexture_w0ufi")
+
+[node name="bolt_shadow" type="Sprite2D" parent="environment/decorations/hall_bolt/bolt_right"]
+modulate = Color(1, 1, 1, 0.75)
+position = Vector2(2.5, 0)
+scale = Vector2(0.5, 34.25)
+texture = SubResource("GradientTexture1D_qgit6")
+
+[node name="bg_light" type="Node2D" parent="environment/decorations"]
+
+[node name="bg_gradient_orange" type="Polygon2D" parent="environment/decorations/bg_light"]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(639, 372)
+scale = Vector2(8, 8)
+texture = SubResource("GradientTexture2D_lwy27")
+polygon = PackedVector2Array(-34.75, -18, 35.125, -17.875, 103.25, -2.75, 103.25, 34.5, -103, 34.5, -103, -2.75)
+
+[node name="bg_gradient_blue" type="Polygon2D" parent="environment/decorations/bg_light"]
+self_modulate = Color(0.051, 0.125, 0.2, 0.5)
+clip_children = 2
+position = Vector2(639, 372)
+scale = Vector2(8, 8)
+texture = SubResource("CanvasTexture_ki7lr")
+polygon = PackedVector2Array(-34.75, -18, 35.125, -17.875, 103.25, -2.75, 103.25, -34, -103, -34, -103, -2.75)
+
+[node name="blue_light" type="Sprite2D" parent="environment/decorations/bg_light/bg_gradient_blue"]
+modulate = Color(0.25098, 0.623529, 1, 1)
+position = Vector2(0, -29.375)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("140_gu4q4")
+
+[node name="vignette" type="Sprite2D" parent="environment/decorations/bg_light"]
+self_modulate = Color(1, 1, 1, 0.8)
+position = Vector2(640, 374)
+scale = Vector2(20.625, 12.1778)
+texture = ExtResource("63_1b12m")
+
 [node name="poster_celebrate" type="Sprite2D" parent="environment/decorations"]
 position = Vector2(128, 256)
 scale = Vector2(0.25, 0.25)
+texture = ExtResource("107_vid7n")
+
+[node name="poster_celebrate_shadow" type="Sprite2D" parent="environment/decorations/poster_celebrate"]
+visible = false
+modulate = Color(0, 0, 0, 0.75)
+show_behind_parent = true
+position = Vector2(-24, 24)
 texture = ExtResource("107_vid7n")
 
 [node name="warning_sign_left" type="Sprite2D" parent="environment/decorations"]
@@ -1403,6 +1740,41 @@ z_index = 1
 position = Vector2(640, 132)
 scale = Vector2(8, 8)
 texture = ExtResource("110_e6ybe")
+
+[node name="ceiling_light_mask" type="Sprite2D" parent="environment/decorations/ceiling_lamp"]
+visible = false
+self_modulate = Color(0.941176, 0.764706, 0.235294, 0.501961)
+clip_children = 1
+position = Vector2(0, 33.25)
+scale = Vector2(0.273438, 0.282806)
+texture = ExtResource("111_jku6h")
+
+[node name="ceiling_light_text" type="Sprite2D" parent="environment/decorations/ceiling_lamp/ceiling_light_mask"]
+position = Vector2(1.94311e-05, 7.62939e-06)
+rotation = 1.5708
+scale = Vector2(0.862073, 255.932)
+texture = SubResource("GradientTexture1D_x8xkb")
+
+[node name="ceiling_light_particles" type="CPUParticles2D" parent="environment/decorations/ceiling_lamp/ceiling_light_mask"]
+position = Vector2(-2.86102e-06, -110.5)
+amount = 100
+lifetime = 10.5
+preprocess = 30.0
+texture = ExtResource("112_ppbtc")
+emission_shape = 3
+emission_rect_extents = Vector2(125, 0)
+direction = Vector2(0, 1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+angular_velocity_min = -15.0
+angular_velocity_max = 15.0
+angle_min = -45.0
+angle_max = 45.0
+scale_amount_min = 1.5
+scale_amount_max = 1.5
+color_ramp = SubResource("Gradient_w72yo")
 
 [node name="monitor_1" type="Sprite2D" parent="environment/decorations"]
 z_index = 1
@@ -1443,9 +1815,51 @@ scale = Vector2(8, 8)
 texture = ExtResource("113_ns5tr")
 
 [node name="poster_repp" type="Sprite2D" parent="environment/decorations"]
-position = Vector2(1132, 180)
+position = Vector2(1132, 196)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("114_8b0g5")
+
+[node name="poster_repp_shadow" type="Sprite2D" parent="environment/decorations/poster_repp"]
+visible = false
+modulate = Color(0, 0, 0, 0.75)
+show_behind_parent = true
+position = Vector2(24, 24)
+texture = ExtResource("114_8b0g5")
+
+[node name="poster_repp_shadow_border" type="Sprite2D" parent="environment/decorations/poster_repp"]
+visible = false
+modulate = Color(0, 0, 0, 0.5)
+show_behind_parent = true
+scale = Vector2(1.031, 1.063)
+texture = ExtResource("114_8b0g5")
+
+[node name="shadow" type="Node2D" parent="environment/decorations/poster_repp"]
+visible = false
+
+[node name="shadow_top" type="Sprite2D" parent="environment/decorations/poster_repp/shadow"]
+modulate = Color(1, 1, 1, 0.74902)
+position = Vector2(0, -320)
+rotation = -1.5708
+scale = Vector2(32, 1024)
+texture = SubResource("GradientTexture1D_3aq5y")
+
+[node name="shadow_right" type="Sprite2D" parent="environment/decorations/poster_repp/shadow"]
+modulate = Color(1, 1, 1, 0.74902)
+position = Vector2(576, 0)
+scale = Vector2(32, 512)
+texture = SubResource("GradientTexture1D_3aq5y")
+
+[node name="balloon_group_big_1" type="Sprite2D" parent="environment/decorations"]
+modulate = Color(0.74902, 0.74902, 0.74902, 1)
+position = Vector2(1240, 468)
+scale = Vector2(8, 8)
+texture = ExtResource("115_yd7ov")
+
+[node name="balloon_group_small_1" type="Sprite2D" parent="environment/decorations"]
+modulate = Color(0.74902, 0.74902, 0.74902, 1)
+position = Vector2(980, 528)
+scale = Vector2(8, 8)
+texture = ExtResource("116_iun1b")
 
 [node name="monitor" type="Sprite2D" parent="environment"]
 self_modulate = Color(1, 1, 1, 0)
@@ -1509,11 +1923,6 @@ script = ExtResource("4_ip4so")
 position = Vector2(132, 92)
 shape = SubResource("RectangleShape2D_56u2q")
 
-[node name="hall_vignette" type="Sprite2D" parent="environment/monitor"]
-position = Vector2(1030, -152)
-scale = Vector2(14, 24.3556)
-texture = ExtResource("63_1b12m")
-
 [node name="ceiling" type="Sprite2D" parent="environment"]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(640, 50)
@@ -1542,7 +1951,7 @@ one_shot = true
 one_shot = true
 
 [node name="toy_chica_in_vent" type="Node2D" parent="environment/in_vent" node_paths=PackedStringArray("timer_jumpscare", "timer_mask", "player", "animatronic_roaming", "monitor_screen")]
-position = Vector2(-394, 670)
+position = Vector2(-395, 670)
 scale = Vector2(16, 16)
 script = ExtResource("5_iwtvp")
 timer_jumpscare = NodePath("toy_chica_in_vent_timer_jumpscare")
@@ -1794,6 +2203,7 @@ one_shot = true
 one_shot = true
 
 [node name="music_box" type="Node2D" parent="environment"]
+z_index = 1
 script = ExtResource("14_cor0g")
 music_box_current_time_easing = 0.3
 decrease_per_sec_over_ai = SubResource("Curve_gheap")
@@ -1879,7 +2289,8 @@ position = Vector2(127.5, 128)
 shape = SubResource("RectangleShape2D_kkv5q")
 
 [node name="floor" type="StaticBody2D" parent="environment"]
-position = Vector2(640, 360)
+z_index = 1
+position = Vector2(448, 360)
 
 [node name="floor_texturerect" type="TextureRect" parent="environment/floor"]
 anchors_preset = 8
@@ -1887,9 +2298,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -427.0
+offset_left = -292.0
 offset_top = 308.0
-offset_right = 438.0
+offset_right = 708.0
 offset_bottom = 340.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1901,32 +2312,216 @@ texture = ExtResource("2_t0500")
 stretch_mode = 1
 
 [node name="floor_collision" type="CollisionShape2D" parent="environment/floor"]
-position = Vector2(13, 324)
+position = Vector2(205, 324)
 shape = SubResource("RectangleShape2D_n1kcr")
 
 [node name="wall_left" type="StaticBody2D" parent="environment"]
-position = Vector2(655, 360)
+position = Vector2(655, 352)
 
-[node name="wall_left_sprite" type="Sprite2D" parent="environment/wall_left"]
-position = Vector2(-900, -128)
-scale = Vector2(120, 464)
-texture = SubResource("CanvasTexture_shv7k")
+[node name="wall_left_sprite" type="ColorRect" parent="environment/wall_left"]
+modulate = Color(0.2, 0.2, 0.2, 1)
+offset_left = -1032.0
+offset_top = -360.0
+offset_right = -840.0
+offset_bottom = 104.0
+
+[node name="brick_texture_1" type="Sprite2D" parent="environment/wall_left/wall_left_sprite"]
+modulate = Color(0.75, 0.75, 0.75, 1)
+position = Vector2(96, 40)
+scale = Vector2(8, 8)
+texture = ExtResource("161_c6cud")
+
+[node name="brick_texture_4" type="Sprite2D" parent="environment/wall_left/wall_left_sprite"]
+modulate = Color(0.75, 0.75, 0.75, 1)
+position = Vector2(160, 40)
+scale = Vector2(8, 8)
+texture = ExtResource("162_cof08")
+
+[node name="brick_texture_5" type="Sprite2D" parent="environment/wall_left/wall_left_sprite"]
+modulate = Color(0.75, 0.75, 0.75, 1)
+position = Vector2(160, 104)
+scale = Vector2(8, 8)
+texture = ExtResource("162_yq76v")
+
+[node name="brick_texture_2" type="Sprite2D" parent="environment/wall_left/wall_left_sprite"]
+modulate = Color(0.75, 0.75, 0.75, 1)
+position = Vector2(32, 192)
+rotation = 3.14159
+scale = Vector2(8, 8)
+texture = ExtResource("162_yq76v")
+
+[node name="brick_texture_3" type="Sprite2D" parent="environment/wall_left/wall_left_sprite"]
+modulate = Color(0.75, 0.75, 0.75, 1)
+position = Vector2(160, 384)
+scale = Vector2(8, 8)
+texture = ExtResource("163_it4na")
+
+[node name="brick_texture_6" type="Sprite2D" parent="environment/wall_left/wall_left_sprite"]
+modulate = Color(0.75, 0.75, 0.75, 1)
+position = Vector2(32, 432)
+rotation = 3.14159
+scale = Vector2(8, 8)
+texture = ExtResource("162_cof08")
+
+[node name="gradient" type="Sprite2D" parent="environment/wall_left/wall_left_sprite"]
+position = Vector2(96, 232.5)
+scale = Vector2(8, 463)
+texture = SubResource("GradientTexture1D_3tyds")
+
+[node name="[DEPREC] wall_left_sprite" type="Sprite2D" parent="environment/wall_left"]
+visible = false
+self_modulate = Color(0.74902, 0.74902, 0.74902, 1)
+position = Vector2(-936, -128)
+scale = Vector2(8, 8)
+texture = SubResource("NoiseTexture2D_x4ao8")
+
+[node name="[DEPREC] vent_light" type="Polygon2D" parent="environment/wall_left/[DEPREC] wall_left_sprite"]
+visible = false
+modulate = Color(1, 1, 1, 0.501961)
+texture = SubResource("GradientTexture2D_6c324")
+polygon = PackedVector2Array(12, 29, 44, 13, 44, 52, 12, 52)
 
 [node name="wall_left_col" type="CollisionShape2D" parent="environment/wall_left"]
-position = Vector2(-900, -128)
+position = Vector2(-900, 64)
 shape = SubResource("RectangleShape2D_2kgle")
+
+[node name="vent_left_bg" type="Sprite2D" parent="environment/wall_left"]
+z_index = -1
+position = Vector2(-936, 200)
+scale = Vector2(8, 8)
+texture = SubResource("NoiseTexture2D_huke8")
+
+[node name="bg_darken" type="Polygon2D" parent="environment/wall_left/vent_left_bg"]
+modulate = Color(0.149, 0.149, 0.149, 0.5)
+polygon = PackedVector2Array(-12, -12, 12, -12, -12, 12)
+
+[node name="light_blue" type="Sprite2D" parent="environment/wall_left/vent_left_bg"]
+modulate = Color(0.901961, 0.901961, 0.901961, 0.74902)
+scale = Vector2(1, 24)
+texture = SubResource("GradientTexture1D_dxamd")
+
+[node name="occlusion_top" type="Sprite2D" parent="environment/wall_left/vent_left_bg"]
+modulate = Color(0, 0, 0, 0.75)
+position = Vector2(0, -6)
+rotation = 1.5708
+scale = Vector2(1, 24)
+texture = SubResource("GradientTexture1D_gallk")
+
+[node name="occlusion_bot" type="Sprite2D" parent="environment/wall_left/vent_left_bg"]
+modulate = Color(0, 0, 0, 0.75)
+position = Vector2(0, 6)
+rotation = -1.5708
+scale = Vector2(1, 24)
+texture = SubResource("GradientTexture1D_gallk")
+
+[node name="wall_left_shadow" type="Sprite2D" parent="environment/wall_left"]
+visible = false
+modulate = Color(1, 1, 1, 0.75)
+position = Vector2(-824, -74)
+scale = Vector2(8, 356)
+texture = SubResource("GradientTexture1D_j7nod")
 
 [node name="wall_right" type="StaticBody2D" parent="environment"]
-position = Vector2(2425, 360)
+position = Vector2(2425, 352)
 
 [node name="wall_right_sprite" type="Sprite2D" parent="environment/wall_right"]
-position = Vector2(-900, -136)
-scale = Vector2(120, 448)
-texture = SubResource("CanvasTexture_shv7k")
+visible = false
+self_modulate = Color(0.74902, 0.74902, 0.74902, 1)
+position = Vector2(-864, -144)
+scale = Vector2(8, 8)
+texture = SubResource("NoiseTexture2D_x4ao8")
 
 [node name="wall_right_col" type="CollisionShape2D" parent="environment/wall_right"]
-position = Vector2(-900, -144)
+position = Vector2(-900, 56)
 shape = SubResource("RectangleShape2D_2kgle")
+
+[node name="vent_left_bg" type="Sprite2D" parent="environment/wall_right"]
+z_index = -1
+position = Vector2(-864, 200)
+scale = Vector2(8, 8)
+texture = SubResource("NoiseTexture2D_huke8")
+
+[node name="bg_darken" type="Polygon2D" parent="environment/wall_right/vent_left_bg"]
+modulate = Color(0.149, 0.149, 0.149, 0.5)
+polygon = PackedVector2Array(-12, -12, 12, -12, -12, 12)
+
+[node name="light_blue" type="Sprite2D" parent="environment/wall_right/vent_left_bg"]
+modulate = Color(0.901961, 0.901961, 0.901961, 0.74902)
+scale = Vector2(1, 24)
+texture = SubResource("GradientTexture1D_dxamd")
+
+[node name="occlusion_top" type="Sprite2D" parent="environment/wall_right/vent_left_bg"]
+modulate = Color(0, 0, 0, 0.75)
+position = Vector2(0, -6)
+rotation = 1.5708
+scale = Vector2(1, 24)
+texture = SubResource("GradientTexture1D_gallk")
+
+[node name="occlusion_bot" type="Sprite2D" parent="environment/wall_right/vent_left_bg"]
+modulate = Color(0, 0, 0, 0.75)
+position = Vector2(0, 6)
+rotation = -1.5708
+scale = Vector2(1, 24)
+texture = SubResource("GradientTexture1D_gallk")
+
+[node name="wall_left_sprite" type="ColorRect" parent="environment/wall_right"]
+modulate = Color(0.2, 0.2, 0.2, 1)
+offset_left = -768.0
+offset_top = -360.0
+offset_right = -576.0
+offset_bottom = 104.0
+scale = Vector2(-1, 1)
+
+[node name="brick_texture_1" type="Sprite2D" parent="environment/wall_right/wall_left_sprite"]
+modulate = Color(0.75, 0.75, 0.75, 1)
+position = Vector2(96, 40)
+scale = Vector2(8, 8)
+texture = ExtResource("161_c6cud")
+
+[node name="brick_texture_4" type="Sprite2D" parent="environment/wall_right/wall_left_sprite"]
+modulate = Color(0.75, 0.75, 0.75, 1)
+position = Vector2(160, 40)
+scale = Vector2(8, 8)
+texture = ExtResource("162_cof08")
+
+[node name="brick_texture_5" type="Sprite2D" parent="environment/wall_right/wall_left_sprite"]
+modulate = Color(0.75, 0.75, 0.75, 1)
+position = Vector2(160, 104)
+scale = Vector2(8, 8)
+texture = ExtResource("162_yq76v")
+
+[node name="brick_texture_2" type="Sprite2D" parent="environment/wall_right/wall_left_sprite"]
+modulate = Color(0.75, 0.75, 0.75, 1)
+position = Vector2(32, 192)
+rotation = 3.14159
+scale = Vector2(8, 8)
+texture = ExtResource("162_yq76v")
+
+[node name="brick_texture_3" type="Sprite2D" parent="environment/wall_right/wall_left_sprite"]
+modulate = Color(0.75, 0.75, 0.75, 1)
+position = Vector2(160, 384)
+scale = Vector2(8, 8)
+texture = ExtResource("163_it4na")
+
+[node name="brick_texture_6" type="Sprite2D" parent="environment/wall_right/wall_left_sprite"]
+modulate = Color(0.75, 0.75, 0.75, 1)
+position = Vector2(32, 432)
+rotation = 3.14159
+scale = Vector2(8, 8)
+texture = ExtResource("162_cof08")
+
+[node name="gradient" type="Sprite2D" parent="environment/wall_right/wall_left_sprite"]
+position = Vector2(96, 232.5)
+scale = Vector2(8, 463)
+texture = SubResource("GradientTexture1D_3tyds")
+
+[node name="wall_right_shadow" type="Sprite2D" parent="environment/wall_right"]
+visible = false
+modulate = Color(1, 1, 1, 0.75)
+position = Vector2(-976, -74)
+rotation = 3.14159
+scale = Vector2(8, 356)
+texture = SubResource("GradientTexture1D_j7nod")
 
 [node name="vent_light_left" type="Button" parent="environment"]
 anchors_preset = -1
@@ -2179,6 +2774,87 @@ position = Vector2(-4.70832, 7.41667)
 rotation = 0.872665
 texture = ExtResource("79_s2ney")
 
+[node name="hall_interior" type="Node2D" parent="environment"]
+position = Vector2(640, 360)
+
+[node name="hall_bg_black" type="ColorRect" parent="environment/hall_interior"]
+offset_left = -280.0
+offset_top = -260.0
+offset_right = 280.0
+offset_bottom = 288.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="pillar_left" type="Node2D" parent="environment/hall_interior"]
+modulate = Color(1, 1, 1, 0.25098)
+position = Vector2(-296, -260)
+
+[node name="pillar_opaque" type="Sprite2D" parent="environment/hall_interior/pillar_left"]
+position = Vector2(136.076, 212)
+scale = Vector2(8.076, 8)
+texture = SubResource("NoiseTexture2D_g3itv")
+
+[node name="pillar_transparent" type="Sprite2D" parent="environment/hall_interior/pillar_left"]
+modulate = Color(1, 1, 1, 0.5)
+position = Vector2(120.076, 212)
+scale = Vector2(8.076, 8)
+texture = SubResource("NoiseTexture2D_g3itv")
+
+[node name="pillar_right" type="Node2D" parent="environment/hall_interior"]
+modulate = Color(1, 1, 1, 0.25098)
+position = Vector2(296, -260)
+scale = Vector2(-1, 1)
+
+[node name="pillar_opaque" type="Sprite2D" parent="environment/hall_interior/pillar_right"]
+position = Vector2(136.076, 212)
+scale = Vector2(8.076, 8)
+texture = SubResource("NoiseTexture2D_g3itv")
+
+[node name="pillar_transparent" type="Sprite2D" parent="environment/hall_interior/pillar_right"]
+modulate = Color(1, 1, 1, 0.5)
+position = Vector2(120.076, 212)
+scale = Vector2(8.076, 8)
+texture = SubResource("NoiseTexture2D_g3itv")
+
+[node name="floor_texturerect_1" type="TextureRect" parent="environment/hall_interior"]
+modulate = Color(0.33, 0.33, 0.33, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = 224.0
+offset_right = 280.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("176_i31pb")
+stretch_mode = 1
+
+[node name="floor_texturerect_2" type="TextureRect" parent="environment/hall_interior"]
+modulate = Color(0.11, 0.11, 0.11, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = 160.0
+offset_right = 840.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("176_i31pb")
+stretch_mode = 1
+
 [node name="hall_animatronics" type="Node2D" parent="environment"]
 
 [node name="withered_foxy_hall" type="Node2D" parent="environment/hall_animatronics" node_paths=PackedStringArray("animatronic_roaming", "timer_retreat", "timer_jumpscare", "animatronic_gfx", "animatronic_eyes")]
@@ -2294,7 +2970,29 @@ offset_right = 280.0
 offset_bottom = 288.0
 script = ExtResource("4_ip4so")
 
+[node name="flashlight_gfx" type="Node2D" parent="environment/hall/hall_light_button"]
+
+[node name="hall_flash" type="Sprite2D" parent="environment/hall/hall_light_button/flashlight_gfx"]
+modulate = Color(1, 1, 1, 0.2)
+position = Vector2(280, 274)
+scale = Vector2(1.09375, 1.07031)
+texture = ExtResource("140_gu4q4")
+
+[node name="[DEPREC] X light test thing" type="Sprite2D" parent="environment/hall/hall_light_button/flashlight_gfx"]
+visible = false
+modulate = Color(1, 1, 1, 0.02)
+position = Vector2(280, 274)
+rotation = 0.785398
+scale = Vector2(64, 64)
+texture = ExtResource("112_ppbtc")
+
+[node name="hall_vignette" type="Sprite2D" parent="environment/hall/hall_light_button/flashlight_gfx"]
+position = Vector2(280, 274)
+scale = Vector2(7, 12.1778)
+texture = ExtResource("63_1b12m")
+
 [node name="hall_cover" type="Sprite2D" parent="environment/hall/hall_light_button"]
+visible = false
 modulate = Color(0, 0, 0, 1)
 position = Vector2(280, 274)
 scale = Vector2(560, 548)
@@ -2444,6 +3142,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -2.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(201, 309)
@@ -3523,6 +4223,8 @@ one_shot = true
 [node name="toy_bonnie_blackout_timer_mask_reaction" type="Timer" parent="environment/blackout/toy_bonnie_blackout"]
 one_shot = true
 
+[node name="Node2D" type="Node2D" parent="environment"]
+
 [node name="player" parent="." instance=ExtResource("2_6okfi")]
 z_index = 2
 position = Vector2(640, 516)
@@ -3615,14 +4317,14 @@ position = Vector2(825, 360)
 [connection signal="button_up" from="environment/music_box/music_box_button" to="environment/music_box" method="toggle_music_box" binds= [false]]
 [connection signal="button_down" from="environment/vent_light_left" to="game_manager/camera_manager" method="reset_limit_smoothing_enabled"]
 [connection signal="button_down" from="environment/vent_light_left" to="player/player_camera_rtrans" method="remove_limit"]
-[connection signal="button_down" from="environment/vent_light_left" to="game_manager/camera_manager" method="set_camera_limit" binds= [Vector4(-305, 0, 1585, 720)]]
-[connection signal="button_down" from="environment/vent_light_left" to="game_manager/camera_manager" method="set_position_smoothing" binds= [25.0]]
+[connection signal="button_down" from="environment/vent_light_left" to="game_manager/camera_manager" method="set_position_smoothing" binds= [20.0]]
+[connection signal="button_down" from="environment/vent_light_left" to="game_manager/camera_manager" method="set_camera_limit" binds= [Vector4(-377, 0, 1657, 720)]]
 [connection signal="button_up" from="environment/vent_light_left" to="game_manager/camera_manager" method="reset_camera_limit"]
 [connection signal="button_up" from="environment/vent_light_left" to="game_manager/camera_manager" method="reset_position_smoothing"]
 [connection signal="button_down" from="environment/vent_light_right" to="game_manager/camera_manager" method="reset_limit_smoothing_enabled"]
 [connection signal="button_down" from="environment/vent_light_right" to="player/player_camera_rtrans" method="remove_limit"]
-[connection signal="button_down" from="environment/vent_light_right" to="game_manager/camera_manager" method="set_camera_limit" binds= [Vector4(-305, 0, 1585, 720)]]
-[connection signal="button_down" from="environment/vent_light_right" to="game_manager/camera_manager" method="set_position_smoothing" binds= [25.0]]
+[connection signal="button_down" from="environment/vent_light_right" to="game_manager/camera_manager" method="set_position_smoothing" binds= [20.0]]
+[connection signal="button_down" from="environment/vent_light_right" to="game_manager/camera_manager" method="set_camera_limit" binds= [Vector4(-377, 0, 1657, 720)]]
 [connection signal="button_up" from="environment/vent_light_right" to="game_manager/camera_manager" method="reset_camera_limit"]
 [connection signal="button_up" from="environment/vent_light_right" to="game_manager/camera_manager" method="reset_position_smoothing"]
 [connection signal="button_down" from="environment/mask/mask_button" to="player" method="set_mask_state" binds= [true]]
@@ -3639,8 +4341,8 @@ position = Vector2(825, 360)
 [connection signal="button_up" from="environment/hall/hall_light_button" to="environment/hall_animatronics/withered_foxy_hall" method="hall_light_state_set" binds= [false]]
 [connection signal="button_up" from="environment/hall/hall_light_button" to="environment/hall/hall_light_button/hall_cover" method="set_visible" binds= [true]]
 [connection signal="ready" from="environment/hall/hall_light_button/hall_cover" to="environment/hall/hall_light_button/hall_cover" method="set_visible" binds= [true]]
-[connection signal="button_down" from="environment/hall/[DEPREC] hall_light" to="game_manager/camera_manager" method="set_camera_limit" binds= [Vector4(-305, 0, 1585, 720)]]
 [connection signal="button_down" from="environment/hall/[DEPREC] hall_light" to="game_manager/camera_manager" method="set_position_smoothing" binds= [25.0]]
+[connection signal="button_down" from="environment/hall/[DEPREC] hall_light" to="game_manager/camera_manager" method="set_camera_limit" binds= [Vector4(-305, 0, 1585, 720)]]
 [connection signal="button_up" from="environment/hall/[DEPREC] hall_light" to="game_manager/camera_manager" method="reset_camera_limit"]
 [connection signal="button_up" from="environment/hall/[DEPREC] hall_light" to="game_manager/camera_manager" method="reset_position_smoothing"]
 [connection signal="animatronic_jumpscare" from="environment/blackout/withered_freddy_blackout" to="game_manager/jumpscare_manager" method="play_jumpscare"]
