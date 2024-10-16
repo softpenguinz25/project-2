@@ -96,7 +96,7 @@ func set_rtrans(rtrans_nodepath : NodePath, remote_path_is_cam : bool):
 
 #-SCREEN SHAKE-
 var in_shake_state : bool
-var shake_amplitude = 15.0
+@export var shake_amplitude = 15.0
 var shake_timer : float
 var original_position = Vector2(0, 0)
 

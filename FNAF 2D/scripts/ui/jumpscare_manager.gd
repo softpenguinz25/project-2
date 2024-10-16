@@ -1,5 +1,7 @@
 extends Node
 
+@export var night_id : int = 1
+
 var in_jumpscare : bool
 
 signal jumpscare_played
@@ -21,6 +23,6 @@ func play_jumpscare(animatronic_name : String):
 	in_jumpscare = true
 
 func finish_jumpscare():
-	if AiManager.use_20d_mode: BestTimeManager.set_time_in_s(night_timer.wait_time - night_timer.time_left)
+	if AiManager.use_20d_mode: BestTimeManager.set_time_in_s(night_timer.wait_time - night_timer.time_left, night_id)
 	
 	jumpscare_finished.emit()

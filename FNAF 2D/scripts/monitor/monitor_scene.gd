@@ -7,6 +7,9 @@ class_name MonitorScene
 
 signal cam_scene_switched(new_cam_scene : String)
 
+var is_cam_scene_switched_first_time : bool = true
+signal cam_scene_switched_first_time
+
 func _ready():
 	for animatronic_default_sprite in animatronics_on_camera.values():
 		get_node(animatronic_default_sprite).visible = true
@@ -16,6 +19,10 @@ func switch_cam_scene(new_cam_scene : String):
 		get_node(cam_scenes[cam_scene_key][0]).click_cam_gfx(cam_scene_key == new_cam_scene)
 		get_node(cam_scenes[cam_scene_key][1]).visible = cam_scene_key == new_cam_scene
 	cam_scene_switched.emit(new_cam_scene)
+	
+	if is_cam_scene_switched_first_time:
+		cam_scene_switched_first_time.emit()
+		is_cam_scene_switched_first_time = false
 	
 func set_animatronic_pos(_animatronic_name : String, _cam_name : String, _num_times_been_to_cam : int = -1):
 	if animatronics_on_camera.has(_animatronic_name):

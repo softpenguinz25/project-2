@@ -1,5 +1,7 @@
 extends Node
 
+@export var game_id : int = 1
+
 @export var best_time_label : Label
 @export var last_time_label : Label
 @export var best_time_string_format : String = "%d:%02d:%02d"
@@ -13,8 +15,13 @@ func _ready():
 func update_best_time():
 	BestTimeManager.load_data()
 	
-	if best_time_in_s_local != BestTimeManager.best_time_in_s: best_time_in_s_local = BestTimeManager.best_time_in_s
-	if last_time_in_s_local != BestTimeManager.last_time_in_s: last_time_in_s_local = BestTimeManager.last_time_in_s
+	match(game_id):
+		1:
+			if best_time_in_s_local != BestTimeManager.best_time_in_s: best_time_in_s_local = BestTimeManager.best_time_in_s
+			if last_time_in_s_local != BestTimeManager.last_time_in_s: last_time_in_s_local = BestTimeManager.last_time_in_s
+		2:
+			if best_time_in_s_local != BestTimeManager.best_time_in_s_fnaf2: best_time_in_s_local = BestTimeManager.best_time_in_s_fnaf2
+			if last_time_in_s_local != BestTimeManager.last_time_in_s_fnaf2: last_time_in_s_local = BestTimeManager.last_time_in_s_fnaf2
 	
 	best_time_label.text = "Best: " + get_time_string(best_time_in_s_local)
 	last_time_label.text = "Last: " + get_time_string(last_time_in_s_local)

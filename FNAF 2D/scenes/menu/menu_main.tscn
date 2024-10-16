@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://budmy4i04lgtg"]
+[gd_scene load_steps=98 format=3 uid="uid://budmy4i04lgtg"]
 
 [ext_resource type="Script" path="res://scripts/misc/scene_loader.gd" id="1_6afx2"]
 [ext_resource type="Script" path="res://scripts/audio/audio_manager_local.gd" id="1_75gly"]
@@ -17,8 +17,10 @@
 [ext_resource type="Texture2D" uid="uid://dx1t6agw3at0b" path="res://sprites/static/21.png" id="15_kiqfe"]
 [ext_resource type="Texture2D" uid="uid://crr0y42npgguf" path="res://sprites/static/22.png" id="16_g2qrw"]
 [ext_resource type="Texture2D" uid="uid://duvsh68d3ln6v" path="res://sprites/static/25.png" id="17_7n8nn"]
+[ext_resource type="Script" path="res://scripts/ui/menu_main.gd" id="18_nssk6"]
 [ext_resource type="Texture2D" uid="uid://b0tiiv7uo3jyy" path="res://sprites/static/430.png" id="18_p2gd1"]
 [ext_resource type="Texture2D" uid="uid://yqe6eym8s2t5" path="res://sprites/static/434.png" id="19_b752r"]
+[ext_resource type="Script" path="res://scripts/ui/menu_main_sub.gd" id="19_h5e5n"]
 [ext_resource type="Texture2D" uid="uid://2u4hxmt3lugo" path="res://sprites/cutscenes/static/12.png" id="19_sgk1k"]
 [ext_resource type="Texture2D" uid="uid://mqayc35mrtoh" path="res://sprites/cutscenes/static/13.png" id="20_2hr40"]
 [ext_resource type="Texture2D" uid="uid://c0n6pgoih70ok" path="res://sprites/static/435.png" id="20_8sifx"]
@@ -46,12 +48,15 @@
 [ext_resource type="Texture2D" uid="uid://da0mcpey8hs48" path="res://sprites/characters/animatronics/toy_freddy.png" id="36_wtanf"]
 [ext_resource type="Texture2D" uid="uid://dpgtdkqni3iil" path="res://sprites/characters/animatronics/toy_bonnie.png" id="37_6usq5"]
 [ext_resource type="Texture2D" uid="uid://c4f7fg0235k5q" path="res://sprites/ui/menu_button_yt.png" id="38_f682b"]
+[ext_resource type="Texture2D" uid="uid://bs4tddpfin8kf" path="res://sprites/ui/main_menu_animatronics_fnaf2.png" id="40_ky7pp"]
 [ext_resource type="Texture2D" uid="uid://bwq6xlg7v5hwo" path="res://sprites/controls/left_button_idle.png" id="43_3acog"]
 [ext_resource type="Texture2D" uid="uid://e3qxn3lklqhh" path="res://sprites/controls/left_button_hover.png" id="44_55clw"]
 [ext_resource type="Texture2D" uid="uid://douxcqi1hty0r" path="res://sprites/controls/left_button_pressed.png" id="44_daido"]
 [ext_resource type="Texture2D" uid="uid://b7wuol0twshp5" path="res://sprites/controls/right_button_hover.png" id="44_sla3m"]
 [ext_resource type="Texture2D" uid="uid://bkb15so0k6g1v" path="res://sprites/controls/right_button_idle.png" id="45_3gbn2"]
 [ext_resource type="Texture2D" uid="uid://bjy3ipwfd2ikh" path="res://sprites/controls/right_button_pressed.png" id="46_m2byy"]
+[ext_resource type="Texture2D" uid="uid://c6xqsfnd75o47" path="res://sprites/ui/menu_button_yt_triangle.png" id="47_rwa21"]
+[ext_resource type="AudioStream" uid="uid://d1lxcyfujoks" path="res://sounds/fnaf_2/ambience/ambience_mainmenu_fnaf2.wav" id="48_rv4fq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2ijog"]
 animations = [{
@@ -212,6 +217,14 @@ animations = [{
 "speed": 50.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n17ph"]
+shader = ExtResource("27_kk0sx")
+shader_parameter/alpha = 1.0
+shader_parameter/inner_radius = 0.33
+shader_parameter/outer_radius = 1.5
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_x34ak"]
+
 [sub_resource type="Gradient" id="Gradient_fqqfl"]
 offsets = PackedFloat32Array(0, 0.356757)
 colors = PackedColorArray(0, 0, 0, 0.533333, 0, 0, 0, 0)
@@ -222,14 +235,6 @@ width = 128
 height = 128
 fill_from = Vector2(0, 1)
 fill_to = Vector2(0, 0.141026)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_n17ph"]
-shader = ExtResource("27_kk0sx")
-shader_parameter/alpha = 1.0
-shader_parameter/inner_radius = 0.33
-shader_parameter/outer_radius = 1.5
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_x34ak"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wfmah"]
 
@@ -262,6 +267,34 @@ modulate_color = Color(0.266667, 0.266667, 0.266667, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l6u81"]
 
+[sub_resource type="Gradient" id="Gradient_ax43p"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0.533333, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3wv68"]
+gradient = SubResource("Gradient_ax43p")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u4xgo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5n5gf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_to8ci"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4mxku"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h5lll"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tpbhg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h5nrc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oium4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qfdl2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fh8gj"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yqu6r"]
 texture = ExtResource("43_3acog")
 
@@ -293,11 +326,6 @@ grow_vertical = 2
 [node name="local_audio_manager" type="Node" parent="manager"]
 script = ExtResource("1_75gly")
 
-[node name="menu_music" type="AudioStreamPlayer" parent="manager/local_audio_manager"]
-stream = ExtResource("3_21r8m")
-volume_db = -8.0
-autoplay = true
-
 [node name="scene_loader" type="Node" parent="manager"]
 script = ExtResource("1_6afx2")
 
@@ -317,16 +345,17 @@ libraries = {
 autoplay = "static"
 speed_scale = 5.0
 
-[node name="menu" type="Control" parent="."]
+[node name="menu" type="Control" parent="." node_paths=PackedStringArray("menu_array")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("18_nssk6")
+menu_array = [NodePath("fnaf_1"), NodePath("fnaf_2")]
 
 [node name="fnaf_1" type="Control" parent="menu"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -334,6 +363,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("19_h5e5n")
 
 [node name="bg" type="Control" parent="menu/fnaf_1"]
 layout_mode = 1
@@ -441,7 +471,25 @@ grow_vertical = 2
 texture = ExtResource("36_kem5p")
 stretch_mode = 6
 
-[node name="text_shadow" type="TextureRect" parent="menu/fnaf_1"]
+[node name="shaders" type="Control" parent="menu/fnaf_1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="vignette" type="TextureRect" parent="menu/fnaf_1/shaders"]
+material = SubResource("ShaderMaterial_n17ph")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_x34ak")
+
+[node name="text_shadow" type="TextureRect" parent="menu/fnaf_1/shaders"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -552,13 +600,188 @@ color = Color(1, 1, 0, 1)
 energy = 3.12
 texture = ExtResource("11_5fvmq")
 
-[node name="fnaf_2" type="Control" parent="menu"]
+[node name="buttons" type="Control" parent="menu/fnaf_1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="button_newgame" type="Button" parent="menu/fnaf_1/buttons"]
+layout_mode = 2
+offset_left = 536.0
+offset_top = 334.0
+offset_right = 709.0
+offset_bottom = 506.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxTexture_wfmah")
+theme_override_styles/hover = SubResource("StyleBoxTexture_m0h71")
+text = "New
+Game"
+script = ExtResource("8_q3obw")
+
+[node name="button_20dmode" type="Button" parent="menu/fnaf_1/buttons"]
+layout_mode = 2
+offset_left = 850.0
+offset_top = 404.0
+offset_right = 972.0
+offset_bottom = 527.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pjkuo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gclx0")
+text = "20D 
+Mode"
+script = ExtResource("8_q3obw")
+
+[node name="time_labels" type="Control" parent="menu/fnaf_1/buttons" node_paths=PackedStringArray("best_time_label", "last_time_label")]
+anchors_preset = 0
+offset_left = 856.0
+offset_top = 533.0
+offset_right = 978.0
+offset_bottom = 564.0
+scale = Vector2(0.9, 0.9)
+script = ExtResource("14_78c3y")
+best_time_label = NodePath("best_time")
+last_time_label = NodePath("last_time")
+
+[node name="best_time" type="Label" parent="menu/fnaf_1/buttons/time_labels"]
+layout_mode = 2
+offset_top = -2.0
+offset_right = 122.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+text = "Best: 0:00.00"
+
+[node name="last_time" type="Label" parent="menu/fnaf_1/buttons/time_labels"]
+layout_mode = 2
+offset_top = 16.0
+offset_right = 122.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+text = "Last: 0:00.00"
+
+[node name="button_cheatmode" type="Button" parent="menu/fnaf_1/buttons"]
+layout_mode = 2
+offset_left = 272.0
+offset_top = 403.0
+offset_right = 396.0
+offset_bottom = 526.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sj4rm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_q15rl")
+text = "Cheat
+Mode"
+script = ExtResource("8_q3obw")
+
+[node name="button_jujuprodgames" type="Button" parent="menu/fnaf_1/buttons"]
+layout_mode = 2
+offset_left = 1108.0
+offset_top = 445.0
+offset_right = 1200.0
+offset_bottom = 538.0
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxTexture_mi3vk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mig85")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_f7dma")
+script = ExtResource("26_lpeo8")
+
+[node name="label_devlog" type="Label" parent="menu/fnaf_1/buttons/button_jujuprodgames"]
+layout_mode = 0
+offset_top = 93.0
+offset_right = 92.0
+offset_bottom = 111.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 15
+text = "Devlog"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="label_redirectwarning" type="Label" parent="menu/fnaf_1/buttons/button_jujuprodgames/label_devlog"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 92.0
+offset_bottom = 47.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 11
+text = "(link)"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="button_scottcawthon" type="Label" parent="menu/fnaf_1/buttons"]
+layout_mode = 2
+offset_left = 51.0
+offset_top = 445.0
+offset_right = 144.0
+offset_bottom = 538.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxEmpty_l6u81")
+text = "Scott
+Cawthon"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("26_lpeo8")
+
+[node name="label_scottcawthon" type="Label" parent="menu/fnaf_1/buttons/button_scottcawthon"]
+layout_mode = 0
+offset_left = -17.0
+offset_top = 95.0
+offset_right = 113.0
+offset_bottom = 116.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 10
+text = "HUGE THANKS For The Original Games!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="menu_music" type="AudioStreamPlayer" parent="menu/fnaf_1"]
+stream = ExtResource("3_21r8m")
+volume_db = -8.0
+autoplay = true
+
+[node name="fnaf_2" type="Control" parent="menu"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("19_h5e5n")
+
+[node name="bg" type="Control" parent="menu/fnaf_2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="gradient_red" type="TextureRect" parent="menu/fnaf_2/bg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_3wv68")
+
+[node name="static_bg" type="AnimatedSprite2D" parent="menu/fnaf_2/bg"]
+modulate = Color(1, 1, 1, 0.533333)
+material = SubResource("CanvasItemMaterial_qu7dr")
+position = Vector2(640, 360)
+scale = Vector2(16, 16)
+sprite_frames = SubResource("SpriteFrames_0f2d0")
+autoplay = "default"
+frame_progress = 0.175905
 
 [node name="animatronics" type="Control" parent="menu/fnaf_2"]
 layout_mode = 1
@@ -569,6 +792,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="springtrap" type="TextureRect" parent="menu/fnaf_2/animatronics"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -584,6 +808,7 @@ texture = ExtResource("36_5aymx")
 stretch_mode = 6
 
 [node name="toy_chica" type="TextureRect" parent="menu/fnaf_2/animatronics"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -598,6 +823,7 @@ texture = ExtResource("36_ndwmm")
 stretch_mode = 6
 
 [node name="toy_bonnie" type="TextureRect" parent="menu/fnaf_2/animatronics"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -612,6 +838,7 @@ texture = ExtResource("37_6usq5")
 stretch_mode = 6
 
 [node name="toy_freddy" type="TextureRect" parent="menu/fnaf_2/animatronics"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -625,7 +852,16 @@ grow_vertical = 2
 texture = ExtResource("36_wtanf")
 stretch_mode = 6
 
-[node name="shaders" type="Control" parent="menu"]
+[node name="animatronic_layout" type="TextureRect" parent="menu/fnaf_2/animatronics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("40_ky7pp")
+
+[node name="shaders" type="Control" parent="menu/fnaf_2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -633,7 +869,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="vignette" type="TextureRect" parent="menu/shaders"]
+[node name="vignette" type="TextureRect" parent="menu/fnaf_2/shaders"]
 material = SubResource("ShaderMaterial_n17ph")
 layout_mode = 1
 anchors_preset = 15
@@ -643,7 +879,127 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CanvasTexture_x34ak")
 
-[node name="button_newgame" type="Button" parent="menu"]
+[node name="text_shadow" type="TextureRect" parent="menu/fnaf_2/shaders"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_f4lfu")
+
+[node name="title" type="Control" parent="menu/fnaf_2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Two" type="Label" parent="menu/fnaf_2/title"]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 98.0
+offset_right = 433.0
+offset_bottom = 169.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 75
+text = "Two"
+
+[node name="Nights" type="Label" parent="menu/fnaf_2/title"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 98.0
+offset_right = 1053.0
+offset_bottom = 169.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 75
+text = "Nights
+"
+
+[node name="2D" type="Label" parent="menu/fnaf_2/title"]
+layout_mode = 0
+offset_left = 506.0
+offset_top = 38.0
+offset_right = 740.0
+offset_bottom = 214.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 200
+text = "2D"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="star_ranking" type="Control" parent="menu/fnaf_2" node_paths=PackedStringArray("star_normal_gfx", "star_cheat_gfx", "star_20d_gfx")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 263.0
+offset_top = 556.0
+offset_right = -297.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_emtr0")
+game_id = 2
+star_normal_gfx = NodePath("star_normal_fnaf2")
+star_cheat_gfx = NodePath("star_cheat_fnaf2")
+star_20d_gfx = NodePath("star_20d_fnaf2")
+
+[node name="star_normal_fnaf2" type="TextureRect" parent="menu/fnaf_2/star_ranking"]
+layout_mode = 0
+offset_left = 279.0
+offset_right = 423.0
+offset_bottom = 144.0
+texture = ExtResource("9_xstaa")
+expand_mode = 1
+
+[node name="star_cheat_fnaf2" type="TextureRect" parent="menu/fnaf_2/star_ranking"]
+self_modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_right = 144.0
+offset_bottom = 144.0
+texture = ExtResource("9_xstaa")
+expand_mode = 1
+
+[node name="star_cheat_text" type="Label" parent="menu/fnaf_2/star_ranking/star_cheat_fnaf2"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 51.0
+offset_right = 120.0
+offset_bottom = 112.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 27
+text = "CHEAT
+ER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="star_20d_fnaf2" type="TextureRect" parent="menu/fnaf_2/star_ranking"]
+modulate = Color(1, 0.878431, 0, 1)
+layout_mode = 0
+offset_left = 575.0
+offset_right = 719.0
+offset_bottom = 144.0
+texture = ExtResource("9_xstaa")
+expand_mode = 1
+
+[node name="star_full_glow" type="PointLight2D" parent="menu/fnaf_2/star_ranking/star_20d_fnaf2"]
+position = Vector2(74, 76)
+scale = Vector2(0.453125, 0.453125)
+color = Color(1, 1, 0, 1)
+energy = 3.12
+texture = ExtResource("11_5fvmq")
+
+[node name="buttons" type="Control" parent="menu/fnaf_2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="button_newgame" type="Button" parent="menu/fnaf_2/buttons"]
 layout_mode = 2
 offset_left = 536.0
 offset_top = 334.0
@@ -651,38 +1007,54 @@ offset_right = 709.0
 offset_bottom = 506.0
 theme_override_fonts/font = ExtResource("2_qxmd5")
 theme_override_font_sizes/font_size = 56
-theme_override_styles/normal = SubResource("StyleBoxTexture_wfmah")
-theme_override_styles/hover = SubResource("StyleBoxTexture_m0h71")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u4xgo")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5n5gf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_to8ci")
 text = "New
 Game"
 script = ExtResource("8_q3obw")
 
-[node name="button_20dmode" type="Button" parent="menu"]
+[node name="button_newgame_hover" type="Polygon2D" parent="menu/fnaf_2/buttons/button_newgame"]
+visible = false
+show_behind_parent = true
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(24, 7, 146, 7, 146, 59, 173, 59, 173, 139, 146, 139, 146, 167, 24, 167, 24, 113, -2, 113, -2, 33, 24, 33)
+
+[node name="button_20dmode" type="Button" parent="menu/fnaf_2/buttons"]
 layout_mode = 2
-offset_left = 850.0
-offset_top = 404.0
-offset_right = 972.0
-offset_bottom = 527.0
+offset_left = 853.0
+offset_top = 409.0
+offset_right = 975.0
+offset_bottom = 532.0
 theme_override_fonts/font = ExtResource("2_qxmd5")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxEmpty_pjkuo")
-theme_override_styles/hover = SubResource("StyleBoxTexture_gclx0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4mxku")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_h5lll")
 text = "20D 
 Mode"
 script = ExtResource("8_q3obw")
 
-[node name="time_labels" type="Control" parent="menu" node_paths=PackedStringArray("best_time_label", "last_time_label")]
-anchors_preset = 0
-offset_left = 856.0
-offset_top = 533.0
-offset_right = 978.0
-offset_bottom = 564.0
-scale = Vector2(0.9, 0.9)
-script = ExtResource("14_78c3y")
-best_time_label = NodePath("best_time")
-last_time_label = NodePath("last_time")
+[node name="button_20dmode_hover" type="Polygon2D" parent="menu/fnaf_2/buttons/button_20dmode"]
+visible = false
+show_behind_parent = true
+position = Vector2(0, -1)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(26, -19, 98, -19, 98, 5, 122, 5, 122, 53, 145, 53, 145, 101, 122, 101, 122, 125, 98, 125, 98, 149, 26, 149, 26, 125, 2, 125, 2, 101, -22, 101, -22, 53, 2, 53, 2, 5, 26, 5)
 
-[node name="best_time" type="Label" parent="menu/time_labels"]
+[node name="time_labels" type="Control" parent="menu/fnaf_2/buttons" node_paths=PackedStringArray("best_time_label", "last_time_label")]
+anchors_preset = 0
+offset_left = 869.0
+offset_top = 557.0
+offset_right = 991.0
+offset_bottom = 588.0
+scale = Vector2(0.75, 0.75)
+script = ExtResource("14_78c3y")
+game_id = 2
+best_time_label = NodePath("best_time_fnaf2")
+last_time_label = NodePath("last_time_fnaf2")
+
+[node name="best_time_fnaf2" type="Label" parent="menu/fnaf_2/buttons/time_labels"]
 layout_mode = 2
 offset_top = -2.0
 offset_right = 122.0
@@ -690,7 +1062,7 @@ offset_bottom = 13.0
 theme_override_fonts/font = ExtResource("2_qxmd5")
 text = "Best: 0:00.00"
 
-[node name="last_time" type="Label" parent="menu/time_labels"]
+[node name="last_time_fnaf2" type="Label" parent="menu/fnaf_2/buttons/time_labels"]
 layout_mode = 2
 offset_top = 16.0
 offset_right = 122.0
@@ -698,19 +1070,117 @@ offset_bottom = 31.0
 theme_override_fonts/font = ExtResource("2_qxmd5")
 text = "Last: 0:00.00"
 
-[node name="button_cheatmode" type="Button" parent="menu"]
-layout_mode = 2
+[node name="button_cheatmode" type="Button" parent="menu/fnaf_2/buttons"]
+layout_mode = 0
 offset_left = 272.0
-offset_top = 403.0
+offset_top = 410.0
 offset_right = 396.0
-offset_bottom = 526.0
+offset_bottom = 533.0
 theme_override_fonts/font = ExtResource("2_qxmd5")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxEmpty_sj4rm")
-theme_override_styles/hover = SubResource("StyleBoxTexture_q15rl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tpbhg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_h5nrc")
 text = "Cheat
 Mode"
 script = ExtResource("8_q3obw")
+
+[node name="button_cheatmode_hover" type="Polygon2D" parent="menu/fnaf_2/buttons/button_cheatmode"]
+visible = false
+show_behind_parent = true
+position = Vector2(0, -7)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(2, -20, 125, -20, 125, 4, 149, 4, 149, 128, 125, 128, 125, 152, 2, 152, 2, 128, -23, 128, -23, 4, 2, 4)
+
+[node name="button_jujuprodgames" type="Button" parent="menu/fnaf_2/buttons"]
+layout_mode = 2
+offset_left = 1102.0
+offset_top = 451.0
+offset_right = 1215.0
+offset_bottom = 565.0
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oium4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_qfdl2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fh8gj")
+script = ExtResource("26_lpeo8")
+
+[node name="youtube_triangle" type="TextureRect" parent="menu/fnaf_2/buttons/button_jujuprodgames"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 27.0
+offset_right = 90.0
+offset_bottom = 88.0
+texture = ExtResource("47_rwa21")
+
+[node name="youtube_bgred" type="Polygon2D" parent="menu/fnaf_2/buttons/button_jujuprodgames/youtube_triangle"]
+show_behind_parent = true
+color = Color(0.733333, 0, 0, 1)
+polygon = PackedVector2Array(3, -27, 52, -27, 52, -10, 68, -10, 68, 6, 84, 6, 84, 54, 68, 54, 68, 71, 52, 71, 52, 87, 3, 87, 3, 71, -13, 71, -13, 54, -29, 54, -29, 6, -13, 6, -13, -10, 3, -10)
+
+[node name="youtube_bgred_hover" type="Polygon2D" parent="menu/fnaf_2/buttons/button_jujuprodgames/youtube_triangle"]
+visible = false
+show_behind_parent = true
+color = Color(1, 0, 0, 1)
+polygon = PackedVector2Array(3, -27, 52, -27, 52, -10, 68, -10, 68, 6, 84, 6, 84, 54, 68, 54, 68, 71, 52, 71, 52, 87, 3, 87, 3, 71, -13, 71, -13, 54, -29, 54, -29, 6, -13, 6, -13, -10, 3, -10)
+
+[node name="label_devlog" type="Label" parent="menu/fnaf_2/buttons/button_jujuprodgames"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 112.0
+offset_right = 103.0
+offset_bottom = 130.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 15
+text = "Devlog"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="label_redirectwarning" type="Label" parent="menu/fnaf_2/buttons/button_jujuprodgames/label_devlog"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_top = 2.0
+offset_right = 92.0
+offset_bottom = 50.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 11
+text = "(link)"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="button_scottcawthon" type="Label" parent="menu/fnaf_2/buttons"]
+layout_mode = 2
+offset_left = 54.0
+offset_top = 423.0
+offset_right = 147.0
+offset_bottom = 516.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxEmpty_l6u81")
+text = "Scott
+Cawthon"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("26_lpeo8")
+
+[node name="label_scottcawthon" type="Label" parent="menu/fnaf_2/buttons/button_scottcawthon"]
+layout_mode = 0
+offset_left = -17.0
+offset_top = 162.0
+offset_right = 113.0
+offset_bottom = 183.0
+theme_override_fonts/font = ExtResource("2_qxmd5")
+theme_override_font_sizes/font_size = 10
+text = "HUGE THANKS For The Original Games!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="menu_music_fnaf2" type="AudioStreamPlayer" parent="menu/fnaf_2"]
+stream = ExtResource("48_rv4fq")
+volume_db = -8.0
 
 [node name="button_exit" type="Button" parent="menu"]
 layout_mode = 1
@@ -742,71 +1212,6 @@ theme_override_font_sizes/font_size = 16
 text = "Made In Godot"
 alignment = 0
 script = ExtResource("26_lpeo8")
-
-[node name="button_jujuprodgames" type="Button" parent="menu"]
-layout_mode = 2
-offset_left = 1108.0
-offset_top = 445.0
-offset_right = 1200.0
-offset_bottom = 538.0
-theme_type_variation = &"FlatButton"
-theme_override_fonts/font = ExtResource("2_qxmd5")
-theme_override_font_sizes/font_size = 27
-theme_override_styles/normal = SubResource("StyleBoxTexture_mi3vk")
-theme_override_styles/hover = SubResource("StyleBoxTexture_mig85")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_f7dma")
-script = ExtResource("26_lpeo8")
-
-[node name="label_devlog" type="Label" parent="menu/button_jujuprodgames"]
-layout_mode = 0
-offset_top = 93.0
-offset_right = 92.0
-offset_bottom = 111.0
-theme_override_fonts/font = ExtResource("2_qxmd5")
-theme_override_font_sizes/font_size = 15
-text = "Devlog"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="label_redirectwarning" type="Label" parent="menu/button_jujuprodgames/label_devlog"]
-layout_mode = 0
-offset_top = -1.0
-offset_right = 92.0
-offset_bottom = 47.0
-theme_override_fonts/font = ExtResource("2_qxmd5")
-theme_override_font_sizes/font_size = 11
-text = "(link)"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="button_scottcawthon" type="Label" parent="menu"]
-layout_mode = 2
-offset_left = 51.0
-offset_top = 445.0
-offset_right = 144.0
-offset_bottom = 538.0
-theme_override_fonts/font = ExtResource("2_qxmd5")
-theme_override_font_sizes/font_size = 21
-theme_override_styles/normal = SubResource("StyleBoxEmpty_l6u81")
-text = "Scott
-Cawthon"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("26_lpeo8")
-
-[node name="label_scottcawthon" type="Label" parent="menu/button_scottcawthon"]
-layout_mode = 0
-offset_left = -17.0
-offset_top = 95.0
-offset_right = 113.0
-offset_bottom = 116.0
-theme_override_fonts/font = ExtResource("2_qxmd5")
-theme_override_font_sizes/font_size = 10
-text = "HUGE THANKS For The Original Games!"
-horizontal_alignment = 1
-autowrap_mode = 2
 
 [node name="button_resetdata" type="Button" parent="menu"]
 layout_mode = 1
@@ -863,24 +1268,55 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_tkrwy")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ixj0l")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_3aabh")
 
-[connection signal="button_down" from="menu/button_newgame" to="manager/local_audio_manager" method="play_sound" binds= ["res://sounds/menu/menu_button.wav"]]
-[connection signal="button_down" from="menu/button_newgame" to="manager/scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/scene_night_number_1.tscn"]]
-[connection signal="button_down" from="menu/button_newgame" to="menu/button_newgame" method="set_use_20d_mode" binds= [false]]
-[connection signal="button_down" from="menu/button_newgame" to="menu/button_newgame" method="set_use_cheat_mode" binds= [false]]
-[connection signal="button_down" from="menu/button_20dmode" to="manager/local_audio_manager" method="play_sound" binds= ["res://sounds/menu/menu_button.wav"]]
-[connection signal="button_down" from="menu/button_20dmode" to="manager/scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/scene_night_number_20D.tscn"]]
-[connection signal="button_down" from="menu/button_20dmode" to="menu/button_20dmode" method="set_use_20d_mode" binds= [true]]
-[connection signal="button_down" from="menu/button_20dmode" to="menu/button_20dmode" method="set_use_cheat_mode" binds= [false]]
-[connection signal="button_down" from="menu/button_cheatmode" to="manager/local_audio_manager" method="play_sound" binds= ["res://sounds/menu/menu_button.wav"]]
-[connection signal="button_down" from="menu/button_cheatmode" to="manager/scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/scene_night_number_cheat.tscn"]]
-[connection signal="button_down" from="menu/button_cheatmode" to="menu/button_cheatmode" method="set_use_20d_mode" binds= [false]]
-[connection signal="button_down" from="menu/button_cheatmode" to="menu/button_cheatmode" method="set_use_cheat_mode" binds= [true]]
+[connection signal="menu_set_no_params" from="menu" to="manager/local_audio_manager" method="play_sound" binds= ["res://sounds/monitor/monitor_switch.wav"]]
+[connection signal="menu_set_no_params" from="menu" to="transition/static_player" method="play" binds= ["static"]]
+[connection signal="active_state_set_false" from="menu/fnaf_1" to="menu/fnaf_1/menu_music" method="stop"]
+[connection signal="active_state_set_true" from="menu/fnaf_1" to="menu/fnaf_1/menu_music" method="play"]
+[connection signal="button_down" from="menu/fnaf_1/buttons/button_newgame" to="manager/local_audio_manager" method="play_sound" binds= ["res://sounds/menu/menu_button.wav"]]
+[connection signal="button_down" from="menu/fnaf_1/buttons/button_newgame" to="manager/scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/scene_night_number_1.tscn"]]
+[connection signal="button_down" from="menu/fnaf_1/buttons/button_newgame" to="menu/fnaf_1/buttons/button_newgame" method="set_use_20d_mode" binds= [false]]
+[connection signal="button_down" from="menu/fnaf_1/buttons/button_newgame" to="menu/fnaf_1/buttons/button_newgame" method="set_use_cheat_mode" binds= [false]]
+[connection signal="button_down" from="menu/fnaf_1/buttons/button_20dmode" to="manager/local_audio_manager" method="play_sound" binds= ["res://sounds/menu/menu_button.wav"]]
+[connection signal="button_down" from="menu/fnaf_1/buttons/button_20dmode" to="manager/scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/scene_night_number_20D.tscn"]]
+[connection signal="button_down" from="menu/fnaf_1/buttons/button_20dmode" to="menu/fnaf_1/buttons/button_20dmode" method="set_use_20d_mode" binds= [true]]
+[connection signal="button_down" from="menu/fnaf_1/buttons/button_20dmode" to="menu/fnaf_1/buttons/button_20dmode" method="set_use_cheat_mode" binds= [false]]
+[connection signal="button_down" from="menu/fnaf_1/buttons/button_cheatmode" to="manager/local_audio_manager" method="play_sound" binds= ["res://sounds/menu/menu_button.wav"]]
+[connection signal="button_down" from="menu/fnaf_1/buttons/button_cheatmode" to="manager/scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/scene_night_number_cheat.tscn"]]
+[connection signal="button_down" from="menu/fnaf_1/buttons/button_cheatmode" to="menu/fnaf_1/buttons/button_cheatmode" method="set_use_20d_mode" binds= [false]]
+[connection signal="button_down" from="menu/fnaf_1/buttons/button_cheatmode" to="menu/fnaf_1/buttons/button_cheatmode" method="set_use_cheat_mode" binds= [true]]
+[connection signal="button_down" from="menu/fnaf_1/buttons/button_jujuprodgames" to="menu/fnaf_1/buttons/button_jujuprodgames" method="open_link" binds= ["https://youtu.be/FJq34KQwLn8?si=yWcg-oDnZm5wCEyx"]]
+[connection signal="active_state_set_false" from="menu/fnaf_2" to="menu/fnaf_2/menu_music_fnaf2" method="stop"]
+[connection signal="active_state_set_true" from="menu/fnaf_2" to="menu/fnaf_2/menu_music_fnaf2" method="play"]
+[connection signal="button_down" from="menu/fnaf_2/buttons/button_newgame" to="manager/local_audio_manager" method="play_sound" binds= ["res://sounds/menu/menu_button.wav"]]
+[connection signal="button_down" from="menu/fnaf_2/buttons/button_newgame" to="manager/scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/fnaf2/scene_night_number_1_fnaf2.tscn"]]
+[connection signal="button_down" from="menu/fnaf_2/buttons/button_newgame" to="menu/fnaf_2/buttons/button_newgame" method="set_use_20d_mode" binds= [false]]
+[connection signal="button_down" from="menu/fnaf_2/buttons/button_newgame" to="menu/fnaf_2/buttons/button_newgame" method="set_use_cheat_mode" binds= [false]]
+[connection signal="mouse_entered" from="menu/fnaf_2/buttons/button_newgame" to="menu/fnaf_2/buttons/button_newgame/button_newgame_hover" method="set_visible" binds= [true]]
+[connection signal="mouse_exited" from="menu/fnaf_2/buttons/button_newgame" to="menu/fnaf_2/buttons/button_newgame/button_newgame_hover" method="set_visible" binds= [false]]
+[connection signal="button_down" from="menu/fnaf_2/buttons/button_20dmode" to="manager/local_audio_manager" method="play_sound" binds= ["res://sounds/menu/menu_button.wav"]]
+[connection signal="button_down" from="menu/fnaf_2/buttons/button_20dmode" to="manager/scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/fnaf2/scene_night_number_20D_fnaf2.tscn"]]
+[connection signal="button_down" from="menu/fnaf_2/buttons/button_20dmode" to="menu/fnaf_2/buttons/button_20dmode" method="set_use_20d_mode" binds= [true]]
+[connection signal="button_down" from="menu/fnaf_2/buttons/button_20dmode" to="menu/fnaf_2/buttons/button_20dmode" method="set_use_cheat_mode" binds= [false]]
+[connection signal="mouse_entered" from="menu/fnaf_2/buttons/button_20dmode" to="menu/fnaf_2/buttons/button_20dmode/button_20dmode_hover" method="set_visible" binds= [true]]
+[connection signal="mouse_exited" from="menu/fnaf_2/buttons/button_20dmode" to="menu/fnaf_2/buttons/button_20dmode/button_20dmode_hover" method="set_visible" binds= [false]]
+[connection signal="button_down" from="menu/fnaf_2/buttons/button_cheatmode" to="manager/local_audio_manager" method="play_sound" binds= ["res://sounds/menu/menu_button.wav"]]
+[connection signal="button_down" from="menu/fnaf_2/buttons/button_cheatmode" to="manager/scene_loader" method="load_scene" binds= ["res://scenes/cutscenes/fnaf2/scene_night_number_cheat_fnaf2.tscn"]]
+[connection signal="button_down" from="menu/fnaf_2/buttons/button_cheatmode" to="menu/fnaf_2/buttons/button_cheatmode" method="set_use_20d_mode" binds= [false]]
+[connection signal="button_down" from="menu/fnaf_2/buttons/button_cheatmode" to="menu/fnaf_2/buttons/button_cheatmode" method="set_use_cheat_mode" binds= [true]]
+[connection signal="mouse_entered" from="menu/fnaf_2/buttons/button_cheatmode" to="menu/fnaf_2/buttons/button_cheatmode/button_cheatmode_hover" method="set_visible" binds= [true]]
+[connection signal="mouse_exited" from="menu/fnaf_2/buttons/button_cheatmode" to="menu/fnaf_2/buttons/button_cheatmode/button_cheatmode_hover" method="set_visible" binds= [false]]
+[connection signal="button_down" from="menu/fnaf_2/buttons/button_jujuprodgames" to="menu/fnaf_2/buttons/button_jujuprodgames" method="open_link" binds= ["https://youtu.be/FJq34KQwLn8?si=yWcg-oDnZm5wCEyx"]]
+[connection signal="mouse_entered" from="menu/fnaf_2/buttons/button_jujuprodgames" to="menu/fnaf_2/buttons/button_jujuprodgames/youtube_triangle/youtube_bgred_hover" method="set_visible" binds= [true]]
+[connection signal="mouse_exited" from="menu/fnaf_2/buttons/button_jujuprodgames" to="menu/fnaf_2/buttons/button_jujuprodgames/youtube_triangle/youtube_bgred_hover" method="set_visible" binds= [false]]
 [connection signal="button_down" from="menu/button_exit" to="manager/local_audio_manager" method="play_sound"]
 [connection signal="button_down" from="menu/button_exit" to="menu/button_exit" method="quit_game"]
 [connection signal="button_down" from="menu/button_godot" to="menu/button_godot" method="open_link" binds= ["https://godotengine.org/license"]]
-[connection signal="button_down" from="menu/button_jujuprodgames" to="menu/button_jujuprodgames" method="open_link" binds= ["https://youtu.be/FJq34KQwLn8?si=yWcg-oDnZm5wCEyx"]]
 [connection signal="button_down" from="menu/button_resetdata" to="menu/button_resetdata/resetdata_timer" method="start"]
 [connection signal="button_up" from="menu/button_resetdata" to="menu/button_resetdata/resetdata_timer" method="stop"]
 [connection signal="data_reset" from="menu/button_resetdata" to="menu/fnaf_1/star_ranking" method="update_star_state"]
-[connection signal="data_reset" from="menu/button_resetdata" to="menu/time_labels" method="update_best_time"]
+[connection signal="data_reset" from="menu/button_resetdata" to="menu/fnaf_1/buttons/time_labels" method="update_best_time"]
+[connection signal="data_reset" from="menu/button_resetdata" to="menu/fnaf_2/star_ranking" method="update_star_state"]
+[connection signal="data_reset" from="menu/button_resetdata" to="menu/fnaf_2/buttons/time_labels" method="update_best_time"]
 [connection signal="timeout" from="menu/button_resetdata/resetdata_timer" to="menu/button_resetdata" method="reset_data"]
+[connection signal="button_up" from="menu/menu_switcher_left" to="menu" method="increment_current_menu" binds= [-1]]
+[connection signal="button_up" from="menu/menu_switcher_right" to="menu" method="increment_current_menu" binds= [1]]

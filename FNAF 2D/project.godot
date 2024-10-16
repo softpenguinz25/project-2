@@ -27,6 +27,7 @@ AudioManager="*res://scenes/manager/audio_manager.tscn"
 AiManager="*res://scenes/manager/ai_manager.tscn"
 StarRankingManager="*res://scenes/manager/star_ranking_manager.tscn"
 BestTimeManager="*res://scenes/manager/best_time_manager.tscn"
+MenuManager="*res://scenes/manager/menu_manager.tscn"
 
 [display]
 

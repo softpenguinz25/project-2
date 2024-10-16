@@ -14,7 +14,7 @@ func is_animatronic_in_hall(animatronic : animatronic_roaming_fnaf2) -> bool:
 	return false
 
 func hall_light_flashed():
-	for animatronic in animatronics.animatronic_array:
+	for animatronic in animatronics.animatronic_roaming_array:
 		if is_animatronic_in_hall(animatronic):
 			#print_debug("%s can be stalled: %s" % [animatronic.animatronic_name, animatronic.can_pause_animatronic])
 			animatronic.pause_animatronic(true)

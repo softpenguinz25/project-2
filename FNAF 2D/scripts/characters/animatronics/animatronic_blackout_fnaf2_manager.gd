@@ -8,12 +8,19 @@ class_name animatronic_blackout_fnaf2_manager
 
 var blackouts_queued : Array[animatronic_blackout_fnaf2]
 
+signal blackout_sequence_triggered
+signal blackout_sequence_triggered_no_param
+signal blackout_sequence_stopped
+
 func append_blackout(blackout : animatronic_blackout_fnaf2):
 	blackouts_queued.append(blackout)
 	#print_debug("appending %s | %s queued {%s}" % [blackout, blackouts_queued.size(), Time.get_ticks_msec() / 1000.0])
 	
 	if blackout == blackouts_queued[0]: 
 		blackout.trigger_blackout()
+		
+		blackout_sequence_triggered.emit(blackout.animatronic_name)
+		blackout_sequence_triggered_no_param.emit()
 
 func erase_blackout(blackout : animatronic_blackout_fnaf2):
 	blackouts_queued.erase(blackout)
@@ -21,3 +28,5 @@ func erase_blackout(blackout : animatronic_blackout_fnaf2):
 	
 	if blackouts_queued.size() >= 1 and not blackout == blackouts_queued[0]: 
 		blackouts_queued[0].trigger_blackout()
+	else:
+		blackout_sequence_stopped.emit()

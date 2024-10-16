@@ -1,4 +1,4 @@
-[gd_scene load_steps=190 format=3 uid="uid://deybknyvrm48a"]
+[gd_scene load_steps=198 format=3 uid="uid://deybknyvrm48a"]
 
 [ext_resource type="Script" path="res://scripts/monitor/monitor_screen.gd" id="1_8ro68"]
 [ext_resource type="Script" path="res://scripts/monitor/monitor_scene.gd" id="2_ve4w3"]
@@ -166,6 +166,7 @@
 [ext_resource type="Script" path="res://scripts/monitor/monitor_eyes_blacked_hall_gfx.gd" id="136_k1j6v"]
 [ext_resource type="Texture2D" uid="uid://cb7bcp375og3m" path="res://sprites/characters/animatronics/withered_golden_freddy/withered_golden_freddy_head.png" id="137_71w4j"]
 [ext_resource type="Texture2D" uid="uid://dya1os0ctorgh" path="res://sprites/icon_crying_child.png" id="137_bbe6m"]
+[ext_resource type="Script" path="res://scripts/ui/popups.gd" id="137_le7rr"]
 [ext_resource type="Script" path="res://scripts/ui/popup_withered_golden_freddy.gd" id="137_q2xfp"]
 [ext_resource type="Texture2D" uid="uid://crtictvbsvevf" path="res://sprites/characters/animatronics/placeholder/2d/toy_bonnie_placeholder.png" id="138_fgpiy"]
 [ext_resource type="Texture2D" uid="uid://m16gms80qs0p" path="res://sprites/characters/animatronics/placeholder/2d/toy_chica_placeholder.png" id="139_ldead"]
@@ -175,10 +176,56 @@
 [ext_resource type="Texture2D" uid="uid://ciw174l5mtv8q" path="res://sprites/characters/animatronics/placeholder/2d/withered_chica_placeholder.png" id="143_act0d"]
 [ext_resource type="Texture2D" uid="uid://8txyqidoxado" path="res://sprites/characters/animatronics/placeholder/2d/withered_foxy_placeholder.png" id="144_0tyby"]
 [ext_resource type="Texture2D" uid="uid://chh2dk4a0t5ta" path="res://sprites/characters/animatronics/placeholder/2d/balloon_boy_placeholder.png" id="145_bbxfp"]
+[ext_resource type="Texture2D" uid="uid://bu11tdw7f2jts" path="res://sprites/ui/ui_input_pc.png" id="155_0lnd5"]
+[ext_resource type="Script" path="res://scripts/ui/instruction_sprite.gd" id="156_djfrp"]
+[ext_resource type="Texture2D" uid="uid://bt0lv5bshww3" path="res://sprites/ui/ui_input_mobile.png" id="157_mhl1c"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_v0m4v"]
 
+[sub_resource type="Animation" id="Animation_g31d4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("monitor_scene:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(112, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_oe5k7"]
+resource_name = "pan"
+length = 12.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("monitor_scene:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(112, 0), Vector2(-112, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bcep0"]
+_data = {
+"RESET": SubResource("Animation_g31d4"),
+"pan": SubResource("Animation_oe5k7")
+}
+
 [sub_resource type="CanvasTexture" id="CanvasTexture_5g333"]
+
+[sub_resource type="Curve" id="Curve_4l7yp"]
+max_value = 10.0
+_data = [Vector2(0, 6), 0.0, -5.0, 0, 1, Vector2(1, 1), -5.0, 0.0, 1, 0]
+point_count = 2
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jsf5v"]
 animations = [{
@@ -290,7 +337,7 @@ animations = [{
 "speed": 50.0
 }]
 
-[sub_resource type="Animation" id="Animation_7uvcd"]
+[sub_resource type="Animation" id="Animation_cdxef"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -317,7 +364,7 @@ tracks/1/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_jyja3"]
+[sub_resource type="Animation" id="Animation_sa5tv"]
 resource_name = "static"
 length = 1.6
 tracks/0/type = "value"
@@ -345,13 +392,13 @@ tracks/1/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_he8l4"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_le2pr"]
 _data = {
-"RESET": SubResource("Animation_7uvcd"),
-"static": SubResource("Animation_jyja3")
+"RESET": SubResource("Animation_cdxef"),
+"static": SubResource("Animation_sa5tv")
 }
 
-[node name="monitor_screen" type="Control" node_paths=PackedStringArray("monitor_scripts", "nodes_to_set_active", "monitor_map", "exit_camera_button")]
+[node name="monitor_screen" type="Control" node_paths=PackedStringArray("monitor_scripts", "nodes_to_set_active", "monitor_map", "exit_camera_button", "popups")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -363,6 +410,7 @@ monitor_scripts = [NodePath("monitor_scene_clipper/monitor_scene"), NodePath("mo
 nodes_to_set_active = [NodePath(".")]
 monitor_map = NodePath("monitor_map")
 exit_camera_button = NodePath("exit_button")
+popups = NodePath("popups")
 
 [node name="monitor_scene_clipper" type="Control" parent="."]
 clip_contents = true
@@ -375,7 +423,8 @@ grow_vertical = 2
 
 [node name="monitor_scene" type="Control" parent="monitor_scene_clipper"]
 anchors_preset = 0
-offset_right = 1280.0
+offset_left = 112.0
+offset_right = 1392.0
 offset_bottom = 720.0
 script = ExtResource("2_ve4w3")
 cam_scenes = {
@@ -2786,6 +2835,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -112.0
+offset_right = 112.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -3722,6 +3773,12 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("133_wubgc")
+
+[node name="monitor_scene_panner" type="AnimationPlayer" parent="monitor_scene_clipper"]
+libraries = {
+"": SubResource("AnimationLibrary_bcep0")
+}
+autoplay = "pan"
 
 [node name="hall_animatronics" type="Node2D" parent="."]
 position = Vector2(-708.108, -4681.08)
@@ -4689,6 +4746,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("137_le7rr")
+popup_dict = {
+"withered_golden_freddy": NodePath("popup_golden_freddy/popup_golden_freddy_gfx")
+}
 
 [node name="popup_golden_freddy" type="Control" parent="popups"]
 layout_mode = 1
@@ -4699,7 +4760,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="popup_golden_freddy_gfx" type="ColorRect" parent="popups/popup_golden_freddy" node_paths=PackedStringArray("jumpscare_increments", "timer_jumpscare_increment", "pos_bound_topleft", "pos_bound_bottomright", "monitor")]
+[node name="popup_golden_freddy_gfx" type="ColorRect" parent="popups/popup_golden_freddy" node_paths=PackedStringArray("monitor_screen", "jumpscare_increments", "timer_jumpscare_increment", "pos_bound_topleft", "pos_bound_bottomright", "monitor")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -4710,8 +4771,10 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 script = ExtResource("137_q2xfp")
+monitor_screen = NodePath("../../..")
 jumpscare_increments = [NodePath("timer_outline_box_1"), NodePath("timer_outline_box_2"), NodePath("timer_outline_box_3"), NodePath("timer_outline_box_4"), NodePath("timer_outline_box_5")]
 timer_jumpscare_increment = NodePath("timer_jumpscare_increment")
+timer_jumpscare_increment_start_time_over_ai = SubResource("Curve_4l7yp")
 pos_bound_topleft = NodePath("../bound_topleft")
 pos_bound_bottomright = NodePath("../bound_bottomright")
 monitor = NodePath("../../..")
@@ -4817,6 +4880,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="timer_jumpscare_increment" type="Timer" parent="popups/popup_golden_freddy/popup_golden_freddy_gfx"]
+one_shot = true
 
 [node name="bound_topleft" type="Control" parent="popups/popup_golden_freddy"]
 anchors_preset = 0
@@ -4847,15 +4911,15 @@ expand_mode = 1
 script = ExtResource("19_2h7gx")
 monitor_scene = NodePath("../monitor_scene_clipper/monitor_scene")
 animatronic_placeholder = {
-"balloon_boy": NodePath("visual_balloon_boy"),
-"mangle": NodePath("visual_mangle"),
-"toy_bonnie": NodePath("visual_toy_bonnie"),
-"toy_chica": NodePath("visual_toy_chica"),
-"toy_freddy": NodePath("visual_toy_freddy"),
-"withered_bonnie": NodePath("visual_withered_bonnie"),
-"withered_chica": NodePath("visual_withered_chica"),
-"withered_foxy": NodePath("visual_withered_foxy"),
-"withered_freddy": NodePath("visual_withered_freddy")
+"balloon_boy": NodePath("visuals/visual_balloon_boy"),
+"mangle": NodePath("visuals/visual_mangle"),
+"toy_bonnie": NodePath("visuals/visual_toy_bonnie"),
+"toy_chica": NodePath("visuals/visual_toy_chica"),
+"toy_freddy": NodePath("visuals/visual_toy_freddy"),
+"withered_bonnie": NodePath("visuals/visual_withered_bonnie"),
+"withered_chica": NodePath("visuals/visual_withered_chica"),
+"withered_foxy": NodePath("visuals/visual_withered_foxy"),
+"withered_freddy": NodePath("visuals/visual_withered_freddy")
 }
 
 [node name="cam_title" type="Label" parent="monitor_map"]
@@ -5009,7 +5073,17 @@ HALL"
 [node name="Button" parent="monitor_map/cam_box_12" index="2"]
 disabled = true
 
-[node name="visual_balloon_boy" type="TextureRect" parent="monitor_map"]
+[node name="visuals" type="Control" parent="monitor_map"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="visual_balloon_boy" type="TextureRect" parent="monitor_map/visuals"]
 z_index = 2
 layout_mode = 0
 offset_left = 257.273
@@ -5020,7 +5094,7 @@ mouse_filter = 2
 texture = ExtResource("145_bbxfp")
 expand_mode = 1
 
-[node name="visual_withered_foxy" type="TextureRect" parent="monitor_map"]
+[node name="visual_withered_foxy" type="TextureRect" parent="monitor_map/visuals"]
 z_index = 2
 layout_mode = 0
 offset_left = 21.8182
@@ -5031,7 +5105,7 @@ mouse_filter = 2
 texture = ExtResource("144_0tyby")
 expand_mode = 1
 
-[node name="visual_withered_chica" type="TextureRect" parent="monitor_map"]
+[node name="visual_withered_chica" type="TextureRect" parent="monitor_map/visuals"]
 z_index = 2
 layout_mode = 0
 offset_left = 29.0909
@@ -5042,7 +5116,7 @@ mouse_filter = 2
 texture = ExtResource("143_act0d")
 expand_mode = 1
 
-[node name="visual_withered_bonnie" type="TextureRect" parent="monitor_map"]
+[node name="visual_withered_bonnie" type="TextureRect" parent="monitor_map/visuals"]
 z_index = 2
 layout_mode = 0
 offset_left = 36.3636
@@ -5053,18 +5127,18 @@ mouse_filter = 2
 texture = ExtResource("142_ttk6f")
 expand_mode = 1
 
-[node name="visual_withered_freddy" type="TextureRect" parent="monitor_map"]
+[node name="visual_withered_freddy" type="TextureRect" parent="monitor_map/visuals"]
 z_index = 2
 layout_mode = 0
-offset_left = 43.6364
+offset_left = 43.6365
 offset_top = 100.909
-offset_right = 75.6364
+offset_right = 75.6365
 offset_bottom = 132.909
 mouse_filter = 2
 texture = ExtResource("141_db5j7")
 expand_mode = 1
 
-[node name="visual_mangle" type="TextureRect" parent="monitor_map"]
+[node name="visual_mangle" type="TextureRect" parent="monitor_map/visuals"]
 z_index = 2
 layout_mode = 0
 offset_left = 313.636
@@ -5075,7 +5149,7 @@ mouse_filter = 2
 texture = ExtResource("140_n0v3n")
 expand_mode = 1
 
-[node name="visual_toy_chica" type="TextureRect" parent="monitor_map"]
+[node name="visual_toy_chica" type="TextureRect" parent="monitor_map/visuals"]
 z_index = 2
 layout_mode = 0
 offset_left = 295.455
@@ -5086,7 +5160,7 @@ mouse_filter = 2
 texture = ExtResource("139_ldead")
 expand_mode = 1
 
-[node name="visual_toy_bonnie" type="TextureRect" parent="monitor_map"]
+[node name="visual_toy_bonnie" type="TextureRect" parent="monitor_map/visuals"]
 z_index = 2
 layout_mode = 0
 offset_left = 301.818
@@ -5097,7 +5171,7 @@ mouse_filter = 2
 texture = ExtResource("138_fgpiy")
 expand_mode = 1
 
-[node name="visual_toy_freddy" type="TextureRect" parent="monitor_map"]
+[node name="visual_toy_freddy" type="TextureRect" parent="monitor_map/visuals"]
 z_index = 2
 layout_mode = 0
 offset_left = 309.091
@@ -5127,6 +5201,16 @@ sprite_frames = SubResource("SpriteFrames_jsf5v")
 autoplay = "default"
 frame_progress = 0.879769
 
+[node name="instruction_monitor" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(640, 360)
+scale = Vector2(8, 8)
+texture = ExtResource("155_0lnd5")
+script = ExtResource("156_djfrp")
+instruction_pc = ExtResource("155_0lnd5")
+instruction_mobile = ExtResource("157_mhl1c")
+
 [node name="interact_obj" type="Node2D" parent="."]
 visible = false
 script = ExtResource("28_481i1")
@@ -5147,7 +5231,6 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="gfx_overlays"]
-visible = false
 position = Vector2(640, 360)
 scale = Vector2(6.4, 3.6)
 copy_mode = 2
@@ -5243,7 +5326,6 @@ position = Vector2(640, 360)
 scale = Vector2(6.4, 3.6)
 
 [node name="vhs_tv_vignette" type="ColorRect" parent="gfx_overlays"]
-visible = false
 material = SubResource("ShaderMaterial_wclkk")
 layout_mode = 1
 anchors_preset = 15
@@ -5263,7 +5345,7 @@ animation = &"static"
 [node name="static_player" type="AnimationPlayer" parent="gfx_overlays"]
 root_node = NodePath("../..")
 libraries = {
-"": SubResource("AnimationLibrary_he8l4")
+"": SubResource("AnimationLibrary_le2pr")
 }
 autoplay = "static"
 speed_scale = 5.0
@@ -5282,11 +5364,13 @@ text = "EXIT CAMERA"
 [connection signal="animatronic_moved_out_of_camera_queue" from="." to="gfx_overlays/static_player" method="play" binds= ["static"]]
 [connection signal="camera_scene_flashed_off" from="." to="monitor_scene_clipper/monitor_scene/flash_off" method="set_visible" binds= [true]]
 [connection signal="camera_scene_flashed_on" from="." to="monitor_scene_clipper/monitor_scene/flash_off" method="set_visible" binds= [false]]
+[connection signal="camera_scene_flashed_on" from="." to="instruction_monitor" method="set_active_state" binds= [false]]
 [connection signal="camera_scene_switched" from="." to="monitor_scene_clipper/monitor_scene/eyes_blacked" method="camera_scene_switched"]
+[connection signal="camera_scene_switched" from="." to="gfx_overlays/static_player" method="play" binds= ["static"]]
 [connection signal="camera_scene_switched_no_params" from="." to="gfx_overlays/static_player" method="stop"]
 [connection signal="camera_scene_switched_no_params" from="." to="gfx_overlays/static_player" method="play" binds= ["static"]]
-[connection signal="cheat_mode_off" from="." to="monitor_map/visual_toy_freddy" method="set_visible" binds= [false]]
-[connection signal="cheat_mode_on" from="." to="monitor_map/visual_toy_freddy" method="set_visible" binds= [true]]
+[connection signal="cheat_mode_off" from="." to="monitor_map/visuals" method="set_visible" binds= [false]]
+[connection signal="cheat_mode_on" from="." to="monitor_map/visuals" method="set_visible" binds= [true]]
 [connection signal="flash_disabled_set" from="." to="monitor_scene_clipper/monitor_scene" method="_on_flash_disabled_set"]
 [connection signal="hall_light_state_set" from="." to="eyes_blacked_hall" method="hall_light_state_set"]
 [connection signal="map_toggled" from="." to="monitor_map" method="set_visible"]
@@ -5294,6 +5378,7 @@ text = "EXIT CAMERA"
 [connection signal="monitor_focus" from="." to="monitor_map" method="set_visible" binds= [true]]
 [connection signal="monitor_unfocus" from="." to="monitor_map" method="set_visible" binds= [false]]
 [connection signal="cam_scene_switched" from="monitor_scene_clipper/monitor_scene" to="." method="set_current_camera_scene"]
+[connection signal="cam_scene_switched_first_time" from="monitor_scene_clipper/monitor_scene" to="instruction_monitor" method="set_active_state" binds= [true]]
 [connection signal="button_down" from="monitor_scene_clipper/monitor_scene/cam_show_stage/flash_show_stage" to="." method="set_current_camera_flashed" binds= ["show_stage", true]]
 [connection signal="button_up" from="monitor_scene_clipper/monitor_scene/cam_show_stage/flash_show_stage" to="." method="set_current_camera_flashed" binds= ["show_stage", false]]
 [connection signal="button_down" from="monitor_scene_clipper/monitor_scene/cam_game_area/flash_game_area" to="." method="set_current_camera_flashed" binds= ["game_area", true]]

@@ -1,0 +1,217 @@
+[gd_scene load_steps=14 format=3 uid="uid://bir70bj5lq57p"]
+
+[ext_resource type="Script" path="res://scripts/misc/scene_loader.gd" id="1_kfbqn"]
+[ext_resource type="FontFile" uid="uid://qul7yje286sn" path="res://ui/fonts/7_segment_display/digital-led.otf" id="2_i2qh3"]
+[ext_resource type="AudioStream" uid="uid://4i8k816ry22h" path="res://sounds/fnaf_2/cutscenes/night_win_fnaf2.wav" id="3_q7p7a"]
+[ext_resource type="AudioStream" uid="uid://bpxa5va4gdwvw" path="res://sounds/cutscenes/cutscene_kidscheering.wav" id="4_cv243"]
+[ext_resource type="Script" path="res://scripts/misc/night_won_data.gd" id="5_fa42e"]
+[ext_resource type="Texture2D" uid="uid://bw5r5s6tuoamy" path="res://sprites/confetti.png" id="6_nvmva"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_y4kvj"]
+
+[sub_resource type="Animation" id="Animation_n5lh6"]
+resource_name = "5 AM to 6 AM"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(522, 207), Vector2(522, 304)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(522, 304), Vector2(522, 401)]
+}
+
+[sub_resource type="Animation" id="Animation_4fdx1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(522, 229)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(522, 401)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6ca4e"]
+_data = {
+"5 AM to 6 AM": SubResource("Animation_n5lh6"),
+"RESET": SubResource("Animation_4fdx1")
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_tcx3e"]
+
+[sub_resource type="Gradient" id="Gradient_ctf2c"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.5, 0.5, 0.5, 1, 1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_bvdix"]
+offsets = PackedFloat32Array(0.1, 0.3, 0.5, 0.7, 0.9)
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1)
+
+[node name="scene_night_win" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="scene_switcher" type="Node" parent="."]
+script = ExtResource("1_kfbqn")
+
+[node name="bg_black" type="TextureRect" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_y4kvj")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.5
+offset_top = -13.0
+offset_right = 35.5
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_i2qh3")
+theme_override_font_sizes/font_size = 100
+text = "  AM"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 522.0
+offset_top = 401.0
+offset_right = 758.0
+offset_bottom = 501.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_i2qh3")
+theme_override_font_sizes/font_size = 100
+text = "5"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 522.0
+offset_top = 229.0
+offset_right = 758.0
+offset_bottom = 329.001
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_i2qh3")
+theme_override_font_sizes/font_size = 100
+text = "6
+"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6ca4e")
+}
+autoplay = "5 AM to 6 AM"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_q7p7a")
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_cv243")
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 304.0
+texture = SubResource("CanvasTexture_tcx3e")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_top = 404.0
+offset_right = 1280.0
+offset_bottom = 726.0
+texture = SubResource("CanvasTexture_tcx3e")
+
+[node name="night_won_data" type="Node" parent="."]
+script = ExtResource("5_fa42e")
+game_id = 2
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(640, 0)
+amount = 30
+lifetime = 15.0
+texture = ExtResource("6_nvmva")
+emission_shape = 3
+emission_rect_extents = Vector2(640, 1)
+direction = Vector2(0, 1)
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+angular_velocity_min = -45.0
+angular_velocity_max = 45.0
+scale_amount_min = 8.0
+scale_amount_max = 8.0
+color_ramp = SubResource("Gradient_ctf2c")
+color_initial_ramp = SubResource("Gradient_bvdix")
+
+[connection signal="timeout" from="Timer" to="scene_switcher" method="load_scene" binds= ["res://scenes/cutscenes/fnaf2/scene_win_fnaf2.tscn"]]
+[connection signal="timeout" from="Timer2" to="AudioStreamPlayer2" method="play"]

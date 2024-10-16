@@ -24,9 +24,15 @@ var jumpscare_queued : bool
 signal animatronic_jumpscare(animatronic_name : String)
 
 @export_subgroup("Debug")
+@export var debug_move_time : float = 1
 @export var enable_gfx_on_ready : bool
 
 func _ready():
+	super._ready()
+	
+	if debug_ai:
+		timer_jumpscare.wait_time = debug_move_time
+	
 	if not enable_gfx_on_ready: handle_gfx(false)
 	monitor_screen.monitor_unfocus.connect(on_monitor_unfocus)
 	
@@ -47,6 +53,7 @@ func handle_gfx(in_office : bool):
 	sprite.visible = in_office
 
 func handle_func():
+	#print_debug("%s in vent" % [animatronic_name])
 	animatronic_roaming.set_can_move(false)
 	
 	timer_jumpscare.start()
@@ -84,6 +91,7 @@ func on_jumpscare_timer_timeout():
 func on_monitor_unfocus():
 	if jumpscare_queued:
 		animatronic_jumpscare.emit(animatronic_name)
+		handle_gfx(false)
 
 func on_mask_timer_timeout():
 	trigger_in_office(false)

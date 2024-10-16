@@ -54,15 +54,23 @@ var can_pause_animatronic : bool = true
 @export_range(0, 1) var movement_cue_probability : float = .05
 signal movement_cue
 
+@export var debug_move_time : float = 1
+
 func set_ai_level(new_ai_level : int): super(new_ai_level)
 
 func _ready():
 	super()
 	cam_path_num = randi_range(0, cam_path.size() - 1)
+	
+	if debug_ai:
+		min_move_time = debug_move_time
+		max_move_time = debug_move_time
+		movement_timer.start(debug_move_time)
 
 func movement_opportunity() -> void:
 	regenerate_movement_timer()
-	if randi_range(1, max_ai_level) <= ai_level_property and can_move:
+	#print_debug("%s opp passed: %s" %[animatronic_name, ai_opportunity_passed()])
+	if ai_opportunity_passed() and can_move:
 		move()
 
 func regenerate_movement_timer() -> void:

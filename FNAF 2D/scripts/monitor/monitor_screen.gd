@@ -24,7 +24,8 @@ signal camera_scene_flashed_off
 signal active_state_on
 signal active_state_off
 
-signal animatronic_moved_from_cam
+signal animatronic_moved_from_cam#idk why i didnt add params but im too scared to change it asldkjlkadhlk
+signal animatronic_moved_to_camera(animatronic_name : String, cam_name : String)
 
 signal animatronic_moved_out_of_camera_queue
 signal animatronic_moved_in_camera_queue
@@ -46,6 +47,7 @@ signal jumpscare(animatronic_name : String)
 signal flash_disabled_set(is_disabled : bool)
 
 @export var animatronics_fnaf2 : animatronics_fnaf2
+@export var popups : popups
 
 func set_active_state(active_state : bool):
 	if active_state_permanent: return
@@ -98,6 +100,8 @@ func animatronic_moved_to(_animatronic_name : String, _cam_name_to : String, _nu
 	#print_debug("(ms) %s moved to %s {%s}" % [_animatronic_name, _cam_name_to, Time.get_ticks_msec() / 1000.0])
 	for monitor_script in monitor_scripts:
 		monitor_script.set_animatronic_pos(_animatronic_name, _cam_name_to, _num_times_been_to_cam)
+	
+	animatronic_moved_to_camera.emit(_animatronic_name, _cam_name_to)
 	
 	if !is_focused: return
 	if _cam_name_to == current_cam_scene: animatronic_moved_in_camera_queue.emit()

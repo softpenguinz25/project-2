@@ -9,14 +9,6 @@ cam_path = Array[Array]([["game_area", "vent_left"]])
 pause_animatronic_timer = NodePath("balloon_boy_timer_pause")
 pause_animatronic_timer_cooldown = NodePath("balloon_boy_timer_pause_cooldown")
 animatronic_name = "balloon_boy"
-ai_level_by_hour = {
-1: 20,
-2: 20,
-3: 20,
-4: 20,
-5: 20,
-12: 20
-}
 
 [node name="balloon_boy_timer" type="Timer" parent="."]
 wait_time = 5.0
@@ -26,7 +18,7 @@ autostart = true
 wait_time = 3.0
 
 [node name="balloon_boy_timer_pause_cooldown" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 3.0
 
 [connection signal="timeout" from="balloon_boy_timer" to="." method="movement_opportunity"]
 [connection signal="timeout" from="balloon_boy_timer_pause" to="." method="pause_animatronic" binds= [false]]

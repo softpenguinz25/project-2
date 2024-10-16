@@ -1,0 +1,701 @@
+[gd_scene load_steps=20 format=3 uid="uid://dul5iw3bnmbyj"]
+
+[ext_resource type="Script" path="res://scripts/misc/scene_loader.gd" id="1_mfifu"]
+[ext_resource type="Script" path="res://scripts/audio/audio_manager_local.gd" id="2_llo6t"]
+[ext_resource type="FontFile" uid="uid://c458otts8ji68" path="res://ui/fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" id="3_hirpu"]
+[ext_resource type="Texture2D" uid="uid://c1n5na7w0g2oi" path="res://sprites/circle_rays_pixel.png" id="3_mulja"]
+[ext_resource type="Texture2D" uid="uid://dpgtdkqni3iil" path="res://sprites/characters/animatronics/toy_bonnie.png" id="4_c4g46"]
+[ext_resource type="Texture2D" uid="uid://caroegfhu8p6o" path="res://sprites/circle_faded.png" id="4_lfbtx"]
+[ext_resource type="Texture2D" uid="uid://bw5r5s6tuoamy" path="res://sprites/confetti.png" id="5_160dx"]
+[ext_resource type="Texture2D" uid="uid://da0mcpey8hs48" path="res://sprites/characters/animatronics/toy_freddy.png" id="5_gdkyt"]
+[ext_resource type="Texture2D" uid="uid://bop35uwera20q" path="res://sprites/characters/animatronics/mangle.png" id="6_1ovmo"]
+[ext_resource type="Texture2D" uid="uid://extpgbvgt676" path="res://sprites/characters/animatronics/toy_chica.png" id="7_6v8ay"]
+[ext_resource type="Texture2D" uid="uid://ddwxbqilwvxyv" path="res://sprites/ui/paycheck.png" id="8_c36dk"]
+[ext_resource type="Script" path="res://scripts/cutscenes/camera_shake_gentle.gd" id="9_sar8r"]
+[ext_resource type="AudioStream" uid="uid://dgl3cdxmw3dfd" path="res://sounds/cutscenes/cutscene_lullabywaltz.wav" id="10_gnsyt"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_yb8gk"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_664p5"]
+frequency = 0.1
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_myrbq"]
+
+[sub_resource type="Animation" id="Animation_tsjap"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fade_in:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fade_in:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_4leot"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fade_in:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fade_in:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_83dhs"]
+_data = {
+"RESET": SubResource("Animation_tsjap"),
+"fade_in": SubResource("Animation_4leot")
+}
+
+[node name="win_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="scene_loader" type="Node" parent="."]
+script = ExtResource("1_mfifu")
+
+[node name="audio_manager_local" type="Node" parent="."]
+script = ExtResource("2_llo6t")
+
+[node name="win_scene_bg" type="TextureRect" parent="."]
+self_modulate = Color(0.611765, 0.262745, 0.4, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -24.0
+offset_right = 38.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_yb8gk")
+
+[node name="circle_rays" type="TextureRect" parent="win_scene_bg"]
+self_modulate = Color(0.611765, 0.152941, 0.337255, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_mulja")
+
+[node name="glow_white" type="TextureRect" parent="win_scene_bg"]
+layout_mode = 0
+offset_left = 293.0
+offset_top = 26.0
+offset_right = 1061.0
+offset_bottom = 794.0
+texture = ExtResource("4_lfbtx")
+
+[node name="glow_white2" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 1, 1, 0.5)
+layout_mode = 0
+offset_left = 293.0
+offset_right = 805.0
+offset_bottom = 512.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_lfbtx")
+
+[node name="glow_white3" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 1, 1, 0.5)
+layout_mode = 0
+offset_left = 1110.0
+offset_top = 213.0
+offset_right = 1622.0
+offset_bottom = 725.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_lfbtx")
+
+[node name="glow_white4" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 1, 1, 0.5)
+layout_mode = 0
+offset_left = -143.0
+offset_top = 213.0
+offset_right = 369.0
+offset_bottom = 725.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_lfbtx")
+
+[node name="glow_white5" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 1, 1, 0.5)
+layout_mode = 0
+offset_left = 293.0
+offset_top = 469.0
+offset_right = 805.0
+offset_bottom = 981.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_lfbtx")
+
+[node name="glow_white6" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 1, 1, 0.5)
+layout_mode = 0
+offset_left = 1201.0
+offset_top = 618.0
+offset_right = 1713.0
+offset_bottom = 1130.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_lfbtx")
+
+[node name="TextureRect" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 0.913725, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 62.0
+offset_top = 42.0
+offset_right = 122.0
+offset_bottom = 82.0
+rotation = -0.261799
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 0.839216, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 164.0
+offset_top = 60.0
+offset_right = 224.0
+offset_bottom = 100.0
+rotation = 0.349066
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect3" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 1, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 156.0
+offset_right = 160.0
+offset_bottom = 196.0
+rotation = -0.610865
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect4" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 0.839216, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 360.0
+offset_top = 70.0
+offset_right = 420.0
+offset_bottom = 110.0
+rotation = -3.31613
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect5" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 1, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 372.0
+offset_top = 153.0
+offset_right = 432.0
+offset_bottom = 193.0
+rotation = -1.13446
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect6" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 1, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 617.0
+offset_top = 81.0
+offset_right = 677.0
+offset_bottom = 121.0
+rotation = -2.44346
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect7" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 0.839216, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 645.0
+offset_top = 154.0
+offset_right = 705.0
+offset_bottom = 194.0
+rotation = 0.174533
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect8" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 0.913725, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 950.0
+offset_top = 26.0
+offset_right = 1010.0
+offset_bottom = 66.0
+rotation = -0.261799
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect9" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 1, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 1110.0
+offset_top = 67.0
+offset_right = 1170.0
+offset_bottom = 107.0
+rotation = 2.44346
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect10" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 0.839216, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 1147.0
+offset_top = 24.0
+offset_right = 1207.0
+offset_bottom = 64.0
+rotation = 0.261799
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect11" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 1, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 1349.0
+offset_top = 218.0
+offset_right = 1409.0
+offset_bottom = 258.0
+rotation = -2.79253
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect12" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 0.839216, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 1286.0
+offset_top = 328.0
+offset_right = 1346.0
+offset_bottom = 368.0
+rotation = -1.39626
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect13" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 1, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 1153.0
+offset_top = 454.0
+offset_right = 1213.0
+offset_bottom = 494.0
+rotation = -2.87979
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect14" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 0.913725, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 1247.0
+offset_top = 458.0
+offset_right = 1307.0
+offset_bottom = 498.0
+rotation = -3.92699
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect15" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 0.839216, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 1298.0
+offset_top = 489.0
+offset_right = 1358.0
+offset_bottom = 529.0
+rotation = -2.18166
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect16" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 1, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 1308.0
+offset_top = 496.0
+offset_right = 1368.0
+offset_bottom = 536.0
+rotation = -5.32326
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect17" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 0.839216, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 1031.0
+offset_top = 633.0
+offset_right = 1091.0
+offset_bottom = 673.0
+rotation = -7.33039
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect18" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 0.913725, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 1110.0
+offset_top = 662.0
+offset_right = 1170.0
+offset_bottom = 702.0
+rotation = -5.32326
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect19" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 1, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 1162.0
+offset_top = 639.0
+offset_right = 1222.0
+offset_bottom = 679.0
+rotation = -6.19592
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect20" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 0.839216, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 1201.0
+offset_top = 746.0
+offset_right = 1261.0
+offset_bottom = 786.0
+rotation = -7.50492
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect21" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 0.913725, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 1356.0
+offset_top = 744.0
+offset_right = 1416.0
+offset_bottom = 784.0
+rotation = -9.51205
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect22" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 1, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 812.0
+offset_top = 691.0
+offset_right = 872.0
+offset_bottom = 731.0
+rotation = -8.20305
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect23" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 0.839216, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 838.0
+offset_top = 706.0
+offset_right = 898.0
+offset_bottom = 746.0
+rotation = -5.93412
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect24" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 1, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 613.0
+offset_top = 618.0
+offset_right = 673.0
+offset_bottom = 658.0
+rotation = -10.3847
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect25" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 0.839216, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 554.0
+offset_top = 704.0
+offset_right = 614.0
+offset_bottom = 744.0
+rotation = -12.6536
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect26" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 0.913725, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 497.0
+offset_top = 695.0
+offset_right = 557.0
+offset_bottom = 735.0
+rotation = -11.4319
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect27" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 0.839216, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 21.0
+offset_top = 725.0
+offset_right = 81.0
+offset_bottom = 765.0
+rotation = -13.09
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect28" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 0.839216, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 88.0
+offset_top = 618.0
+offset_right = 148.0
+offset_bottom = 658.0
+rotation = -10.7338
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect29" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 0.839216, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 167.0
+offset_top = 693.0
+offset_right = 227.0
+offset_bottom = 733.0
+rotation = -11.8682
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect30" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 1, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 205.0
+offset_top = 655.0
+offset_right = 265.0
+offset_bottom = 695.0
+rotation = -15.0098
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect31" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 0.839216, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 302.0
+offset_top = 626.0
+offset_right = 362.0
+offset_bottom = 666.0
+rotation = -12.9154
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect32" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 0.913725, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 31.0
+offset_top = 310.0
+offset_right = 91.0
+offset_bottom = 350.0
+rotation = -11.8682
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect33" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 0.839216, 0.929412, 0.376471)
+layout_mode = 0
+offset_left = 252.0
+offset_top = 461.0
+offset_right = 312.0
+offset_bottom = 501.0
+rotation = -9.33751
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="TextureRect34" type="TextureRect" parent="win_scene_bg"]
+modulate = Color(1, 0.913725, 0.929412, 0.376471)
+layout_mode = 0
+offset_top = 479.0
+offset_right = 60.0
+offset_bottom = 519.0
+rotation = -7.06859
+texture = ExtResource("5_160dx")
+expand_mode = 3
+
+[node name="bonnie" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -128.0
+offset_top = 330.038
+offset_right = -96.0
+offset_bottom = 362.038
+rotation = -0.785397
+scale = Vector2(16, 16)
+texture = ExtResource("4_c4g46")
+stretch_mode = 5
+
+[node name="freddy" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -32.0
+offset_top = 106.038
+offset_bottom = 140.038
+rotation = -0.261799
+scale = Vector2(16, 16)
+texture = ExtResource("5_gdkyt")
+stretch_mode = 5
+
+[node name="foxy" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 952.0
+offset_top = -171.0
+offset_right = 985.0
+offset_bottom = -139.0
+rotation = 0.785397
+scale = Vector2(16, 16)
+texture = ExtResource("6_1ovmo")
+stretch_mode = 5
+
+[node name="chica" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 788.515
+offset_top = 10.0383
+offset_right = 820.515
+offset_bottom = 42.0383
+rotation = 0.261799
+scale = Vector2(16, 16)
+texture = ExtResource("7_6v8ay")
+stretch_mode = 5
+
+[node name="6_am" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.03827
+offset_bottom = 2.03827
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("3_hirpu")
+theme_override_font_sizes/font_size = 240
+text = "6 AM"
+horizontal_alignment = 1
+
+[node name="congrats_message" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -678.0
+offset_top = 234.0
+offset_right = 678.0
+offset_bottom = 299.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_hirpu")
+theme_override_font_sizes/font_size = 23
+text = "congrats, you beat FNAF 2 2D! i still dont have enough budget to make an proper end screen lmao"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="congrats_message"]
+modulate = Color(0, 0, 0, 0.705882)
+show_behind_parent = true
+layout_mode = 0
+offset_left = -376.0
+offset_top = -22.0
+offset_right = 1694.0
+offset_bottom = 87.0
+texture = ExtResource("4_lfbtx")
+expand_mode = 3
+
+[node name="paycheck" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 234.038
+offset_right = 344.0
+offset_bottom = 252.038
+scale = Vector2(20, 20)
+texture = ExtResource("8_c36dk")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+script = ExtResource("9_sar8r")
+noise = SubResource("FastNoiseLite_664p5")
+shake_speed = 1.0
+shake_amplitude = 50.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_gnsyt")
+autoplay = true
+
+[node name="fade_in" type="TextureRect" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -264.0
+offset_top = -171.0
+offset_right = -264.0
+offset_bottom = -171.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+texture = SubResource("CanvasTexture_myrbq")
+
+[node name="fade_in_player" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_83dhs")
+}
+autoplay = "fade_in"
+
+[node name="return_to_main_menu" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -134.0
+offset_top = -69.0
+offset_right = 135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_hirpu")
+theme_override_font_sizes/font_size = 50
+text = "Main Menu"
+
+[connection signal="button_down" from="return_to_main_menu" to="audio_manager_local" method="play_sound" binds= ["res://scripts/ui/main_menu_button.gd"]]
+[connection signal="button_up" from="return_to_main_menu" to="scene_loader" method="load_scene" binds= ["res://scenes/menu/menu_main.tscn"]]

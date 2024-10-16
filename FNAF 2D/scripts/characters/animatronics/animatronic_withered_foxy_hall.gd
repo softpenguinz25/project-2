@@ -1,4 +1,5 @@
 extends animatronic
+class_name animatronic_withered_foxy_hall
 #i could make this polymorphic as vent animatronics have the same funcs, but ¯\_(ツ)_/¯
 
 var is_in_hall : bool
@@ -17,6 +18,7 @@ var retreat_queued : bool
 @export var animatronic_gfx : CanvasItem
 @export var animatronic_eyes : CanvasItem
 
+signal hall_state_set(hall_state : bool)
 signal animatronic_jumpscare(animatronic_name : String)
 
 func _ready():
@@ -43,6 +45,8 @@ func handle_func(in_office : bool):
 		animatronic_roaming.reset_pos()
 	
 	retreat_queued = false
+	
+	hall_state_set.emit(is_in_hall)
 
 func _process(delta):
 	if not is_in_hall: return
